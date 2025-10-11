@@ -151,7 +151,7 @@ const Home = () => {
           <MorphingShape />
           <motion.div {...fadeInUp} className="text-center max-w-4xl mx-auto">
             <motion.h1
-              className="vt-title text-5xl md:text-7xl font-bold mb-6 gradient-text"
+              className="vt-title text-5xl md:text-7xl font-bold mt-10 mb-6 gradient-text"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -540,11 +540,14 @@ const Home = () => {
 export default Home;
 
 function MorphingShape() {
-  const reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const shapes = useRef([
-    'M122 50c40-40 110-40 150 0s40 110 0 150-110 40-150 0-40-110 0-150Z',
-    'M80 120c20-60 120-90 170-40s30 120-30 150-120-10-140-70Z',
-    'M60 100c50-70 160-70 210 0s-10 150-105 140S10 170 60 100Z',
+    "M122 50c40-40 110-40 150 0s40 110 0 150-110 40-150 0-40-110 0-150Z",
+    "M80 120c20-60 120-90 170-40s30 120-30 150-120-10-140-70Z",
+    "M60 100c50-70 160-70 210 0s-10 150-105 140S10 170 60 100Z",
   ]).current;
   const idxRef = useRef(0);
   const raf = useRef(0);
@@ -560,22 +563,25 @@ function MorphingShape() {
     let start = performance.now();
     let i = idxRef.current;
     let next = (i + 1) % shapes.length;
-    interpRef.current = interpolate(shapes[i], shapes[next], { maxSegmentLength: 2 });
+    interpRef.current = interpolate(shapes[i], shapes[next], {
+      maxSegmentLength: 2,
+    });
 
-    const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; // easeInOutCubic
+    const ease = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; // easeInOutCubic
 
     function frame(now) {
       const t = Math.min(1, (now - start) / duration);
       const eased = ease(t);
       const p = interpRef.current ? interpRef.current(eased) : shapes[i];
-      if (pathRef.current) pathRef.current.setAttribute('d', p);
+      if (pathRef.current) pathRef.current.setAttribute("d", p);
       // gentle motion path for the whole shape (lissajous‑like)
       if (svgRef.current) {
         const a = ampRef.current;
         // fréquences plus basses pour un mouvement plus lent et ample
         const x = a.x * Math.sin(now * 0.00016);
         const y = a.y * Math.cos(now * 0.00014);
-        const rot = a.r * Math.sin(now * 0.00010);
+        const rot = a.r * Math.sin(now * 0.0001);
         const sc = 1.012 + 0.038 * Math.sin(now * 0.00014);
         svgRef.current.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
       }
@@ -583,9 +589,12 @@ function MorphingShape() {
         raf.current = requestAnimationFrame(frame);
       } else {
         // next cycle
-        i = next; next = (next + 1) % shapes.length;
+        i = next;
+        next = (next + 1) % shapes.length;
         idxRef.current = i;
-        interpRef.current = interpolate(shapes[i], shapes[next], { maxSegmentLength: 2 });
+        interpRef.current = interpolate(shapes[i], shapes[next], {
+          maxSegmentLength: 2,
+        });
         start = performance.now();
         raf.current = requestAnimationFrame(frame);
       }
@@ -595,14 +604,25 @@ function MorphingShape() {
   }, [reduce]);
 
   return (
-    <svg ref={svgRef} className="vt-hero-shape pointer-events-none absolute -top-16 right-0 md:right-10 w-[320px] md:w-[420px] opacity-25" viewBox="0 0 320 320" aria-hidden style={{ willChange: 'transform' }}>
+    <svg
+      ref={svgRef}
+      className="vt-hero-shape pointer-events-none absolute -top-16 right-0 md:right-10 w-[320px] md:w-[420px] opacity-25"
+      viewBox="0 0 320 320"
+      aria-hidden
+      style={{ willChange: "transform" }}
+    >
       <defs>
         <linearGradient id="morphG" x1="0" x2="1" y1="0" y2="1">
           <stop offset="0%" stopColor="#60a5fa" />
           <stop offset="100%" stopColor="#22d3ee" />
         </linearGradient>
       </defs>
-      <path ref={pathRef} d={shapes[0]} fill="url(#morphG)" shapeRendering="optimizeSpeed" />
+      <path
+        ref={pathRef}
+        d={shapes[0]}
+        fill="url(#morphG)"
+        shapeRendering="optimizeSpeed"
+      />
     </svg>
   );
 }

@@ -91,7 +91,7 @@ const About = () => {
         description={t("about.seo.description")}
       />
 
-      <section className="py-20 gradient-bg">
+      <section className="gradient-bg pt-28 md:pt-20 pb-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
