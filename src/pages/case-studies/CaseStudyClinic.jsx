@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import clinicImg from "@/assets/clinic-dabia.png";
+import clinicImg from "@/assets/clinic-dabia.webp";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const CaseStudyClinic = () => {
@@ -20,13 +20,20 @@ const CaseStudyClinic = () => {
           "@context": "https://schema.org",
           "@type": "Article",
           headline: "Étude de cas: Clinique DABIA — +70% trafic mobile",
-          image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + clinicImg,
+          image:
+            (import.meta.env.VITE_SITE_URL ||
+              (typeof window !== "undefined" ? window.location.origin : "")) +
+            clinicImg,
           datePublished: "2025-06-01",
           dateModified: "2025-09-01",
           author: { "@type": "Person", name: "Boubacar FALL" },
           publisher: { "@type": "Organization", name: "Fallcon Tech" },
-          mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/case-study/clinic",
-          description: "Site clinique moderne avec réservation en ligne à Dakar.",
+          mainEntityOfPage:
+            (import.meta.env.VITE_SITE_URL ||
+              (typeof window !== "undefined" ? window.location.origin : "")) +
+            "/case-study/clinic",
+          description:
+            "Site clinique moderne avec réservation en ligne à Dakar.",
         }}
       />
 

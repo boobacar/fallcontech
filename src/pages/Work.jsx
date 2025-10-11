@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import clinicImg from "@/assets/clinic-dabia.png";
-import telimanImg from "@/assets/telimanshare.png";
+import clinicImg from "@/assets/clinic-dabia.webp";
+import telimanImg from "@/assets/telimanshare.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 
 const Work = () => {
@@ -21,7 +21,8 @@ const Work = () => {
       link: "/case-study/clinic",
       img: clinicImg,
       site: "https://www.cliniquedentairedabia.com",
-      image: "Site web de clinique médicale moderne avec interface de réservation de rendez-vous et portail patient",
+      image:
+        "Site web de clinique médicale moderne avec interface de réservation de rendez-vous et portail patient",
     },
     {
       title: "Plateforme TelimanShare",
@@ -34,7 +35,8 @@ const Work = () => {
       link: "/case-study/telimanshare",
       img: telimanImg,
       site: "https://www.telimanshare.com",
-      image: "Tableau de bord d'une plateforme de partage de documents sécurisée avec gestion de fichiers et journaux d'activité",
+      image:
+        "Tableau de bord d'une plateforme de partage de documents sécurisée avec gestion de fichiers et journaux d'activité",
     },
     {
       title: "Automatisation Anniversaires WhatsApp",
@@ -46,11 +48,14 @@ const Work = () => {
       tags: ["API WhatsApp", "Automatisation", "Node.js"],
       link: "/case-study/whatsapp",
       img: whatsappImg,
-      image: "Tableau de bord d'automatisation WhatsApp montrant le flux de messages d'anniversaire et les analyses",
+      image:
+        "Tableau de bord d'automatisation WhatsApp montrant le flux de messages d'anniversaire et les analyses",
     },
   ];
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+  const siteUrl =
+    import.meta.env.VITE_SITE_URL ||
+    (typeof window !== "undefined" ? window.location.origin : "");
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -71,8 +76,18 @@ const Work = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "Projets", item: `${siteUrl}/work` },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: `${siteUrl}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projets",
+        item: `${siteUrl}/work`,
+      },
     ],
   };
 
@@ -164,7 +179,11 @@ const Work = () => {
                     </Button>
                     {project.site && (
                       <Button asChild className="w-full" variant="secondary">
-                        <a href={project.site} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.site}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Voir le site
                         </a>
                       </Button>
@@ -202,11 +221,34 @@ const Work = () => {
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-primary">Articles récents</h2>
+          <h2 className="text-3xl font-bold mb-6 text-primary">
+            Articles récents
+          </h2>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
-            <li><Link to="/article/seo-basics-senegalese-businesses" className="hover:underline">SEO local au Sénégal — Guide</Link></li>
-            <li><Link to="/article/automating-follow-ups-whatsapp-senegal" className="hover:underline">Automatiser les suivis WhatsApp</Link></li>
-            <li><Link to="/article/choosing-right-tech-stack" className="hover:underline">Choisir la bonne stack technique</Link></li>
+            <li>
+              <Link
+                to="/article/seo-basics-senegalese-businesses"
+                className="hover:underline"
+              >
+                SEO local au Sénégal — Guide
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/article/automating-follow-ups-whatsapp-senegal"
+                className="hover:underline"
+              >
+                Automatiser les suivis WhatsApp
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/article/choosing-right-tech-stack"
+                className="hover:underline"
+              >
+                Choisir la bonne stack technique
+              </Link>
+            </li>
           </ul>
         </div>
       </section>

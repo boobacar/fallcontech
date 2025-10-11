@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import telimanImg from "@/assets/telimanshare.png";
+import telimanImg from "@/assets/telimanshare.webp";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const CaseStudyTelimanShare = () => {
@@ -20,12 +20,18 @@ const CaseStudyTelimanShare = () => {
           "@context": "https://schema.org",
           "@type": "Article",
           headline: "Étude de cas: TelimanShare — plateforme docs sécurisée",
-          image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + telimanImg,
+          image:
+            (import.meta.env.VITE_SITE_URL ||
+              (typeof window !== "undefined" ? window.location.origin : "")) +
+            telimanImg,
           datePublished: "2025-05-10",
           dateModified: "2025-08-10",
           author: { "@type": "Person", name: "Boubacar FALL" },
           publisher: { "@type": "Organization", name: "Fallcon Tech" },
-          mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/case-study/telimanshare",
+          mainEntityOfPage:
+            (import.meta.env.VITE_SITE_URL ||
+              (typeof window !== "undefined" ? window.location.origin : "")) +
+            "/case-study/telimanshare",
           description: "Plateforme interne de documents sécurisée au Sénégal.",
         }}
       />
