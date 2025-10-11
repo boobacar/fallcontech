@@ -182,8 +182,9 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Sites rapides et mobile-first, systèmes de réservation et outils
-              personnalisés pour les cliniques, PME et startups.
+              Sites rapides (mobile‑first), SEO local et automatisations métier
+              pour tous secteurs&nbsp;: réservation en ligne, workflows
+              WhatsApp, plateformes internes et MVP.
             </motion.p>
 
             <motion.div
