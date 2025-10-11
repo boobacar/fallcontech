@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SEO from "@/components/SEO";
+import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText, Download, ArrowRight } from "lucide-react";
@@ -13,6 +14,7 @@ import imgMobile from "@/assets/articles/mobile-first-design.png";
 import imgStack from "@/assets/articles/stack.png";
 
 const Resources = () => {
+  const { t } = useI18n();
   const { toast } = useToast();
   const [email, setEmail] = useState("");
 
@@ -20,9 +22,8 @@ const Resources = () => {
     e.preventDefault();
     if (!email) {
       toast({
-        title: "Email Requis",
-        description:
-          "Veuillez entrer votre email pour télécharger la checklist.",
+        title: t('resources.toast.emailRequired.title'),
+        description: t('resources.toast.emailRequired.description'),
         variant: "destructive",
       });
       return;
@@ -31,17 +32,16 @@ const Resources = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast({
-        title: "Email Invalide",
-        description: "Veuillez entrer une adresse email valide.",
+        title: t('resources.toast.emailInvalid.title'),
+        description: t('resources.toast.emailInvalid.description'),
         variant: "destructive",
       });
       return;
     }
 
     toast({
-      title: "🚧 Téléchargement Bientôt Disponible !",
-      description:
-        "Cette fonctionnalité n'est pas encore implémentée, mais ne vous inquiétez pas ! Vous pouvez la demander dans votre prochain message ! 🚀",
+      title: t('resources.toast.downloadSoon.title'),
+      description: t('resources.toast.downloadSoon.description'),
     });
 
     setEmail("");
@@ -103,8 +103,8 @@ const Resources = () => {
     <>
       <SEO
         path="/resources"
-        title="Guides & Ressources — Développement Web au Sénégal"
-        description="Guides pratiques, SEO local, automatisations WhatsApp et checklists pour réussir en ligne au Sénégal."
+        title={t('resources.seo.title')}
+        description={t('resources.seo.description')}
       />
 
       <section className="py-20 gradient-bg">
@@ -114,13 +114,8 @@ const Resources = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              Ressources & Guides
-            </h1>
-            <p className="text-xl text-foreground/80">
-              Outils gratuits, checklists et conseils pour vous aider à réussir
-              en ligne
-            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('resources.pageTitle')}</h1>
+            <p className="text-xl text-foreground/80">{t('resources.lead')}</p>
           </motion.div>
 
           <motion.div
@@ -134,33 +129,24 @@ const Resources = () => {
                 <FileText className="text-primary-foreground" size={32} />
               </div>
               <div>
-                <h2 className="text-3xl font-bold">
-                  Checklist de Lancement de Site Web
-                </h2>
-                <p className="text-muted-foreground">Édition Sénégal</p>
+                <h2 className="text-3xl font-bold">{t('resources.checklist.title')}</h2>
+                <p className="text-muted-foreground">{t('resources.checklist.subtitle')}</p>
               </div>
             </div>
 
-            <p className="text-foreground/80 mb-6">
-              Obtenez notre checklist complète couvrant tout, de
-              l'enregistrement du domaine à la configuration SEO, spécialement
-              conçue pour les entreprises au Sénégal.
-            </p>
+            <p className="text-foreground/80 mb-6">{t('resources.checklist.description')}</p>
 
             <form onSubmit={handleDownload} className="space-y-4">
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  Adresse Email
+                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  {t('resources.form.emailLabel')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="votre@email.com"
+                  placeholder={t('resources.form.emailPlaceholder')}
                   className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
                 />
               </div>
@@ -169,7 +155,7 @@ const Resources = () => {
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg py-6"
               >
                 <Download className="mr-2" size={20} />
-                Télécharger la Checklist Gratuite
+                {t('resources.form.download')}
               </Button>
             </form>
           </motion.div>
@@ -184,13 +170,8 @@ const Resources = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Derniers Articles
-            </h2>
-            <p className="text-xl text-foreground/80">
-              Guides pratiques et aperçus pour développer votre activité en
-              ligne
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('resources.latest.title')}</h2>
+            <p className="text-xl text-foreground/80">{t('resources.latest.subtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -242,7 +223,7 @@ const Resources = () => {
                         {post.readTime}
                       </span>
                       <span className="text-blue-500 font-semibold text-sm flex items-center gap-1">
-                        Lire Plus <ArrowRight size={16} />
+                        {t('resources.latest.readMore')} <ArrowRight size={16} />
                       </span>
                     </div>
                   </div>

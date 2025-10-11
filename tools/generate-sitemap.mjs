@@ -15,6 +15,7 @@ const routes = [
   '/case-study/clinic',
   '/case-study/telimanshare',
   '/case-study/whatsapp',
+  '/case-study/miroir-foncier',
   '/article/booking-system-clinics-dakar',
   '/article/automating-follow-ups-whatsapp-senegal',
   '/article/idea-to-mvp-2-weeks',

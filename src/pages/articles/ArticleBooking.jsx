@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgBooking from "@/assets/articles/online-reservation-system.png";
+import { useI18n } from "@/i18n";
 
 const ArticleBooking = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/booking-system-clinics-dakar"
-        title="Système de réservation clinique à Dakar — Guide"
-        description="Les clés d’un système de réservation pour cliniques au Sénégal: rappels WhatsApp, agendas, paiements locaux et sécurité."
+        title={t('articles.booking.seo.title')}
+        description={t('articles.booking.seo.description')}
         image={imgBooking}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "Système de réservation clinique à Dakar — Guide",
+            headline: t('articles.booking.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,8 +46,7 @@ const ArticleBooking = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/booking-system-clinics-dakar",
-            description:
-              "Fonctionnalités essentielles pour la réservation en ligne des cliniques à Dakar.",
+            description: t('articles.booking.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -54,7 +55,7 @@ const ArticleBooking = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -64,7 +65,7 @@ const ArticleBooking = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -74,7 +75,7 @@ const ArticleBooking = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Système de réservation clinique à Dakar — Guide",
+                name: t('articles.booking.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -93,26 +94,21 @@ const ArticleBooking = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "Réservation clinique à Dakar — Guide" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.booking.breadcrumb') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Comment choisir un système de réservation pour les cliniques à
-              Dakar
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 5 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.booking.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.booking.meta')}</p>
           </motion.div>
         </div>
       </section>

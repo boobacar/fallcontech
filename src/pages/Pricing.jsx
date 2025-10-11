@@ -1,100 +1,102 @@
 import React from "react";
 import SEO from "@/components/SEO";
+import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
+  const { t } = useI18n();
   const plans = [
     {
-      name: "Site Starter",
+      name: t('pricing.plans.starter.name'),
       price: "350 000",
-      currency: "F CFA",
-      description: "Parfait pour les petites entreprises et les professionnels",
+      currency: t('pricing.currency'),
+      description: t('pricing.plans.starter.description'),
       features: [
-        "Site web one-page responsive",
-        "Bases du SEO (méta-tags, sitemap)",
-        "Bouton CTA WhatsApp",
-        "Design optimisé pour mobile",
-        "Formulaire de contact",
-        "1 session de révisions",
-        "Livraison en 1-2 semaines",
+        t('pricing.plans.starter.features.0'),
+        t('pricing.plans.starter.features.1'),
+        t('pricing.plans.starter.features.2'),
+        t('pricing.plans.starter.features.3'),
+        t('pricing.plans.starter.features.4'),
+        t('pricing.plans.starter.features.5'),
+        t('pricing.plans.starter.features.6'),
       ],
-      cta: "Démarrer",
+      cta: t('pricing.plans.starter.cta'),
       popular: false,
     },
     {
-      name: "Site Business",
+      name: t('pricing.plans.business.name'),
       price: "1 000 000",
-      currency: "F CFA",
-      description: "Idéal pour les entreprises en croissance",
+      currency: t('pricing.currency'),
+      description: t('pricing.plans.business.description'),
       features: [
-        "Site web de 5-7 pages",
-        "Configuration SEO avancée",
-        "Système de réservation en ligne",
-        "Section blog/actualités",
-        "Google Analytics",
-        "Formulaires de capture de leads",
-        "2 sessions de révisions",
-        "Livraison en 2-3 semaines",
-        "1 mois de maintenance gratuite",
+        t('pricing.plans.business.features.0'),
+        t('pricing.plans.business.features.1'),
+        t('pricing.plans.business.features.2'),
+        t('pricing.plans.business.features.3'),
+        t('pricing.plans.business.features.4'),
+        t('pricing.plans.business.features.5'),
+        t('pricing.plans.business.features.6'),
+        t('pricing.plans.business.features.7'),
+        t('pricing.plans.business.features.8'),
       ],
-      cta: "Le plus populaire",
+      cta: t('pricing.plans.business.cta'),
       popular: true,
     },
     {
-      name: "Forfait Croissance",
+      name: t('pricing.plans.growth.name'),
       price: "2.5M+",
-      currency: "F CFA",
-      description: "Solutions personnalisées pour les projets ambitieux",
+      currency: t('pricing.currency'),
+      description: t('pricing.plans.growth.description'),
       features: [
-        "Portail/plateforme sur mesure",
-        "Intégrations d'automatisations",
-        "Workflows WhatsApp/SMS",
-        "Gestion de documents",
-        "Authentification des utilisateurs",
-        "Journaux d'activité et analyses",
-        "3 sessions de révisions",
-        "Livraison en 4-8 semaines",
-        "3 mois de maintenance inclus",
+        t('pricing.plans.growth.features.0'),
+        t('pricing.plans.growth.features.1'),
+        t('pricing.plans.growth.features.2'),
+        t('pricing.plans.growth.features.3'),
+        t('pricing.plans.growth.features.4'),
+        t('pricing.plans.growth.features.5'),
+        t('pricing.plans.growth.features.6'),
+        t('pricing.plans.growth.features.7'),
+        t('pricing.plans.growth.features.8'),
       ],
-      cta: "Nous contacter",
+      cta: t('pricing.plans.growth.cta'),
       popular: false,
     },
   ];
 
   const maintenancePlans = [
     {
-      name: "Basique",
-      price: "35 000",
+      name: t('pricing.maintenancePlans.basic.name'),
+      price: t('pricing.maintenancePlans.basic.priceLabel'),
       features: [
-        "Mises à jour mensuelles",
-        "Patchs de sécurité",
-        "Gestion des sauvegardes",
-        "Support par e-mail",
+        t('pricing.maintenancePlans.basic.features.0'),
+        t('pricing.maintenancePlans.basic.features.1'),
+        t('pricing.maintenancePlans.basic.features.2'),
+        t('pricing.maintenancePlans.basic.features.3'),
       ],
     },
     {
-      name: "Pro",
-      price: "75 000",
+      name: t('pricing.maintenancePlans.pro.name'),
+      price: t('pricing.maintenancePlans.pro.priceLabel'),
       features: [
-        "Toutes les fonctionnalités Basique",
-        "Suivi des performances",
-        "Mises à jour de contenu (2/mois)",
-        "Support prioritaire",
-        "Rapports mensuels",
+        t('pricing.maintenancePlans.pro.features.0'),
+        t('pricing.maintenancePlans.pro.features.1'),
+        t('pricing.maintenancePlans.pro.features.2'),
+        t('pricing.maintenancePlans.pro.features.3'),
+        t('pricing.maintenancePlans.pro.features.4'),
       ],
     },
     {
-      name: "Entreprise",
-      price: "Sur mesure",
+      name: t('pricing.maintenancePlans.enterprise.name'),
+      price: t('pricing.maintenancePlans.enterprise.priceLabel'),
       features: [
-        "Toutes les fonctionnalités Pro",
-        "Mises à jour illimitées",
-        "Support 24/7",
-        "Intégrations personnalisées",
-        "Gestionnaire de compte dédié",
+        t('pricing.maintenancePlans.enterprise.features.0'),
+        t('pricing.maintenancePlans.enterprise.features.1'),
+        t('pricing.maintenancePlans.enterprise.features.2'),
+        t('pricing.maintenancePlans.enterprise.features.3'),
+        t('pricing.maintenancePlans.enterprise.features.4'),
       ],
     },
   ];
@@ -103,8 +105,8 @@ const Pricing = () => {
     <>
       <SEO
         path="/pricing"
-        title="Tarifs développement web au Sénégal — Packs clairs"
-        description="Sites dès 350 000 F CFA, Business dès 1 000 000 F CFA, solutions sur mesure dès 2.5M. Tarifs transparents et délais rapides."
+        title={t('pricing.seo.title')}
+        description={t('pricing.seo.description')}
       />
 
       <section className="py-20 gradient-bg">
@@ -114,13 +116,8 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              Tarification Transparente
-            </h1>
-            <p className="text-xl text-foreground/80">
-              Des forfaits clairs, sans frais cachés. Choisissez ce qui
-              correspond à vos besoins et à votre budget.
-            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('pricing.pageTitle')}</h1>
+            <p className="text-xl text-foreground/80">{t('pricing.lead')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-20 items-center">
@@ -139,7 +136,7 @@ const Pricing = () => {
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full bg-blue-500 text-white text-center py-2 text-sm font-bold">
-                    LE PLUS POPULAIRE
+                    {t('pricing.mostPopular')}
                   </div>
                 )}
 
@@ -194,13 +191,8 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-              Plans de Maintenance
-            </h2>
-            <p className="text-center text-foreground/80 mb-8 max-w-2xl mx-auto">
-              Assurez le bon fonctionnement de votre site web avec nos plans de
-              maintenance mensuels.
-            </p>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('pricing.maintenance.title')}</h2>
+            <p className="text-center text-foreground/80 mb-8 max-w-2xl mx-auto">{t('pricing.maintenance.subtitle')}</p>
 
             <div className="grid md:grid-cols-3 gap-8">
               {maintenancePlans.map((plan, idx) => (
@@ -219,7 +211,7 @@ const Pricing = () => {
                     </span>
                     {plan.price !== "Sur mesure" && (
                       <span className="text-muted-foreground ml-2">
-                        F CFA/mois
+                        {t('pricing.maintenance.perMonth')}
                       </span>
                     )}
                   </div>

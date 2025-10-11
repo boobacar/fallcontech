@@ -5,11 +5,13 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import logoUrl from "@/assets/logo.webp";
+import { useI18n } from "@/i18n";
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t, locale, setLocale } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +35,13 @@ const Layout = ({ children }) => {
   }, [location.pathname]);
 
   const navLinks = [
-    { path: "/", label: "Accueil" },
-    { path: "/services", label: "Services" },
-    { path: "/work", label: "Projets" },
-    { path: "/about", label: "À Propos" },
-    { path: "/pricing", label: "Tarifs" },
-    { path: "/resources", label: "Ressources" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: t('common.nav.home') },
+    { path: "/services", label: t('common.nav.services') },
+    { path: "/work", label: t('common.nav.work') },
+    { path: "/about", label: t('common.nav.about') },
+    { path: "/pricing", label: t('common.nav.pricing') },
+    { path: "/resources", label: t('common.nav.resources') },
+    { path: "/contact", label: t('common.nav.contact') },
   ];
 
   const siteUrl =
@@ -97,7 +99,7 @@ const Layout = ({ children }) => {
               </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -111,17 +113,62 @@ const Layout = ({ children }) => {
                   {link.label}
                 </Link>
               ))}
+              <div className="h-5 w-px bg-foreground/20 mx-1" />
+              <div className="flex items-center gap-1 text-xs">
+                <button
+                  aria-label="Français"
+                  className={`px-2 py-1 rounded ${
+                    locale === 'fr'
+                      ? 'bg-foreground/10 text-foreground'
+                      : 'text-foreground/70 hover:text-foreground'
+                  }`}
+                  onClick={() => setLocale('fr')}
+                >
+                  FR
+                </button>
+                <button
+                  aria-label="English"
+                  className={`px-2 py-1 rounded ${
+                    locale === 'en'
+                      ? 'bg-foreground/10 text-foreground'
+                      : 'text-foreground/70 hover:text-foreground'
+                  }`}
+                  onClick={() => setLocale('en')}
+                >
+                  EN
+                </button>
+              </div>
               <Button asChild>
-                <Link to="/contact">Planifier un appel</Link>
+                <Link to="/contact">{t('common.cta.planCall')}</Link>
               </Button>
             </div>
 
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-foreground"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Mobile language switcher (always visible) */}
+              <div className="md:hidden flex items-center gap-1 text-xs mr-1">
+                <button
+                  aria-label="Français"
+                  className={`px-2 py-1 rounded ${
+                    locale === 'fr' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                  }`}
+                  onClick={() => setLocale('fr')}
+                >
+                  FR
+                </button>
+                <button
+                  aria-label="English"
+                  className={`px-2 py-1 rounded ${
+                    locale === 'en' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                  }`}
+                  onClick={() => setLocale('en')}
+                >
+                  EN
+                </button>
+              </div>
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground">
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           <AnimatePresence>
@@ -157,8 +204,26 @@ const Layout = ({ children }) => {
                         {link.label}
                       </Link>
                     ))}
+                    <div className="flex items-center gap-2 mt-2">
+                      <button
+                        className={`px-2 py-1 rounded text-xs ${
+                          locale === 'fr' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                        }`}
+                        onClick={() => setLocale('fr')}
+                      >
+                        FR
+                      </button>
+                      <button
+                        className={`px-2 py-1 rounded text-xs ${
+                          locale === 'en' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                        }`}
+                        onClick={() => setLocale('en')}
+                      >
+                        EN
+                      </button>
+                    </div>
                     <Button asChild className="w-full mt-4">
-                      <Link to="/contact">Planifier un appel</Link>
+                      <Link to="/contact">{t('common.cta.planCall')}</Link>
                     </Button>
                   </div>
                 </motion.div>
@@ -175,23 +240,18 @@ const Layout = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <span className="text-2xl font-bold">Fallcon Tech</span>
-              <p className="mt-4 text-muted-foreground text-sm">
-                Sites web modernes et automatisations pour la croissance de
-                votre entreprise au Sénégal.
-              </p>
+              <p className="mt-4 text-muted-foreground text-sm">{t('common.blurb')}</p>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                Services
-              </span>
+              <span className="font-semibold text-primary-foreground">{t('common.footer.services')}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    Conception de sites Web
+                    {t('common.footer.links.webDesign')}
                   </Link>
                 </li>
                 <li>
@@ -199,7 +259,7 @@ const Layout = ({ children }) => {
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    Automatisations
+                    {t('common.footer.links.automations')}
                   </Link>
                 </li>
                 <li>
@@ -207,23 +267,21 @@ const Layout = ({ children }) => {
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    Développement de MVP
+                    {t('common.footer.links.mvpDev')}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                Entreprise
-              </span>
+              <span className="font-semibold text-primary-foreground">{t('common.footer.company')}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link
                     to="/about"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    À Propos
+                    {t('common.nav.about')}
                   </Link>
                 </li>
                 <li>
@@ -231,7 +289,7 @@ const Layout = ({ children }) => {
                     to="/work"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    Projets
+                    {t('common.nav.work')}
                   </Link>
                 </li>
                 <li>
@@ -239,16 +297,14 @@ const Layout = ({ children }) => {
                     to="/resources"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    Ressources
+                    {t('common.nav.resources')}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                Contact
-              </span>
+              <span className="font-semibold text-primary-foreground">{t('common.footer.contact')}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>HLM Shelter II, Dakar</li>
                 <li>info@fallcontech.com</li>
@@ -259,7 +315,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="mt-8 pt-8 border-t border-secondary text-center text-sm text-muted-foreground">
-            <p>&copy; 2025 Fallcon Tech. Tous droits réservés.</p>
+            <p>&copy; 2025 Fallcon Tech. {t('common.footer.copy')}</p>
           </div>
         </div>
       </footer>
@@ -269,7 +325,7 @@ const Layout = ({ children }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
-        aria-label="Discuter sur WhatsApp"
+        aria-label={t('common.aria.whatsappChat')}
       >
         <MessageCircle size={24} />
       </a>

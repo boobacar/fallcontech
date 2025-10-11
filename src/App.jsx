@@ -12,6 +12,7 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const CaseStudyClinic = lazy(() => import("@/pages/case-studies/CaseStudyClinic"));
 const CaseStudyTelimanShare = lazy(() => import("@/pages/case-studies/CaseStudyTelimanShare"));
 const CaseStudyWhatsapp = lazy(() => import("@/pages/case-studies/CaseStudyWhatsapp"));
+const CaseStudyMiroirFoncier = lazy(() => import("@/pages/case-studies/CaseStudyMiroirFoncier"));
 const ArticleBooking = lazy(() => import("@/pages/articles/ArticleBooking"));
 const ArticleWhatsapp = lazy(() => import("@/pages/articles/ArticleWhatsapp"));
 const ArticleMvp = lazy(() => import("@/pages/articles/ArticleMvp"));
@@ -37,6 +38,7 @@ function App() {
             element={<CaseStudyTelimanShare />}
           />
           <Route path="/case-study/whatsapp" element={<CaseStudyWhatsapp />} />
+          <Route path="/case-study/miroir-foncier" element={<CaseStudyMiroirFoncier />} />
           <Route
             path="/article/booking-system-clinics-dakar"
             element={<ArticleBooking />}

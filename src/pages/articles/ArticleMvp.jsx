@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgMvp from "@/assets/articles/mvp-development-for-startups.png";
+import { useI18n } from "@/i18n";
 
 const ArticleMvp = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/idea-to-mvp-2-weeks"
-        title="De l’idée au MVP en 2 semaines — Guide Sénégal"
-        description="Méthode express pour lancer un MVP: priorisation, prototypage, React + Firebase, tests et déploiement rapide au Sénégal."
+        title={t('articles.mvp.seo.title')}
+        description={t('articles.mvp.seo.description')}
         image={imgMvp}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "De l’idée au MVP en 2 semaines — Guide",
+            headline: t('articles.mvp.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,7 +46,7 @@ const ArticleMvp = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/idea-to-mvp-2-weeks",
-            description: "Lancer un MVP en 2 semaines au Sénégal.",
+            description: t('articles.mvp.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -53,7 +55,7 @@ const ArticleMvp = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -63,7 +65,7 @@ const ArticleMvp = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -73,7 +75,7 @@ const ArticleMvp = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "De l’idée au MVP en 2 semaines — Guide Sénégal",
+                name: t('articles.mvp.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -92,25 +94,21 @@ const ArticleMvp = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "De l’idée au MVP en 2 semaines" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.mvp.breadcrumbShort') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              De l'idée au MVP en 2 semaines : à quoi s'attendre
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 6 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.mvp.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.mvp.meta')}</p>
           </motion.div>
         </div>
       </section>

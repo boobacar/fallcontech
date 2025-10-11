@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgWhatsapp from "@/assets/articles/whatsapp-automation.webp";
+import { useI18n } from "@/i18n";
 
 const ArticleWhatsapp = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/automating-follow-ups-whatsapp-senegal"
-        title="Automatiser les suivis WhatsApp — Entreprises Sénégal"
-        description="Mettre en place des workflows WhatsApp: rappels, promos et support automatique pour vos clients au Sénégal. Guide et cas d’usage."
+        title={t('articles.whatsapp.seo.title')}
+        description={t('articles.whatsapp.seo.description')}
         image={imgWhatsapp}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "Automatiser les suivis clients avec WhatsApp au Sénégal",
+            headline: t('articles.whatsapp.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,8 +46,7 @@ const ArticleWhatsapp = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/automating-follow-ups-whatsapp-senegal",
-            description:
-              "Automatiser les suivis clients via WhatsApp au Sénégal.",
+            description: t('articles.whatsapp.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -54,7 +55,7 @@ const ArticleWhatsapp = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -64,7 +65,7 @@ const ArticleWhatsapp = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -74,7 +75,7 @@ const ArticleWhatsapp = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Automatiser les suivis WhatsApp — Entreprises Sénégal",
+                name: t('articles.whatsapp.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -94,25 +95,21 @@ const ArticleWhatsapp = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "Automatiser les suivis WhatsApp" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.whatsapp.breadcrumb') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Automatiser les suivis clients avec WhatsApp au Sénégal
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 7 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.whatsapp.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.whatsapp.meta')}</p>
           </motion.div>
         </div>
       </section>

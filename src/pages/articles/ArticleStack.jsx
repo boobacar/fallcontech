@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgStack from "@/assets/articles/stack.png";
+import { useI18n } from "@/i18n";
 
 const ArticleStack = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/choosing-right-tech-stack"
-        title="Choisir la bonne stack technique — Guide"
-        description="React, WordPress, Firebase, SQL… Comparatif pratique pour sélectionner la stack adaptée à votre projet au Sénégal."
+        title={t('articles.stack.seo.title')}
+        description={t('articles.stack.seo.description')}
         image={imgStack}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "Choisir la bonne stack technique — Guide",
+            headline: t('articles.stack.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,7 +46,7 @@ const ArticleStack = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/choosing-right-tech-stack",
-            description: "Choisir la stack adaptée à votre projet web.",
+            description: t('articles.stack.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -53,7 +55,7 @@ const ArticleStack = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -63,7 +65,7 @@ const ArticleStack = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -73,7 +75,7 @@ const ArticleStack = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Choisir la bonne stack technique — Guide",
+                name: t('articles.stack.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -92,25 +94,21 @@ const ArticleStack = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "Choisir la bonne stack" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.stack.breadcrumbShort') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Choisir la bonne stack technique pour votre projet
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 10 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.stack.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.stack.meta')}</p>
           </motion.div>
         </div>
       </section>

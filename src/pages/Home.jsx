@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/i18n";
 import {
   ReactLogo,
   TailwindLogo,
@@ -15,10 +16,11 @@ import {
   TestingLogo,
 } from "@/components/TechIcons";
 import clinicImg from "@/assets/clinic-dabia.webp";
-import telimanImg from "@/assets/telimanshare.webp";
+import miroirImg from "@/assets/miroir-foncier.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 
 const Home = () => {
+  const { t, locale } = useI18n();
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -27,115 +29,72 @@ const Home = () => {
 
   const services = [
     {
-      title: "Conception de Sites Web & SEO",
-      description:
-        "Sites mobile-first, ultra-rapides, qui se classent bien et convertissent les visiteurs en clients.",
+      title: t('home.servicesCards.web.title'),
+      description: t('home.servicesCards.web.description'),
       benefits: [
-        "Optimisé pour le SEO",
-        "Design mobile-first",
-        "Vitesses de chargement rapides",
+        t('home.servicesCards.web.benefits.0'),
+        t('home.servicesCards.web.benefits.1'),
+        t('home.servicesCards.web.benefits.2'),
       ],
     },
     {
-      title: "Plateformes Internes & Automatisation",
-      description:
-        "Tableaux de bord personnalisés, portails documentaires et workflows WhatsApp/SMS qui font gagner du temps.",
+      title: t('home.servicesCards.platforms.title'),
+      description: t('home.servicesCards.platforms.description'),
       benefits: [
-        "Automatisation des workflows",
-        "Contrôle d'accès sécurisé",
-        "Suivi des activités",
+        t('home.servicesCards.platforms.benefits.0'),
+        t('home.servicesCards.platforms.benefits.1'),
+        t('home.servicesCards.platforms.benefits.2'),
       ],
     },
     {
-      title: "Développement de MVP & Startups",
-      description:
-        "Prototypage rapide avec React & Firebase pour lancer votre idée de startup en quelques semaines.",
+      title: t('home.servicesCards.mvp.title'),
+      description: t('home.servicesCards.mvp.description'),
       benefits: [
-        "Déploiement rapide",
-        "Architecture évolutive",
-        "Fonctionnalités en temps réel",
+        t('home.servicesCards.mvp.benefits.0'),
+        t('home.servicesCards.mvp.benefits.1'),
+        t('home.servicesCards.mvp.benefits.2'),
       ],
     },
   ];
 
   const caseStudies = [
     {
-      title: "Site Web Clinique DABIA",
-      result:
-        "+70% d'utilisateurs mobiles ; demandes de rendez-vous automatisées",
-      description:
-        "Site web de clinique moderne avec système de réservation en ligne",
+      title: t('home.caseStudies.clinic.title'),
+      result: t('home.caseStudies.clinic.result'),
+      description: t('home.caseStudies.clinic.description'),
       link: "/case-study/clinic",
       img: clinicImg,
     },
     {
-      title: "Plateforme TelimanShare",
-      result:
-        "Moins d'allers-retours par e-mail ; accès sécurisé et journaux d'activité",
-      description: "Plateforme interne de documents avec contrôle d'accès",
-      link: "/case-study/telimanshare",
-      img: telimanImg,
+      title: t('home.caseStudies.miroir.title'),
+      result: t('home.caseStudies.miroir.result'),
+      description: t('home.caseStudies.miroir.description'),
+      link: "/case-study/miroir-foncier",
+      img: miroirImg,
     },
     {
-      title: "Automatisation Anniversaires WhatsApp",
-      result:
-        "100% des SMS d'anniversaire envoyés quotidiennement sans intervention manuelle",
-      description: "Système d'engagement client automatisé",
+      title: t('home.caseStudies.whatsapp.title'),
+      result: t('home.caseStudies.whatsapp.result'),
+      description: t('home.caseStudies.whatsapp.description'),
       link: "/case-study/whatsapp",
       img: whatsappImg,
     },
   ];
 
   const processSteps = [
-    {
-      number: "01",
-      title: "Découverte",
-      description:
-        "Nous comprenons vos objectifs, votre public et vos exigences",
-    },
-    {
-      number: "02",
-      title: "Prototype",
-      description: "Maquettes et wireframes rapides pour votre approbation",
-    },
-    {
-      number: "03",
-      title: "Construction",
-      description:
-        "Développement avec des technologies modernes et les meilleures pratiques",
-    },
-    {
-      number: "04",
-      title: "Lancement & Maintenance",
-      description: "Déployer, surveiller et améliorer continuellement",
-    },
+    { number: "01", title: t('home.process.steps.0.title'), description: t('home.process.steps.0.description') },
+    { number: "02", title: t('home.process.steps.1.title'), description: t('home.process.steps.1.description') },
+    { number: "03", title: t('home.process.steps.2.title'), description: t('home.process.steps.2.description') },
+    { number: "04", title: t('home.process.steps.3.title'), description: t('home.process.steps.3.description') },
   ];
 
   const faqs = [
-    {
-      q: "Combien de temps dure un projet typique ?",
-      a: "Sites simples : 1-2 semaines. Plateformes complexes : 4-8 semaines. MVPs : 2-4 semaines.",
-    },
-    {
-      q: "Quelles sont vos fourchettes de prix ?",
-      a: "Sites de démarrage à partir de 350 000 F CFA, sites professionnels à partir de 1 000 000 F CFA, plateformes personnalisées à partir de 2 500 000 F CFA.",
-    },
-    {
-      q: "Proposez-vous des révisions ?",
-      a: "Oui ! 2 à 3 séries de révisions sont incluses dans tous les forfaits.",
-    },
-    {
-      q: "Qu'en est-il de la maintenance ?",
-      a: "Des plans de maintenance mensuels sont disponibles à partir de 35 000 F CFA/mois.",
-    },
-    {
-      q: "Mon site sera-t-il optimisé pour le SEO ?",
-      a: "Absolument ! Tous les sites incluent le SEO on-page, les sitemaps et la configuration de Google Search Console.",
-    },
-    {
-      q: "Qui est propriétaire du site web ?",
-      a: "Vous êtes propriétaire de tout : code, design, contenu et domaine.",
-    },
+    { q: t('home.faq.items.0.q'), a: t('home.faq.items.0.a') },
+    { q: t('home.faq.items.1.q'), a: t('home.faq.items.1.a') },
+    { q: t('home.faq.items.2.q'), a: t('home.faq.items.2.a') },
+    { q: t('home.faq.items.3.q'), a: t('home.faq.items.3.a') },
+    { q: t('home.faq.items.4.q'), a: t('home.faq.items.4.a') },
+    { q: t('home.faq.items.5.q'), a: t('home.faq.items.5.a') },
   ];
 
   const techStack = [
@@ -159,8 +118,8 @@ const Home = () => {
     <>
       <SEO
         path="/"
-        title="Agence web à Dakar — Sites rapides, SEO, automatisations"
-        description="Sites rapides, mobile‑first, SEO et automatisations (réservation, WhatsApp) pour cliniques, PME et startups au Sénégal. Consultation gratuite."
+        title={t('home.seo.title')}
+        description={t('home.seo.description')}
       />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
@@ -172,8 +131,7 @@ const Home = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              Sites web modernes & automatisations qui font grandir votre
-              entreprise
+              {t('home.hero.title')}
             </motion.h1>
 
             <motion.p
@@ -182,9 +140,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Sites rapides (mobile‑first), SEO local et automatisations métier
-              pour tous secteurs&nbsp;: réservation en ligne, workflows
-              WhatsApp, plateformes internes et MVP.
+              {t('home.hero.subtitle')}
             </motion.p>
 
             <motion.div
@@ -194,10 +150,10 @@ const Home = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               {[
-                "Prêt pour le SEO et ultra-rapide",
-                "Réservation en ligne & capture de leads",
-                "Outils internes & automatisations sur mesure",
-                "Déployé rapidement, maintenu de manière fiable",
+                t('home.hero.bullets.0'),
+                t('home.hero.bullets.1'),
+                t('home.hero.bullets.2'),
+                t('home.hero.bullets.3'),
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -222,7 +178,7 @@ const Home = () => {
             >
               <Button asChild size="lg" className="text-lg px-8">
                 <Link to="/contact">
-                  Consultation Gratuite{" "}
+                  {t('common.cta.freeConsultation')}{" "}
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
@@ -232,7 +188,7 @@ const Home = () => {
                 variant="outline"
                 className="text-lg px-8"
               >
-                <Link to="/work">Voir les Projets</Link>
+                <Link to="/work">{t('common.cta.viewProjects')}</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -247,13 +203,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Services Qui Mènent à la Croissance
-            </h2>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-              Tout ce dont vous avez besoin pour établir et développer votre
-              présence numérique
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('home.sections.services.title')}</h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t('home.sections.services.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -300,12 +251,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Études de Cas
-            </h2>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-              Projets réels, résultats concrets pour les entreprises au Sénégal
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('home.sections.caseStudies.title')}</h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t('home.sections.caseStudies.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -339,13 +286,18 @@ const Home = () => {
                   </div>
                   <Button asChild variant="outline" className="w-full">
                     <Link to={study.link}>
-                      Lire l'étude de cas{" "}
+                      {t('home.caseStudies.readCaseStudy')}{" "}
                       <ArrowRight className="ml-2" size={16} />
                     </Link>
                   </Button>
                 </div>
               </motion.div>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Button asChild size="lg" variant="secondary">
+              <Link to="/work">{t('home.caseStudies.viewAll')}</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -358,12 +310,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Notre Processus
-            </h2>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-              De l'idée au lancement en quatre étapes simples
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('home.process.title')}</h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">{t('home.process.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -402,12 +350,8 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Technologie & Qualité
-            </h2>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-12">
-              Stack moderne, meilleures pratiques, résultats fiables
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('home.tech.title')}</h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-12">{t('home.tech.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -438,9 +382,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              Questions Fréquemment Posées
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t('home.faq.title')}</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto space-y-4">
@@ -470,20 +412,15 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Prêt à développer votre entreprise ?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
-              Réservez un appel de 15 minutes et discutons de la manière dont
-              nous pouvons vous aider à réussir
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('home.cta.title')}</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">{t('home.cta.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
               >
-                <Link to="/contact">Consultation Gratuite</Link>
+                <Link to="/contact">{t('common.cta.freeConsultation')}</Link>
               </Button>
               <Button
                 asChild
@@ -496,7 +433,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Discuter sur WhatsApp
+                  {t('common.cta.whatsapp')}
                 </a>
               </Button>
             </div>

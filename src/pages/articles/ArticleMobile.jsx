@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgMobile from "@/assets/articles/mobile-first-design.png";
+import { useI18n } from "@/i18n";
 
 const ArticleMobile = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/why-mobile-first-design-matters-africa"
-        title="Mobile‑first en Afrique — Pourquoi c’est crucial"
-        description="L’approche mobile‑first garantit vitesse, lisibilité et conversions sur des marchés où le mobile domine, comme au Sénégal."
+        title={t('articles.mobile.seo.title')}
+        description={t('articles.mobile.seo.description')}
         image={imgMobile}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "Mobile‑first en Afrique — Pourquoi c’est crucial",
+            headline: t('articles.mobile.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,7 +46,7 @@ const ArticleMobile = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/why-mobile-first-design-matters-africa",
-            description: "Pourquoi le mobile‑first est essentiel en Afrique.",
+            description: t('articles.mobile.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -53,7 +55,7 @@ const ArticleMobile = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -63,7 +65,7 @@ const ArticleMobile = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -73,7 +75,7 @@ const ArticleMobile = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Mobile‑first en Afrique — Pourquoi c’est crucial",
+                name: t('articles.mobile.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -93,25 +95,21 @@ const ArticleMobile = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "Mobile‑first en Afrique" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.mobile.breadcrumb') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Pourquoi le design Mobile-First est crucial en Afrique
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 5 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.mobile.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.mobile.meta')}</p>
           </motion.div>
         </div>
       </section>

@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, BarChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import imgSeo from "@/assets/articles/seo.png";
+import { useI18n } from "@/i18n";
 
 const ArticleSeo = () => {
+  const { t } = useI18n();
   return (
     <>
       <SEO
         path="/article/seo-basics-senegalese-businesses"
-        title="SEO local au Sénégal — Guide pour entreprises"
-        description="Mots‑clés locaux, Google Business Profile et optimisations on‑page pour booster votre visibilité à Dakar et au Sénégal."
+        title={t('articles.seo.seo.title')}
+        description={t('articles.seo.seo.description')}
         image={imgSeo}
         type="article"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: "SEO local au Sénégal — Guide",
+            headline: t('articles.seo.seo.headline'),
             image:
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
@@ -44,7 +46,7 @@ const ArticleSeo = () => {
               (import.meta.env.VITE_SITE_URL ||
                 (typeof window !== "undefined" ? window.location.origin : "")) +
               "/article/seo-basics-senegalese-businesses",
-            description: "Stratégies de SEO local pour entreprises au Sénégal.",
+            description: t('articles.seo.seo.ldDescription'),
           },
           {
             "@context": "https://schema.org",
@@ -53,7 +55,7 @@ const ArticleSeo = () => {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t('common.breadcrumb.home'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -63,7 +65,7 @@ const ArticleSeo = () => {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Ressources",
+                name: t('common.breadcrumb.resources'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -73,7 +75,7 @@ const ArticleSeo = () => {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "SEO local au Sénégal — Guide pour entreprises",
+                name: t('articles.seo.breadcrumb'),
                 item:
                   (import.meta.env.VITE_SITE_URL ||
                     (typeof window !== "undefined"
@@ -92,25 +94,21 @@ const ArticleSeo = () => {
             className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
           >
             <ArrowLeft className="mr-2" size={20} />
-            Retour aux Ressources
+            {t('articles.common.backToResources')}
           </Link>
           <Breadcrumbs
             items={[
-              { label: "Accueil", to: "/" },
-              { label: "Ressources", to: "/resources" },
-              { label: "SEO local — Guide" },
+              { label: t('common.breadcrumb.home'), to: "/" },
+              { label: t('common.breadcrumb.resources'), to: "/resources" },
+              { label: t('articles.seo.breadcrumb') },
             ]}
           />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Les bases du SEO pour les entreprises sénégalaises
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Publié le 10 Octobre 2025 • 8 min de lecture
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t('articles.seo.title')}</h1>
+            <p className="text-lg text-muted-foreground">{t('articles.seo.meta')}</p>
           </motion.div>
         </div>
       </section>

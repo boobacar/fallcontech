@@ -4,9 +4,60 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Globe, Zap, Rocket, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/i18n";
 
 const Services = () => {
-  const services = [
+  const { t, locale } = useI18n();
+  const services = (locale === 'en') ? [
+    {
+      icon: Globe,
+      title: 'Website Design & SEO',
+      tagline: 'More leads, faster load times, better local rankings',
+      priceFrom: '350,000 XOF',
+      id: 'site-web-seo',
+      features: [
+        'Mobile‑first responsive UI',
+        'On‑page SEO (sitemap, meta tags, GSC)',
+        'Google Analytics integration',
+        'Fast loading (Core Web Vitals)',
+        'Lead capture forms',
+        'Blog/content management',
+      ],
+      outcomes: ['Increased organic traffic', 'Better user engagement', 'Higher conversion rates'],
+    },
+    {
+      icon: Zap,
+      title: 'Internal Platforms & Automations',
+      tagline: 'Save time, reduce errors, scale your operations',
+      priceFrom: '2.5M XOF',
+      id: 'automatisations-plateformes',
+      features: [
+        'Document portals with access control',
+        'Activity logs & audit trails',
+        'WhatsApp/SMS workflows',
+        'Bulk messaging from CSV',
+        'Custom dashboards',
+        'Recycle bin/restore',
+      ],
+      outcomes: ['Reduced manual work', 'Improved security', 'Better team collaboration'],
+    },
+    {
+      icon: Rocket,
+      title: 'MVP Development (Startups)',
+      tagline: 'Rapid prototyping, real‑time features, cloud‑ready',
+      priceFrom: '1,000,000 XOF',
+      id: 'developpement-mvp',
+      features: [
+        'React + Firebase architecture',
+        'Real‑time database',
+        'User authentication',
+        'Cloud deployment (Vercel/Firebase)',
+        'Scalable infrastructure',
+        'Fast iteration cycles',
+      ],
+      outcomes: ['Fast market validation', 'Investor‑ready product', 'Scalable foundation'],
+    },
+  ] : [
     {
       icon: Globe,
       title: "Conception de Sites Web & SEO",
@@ -106,26 +157,43 @@ const Services = () => {
   };
 
   const faqs = [
-    {
-      q: "Combien coûte un site web professionnel ?",
-      a: "Nos sites démarrent à 350 000 F CFA et varient selon les fonctionnalités (réservation, blog, intégrations, etc.).",
-    },
-    {
-      q: "En combien de temps livrez-vous ?",
-      a: "De 1 à 2 semaines pour un site vitrine, 2 à 3 semaines pour un site business, 4 à 8 semaines pour une plateforme personnalisée.",
-    },
-    {
-      q: "Puis-je vous contacter sur WhatsApp ?",
-      a: "Oui, nous répondons rapidement sur WhatsApp au +221 77 626 00 20 pour planifier un appel et clarifier vos besoins.",
-    },
+    ...(locale === 'en'
+      ? [
+          {
+            q: 'How much does a professional website cost?',
+            a: 'Our websites start at 350,000 XOF and vary depending on features (booking, blog, integrations, etc.).',
+          },
+          {
+            q: 'How fast do you deliver?',
+            a: '1–2 weeks for a one‑page site, 2–3 weeks for a business site, 4–8 weeks for a custom platform.',
+          },
+          {
+            q: 'Can I contact you on WhatsApp?',
+            a: 'Yes, we respond quickly on WhatsApp at +221 77 626 00 20 to schedule a call and clarify your needs.',
+          },
+        ]
+      : [
+          {
+            q: 'Combien coûte un site web professionnel ?',
+            a: "Nos sites démarrent à 350 000 F CFA et varient selon les fonctionnalités (réservation, blog, intégrations, etc.).",
+          },
+          {
+            q: 'En combien de temps livrez-vous ?',
+            a: "De 1 à 2 semaines pour un site vitrine, 2 à 3 semaines pour un site business, 4 à 8 semaines pour une plateforme personnalisée.",
+          },
+          {
+            q: 'Puis-je vous contacter sur WhatsApp ?',
+            a: 'Oui, nous répondons rapidement sur WhatsApp au +221 77 626 00 20 pour planifier un appel et clarifier vos besoins.',
+          },
+        ]),
   ];
 
   return (
     <>
       <SEO
         path="/services"
-        title="Services Web à Dakar — Sites, Automatisations, MVP"
-        description="Sites web SEO, automatisations et MVP rapides pour cliniques, PME et startups au Sénégal. Prix transparents, résultats mesurables."
+        title={t('services.seo.title')}
+        description={t('services.seo.description')}
         jsonLd={[servicesJsonLd, {
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -144,14 +212,8 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              Des Services Qui Donnent Des Résultats
-            </h1>
-            <p className="text-xl text-foreground/80">
-              Des sites web éblouissants aux automatisations puissantes — tout
-              ce dont vous avez besoin pour développer votre entreprise au
-              Sénégal
-            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('services.pageTitle')}</h1>
+            <p className="text-xl text-foreground/80">{t('services.lead')}</p>
           </motion.div>
 
           <div className="space-y-20">
@@ -180,10 +242,8 @@ const Services = () => {
                       {service.tagline}
                     </p>
 
-                    <div className="mb-4 text-sm text-muted-foreground">À partir de {service.priceFrom}</div>
-                    <h3 className="font-bold text-lg mb-4 text-foreground">
-                      Fonctionnalités Clés :
-                    </h3>
+                    <div className="mb-4 text-sm text-muted-foreground">{t('services.card.startingAt')} {service.priceFrom}</div>
+                    <h3 className="font-bold text-lg mb-4 text-foreground">{t('services.card.keyFeatures')}</h3>
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -198,20 +258,18 @@ const Services = () => {
 
                     <div className="flex items-center gap-4">
                       <Button asChild>
-                      <Link to="/contact">
-                        Démarrer <ArrowRight className="ml-2" size={18} />
-                      </Link>
+                        <Link to="/contact">
+                          {t('services.card.startNow')} <ArrowRight className="ml-2" size={18} />
+                        </Link>
                       </Button>
                       <Link to="/work" className="text-sm text-blue-600 hover:underline">
-                        Voir nos études de cas
+                        {t('services.card.seeCaseStudies')}
                       </Link>
                     </div>
                   </div>
 
                   <div className="bg-primary/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="font-bold text-2xl mb-6 text-primary">
-                      Résultats Attendus :
-                    </h3>
+                    <h3 className="font-bold text-2xl mb-6 text-primary">{t('services.card.expectedOutcomes')}</h3>
                     <div className="space-y-4">
                       {service.outcomes.map((outcome, i) => (
                         <div
@@ -253,18 +311,14 @@ const Services = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Prêt à transformer votre entreprise ?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
-              Discutons du service qui correspond le mieux à vos besoins
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('services.cta.title')}</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">{t('services.cta.subtitle')}</p>
             <Button
               asChild
               size="lg"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
             >
-              <Link to="/contact">Réserver une consultation gratuite</Link>
+              <Link to="/contact">{t('services.cta.button')}</Link>
             </Button>
           </motion.div>
         </div>
@@ -272,7 +326,7 @@ const Services = () => {
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-primary">Articles récents</h2>
+          <h2 className="text-3xl font-bold mb-6 text-primary">{t('services.recentArticles')}</h2>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
             <li><Link to="/article/booking-system-clinics-dakar" className="hover:underline">Système de réservation clinique à Dakar — Guide</Link></li>
             <li><Link to="/article/seo-basics-senegalese-businesses" className="hover:underline">SEO local au Sénégal — Guide</Link></li>
