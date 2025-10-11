@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import logoUrl from "@/assets/logo.png";
 
@@ -43,43 +42,33 @@ const Layout = ({ children }) => {
     { path: "/contact", label: "Contact" },
   ];
 
+  const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Fallcon Tech",
+    url: siteUrl || undefined,
+    logo: `${siteUrl}/assets/logo.png`,
+    email: "info@fallcontech.com",
+    telephone: "+221 77 626 00 20",
+    address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+  };
+  const webSiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Fallcon Tech",
+    url: siteUrl || undefined,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/resources?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Site-wide defaults + structured data */}
-      <SEO path={location.pathname} />
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Fallcon Tech",
-            url:
-              (import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')) || undefined,
-            logo: (import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/` : (typeof window !== 'undefined' ? `${window.location.origin}/` : '')) + 'assets/logo.png',
-            email: "info@fallcontech.com",
-            telephone: "+221 77 626 00 20",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Dakar",
-              addressCountry: "SN",
-            },
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Fallcon Tech",
-            url:
-              (import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')) || undefined,
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `${import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')}/resources?q={search_term_string}`,
-              "query-input": "required name=search_term_string",
-            },
-          })}
-        </script>
-      </Helmet>
+      <SEO path={location.pathname} jsonLd={[orgJsonLd, webSiteJsonLd]} />
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}

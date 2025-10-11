@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import siteLogo from "@/assets/logo.png";
+import { useEffect } from "react";
 
 function absoluteUrl(path) {
   if (!path) return undefined;
@@ -7,6 +7,21 @@ function absoluteUrl(path) {
   if (!base) return path;
   if (path.startsWith("http")) return path;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+function setTag(tagName, attrs) {
+  const el = document.createElement(tagName);
+  Object.entries(attrs).forEach(([k, v]) => {
+    if (v != null) el.setAttribute(k, String(v));
+  });
+  el.setAttribute("data-seo-dynamic", "true");
+  document.head.appendChild(el);
+  return el;
+}
+
+function meta(name, content, attr = "name") {
+  if (!content) return;
+  setTag("meta", { [attr]: name, content });
 }
 
 export default function SEO({
@@ -18,33 +33,51 @@ export default function SEO({
   noindex = false,
   jsonLd,
 }) {
-  const canonical = absoluteUrl(path || "/");
-  const ogImage = absoluteUrl(image);
-  const robots = noindex ? "noindex, nofollow" : "index, follow";
+  useEffect(() => {
+    if (typeof document === "undefined") return;
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="robots" content={robots} />
+    // Clear previous dynamic tags
+    document.head
+      .querySelectorAll('[data-seo-dynamic="true"]')
+      .forEach((n) => n.remove());
 
-      {canonical && <link rel="canonical" href={canonical} />}
+    const canonical = absoluteUrl(path || "/");
+    const ogImage = absoluteUrl(image);
+    const robots = noindex ? "noindex, nofollow" : "index, follow";
 
-      <meta property="og:type" content={type} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      {canonical && <meta property="og:url" content={canonical} />}
-      {ogImage && <meta property="og:image" content={ogImage} />}
+    document.title = title;
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={ogImage} />}
+    if (canonical) setTag("link", { rel: "canonical", href: canonical });
 
-      {jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      )}
-    </Helmet>
-  );
+    meta("description", description);
+    meta("robots", robots);
+
+    // OpenGraph
+    meta("og:type", type, "property");
+    meta("og:title", title, "property");
+    meta("og:description", description, "property");
+    if (canonical) meta("og:url", canonical, "property");
+    if (ogImage) meta("og:image", ogImage, "property");
+
+    // Twitter
+    meta("twitter:card", "summary_large_image");
+    meta("twitter:title", title);
+    meta("twitter:description", description);
+    if (ogImage) meta("twitter:image", ogImage);
+
+    // JSON-LD
+    const jsonArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+    jsonArray.forEach((obj) => {
+      const script = setTag("script", { type: "application/ld+json" });
+      script.textContent = JSON.stringify(obj);
+    });
+
+    return () => {
+      document.head
+        .querySelectorAll('[data-seo-dynamic="true"]')
+        .forEach((n) => n.remove());
+    };
+  }, [title, description, path, image, type, noindex, JSON.stringify(jsonLd)]);
+
+  return null;
 }
-
