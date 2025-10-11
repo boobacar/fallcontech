@@ -92,6 +92,8 @@ const CaseStudyWhatsApp = () => {
                 alt="Tableau de bord de l'automatisation WhatsApp"
                 className="w-full rounded-2xl shadow-2xl"
                 src={whatsappImg}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -141,6 +143,8 @@ const CaseStudyWhatsApp = () => {
                   alt="Interface d'importation CSV"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1529078155058-5d716f45d604"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="bg-primary/5 rounded-2xl p-2">
@@ -148,6 +152,8 @@ const CaseStudyWhatsApp = () => {
                   alt="Analyses des messages"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

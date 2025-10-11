@@ -14,8 +14,8 @@ import {
   CICDLogo,
   TestingLogo,
 } from "@/components/TechIcons";
-import clinicImg from "@/assets/clinic-dabia.png";
-import telimanImg from "@/assets/telimanshare.png";
+import clinicImg from "@/assets/clinic-dabia.webp";
+import telimanImg from "@/assets/telimanshare.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 
 const Home = () => {
@@ -322,6 +322,8 @@ const Home = () => {
                     alt={study.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     src={study.img}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6">

@@ -21,21 +21,65 @@ const ArticleMvp = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "De l’idée au MVP en 2 semaines — Guide",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgMvp,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgMvp,
             datePublished: "2025-05-20",
             dateModified: "2025-08-15",
             author: { "@type": "Person", name: "Boubacar FALL" },
-            publisher: { "@type": "Organization", name: "Fallcon Tech", logo: { "@type": "ImageObject", url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png" } },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/idea-to-mvp-2-weeks",
+            publisher: {
+              "@type": "Organization",
+              name: "Fallcon Tech",
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
+              },
+            },
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/idea-to-mvp-2-weeks",
             description: "Lancer un MVP en 2 semaines au Sénégal.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "De l’idée au MVP en 2 semaines — Guide Sénégal", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/idea-to-mvp-2-weeks" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "De l’idée au MVP en 2 semaines — Guide Sénégal",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/article/idea-to-mvp-2-weeks",
+              },
             ],
           },
         ]}
@@ -73,7 +117,13 @@ const ArticleMvp = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-6 text-sm">Découvrez nos <Link to="/services" className="text-blue-600 hover:underline">services pour startups (MVP)</Link>.</div>
+          <div className="mb-6 text-sm">
+            Découvrez nos{" "}
+            <Link to="/services" className="text-blue-600 hover:underline">
+              services pour startups (MVP)
+            </Link>
+            .
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -84,6 +134,8 @@ const ArticleMvp = () => {
               alt="Une fusée décollant d'un ordinateur portable, symbolisant le lancement rapide d'un MVP"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMvp}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>
@@ -181,9 +233,21 @@ const ArticleMvp = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold mb-3">Articles récents</h4>
               <ul className="list-disc list-inside text-sm text-blue-600">
-                <li><Link to="/article/seo-basics-senegalese-businesses">Les bases du SEO pour les entreprises sénégalaises</Link></li>
-                <li><Link to="/article/automating-follow-ups-whatsapp-senegal">Automatiser les suivis WhatsApp</Link></li>
-                <li><Link to="/article/choosing-right-tech-stack">Choisir la bonne stack technique</Link></li>
+                <li>
+                  <Link to="/article/seo-basics-senegalese-businesses">
+                    Les bases du SEO pour les entreprises sénégalaises
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/automating-follow-ups-whatsapp-senegal">
+                    Automatiser les suivis WhatsApp
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/choosing-right-tech-stack">
+                    Choisir la bonne stack technique
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>

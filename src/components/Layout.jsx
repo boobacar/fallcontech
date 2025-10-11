@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
-import logoUrl from "@/assets/logo.png";
+import logoUrl from "@/assets/logo.webp";
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,16 +42,22 @@ const Layout = ({ children }) => {
     { path: "/contact", label: "Contact" },
   ];
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+  const siteUrl =
+    import.meta.env.VITE_SITE_URL ||
+    (typeof window !== "undefined" ? window.location.origin : "");
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Fallcon Tech",
     url: siteUrl || undefined,
-    logo: `${siteUrl}/assets/logo.png`,
+    logo: `${siteUrl}/assets/logo.webp`,
     email: "info@fallcontech.com",
     telephone: "+221 77 626 00 20",
-    address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Dakar",
+      addressCountry: "SN",
+    },
   };
   const webSiteJsonLd = {
     "@context": "https://schema.org",
@@ -80,10 +86,7 @@ const Layout = ({ children }) => {
       >
         <nav className="container mx-auto px-4 py-4 relative">
           <div className="flex items-center justify-between">
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-2xl font-bold"
-            >
+            <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
               <img
                 src={logoUrl}
                 alt="Fallcon Tech"

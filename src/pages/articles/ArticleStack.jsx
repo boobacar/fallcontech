@@ -21,21 +21,65 @@ const ArticleStack = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "Choisir la bonne stack technique — Guide",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgStack,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgStack,
             datePublished: "2025-02-28",
             dateModified: "2025-07-01",
             author: { "@type": "Person", name: "Boubacar FALL" },
-            publisher: { "@type": "Organization", name: "Fallcon Tech", logo: { "@type": "ImageObject", url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png" } },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/choosing-right-tech-stack",
+            publisher: {
+              "@type": "Organization",
+              name: "Fallcon Tech",
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
+              },
+            },
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/choosing-right-tech-stack",
             description: "Choisir la stack adaptée à votre projet web.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "Choisir la bonne stack technique — Guide", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/choosing-right-tech-stack" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Choisir la bonne stack technique — Guide",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/article/choosing-right-tech-stack",
+              },
             ],
           },
         ]}
@@ -73,7 +117,13 @@ const ArticleStack = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-6 text-sm">Besoin d’un conseil technique ? Découvrez nos <Link to="/services" className="text-blue-600 hover:underline">services</Link>.</div>
+          <div className="mb-6 text-sm">
+            Besoin d’un conseil technique ? Découvrez nos{" "}
+            <Link to="/services" className="text-blue-600 hover:underline">
+              services
+            </Link>
+            .
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -84,6 +134,8 @@ const ArticleStack = () => {
               alt="Des logos de différentes technologies web flottant autour d'un cerveau"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgStack}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>
@@ -216,9 +268,21 @@ const ArticleStack = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold mb-3">Articles récents</h4>
               <ul className="list-disc list-inside text-sm text-blue-600">
-                <li><Link to="/article/seo-basics-senegalese-businesses">Les bases du SEO pour les entreprises sénégalaises</Link></li>
-                <li><Link to="/article/automating-follow-ups-whatsapp-senegal">Automatiser les suivis WhatsApp</Link></li>
-                <li><Link to="/article/idea-to-mvp-2-weeks">De l’idée au MVP en 2 semaines</Link></li>
+                <li>
+                  <Link to="/article/seo-basics-senegalese-businesses">
+                    Les bases du SEO pour les entreprises sénégalaises
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/automating-follow-ups-whatsapp-senegal">
+                    Automatiser les suivis WhatsApp
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/idea-to-mvp-2-weeks">
+                    De l’idée au MVP en 2 semaines
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>

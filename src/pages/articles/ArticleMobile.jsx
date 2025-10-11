@@ -21,21 +21,66 @@ const ArticleMobile = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "Mobile‑first en Afrique — Pourquoi c’est crucial",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgMobile,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgMobile,
             datePublished: "2025-03-30",
             dateModified: "2025-07-20",
             author: { "@type": "Person", name: "Boubacar FALL" },
-            publisher: { "@type": "Organization", name: "Fallcon Tech", logo: { "@type": "ImageObject", url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png" } },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/why-mobile-first-design-matters-africa",
+            publisher: {
+              "@type": "Organization",
+              name: "Fallcon Tech",
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
+              },
+            },
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/why-mobile-first-design-matters-africa",
             description: "Pourquoi le mobile‑first est essentiel en Afrique.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "Mobile‑first en Afrique — Pourquoi c’est crucial", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/why-mobile-first-design-matters-africa" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Mobile‑first en Afrique — Pourquoi c’est crucial",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) +
+                  "/article/why-mobile-first-design-matters-africa",
+              },
             ],
           },
         ]}
@@ -73,7 +118,13 @@ const ArticleMobile = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-6 text-sm">Nous concevons tous nos sites en <Link to="/services" className="text-blue-600 hover:underline">mobile‑first</Link>.</div>
+          <div className="mb-6 text-sm">
+            Nous concevons tous nos sites en{" "}
+            <Link to="/services" className="text-blue-600 hover:underline">
+              mobile‑first
+            </Link>
+            .
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -84,6 +135,8 @@ const ArticleMobile = () => {
               alt="Une main tenant un smartphone affichant un site web parfaitement adapté à l'écran mobile"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMobile}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>
@@ -187,9 +240,21 @@ const ArticleMobile = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold mb-3">Articles récents</h4>
               <ul className="list-disc list-inside text-sm text-blue-600">
-                <li><Link to="/article/seo-basics-senegalese-businesses">Les bases du SEO pour les entreprises sénégalaises</Link></li>
-                <li><Link to="/article/automating-follow-ups-whatsapp-senegal">Automatiser les suivis WhatsApp</Link></li>
-                <li><Link to="/article/choosing-right-tech-stack">Choisir la bonne stack technique</Link></li>
+                <li>
+                  <Link to="/article/seo-basics-senegalese-businesses">
+                    Les bases du SEO pour les entreprises sénégalaises
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/automating-follow-ups-whatsapp-senegal">
+                    Automatiser les suivis WhatsApp
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/choosing-right-tech-stack">
+                    Choisir la bonne stack technique
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>

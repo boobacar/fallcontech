@@ -150,6 +150,8 @@ const About = () => {
                 alt="Espace de travail de développement web moderne"
                 className="w-full h-full object-cover rounded-2xl shadow-xl"
                 src="https://images.unsplash.com/photo-1699843526854-250e2aca1a60"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>

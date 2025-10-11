@@ -21,25 +21,67 @@ const ArticleWhatsapp = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "Automatiser les suivis clients avec WhatsApp au Sénégal",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgWhatsapp,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgWhatsapp,
             datePublished: "2025-06-15",
             dateModified: "2025-09-01",
             author: { "@type": "Person", name: "Boubacar FALL" },
             publisher: {
               "@type": "Organization",
               name: "Fallcon Tech",
-              logo: { "@type": "ImageObject", url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png" },
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
+              },
             },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/automating-follow-ups-whatsapp-senegal",
-            description: "Automatiser les suivis clients via WhatsApp au Sénégal.",
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/automating-follow-ups-whatsapp-senegal",
+            description:
+              "Automatiser les suivis clients via WhatsApp au Sénégal.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "Automatiser les suivis WhatsApp — Entreprises Sénégal", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/automating-follow-ups-whatsapp-senegal" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Automatiser les suivis WhatsApp — Entreprises Sénégal",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) +
+                  "/article/automating-follow-ups-whatsapp-senegal",
+              },
             ],
           },
         ]}
@@ -78,7 +120,11 @@ const ArticleWhatsapp = () => {
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="mb-6 text-sm">
-            Découvrez aussi nos <Link to="/services" className="text-blue-600 hover:underline">services d’automatisation</Link>.
+            Découvrez aussi nos{" "}
+            <Link to="/services" className="text-blue-600 hover:underline">
+              services d’automatisation
+            </Link>
+            .
           </div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -90,6 +136,8 @@ const ArticleWhatsapp = () => {
               alt="Un téléphone affichant une conversation WhatsApp automatisée pour le service client"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgWhatsapp}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>
@@ -214,9 +262,21 @@ const ArticleWhatsapp = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold mb-3">Articles récents</h4>
               <ul className="list-disc list-inside text-sm text-blue-600">
-                <li><Link to="/article/seo-basics-senegalese-businesses">Les bases du SEO pour les entreprises sénégalaises</Link></li>
-                <li><Link to="/article/idea-to-mvp-2-weeks">De l’idée au MVP en 2 semaines</Link></li>
-                <li><Link to="/article/choosing-right-tech-stack">Choisir la bonne stack technique</Link></li>
+                <li>
+                  <Link to="/article/seo-basics-senegalese-businesses">
+                    Les bases du SEO pour les entreprises sénégalaises
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/idea-to-mvp-2-weeks">
+                    De l’idée au MVP en 2 semaines
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/choosing-right-tech-stack">
+                    Choisir la bonne stack technique
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>

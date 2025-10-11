@@ -216,11 +216,13 @@ const Resources = () => {
                 >
                   <Link to={post.link}>
                     <div className="aspect-video relative overflow-hidden">
-                      <img
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    <img
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       src={img}
-                      />
+                      loading="lazy"
+                      decoding="async"
+                    />
                       <div className="absolute top-4 left-4">
                         <span className="bg-card/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-blue-500">
                           {post.category}

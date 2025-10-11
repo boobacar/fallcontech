@@ -21,21 +21,65 @@ const ArticleSeo = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "SEO local au Sénégal — Guide",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgSeo,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgSeo,
             datePublished: "2025-04-25",
             dateModified: "2025-08-01",
             author: { "@type": "Person", name: "Boubacar FALL" },
-            publisher: { "@type": "Organization", name: "Fallcon Tech", logo: { "@type": "ImageObject", url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png" } },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/seo-basics-senegalese-businesses",
+            publisher: {
+              "@type": "Organization",
+              name: "Fallcon Tech",
+              logo: {
+                "@type": "ImageObject",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
+              },
+            },
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/seo-basics-senegalese-businesses",
             description: "Stratégies de SEO local pour entreprises au Sénégal.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "SEO local au Sénégal — Guide pour entreprises", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/seo-basics-senegalese-businesses" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "SEO local au Sénégal — Guide pour entreprises",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/article/seo-basics-senegalese-businesses",
+              },
             ],
           },
         ]}
@@ -73,7 +117,13 @@ const ArticleSeo = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-6 text-sm">Besoin d’aide SEO ? Découvrez nos <Link to="/services" className="text-blue-600 hover:underline">services</Link>.</div>
+          <div className="mb-6 text-sm">
+            Besoin d’aide SEO ? Découvrez nos{" "}
+            <Link to="/services" className="text-blue-600 hover:underline">
+              services
+            </Link>
+            .
+          </div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -84,6 +134,8 @@ const ArticleSeo = () => {
               alt="Un graphique montrant la croissance du trafic de recherche organique sur un ordinateur portable"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgSeo}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>
@@ -185,9 +237,21 @@ const ArticleSeo = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold mb-3">Articles récents</h4>
               <ul className="list-disc list-inside text-sm text-blue-600">
-                <li><Link to="/article/automating-follow-ups-whatsapp-senegal">Automatiser les suivis WhatsApp</Link></li>
-                <li><Link to="/article/idea-to-mvp-2-weeks">De l’idée au MVP en 2 semaines</Link></li>
-                <li><Link to="/article/choosing-right-tech-stack">Choisir la bonne stack technique</Link></li>
+                <li>
+                  <Link to="/article/automating-follow-ups-whatsapp-senegal">
+                    Automatiser les suivis WhatsApp
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/idea-to-mvp-2-weeks">
+                    De l’idée au MVP en 2 semaines
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/article/choosing-right-tech-stack">
+                    Choisir la bonne stack technique
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>

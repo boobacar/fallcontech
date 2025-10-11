@@ -98,6 +98,8 @@ const CaseStudyTelimanShare = () => {
                 alt="Tableau de bord de la plateforme TelimanShare"
                 className="w-full rounded-2xl shadow-2xl"
                 src={telimanImg}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -149,6 +151,8 @@ const CaseStudyTelimanShare = () => {
                   alt="Interface de contrôle d'accès"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1651517155200-4da6815940f6"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="bg-primary/5 rounded-2xl p-2">
@@ -156,6 +160,8 @@ const CaseStudyTelimanShare = () => {
                   alt="Tableau de bord des journaux d'activité"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1518734549841-b417d28c22aa"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

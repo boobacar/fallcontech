@@ -21,7 +21,10 @@ const ArticleBooking = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: "Système de réservation clinique à Dakar — Guide",
-            image: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + imgBooking,
+            image:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              imgBooking,
             datePublished: "2025-07-10",
             dateModified: "2025-09-10",
             author: { "@type": "Person", name: "Boubacar FALL" },
@@ -30,19 +33,54 @@ const ArticleBooking = () => {
               name: "Fallcon Tech",
               logo: {
                 "@type": "ImageObject",
-                url: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/assets/logo.png",
+                url:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/assets/logo.webp",
               },
             },
-            mainEntityOfPage: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/booking-system-clinics-dakar",
-            description: "Fonctionnalités essentielles pour la réservation en ligne des cliniques à Dakar.",
+            mainEntityOfPage:
+              (import.meta.env.VITE_SITE_URL ||
+                (typeof window !== "undefined" ? window.location.origin : "")) +
+              "/article/booking-system-clinics-dakar",
+            description:
+              "Fonctionnalités essentielles pour la réservation en ligne des cliniques à Dakar.",
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/" },
-              { "@type": "ListItem", position: 2, name: "Ressources", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/resources" },
-              { "@type": "ListItem", position: 3, name: "Système de réservation clinique à Dakar — Guide", item: (import.meta.env.VITE_SITE_URL || (typeof window!=="undefined"?window.location.origin:"")) + "/article/booking-system-clinics-dakar" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Ressources",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/resources",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Système de réservation clinique à Dakar — Guide",
+                item:
+                  (import.meta.env.VITE_SITE_URL ||
+                    (typeof window !== "undefined"
+                      ? window.location.origin
+                      : "")) + "/article/booking-system-clinics-dakar",
+              },
             ],
           },
         ]}
@@ -98,6 +136,8 @@ const ArticleBooking = () => {
               alt="Une réception de clinique moderne avec une tablette affichant un système de réservation"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgBooking}
+              loading="lazy"
+              decoding="async"
             />
 
             <p>

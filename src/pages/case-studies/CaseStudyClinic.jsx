@@ -96,6 +96,8 @@ const CaseStudyClinic = () => {
                 alt="Site Web Clinique DABIA"
                 className="w-full rounded-2xl shadow-2xl"
                 src={clinicImg}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -143,6 +145,8 @@ const CaseStudyClinic = () => {
                   alt="Interface de réservation mobile"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1593150543200-56e05bdb018e"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="bg-primary/5 rounded-2xl p-2">
@@ -150,6 +154,8 @@ const CaseStudyClinic = () => {
                   alt="Page des profils de médecins"
                   className="w-full rounded-xl"
                   src="https://images.unsplash.com/photo-1588966915713-6d43603478e5"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

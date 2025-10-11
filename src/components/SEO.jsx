@@ -1,9 +1,11 @@
-import siteLogo from "@/assets/logo.png";
+import siteLogo from "@/assets/logo.webp";
 import { useEffect } from "react";
 
 function absoluteUrl(path) {
   if (!path) return undefined;
-  const base = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
+  const base =
+    import.meta.env.VITE_SITE_URL ||
+    (typeof window !== "undefined" ? window.location.origin : "");
   if (!base) return path;
   if (path.startsWith("http")) return path;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
