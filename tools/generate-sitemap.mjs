@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const SITE_URL = process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://fallcontech.com'
@@ -28,7 +28,8 @@ const urls = routes.map((p) => `  <url>\n    <loc>${SITE_URL}${p}</loc>\n    <la
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
 
-mkdirSync(resolve('public'), { recursive: true })
-writeFileSync(resolve('public/sitemap.xml'), xml)
-console.log('Sitemap generated at public/sitemap.xml with base', SITE_URL)
-
+// Prefer writing into the final output directory used by Vite (dist)
+const outDir = existsSync(resolve('dist')) ? 'dist' : 'public'
+mkdirSync(resolve(outDir), { recursive: true })
+writeFileSync(resolve(`${outDir}/sitemap.xml`), xml)
+console.log(`Sitemap generated at ${outDir}/sitemap.xml with base`, SITE_URL)
