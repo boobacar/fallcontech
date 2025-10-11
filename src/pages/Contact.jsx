@@ -96,7 +96,7 @@ const Contact = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('contact.heroTitle')}</h1>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('contact.heroTitle')}</h1>
             <p className="text-xl text-foreground/80">{t('contact.lead')}</p>
           </motion.div>
 

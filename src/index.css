@@ -66,6 +66,120 @@
   .gradient-bg {
     @apply bg-gradient-to-br from-blue-50 via-gray-50 to-background;
   }
+
+  /* Soft animated gradient mesh for hero */
+  .mesh-bg {
+    position: absolute;
+    inset: -10% -10% 0 -10%;
+    pointer-events: none;
+    filter: blur(60px) saturate(120%);
+    opacity: 0.35;
+    background: radial-gradient(40% 40% at 20% 10%, rgba(59,130,246,0.6), transparent),
+                radial-gradient(35% 35% at 80% 0%, rgba(99,102,241,0.6), transparent),
+                radial-gradient(40% 40% at 90% 60%, rgba(14,165,233,0.5), transparent),
+                radial-gradient(50% 50% at 10% 80%, rgba(16,185,129,0.5), transparent);
+    animation: mesh-move 18s ease-in-out infinite alternate;
+  }
+
+  .particles-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 10px 10px, rgba(59,130,246,0.15) 2px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.25;
+    animation: particles-shift 40s linear infinite;
+  }
+
+  .section-sep {
+    position: relative;
+  }
+  .section-sep::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.35), transparent);
+  }
+
+  .floating-blobs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .floating-blobs::before,
+  .floating-blobs::after {
+    content: "";
+    position: absolute;
+    width: 280px; height: 280px;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.18;
+  }
+  .floating-blobs::before {
+    background: #60a5fa; /* blue-400 */
+    top: 10%; left: -80px;
+    animation: blob-float 22s ease-in-out infinite;
+  }
+  .floating-blobs::after {
+    background: #34d399; /* emerald-400 */
+    bottom: -40px; right: -80px;
+    animation: blob-float 26s ease-in-out infinite reverse;
+  }
+
+  .glow-btn {
+    position: relative;
+    isolation: isolate;
+  }
+  .glow-btn::before {
+    content: "";
+    position: absolute; inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, #3b82f6, #22d3ee, #34d399, #3b82f6);
+    filter: blur(12px);
+    opacity: 0.35;
+    z-index: -1;
+    animation: glow-rotate 8s linear infinite;
+  }
+  /* Scroll progress bar (CSS scroll-driven where supported) */
+  .scroll-progress { background: transparent; }
+  .scroll-progress__bar { width: 0%; background: linear-gradient(90deg,#3b82f6,#22d3ee); }
+  @supports (animation-timeline: scroll()) or (animation-timeline: scroll(root)) {
+    .scroll-progress__bar {
+      animation-name: progress-grow;
+      animation-timeline: scroll();
+    }
+    @keyframes progress-grow { from { width: 0% } to { width: 100% } }
+  }
+
+  /* Ripple ink */
+  [data-ripple] { position: relative; overflow: hidden; }
+  .ripple-ink {
+    position: absolute; width: 12px; height: 12px; border-radius: 9999px;
+    translate: -50% -50%;
+    background: radial-gradient(circle, rgba(59,130,246,0.35) 0%, rgba(59,130,246,0.15) 60%, transparent 70%);
+    animation: ripple-fade 600ms ease-out forwards;
+    pointer-events: none; will-change: transform, opacity;
+  }
+  @keyframes ripple-fade { from { opacity: 0.7; transform: scale(1) } to { opacity: 0; transform: scale(16) } }
+
+  /* Cursor halo */
+  .cursor-halo {
+    position: absolute; width: 32px; height: 32px; border-radius: 9999px;
+    background: radial-gradient(circle, rgba(59,130,246,0.35), transparent 60%);
+    filter: blur(6px); opacity: 0; transition: opacity 150ms ease;
+    pointer-events: none; mix-blend-mode: multiply;
+  }
+
+  /* Displacement filter hover for images */
+  .image-displace { transition: filter 250ms ease; }
+  .group:hover .image-displace { filter: url('#hoverDisplace'); }
+
+  /* View Transitions named elements */
+  .vt-title { view-transition-name: page-title; }
+  .vt-hero-shape { view-transition-name: hero-shape; }
+  .vt-hero-bg { view-transition-name: hero-bg; }
 }
 
 html {
@@ -112,4 +226,29 @@ html {
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+}
+
+@keyframes mesh-move {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(0,-3%,0) scale(1.05); }
+  100% { transform: translate3d(0,2%,0) scale(1.02); }
+}
+
+@keyframes particles-shift {
+  from { background-position: 0 0; }
+  to   { background-position: 2000px 0; }
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  50%      { transform: translateY(-20px) translateX(10px) scale(1.05); }
+}
+
+@keyframes glow-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-bg,.particles-bg,.floating-blobs::before,.floating-blobs::after { animation: none !important; }
+  .glow-btn::before { display: none; }
 }

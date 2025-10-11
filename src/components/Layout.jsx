@@ -6,12 +6,18 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import logoUrl from "@/assets/logo.webp";
 import { useI18n } from "@/i18n";
+import { initVisualEffects } from "@/lib/enhanceEffects";
+import { confettiBurst } from "@/lib/confetti";
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { t, locale, setLocale } = useI18n();
+
+  useEffect(() => {
+    initVisualEffects();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +81,16 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <div className="scroll-progress fixed top-0 left-0 right-0 h-[3px] z-[60] pointer-events-none">
+        <div className="scroll-progress__bar h-full"></div>
+      </div>
+      {/* SVG filters globales */}
+      <svg width="0" height="0" className="absolute -z-10" aria-hidden>
+        <filter id="hoverDisplace">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" seed="2" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
       {/* Site-wide defaults + structured data */}
       <SEO path={location.pathname} jsonLd={[orgJsonLd, webSiteJsonLd]} />
       <motion.header
@@ -326,6 +342,7 @@ const Layout = ({ children }) => {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
         aria-label={t('common.aria.whatsappChat')}
+        onClick={() => confettiBurst({ particleCount: 40, spread: 50 })}
       >
         <MessageCircle size={24} />
       </a>

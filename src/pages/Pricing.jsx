@@ -116,7 +116,7 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('pricing.pageTitle')}</h1>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('pricing.pageTitle')}</h1>
             <p className="text-xl text-foreground/80">{t('pricing.lead')}</p>
           </motion.div>
 

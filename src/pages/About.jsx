@@ -19,32 +19,32 @@ const About = () => {
   const techStack = [
     {
       name: "React",
-      description: t('about.stackItems.react'),
+      description: t("about.stackItems.react"),
       icon: <ReactLogo className="h-8 w-8" />,
     },
     {
       name: "Tailwind CSS",
-      description: t('about.stackItems.tailwind'),
+      description: t("about.stackItems.tailwind"),
       icon: <TailwindLogo className="h-8 w-8" />,
     },
     {
       name: "Node.js",
-      description: t('about.stackItems.node'),
+      description: t("about.stackItems.node"),
       icon: <NodeLogo className="h-8 w-8" />,
     },
     {
       name: "Firebase",
-      description: t('about.stackItems.firebase'),
+      description: t("about.stackItems.firebase"),
       icon: <FirebaseLogo className="h-8 w-8" />,
     },
     {
       name: "Git/GitHub",
-      description: t('about.stackItems.git'),
+      description: t("about.stackItems.git"),
       icon: <GitLogo className="h-8 w-8" />,
     },
     {
       name: "Vercel/GoDaddy",
-      description: t('about.stackItems.hosting'),
+      description: t("about.stackItems.hosting"),
       icon: (
         <span className="inline-flex items-center gap-2">
           <VercelLogo className="h-8 w-8" />
@@ -61,18 +61,34 @@ const About = () => {
   ];
 
   const values = [
-    { icon: Zap, title: t('about.values.items.0.title'), description: t('about.values.items.0.desc') },
-    { icon: Shield, title: t('about.values.items.1.title'), description: t('about.values.items.1.desc') },
-    { icon: Code, title: t('about.values.items.2.title'), description: t('about.values.items.2.desc') },
-    { icon: Globe, title: t('about.values.items.3.title'), description: t('about.values.items.3.desc') },
+    {
+      icon: Zap,
+      title: t("about.values.items.0.title"),
+      description: t("about.values.items.0.desc"),
+    },
+    {
+      icon: Shield,
+      title: t("about.values.items.1.title"),
+      description: t("about.values.items.1.desc"),
+    },
+    {
+      icon: Code,
+      title: t("about.values.items.2.title"),
+      description: t("about.values.items.2.desc"),
+    },
+    {
+      icon: Globe,
+      title: t("about.values.items.3.title"),
+      description: t("about.values.items.3.desc"),
+    },
   ];
 
   return (
     <>
       <SEO
         path="/about"
-        title={t('about.seo.title')}
-        description={t('about.seo.description')}
+        title={t("about.seo.title")}
+        description={t("about.seo.description")}
       />
 
       <section className="py-20 gradient-bg">
@@ -80,15 +96,19 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('about.hero.title')}</h1>
-            <p className="text-xl text-foreground/80">{t('about.hero.subtitle')}</p>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">
+              {t("about.hero.title")}
+            </h1>
+            <p className="text-xl text-foreground/80">
+              {t("about.hero.subtitle")}
+            </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section className="pb-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <motion.div
@@ -96,8 +116,10 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-primary">{t('about.approach.title')}</h2>
-              {[0,1,2].map(i => (
+              <h2 className="text-4xl font-bold mb-6 text-primary">
+                {t("about.approach.title")}
+              </h2>
+              {[0, 1, 2].map((i) => (
                 <p key={i} className="text-lg text-muted-foreground mb-6">
                   {t(`about.approach.paragraphs.${i}`)}
                 </p>
@@ -111,7 +133,7 @@ const About = () => {
               className="bg-card rounded-3xl p-8"
             >
               <img
-                alt={t('about.images.workspaceAlt')}
+                alt={t("about.images.workspaceAlt")}
                 className="w-full h-full object-cover rounded-2xl shadow-xl"
                 src="https://images.unsplash.com/photo-1699843526854-250e2aca1a60"
                 loading="lazy"
@@ -126,7 +148,9 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('about.values.title')}</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+              {t("about.values.title")}
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, idx) => (
                 <motion.div
@@ -154,7 +178,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('about.stack.title')}</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+              {t("about.stack.title")}
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {techStack.map((tech, idx) => (
                 <motion.div
@@ -189,9 +215,11 @@ const About = () => {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">{t('about.why.title')}</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+              {t("about.why.title")}
+            </h2>
             <div className="space-y-4">
-              {[0,1,2,3,4,5,6,7].map((i, idx) => (
+              {[0, 1, 2, 3, 4, 5, 6, 7].map((i, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
@@ -204,7 +232,9 @@ const About = () => {
                     className="text-blue-600 flex-shrink-0"
                     size={24}
                   />
-                  <span className="text-lg text-foreground">{t(`about.why.items.${i}`)}</span>
+                  <span className="text-lg text-foreground">
+                    {t(`about.why.items.${i}`)}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -219,14 +249,18 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('about.cta.title')}</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">{t('about.cta.subtitle')}</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t("about.cta.title")}
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
+              {t("about.cta.subtitle")}
+            </p>
             <Button
               asChild
               size="lg"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
             >
-              <Link to="/contact">{t('about.cta.button')}</Link>
+              <Link to="/contact">{t("about.cta.button")}</Link>
             </Button>
           </motion.div>
         </div>

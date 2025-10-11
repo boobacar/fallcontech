@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Globe, Zap, Rocket, CheckCircle2, ArrowRight } from "lucide-react";
+import RiveIcon from "@/components/media/RiveIcon";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n";
 
@@ -212,7 +213,8 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('services.pageTitle')}</h1>
+            <div className="mb-4"><RiveIcon /></div>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('services.pageTitle')}</h1>
             <p className="text-xl text-foreground/80">{t('services.lead')}</p>
           </motion.div>
 

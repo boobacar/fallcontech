@@ -4,6 +4,7 @@ import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText, Download, ArrowRight } from "lucide-react";
+import LottieBlock from "@/components/media/LottieBlock";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import imgBooking from "@/assets/articles/online-reservation-system.png";
@@ -114,7 +115,8 @@ const Resources = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('resources.pageTitle')}</h1>
+            <div className="mb-4"><LottieBlock /></div>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('resources.pageTitle')}</h1>
             <p className="text-xl text-foreground/80">{t('resources.lead')}</p>
           </motion.div>
 
