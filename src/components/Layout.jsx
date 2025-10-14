@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCursorFX, setShowCursorFX] = useState(false);
+  const [isCoarsePointer, setIsCoarsePointer] = useState(false);
   const location = useLocation();
   const { t, locale, setLocale } = useI18n();
 
@@ -21,15 +22,16 @@ const Layout = ({ children }) => {
     initVisualEffects();
   }, []);
 
-  // Mount the splash cursor effect for users who allow motion and have a fine pointer (desktop/mouse)
+  // Mount the splash cursor effect respecting motion prefs.
   useEffect(() => {
     try {
-      const noReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-      const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
-      if (!(noReduce && finePointer)) return;
+      const noReduce = window.matchMedia?.('(prefers-reduced-motion: no-preference)').matches;
+      const finePointer = window.matchMedia?.('(pointer: fine)').matches;
+      const coarsePointer = window.matchMedia?.('(pointer: coarse)').matches;
+      setIsCoarsePointer(!!coarsePointer);
+      if (!noReduce) return;
 
       const enable = () => {
-        // Defer mounting so it doesn't compete with initial paint
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(() => setShowCursorFX(true), { timeout: 1500 });
         } else {
@@ -37,9 +39,19 @@ const Layout = ({ children }) => {
         }
       };
 
-      if (document.readyState === 'complete') enable();
-      else window.addEventListener('load', enable, { once: true });
-      return () => window.removeEventListener('load', enable);
+      if (finePointer) {
+        if (document.readyState === 'complete') enable();
+        else window.addEventListener('load', enable, { once: true });
+        return () => window.removeEventListener('load', enable);
+      }
+
+      if (coarsePointer) {
+        const onFirstTouch = () => {
+          setShowCursorFX(true);
+        };
+        window.addEventListener('touchstart', onFirstTouch, { once: true, passive: true });
+        return () => window.removeEventListener('touchstart', onFirstTouch);
+      }
     } catch {
       // no-op
     }
@@ -278,7 +290,19 @@ const Layout = ({ children }) => {
       <main className="flex-1 pt-20">{children}</main>
 
       {showCursorFX && (
-        <SplashCursor TRANSPARENT={true} SHADING={true} />
+        isCoarsePointer ? (
+          <SplashCursor
+            TRANSPARENT={true}
+            SHADING={true}
+            SIM_RESOLUTION={64}
+            DYE_RESOLUTION={720}
+            CAPTURE_RESOLUTION={256}
+            SPLAT_FORCE={3000}
+            SPLAT_RADIUS={0.15}
+          />
+        ) : (
+          <SplashCursor TRANSPARENT={true} SHADING={true} />
+        )
       )}
 
       <footer className="bg-primary text-primary-foreground py-12">
