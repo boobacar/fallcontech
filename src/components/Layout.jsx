@@ -8,15 +8,41 @@ import logoUrl from "@/assets/logo.webp";
 import { useI18n } from "@/i18n";
 import { initVisualEffects } from "@/lib/enhanceEffects";
 import { confettiBurst } from "@/lib/confetti";
+import SplashCursor from "@/components/SplashCursor";
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showCursorFX, setShowCursorFX] = useState(false);
   const location = useLocation();
   const { t, locale, setLocale } = useI18n();
 
   useEffect(() => {
     initVisualEffects();
+  }, []);
+
+  // Mount the splash cursor effect for users who allow motion and have a fine pointer (desktop/mouse)
+  useEffect(() => {
+    try {
+      const noReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+      const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+      if (!(noReduce && finePointer)) return;
+
+      const enable = () => {
+        // Defer mounting so it doesn't compete with initial paint
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(() => setShowCursorFX(true), { timeout: 1500 });
+        } else {
+          setTimeout(() => setShowCursorFX(true), 600);
+        }
+      };
+
+      if (document.readyState === 'complete') enable();
+      else window.addEventListener('load', enable, { once: true });
+      return () => window.removeEventListener('load', enable);
+    } catch {
+      // no-op
+    }
   }, []);
 
   useEffect(() => {
@@ -250,6 +276,10 @@ const Layout = ({ children }) => {
       </motion.header>
 
       <main className="flex-1 pt-20">{children}</main>
+
+      {showCursorFX && (
+        <SplashCursor TRANSPARENT={true} SHADING={true} />
+      )}
 
       <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
