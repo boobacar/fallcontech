@@ -8,13 +8,11 @@ import logoUrl from "@/assets/logo.webp";
 import { useI18n } from "@/i18n";
 import { initVisualEffects } from "@/lib/enhanceEffects";
 import { confettiBurst } from "@/lib/confetti";
-import SplashCursor from "@/components/SplashCursor";
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showCursorFX, setShowCursorFX] = useState(false);
-  const [isCoarsePointer, setIsCoarsePointer] = useState(false);
+  
   const location = useLocation();
   const { t, locale, setLocale } = useI18n();
 
@@ -22,40 +20,7 @@ const Layout = ({ children }) => {
     initVisualEffects();
   }, []);
 
-  // Mount the splash cursor effect respecting motion prefs.
-  useEffect(() => {
-    try {
-      const noReduce = window.matchMedia?.('(prefers-reduced-motion: no-preference)').matches;
-      const finePointer = window.matchMedia?.('(pointer: fine)').matches;
-      const coarsePointer = window.matchMedia?.('(pointer: coarse)').matches;
-      setIsCoarsePointer(!!coarsePointer);
-      if (!noReduce) return;
-
-      const enable = () => {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(() => setShowCursorFX(true), { timeout: 1500 });
-        } else {
-          setTimeout(() => setShowCursorFX(true), 600);
-        }
-      };
-
-      if (finePointer) {
-        if (document.readyState === 'complete') enable();
-        else window.addEventListener('load', enable, { once: true });
-        return () => window.removeEventListener('load', enable);
-      }
-
-      if (coarsePointer) {
-        const onFirstTouch = () => {
-          setShowCursorFX(true);
-        };
-        window.addEventListener('touchstart', onFirstTouch, { once: true, passive: true });
-        return () => window.removeEventListener('touchstart', onFirstTouch);
-      }
-    } catch {
-      // no-op
-    }
-  }, []);
+  // SplashCursor disabled globally
 
   useEffect(() => {
     const handleScroll = () => {
@@ -289,21 +254,8 @@ const Layout = ({ children }) => {
 
       <main className="flex-1 pt-20">{children}</main>
 
-      {showCursorFX && (
-        isCoarsePointer ? (
-          <SplashCursor
-            TRANSPARENT={true}
-            SHADING={true}
-            SIM_RESOLUTION={64}
-            DYE_RESOLUTION={720}
-            CAPTURE_RESOLUTION={256}
-            SPLAT_FORCE={3000}
-            SPLAT_RADIUS={0.15}
-          />
-        ) : (
-          <SplashCursor TRANSPARENT={true} SHADING={true} />
-        )
-      )}
+      {/* SplashCursor removed */}
+
 
       <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">

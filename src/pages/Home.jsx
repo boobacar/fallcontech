@@ -321,27 +321,12 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all will-change-transform"
-                onMouseMove={(e) => {
-                  const el = e.currentTarget;
-                  const r = el.getBoundingClientRect();
-                  const x = e.clientX - r.left;
-                  const y = e.clientY - r.top;
-                  const cx = r.width / 2;
-                  const cy = r.height / 2;
-                  const rx = ((y - cy) / cy) * -6;
-                  const ry = ((x - cx) / cx) * 6;
-                  el.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform =
-                    "perspective(800px) rotateX(0deg) rotateY(0deg)";
-                }}
+                className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
               >
                 <div className="aspect-video relative overflow-hidden">
                   <img
                     alt={study.title}
-                    className="image-displace w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     src={study.img}
                     loading="lazy"
                     decoding="async"

@@ -40,6 +40,7 @@ function setupScrollProgress() {
   return () => window.removeEventListener('scroll', onScroll);
 }
 
+
 function setupMagneticButtons() {
   const nodes = Array.from(document.querySelectorAll('[data-magnetic]'));
   const listeners = [];
@@ -76,15 +77,28 @@ function setupRipple() {
 }
 
 function setupCursorHalo() {
+  try {
+    const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (coarse || reduce) return () => {};
+  } catch {}
   const container = document.querySelector('[data-halo-container]');
   const halo = document.querySelector('[data-halo]');
   if (!container || !halo) return () => {};
+  let ticking = false;
+  let lastX = 0, lastY = 0;
   const onMove = (e) => {
-    const r = container.getBoundingClientRect();
-    const x = e.clientX - r.left; const y = e.clientY - r.top;
-    halo.style.transform = `translate(${x - 16}px, ${y - 16}px)`;
+    lastX = e.clientX; lastY = e.clientY;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const r = container.getBoundingClientRect();
+      const x = lastX - r.left; const y = lastY - r.top;
+      halo.style.transform = `translate(${x - 16}px, ${y - 16}px)`;
+      ticking = false;
+    });
   };
-  container.addEventListener('mousemove', onMove);
+  container.addEventListener('mousemove', onMove, { passive: true });
   container.addEventListener('mouseleave', () => { halo.style.opacity = '0'; });
   container.addEventListener('mouseenter', () => { halo.style.opacity = '1'; });
   return () => { container.removeEventListener('mousemove', onMove); };
@@ -112,9 +126,9 @@ export function initVisualEffects() {
   cleanupFns = [];
   cleanupFns.push(setupViewTransitions());
   cleanupFns.push(setupScrollProgress());
+  
   cleanupFns.push(setupMagneticButtons());
   cleanupFns.push(setupRipple());
   cleanupFns.push(setupCursorHalo());
   cleanupFns.push(setupParallax());
 }
-

@@ -172,6 +172,11 @@
     pointer-events: none; mix-blend-mode: multiply;
   }
 
+  /* Hide cursor halo on touch/coarse pointer devices */
+  @media (pointer: coarse) {
+    .cursor-halo { display: none !important; }
+  }
+
   /* Displacement filter hover for images */
   .image-displace { transition: filter 250ms ease; }
   .group:hover .image-displace { filter: url('#hoverDisplace'); }
