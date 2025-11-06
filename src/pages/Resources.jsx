@@ -13,6 +13,10 @@ import imgMvp from "@/assets/articles/mvp-development-for-startups.png";
 import imgSeo from "@/assets/articles/seo.png";
 import imgMobile from "@/assets/articles/mobile-first-design.png";
 import imgStack from "@/assets/articles/stack.png";
+import imgIoTPayment from "@/assets/articles/iot-esp32.svg";
+import imgIoTEmbedded from "@/assets/articles/iot-embedded.svg";
+import imgGateways from "@/assets/articles/payment-gateways.svg";
+import imgTelemetry from "@/assets/articles/telemetry.svg";
 
 const Resources = () => {
   const { t } = useI18n();
@@ -49,6 +53,34 @@ const Resources = () => {
   };
 
   const blogPosts = [
+    {
+      title: "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
+      excerpt: "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur d’eau.",
+      category: "IoT",
+      readTime: "8 min de lecture",
+      link: "/article/integrer-paiement-machine-eau-esp32-senegal",
+    },
+    {
+      title: "Développement IoT & embarqué au Sénégal (Arduino, ESP32)",
+      excerpt: "Capteurs, contrôle, OTA et dashboards: comment démarrer un projet IoT fiable et évolutif.",
+      category: "IoT",
+      readTime: "6 min de lecture",
+      link: "/article/developpement-iot-embarque-senegal-arduino-esp32",
+    },
+    {
+      title: "Passerelles de paiement pour IoT: Wave, Orange Money, Free Money",
+      excerpt: "Comparatif et bonnes pratiques: sécurité, confirmations côté serveur, résilience et supervision.",
+      category: "Paiement",
+      readTime: "7 min de lecture",
+      link: "/article/passerelles-paiement-iot-wave-orange-free",
+    },
+    {
+      title: "Télémétrie & maintenance prédictive pour machines connectées",
+      excerpt: "Réduire les pannes avec la donnée: capteurs, alertes et historique exploitable.",
+      category: "IoT",
+      readTime: "5 min de lecture",
+      link: "/article/telemetrie-maintenance-predictive-iot-senegal",
+    },
     {
       title:
         "Comment choisir un système de réservation pour les cliniques à Dakar",
@@ -186,6 +218,10 @@ const Resources = () => {
                 "seo-basics-senegalese-businesses": imgSeo,
                 "why-mobile-first-design-matters-africa": imgMobile,
                 "choosing-right-tech-stack": imgStack,
+                "integrer-paiement-machine-eau-esp32-senegal": imgIoTPayment,
+                "developpement-iot-embarque-senegal-arduino-esp32": imgIoTPayment,
+                "passerelles-paiement-iot-wave-orange-free": imgGateways,
+                "telemetrie-maintenance-predictive-iot-senegal": imgIoTPayment,
               };
               const img = map[slug];
               return (

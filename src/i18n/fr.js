@@ -24,6 +24,7 @@ export default {
         webDesign: 'Conception de sites Web',
         automations: 'Automatisations',
         mvpDev: 'Développement de MVP',
+        iot: 'IoT & Systèmes embarqués',
       },
     },
     blurb: 'Sites web modernes et automatisations pour la croissance de votre entreprise au Sénégal.',
@@ -188,17 +189,17 @@ export default {
   },
   home: {
     seo: {
-      title: 'Agence web à Dakar — Sites rapides, SEO, automatisations',
-      description: 'Sites rapides, mobile‑first, SEO et automatisations (réservation, WhatsApp) pour cliniques, PME et startups au Sénégal. Consultation gratuite.',
+      title: 'Développement web & IoT à Dakar — Sites, automatisations, embarqué',
+      description: 'Sites rapides (mobile‑first), SEO, automatisations et solutions IoT/embarquées (Arduino, ESP32) pour cliniques, PME, kiosques et startups au Sénégal.',
     },
     hero: {
       title: 'Sites web modernes & automatisations qui font grandir votre entreprise',
       subtitle:
-        'Sites rapides (mobile‑first), SEO local et automatisations métier pour tous secteurs : réservation en ligne, workflows WhatsApp, plateformes internes et MVP.',
+        "Sites rapides (mobile‑first), SEO local, automatisations métier et développement IoT/embarqué (Arduino, ESP32) pour sites, plateformes, kiosques et machines.",
       bullets: [
         'Prêt pour le SEO et ultra‑rapide',
         'Réservation en ligne & capture de leads',
-        'Outils internes & automatisations sur mesure',
+        'Outils internes & IoT (Arduino/ESP32)',
         'Déployé rapidement, maintenu de manière fiable',
       ],
     },
@@ -252,6 +253,10 @@ export default {
       },
       readCaseStudy: "Lire l'étude de cas",
       viewAll: 'Tous nos projets récents',
+    },
+    latest: {
+      title: 'Articles récents',
+      subtitle: 'Trois lectures utiles pour démarrer votre projet.',
     },
     process: {
       title: 'Notre Processus',
@@ -310,6 +315,15 @@ export default {
     recentArticles: 'Articles récents',
     viewCaseStudy: "Voir l'étude de cas",
     viewSite: 'Voir le site',
+    iotMini: {
+      title: 'Projets IoT (mini cas)',
+      subtitle: 'Des exemples concrets pour kiosques, machines et industrie',
+      items: [
+        { title: 'Paiement mobile pour machine de vente d’eau', desc: 'ESP32 + intégration Wave/OM/Free — fiable et sécurisé' },
+        { title: 'Développement IoT & embarqué', desc: 'Arduino/ESP32 — capteurs, contrôle et mises à jour à distance' },
+        { title: 'Télémétrie & maintenance prédictive', desc: 'Capteurs, alertes et tableaux de bord exploitables' },
+      ],
+    },
     cta: {
       title: 'Vous voulez des résultats similaires ?',
       subtitle: 'Créons une solution sur mesure pour votre entreprise',

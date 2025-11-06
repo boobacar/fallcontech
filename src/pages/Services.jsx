@@ -58,6 +58,22 @@ const Services = () => {
       ],
       outcomes: ['Fast market validation', 'Investor‑ready product', 'Scalable foundation'],
     },
+    {
+      icon: Zap,
+      title: 'IoT & Embedded Systems (Arduino/ESP32)',
+      tagline: 'Payment integrations, sensors, dashboards & OTA updates',
+      priceFrom: 'Custom',
+      id: 'iot-embedded',
+      features: [
+        'Wave/Orange/Free payment integrations',
+        'Telemetry: sensors, alerts, logs',
+        'Secure MQTT/HTTPS communication',
+        'OTA updates and device management',
+        'Admin tools and audit logs',
+        'Offline/restore resilient flows',
+      ],
+      outcomes: ['Reliable vending/kiosk operations', 'Reduced downtime', 'Actionable real‑time insights'],
+    },
   ] : [
     {
       icon: Globe,
@@ -120,6 +136,27 @@ const Services = () => {
         "Validation rapide sur le marché",
         "Produit prêt pour les investisseurs",
         "Fondation évolutive",
+      ],
+    },
+    {
+      icon: Zap,
+      title: "Systèmes Embarqués & IoT (Arduino/ESP32)",
+      tagline:
+        "Intégrations paiement, capteurs, télémétrie & mises à jour OTA",
+      priceFrom: "Sur devis",
+      id: "iot-embedded",
+      features: [
+        "Intégrations Wave/Orange/Free Money",
+        "Télémétrie: capteurs, alertes, journaux",
+        "Communication sécurisée MQTT/HTTPS",
+        "Mises à jour OTA et gestion d'appareils",
+        "Outils d'administration et audit",
+        "Résilience: offline & reprise",
+      ],
+      outcomes: [
+        "Exploitation fiable de vos kiosques/machines",
+        "Moins d'arrêts imprévus",
+        "Indicateurs temps réel actionnables",
       ],
     },
   ];
@@ -330,9 +367,9 @@ const Services = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold mb-6 text-primary">{t('services.recentArticles')}</h2>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
-            <li><Link to="/article/booking-system-clinics-dakar" className="hover:underline">Système de réservation clinique à Dakar — Guide</Link></li>
-            <li><Link to="/article/seo-basics-senegalese-businesses" className="hover:underline">SEO local au Sénégal — Guide</Link></li>
-            <li><Link to="/article/idea-to-mvp-2-weeks" className="hover:underline">De l’idée au MVP en 2 semaines</Link></li>
+            <li><Link to="/article/integrer-paiement-machine-eau-esp32-senegal" className="hover:underline">Intégrer un paiement mobile sur une machine (ESP32)</Link></li>
+            <li><Link to="/article/passerelles-paiement-iot-wave-orange-free" className="hover:underline">Passerelles de paiement pour IoT (Wave/OM/Free)</Link></li>
+            <li><Link to="/article/developpement-iot-embarque-senegal-arduino-esp32" className="hover:underline">Développement IoT & embarqué (Arduino/ESP32)</Link></li>
           </ul>
         </div>
       </section>

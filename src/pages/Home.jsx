@@ -20,6 +20,7 @@ import {
 import clinicImg from "@/assets/clinic-dabia.webp";
 import miroirImg from "@/assets/miroir-foncier.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
+import imgIoT from "@/assets/articles/iot-esp32.svg";
 
 const Home = () => {
   const { t, locale } = useI18n();
@@ -134,11 +135,53 @@ const Home = () => {
 
   return (
     <>
-      <SEO
-        path="/"
-        title={t("home.seo.title")}
-        description={t("home.seo.description")}
-      />
+      {(() => {
+        const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+        const latestPosts = [
+          {
+            title: locale === 'en' ? 'Add mobile payments to a water vending machine (ESP32)' : 'Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)',
+            excerpt: locale === 'en' ? 'Reliable approach, security and go‑live for Wave/OM/Free.' : 'Approche fiable, sécurité et mise en service (Wave/OM/Free).',
+            category: 'IoT',
+            link: locale === 'en'
+              ? '/en/article/esp32-water-vending-mobile-payments-senegal'
+              : '/article/integrer-paiement-machine-eau-esp32-senegal',
+          },
+          {
+            title: locale === 'en' ? 'IoT & embedded development (Arduino/ESP32)' : 'Développement IoT & embarqué (Arduino/ESP32)',
+            excerpt: locale === 'en' ? 'Sensors, control, remote updates and dashboards.' : 'Capteurs, contrôle, mises à jour à distance et tableaux de bord.',
+            category: 'IoT',
+            link: locale === 'en'
+              ? '/en/article/iot-embedded-development-senegal-arduino-esp32'
+              : '/article/developpement-iot-embarque-senegal-arduino-esp32',
+          },
+          {
+            title: locale === 'en' ? 'IoT telemetry & predictive maintenance' : 'Télémétrie & maintenance prédictive IoT',
+            excerpt: locale === 'en' ? 'Sensors, alerts and data‑driven decisions to reduce downtime.' : 'Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.',
+            category: 'IoT',
+            link: locale === 'en'
+              ? '/en/article/iot-telemetry-predictive-maintenance-senegal'
+              : '/article/telemetrie-maintenance-predictive-iot-senegal',
+          },
+        ];
+        const itemListJsonLd = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: latestPosts.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: siteUrl + p.link,
+            item: { "@type": "BlogPosting", name: p.title }
+          })),
+        };
+        return (
+          <SEO
+            path="/"
+            title={t("home.seo.title")}
+            description={t("home.seo.description")}
+            jsonLd={[itemListJsonLd]}
+          />
+        );
+      })()}
 
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg vt-hero-bg"
@@ -362,6 +405,91 @@ const Home = () => {
             <Button asChild size="lg" variant="secondary">
               <Link to="/work">{t("home.caseStudies.viewAll")}</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Articles (compact, decision‑maker oriented) */}
+      <section className="py-20 bg-background section-sep">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+              {t('home.latest.title')}
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              {t('home.latest.subtitle')}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {(() => {
+              const posts = [
+                {
+                  title: locale === 'en' ? 'Add mobile payments to a water vending machine (ESP32)' : 'Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)',
+                  excerpt: locale === 'en' ? 'Reliable approach, security and go‑live for Wave/OM/Free.' : 'Approche fiable, sécurité et mise en service (Wave/OM/Free).',
+                  category: 'IoT',
+                  link: locale === 'en' ? '/en/article/esp32-water-vending-mobile-payments-senegal' : '/article/integrer-paiement-machine-eau-esp32-senegal',
+                },
+                {
+                  title: locale === 'en' ? 'IoT & embedded development (Arduino/ESP32)' : 'Développement IoT & embarqué (Arduino/ESP32)',
+                  excerpt: locale === 'en' ? 'Sensors, control, remote updates and dashboards.' : 'Capteurs, contrôle, mises à jour à distance et tableaux de bord.',
+                  category: 'IoT',
+                  link: locale === 'en' ? '/en/article/iot-embedded-development-senegal-arduino-esp32' : '/article/developpement-iot-embarque-senegal-arduino-esp32',
+                },
+                {
+                  title: locale === 'en' ? 'IoT telemetry & predictive maintenance' : 'Télémétrie & maintenance prédictive IoT',
+                  excerpt: locale === 'en' ? 'Sensors, alerts and data‑driven decisions to reduce downtime.' : 'Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.',
+                  category: 'IoT',
+                  link: locale === 'en' ? '/en/article/iot-telemetry-predictive-maintenance-senegal' : '/article/telemetrie-maintenance-predictive-iot-senegal',
+                },
+              ];
+              return posts.map((post, idx) => (
+                <motion.article
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+                >
+                  <Link to={post.link}>
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        src={imgIoT}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-card/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-blue-500">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-4">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-blue-500 font-semibold text-sm flex items-center gap-1">
+                          {t('resources.latest.readMore')} <ArrowRight size={16} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              ));
+            })()}
           </div>
         </div>
       </section>

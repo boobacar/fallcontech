@@ -292,6 +292,14 @@ const Layout = ({ children }) => {
                     {t('common.footer.links.mvpDev')}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/services#iot-embedded"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    {t('common.footer.links.iot')}
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -24,6 +24,7 @@ export default {
         webDesign: 'Web Design',
         automations: 'Automations',
         mvpDev: 'MVP Development',
+        iot: 'IoT & Embedded',
       },
     },
     blurb: 'Modern websites and automations to grow your business in Senegal.',
@@ -195,17 +196,17 @@ export default {
   },
   home: {
     seo: {
-      title: 'Web agency in Dakar — Fast sites, SEO, automations',
-      description: 'Fast, mobile‑first websites, SEO and automations (booking, WhatsApp) for clinics, SMEs and startups in Senegal. Free consultation.',
+      title: 'Web & IoT development in Dakar — Sites, automations, embedded',
+      description: 'Fast, mobile‑first websites, SEO, automations and IoT/embedded solutions (Arduino, ESP32) for clinics, SMEs, kiosks and startups in Senegal.',
     },
     hero: {
       title: 'Modern websites & automations that grow your business',
       subtitle:
-        'Fast (mobile‑first) sites, local SEO and business automations for any sector: online booking, WhatsApp workflows, internal platforms and MVPs.',
+        'Fast (mobile‑first) sites, local SEO, business automations and IoT/embedded development (Arduino, ESP32) for sites, platforms, kiosks and machines.',
       bullets: [
         'SEO‑ready and ultra‑fast',
         'Online booking & lead capture',
-        'Internal tools & custom automations',
+        'Internal tools & IoT (Arduino/ESP32)',
         'Fast delivery, reliable maintenance',
       ],
     },
@@ -218,6 +219,10 @@ export default {
         title: 'Case Studies',
         subtitle: 'Real projects and measurable results for businesses in Senegal',
       },
+    },
+    latest: {
+      title: 'Latest articles',
+      subtitle: 'Three quick reads to kick‑start your project.',
     },
     servicesCards: {
       web: {
@@ -323,6 +328,15 @@ export default {
     recentArticles: 'Recent articles',
     viewCaseStudy: 'View case study',
     viewSite: 'View site',
+    iotMini: {
+      title: 'IoT Projects (mini cases)',
+      subtitle: 'Concrete examples for kiosks, machines and industry',
+      items: [
+        { title: 'Mobile payments for water vending', desc: 'ESP32 + Wave/OM/Free integration — reliable and secure' },
+        { title: 'IoT & embedded development', desc: 'Arduino/ESP32 — sensors, control and remote updates' },
+        { title: 'Telemetry & predictive maintenance', desc: 'Sensors, alerts and actionable dashboards' },
+      ],
+    },
     cta: {
       title: 'Want similar results?',
       subtitle: 'Let’s create a tailored solution for your business',

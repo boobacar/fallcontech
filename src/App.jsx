@@ -19,6 +19,15 @@ const ArticleMvp = lazy(() => import("@/pages/articles/ArticleMvp"));
 const ArticleSeo = lazy(() => import("@/pages/articles/ArticleSeo"));
 const ArticleMobile = lazy(() => import("@/pages/articles/ArticleMobile"));
 const ArticleStack = lazy(() => import("@/pages/articles/ArticleStack"));
+const ArticlePaymentMachine = lazy(() => import("@/pages/articles/ArticlePaymentMachine"));
+const ArticleIoTEmbedded = lazy(() => import("@/pages/articles/ArticleIoTEmbedded"));
+const ArticlePaymentGatewaysIoT = lazy(() => import("@/pages/articles/ArticlePaymentGatewaysIoT"));
+const ArticleTelemetry = lazy(() => import("@/pages/articles/ArticleTelemetry"));
+// EN articles
+const ArticlePaymentMachineEn = lazy(() => import("@/pages/articles/en/ArticlePaymentMachineEn"));
+const ArticleIoTEmbeddedEn = lazy(() => import("@/pages/articles/en/ArticleIoTEmbeddedEn"));
+const ArticlePaymentGatewaysIoTEn = lazy(() => import("@/pages/articles/en/ArticlePaymentGatewaysIoTEn"));
+const ArticleTelemetryEn = lazy(() => import("@/pages/articles/en/ArticleTelemetryEn"));
 
 function App() {
   return (
@@ -59,6 +68,39 @@ function App() {
           <Route
             path="/article/choosing-right-tech-stack"
             element={<ArticleStack />}
+          />
+          <Route
+            path="/article/integrer-paiement-machine-eau-esp32-senegal"
+            element={<ArticlePaymentMachine />}
+          />
+          <Route
+            path="/article/developpement-iot-embarque-senegal-arduino-esp32"
+            element={<ArticleIoTEmbedded />}
+          />
+          <Route
+            path="/article/passerelles-paiement-iot-wave-orange-free"
+            element={<ArticlePaymentGatewaysIoT />}
+          />
+          <Route
+            path="/article/telemetrie-maintenance-predictive-iot-senegal"
+            element={<ArticleTelemetry />}
+          />
+          {/* English versions */}
+          <Route
+            path="/en/article/esp32-water-vending-mobile-payments-senegal"
+            element={<ArticlePaymentMachineEn />}
+          />
+          <Route
+            path="/en/article/iot-embedded-development-senegal-arduino-esp32"
+            element={<ArticleIoTEmbeddedEn />}
+          />
+          <Route
+            path="/en/article/payment-gateways-iot-wave-orange-free"
+            element={<ArticlePaymentGatewaysIoTEn />}
+          />
+          <Route
+            path="/en/article/iot-telemetry-predictive-maintenance-senegal"
+            element={<ArticleTelemetryEn />}
           />
         </Routes>
       </Suspense>
