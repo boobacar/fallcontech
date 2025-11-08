@@ -61,7 +61,8 @@ const Layout = ({ children }) => {
     "@type": "Organization",
     name: "Fallcon Tech",
     url: siteUrl || undefined,
-    logo: `${siteUrl}/assets/logo.webp`,
+    // Use a stable public asset path (not a hashed build asset)
+    logo: `${siteUrl}/logo.png`,
     email: "info@fallcontech.com",
     telephone: "+221 77 626 00 20",
     address: {
