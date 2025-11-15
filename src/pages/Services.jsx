@@ -14,7 +14,7 @@ const Services = () => {
       icon: Globe,
       title: 'Website Design & SEO',
       tagline: 'More leads, faster load times, better local rankings',
-      priceFrom: '350,000 XOF',
+      priceFrom: '$580',
       id: 'site-web-seo',
       features: [
         'Mobile‑first responsive UI',
@@ -30,7 +30,7 @@ const Services = () => {
       icon: Zap,
       title: 'Internal Platforms & Automations',
       tagline: 'Save time, reduce errors, scale your operations',
-      priceFrom: '2.5M XOF',
+      priceFrom: '$4,200+',
       id: 'automatisations-plateformes',
       features: [
         'Document portals with access control',
@@ -46,7 +46,7 @@ const Services = () => {
       icon: Rocket,
       title: 'MVP Development (Startups)',
       tagline: 'Rapid prototyping, real‑time features, cloud‑ready',
-      priceFrom: '1,000,000 XOF',
+      priceFrom: '$1,700',
       id: 'developpement-mvp',
       features: [
         'React + Firebase architecture',
@@ -178,7 +178,7 @@ const Services = () => {
         offers: {
           "@type": "Offer",
           price: s.priceFrom?.replace(/[^0-9.]/g, ""),
-          priceCurrency: "XOF",
+          priceCurrency: locale === 'en' ? "USD" : "XOF",
           url: `${siteUrl}/contact`,
         },
       },
@@ -199,7 +199,7 @@ const Services = () => {
       ? [
           {
             q: 'How much does a professional website cost?',
-            a: 'Our websites start at 350,000 XOF and vary depending on features (booking, blog, integrations, etc.).',
+            a: 'Our websites start at about $580 and vary depending on features (booking, blog, integrations, etc.).',
           },
           {
             q: 'How fast do you deliver?',

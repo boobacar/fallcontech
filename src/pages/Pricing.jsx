@@ -11,7 +11,7 @@ const Pricing = () => {
   const plans = [
     {
       name: t('pricing.plans.starter.name'),
-      price: "350 000",
+      price: t('pricing.plans.starter.price'),
       currency: t('pricing.currency'),
       description: t('pricing.plans.starter.description'),
       features: [
@@ -28,7 +28,7 @@ const Pricing = () => {
     },
     {
       name: t('pricing.plans.business.name'),
-      price: "1 000 000",
+      price: t('pricing.plans.business.price'),
       currency: t('pricing.currency'),
       description: t('pricing.plans.business.description'),
       features: [
@@ -47,7 +47,7 @@ const Pricing = () => {
     },
     {
       name: t('pricing.plans.growth.name'),
-      price: "2.5M+",
+      price: t('pricing.plans.growth.price'),
       currency: t('pricing.currency'),
       description: t('pricing.plans.growth.description'),
       features: [

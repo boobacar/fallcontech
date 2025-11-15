@@ -27,7 +27,7 @@ export default {
         iot: 'IoT & Embedded',
       },
     },
-    blurb: 'Modern websites and automations to grow your business in Senegal.',
+    blurb: 'Modern websites and automations to grow your business in Dakar and New York.',
     breadcrumb: {
       home: 'Home',
       resources: 'Resources',
@@ -288,10 +288,10 @@ export default {
         },
         {
           q: 'What are your price ranges?',
-          a: 'Starter sites from 350,000 XOF, business sites from 1,000,000 XOF, custom platforms from 2.5M XOF.',
+          a: 'Starter sites from about $580, business sites from about $1,700, custom platforms from about $4,200.',
         },
         { q: 'Do you offer revisions?', a: 'Yes! 2–3 rounds of revisions are included in all plans.' },
-        { q: 'What about maintenance?', a: 'Monthly maintenance plans are available starting at 35,000 XOF/month.' },
+        { q: 'What about maintenance?', a: 'Monthly maintenance plans are available starting at about $60/month.' },
         { q: 'Will my site be optimized for SEO?', a: 'Absolutely! All sites include on‑page SEO, sitemaps and Google Search Console setup.' },
         { q: 'Who owns the website?', a: 'You own everything: code, design, content and domain.' },
       ],
@@ -475,15 +475,16 @@ export default {
   pricing: {
     seo: {
       title: 'Web development pricing in Senegal — Clear plans',
-      description: 'Starter sites from 350,000 XOF, Business from 1,000,000 XOF, custom solutions from 2.5M. Transparent pricing and fast timelines.',
+      description: 'Starter sites from about $580, Business from about $1,700, custom solutions from about $4,200. Transparent pricing and fast timelines.',
     },
     pageTitle: 'Transparent Pricing',
     lead: 'Clear plans, no hidden fees. Choose what fits your goals and budget.',
     mostPopular: 'MOST POPULAR',
-    currency: 'XOF',
+    currency: 'USD',
     plans: {
       starter: {
         name: 'Starter Site',
+        price: '$580',
         description: 'Perfect for small businesses and professionals',
         features: [
           'One‑page responsive website',
@@ -498,6 +499,7 @@ export default {
       },
       business: {
         name: 'Business Site',
+        price: '$1,700',
         description: 'Ideal for growing companies',
         features: [
           '5–7 page website',
@@ -514,6 +516,7 @@ export default {
       },
       growth: {
         name: 'Growth Package',
+        price: '$4,200+',
         description: 'Custom solutions for ambitious projects',
         features: [
           'Custom portal/platform',
@@ -532,12 +535,12 @@ export default {
     maintenancePlans: {
       basic: {
         name: 'Basic',
-        priceLabel: '35 000',
+        priceLabel: '60',
         features: ['Monthly updates', 'Security patches', 'Backup management', 'Email support'],
       },
       pro: {
         name: 'Pro',
-        priceLabel: '75 000',
+        priceLabel: '125',
         features: ['Everything in Basic', 'Performance monitoring', 'Content updates (2/month)', 'Priority support', 'Monthly reports'],
       },
       enterprise: {
@@ -549,7 +552,7 @@ export default {
     maintenance: {
       title: 'Maintenance Plans',
       subtitle: 'Keep your website running smoothly with our monthly maintenance plans.',
-      perMonth: 'XOF/month',
+      perMonth: 'USD/month',
     },
   },
   contact: {

@@ -27,7 +27,7 @@ export default {
         iot: 'IoT & Systèmes embarqués',
       },
     },
-    blurb: 'Sites web modernes et automatisations pour la croissance de votre entreprise au Sénégal.',
+    blurb: 'Sites web modernes et automatisations pour la croissance de votre entreprise à Dakar et à New York.',
     aria: {
       whatsappChat: 'Discuter sur WhatsApp',
     },
@@ -471,6 +471,7 @@ export default {
     plans: {
       starter: {
         name: 'Site Starter',
+        price: '350 000',
         description: 'Parfait pour les petites entreprises et les professionnels',
         features: [
           'Site web one‑page responsive',
@@ -485,6 +486,7 @@ export default {
       },
       business: {
         name: 'Site Business',
+        price: '1 000 000',
         description: 'Idéal pour les entreprises en croissance',
         features: [
           'Site web de 5‑7 pages',
@@ -501,6 +503,7 @@ export default {
       },
       growth: {
         name: 'Forfait Croissance',
+        price: '2.5M+',
         description: 'Solutions personnalisées pour les projets ambitieux',
         features: [
           'Portail/plateforme sur mesure',

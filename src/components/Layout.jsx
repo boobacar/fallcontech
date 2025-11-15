@@ -12,7 +12,7 @@ import { confettiBurst } from "@/lib/confetti";
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
+
   const location = useLocation();
   const { t, locale, setLocale } = useI18n();
 
@@ -44,13 +44,13 @@ const Layout = ({ children }) => {
   }, [location.pathname]);
 
   const navLinks = [
-    { path: "/", label: t('common.nav.home') },
-    { path: "/services", label: t('common.nav.services') },
-    { path: "/work", label: t('common.nav.work') },
-    { path: "/about", label: t('common.nav.about') },
-    { path: "/pricing", label: t('common.nav.pricing') },
-    { path: "/resources", label: t('common.nav.resources') },
-    { path: "/contact", label: t('common.nav.contact') },
+    { path: "/", label: t("common.nav.home") },
+    { path: "/services", label: t("common.nav.services") },
+    { path: "/work", label: t("common.nav.work") },
+    { path: "/about", label: t("common.nav.about") },
+    { path: "/pricing", label: t("common.nav.pricing") },
+    { path: "/resources", label: t("common.nav.resources") },
+    { path: "/contact", label: t("common.nav.contact") },
   ];
 
   const siteUrl =
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
     telephone: "+221 77 626 00 20",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Dakar",
+      addressLocality: "Dakar – New York",
       addressCountry: "SN",
     },
   };
@@ -91,8 +91,20 @@ const Layout = ({ children }) => {
       {/* SVG filters globales */}
       <svg width="0" height="0" className="absolute -z-10" aria-hidden>
         <filter id="hoverDisplace">
-          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" seed="2" result="noise"/>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.01 0.02"
+            numOctaves="2"
+            seed="2"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="12"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
         </filter>
       </svg>
       {/* Site-wide defaults + structured data */}
@@ -138,28 +150,28 @@ const Layout = ({ children }) => {
                 <button
                   aria-label="Français"
                   className={`px-2 py-1 rounded ${
-                    locale === 'fr'
-                      ? 'bg-foreground/10 text-foreground'
-                      : 'text-foreground/70 hover:text-foreground'
+                    locale === "fr"
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/70 hover:text-foreground"
                   }`}
-                  onClick={() => setLocale('fr')}
+                  onClick={() => setLocale("fr")}
                 >
                   FR
                 </button>
                 <button
                   aria-label="English"
                   className={`px-2 py-1 rounded ${
-                    locale === 'en'
-                      ? 'bg-foreground/10 text-foreground'
-                      : 'text-foreground/70 hover:text-foreground'
+                    locale === "en"
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/70 hover:text-foreground"
                   }`}
-                  onClick={() => setLocale('en')}
+                  onClick={() => setLocale("en")}
                 >
                   EN
                 </button>
               </div>
               <Button asChild>
-                <Link to="/contact">{t('common.cta.planCall')}</Link>
+                <Link to="/contact">{t("common.cta.planCall")}</Link>
               </Button>
             </div>
 
@@ -169,23 +181,30 @@ const Layout = ({ children }) => {
                 <button
                   aria-label="Français"
                   className={`px-2 py-1 rounded ${
-                    locale === 'fr' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                    locale === "fr"
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/70"
                   }`}
-                  onClick={() => setLocale('fr')}
+                  onClick={() => setLocale("fr")}
                 >
                   FR
                 </button>
                 <button
                   aria-label="English"
                   className={`px-2 py-1 rounded ${
-                    locale === 'en' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                    locale === "en"
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/70"
                   }`}
-                  onClick={() => setLocale('en')}
+                  onClick={() => setLocale("en")}
                 >
                   EN
                 </button>
               </div>
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2 text-foreground"
+              >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
@@ -227,23 +246,27 @@ const Layout = ({ children }) => {
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         className={`px-2 py-1 rounded text-xs ${
-                          locale === 'fr' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                          locale === "fr"
+                            ? "bg-foreground/10 text-foreground"
+                            : "text-foreground/70"
                         }`}
-                        onClick={() => setLocale('fr')}
+                        onClick={() => setLocale("fr")}
                       >
                         FR
                       </button>
                       <button
                         className={`px-2 py-1 rounded text-xs ${
-                          locale === 'en' ? 'bg-foreground/10 text-foreground' : 'text-foreground/70'
+                          locale === "en"
+                            ? "bg-foreground/10 text-foreground"
+                            : "text-foreground/70"
                         }`}
-                        onClick={() => setLocale('en')}
+                        onClick={() => setLocale("en")}
                       >
                         EN
                       </button>
                     </div>
                     <Button asChild className="w-full mt-4">
-                      <Link to="/contact">{t('common.cta.planCall')}</Link>
+                      <Link to="/contact">{t("common.cta.planCall")}</Link>
                     </Button>
                   </div>
                 </motion.div>
@@ -257,24 +280,27 @@ const Layout = ({ children }) => {
 
       {/* SplashCursor removed */}
 
-
       <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <span className="text-2xl font-bold">Fallcon Tech</span>
-              <p className="mt-4 text-muted-foreground text-sm">{t('common.blurb')}</p>
+              <p className="mt-4 text-muted-foreground text-sm">
+                {t("common.blurb")}
+              </p>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">{t('common.footer.services')}</span>
+              <span className="font-semibold text-primary-foreground">
+                {t("common.footer.services")}
+              </span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.footer.links.webDesign')}
+                    {t("common.footer.links.webDesign")}
                   </Link>
                 </li>
                 <li>
@@ -282,7 +308,7 @@ const Layout = ({ children }) => {
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.footer.links.automations')}
+                    {t("common.footer.links.automations")}
                   </Link>
                 </li>
                 <li>
@@ -290,7 +316,7 @@ const Layout = ({ children }) => {
                     to="/services"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.footer.links.mvpDev')}
+                    {t("common.footer.links.mvpDev")}
                   </Link>
                 </li>
                 <li>
@@ -298,21 +324,23 @@ const Layout = ({ children }) => {
                     to="/services#iot-embedded"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.footer.links.iot')}
+                    {t("common.footer.links.iot")}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">{t('common.footer.company')}</span>
+              <span className="font-semibold text-primary-foreground">
+                {t("common.footer.company")}
+              </span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link
                     to="/about"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.nav.about')}
+                    {t("common.nav.about")}
                   </Link>
                 </li>
                 <li>
@@ -320,7 +348,7 @@ const Layout = ({ children }) => {
                     to="/work"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.nav.work')}
+                    {t("common.nav.work")}
                   </Link>
                 </li>
                 <li>
@@ -328,16 +356,18 @@ const Layout = ({ children }) => {
                     to="/resources"
                     className="hover:text-blue-400 transition-colors"
                   >
-                    {t('common.nav.resources')}
+                    {t("common.nav.resources")}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">{t('common.footer.contact')}</span>
+              <span className="font-semibold text-primary-foreground">
+                {t("common.footer.contact")}
+              </span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>HLM Shelter II, Dakar</li>
+                <li>Dakar – New York</li>
                 <li>info@fallcontech.com</li>
                 <li>+221 77 626 00 20</li>
                 <li>+221 77 483 75 76</li>
@@ -346,7 +376,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="mt-8 pt-8 border-t border-secondary text-center text-sm text-muted-foreground">
-            <p>&copy; 2025 Fallcon Tech. {t('common.footer.copy')}</p>
+            <p>&copy; 2025 Fallcon Tech. {t("common.footer.copy")}</p>
           </div>
         </div>
       </footer>
@@ -356,7 +386,7 @@ const Layout = ({ children }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
-        aria-label={t('common.aria.whatsappChat')}
+        aria-label={t("common.aria.whatsappChat")}
         onClick={() => confettiBurst({ particleCount: 40, spread: 50 })}
       >
         <MessageCircle size={24} />
