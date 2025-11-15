@@ -36,6 +36,13 @@ export default {
       whatsappChat: 'Chat on WhatsApp',
     },
   },
+  promo: {
+    blackFriday: {
+      badge: 'Black Friday -20%',
+      text: 'Get 20% off our website and platform packages. Discount applied on the quote, prices shown stay the same.',
+      cta: 'Claim this offer',
+    },
+  },
   case: {
     common: {
       backToWork: 'Back to Projects',
