@@ -54,6 +54,41 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Refonte de site vitrine à Dakar : SEO local et conversions",
+      excerpt: "Check-list Core Web Vitals, balises locales et contenus qui génèrent des leads à Dakar et au Sénégal.",
+      category: "SEO",
+      readTime: "7 min de lecture",
+      link: "/article/refonte-site-vitrine-seo-dakar",
+    },
+    {
+      title: "E-commerce au Sénégal : Wave, Orange Money, Free Money et logistique",
+      excerpt: "Stack paiement mobile, logistique locale, fiches produits SEO et automatisations WhatsApp.",
+      category: "E-commerce",
+      readTime: "8 min de lecture",
+      link: "/article/ecommerce-senegal-wave-orange",
+    },
+    {
+      title: "Workflows WhatsApp + CRM au Sénégal : relances et ventes",
+      excerpt: "Connecter WhatsApp Business, CRM et emails pour relances paniers abandonnés et support client.",
+      category: "Automatisation",
+      readTime: "6 min de lecture",
+      link: "/article/workflows-whatsapp-crm-senegal",
+    },
+    {
+      title: "Maintenance WordPress au Sénégal : sécurité, vitesse et backups",
+      excerpt: "Mises à jour sécurisées, Core Web Vitals, sauvegardes vérifiées et surveillance malware.",
+      category: "Maintenance",
+      readTime: "6 min de lecture",
+      link: "/article/maintenance-wordpress-securite-senegal",
+    },
+    {
+      title: "Core Web Vitals en Afrique : comment passer au vert",
+      excerpt: "LCP, CLS, INP sur mobile 3G/4G : optimisations performance adaptées aux marchés africains.",
+      category: "Performance",
+      readTime: "7 min de lecture",
+      link: "/article/core-web-vitals-afrique",
+    },
+    {
       title: "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
       excerpt: "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur d’eau.",
       category: "IoT",
@@ -212,6 +247,11 @@ const Resources = () => {
             {blogPosts.map((post, idx) => {
               const slug = post.link.split("/").pop();
               const map = {
+                "refonte-site-vitrine-seo-dakar": imgSeo,
+                "ecommerce-senegal-wave-orange": imgGateways,
+                "workflows-whatsapp-crm-senegal": imgWhatsapp,
+                "maintenance-wordpress-securite-senegal": imgStack,
+                "core-web-vitals-afrique": imgMobile,
                 "booking-system-clinics-dakar": imgBooking,
                 "automating-follow-ups-whatsapp-senegal": imgWhatsapp,
                 "idea-to-mvp-2-weeks": imgMvp,
@@ -223,7 +263,7 @@ const Resources = () => {
                 "passerelles-paiement-iot-wave-orange-free": imgGateways,
                 "telemetrie-maintenance-predictive-iot-senegal": imgIoTPayment,
               };
-              const img = map[slug];
+              const img = map[slug] || imgSeo;
               return (
                 <motion.article
                   key={idx}

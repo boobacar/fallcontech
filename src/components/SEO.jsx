@@ -26,6 +26,14 @@ function meta(name, content, attr = "name") {
   setTag("meta", { [attr]: name, content });
 }
 
+function ogLocaleFromLang(lang) {
+  if (!lang) return undefined;
+  const normalized = lang.toLowerCase();
+  if (normalized.startsWith("fr")) return "fr_FR";
+  if (normalized.startsWith("en")) return "en_US";
+  return undefined;
+}
+
 export default function SEO({
   title = "Fallcon Tech | Développement Web & Automatisations au Sénégal",
   description = "Sites web rapides, SEO, systèmes de réservation et automatisations pour cliniques, PME et startups au Sénégal.",
@@ -33,6 +41,9 @@ export default function SEO({
   image = siteLogo,
   type = "website",
   noindex = false,
+  lang = "fr",
+  imageAlt = "Fallcon Tech preview image",
+  siteName = "Fallcon Tech",
   jsonLd,
 }) {
   useEffect(() => {
@@ -46,6 +57,9 @@ export default function SEO({
     const canonical = absoluteUrl(path || "/");
     const ogImage = absoluteUrl(image);
     const robots = noindex ? "noindex, nofollow" : "index, follow";
+    const ogLocale = ogLocaleFromLang(lang);
+    const resolvedLang = lang || document.documentElement.lang || "fr";
+    document.documentElement.lang = resolvedLang;
 
     document.title = title;
 
@@ -53,18 +67,23 @@ export default function SEO({
 
     meta("description", description);
     meta("robots", robots);
+    meta("author", siteName);
 
     // OpenGraph
     meta("og:type", type, "property");
     meta("og:title", title, "property");
+    meta("og:site_name", siteName, "property");
     meta("og:description", description, "property");
     if (canonical) meta("og:url", canonical, "property");
     if (ogImage) meta("og:image", ogImage, "property");
+    if (ogImage) meta("og:image:alt", imageAlt, "property");
+    if (ogLocale) meta("og:locale", ogLocale, "property");
 
     // Twitter
     meta("twitter:card", "summary_large_image");
     meta("twitter:title", title);
     meta("twitter:description", description);
+    meta("twitter:image:alt", imageAlt);
     if (ogImage) meta("twitter:image", ogImage);
 
     // JSON-LD
@@ -79,7 +98,7 @@ export default function SEO({
         .querySelectorAll('[data-seo-dynamic="true"]')
         .forEach((n) => n.remove());
     };
-  }, [title, description, path, image, type, noindex, JSON.stringify(jsonLd)]);
+  }, [title, description, path, image, type, noindex, lang, imageAlt, siteName, JSON.stringify(jsonLd)]);
 
   return null;
 }

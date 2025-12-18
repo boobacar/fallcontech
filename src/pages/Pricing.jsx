@@ -118,14 +118,6 @@ const Pricing = () => {
           >
             <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('pricing.pageTitle')}</h1>
             <p className="text-xl text-foreground/80">{t('pricing.lead')}</p>
-            <div className="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-black/80 text-sm text-white shadow-lg border border-yellow-400/70">
-              <span className="text-xs font-semibold uppercase tracking-wide bg-gradient-to-r from-yellow-300 to-orange-400 text-black px-2 py-1 rounded-full">
-                {t('promo.blackFriday.badge')}
-              </span>
-              <span className="text-xs sm:text-sm">
-                {t('promo.blackFriday.text')}
-              </span>
-            </div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-20 items-center">

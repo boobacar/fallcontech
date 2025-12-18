@@ -185,12 +185,6 @@
   .vt-title { view-transition-name: page-title; }
   .vt-hero-shape { view-transition-name: hero-shape; }
   .vt-hero-bg { view-transition-name: hero-bg; }
-
-  /* Thin promo marquee strip */
-  .promo-marquee {
-    display: inline-block;
-    animation: promo-marquee 20s linear infinite;
-  }
 }
 
 html {
@@ -257,11 +251,6 @@ html {
 
 @keyframes glow-rotate {
   to { transform: rotate(360deg); }
-}
-
-@keyframes promo-marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {

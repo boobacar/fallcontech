@@ -23,6 +23,11 @@ const ArticlePaymentMachine = lazy(() => import("@/pages/articles/ArticlePayment
 const ArticleIoTEmbedded = lazy(() => import("@/pages/articles/ArticleIoTEmbedded"));
 const ArticlePaymentGatewaysIoT = lazy(() => import("@/pages/articles/ArticlePaymentGatewaysIoT"));
 const ArticleTelemetry = lazy(() => import("@/pages/articles/ArticleTelemetry"));
+const ArticleSiteVitrineSeo = lazy(() => import("@/pages/articles/ArticleSiteVitrineSeo"));
+const ArticleEcommerceSenegal = lazy(() => import("@/pages/articles/ArticleEcommerceSenegal"));
+const ArticleWorkflowsWhatsapp = lazy(() => import("@/pages/articles/ArticleWorkflowsWhatsapp"));
+const ArticleMaintenanceWordpress = lazy(() => import("@/pages/articles/ArticleMaintenanceWordpress"));
+const ArticleCoreWebVitals = lazy(() => import("@/pages/articles/ArticleCoreWebVitals"));
 // EN articles
 const ArticlePaymentMachineEn = lazy(() => import("@/pages/articles/en/ArticlePaymentMachineEn"));
 const ArticleIoTEmbeddedEn = lazy(() => import("@/pages/articles/en/ArticleIoTEmbeddedEn"));
@@ -84,6 +89,26 @@ function App() {
           <Route
             path="/article/telemetrie-maintenance-predictive-iot-senegal"
             element={<ArticleTelemetry />}
+          />
+          <Route
+            path="/article/refonte-site-vitrine-seo-dakar"
+            element={<ArticleSiteVitrineSeo />}
+          />
+          <Route
+            path="/article/ecommerce-senegal-wave-orange"
+            element={<ArticleEcommerceSenegal />}
+          />
+          <Route
+            path="/article/workflows-whatsapp-crm-senegal"
+            element={<ArticleWorkflowsWhatsapp />}
+          />
+          <Route
+            path="/article/maintenance-wordpress-securite-senegal"
+            element={<ArticleMaintenanceWordpress />}
+          />
+          <Route
+            path="/article/core-web-vitals-afrique"
+            element={<ArticleCoreWebVitals />}
           />
           {/* English versions */}
           <Route

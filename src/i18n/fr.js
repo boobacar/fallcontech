@@ -36,13 +36,6 @@ export default {
       resources: 'Ressources',
     },
   },
-  promo: {
-    blackFriday: {
-      badge: 'Black Friday -20%',
-      text: '20% de réduction sur nos packs sites web et plateformes. Remise appliquée sur devis, sans changer les prix affichés.',
-      cta: 'Profiter de la promo',
-    },
-  },
   case: {
     common: {
       backToWork: 'Retour aux Projets',

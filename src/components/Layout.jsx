@@ -43,6 +43,11 @@ const Layout = ({ children }) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.documentElement.lang = locale === "en" ? "en" : "fr";
+    document.documentElement.dir = "ltr";
+  }, [locale]);
+
   const navLinks = [
     { path: "/", label: t("common.nav.home") },
     { path: "/services", label: t("common.nav.services") },
@@ -108,7 +113,11 @@ const Layout = ({ children }) => {
         </filter>
       </svg>
       {/* Site-wide defaults + structured data */}
-      <SEO path={location.pathname} jsonLd={[orgJsonLd, webSiteJsonLd]} />
+      <SEO
+        path={location.pathname}
+        lang={locale}
+        jsonLd={[orgJsonLd, webSiteJsonLd]}
+      />
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -118,23 +127,6 @@ const Layout = ({ children }) => {
             : "bg-transparent"
         }`}
       >
-        {/* Thin Black Friday promo strip in its own full-width div, no margin/padding */}
-        <div>
-          <Link
-            to="/pricing"
-            className="block w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white"
-          >
-            <div className="h-8 flex items-center overflow-hidden">
-              <div className="promo-marquee whitespace-nowrap text-[0.7rem] sm:text-xs md:text-[0.8rem] text-center">
-                {t("promo.blackFriday.badge")} — {t("promo.blackFriday.text")} •{" "}
-                {t("promo.blackFriday.cta")} —{" "}
-                {t("promo.blackFriday.badge")} — {t("promo.blackFriday.text")} •{" "}
-                {t("promo.blackFriday.cta")}
-              </div>
-            </div>
-          </Link>
-        </div>
-
         <nav className="container mx-auto px-4 py-2 relative">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
