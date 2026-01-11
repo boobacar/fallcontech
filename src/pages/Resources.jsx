@@ -268,6 +268,15 @@ const Resources = () => {
     },
   ];
 
+  const itemsPerPage = 9;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(blogPosts.length / itemsPerPage);
+
+  const paginatedPosts = blogPosts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
     <>
       <SEO
@@ -361,8 +370,8 @@ const Resources = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, idx) => {
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {paginatedPosts.map((post, idx) => {
               const slug = post.link.split("/").pop();
               const map = {
                 "refonte-site-vitrine-seo-dakar": imgSeo,
@@ -440,6 +449,48 @@ const Resources = () => {
               );
             })}
           </div>
+
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4">
+              <Button
+                variant="outline"
+                disabled={currentPage === 1}
+                onClick={() => {
+                  setCurrentPage((p) => p - 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Previous
+              </Button>
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (page) => (
+                    <Button
+                      key={page}
+                      variant={currentPage === page ? "default" : "ghost"}
+                      onClick={() => {
+                        setCurrentPage(page);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="w-10 h-10 p-0"
+                    >
+                      {page}
+                    </Button>
+                  )
+                )}
+              </div>
+              <Button
+                variant="outline"
+                disabled={currentPage === totalPages}
+                onClick={() => {
+                  setCurrentPage((p) => p + 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Next
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </>
