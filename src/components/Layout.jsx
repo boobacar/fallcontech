@@ -376,7 +376,7 @@ const Layout = ({ children }) => {
                 {t("common.footer.contact")}
               </span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>Dakar – New York</li>
+                <li>Dakar</li>
                 <li>info@fallcontech.com</li>
                 <li>+221 77 626 00 20</li>
                 <li>+221 77 483 75 76</li>

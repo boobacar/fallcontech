@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -18,9 +18,12 @@ import {
   TestingLogo,
 } from "@/components/TechIcons";
 import clinicImg from "@/assets/clinic-dabia.webp";
-import miroirImg from "@/assets/miroir-foncier.webp";
-import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
-import imgIoT from "@/assets/articles/iot-esp32.svg";
+
+import imgTroubleshooting from "@/assets/articles/troubleshooting.png";
+import imgGeneralist from "@/assets/articles/it-support.png";
+import imgMaintenance from "@/assets/articles/maintenance.png";
+import telimanImg from "@/assets/telimanshare.webp";
+import eaxperienceImg from "@/assets/eaxperience.webp";
 
 const Home = () => {
   const { t, locale } = useI18n();
@@ -60,27 +63,29 @@ const Home = () => {
     },
   ];
 
+  // ... existing imports
+
   const caseStudies = [
+    {
+      title: t("home.caseStudies.eaxperience.title"),
+      result: t("home.caseStudies.eaxperience.result"),
+      description: t("home.caseStudies.eaxperience.description"),
+      link: "/work",
+      img: eaxperienceImg,
+    },
+    {
+      title: t("home.caseStudies.teliman.title"),
+      result: t("home.caseStudies.teliman.result"),
+      description: t("home.caseStudies.teliman.description"),
+      link: "/case-study/telimanshare",
+      img: telimanImg,
+    },
     {
       title: t("home.caseStudies.clinic.title"),
       result: t("home.caseStudies.clinic.result"),
       description: t("home.caseStudies.clinic.description"),
       link: "/case-study/clinic",
       img: clinicImg,
-    },
-    {
-      title: t("home.caseStudies.miroir.title"),
-      result: t("home.caseStudies.miroir.result"),
-      description: t("home.caseStudies.miroir.description"),
-      link: "/case-study/miroir-foncier",
-      img: miroirImg,
-    },
-    {
-      title: t("home.caseStudies.whatsapp.title"),
-      result: t("home.caseStudies.whatsapp.result"),
-      description: t("home.caseStudies.whatsapp.description"),
-      link: "/case-study/whatsapp",
-      img: whatsappImg,
     },
   ];
 
@@ -136,31 +141,54 @@ const Home = () => {
   return (
     <>
       {(() => {
-        const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+        const siteUrl =
+          import.meta.env.VITE_SITE_URL ||
+          (typeof window !== "undefined" ? window.location.origin : "");
         const latestPosts = [
           {
-            title: locale === 'en' ? 'Add mobile payments to a water vending machine (ESP32)' : 'Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)',
-            excerpt: locale === 'en' ? 'Reliable approach, security and go‑live for Wave/OM/Free.' : 'Approche fiable, sécurité et mise en service (Wave/OM/Free).',
-            category: 'IoT',
-            link: locale === 'en'
-              ? '/en/article/esp32-water-vending-mobile-payments-senegal'
-              : '/article/integrer-paiement-machine-eau-esp32-senegal',
+            title:
+              locale === "en"
+                ? "Add mobile payments to a water vending machine (ESP32)"
+                : "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
+            excerpt:
+              locale === "en"
+                ? "Reliable approach, security and go‑live for Wave/OM/Free."
+                : "Approche fiable, sécurité et mise en service (Wave/OM/Free).",
+            category: "IoT",
+            link:
+              locale === "en"
+                ? "/en/article/esp32-water-vending-mobile-payments-senegal"
+                : "/article/integrer-paiement-machine-eau-esp32-senegal",
           },
           {
-            title: locale === 'en' ? 'IoT & embedded development (Arduino/ESP32)' : 'Développement IoT & embarqué (Arduino/ESP32)',
-            excerpt: locale === 'en' ? 'Sensors, control, remote updates and dashboards.' : 'Capteurs, contrôle, mises à jour à distance et tableaux de bord.',
-            category: 'IoT',
-            link: locale === 'en'
-              ? '/en/article/iot-embedded-development-senegal-arduino-esp32'
-              : '/article/developpement-iot-embarque-senegal-arduino-esp32',
+            title:
+              locale === "en"
+                ? "IoT & embedded development (Arduino/ESP32)"
+                : "Développement IoT & embarqué (Arduino/ESP32)",
+            excerpt:
+              locale === "en"
+                ? "Sensors, control, remote updates and dashboards."
+                : "Capteurs, contrôle, mises à jour à distance et tableaux de bord.",
+            category: "IoT",
+            link:
+              locale === "en"
+                ? "/en/article/iot-embedded-development-senegal-arduino-esp32"
+                : "/article/developpement-iot-embarque-senegal-arduino-esp32",
           },
           {
-            title: locale === 'en' ? 'IoT telemetry & predictive maintenance' : 'Télémétrie & maintenance prédictive IoT',
-            excerpt: locale === 'en' ? 'Sensors, alerts and data‑driven decisions to reduce downtime.' : 'Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.',
-            category: 'IoT',
-            link: locale === 'en'
-              ? '/en/article/iot-telemetry-predictive-maintenance-senegal'
-              : '/article/telemetrie-maintenance-predictive-iot-senegal',
+            title:
+              locale === "en"
+                ? "IoT telemetry & predictive maintenance"
+                : "Télémétrie & maintenance prédictive IoT",
+            excerpt:
+              locale === "en"
+                ? "Sensors, alerts and data‑driven decisions to reduce downtime."
+                : "Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.",
+            category: "IoT",
+            link:
+              locale === "en"
+                ? "/en/article/iot-telemetry-predictive-maintenance-senegal"
+                : "/article/telemetrie-maintenance-predictive-iot-senegal",
           },
         ];
         const itemListJsonLd = {
@@ -170,7 +198,7 @@ const Home = () => {
             "@type": "ListItem",
             position: i + 1,
             url: siteUrl + p.link,
-            item: { "@type": "BlogPosting", name: p.title }
+            item: { "@type": "BlogPosting", name: p.title },
           })),
         };
         return (
@@ -178,7 +206,43 @@ const Home = () => {
             path="/"
             title={t("home.seo.title")}
             description={t("home.seo.description")}
-            jsonLd={[itemListJsonLd]}
+            jsonLd={[
+              itemListJsonLd,
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                name: "Fallcon Tech",
+                image: siteUrl + "/assets/logo.webp",
+                "@id": siteUrl,
+                url: siteUrl,
+                telephone: "+221776260020",
+                priceRange: "$$",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Dakar",
+                  addressLocality: "Dakar",
+                  addressCountry: "SN",
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: 14.7167,
+                  longitude: -17.4677,
+                },
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ],
+                  opens: "09:00",
+                  closes: "18:00",
+                },
+              },
+            ]}
           />
         );
       })()}
@@ -419,10 +483,10 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              {t('home.latest.title')}
+              {t("home.latest.title")}
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              {t('home.latest.subtitle')}
+              {t("home.latest.subtitle")}
             </p>
           </motion.div>
 
@@ -430,22 +494,25 @@ const Home = () => {
             {(() => {
               const posts = [
                 {
-                  title: locale === 'en' ? 'Add mobile payments to a water vending machine (ESP32)' : 'Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)',
-                  excerpt: locale === 'en' ? 'Reliable approach, security and go‑live for Wave/OM/Free.' : 'Approche fiable, sécurité et mise en service (Wave/OM/Free).',
-                  category: 'IoT',
-                  link: locale === 'en' ? '/en/article/esp32-water-vending-mobile-payments-senegal' : '/article/integrer-paiement-machine-eau-esp32-senegal',
+                  title: t("articles.troubleshooting.title"),
+                  excerpt: t("articles.troubleshooting.seo.description"),
+                  category: "Information",
+                  link: "/article/depannage-informatique-5-problemes-courants",
+                  img: imgTroubleshooting,
                 },
                 {
-                  title: locale === 'en' ? 'IoT & embedded development (Arduino/ESP32)' : 'Développement IoT & embarqué (Arduino/ESP32)',
-                  excerpt: locale === 'en' ? 'Sensors, control, remote updates and dashboards.' : 'Capteurs, contrôle, mises à jour à distance et tableaux de bord.',
-                  category: 'IoT',
-                  link: locale === 'en' ? '/en/article/iot-embedded-development-senegal-arduino-esp32' : '/article/developpement-iot-embarque-senegal-arduino-esp32',
+                  title: t("articles.generalist.title"),
+                  excerpt: t("articles.generalist.seo.description"),
+                  category: "Strategy",
+                  link: "/article/pourquoi-informaticien-generaliste-dakar",
+                  img: imgGeneralist,
                 },
                 {
-                  title: locale === 'en' ? 'IoT telemetry & predictive maintenance' : 'Télémétrie & maintenance prédictive IoT',
-                  excerpt: locale === 'en' ? 'Sensors, alerts and data‑driven decisions to reduce downtime.' : 'Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.',
-                  category: 'IoT',
-                  link: locale === 'en' ? '/en/article/iot-telemetry-predictive-maintenance-senegal' : '/article/telemetrie-maintenance-predictive-iot-senegal',
+                  title: t("articles.maintenance.title"),
+                  excerpt: t("articles.maintenance.seo.description"),
+                  category: "Maintenance",
+                  link: "/article/maintenance-nettoyage-pc-senegal",
+                  img: imgMaintenance,
                 },
               ];
               return posts.map((post, idx) => (
@@ -462,7 +529,7 @@ const Home = () => {
                       <img
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        src={imgIoT}
+                        src={post.img}
                         loading="lazy"
                         decoding="async"
                       />
@@ -482,7 +549,8 @@ const Home = () => {
                       </p>
                       <div className="flex items-center justify-between">
                         <span className="text-blue-500 font-semibold text-sm flex items-center gap-1">
-                          {t('resources.latest.readMore')} <ArrowRight size={16} />
+                          {t("resources.latest.readMore")}{" "}
+                          <ArrowRight size={16} />
                         </span>
                       </div>
                     </div>
@@ -714,7 +782,7 @@ function MorphingShape() {
     }
     raf.current = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(raf.current);
-  }, [reduce]);
+  }, [reduce, shapes]);
 
   return (
     <svg

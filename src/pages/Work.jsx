@@ -10,6 +10,7 @@ import telimanImg from "@/assets/telimanshare.webp";
 import miroirImg from "@/assets/miroir-foncier.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 import iotImg from "@/assets/articles/iot-esp32.svg";
+import eaxperienceImg from "../assets/eaxperience.webp";
 
 const Work = () => {
   const { t, locale } = useI18n();
@@ -68,6 +69,20 @@ const Work = () => {
       ],
       link: "/case-study/whatsapp",
       img: whatsappImg,
+    },
+    {
+      title: t("work.projects.eaxperience.title"),
+      category: t("work.projects.eaxperience.category"),
+      description: t("work.projects.eaxperience.description"),
+      result: t("work.projects.eaxperience.result"),
+      tags: [
+        t("work.projects.eaxperience.tags.0"),
+        t("work.projects.eaxperience.tags.1"),
+        t("work.projects.eaxperience.tags.2"),
+      ],
+      link: "#", // No case study yet, maybe link to site directly or leave empty
+      img: eaxperienceImg, // Placeholder image - User should update this
+      site: "https://www.eaxperience.com",
     },
   ];
 
@@ -220,37 +235,43 @@ const Work = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
-              {t('work.iotMini.title')}
+              {t("work.iotMini.title")}
             </h2>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-              {t('work.iotMini.subtitle')}
+              {t("work.iotMini.subtitle")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[0,1,2].map((i) => {
+            {[0, 1, 2].map((i) => {
               const items = [
                 {
-                  title: t('work.iotMini.items.0.title'),
-                  desc: t('work.iotMini.items.0.desc'),
-                  linkFr: '/article/integrer-paiement-machine-eau-esp32-senegal',
-                  linkEn: '/en/article/esp32-water-vending-mobile-payments-senegal',
+                  title: t("work.iotMini.items.0.title"),
+                  desc: t("work.iotMini.items.0.desc"),
+                  linkFr:
+                    "/article/integrer-paiement-machine-eau-esp32-senegal",
+                  linkEn:
+                    "/en/article/esp32-water-vending-mobile-payments-senegal",
                 },
                 {
-                  title: t('work.iotMini.items.1.title'),
-                  desc: t('work.iotMini.items.1.desc'),
-                  linkFr: '/article/developpement-iot-embarque-senegal-arduino-esp32',
-                  linkEn: '/en/article/iot-embedded-development-senegal-arduino-esp32',
+                  title: t("work.iotMini.items.1.title"),
+                  desc: t("work.iotMini.items.1.desc"),
+                  linkFr:
+                    "/article/developpement-iot-embarque-senegal-arduino-esp32",
+                  linkEn:
+                    "/en/article/iot-embedded-development-senegal-arduino-esp32",
                 },
                 {
-                  title: t('work.iotMini.items.2.title'),
-                  desc: t('work.iotMini.items.2.desc'),
-                  linkFr: '/article/telemetrie-maintenance-predictive-iot-senegal',
-                  linkEn: '/en/article/iot-telemetry-predictive-maintenance-senegal',
+                  title: t("work.iotMini.items.2.title"),
+                  desc: t("work.iotMini.items.2.desc"),
+                  linkFr:
+                    "/article/telemetrie-maintenance-predictive-iot-senegal",
+                  linkEn:
+                    "/en/article/iot-telemetry-predictive-maintenance-senegal",
                 },
               ];
               const { title, desc, linkFr, linkEn } = items[i];
-              const href = locale === 'en' ? linkEn : linkFr;
+              const href = locale === "en" ? linkEn : linkFr;
               return (
                 <motion.article
                   key={i}
@@ -269,10 +290,12 @@ const Work = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">{title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                      {title}
+                    </h3>
                     <p className="text-muted-foreground text-sm mb-4">{desc}</p>
                     <Button asChild variant="outline" className="w-full">
-                      <Link to={href}>{t('work.viewCaseStudy')}</Link>
+                      <Link to={href}>{t("work.viewCaseStudy")}</Link>
                     </Button>
                   </div>
                 </motion.article>
