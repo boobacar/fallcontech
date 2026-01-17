@@ -1,5 +1,5 @@
+import { Helmet } from "react-helmet-async";
 import siteLogo from "@/assets/logo.webp";
-import { useEffect } from "react";
 
 function absoluteUrl(path) {
   if (!path) return undefined;
@@ -9,29 +9,6 @@ function absoluteUrl(path) {
   if (!base) return path;
   if (path.startsWith("http")) return path;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
-}
-
-function setTag(tagName, attrs) {
-  const el = document.createElement(tagName);
-  Object.entries(attrs).forEach(([k, v]) => {
-    if (v != null) el.setAttribute(k, String(v));
-  });
-  el.setAttribute("data-seo-dynamic", "true");
-  document.head.appendChild(el);
-  return el;
-}
-
-function meta(name, content, attr = "name") {
-  if (!content) return;
-  setTag("meta", { [attr]: name, content });
-}
-
-function ogLocaleFromLang(lang) {
-  if (!lang) return undefined;
-  const normalized = lang.toLowerCase();
-  if (normalized.startsWith("fr")) return "fr_FR";
-  if (normalized.startsWith("en")) return "en_US";
-  return undefined;
 }
 
 export default function SEO({
@@ -46,59 +23,45 @@ export default function SEO({
   siteName = "Fallcon Tech",
   jsonLd,
 }) {
-  useEffect(() => {
-    if (typeof document === "undefined") return;
+  const canonical = absoluteUrl(path || "/");
+  const ogImage = absoluteUrl(image);
+  const robots = noindex ? "noindex, nofollow" : "index, follow";
 
-    // Clear previous dynamic tags
-    document.head
-      .querySelectorAll('[data-seo-dynamic="true"]')
-      .forEach((n) => n.remove());
+  // Language management
+  const htmlAttributes = { lang: lang || "fr" };
 
-    const canonical = absoluteUrl(path || "/");
-    const ogImage = absoluteUrl(image);
-    const robots = noindex ? "noindex, nofollow" : "index, follow";
-    const ogLocale = ogLocaleFromLang(lang);
-    const resolvedLang = lang || document.documentElement.lang || "fr";
-    document.documentElement.lang = resolvedLang;
+  return (
+    <Helmet htmlAttributes={htmlAttributes}>
+      {/* Standard Metadata */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content={robots} />
+      <meta name="author" content={siteName} />
+      {canonical && <link rel="canonical" href={canonical} />}
 
-    document.title = title;
+      {/* Open Graph */}
+      <meta property="og:type" content={type} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={siteName} />
+      {canonical && <meta property="og:url" content={canonical} />}
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      {ogImage && <meta property="og:image:alt" content={imageAlt} />}
 
-    if (canonical) setTag("link", { rel: "canonical", href: canonical });
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image:alt" content={imageAlt} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-    meta("description", description);
-    meta("robots", robots);
-    meta("author", siteName);
-
-    // OpenGraph
-    meta("og:type", type, "property");
-    meta("og:title", title, "property");
-    meta("og:site_name", siteName, "property");
-    meta("og:description", description, "property");
-    if (canonical) meta("og:url", canonical, "property");
-    if (ogImage) meta("og:image", ogImage, "property");
-    if (ogImage) meta("og:image:alt", imageAlt, "property");
-    if (ogLocale) meta("og:locale", ogLocale, "property");
-
-    // Twitter
-    meta("twitter:card", "summary_large_image");
-    meta("twitter:title", title);
-    meta("twitter:description", description);
-    meta("twitter:image:alt", imageAlt);
-    if (ogImage) meta("twitter:image", ogImage);
-
-    // JSON-LD
-    const jsonArray = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
-    jsonArray.forEach((obj) => {
-      const script = setTag("script", { type: "application/ld+json" });
-      script.textContent = JSON.stringify(obj);
-    });
-
-    return () => {
-      document.head
-        .querySelectorAll('[data-seo-dynamic="true"]')
-        .forEach((n) => n.remove());
-    };
-  }, [title, description, path, image, type, noindex, lang, imageAlt, siteName, JSON.stringify(jsonLd)]);
-
-  return null;
+      {/* JSON-LD Structured Data */}
+      {jsonLd &&
+        (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((data, i) => (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(data)}
+          </script>
+        ))}
+    </Helmet>
+  );
 }
