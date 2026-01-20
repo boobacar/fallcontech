@@ -11,10 +11,25 @@ import miroirImg from "@/assets/miroir-foncier.webp";
 import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 import iotImg from "@/assets/articles/iot-esp32.svg";
 import eaxperienceImg from "../assets/eaxperience.webp";
+import hgCuisineImg from "@/assets/hg-cuisine.webp";
 
 const Work = () => {
   const { t, locale } = useI18n();
   const projects = [
+    {
+      title: t("work.projects.hgcuisine.title"),
+      category: t("work.projects.hgcuisine.category"),
+      description: t("work.projects.hgcuisine.description"),
+      result: t("work.projects.hgcuisine.result"),
+      tags: [
+        t("work.projects.hgcuisine.tags.0"),
+        t("work.projects.hgcuisine.tags.1"),
+        t("work.projects.hgcuisine.tags.2"),
+      ],
+      link: "/case-study/hg-cuisine",
+      img: hgCuisineImg,
+      site: "https://hg-cuisine.vercel.app",
+    },
     {
       title: t("work.projects.clinic.title"),
       category: t("work.projects.clinic.category"),

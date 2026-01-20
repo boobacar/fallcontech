@@ -264,6 +264,47 @@ export default {
         primary: "Démarrer votre projet",
       },
     },
+    hgcuisine: {
+      seo: {
+        title: "Étude de cas: HG Cuisine — Expérience Culinaire",
+        description:
+          "Site vitrine élégant pour services de chef privé et traiteur haut de gamme.",
+        headlineDescription:
+          "Une vitrine digitale pour l'excellence culinaire.",
+      },
+      title: "HG Cuisine",
+      subtitle: "L'art de la table et de l'hospitalité moderne",
+      alt: { hero: "Présentation des plats HG Cuisine" },
+      metrics: {
+        branding: "Identité visuelle premium",
+        ux: "Navigation fluide & immersive",
+        conversion: "Appels à l'action clairs",
+      },
+      challenge:
+        "Le Chef Henry Ghanney avait besoin d'une plateforme numérique à la hauteur de ses services culinaires d'exception. Il fallait traduire l'élégance, le goût et le raffinement de sa cuisine à travers un écran, tout en permettant aux clients potentiels de comprendre facilement l'offre de 'Private Dining' et 'Bespoke Catering'.",
+      solutionIntro:
+        "Nous avons conçu un site vitrine minimaliste et sophistiqué qui met l'accent sur l'esthétique visuelle et la clarté de l'offre :",
+      features: [
+        "Design minimaliste 'Luxury Lifestyle' (Ivoire, Or, Noir)",
+        "Mise en avant de photographies culinaires haute définition",
+        "Structure de navigation intuitive (About, Services, Menus)",
+        "Typographie élégante renforçant l'image de marque",
+        "Section 'Services' détaillée pour différencier les offres",
+        "Optimisation mobile pour une consultation aisée",
+      ],
+      results: [
+        "Une présence en ligne qui reflète parfaitement le positionnement haut de gamme",
+        "Meilleure compréhension des services par les prospects",
+        "Augmentation de la crédibilité et de la confiance client",
+        "Une plateforme facile à partager pour le bouche-à-oreille",
+      ],
+      cta: {
+        title: "Vous visez l'excellence ?",
+        subtitle:
+          "Créons une expérience digitale aussi raffinée que vos services",
+        primary: "Discuter de votre vision",
+      },
+    },
   },
   home: {
     seo: {
@@ -402,7 +443,7 @@ export default {
         },
         {
           q: "Quelles sont vos fourchettes de prix ?",
-          a: "Sites de démarrage à partir de 350 000 F CFA, sites professionnels à partir de 1 000 000 F CFA, plateformes personnalisées à partir de 2 500 000 F CFA.",
+          a: "Sites de démarrage à partir de 250 000 F CFA, sites professionnels à partir de 600 000 F CFA, plateformes personnalisées à partir de 1 500 000 F CFA.",
         },
         {
           q: "Proposez-vous des révisions ?",
@@ -522,6 +563,13 @@ export default {
           "Site de coaching sportif personnel et programmes sur mesure",
         result: "Plateforme moderne pour l'accompagnement sportif",
         tags: ["React", "Next.js", "Sport"],
+      },
+      hgcuisine: {
+        title: "HG Cuisine",
+        category: "Restauration / Traiteur",
+        description: "Vitrine élégante pour un chef privé et service traiteur",
+        result: "Branding premium et présentation immersive des menus",
+        tags: ["React", "Design", "Branding"],
       },
     },
   },
@@ -820,7 +868,7 @@ export default {
     seo: {
       title: "Tarifs développement web au Sénégal — Packs clairs",
       description:
-        "Sites dès 350 000 F CFA, Business dès 1 000 000 F CFA, solutions sur mesure dès 2.5M. Tarifs transparents et délais rapides.",
+        "Sites dès 250 000 F CFA, Business dès 600 000 F CFA, solutions sur mesure dès 1.5M. Tarifs transparents et délais rapides.",
     },
     pageTitle: "Tarification transparente",
     lead: "Des forfaits clairs, sans frais cachés. Choisissez ce qui correspond à vos objectifs et à votre budget.",
@@ -829,7 +877,7 @@ export default {
     plans: {
       starter: {
         name: "Site Starter",
-        price: "350 000",
+        price: "250 000",
         description:
           "Parfait pour les petites entreprises et les professionnels",
         features: [
@@ -845,7 +893,7 @@ export default {
       },
       business: {
         name: "Site Business",
-        price: "1 000 000",
+        price: "600 000",
         description: "Idéal pour les entreprises en croissance",
         features: [
           "Site web de 5‑7 pages",
@@ -862,7 +910,7 @@ export default {
       },
       growth: {
         name: "Forfait Croissance",
-        price: "2.5M+",
+        price: "1.5M+",
         description: "Solutions personnalisées pour les projets ambitieux",
         features: [
           "Portail/plateforme sur mesure",
@@ -881,7 +929,7 @@ export default {
     maintenancePlans: {
       basic: {
         name: "Basique",
-        priceLabel: "35 000",
+        priceLabel: "25 000",
         features: [
           "Mises à jour mensuelles",
           "Patchs de sécurité",
@@ -891,7 +939,7 @@ export default {
       },
       pro: {
         name: "Pro",
-        priceLabel: "75 000",
+        priceLabel: "50 000",
         features: [
           "Toutes les fonctionnalités Basique",
           "Suivi des performances",

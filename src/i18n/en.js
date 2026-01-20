@@ -253,6 +253,46 @@ export default {
         primary: "Start your project",
       },
     },
+    hgcuisine: {
+      seo: {
+        title: "Case Study: HG Cuisine — Culinary Experience",
+        description:
+          "Elegant showcase site for private chef and high-end catering services.",
+        headlineDescription: "A digital showcase for culinary excellence.",
+      },
+      title: "HG Cuisine",
+      subtitle: "The art of dining and modern hospitality",
+      alt: { hero: "HG Cuisine dish presentation" },
+      metrics: {
+        branding: "Premium Visual Identity",
+        ux: "Fluid & Immersive Navigation",
+        conversion: "Clear Calls to Action",
+      },
+      challenge:
+        "Chef Henry Ghanney needed a digital platform worthy of his exceptional culinary services. The goal was to translate the elegance, taste, and refinement of his cuisine through a screen, while making it easy for potential clients to understand the 'Private Dining' and 'Bespoke Catering' offerings.",
+      solutionIntro:
+        "We designed a minimalist and sophisticated showcase site that emphasizes visual aesthetics and clarity of the offer:",
+      features: [
+        "Minimalist 'Luxury Lifestyle' Design (Ivory, Gold, Ink)",
+        "Showcasing high-definition food photography",
+        "Intuitive navigation structure (About, Services, Menus)",
+        "Elegant typography reinforcing the brand image",
+        "Detailed 'Services' section to differentiate offerings",
+        "Mobile optimization for easy viewing",
+      ],
+      results: [
+        "An online presence that perfectly reflects the high-end positioning",
+        "Better understanding of services by prospects",
+        "Increased credibility and client trust",
+        "A platform easy to share for word-of-mouth",
+      ],
+      cta: {
+        title: "Aiming for excellence?",
+        subtitle:
+          "Let's create a digital experience as refined as your services",
+        primary: "Discuss your vision",
+      },
+    },
   },
   home: {
     seo: {
@@ -379,7 +419,7 @@ export default {
         },
         {
           q: "What are your price ranges?",
-          a: "Starter sites from about $580, business sites from about $1,700, custom platforms from about $4,200.",
+          a: "Starter sites from about $400, business sites from about $1,000, custom platforms from about $2,500.",
         },
         {
           q: "Do you offer revisions?",
@@ -387,7 +427,7 @@ export default {
         },
         {
           q: "What about maintenance?",
-          a: "Monthly maintenance plans are available starting at about $60/month.",
+          a: "Monthly maintenance plans are available starting at about $40/month.",
         },
         {
           q: "Will my site be optimized for SEO?",
@@ -494,6 +534,13 @@ export default {
         description: "Personal sports coaching website and tailored programs",
         result: "Modern platform for sports training",
         tags: ["React", "Next.js", "Fitness"],
+      },
+      hgcuisine: {
+        title: "HG Cuisine",
+        category: "Dining / Catering",
+        description: "Elegant showcase for a private chef and catering service",
+        result: "Premium branding and immersive menu presentation",
+        tags: ["React", "Design", "Branding"],
       },
     },
   },
@@ -787,7 +834,7 @@ export default {
     seo: {
       title: "Web development pricing in Senegal — Clear plans",
       description:
-        "Starter sites from about $580, Business from about $1,700, custom solutions from about $4,200. Transparent pricing and fast timelines.",
+        "Starter sites from about $400, Business from about $1,000, custom solutions from about $2,500. Transparent pricing and fast timelines.",
     },
     pageTitle: "Transparent Pricing",
     lead: "Clear plans, no hidden fees. Choose what fits your goals and budget.",
@@ -796,7 +843,7 @@ export default {
     plans: {
       starter: {
         name: "Starter Site",
-        price: "$580",
+        price: "$400",
         description: "Perfect for small businesses and professionals",
         features: [
           "One‑page responsive website",
@@ -811,7 +858,7 @@ export default {
       },
       business: {
         name: "Business Site",
-        price: "$1,700",
+        price: "$1,000",
         description: "Ideal for growing companies",
         features: [
           "5–7 page website",
@@ -828,7 +875,7 @@ export default {
       },
       growth: {
         name: "Growth Package",
-        price: "$4,200+",
+        price: "$2,500+",
         description: "Custom solutions for ambitious projects",
         features: [
           "Custom portal/platform",
@@ -847,7 +894,7 @@ export default {
     maintenancePlans: {
       basic: {
         name: "Basic",
-        priceLabel: "60",
+        priceLabel: "40",
         features: [
           "Monthly updates",
           "Security patches",
@@ -857,7 +904,7 @@ export default {
       },
       pro: {
         name: "Pro",
-        priceLabel: "125",
+        priceLabel: "85",
         features: [
           "Everything in Basic",
           "Performance monitoring",

@@ -9,17 +9,20 @@ const About = lazy(() => import("@/pages/About"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Contact = lazy(() => import("@/pages/Contact"));
-const CaseStudyClinic = lazy(() =>
-  import("@/pages/case-studies/CaseStudyClinic")
+const CaseStudyClinic = lazy(
+  () => import("@/pages/case-studies/CaseStudyClinic"),
 );
-const CaseStudyTelimanShare = lazy(() =>
-  import("@/pages/case-studies/CaseStudyTelimanShare")
+const CaseStudyTelimanShare = lazy(
+  () => import("@/pages/case-studies/CaseStudyTelimanShare"),
 );
-const CaseStudyWhatsapp = lazy(() =>
-  import("@/pages/case-studies/CaseStudyWhatsapp")
+const CaseStudyWhatsapp = lazy(
+  () => import("@/pages/case-studies/CaseStudyWhatsapp"),
 );
-const CaseStudyMiroirFoncier = lazy(() =>
-  import("@/pages/case-studies/CaseStudyMiroirFoncier")
+const CaseStudyMiroirFoncier = lazy(
+  () => import("@/pages/case-studies/CaseStudyMiroirFoncier"),
+);
+const CaseStudyHgCuisine = lazy(
+  () => import("@/pages/case-studies/CaseStudyHgCuisine"),
 );
 const ArticleBooking = lazy(() => import("@/pages/articles/ArticleBooking"));
 const ArticleWhatsapp = lazy(() => import("@/pages/articles/ArticleWhatsapp"));
@@ -27,87 +30,87 @@ const ArticleMvp = lazy(() => import("@/pages/articles/ArticleMvp"));
 const ArticleSeo = lazy(() => import("@/pages/articles/ArticleSeo"));
 const ArticleMobile = lazy(() => import("@/pages/articles/ArticleMobile"));
 const ArticleStack = lazy(() => import("@/pages/articles/ArticleStack"));
-const ArticlePaymentMachine = lazy(() =>
-  import("@/pages/articles/ArticlePaymentMachine")
+const ArticlePaymentMachine = lazy(
+  () => import("@/pages/articles/ArticlePaymentMachine"),
 );
-const ArticleIoTEmbedded = lazy(() =>
-  import("@/pages/articles/ArticleIoTEmbedded")
+const ArticleIoTEmbedded = lazy(
+  () => import("@/pages/articles/ArticleIoTEmbedded"),
 );
-const ArticlePaymentGatewaysIoT = lazy(() =>
-  import("@/pages/articles/ArticlePaymentGatewaysIoT")
+const ArticlePaymentGatewaysIoT = lazy(
+  () => import("@/pages/articles/ArticlePaymentGatewaysIoT"),
 );
-const ArticleTelemetry = lazy(() =>
-  import("@/pages/articles/ArticleTelemetry")
+const ArticleTelemetry = lazy(
+  () => import("@/pages/articles/ArticleTelemetry"),
 );
-const ArticleSiteVitrineSeo = lazy(() =>
-  import("@/pages/articles/ArticleSiteVitrineSeo")
+const ArticleSiteVitrineSeo = lazy(
+  () => import("@/pages/articles/ArticleSiteVitrineSeo"),
 );
-const ArticleEcommerceSenegal = lazy(() =>
-  import("@/pages/articles/ArticleEcommerceSenegal")
+const ArticleEcommerceSenegal = lazy(
+  () => import("@/pages/articles/ArticleEcommerceSenegal"),
 );
-const ArticleWorkflowsWhatsapp = lazy(() =>
-  import("@/pages/articles/ArticleWorkflowsWhatsapp")
+const ArticleWorkflowsWhatsapp = lazy(
+  () => import("@/pages/articles/ArticleWorkflowsWhatsapp"),
 );
-const ArticleMaintenanceWordpress = lazy(() =>
-  import("@/pages/articles/ArticleMaintenanceWordpress")
+const ArticleMaintenanceWordpress = lazy(
+  () => import("@/pages/articles/ArticleMaintenanceWordpress"),
 );
-const ArticleCoreWebVitals = lazy(() =>
-  import("@/pages/articles/ArticleCoreWebVitals")
+const ArticleCoreWebVitals = lazy(
+  () => import("@/pages/articles/ArticleCoreWebVitals"),
 );
-const ArticleTroubleshooting = lazy(() =>
-  import("@/pages/articles/ArticleTroubleshooting")
+const ArticleTroubleshooting = lazy(
+  () => import("@/pages/articles/ArticleTroubleshooting"),
 );
-const ArticleGeneralistIT = lazy(() =>
-  import("@/pages/articles/ArticleGeneralistIT")
+const ArticleGeneralistIT = lazy(
+  () => import("@/pages/articles/ArticleGeneralistIT"),
 );
-const ArticleMaintenancePC = lazy(() =>
-  import("@/pages/articles/ArticleMaintenancePC")
+const ArticleMaintenancePC = lazy(
+  () => import("@/pages/articles/ArticleMaintenancePC"),
 );
-const ArticleCybersecurity = lazy(() =>
-  import("@/pages/articles/ArticleCybersecurity")
+const ArticleCybersecurity = lazy(
+  () => import("@/pages/articles/ArticleCybersecurity"),
 );
-const ArticleHardwareChoice = lazy(() =>
-  import("@/pages/articles/ArticleHardwareChoice")
+const ArticleHardwareChoice = lazy(
+  () => import("@/pages/articles/ArticleHardwareChoice"),
 );
-const ArticleBackupData = lazy(() =>
-  import("@/pages/articles/ArticleBackupData")
+const ArticleBackupData = lazy(
+  () => import("@/pages/articles/ArticleBackupData"),
 );
 // EN articles
-const ArticlePaymentMachineEn = lazy(() =>
-  import("@/pages/articles/en/ArticlePaymentMachineEn")
+const ArticlePaymentMachineEn = lazy(
+  () => import("@/pages/articles/en/ArticlePaymentMachineEn"),
 );
-const ArticleIoTEmbeddedEn = lazy(() =>
-  import("@/pages/articles/en/ArticleIoTEmbeddedEn")
+const ArticleIoTEmbeddedEn = lazy(
+  () => import("@/pages/articles/en/ArticleIoTEmbeddedEn"),
 );
-const ArticlePaymentGatewaysIoTEn = lazy(() =>
-  import("@/pages/articles/en/ArticlePaymentGatewaysIoTEn")
+const ArticlePaymentGatewaysIoTEn = lazy(
+  () => import("@/pages/articles/en/ArticlePaymentGatewaysIoTEn"),
 );
-const ArticleTelemetryEn = lazy(() =>
-  import("@/pages/articles/en/ArticleTelemetryEn")
+const ArticleTelemetryEn = lazy(
+  () => import("@/pages/articles/en/ArticleTelemetryEn"),
 );
 
-const ArticleElectricity = lazy(() =>
-  import("@/pages/articles/ArticleElectricity")
+const ArticleElectricity = lazy(
+  () => import("@/pages/articles/ArticleElectricity"),
 );
 const ArticleInternet = lazy(() => import("@/pages/articles/ArticleInternet"));
 const ArticleScams = lazy(() => import("@/pages/articles/ArticleScams"));
-const ArticleOriginalHardware = lazy(() =>
-  import("@/pages/articles/ArticleOriginalHardware")
+const ArticleOriginalHardware = lazy(
+  () => import("@/pages/articles/ArticleOriginalHardware"),
 );
 const ArticlePOS = lazy(() => import("@/pages/articles/ArticlePOS"));
 
-const ArticleChoosingDev = lazy(() =>
-  import("@/pages/articles/ArticleChoosingDev")
+const ArticleChoosingDev = lazy(
+  () => import("@/pages/articles/ArticleChoosingDev"),
 );
-const ArticleFreelanceAgency = lazy(() =>
-  import("@/pages/articles/ArticleFreelanceAgency")
+const ArticleFreelanceAgency = lazy(
+  () => import("@/pages/articles/ArticleFreelanceAgency"),
 );
 const ArticleITRole = lazy(() => import("@/pages/articles/ArticleITRole"));
-const ArticleWebsiteCost = lazy(() =>
-  import("@/pages/articles/ArticleWebsiteCost")
+const ArticleWebsiteCost = lazy(
+  () => import("@/pages/articles/ArticleWebsiteCost"),
 );
-const ArticleITSupport = lazy(() =>
-  import("@/pages/articles/ArticleITSupport")
+const ArticleITSupport = lazy(
+  () => import("@/pages/articles/ArticleITSupport"),
 );
 
 function App() {
@@ -137,6 +140,10 @@ function App() {
           <Route
             path="/case-study/miroir-foncier"
             element={<CaseStudyMiroirFoncier />}
+          />
+          <Route
+            path="/case-study/hg-cuisine"
+            element={<CaseStudyHgCuisine />}
           />
           <Route
             path="/article/booking-system-clinics-dakar"
