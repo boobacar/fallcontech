@@ -176,7 +176,20 @@ const Layout = ({ children }) => {
         </nav>
       </motion.header>
 
-      <main className="flex-1 pt-28">{children}</main>
+      <main className="flex-1 pt-28">
+        {location.pathname.startsWith("/article/") && (
+          <div className="container mx-auto px-4 mb-6">
+            <div className="rounded-xl border border-blue-300/30 bg-blue-500/10 p-4 text-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <span>Besoin d'aide pour appliquer ces conseils SEO/Web à votre business ?</span>
+              <div className="flex gap-3">
+                <Link to="/contact" className="text-blue-300 hover:underline">Demander un devis</Link>
+                <a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer" className="text-green-300 hover:underline">Écrire sur WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        )}
+        {children}
+      </main>
 
       <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">

@@ -283,7 +283,13 @@ const Services = () => {
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-primary">{t('services.recentArticles')}</h2>
+          <h2 className="text-3xl font-bold mb-6 text-primary">Pages services SEO locales</h2>
+          <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm mb-8">
+            <li><Link to="/services/creation-site-web-dakar" className="hover:underline">Création de site web à Dakar</Link></li>
+            <li><Link to="/services/agence-seo-senegal" className="hover:underline">Agence SEO au Sénégal</Link></li>
+            <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:underline">Automatisation WhatsApp au Sénégal</Link></li>
+          </ul>
+          <h3 className="text-2xl font-bold mb-4 text-primary">{t('services.recentArticles')}</h3>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
             <li><Link to="/article/integrer-paiement-machine-eau-esp32-senegal" className="hover:underline">Intégrer un paiement mobile sur une machine (ESP32)</Link></li>
             <li><Link to="/article/passerelles-paiement-iot-wave-orange-free" className="hover:underline">Passerelles de paiement pour IoT (Wave/OM/Free)</Link></li>

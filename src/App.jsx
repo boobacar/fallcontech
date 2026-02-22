@@ -9,6 +9,9 @@ const About = lazy(() => import("@/pages/About"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const ServiceCreationSiteWebDakar = lazy(() => import("@/pages/ServiceCreationSiteWebDakar"));
+const ServiceAgenceSeoSenegal = lazy(() => import("@/pages/ServiceAgenceSeoSenegal"));
+const ServiceAutomatisationWhatsappSenegal = lazy(() => import("@/pages/ServiceAutomatisationWhatsappSenegal"));
 const CaseStudyClinic = lazy(
   () => import("@/pages/case-studies/CaseStudyClinic"),
 );
@@ -119,6 +122,9 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services/creation-site-web-dakar" element={<ServiceCreationSiteWebDakar />} />
+          <Route path="/services/agence-seo-senegal" element={<ServiceAgenceSeoSenegal />} />
+          <Route path="/services/automatisation-whatsapp-senegal" element={<ServiceAutomatisationWhatsappSenegal />} />
           <Route path="/case-study/clinic" element={<CaseStudyClinic />} />
           <Route
             path="/case-study/telimanshare"
