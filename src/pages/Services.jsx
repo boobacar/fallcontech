@@ -8,73 +8,8 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n";
 
 const Services = () => {
-  const { t, locale } = useI18n();
-  const services = (locale === 'en') ? [
-    {
-      icon: Globe,
-      title: 'Website Design & SEO',
-      tagline: 'More leads, faster load times, better local rankings',
-      priceFrom: '$580',
-      id: 'site-web-seo',
-      features: [
-        'Mobile‑first responsive UI',
-        'On‑page SEO (sitemap, meta tags, GSC)',
-        'Google Analytics integration',
-        'Fast loading (Core Web Vitals)',
-        'Lead capture forms',
-        'Blog/content management',
-      ],
-      outcomes: ['Increased organic traffic', 'Better user engagement', 'Higher conversion rates'],
-    },
-    {
-      icon: Zap,
-      title: 'Internal Platforms & Automations',
-      tagline: 'Save time, reduce errors, scale your operations',
-      priceFrom: '$4,200+',
-      id: 'automatisations-plateformes',
-      features: [
-        'Document portals with access control',
-        'Activity logs & audit trails',
-        'WhatsApp/SMS workflows',
-        'Bulk messaging from CSV',
-        'Custom dashboards',
-        'Recycle bin/restore',
-      ],
-      outcomes: ['Reduced manual work', 'Improved security', 'Better team collaboration'],
-    },
-    {
-      icon: Rocket,
-      title: 'MVP Development (Startups)',
-      tagline: 'Rapid prototyping, real‑time features, cloud‑ready',
-      priceFrom: '$1,700',
-      id: 'developpement-mvp',
-      features: [
-        'React + Firebase architecture',
-        'Real‑time database',
-        'User authentication',
-        'Cloud deployment (Vercel/Firebase)',
-        'Scalable infrastructure',
-        'Fast iteration cycles',
-      ],
-      outcomes: ['Fast market validation', 'Investor‑ready product', 'Scalable foundation'],
-    },
-    {
-      icon: Zap,
-      title: 'IoT & Embedded Systems (Arduino/ESP32)',
-      tagline: 'Payment integrations, sensors, dashboards & OTA updates',
-      priceFrom: 'Custom',
-      id: 'iot-embedded',
-      features: [
-        'Wave/Orange/Free payment integrations',
-        'Telemetry: sensors, alerts, logs',
-        'Secure MQTT/HTTPS communication',
-        'OTA updates and device management',
-        'Admin tools and audit logs',
-        'Offline/restore resilient flows',
-      ],
-      outcomes: ['Reliable vending/kiosk operations', 'Reduced downtime', 'Actionable real‑time insights'],
-    },
-  ] : [
+  const { t } = useI18n();
+  const services = [
     {
       icon: Globe,
       title: "Conception de Sites Web & SEO",
@@ -178,7 +113,7 @@ const Services = () => {
         offers: {
           "@type": "Offer",
           price: s.priceFrom?.replace(/[^0-9.]/g, ""),
-          priceCurrency: locale === 'en' ? "USD" : "XOF",
+          priceCurrency: "XOF",
           url: `${siteUrl}/contact`,
         },
       },
@@ -195,22 +130,6 @@ const Services = () => {
   };
 
   const faqs = [
-    ...(locale === 'en'
-      ? [
-          {
-            q: 'How much does a professional website cost?',
-            a: 'Our websites start at about $580 and vary depending on features (booking, blog, integrations, etc.).',
-          },
-          {
-            q: 'How fast do you deliver?',
-            a: '1–2 weeks for a one‑page site, 2–3 weeks for a business site, 4–8 weeks for a custom platform.',
-          },
-          {
-            q: 'Can I contact you on WhatsApp?',
-            a: 'Yes, we respond quickly on WhatsApp at +221 77 626 00 20 to schedule a call and clarify your needs.',
-          },
-        ]
-      : [
           {
             q: 'Combien coûte un site web professionnel ?',
             a: "Nos sites démarrent à 350 000 F CFA et varient selon les fonctionnalités (réservation, blog, intégrations, etc.).",
@@ -223,8 +142,7 @@ const Services = () => {
             q: 'Puis-je vous contacter sur WhatsApp ?',
             a: 'Oui, nous répondons rapidement sur WhatsApp au +221 77 626 00 20 pour planifier un appel et clarifier vos besoins.',
           },
-        ]),
-  ];
+        ];
 
   return (
     <>

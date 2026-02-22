@@ -257,8 +257,7 @@ function App() {
             element={<ArticleITSupport />}
           />
 
-          {/* Redirection des anciennes URLs anglaises */}
-          <Route path="/en/*" element={<Home />} />
+          {/* FR only */}
         </Routes>
       </Suspense>
     </Layout>

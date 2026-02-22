@@ -14,7 +14,7 @@ import eaxperienceImg from "../assets/eaxperience.webp";
 import hgCuisineImg from "@/assets/hg-cuisine.webp";
 
 const Work = () => {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const projects = [
     {
       title: t("work.projects.hgcuisine.title"),
@@ -265,28 +265,22 @@ const Work = () => {
                   desc: t("work.iotMini.items.0.desc"),
                   linkFr:
                     "/article/integrer-paiement-machine-eau-esp32-senegal",
-                  linkEn:
-                    "/en/article/esp32-water-vending-mobile-payments-senegal",
                 },
                 {
                   title: t("work.iotMini.items.1.title"),
                   desc: t("work.iotMini.items.1.desc"),
                   linkFr:
                     "/article/developpement-iot-embarque-senegal-arduino-esp32",
-                  linkEn:
-                    "/en/article/iot-embedded-development-senegal-arduino-esp32",
                 },
                 {
                   title: t("work.iotMini.items.2.title"),
                   desc: t("work.iotMini.items.2.desc"),
                   linkFr:
                     "/article/telemetrie-maintenance-predictive-iot-senegal",
-                  linkEn:
-                    "/en/article/iot-telemetry-predictive-maintenance-senegal",
                 },
               ];
-              const { title, desc, linkFr, linkEn } = items[i];
-              const href = locale === "en" ? linkEn : linkFr;
+              const { title, desc, linkFr } = items[i];
+              const href = linkFr;
               return (
                 <motion.article
                   key={i}

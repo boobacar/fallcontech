@@ -26,7 +26,7 @@ import telimanImg from "@/assets/telimanshare.webp";
 import eaxperienceImg from "@/assets/eaxperience.webp";
 
 const Home = () => {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -146,49 +146,22 @@ const Home = () => {
           (typeof window !== "undefined" ? window.location.origin : "");
         const latestPosts = [
           {
-            title:
-              locale === "en"
-                ? "Add mobile payments to a water vending machine (ESP32)"
-                : "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
-            excerpt:
-              locale === "en"
-                ? "Reliable approach, security and go‑live for Wave/OM/Free."
-                : "Approche fiable, sécurité et mise en service (Wave/OM/Free).",
+            title: "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
+            excerpt: "Approche fiable, sécurité et mise en service (Wave/OM/Free).",
             category: "IoT",
-            link:
-              locale === "en"
-                ? "/en/article/esp32-water-vending-mobile-payments-senegal"
-                : "/article/integrer-paiement-machine-eau-esp32-senegal",
+            link: "/article/integrer-paiement-machine-eau-esp32-senegal",
           },
           {
-            title:
-              locale === "en"
-                ? "IoT & embedded development (Arduino/ESP32)"
-                : "Développement IoT & embarqué (Arduino/ESP32)",
-            excerpt:
-              locale === "en"
-                ? "Sensors, control, remote updates and dashboards."
-                : "Capteurs, contrôle, mises à jour à distance et tableaux de bord.",
+            title: "Développement IoT & embarqué (Arduino/ESP32)",
+            excerpt: "Capteurs, contrôle, mises à jour à distance et tableaux de bord.",
             category: "IoT",
-            link:
-              locale === "en"
-                ? "/en/article/iot-embedded-development-senegal-arduino-esp32"
-                : "/article/developpement-iot-embarque-senegal-arduino-esp32",
+            link: "/article/developpement-iot-embarque-senegal-arduino-esp32",
           },
           {
-            title:
-              locale === "en"
-                ? "IoT telemetry & predictive maintenance"
-                : "Télémétrie & maintenance prédictive IoT",
-            excerpt:
-              locale === "en"
-                ? "Sensors, alerts and data‑driven decisions to reduce downtime."
-                : "Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.",
+            title: "Télémétrie & maintenance prédictive IoT",
+            excerpt: "Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.",
             category: "IoT",
-            link:
-              locale === "en"
-                ? "/en/article/iot-telemetry-predictive-maintenance-senegal"
-                : "/article/telemetrie-maintenance-predictive-iot-senegal",
+            link: "/article/telemetrie-maintenance-predictive-iot-senegal",
           },
         ];
         const itemListJsonLd = {
