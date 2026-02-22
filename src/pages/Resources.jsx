@@ -460,7 +460,7 @@ const Resources = () => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                Previous
+                Précédent
               </Button>
               <div className="flex gap-2">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
@@ -487,7 +487,7 @@ const Resources = () => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                Next
+                Suivant
               </Button>
             </div>
           )}

@@ -178,12 +178,37 @@ const Layout = ({ children }) => {
 
       <main className="flex-1 pt-28">
         {location.pathname.startsWith("/article/") && (
-          <div className="container mx-auto px-4 mb-6">
+          <div className="container mx-auto px-4 mb-6 space-y-3">
             <div className="rounded-xl border border-blue-300/30 bg-blue-500/10 p-4 text-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <span>Besoin d'aide pour appliquer ces conseils SEO/Web à votre business ?</span>
               <div className="flex gap-3">
                 <Link to="/contact" className="text-blue-300 hover:underline">Demander un devis</Link>
                 <a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer" className="text-green-300 hover:underline">Écrire sur WhatsApp</a>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-foreground/15 bg-card p-4 text-sm">
+              <p className="font-semibold mb-2">Services recommandés pour aller plus loin :</p>
+              <div className="flex flex-wrap gap-3">
+                {(location.pathname.includes("iot") || location.pathname.includes("paiement")
+                  ? [
+                      { to: "/services/automatisation-whatsapp-senegal", label: "Automatisation WhatsApp pour vos relances clients" },
+                      { to: "/services", label: "Solutions IoT & intégrations de paiement" },
+                    ]
+                  : location.pathname.includes("seo") || location.pathname.includes("site")
+                    ? [
+                        { to: "/services/agence-seo-senegal", label: "Agence SEO au Sénégal" },
+                        { to: "/services/creation-site-web-dakar", label: "Création de site web à Dakar" },
+                      ]
+                    : [
+                        { to: "/services/creation-site-web-dakar", label: "Créer un site web qui génère des leads" },
+                        { to: "/services/agence-seo-senegal", label: "Améliorer votre visibilité sur Google" },
+                      ]
+                ).map((item) => (
+                  <Link key={item.to} to={item.to} className="text-blue-400 hover:underline">
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
