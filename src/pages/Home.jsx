@@ -177,8 +177,8 @@ const Home = () => {
         return (
           <SEO
             path="/"
-            title={t("home.seo.title")}
-            description={t("home.seo.description")}
+            title="Agence Web Dakar & SEO Sénégal | Fallcon Tech"
+            description="Fallcon Tech, agence web à Dakar : création de site internet, SEO local au Sénégal, automatisation WhatsApp et solutions IoT pour PME."
             jsonLd={[
               itemListJsonLd,
               {

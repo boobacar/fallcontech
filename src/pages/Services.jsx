@@ -148,8 +148,8 @@ const Services = () => {
     <>
       <SEO
         path="/services"
-        title={t('services.seo.title')}
-        description={t('services.seo.description')}
+        title="Services Web, SEO, Automatisation & IoT à Dakar | Fallcon Tech"
+        description="Découvrez nos services : création de site web, référencement SEO, automatisation WhatsApp/CRM, MVP et intégration IoT au Sénégal."
         jsonLd={[servicesJsonLd, {
           "@context": "https://schema.org",
           "@type": "FAQPage",

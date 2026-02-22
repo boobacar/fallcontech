@@ -105,8 +105,8 @@ const Pricing = () => {
     <>
       <SEO
         path="/pricing"
-        title={t('pricing.seo.title')}
-        description={t('pricing.seo.description')}
+        title="Tarifs création site web, SEO & maintenance à Dakar | Fallcon Tech"
+        description="Consultez nos tarifs pour site vitrine, SEO, maintenance web et solutions digitales sur mesure au Sénégal. Devis rapide et transparent."
       />
 
       <section className="py-20 gradient-bg">

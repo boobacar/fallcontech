@@ -143,8 +143,8 @@ const Work = () => {
     <>
       <SEO
         path="/work"
-        title={t("work.pageTitle") + " — Fallcon Tech"}
-        description={t("work.lead")}
+        title="Réalisations Web, SEO & IoT au Sénégal | Fallcon Tech"
+        description="Études de cas Fallcon Tech : projets livrés en création de site web, SEO local, automatisation et solutions IT pour entreprises sénégalaises."
         jsonLd={[itemListJsonLd, breadcrumbJsonLd]}
       />
 

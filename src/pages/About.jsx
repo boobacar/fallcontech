@@ -87,8 +87,8 @@ const About = () => {
     <>
       <SEO
         path="/about"
-        title={t("about.seo.title")}
-        description={t("about.seo.description")}
+        title="À propos de Fallcon Tech | Agence Web & SEO basée à Dakar"
+        description="Découvrez Fallcon Tech : agence digitale sénégalaise spécialisée en développement web, SEO local, automatisation et solutions IT orientées résultats."
       />
 
       <section className="gradient-bg pt-28 md:pt-20 pb-20">

@@ -116,8 +116,8 @@ const Contact = () => {
     <>
       <SEO
         path="/contact"
-        title={t("contact.seo.title")}
-        description={t("contact.seo.description")}
+        title="Contact agence web & SEO à Dakar | Devis Fallcon Tech"
+        description="Parlez-nous de votre projet web, SEO ou automatisation. Contactez Fallcon Tech à Dakar pour un devis rapide et une stratégie orientée résultats."
       />
 
       <section className="py-20 gradient-bg">
