@@ -228,31 +228,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://fallcontech.com/en/article/esp32-water-vending-mobile-payments-senegal</loc>
-    <lastmod>2026-01-17T18:13:07.611Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fallcontech.com/en/article/iot-embedded-development-senegal-arduino-esp32</loc>
-    <lastmod>2026-01-17T18:13:07.611Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fallcontech.com/en/article/iot-telemetry-predictive-maintenance-senegal</loc>
-    <lastmod>2026-01-17T18:13:07.611Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://fallcontech.com/en/article/payment-gateways-iot-wave-orange-free</loc>
-    <lastmod>2026-01-17T18:13:07.611Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+
+
+
+<url>
     <loc>https://fallcontech.com/pricing</loc>
     <lastmod>2026-01-17T18:13:07.611Z</lastmod>
     <changefreq>weekly</changefreq>

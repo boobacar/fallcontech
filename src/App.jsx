@@ -75,19 +75,7 @@ const ArticleHardwareChoice = lazy(
 const ArticleBackupData = lazy(
   () => import("@/pages/articles/ArticleBackupData"),
 );
-// EN articles
-const ArticlePaymentMachineEn = lazy(
-  () => import("@/pages/articles/en/ArticlePaymentMachineEn"),
-);
-const ArticleIoTEmbeddedEn = lazy(
-  () => import("@/pages/articles/en/ArticleIoTEmbeddedEn"),
-);
-const ArticlePaymentGatewaysIoTEn = lazy(
-  () => import("@/pages/articles/en/ArticlePaymentGatewaysIoTEn"),
-);
-const ArticleTelemetryEn = lazy(
-  () => import("@/pages/articles/en/ArticleTelemetryEn"),
-);
+// Versions anglaises supprimées (site FR uniquement)
 
 const ArticleElectricity = lazy(
   () => import("@/pages/articles/ArticleElectricity"),
@@ -269,23 +257,8 @@ function App() {
             element={<ArticleITSupport />}
           />
 
-          {/* English versions */}
-          <Route
-            path="/en/article/esp32-water-vending-mobile-payments-senegal"
-            element={<ArticlePaymentMachineEn />}
-          />
-          <Route
-            path="/en/article/iot-embedded-development-senegal-arduino-esp32"
-            element={<ArticleIoTEmbeddedEn />}
-          />
-          <Route
-            path="/en/article/payment-gateways-iot-wave-orange-free"
-            element={<ArticlePaymentGatewaysIoTEn />}
-          />
-          <Route
-            path="/en/article/iot-telemetry-predictive-maintenance-senegal"
-            element={<ArticleTelemetryEn />}
-          />
+          {/* Redirection des anciennes URLs anglaises */}
+          <Route path="/en/*" element={<Home />} />
         </Routes>
       </Suspense>
     </Layout>

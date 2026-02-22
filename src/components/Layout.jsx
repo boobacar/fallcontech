@@ -14,23 +14,18 @@ const Layout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
-  const { t, locale, setLocale } = useI18n();
+  const { t } = useI18n();
 
   useEffect(() => {
     initVisualEffects();
   }, []);
 
-  // SplashCursor disabled globally
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
@@ -44,9 +39,9 @@ const Layout = ({ children }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.documentElement.lang = locale === "en" ? "en" : "fr";
+    document.documentElement.lang = "fr";
     document.documentElement.dir = "ltr";
-  }, [locale]);
+  }, []);
 
   const navLinks = [
     { path: "/", label: t("common.nav.home") },
@@ -61,21 +56,22 @@ const Layout = ({ children }) => {
   const siteUrl =
     import.meta.env.VITE_SITE_URL ||
     (typeof window !== "undefined" ? window.location.origin : "");
+
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Fallcon Tech",
     url: siteUrl || undefined,
-    // Use a stable public asset path (not a hashed build asset)
     logo: `${siteUrl}/logo.png`,
     email: "info@fallcontech.com",
     telephone: "+221 77 626 00 20",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Dakar – New York",
+      addressLocality: "Dakar",
       addressCountry: "SN",
     },
   };
+
   const webSiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -93,48 +89,27 @@ const Layout = ({ children }) => {
       <div className="scroll-progress fixed top-0 left-0 right-0 h-[3px] z-[60] pointer-events-none">
         <div className="scroll-progress__bar h-full"></div>
       </div>
-      {/* SVG filters globales */}
+
       <svg width="0" height="0" className="absolute -z-10" aria-hidden>
         <filter id="hoverDisplace">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.01 0.02"
-            numOctaves="2"
-            seed="2"
-            result="noise"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="noise"
-            scale="12"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" seed="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
-      {/* Site-wide defaults + structured data */}
-      <SEO
-        path={location.pathname}
-        lang={locale}
-        jsonLd={[orgJsonLd, webSiteJsonLd]}
-      />
+
+      <SEO path={location.pathname} lang="fr" jsonLd={[orgJsonLd, webSiteJsonLd]} />
+
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled || isMenuOpen
-            ? "bg-background/95 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+          isScrolled || isMenuOpen ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
       >
         <nav className="container mx-auto px-4 py-2 relative">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
-              <img
-                src={logoUrl}
-                alt="Fallcon Tech"
-                className="h-10 w-10 sm:h-12 sm:w-12 rounded-md object-contain"
-              />
+              <img src={logoUrl} alt="Fallcon Tech" className="h-10 w-10 sm:h-12 sm:w-12 rounded-md object-contain" />
               <span className="whitespace-nowrap tracking-tight bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
                 Fallcon Tech
               </span>
@@ -146,83 +121,25 @@ const Layout = ({ children }) => {
                   key={link.path}
                   to={link.path}
                   className={`text-sm font-medium transition-colors hover:text-blue-500 ${
-                    location.pathname === link.path
-                      ? "text-blue-500"
-                      : "text-foreground"
+                    location.pathname === link.path ? "text-blue-500" : "text-foreground"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="h-5 w-px bg-foreground/20 mx-1" />
-              <div className="flex items-center gap-1 text-xs">
-                <button
-                  aria-label="Français"
-                  className={`px-2 py-1 rounded ${
-                    locale === "fr"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/70 hover:text-foreground"
-                  }`}
-                  onClick={() => setLocale("fr")}
-                >
-                  FR
-                </button>
-                <button
-                  aria-label="English"
-                  className={`px-2 py-1 rounded ${
-                    locale === "en"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/70 hover:text-foreground"
-                  }`}
-                  onClick={() => setLocale("en")}
-                >
-                  EN
-                </button>
-              </div>
               <Button asChild>
                 <Link to="/contact">{t("common.cta.planCall")}</Link>
               </Button>
             </div>
 
-            <div className="flex items-center gap-2">
-              {/* Mobile language switcher (always visible) */}
-              <div className="md:hidden flex items-center gap-1 text-xs mr-1">
-                <button
-                  aria-label="Français"
-                  className={`px-2 py-1 rounded ${
-                    locale === "fr"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/70"
-                  }`}
-                  onClick={() => setLocale("fr")}
-                >
-                  FR
-                </button>
-                <button
-                  aria-label="English"
-                  className={`px-2 py-1 rounded ${
-                    locale === "en"
-                      ? "bg-foreground/10 text-foreground"
-                      : "text-foreground/70"
-                  }`}
-                  onClick={() => setLocale("en")}
-                >
-                  EN
-                </button>
-              </div>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 text-foreground"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-foreground">
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
 
           <AnimatePresence>
             {isMenuOpen && (
               <>
-                {/* Backdrop under the header to dim content */}
                 <motion.div
                   className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
                   initial={{ opacity: 0 }}
@@ -230,8 +147,6 @@ const Layout = ({ children }) => {
                   exit={{ opacity: 0 }}
                   onClick={() => setIsMenuOpen(false)}
                 />
-
-                {/* Dropdown panel positioned below header */}
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -244,36 +159,12 @@ const Layout = ({ children }) => {
                         key={link.path}
                         to={link.path}
                         className={`block py-2 text-sm font-medium transition-colors hover:text-blue-500 ${
-                          location.pathname === link.path
-                            ? "text-blue-500"
-                            : "text-foreground"
+                          location.pathname === link.path ? "text-blue-500" : "text-foreground"
                         }`}
                       >
                         {link.label}
                       </Link>
                     ))}
-                    <div className="flex items-center gap-2 mt-2">
-                      <button
-                        className={`px-2 py-1 rounded text-xs ${
-                          locale === "fr"
-                            ? "bg-foreground/10 text-foreground"
-                            : "text-foreground/70"
-                        }`}
-                        onClick={() => setLocale("fr")}
-                      >
-                        FR
-                      </button>
-                      <button
-                        className={`px-2 py-1 rounded text-xs ${
-                          locale === "en"
-                            ? "bg-foreground/10 text-foreground"
-                            : "text-foreground/70"
-                        }`}
-                        onClick={() => setLocale("en")}
-                      >
-                        EN
-                      </button>
-                    </div>
                     <Button asChild className="w-full mt-4">
                       <Link to="/contact">{t("common.cta.planCall")}</Link>
                     </Button>
@@ -287,94 +178,35 @@ const Layout = ({ children }) => {
 
       <main className="flex-1 pt-28">{children}</main>
 
-      {/* SplashCursor removed */}
-
       <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <span className="text-2xl font-bold">Fallcon Tech</span>
-              <p className="mt-4 text-muted-foreground text-sm">
-                {t("common.blurb")}
-              </p>
+              <p className="mt-4 text-muted-foreground text-sm">{t("common.blurb")}</p>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                {t("common.footer.services")}
-              </span>
+              <span className="font-semibold text-primary-foreground">{t("common.footer.services")}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.footer.links.webDesign")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.footer.links.automations")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.footer.links.mvpDev")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services#iot-embedded"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.footer.links.iot")}
-                  </Link>
-                </li>
+                <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.webDesign")}</Link></li>
+                <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.automations")}</Link></li>
+                <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.mvpDev")}</Link></li>
+                <li><Link to="/services#iot-embedded" className="hover:text-blue-400 transition-colors">{t("common.footer.links.iot")}</Link></li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                {t("common.footer.company")}
-              </span>
+              <span className="font-semibold text-primary-foreground">{t("common.footer.company")}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link
-                    to="/about"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.nav.about")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/work"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.nav.work")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/resources"
-                    className="hover:text-blue-400 transition-colors"
-                  >
-                    {t("common.nav.resources")}
-                  </Link>
-                </li>
+                <li><Link to="/about" className="hover:text-blue-400 transition-colors">{t("common.nav.about")}</Link></li>
+                <li><Link to="/work" className="hover:text-blue-400 transition-colors">{t("common.nav.work")}</Link></li>
+                <li><Link to="/resources" className="hover:text-blue-400 transition-colors">{t("common.nav.resources")}</Link></li>
               </ul>
             </div>
 
             <div>
-              <span className="font-semibold text-primary-foreground">
-                {t("common.footer.contact")}
-              </span>
+              <span className="font-semibold text-primary-foreground">{t("common.footer.contact")}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>Dakar</li>
                 <li>info@fallcontech.com</li>
