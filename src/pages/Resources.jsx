@@ -32,6 +32,30 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Agence web à Dakar : comment choisir en 2026",
+      excerpt:
+        "Checklist concrète pour choisir le bon partenaire web à Dakar: méthode, livrables, budget et erreurs à éviter.",
+      category: "Guide",
+      readTime: "6 min de lecture",
+      link: "/article/agence-web-dakar-comment-choisir-2026",
+    },
+    {
+      title: "Prix création site web au Sénégal : guide complet",
+      excerpt:
+        "Comprendre les prix d’un site vitrine, e-commerce ou site business au Sénégal et les facteurs qui font varier le budget.",
+      category: "Prix",
+      readTime: "7 min de lecture",
+      link: "/article/prix-creation-site-web-senegal-guide-complet",
+    },
+    {
+      title: "SEO local Sénégal : Google Business Profile + plan d’action",
+      excerpt:
+        "Méthode pratique pour améliorer votre visibilité locale: GBP, contenus géolocalisés, maillage interne et suivi KPI.",
+      category: "SEO",
+      readTime: "6 min de lecture",
+      link: "/article/seo-local-senegal-google-business-profile-plan-action",
+    },
+    {
       title: "Refonte de site vitrine à Dakar : SEO local et conversions",
       excerpt:
         "Check-list Core Web Vitals, balises locales et contenus qui génèrent des leads à Dakar et au Sénégal.",

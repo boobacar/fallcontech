@@ -103,6 +103,15 @@ const ArticleWebsiteCost = lazy(
 const ArticleITSupport = lazy(
   () => import("@/pages/articles/ArticleITSupport"),
 );
+const ArticleAgenceWebDakar2026 = lazy(
+  () => import("@/pages/articles/ArticleAgenceWebDakar2026"),
+);
+const ArticlePrixSiteWebSenegalGuide = lazy(
+  () => import("@/pages/articles/ArticlePrixSiteWebSenegalGuide"),
+);
+const ArticleSeoLocalSenegalGBP = lazy(
+  () => import("@/pages/articles/ArticleSeoLocalSenegalGBP"),
+);
 
 function App() {
   return (
@@ -261,6 +270,18 @@ function App() {
           <Route
             path="/article/support-informatique-dedie-dakar-importance"
             element={<ArticleITSupport />}
+          />
+          <Route
+            path="/article/agence-web-dakar-comment-choisir-2026"
+            element={<ArticleAgenceWebDakar2026 />}
+          />
+          <Route
+            path="/article/prix-creation-site-web-senegal-guide-complet"
+            element={<ArticlePrixSiteWebSenegalGuide />}
+          />
+          <Route
+            path="/article/seo-local-senegal-google-business-profile-plan-action"
+            element={<ArticleSeoLocalSenegalGBP />}
           />
 
           {/* FR only */}
