@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SEO from "@/components/SEO";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
