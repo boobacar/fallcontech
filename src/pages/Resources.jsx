@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SEO from "@/components/SEO";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FileText, Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import LottieBlock from "@/components/media/LottieBlock";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 import imgBooking from "@/assets/articles/online-reservation-system.png";
 import imgWhatsapp from "@/assets/articles/whatsapp-automation.webp";
 import imgMvp from "@/assets/articles/mvp-development-for-startups.png";
@@ -30,37 +29,6 @@ import imgITSupport from "@/assets/articles/it_support_helpdesk_dakar.png";
 
 const Resources = () => {
   const { t } = useI18n();
-  const { toast } = useToast();
-  const [email, setEmail] = useState("");
-
-  const handleDownload = (e) => {
-    e.preventDefault();
-    if (!email) {
-      toast({
-        title: t("resources.toast.emailRequired.title"),
-        description: t("resources.toast.emailRequired.description"),
-        variant: "destructive",
-      });
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast({
-        title: t("resources.toast.emailInvalid.title"),
-        description: t("resources.toast.emailInvalid.description"),
-        variant: "destructive",
-      });
-      return;
-    }
-
-    toast({
-      title: t("resources.toast.downloadSoon.title"),
-      description: t("resources.toast.downloadSoon.description"),
-    });
-
-    setEmail("");
-  };
 
   const blogPosts = [
     {
@@ -287,70 +255,6 @@ const Resources = () => {
 
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <div className="mb-4">
-              <LottieBlock />
-            </div>
-            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              {t("resources.pageTitle")}
-            </h1>
-            <p className="text-xl text-foreground/80">{t("resources.lead")}</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto bg-card rounded-3xl shadow-2xl p-8 md:p-12 mb-20"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-primary p-4 rounded-2xl">
-                <FileText className="text-primary-foreground" size={32} />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold">
-                  {t("resources.checklist.title")}
-                </h2>
-                <p className="text-muted-foreground">
-                  {t("resources.checklist.subtitle")}
-                </p>
-              </div>
-            </div>
-
-            <p className="text-foreground/80 mb-6">
-              {t("resources.checklist.description")}
-            </p>
-
-            <form onSubmit={handleDownload} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  {t("resources.form.emailLabel")}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("resources.form.emailPlaceholder")}
-                  className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg py-6"
-              >
-                <Download className="mr-2" size={20} />
-                {t("resources.form.download")}
-              </Button>
-            </form>
-          </motion.div>
         </div>
       </section>
 
