@@ -42,6 +42,19 @@ const ArticleWordpressVsNextjsSeo = () => {
         <p>Oui, mais mieux vaut préparer le contenu et les URLs pour éviter de perdre le trafic SEO.</p>
 
         <p>À lire ensuite : <Link to="/article/optimisation-vitesse-site-seo-conversions">optimisation vitesse site</Link>.</p>
+
+
+        <h2>Cas client (type) : choisir la bonne stack selon l’objectif</h2>
+        <p>
+          Les projets éditoriaux rapides performent mieux avec un WordPress bien optimisé. Les plateformes avec logique métier
+          avancée gagnent en stabilité et vitesse avec Next.js.
+        </p>
+
+        <h2>Besoin d’un arbitrage technique ?</h2>
+        <p>
+          <Link to="/contact">Demandez une recommandation stack + SEO</Link> basée sur votre budget, vos délais et votre objectif business.
+        </p>
+
       </div></article>
     </>
   );

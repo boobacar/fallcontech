@@ -48,6 +48,19 @@ const ArticlePrixSiteWebSenegal2026 = () => {
         <p>Oui. Le SEO doit être pensé dès la conception pour éviter une refonte technique plus tard.</p>
 
         <p>Article complémentaire : <Link to="/article/wordpress-vs-nextjs-seo">WordPress vs Next.js</Link>.</p>
+
+
+        <h2>Cas client (type) : budget mieux cadré = ROI plus rapide</h2>
+        <p>
+          Quand le périmètre est clair dès le départ (contenu, SEO, tracking, support), les délais sont mieux tenus
+          et le site commence plus vite à générer des opportunités.
+        </p>
+
+        <h2>Demander un cadrage de projet</h2>
+        <p>
+          Si vous hésitez entre plusieurs devis, <Link to="/contact">demandez un cadrage technique et SEO neutre</Link> avant de choisir.
+        </p>
+
       </div></article>
     </>
   );

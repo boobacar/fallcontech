@@ -47,6 +47,19 @@ const ArticleSeoLocalSenegal2026 = () => {
         <p>Oui, ils jouent sur la conversion et la visibilité locale. La régularité est plus importante qu’un pic ponctuel.</p>
 
         <p>À lire ensuite : <Link to="/article/checklist-audit-seo-30-minutes">audit SEO 30 min</Link> et <Link to="/article/prix-site-web-senegal-2026">prix d’un site web en 2026</Link>.</p>
+
+
+        <h2>Cas client (type) : SEO local + Google Business Profile</h2>
+        <p>
+          Avec une optimisation GBP + pages locales + avis structurés, une entreprise peut gagner en visibilité Maps
+          et transformer davantage de recherches locales en appels.
+        </p>
+
+        <h2>CTA business</h2>
+        <p>
+          Besoin d’un plan SEO local exécutable ? <Link to="/contact">Réservez un audit local orienté leads</Link>.
+        </p>
+
       </div></article>
     </>
   );

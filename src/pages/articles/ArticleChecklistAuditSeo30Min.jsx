@@ -53,6 +53,18 @@ const ArticleChecklistAuditSeo30Min = () => {
         <p>
           Articles liés : <Link to="/article/seo-local-senegal-guide-2026">SEO local Sénégal</Link> et <Link to="/article/optimisation-vitesse-site-seo-conversions">optimisation vitesse</Link>.
         </p>
+
+
+        <h2>Cas client (type) : corrections rapides, gains visibles</h2>
+        <p>
+          En corrigeant d’abord indexation, balises clés et maillage interne, un site peut récupérer de la visibilité en quelques semaines.
+        </p>
+
+        <h2>Audit guidé</h2>
+        <p>
+          Vous voulez qu’on applique cette checklist sur votre site ? <Link to="/contact">Demandez un audit SEO actionnable</Link>.
+        </p>
+
       </div></article>
     </>
   );
