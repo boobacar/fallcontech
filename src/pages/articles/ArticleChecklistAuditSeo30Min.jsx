@@ -13,7 +13,26 @@ const ArticleChecklistAuditSeo30Min = () => {
 
   return (
     <>
-      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgSeo} type="article" />
+      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgSeo} type="article"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Combien de temps pour voir des résultats ?",
+                acceptedAnswer: { "@type": "Answer", text: "En général, les premiers résultats arrivent entre 4 et 12 semaines selon la base technique, le contenu et la concurrence." },
+              },
+              {
+                "@type": "Question",
+                name: "Faut-il un gros budget pour commencer ?",
+                acceptedAnswer: { "@type": "Answer", text: "Non. Le plus important est de prioriser les actions à fort impact: performance, structure SEO, contenu ciblé et suivi KPI." },
+              },
+            ],
+          },
+        ]}
+      />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4">
         <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link>
         <Breadcrumbs items={[{ label: "Accueil", to: "/" }, { label: "Ressources", to: "/resources" }, { label: "SEO" }]} />

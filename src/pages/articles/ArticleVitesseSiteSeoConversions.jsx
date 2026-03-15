@@ -34,6 +34,23 @@ const ArticleVitesseSiteSeoConversions = () => {
             dateModified: "2026-03-15",
             author: { "@type": "Organization", name: "Fallcon Tech" },
           },
+          ,
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Combien de temps pour voir des résultats ?",
+                acceptedAnswer: { "@type": "Answer", text: "En général, les premiers résultats arrivent entre 4 et 12 semaines selon la base technique, le contenu et la concurrence." },
+              },
+              {
+                "@type": "Question",
+                name: "Faut-il un gros budget pour commencer ?",
+                acceptedAnswer: { "@type": "Answer", text: "Non. Le plus important est de prioriser les actions à fort impact: performance, structure SEO, contenu ciblé et suivi KPI." },
+              },
+            ],
+          }
         ]}
       />
 
