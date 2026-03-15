@@ -21,14 +21,33 @@ const ArticlePrixSiteWebSenegal2026 = () => {
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
         <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgCost} loading="lazy" decoding="async" />
+
         <h2>Fourchettes de prix indicatives</h2>
         <ul>
           <li>Site vitrine: 250 000 – 900 000 FCFA</li>
           <li>Site business avancé: 900 000 – 2 500 000 FCFA</li>
           <li>E-commerce: 1 200 000 – 4 500 000 FCFA</li>
         </ul>
+
         <h2>Ce qui fait varier le coût</h2>
-        <p>Le prix dépend surtout du contenu, du niveau SEO, des intégrations (paiement, CRM), de la performance et du support post-lancement.</p>
+        <ul>
+          <li>Nombre de pages et niveau de contenu</li>
+          <li>Intégrations (paiement, CRM, automation)</li>
+          <li>SEO technique et stratégie éditoriale</li>
+          <li>Performance (Core Web Vitals)</li>
+          <li>Maintenance et support après livraison</li>
+        </ul>
+
+        <h2>Comment éviter les mauvais devis</h2>
+        <p>Demandez les livrables exacts, les KPI visés, les délais, les responsabilités et le plan de maintenance avant signature.</p>
+
+        <h2>FAQ rapide</h2>
+        <h3>Un site pas cher est-il une bonne affaire ?</h3>
+        <p>Pas toujours. Un site trop bas prix peut coûter plus cher en corrections, SEO raté et pertes de leads.</p>
+        <h3>Faut-il inclure le SEO dans le budget initial ?</h3>
+        <p>Oui. Le SEO doit être pensé dès la conception pour éviter une refonte technique plus tard.</p>
+
+        <p>Article complémentaire : <Link to="/article/wordpress-vs-nextjs-seo">WordPress vs Next.js</Link>.</p>
       </div></article>
     </>
   );

@@ -21,7 +21,11 @@ const ArticleChecklistAuditSeo30Min = () => {
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
         <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo} loading="lazy" decoding="async" />
-        <h2>Checklist 30 min</h2>
+
+        <h2>Pourquoi cette checklist marche</h2>
+        <p>Elle vous force à corriger d’abord les points qui bloquent la visibilité et la conversion, avant d’entrer dans des optimisations secondaires.</p>
+
+        <h2>Checklist 30 minutes</h2>
         <ol>
           <li>Indexation Google (site:domain.com).</li>
           <li>Titles et meta descriptions uniques.</li>
@@ -32,7 +36,23 @@ const ArticleChecklistAuditSeo30Min = () => {
           <li>Pages locales + NAP cohérent.</li>
           <li>Schema FAQ/LocalBusiness.</li>
         </ol>
-        <p>À la fin, priorisez les corrections en 3 lots : immédiat, 7 jours, 30 jours.</p>
+
+        <h2>Plan de correction recommandé</h2>
+        <ul>
+          <li>Lot 1 (immédiat) : indexation, title/H1, erreurs bloquantes.</li>
+          <li>Lot 2 (7 jours) : maillage interne, assets médias, données structurées.</li>
+          <li>Lot 3 (30 jours) : contenus piliers, clusters thématiques, netlinking local.</li>
+        </ul>
+
+        <h2>FAQ rapide</h2>
+        <h3>Faut-il un outil payant pour auditer ?</h3>
+        <p>Non, vous pouvez déjà faire 70% du travail avec Search Console, PageSpeed et un crawl léger.</p>
+        <h3>À quelle fréquence faire cet audit ?</h3>
+        <p>Minimum mensuel, et après chaque refonte, migration ou gros ajout de pages.</p>
+
+        <p>
+          Articles liés : <Link to="/article/seo-local-senegal-guide-2026">SEO local Sénégal</Link> et <Link to="/article/optimisation-vitesse-site-seo-conversions">optimisation vitesse</Link>.
+        </p>
       </div></article>
     </>
   );

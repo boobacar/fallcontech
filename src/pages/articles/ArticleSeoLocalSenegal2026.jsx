@@ -21,7 +21,11 @@ const ArticleSeoLocalSenegal2026 = () => {
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
         <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo} loading="lazy" decoding="async" />
-        <h2>Checklist rapide</h2>
+
+        <h2>Le SEO local, c’est quoi concrètement ?</h2>
+        <p>Le SEO local vise à positionner votre entreprise quand un prospect cherche un service “près de moi” ou par ville (Dakar, Thiès, Mbour…).</p>
+
+        <h2>Checklist opérationnelle</h2>
         <ul>
           <li>Google Business Profile complet (catégories, services, photos, horaires).</li>
           <li>Pages locales optimisées: Dakar, Thiès, Saint-Louis…</li>
@@ -29,8 +33,20 @@ const ArticleSeoLocalSenegal2026 = () => {
           <li>Citations locales cohérentes (NAP).</li>
           <li>Schema LocalBusiness + FAQ.</li>
         </ul>
-        <h2>Contenus qui convertissent</h2>
-        <p>Publiez des cas clients locaux, des guides pratiques et des pages service ciblées par intention.</p>
+
+        <h2>Stratégie contenu locale</h2>
+        <p>Publiez des études de cas locales, pages services ciblées, FAQ métiers et pages “problème/solution” adaptées au marché sénégalais.</p>
+
+        <h2>Mesure et pilotage</h2>
+        <p>Suivez les appels, clics vers WhatsApp, itinéraires Maps, formulaires, et positions sur vos requêtes commerciales principales.</p>
+
+        <h2>FAQ rapide</h2>
+        <h3>Combien de temps pour voir des résultats ?</h3>
+        <p>Généralement 6 à 12 semaines pour des premiers gains visibles si la base technique est saine.</p>
+        <h3>Les avis Google sont-ils vraiment importants ?</h3>
+        <p>Oui, ils jouent sur la conversion et la visibilité locale. La régularité est plus importante qu’un pic ponctuel.</p>
+
+        <p>À lire ensuite : <Link to="/article/checklist-audit-seo-30-minutes">audit SEO 30 min</Link> et <Link to="/article/prix-site-web-senegal-2026">prix d’un site web en 2026</Link>.</p>
       </div></article>
     </>
   );

@@ -21,12 +21,27 @@ const ArticleWordpressVsNextjsSeo = () => {
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
         <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack} loading="lazy" decoding="async" />
+
         <h2>Quand choisir WordPress</h2>
-        <p>Idéal pour publier rapidement, gérer un blog éditorial riche et garder des coûts modérés.</p>
+        <p>WordPress est excellent pour publier rapidement du contenu, gérer un blog riche et garder un coût de production accessible.</p>
+
         <h2>Quand choisir Next.js</h2>
-        <p>Parfait pour la performance, les expériences sur mesure, les apps web et un SEO technique finement contrôlé.</p>
-        <h2>Règle simple</h2>
-        <p>Si votre priorité est le time-to-market éditorial: WordPress. Si votre priorité est la performance produit long terme: Next.js.</p>
+        <p>Next.js est idéal quand la performance, la personnalisation produit et la scalabilité sont prioritaires.</p>
+
+        <h2>SEO : qui gagne vraiment ?</h2>
+        <p>Les deux peuvent performer. La différence se fait sur l’exécution : architecture, qualité des contenus, maillage, temps de chargement.</p>
+
+        <h2>Règle simple de décision</h2>
+        <ul>
+          <li>Time-to-market éditorial: WordPress</li>
+          <li>Produit web sur mesure et haute performance: Next.js</li>
+        </ul>
+
+        <h2>FAQ rapide</h2>
+        <h3>Peut-on migrer de WordPress vers Next.js plus tard ?</h3>
+        <p>Oui, mais mieux vaut préparer le contenu et les URLs pour éviter de perdre le trafic SEO.</p>
+
+        <p>À lire ensuite : <Link to="/article/optimisation-vitesse-site-seo-conversions">optimisation vitesse site</Link>.</p>
       </div></article>
     </>
   );
