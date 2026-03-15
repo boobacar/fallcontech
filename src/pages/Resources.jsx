@@ -32,6 +32,46 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Site web lent : 12 optimisations qui boostent SEO et conversions",
+      excerpt:
+        "Checklist pratique pour accélérer votre site, améliorer les Core Web Vitals et convertir plus de visiteurs.",
+      category: "Performance",
+      readTime: "8 min de lecture",
+      link: "/article/optimisation-vitesse-site-seo-conversions",
+    },
+    {
+      title: "SEO local au Sénégal : guide complet 2026",
+      excerpt:
+        "Méthode actionnable pour mieux ranker sur Google Maps et Google Search avec une vraie stratégie locale.",
+      category: "SEO",
+      readTime: "7 min de lecture",
+      link: "/article/seo-local-senegal-guide-2026",
+    },
+    {
+      title: "Combien coûte un site web professionnel en 2026 au Sénégal ?",
+      excerpt:
+        "Tarifs réalistes, fourchettes de budget et facteurs qui influencent le coût d'un site performant.",
+      category: "Prix",
+      readTime: "6 min de lecture",
+      link: "/article/prix-site-web-senegal-2026",
+    },
+    {
+      title: "WordPress vs Next.js : quel choix pour SEO et performance ?",
+      excerpt:
+        "Comparatif simple pour choisir la stack adaptée à vos objectifs business et SEO.",
+      category: "Développement",
+      readTime: "7 min de lecture",
+      link: "/article/wordpress-vs-nextjs-seo",
+    },
+    {
+      title: "Audit SEO en 30 minutes : checklist terrain",
+      excerpt:
+        "Les contrôles essentiels pour détecter vite les erreurs qui bloquent votre trafic organique.",
+      category: "SEO",
+      readTime: "5 min de lecture",
+      link: "/article/checklist-audit-seo-30-minutes",
+    },
+    {
       title: "Agence web à Dakar : comment choisir en 2026",
       excerpt:
         "Checklist concrète pour choisir le bon partenaire web à Dakar: méthode, livrables, budget et erreurs à éviter.",
@@ -302,6 +342,11 @@ const Resources = () => {
             {paginatedPosts.map((post, idx) => {
               const slug = post.link.split("/").pop();
               const map = {
+                "optimisation-vitesse-site-seo-conversions": imgMobile,
+                "seo-local-senegal-guide-2026": imgSeo,
+                "prix-site-web-senegal-2026": imgCost,
+                "wordpress-vs-nextjs-seo": imgStack,
+                "checklist-audit-seo-30-minutes": imgSeo,
                 "refonte-site-vitrine-seo-dakar": imgSeo,
                 "ecommerce-senegal-wave-orange": imgGateways,
                 "workflows-whatsapp-crm-senegal": imgWhatsapp,

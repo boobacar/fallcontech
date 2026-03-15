@@ -112,6 +112,21 @@ const ArticlePrixSiteWebSenegalGuide = lazy(
 const ArticleSeoLocalSenegalGBP = lazy(
   () => import("@/pages/articles/ArticleSeoLocalSenegalGBP"),
 );
+const ArticleChecklistAuditSeo30Min = lazy(
+  () => import("@/pages/articles/ArticleChecklistAuditSeo30Min"),
+);
+const ArticleWordpressVsNextjsSeo = lazy(
+  () => import("@/pages/articles/ArticleWordpressVsNextjsSeo"),
+);
+const ArticlePrixSiteWebSenegal2026 = lazy(
+  () => import("@/pages/articles/ArticlePrixSiteWebSenegal2026"),
+);
+const ArticleSeoLocalSenegal2026 = lazy(
+  () => import("@/pages/articles/ArticleSeoLocalSenegal2026"),
+);
+const ArticleVitesseSiteSeoConversions = lazy(
+  () => import("@/pages/articles/ArticleVitesseSiteSeoConversions"),
+);
 
 function App() {
   return (
@@ -282,6 +297,26 @@ function App() {
           <Route
             path="/article/seo-local-senegal-google-business-profile-plan-action"
             element={<ArticleSeoLocalSenegalGBP />}
+          />
+          <Route
+            path="/article/optimisation-vitesse-site-seo-conversions"
+            element={<ArticleVitesseSiteSeoConversions />}
+          />
+          <Route
+            path="/article/seo-local-senegal-guide-2026"
+            element={<ArticleSeoLocalSenegal2026 />}
+          />
+          <Route
+            path="/article/prix-site-web-senegal-2026"
+            element={<ArticlePrixSiteWebSenegal2026 />}
+          />
+          <Route
+            path="/article/wordpress-vs-nextjs-seo"
+            element={<ArticleWordpressVsNextjsSeo />}
+          />
+          <Route
+            path="/article/checklist-audit-seo-30-minutes"
+            element={<ArticleChecklistAuditSeo30Min />}
           />
 
           {/* FR only */}
