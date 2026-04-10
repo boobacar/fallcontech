@@ -127,6 +127,21 @@ const ArticleSeoLocalSenegal2026 = lazy(
 const ArticleVitesseSiteSeoConversions = lazy(
   () => import("@/pages/articles/ArticleVitesseSiteSeoConversions"),
 );
+const ArticleRefonteSiteWebDakar2026 = lazy(
+  () => import("@/pages/articles/ArticleRefonteSiteWebDakar2026"),
+);
+const ArticleMaintenanceSiteWebBusiness = lazy(
+  () => import("@/pages/articles/ArticleMaintenanceSiteWebBusiness"),
+);
+const ArticleSeoEcommerceSenegal2026 = lazy(
+  () => import("@/pages/articles/ArticleSeoEcommerceSenegal2026"),
+);
+const ArticlePrixMaintenanceInformatiqueSenegal = lazy(
+  () => import("@/pages/articles/ArticlePrixMaintenanceInformatiqueSenegal"),
+);
+const ArticleAutomatisationWhatsappVentesSenegal = lazy(
+  () => import("@/pages/articles/ArticleAutomatisationWhatsappVentesSenegal"),
+);
 
 function App() {
   return (
@@ -301,6 +316,26 @@ function App() {
           <Route
             path="/article/optimisation-vitesse-site-seo-conversions"
             element={<ArticleVitesseSiteSeoConversions />}
+          />
+          <Route
+            path="/article/refonte-site-web-dakar-seo-2026"
+            element={<ArticleRefonteSiteWebDakar2026 />}
+          />
+          <Route
+            path="/article/maintenance-site-web-business-senegal"
+            element={<ArticleMaintenanceSiteWebBusiness />}
+          />
+          <Route
+            path="/article/seo-ecommerce-senegal-guide-2026"
+            element={<ArticleSeoEcommerceSenegal2026 />}
+          />
+          <Route
+            path="/article/prix-maintenance-informatique-senegal-2026"
+            element={<ArticlePrixMaintenanceInformatiqueSenegal />}
+          />
+          <Route
+            path="/article/automatisation-whatsapp-ventes-senegal-2026"
+            element={<ArticleAutomatisationWhatsappVentesSenegal />}
           />
           <Route
             path="/article/seo-local-senegal-guide-2026"

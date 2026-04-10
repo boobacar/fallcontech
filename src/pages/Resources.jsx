@@ -32,6 +32,46 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Refonte site web à Dakar : plan SEO + conversion en 2026",
+      excerpt:
+        "Méthode terrain pour transformer un site lent en machine à leads avec SEO local, UX mobile et CTA orientés business.",
+      category: "SEO",
+      readTime: "8 min de lecture",
+      link: "/article/refonte-site-web-dakar-seo-2026",
+    },
+    {
+      title: "Maintenance site web business au Sénégal : éviter les pannes et pertes de leads",
+      excerpt:
+        "Checklist de maintenance proactive : sécurité, backups, monitoring et performances pour garantir la continuité.",
+      category: "Maintenance",
+      readTime: "6 min de lecture",
+      link: "/article/maintenance-site-web-business-senegal",
+    },
+    {
+      title: "SEO e-commerce au Sénégal : guide 2026 pour plus de ventes",
+      excerpt:
+        "Comment structurer catégories, fiches produits et maillage interne pour ranker et convertir sur Google.",
+      category: "E-commerce",
+      readTime: "7 min de lecture",
+      link: "/article/seo-ecommerce-senegal-guide-2026",
+    },
+    {
+      title: "Prix maintenance informatique au Sénégal en 2026 : guide PME",
+      excerpt:
+        "Tarifs, SLA, niveaux de service et critères de choix pour externaliser votre support IT sans risque.",
+      category: "Prix",
+      readTime: "6 min de lecture",
+      link: "/article/prix-maintenance-informatique-senegal-2026",
+    },
+    {
+      title: "Automatisation WhatsApp au Sénégal : convertir plus sans spam",
+      excerpt:
+        "Playbook actionnable pour relances commerciales, qualification et closing avec WhatsApp Business.",
+      category: "Automatisation",
+      readTime: "6 min de lecture",
+      link: "/article/automatisation-whatsapp-ventes-senegal-2026",
+    },
+    {
       title: "Site web lent : 12 optimisations qui boostent SEO et conversions",
       excerpt:
         "Checklist pratique pour accélérer votre site, améliorer les Core Web Vitals et convertir plus de visiteurs.",
