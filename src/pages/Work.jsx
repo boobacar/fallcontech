@@ -12,6 +12,7 @@ import whatsappImg from "@/assets/articles/whatsapp-automation.webp";
 import iotImg from "@/assets/articles/iot-esp32.svg";
 import eaxperienceImg from "../assets/eaxperience.webp";
 import hgCuisineImg from "@/assets/hg-cuisine.webp";
+import fleetiDashboardImg from "@/assets/teliman-tracking-fleeti-dashboard.png";
 
 const Work = () => {
   const { t } = useI18n();
@@ -71,6 +72,20 @@ const Work = () => {
       link: "/case-study/telimanshare",
       img: telimanImg,
       site: "https://www.telimanshare.com",
+    },
+    {
+      title: t("work.projects.fleeti.title"),
+      category: t("work.projects.fleeti.category"),
+      description: t("work.projects.fleeti.description"),
+      result: t("work.projects.fleeti.result"),
+      tags: [
+        t("work.projects.fleeti.tags.0"),
+        t("work.projects.fleeti.tags.1"),
+        t("work.projects.fleeti.tags.2"),
+      ],
+      link: "/case-study/teliman-tracking-fleeti",
+      img: fleetiDashboardImg,
+      site: "https://teliman-tracking-fleeti.vercel.app",
     },
     {
       title: t("work.projects.whatsapp.title"),

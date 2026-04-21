@@ -150,6 +150,50 @@ export default {
         primary: "Start Your Project",
       },
     },
+    fleeti: {
+      seo: {
+        title: "Case Study: Teliman Tracking Fleeti — Fleet Dashboard",
+        description:
+          "Real-time fleet operations dashboard with critical alerts, analytics and reporting for logistics teams.",
+        headlineDescription:
+          "Live visibility into trucks, drivers and operational risks for Teliman logistics.",
+      },
+      title: "Teliman Tracking Fleeti",
+      subtitle: "Real-time fleet supervision and logistics operations platform",
+      alt: {
+        hero: "Main dashboard view of Teliman Tracking Fleeti",
+        full: "Full fleet dashboard with analytics and monitoring blocks",
+      },
+      metrics: {
+        trackers: "Trackers monitored continuously",
+        alerts: "Operational events analyzed over the period",
+        visibility: "Real-time operational visibility",
+      },
+      challenge:
+        "The logistics team needed one operational control center for truck status, critical events, driver performance and route execution. Data existed, but it was fragmented across tools and difficult to use quickly for day-to-day decisions.",
+      solutionIntro:
+        "We delivered an operations-first control dashboard with clear KPIs and actionable views for dispatch and supervision:",
+      features: [
+        "Executive dashboard (trackers, active/offline units, average speed, mileage)",
+        "Automatic prioritization of trucks requiring attention",
+        "Top-driver activity ranking",
+        "Critical alerts and anomaly visualization",
+        "Multi-view navigation (map, fleet, analytics, reports)",
+        "Robust stack (React + Express + Fleeti API)",
+      ],
+      results: [
+        "Consolidated operations visibility in one interface",
+        "Faster diagnosis of field incidents",
+        "Stronger daily decision-making with usable KPIs",
+        "Improved responsiveness of operations teams",
+      ],
+      cta: {
+        title: "Need a similar operations dashboard?",
+        subtitle:
+          "Let’s build a control platform tailored to your logistics workflows",
+        primary: "Start your project",
+      },
+    },
     whatsapp: {
       seo: {
         title: "Case Study: WhatsApp Automation — 100% messages",
@@ -519,6 +563,15 @@ export default {
           "Secure document sharing platform with access control and activity tracking",
         result: "Fewer emails; secure access and activity logs",
         tags: ["React", "Firebase", "Security"],
+      },
+      fleeti: {
+        title: "Teliman Tracking Fleeti",
+        category: "Logistics & Fleet",
+        description:
+          "Real-time fleet supervision dashboard with alerts, analytics, and operational reporting",
+        result:
+          "Centralized truck operations monitoring and faster operational response",
+        tags: ["React", "Express", "Fleeti API"],
       },
       whatsapp: {
         title: "WhatsApp Birthday Automation",

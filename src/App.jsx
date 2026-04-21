@@ -27,6 +27,9 @@ const CaseStudyMiroirFoncier = lazy(
 const CaseStudyHgCuisine = lazy(
   () => import("@/pages/case-studies/CaseStudyHgCuisine"),
 );
+const CaseStudyTelimanTrackingFleeti = lazy(
+  () => import("@/pages/case-studies/CaseStudyTelimanTrackingFleeti"),
+);
 const ArticleBooking = lazy(() => import("@/pages/articles/ArticleBooking"));
 const ArticleWhatsapp = lazy(() => import("@/pages/articles/ArticleWhatsapp"));
 const ArticleMvp = lazy(() => import("@/pages/articles/ArticleMvp"));
@@ -177,6 +180,10 @@ function App() {
           <Route
             path="/case-study/hg-cuisine"
             element={<CaseStudyHgCuisine />}
+          />
+          <Route
+            path="/case-study/teliman-tracking-fleeti"
+            element={<CaseStudyTelimanTrackingFleeti />}
           />
           <Route
             path="/article/booking-system-clinics-dakar"

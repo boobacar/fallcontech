@@ -159,6 +159,50 @@ export default {
         primary: "Démarrer Votre Projet",
       },
     },
+    fleeti: {
+      seo: {
+        title: "Étude de cas: Teliman Tracking Fleeti — Dashboard flotte",
+        description:
+          "Tableau de bord de pilotage flotte avec suivi live, alertes critiques, analytics et rapports opérationnels.",
+        headlineDescription:
+          "Supervision en temps réel des camions et des opérations logistiques de Teliman.",
+      },
+      title: "Teliman Tracking Fleeti",
+      subtitle: "Plateforme de supervision flotte et opérations logistiques en temps réel",
+      alt: {
+        hero: "Tableau de bord principal de Teliman Tracking Fleeti",
+        full: "Vue complète du dashboard flotte et analytics",
+      },
+      metrics: {
+        trackers: "Trackers supervisés en continu",
+        alerts: "Événements analysés sur la période",
+        visibility: "Visibilité opérationnelle en temps réel",
+      },
+      challenge:
+        "L’équipe logistique avait besoin d’une vue unique pour piloter sa flotte: état des camions, incidents critiques, performance des chauffeurs et suivi des trajets. Les données existaient, mais elles restaient dispersées et difficiles à exploiter rapidement en exploitation quotidienne.",
+      solutionIntro:
+        "Nous avons déployé une interface de pilotage orientée opérations, avec des métriques lisibles et des vues actionnables pour la coordination terrain :",
+      features: [
+        "Dashboard exécutif (trackers, actifs/offline, vitesse moyenne, kilométrage)",
+        "Priorisation automatique des camions à surveiller",
+        "Classement des chauffeurs les plus actifs",
+        "Visualisation des alertes critiques et anomalies",
+        "Navigation multi-vues (map, flotte, analytics, rapports)",
+        "Base technique robuste (React + Express + API Fleeti)",
+      ],
+      results: [
+        "Vision consolidée des opérations sur une seule interface",
+        "Réduction du temps de diagnostic des incidents terrain",
+        "Meilleur pilotage quotidien grâce aux KPI exploitables",
+        "Support à la décision plus rapide pour l’équipe exploitation",
+      ],
+      cta: {
+        title: "Besoin d’un dashboard métier similaire ?",
+        subtitle:
+          "Construisons une plateforme de pilotage adaptée à vos opérations",
+        primary: "Lancer votre projet",
+      },
+    },
     whatsapp: {
       seo: {
         title: "Étude de cas: Automatisation WhatsApp — 100% messages",
@@ -546,6 +590,15 @@ export default {
         result:
           "Moins d'allers‑retours par e‑mail ; accès sécurisé et journaux d'activité",
         tags: ["React", "Firebase", "Sécurité"],
+      },
+      fleeti: {
+        title: "Teliman Tracking Fleeti",
+        category: "Logistique & Flotte",
+        description:
+          "Dashboard de supervision flotte en temps réel avec alertes, analytics et rapports opérationnels",
+        result:
+          "Pilotage centralisé des camions et meilleure réactivité opérationnelle",
+        tags: ["React", "Express", "Fleeti API"],
       },
       whatsapp: {
         title: "Automatisation Anniversaires WhatsApp",
