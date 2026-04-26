@@ -145,6 +145,21 @@ const ArticlePrixMaintenanceInformatiqueSenegal = lazy(
 const ArticleAutomatisationWhatsappVentesSenegal = lazy(
   () => import("@/pages/articles/ArticleAutomatisationWhatsappVentesSenegal"),
 );
+const ArticleDeveloppementAppMobileDakar = lazy(
+  () => import("@/pages/articles/ArticleDeveloppementAppMobileDakar"),
+);
+const ArticleCrerBoutiqueEnLigneSenegal = lazy(
+  () => import("@/pages/articles/ArticleCrerBoutiqueEnLigneSenegal"),
+);
+const ArticleDeveloppeurFreelanceDakar = lazy(
+  () => import("@/pages/articles/ArticleDeveloppeurFreelanceDakar"),
+);
+const ArticleApplicationGestionSurMesureSenegal = lazy(
+  () => import("@/pages/articles/ArticleApplicationGestionSurMesureSenegal"),
+);
+const ArticleCreerSiteWebProfessionnelDakar = lazy(
+  () => import("@/pages/articles/ArticleCreerSiteWebProfessionnelDakar"),
+);
 
 function App() {
   return (
@@ -359,6 +374,27 @@ function App() {
           <Route
             path="/article/checklist-audit-seo-30-minutes"
             element={<ArticleChecklistAuditSeo30Min />}
+          />
+
+          <Route
+            path="/article/developpement-application-mobile-dakar"
+            element={<ArticleDeveloppementAppMobileDakar />}
+          />
+          <Route
+            path="/article/creer-boutique-en-ligne-senegal"
+            element={<ArticleCrerBoutiqueEnLigneSenegal />}
+          />
+          <Route
+            path="/article/developpeur-freelance-dakar-embaucher"
+            element={<ArticleDeveloppeurFreelanceDakar />}
+          />
+          <Route
+            path="/article/application-gestion-sur-mesure-senegal"
+            element={<ArticleApplicationGestionSurMesureSenegal />}
+          />
+          <Route
+            path="/article/creer-site-web-professionnel-dakar"
+            element={<ArticleCreerSiteWebProfessionnelDakar />}
           />
 
           {/* FR only */}

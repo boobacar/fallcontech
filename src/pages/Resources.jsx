@@ -32,6 +32,46 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Créer un site web professionnel à Dakar : guide complet 2026",
+      excerpt:
+        "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal.",
+      category: "Création web",
+      readTime: "10 min de lecture",
+      link: "/article/creer-site-web-professionnel-dakar",
+    },
+    {
+      title: "Développement application mobile à Dakar : guide complet 2026",
+      excerpt:
+        "Tout ce qu'il faut savoir pour faire développer une app mobile à Dakar : coûts, technologies React Native, Wave/Orange Money.",
+      category: "Application mobile",
+      readTime: "9 min de lecture",
+      link: "/article/developpement-application-mobile-dakar",
+    },
+    {
+      title: "Créer une boutique en ligne au Sénégal : guide complet 2026",
+      excerpt:
+        "Lancer votre e-commerce avec Wave et Orange Money : technologies, coûts, livraison locale et SEO e-commerce.",
+      category: "E-commerce",
+      readTime: "8 min de lecture",
+      link: "/article/creer-boutique-en-ligne-senegal",
+    },
+    {
+      title: "Embaucher un développeur freelance à Dakar : guide 2026",
+      excerpt:
+        "Tarifs réels, compétences à vérifier, contrat, signaux d'alarme et comparatif freelance vs agence à Dakar.",
+      category: "Développement",
+      readTime: "8 min de lecture",
+      link: "/article/developpeur-freelance-dakar-embaucher",
+    },
+    {
+      title: "Application de gestion sur mesure au Sénégal : pourquoi et comment",
+      excerpt:
+        "CRM, stocks, facturation, RH : comment digitaliser votre PME sénégalaise avec une application adaptée à vos processus.",
+      category: "Gestion",
+      readTime: "7 min de lecture",
+      link: "/article/application-gestion-sur-mesure-senegal",
+    },
+    {
       title: "Refonte site web à Dakar : plan SEO + conversion en 2026",
       excerpt:
         "Méthode terrain pour transformer un site lent en machine à leads avec SEO local, UX mobile et CTA orientés business.",
