@@ -3,15 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fallcon Tech</title>
 
-    <!-- Favicons / icons for Google and devices -->
+    <!-- Fallback title/description avant chargement JS -->
+    <title>Agence Web Dakar & Développeur Web Sénégal | Fallcon Tech</title>
+    <meta name="description" content="Fallcon Tech — agence web et développeur à Dakar : création de site internet, SEO local Sénégal, automatisation WhatsApp, applications mobile/web et IoT pour PME, startups et cliniques." />
+    <meta name="keywords" content="agence web Dakar, développeur web Sénégal, création site web Dakar, agence SEO Sénégal, automatisation WhatsApp, application mobile Sénégal, développeur freelance Dakar, site internet Dakar, référencement Google Sénégal" />
+    <meta name="author" content="Fallcon Tech" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fallcontech.com/" />
+
+    <!-- Open Graph fallback -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fallcon Tech" />
+    <meta property="og:title" content="Agence Web Dakar & Développeur Web Sénégal | Fallcon Tech" />
+    <meta property="og:description" content="Fallcon Tech — création de site web, SEO local, automatisation WhatsApp, applications et IoT pour entreprises à Dakar et au Sénégal." />
+    <meta property="og:url" content="https://fallcontech.com/" />
+    <meta property="og:image" content="https://fallcontech.com/logo.png" />
+    <meta property="og:image:alt" content="Fallcon Tech — Agence Web Dakar" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_SN" />
+
+    <!-- Twitter Card fallback -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agence Web Dakar & Développeur Web Sénégal | Fallcon Tech" />
+    <meta name="twitter:description" content="Création de site web, SEO, automatisation WhatsApp et solutions IoT pour entreprises à Dakar et au Sénégal." />
+    <meta name="twitter:image" content="https://fallcontech.com/logo.png" />
+
+    <!-- Favicons / icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Performance: DNS prefetch & preconnect -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+
+    <!-- Structured Data fallback (avant JS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://fallcontech.com",
+      "name": "Fallcon Tech",
+      "description": "Agence web à Dakar spécialisée en création de site internet, SEO local, automatisation WhatsApp et développement IoT pour PME et startups au Sénégal.",
+      "url": "https://fallcontech.com",
+      "logo": "https://fallcontech.com/logo.png",
+      "image": "https://fallcontech.com/logo.png",
+      "telephone": "+221776260020",
+      "email": "info@fallcontech.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "XOF",
+      "paymentAccepted": "Wave, Orange Money, Free Money, Virement",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dakar",
+        "addressLocality": "Dakar",
+        "addressRegion": "Dakar",
+        "addressCountry": "SN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 14.7167,
+        "longitude": -17.4677
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Dakar"},
+        {"@type": "Country", "name": "Sénégal"}
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "knowsAbout": [
+        "Création de site web",
+        "Développement web",
+        "SEO local",
+        "Référencement Google",
+        "Automatisation WhatsApp",
+        "Développement IoT",
+        "Arduino",
+        "ESP32",
+        "React",
+        "Node.js",
+        "Firebase",
+        "MVP startup",
+        "Application mobile",
+        "E-commerce Sénégal"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Fallcon Tech",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Création de site web à Dakar"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agence SEO Sénégal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatisation WhatsApp"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Développement application web"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Solutions IoT & embarqué"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Développement MVP startup"}}
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

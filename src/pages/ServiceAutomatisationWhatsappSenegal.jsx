@@ -24,9 +24,41 @@ export default function ServiceAutomatisationWhatsappSenegal() {
     <>
       <SEO
         path="/services/automatisation-whatsapp-senegal"
-        title="Automatisation WhatsApp Business au Sénégal | Fallcon Tech"
-        description="Automatisation WhatsApp au Sénégal : relances clients, messages ciblés, workflows CRM et intégrations sur mesure pour PME et commerces."
-        jsonLd={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }}
+        title="Automatisation WhatsApp Business Sénégal | Relances & CRM — Fallcon Tech"
+        description="Automatisation WhatsApp Business au Sénégal : relances prospects, rappels rendez-vous, workflows CRM et intégrations sur mesure pour PME à Dakar. Gagnez du temps, vendez plus."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Automatisation WhatsApp Business au Sénégal",
+            description: "Service d'automatisation WhatsApp pour entreprises au Sénégal : relances clients, notifications, workflows CRM et intégrations sur mesure pour PME à Dakar.",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Fallcon Tech",
+              url: "https://fallcontech.com",
+              telephone: "+221776260020",
+              address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+            },
+            areaServed: [{ "@type": "City", name: "Dakar" }, { "@type": "Country", name: "Sénégal" }],
+            offers: { "@type": "Offer", url: "https://fallcontech.com/contact" },
+            serviceType: "Automatisation WhatsApp Business",
+            url: "https://fallcontech.com/services/automatisation-whatsapp-senegal",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://fallcontech.com/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://fallcontech.com/services" },
+              { "@type": "ListItem", position: 3, name: "Automatisation WhatsApp Sénégal", item: "https://fallcontech.com/services/automatisation-whatsapp-senegal" },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          },
+        ]}
       />
 
       <section className="py-20 gradient-bg">

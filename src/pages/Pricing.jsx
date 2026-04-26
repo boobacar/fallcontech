@@ -105,8 +105,8 @@ const Pricing = () => {
     <>
       <SEO
         path="/pricing"
-        title="Tarifs création site web, SEO & maintenance à Dakar | Fallcon Tech"
-        description="Consultez nos tarifs pour site vitrine, SEO, maintenance web et solutions digitales sur mesure au Sénégal. Devis rapide et transparent."
+        title="Prix Création Site Web Sénégal & Tarifs Développement Web Dakar | Fallcon Tech"
+        description="Tarifs transparents pour la création de site web à Dakar : site vitrine dès 350 000 F CFA, SEO, maintenance, MVP et solutions digitales sur mesure au Sénégal. Devis gratuit."
       />
 
       <section className="py-20 gradient-bg">

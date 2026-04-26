@@ -353,8 +353,8 @@ const Resources = () => {
     <>
       <SEO
         path="/resources"
-        title="Blog SEO, Web & IT au Sénégal | Conseils Fallcon Tech"
-        description="Articles pratiques sur le SEO local, la création de site web, l'automatisation WhatsApp et les solutions IT pour entreprises à Dakar et au Sénégal."
+        title="Blog Développement Web, SEO & IT Sénégal | Guides Fallcon Tech"
+        description="Guides pratiques pour développeurs et entrepreneurs au Sénégal : SEO local Dakar, création de site web, automatisation WhatsApp, IoT, prix et bonnes pratiques IT. Contenu expert Fallcon Tech."
       />
 
       <section className="py-20 gradient-bg">

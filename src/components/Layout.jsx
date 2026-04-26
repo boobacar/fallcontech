@@ -59,16 +59,61 @@ const Layout = ({ children }) => {
 
   const orgJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": siteUrl || "https://fallcontech.com",
     name: "Fallcon Tech",
-    url: siteUrl || undefined,
-    logo: `${siteUrl}/logo.png`,
+    description: "Agence web à Dakar spécialisée en création de site internet, SEO local, automatisation WhatsApp et développement IoT pour PME et startups au Sénégal.",
+    url: siteUrl || "https://fallcontech.com",
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl || "https://fallcontech.com"}/logo.png`,
+      width: 512,
+      height: 512,
+    },
+    image: `${siteUrl || "https://fallcontech.com"}/logo.png`,
     email: "info@fallcontech.com",
-    telephone: "+221 77 626 00 20",
+    telephone: "+221776260020",
+    priceRange: "$$",
+    currenciesAccepted: "XOF",
+    paymentAccepted: "Wave, Orange Money, Free Money, Virement bancaire",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Dakar",
       addressLocality: "Dakar",
+      addressRegion: "Dakar",
       addressCountry: "SN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 14.7167,
+      longitude: -17.4677,
+    },
+    areaServed: [
+      { "@type": "City", "name": "Dakar" },
+      { "@type": "Country", "name": "Sénégal" },
+    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    knowsAbout: [
+      "Création de site web", "Développement web", "SEO local",
+      "Référencement Google", "Automatisation WhatsApp", "Développement IoT",
+      "Arduino", "ESP32", "React", "Node.js", "Firebase", "MVP startup",
+      "Application mobile", "E-commerce Sénégal", "Développement embarqué",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services Fallcon Tech",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Création de site web à Dakar", url: `${siteUrl || "https://fallcontech.com"}/services/creation-site-web-dakar` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agence SEO Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/agence-seo-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automatisation WhatsApp", url: `${siteUrl || "https://fallcontech.com"}/services/automatisation-whatsapp-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Développement application web & MVP" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solutions IoT & embarqué" } },
+      ],
     },
   };
 
@@ -76,10 +121,11 @@ const Layout = ({ children }) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Fallcon Tech",
-    url: siteUrl || undefined,
+    url: siteUrl || "https://fallcontech.com",
+    description: "Agence web et développeur à Dakar — création de site, SEO, automatisation et IoT pour entreprises au Sénégal.",
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteUrl}/resources?q={search_term_string}`,
+      target: `${siteUrl || "https://fallcontech.com"}/resources?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };
@@ -227,8 +273,9 @@ const Layout = ({ children }) => {
             <div>
               <span className="font-semibold text-primary-foreground">{t("common.footer.services")}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.webDesign")}</Link></li>
-                <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.automations")}</Link></li>
+                <li><Link to="/services/creation-site-web-dakar" className="hover:text-blue-400 transition-colors">Création de site web à Dakar</Link></li>
+                <li><Link to="/services/agence-seo-senegal" className="hover:text-blue-400 transition-colors">Agence SEO au Sénégal</Link></li>
+                <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:text-blue-400 transition-colors">Automatisation WhatsApp</Link></li>
                 <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.mvpDev")}</Link></li>
                 <li><Link to="/services#iot-embedded" className="hover:text-blue-400 transition-colors">{t("common.footer.links.iot")}</Link></li>
               </ul>

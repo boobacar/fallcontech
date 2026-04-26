@@ -158,8 +158,8 @@ const Work = () => {
     <>
       <SEO
         path="/work"
-        title="Réalisations Web, SEO & IoT au Sénégal | Fallcon Tech"
-        description="Études de cas Fallcon Tech : projets livrés en création de site web, SEO local, automatisation et solutions IT pour entreprises sénégalaises."
+        title="Projets & Réalisations Développeur Web Dakar | Sites, Apps, IoT — Fallcon Tech"
+        description="Portfolio Fallcon Tech : site clinique, plateforme de documents sécurisée, automatisation WhatsApp, dashboard IoT et e-commerce livré à Dakar et au Sénégal. Voir les études de cas."
         jsonLd={[itemListJsonLd, breadcrumbJsonLd]}
       />
 

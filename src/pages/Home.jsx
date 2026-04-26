@@ -177,8 +177,8 @@ const Home = () => {
         return (
           <SEO
             path="/"
-            title="Agence Web Dakar & SEO Sénégal | Fallcon Tech"
-            description="Fallcon Tech, agence web à Dakar : création de site internet, SEO local au Sénégal, automatisation WhatsApp et solutions IoT pour PME."
+            title="Développeur Web & Agence Web Dakar | Création Site, SEO, App — Fallcon Tech"
+            description="Fallcon Tech — développeur web et agence à Dakar : création de site internet, SEO local Sénégal, automatisation WhatsApp, applications web/mobile et IoT pour PME, cliniques et startups. Devis gratuit."
             jsonLd={[
               itemListJsonLd,
               {

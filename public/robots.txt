@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Priorité aux pages services
+Allow: /services/
+Allow: /article/
+Allow: /case-study/
+
 Sitemap: https://fallcontech.com/sitemap.xml

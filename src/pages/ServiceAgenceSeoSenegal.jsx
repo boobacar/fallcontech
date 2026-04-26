@@ -24,9 +24,41 @@ export default function ServiceAgenceSeoSenegal() {
     <>
       <SEO
         path="/services/agence-seo-senegal"
-        title="Agence SEO au Sénégal | Référencement Google avec Fallcon Tech"
-        description="Agence SEO au Sénégal : audit technique, optimisation on-page, stratégie de contenus et SEO local pour augmenter vos clics Google qualifiés."
-        jsonLd={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }}
+        title="Agence SEO Sénégal | Référencement Google à Dakar — Fallcon Tech"
+        description="Agence SEO au Sénégal : audit technique complet, optimisation on-page, stratégie de contenus locale et SEO Google pour PME à Dakar. Résultats mesurables dès 4 semaines."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Agence SEO au Sénégal — Référencement Google",
+            description: "Service de référencement naturel (SEO) pour entreprises à Dakar et au Sénégal : audit, optimisation on-page, stratégie de contenu et SEO local Google.",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Fallcon Tech",
+              url: "https://fallcontech.com",
+              telephone: "+221776260020",
+              address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+            },
+            areaServed: [{ "@type": "City", name: "Dakar" }, { "@type": "Country", name: "Sénégal" }],
+            offers: { "@type": "Offer", url: "https://fallcontech.com/contact" },
+            serviceType: "SEO et référencement naturel",
+            url: "https://fallcontech.com/services/agence-seo-senegal",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://fallcontech.com/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://fallcontech.com/services" },
+              { "@type": "ListItem", position: 3, name: "Agence SEO Sénégal", item: "https://fallcontech.com/services/agence-seo-senegal" },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          },
+        ]}
       />
 
       <section className="py-20 gradient-bg">

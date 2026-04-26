@@ -25,13 +25,45 @@ export default function ServiceCreationSiteWebDakar() {
     <>
       <SEO
         path="/services/creation-site-web-dakar"
-        title="Création de site web à Dakar | Agence Fallcon Tech"
-        description="Création de site web professionnel à Dakar : design moderne, SEO local, performance mobile et stratégie conversion pour PME et entrepreneurs."
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-        }}
+        title="Création de site web à Dakar | Agence Web Fallcon Tech — Sénégal"
+        description="Création de site web professionnel à Dakar dès 350 000 F CFA : design mobile-first, SEO local Sénégal, Core Web Vitals, Analytics et stratégie de conversion pour PME, cliniques et startups."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Création de site web à Dakar",
+            description: "Création de site web professionnel à Dakar : design moderne mobile-first, SEO local, performance optimisée et stratégie de conversion pour PME au Sénégal.",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Fallcon Tech",
+              url: "https://fallcontech.com",
+              telephone: "+221776260020",
+              address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+            },
+            areaServed: [{ "@type": "City", name: "Dakar" }, { "@type": "Country", name: "Sénégal" }],
+            offers: {
+              "@type": "Offer",
+              priceSpecification: { "@type": "PriceSpecification", price: "350000", priceCurrency: "XOF", minPrice: "350000" },
+              url: "https://fallcontech.com/contact",
+            },
+            serviceType: "Création de site web",
+            url: "https://fallcontech.com/services/creation-site-web-dakar",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://fallcontech.com/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://fallcontech.com/services" },
+              { "@type": "ListItem", position: 3, name: "Création de site web à Dakar", item: "https://fallcontech.com/services/creation-site-web-dakar" },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          },
+        ]}
       />
 
       <section className="py-20 gradient-bg">
