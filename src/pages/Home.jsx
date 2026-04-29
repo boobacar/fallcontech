@@ -19,10 +19,8 @@ import {
 } from "@/components/TechIcons";
 import clinicImg from "@/assets/clinic-dabia.webp";
 
-import imgTroubleshooting from "@/assets/articles/troubleshooting.png";
-import imgGeneralist from "@/assets/articles/it-support.png";
-import imgMaintenance from "@/assets/articles/maintenance.png";
 import imgStack from "@/assets/articles/stack.png";
+import imgSeo from "@/assets/articles/seo.png";
 import telimanImg from "@/assets/telimanshare.webp";
 import eaxperienceImg from "@/assets/eaxperience.webp";
 
@@ -161,22 +159,11 @@ const Home = () => {
             link: "/article/logiciel-gestion-courrier-administration-senegal",
           },
           {
-            title: "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
-            excerpt: "Approche fiable, sécurité et mise en service (Wave/OM/Free).",
-            category: "IoT",
-            link: "/article/integrer-paiement-machine-eau-esp32-senegal",
-          },
-          {
-            title: "Développement IoT & embarqué (Arduino/ESP32)",
-            excerpt: "Capteurs, contrôle, mises à jour à distance et tableaux de bord.",
-            category: "IoT",
-            link: "/article/developpement-iot-embarque-senegal-arduino-esp32",
-          },
-          {
-            title: "Télémétrie & maintenance prédictive IoT",
-            excerpt: "Capteurs, alertes et décisions guidées par la donnée pour réduire les pannes.",
-            category: "IoT",
-            link: "/article/telemetrie-maintenance-predictive-iot-senegal",
+            title: "Créer un site web professionnel à Dakar : guide complet 2026",
+            excerpt:
+              "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal.",
+            category: "Création web",
+            link: "/article/creer-site-web-professionnel-dakar",
           },
         ];
         const itemListJsonLd = {
@@ -554,25 +541,20 @@ const Home = () => {
                   img: imgStack,
                 },
                 {
-                  title: t("articles.troubleshooting.title"),
-                  excerpt: t("articles.troubleshooting.seo.description"),
-                  category: "Information",
-                  link: "/article/depannage-informatique-5-problemes-courants",
-                  img: imgTroubleshooting,
+                  title: "Logiciel de gestion de courrier au Sénégal",
+                  excerpt:
+                    "Fonctionnalités, budget et checklist pour administrations, services et PME.",
+                  category: "Gestion courrier",
+                  link: "/article/logiciel-gestion-courrier-administration-senegal",
+                  img: imgSeo,
                 },
                 {
-                  title: t("articles.generalist.title"),
-                  excerpt: t("articles.generalist.seo.description"),
-                  category: "Strategy",
-                  link: "/article/pourquoi-informaticien-generaliste-dakar",
-                  img: imgGeneralist,
-                },
-                {
-                  title: t("articles.maintenance.title"),
-                  excerpt: t("articles.maintenance.seo.description"),
-                  category: "Maintenance",
-                  link: "/article/maintenance-nettoyage-pc-senegal",
-                  img: imgMaintenance,
+                  title: "Créer un site web professionnel à Dakar : guide complet 2026",
+                  excerpt:
+                    "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal.",
+                  category: "Création web",
+                  link: "/article/creer-site-web-professionnel-dakar",
+                  img: imgStack,
                 },
               ];
               return posts.map((post, idx) => (
