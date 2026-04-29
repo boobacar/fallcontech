@@ -29,7 +29,7 @@ const Work = () => {
       ],
       link: "/case-study/hg-cuisine",
       img: hgCuisineImg,
-      site: "https://hg-cuisine.vercel.app",
+      site: "https://www.hgcuisine.com/",
     },
     {
       title: t("work.projects.clinic.title"),
