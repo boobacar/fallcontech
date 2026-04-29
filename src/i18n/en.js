@@ -595,6 +595,15 @@ export default {
         result: "Premium branding and immersive menu presentation",
         tags: ["React", "Design", "Branding"],
       },
+      afrismile: {
+        title: "AfriSmile",
+        category: "Dental equipment",
+        description:
+          "Showcase and catalog website for a dental equipment distributor in Senegal and West Africa",
+        result:
+          "Clear positioning, visible quote journey and premium presentation of dental solutions",
+        tags: ["React", "SEO", "Catalog"],
+      },
     },
   },
   resources: {

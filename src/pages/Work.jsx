@@ -13,6 +13,7 @@ import iotImg from "@/assets/articles/iot-esp32.svg";
 import eaxperienceImg from "../assets/eaxperience.webp";
 import hgCuisineImg from "@/assets/hg-cuisine.webp";
 import fleetiDashboardImg from "@/assets/teliman-tracking-fleeti-dashboard.png";
+import afrismileImg from "@/assets/afrismile.webp";
 
 const Work = () => {
   const { t } = useI18n();
@@ -30,6 +31,20 @@ const Work = () => {
       link: "/case-study/hg-cuisine",
       img: hgCuisineImg,
       site: "https://www.hgcuisine.com/",
+    },
+    {
+      title: t("work.projects.afrismile.title"),
+      category: t("work.projects.afrismile.category"),
+      description: t("work.projects.afrismile.description"),
+      result: t("work.projects.afrismile.result"),
+      tags: [
+        t("work.projects.afrismile.tags.0"),
+        t("work.projects.afrismile.tags.1"),
+        t("work.projects.afrismile.tags.2"),
+      ],
+      link: "#",
+      img: afrismileImg,
+      site: "https://www.afrismile.net/",
     },
     {
       title: t("work.projects.clinic.title"),

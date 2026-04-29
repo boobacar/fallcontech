@@ -624,6 +624,15 @@ export default {
         result: "Branding premium et présentation immersive des menus",
         tags: ["React", "Design", "Branding"],
       },
+      afrismile: {
+        title: "AfriSmile",
+        category: "Équipements dentaires",
+        description:
+          "Site vitrine et catalogue pour un distributeur d'équipements dentaires au Sénégal et en Afrique de l'Ouest",
+        result:
+          "Positionnement clair, parcours devis visible et présentation premium des solutions dentaires",
+        tags: ["React", "SEO", "Catalogue"],
+      },
     },
   },
   resources: {
