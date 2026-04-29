@@ -22,6 +22,7 @@ import clinicImg from "@/assets/clinic-dabia.webp";
 import imgTroubleshooting from "@/assets/articles/troubleshooting.png";
 import imgGeneralist from "@/assets/articles/it-support.png";
 import imgMaintenance from "@/assets/articles/maintenance.png";
+import imgStack from "@/assets/articles/stack.png";
 import telimanImg from "@/assets/telimanshare.webp";
 import eaxperienceImg from "@/assets/eaxperience.webp";
 
@@ -146,6 +147,20 @@ const Home = () => {
           (typeof window !== "undefined" ? window.location.origin : "");
         const latestPosts = [
           {
+            title: "Digitalisation des courriers au Sénégal",
+            excerpt:
+              "Registre numérique, workflow, GED et suivi des courriers entrants/sortants.",
+            category: "Digitalisation",
+            link: "/article/digitalisation-courriers-services-senegal",
+          },
+          {
+            title: "Logiciel de gestion de courrier",
+            excerpt:
+              "Fonctionnalités, budget et checklist pour administrations, services et PME.",
+            category: "Gestion courrier",
+            link: "/article/logiciel-gestion-courrier-administration-senegal",
+          },
+          {
             title: "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
             excerpt: "Approche fiable, sécurité et mise en service (Wave/OM/Free).",
             category: "IoT",
@@ -177,8 +192,8 @@ const Home = () => {
         return (
           <SEO
             path="/"
-            title="Développeur Web & Agence Web Dakar | Création Site, SEO, App — Fallcon Tech"
-            description="Fallcon Tech — développeur web et agence à Dakar : création de site internet, SEO local Sénégal, automatisation WhatsApp, applications web/mobile et IoT pour PME, cliniques et startups. Devis gratuit."
+            title="Transition Digitale Sénégal | Développeur Web & Agence Web Dakar — Fallcon Tech"
+            description="Fallcon Tech accompagne la transition digitale au Sénégal : digitalisation des courriers, applications de gestion, GED, création de site web, SEO local, automatisation WhatsApp et solutions web/mobile pour services, PME et administrations."
             jsonLd={[
               itemListJsonLd,
               {
@@ -319,6 +334,70 @@ const Home = () => {
               </Button>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-background section-sep">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700 mb-5">
+                Transition digitale au Sénégal
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-5 text-primary">
+                Digitalisez vos courriers, documents et processus internes
+              </h2>
+              <p className="text-lg text-foreground/80 mb-6">
+                Fallcon Tech aide les services, PME, écoles, cliniques,
+                cabinets et administrations à passer du papier aux outils
+                numériques : gestion des courriers entrants et sortants,
+                registre numérique, GED, workflows de validation, tableaux de
+                bord et applications de gestion sur mesure.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg">
+                  <Link to="/contact">Parler de ma transition digitale</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/article/digitalisation-courriers-services-senegal">
+                    Guide digitalisation courrier
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid sm:grid-cols-2 gap-4"
+            >
+              {[
+                "Digitalisation des courriers au Sénégal",
+                "Logiciel de gestion de courrier",
+                "Gestion électronique des documents (GED)",
+                "Application de gestion sur mesure",
+                "Workflow de validation interne",
+                "Transition digitale pour services et PME",
+              ].map((keyword) => (
+                <div
+                  key={keyword}
+                  className="bg-card rounded-xl p-5 shadow-md border border-border"
+                >
+                  <CheckCircle2
+                    className="text-blue-500 mb-3"
+                    size={22}
+                    aria-hidden="true"
+                  />
+                  <p className="font-semibold text-foreground">{keyword}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -466,6 +545,14 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {(() => {
               const posts = [
+                {
+                  title: "Digitalisation des courriers au Sénégal",
+                  excerpt:
+                    "Registre numérique, workflow, GED et suivi des courriers entrants/sortants pour services et PME.",
+                  category: "Digitalisation",
+                  link: "/article/digitalisation-courriers-services-senegal",
+                  img: imgStack,
+                },
                 {
                   title: t("articles.troubleshooting.title"),
                   excerpt: t("articles.troubleshooting.seo.description"),

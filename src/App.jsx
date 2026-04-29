@@ -160,6 +160,12 @@ const ArticleApplicationGestionSurMesureSenegal = lazy(
 const ArticleCreerSiteWebProfessionnelDakar = lazy(
   () => import("@/pages/articles/ArticleCreerSiteWebProfessionnelDakar"),
 );
+const ArticleDigitalisationCourriersSenegal = lazy(
+  () => import("@/pages/articles/ArticleDigitalisationCourriersSenegal"),
+);
+const ArticleLogicielGestionCourrierSenegal = lazy(
+  () => import("@/pages/articles/ArticleLogicielGestionCourrierSenegal"),
+);
 
 function App() {
   return (
@@ -395,6 +401,14 @@ function App() {
           <Route
             path="/article/creer-site-web-professionnel-dakar"
             element={<ArticleCreerSiteWebProfessionnelDakar />}
+          />
+          <Route
+            path="/article/digitalisation-courriers-services-senegal"
+            element={<ArticleDigitalisationCourriersSenegal />}
+          />
+          <Route
+            path="/article/logiciel-gestion-courrier-administration-senegal"
+            element={<ArticleLogicielGestionCourrierSenegal />}
           />
 
           {/* FR only */}

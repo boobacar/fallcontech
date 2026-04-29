@@ -32,6 +32,24 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title:
+        "Digitalisation des courriers au Sénégal : réussir sa transition digitale",
+      excerpt:
+        "Registre numérique, workflow, GED, archivage et traçabilité : comment digitaliser les courriers entrants et sortants de votre service.",
+      category: "Digitalisation",
+      readTime: "8 min de lecture",
+      link: "/article/digitalisation-courriers-services-senegal",
+    },
+    {
+      title:
+        "Logiciel de gestion de courrier au Sénégal : fonctionnalités et budget",
+      excerpt:
+        "Checklist pour choisir ou développer une application de gestion de courrier adaptée aux administrations, services et PME sénégalaises.",
+      category: "Gestion courrier",
+      readTime: "7 min de lecture",
+      link: "/article/logiciel-gestion-courrier-administration-senegal",
+    },
+    {
       title: "Créer un site web professionnel à Dakar : guide complet 2026",
       excerpt:
         "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal.",
@@ -423,6 +441,8 @@ const Resources = () => {
               const slug = post.link.split("/").pop();
               const map = {
                 "optimisation-vitesse-site-seo-conversions": imgMobile,
+                "digitalisation-courriers-services-senegal": imgStack,
+                "logiciel-gestion-courrier-administration-senegal": imgSeo,
                 "seo-local-senegal-guide-2026": imgSeo,
                 "prix-site-web-senegal-2026": imgCost,
                 "wordpress-vs-nextjs-seo": imgStack,
