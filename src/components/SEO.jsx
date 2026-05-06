@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import siteLogo from "@/assets/logo.webp";
+import { SITE_URL } from "@/data/seoData";
 
 function absoluteUrl(path) {
   if (!path) return undefined;
   const base =
     import.meta.env.VITE_SITE_URL ||
+    SITE_URL ||
     (typeof window !== "undefined" ? window.location.origin : "");
   if (!base) return path;
   if (path.startsWith("http")) return path;

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { getSeoForPath } from "../src/data/seoData.js";
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -36,29 +37,11 @@ const routes = Array.from(
 
 // 2. Priority & changefreq logic
 function getMeta(p) {
-  if (p === "/") return { priority: "1.0", changefreq: "daily" };
-
-  // Pages services dédiées : très haute priorité (cibles SEO principales)
-  if (p === "/services/creation-site-web-dakar") return { priority: "0.95", changefreq: "weekly" };
-  if (p === "/services/agence-seo-senegal") return { priority: "0.95", changefreq: "weekly" };
-  if (p === "/services/automatisation-whatsapp-senegal") return { priority: "0.90", changefreq: "weekly" };
-
-  // Page services générale
-  if (p === "/services") return { priority: "0.90", changefreq: "weekly" };
-
-  // Pages principales : forte priorité
-  if (["/work", "/about", "/contact", "/pricing"].includes(p)) return { priority: "0.80", changefreq: "monthly" };
-
-  // Blog/ressources
-  if (p === "/resources") return { priority: "0.75", changefreq: "weekly" };
-
-  // Études de cas
-  if (p.startsWith("/case-study/")) return { priority: "0.70", changefreq: "monthly" };
-
-  // Articles
-  if (p.startsWith("/article/")) return { priority: "0.60", changefreq: "monthly" };
-
-  return { priority: "0.50", changefreq: "monthly" };
+  const seo = getSeoForPath(p);
+  return {
+    priority: seo.priority || "0.50",
+    changefreq: seo.changefreq || "monthly",
+  };
 }
 
 // 3. Generate Sitemap XML
