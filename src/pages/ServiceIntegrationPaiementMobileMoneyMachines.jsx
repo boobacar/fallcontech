@@ -27,7 +27,7 @@ export default function ServiceIntegrationPaiementMobileMoneyMachines() {
   const features = [
     "Audit du monnayeur, de la carte de commande et du cycle de vente",
     "Ajout de Wave, Orange Money ou Free Money en complément des pièces",
-    "Module ESP32/Arduino, relais, capteurs et affichage selon la machine",
+    "Module IOT, relais, capteurs et affichage selon la machine",
     "Validation côté serveur avec référence de paiement unique",
     "Tableau de bord pour ventes, erreurs, stocks, volumes ou cycles",
     "Tests coupure réseau, reprise automatique et anti-doublon",
