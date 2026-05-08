@@ -13,7 +13,7 @@ export const pageSeo = {
   "/services": {
     title: "Services Web, SEO, Automatisation & IoT à Dakar | Fallcon Tech",
     description:
-      "Création de site web, référencement SEO, automatisation WhatsApp, MVP, applications web/mobile et intégration IoT pour entreprises au Sénégal.",
+      "Création de site web, référencement SEO, automatisation WhatsApp, MVP, applications web/mobile et intégration IoT, Wave et Orange Money sur machines à pièces au Sénégal.",
     priority: "0.90",
     changefreq: "weekly",
   },
@@ -36,6 +36,13 @@ export const pageSeo = {
     description:
       "Automatisation WhatsApp Business au Sénégal : relances prospects, rappels rendez-vous, workflows CRM et intégrations sur mesure.",
     priority: "0.90",
+    changefreq: "weekly",
+  },
+  "/services/integration-paiement-mobile-money-machines": {
+    title: "Intégration Wave Orange Money sur machine à pièces | Fallcon Tech Sénégal",
+    description:
+      "Intégration mobile money Wave, Orange Money ou Free Money sur distributeurs automatiques, machines de vente, bornes et équipements à monnayeur au Sénégal.",
+    priority: "0.92",
     changefreq: "weekly",
   },
   "/work": {

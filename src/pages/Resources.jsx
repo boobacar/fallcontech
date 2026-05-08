@@ -236,9 +236,9 @@ const Resources = () => {
     },
     {
       title:
-        "Intégrer un paiement mobile dans une machine de vente d’eau (ESP32)",
+        "Intégrer Wave ou Orange Money sur une machine à pièces",
       excerpt:
-        "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur d’eau.",
+        "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur, une borne ou une machine à monnayeur.",
       category: "IoT",
       readTime: "8 min de lecture",
       link: "/article/integrer-paiement-machine-eau-esp32-senegal",

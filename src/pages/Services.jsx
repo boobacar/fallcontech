@@ -77,11 +77,12 @@ const Services = () => {
       icon: Zap,
       title: "Systèmes Embarqués & IoT (Arduino/ESP32)",
       tagline:
-        "Intégrations paiement, capteurs, télémétrie & mises à jour OTA",
+        "Mobile money sur machines à pièces, capteurs, télémétrie & OTA",
       priceFrom: "Sur devis",
       id: "iot-embedded",
       features: [
-        "Intégrations Wave/Orange/Free Money",
+        "Intégrations Wave/Orange/Free Money sur monnayeur",
+        "Ajout paiement mobile sur machines qui prennent des pièces",
         "Télémétrie: capteurs, alertes, journaux",
         "Communication sécurisée MQTT/HTTPS",
         "Mises à jour OTA et gestion d'appareils",
@@ -89,6 +90,7 @@ const Services = () => {
         "Résilience: offline & reprise",
       ],
       outcomes: [
+        "Machines de vente moins dépendantes des pièces",
         "Exploitation fiable de vos kiosques/machines",
         "Moins d'arrêts imprévus",
         "Indicateurs temps réel actionnables",
@@ -142,6 +144,10 @@ const Services = () => {
             q: 'Puis-je vous contacter sur WhatsApp ?',
             a: 'Oui, nous répondons rapidement sur WhatsApp au +221 77 626 00 20 pour planifier un appel et clarifier vos besoins.',
           },
+          {
+            q: 'Intégrez-vous Wave ou Orange Money sur des machines à pièces ?',
+            a: "Oui, nous pouvons ajouter Wave, Orange Money ou Free Money sur des distributeurs automatiques, machines de vente, bornes et équipements à monnayeur, avec validation sécurisée côté serveur.",
+          },
         ];
 
   return (
@@ -149,7 +155,7 @@ const Services = () => {
       <SEO
         path="/services"
         title="Services Web, SEO, Automatisation & IoT à Dakar | Fallcon Tech"
-        description="Découvrez nos services : création de site web, référencement SEO, automatisation WhatsApp/CRM, MVP et intégration IoT au Sénégal."
+        description="Découvrez nos services : création de site web, référencement SEO, automatisation WhatsApp/CRM, MVP et intégration IoT, Wave et Orange Money sur machines à pièces au Sénégal."
         jsonLd={[servicesJsonLd, {
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -288,6 +294,7 @@ const Services = () => {
             <li><Link to="/services/creation-site-web-dakar" className="hover:underline">Création de site web à Dakar</Link></li>
             <li><Link to="/services/agence-seo-senegal" className="hover:underline">Agence SEO au Sénégal</Link></li>
             <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:underline">Automatisation WhatsApp au Sénégal</Link></li>
+            <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:underline">Paiement mobile money sur machines à pièces</Link></li>
           </ul>
           <h3 className="text-2xl font-bold mb-4 text-primary">{t('services.recentArticles')}</h3>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
