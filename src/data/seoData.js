@@ -4,9 +4,9 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Agence Web Dakar & Développeur Web Sénégal | Fallcon Tech",
+    title: "Web Development Senegal & Agence Web Dakar | Fallcon Tech",
     description:
-      "Fallcon Tech accompagne les entreprises au Sénégal : création de site web, SEO local, automatisation WhatsApp, applications de gestion, mobile et IoT.",
+      "Web development in Senegal for companies that need websites, custom software, mobile apps, SEO, automation and IoT solutions in Dakar.",
     priority: "1.0",
     changefreq: "daily",
   },
@@ -18,9 +18,9 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/services/creation-site-web-dakar": {
-    title: "Création de site web à Dakar | Agence Web Fallcon Tech",
+    title: "Création Site Internet Sénégal | Développeur Web Dakar",
     description:
-      "Création de site web professionnel à Dakar : design mobile-first, SEO local Sénégal, Core Web Vitals, Analytics et stratégie de conversion.",
+      "Création de site internet au Sénégal : site web professionnel à Dakar, design mobile-first, SEO local, vitesse, Analytics et stratégie de conversion.",
     priority: "0.95",
     changefreq: "weekly",
   },
@@ -44,6 +44,30 @@ export const pageSeo = {
       "Intégration mobile money Wave, Orange Money ou Free Money sur distributeurs automatiques, machines de vente, bornes et équipements à monnayeur au Sénégal.",
     priority: "0.92",
     changefreq: "weekly",
+  },
+  "/services/web-development-senegal": {
+    title: "Web Development Senegal | Websites, Apps & SEO in Dakar",
+    description:
+      "Web development in Senegal for businesses: fast websites, React web apps, SEO setup, lead tracking and conversion-focused pages by Fallcon Tech Dakar.",
+    priority: "0.93",
+    changefreq: "weekly",
+    lang: "en-SN",
+  },
+  "/services/mobile-app-development-senegal": {
+    title: "Mobile App Development Senegal | Android & iOS Apps Dakar",
+    description:
+      "Mobile app development in Senegal for startups and businesses: MVP planning, React Native apps, dashboards, payments and WhatsApp integrations.",
+    priority: "0.91",
+    changefreq: "weekly",
+    lang: "en-SN",
+  },
+  "/services/software-development-senegal": {
+    title: "Software Development Senegal | Custom Business Apps Dakar",
+    description:
+      "Custom software development in Senegal: CRM, stock, billing, booking, dashboards, automation and secure internal platforms for growing companies.",
+    priority: "0.91",
+    changefreq: "weekly",
+    lang: "en-SN",
   },
   "/work": {
     title: "Réalisations Web, SEO & Apps au Sénégal | Fallcon Tech",
@@ -138,7 +162,7 @@ export const articleSeo = {
   "/article/workflows-whatsapp-crm-senegal": ["Workflows WhatsApp + CRM au Sénégal : relances et ventes", "Connecter WhatsApp Business, CRM et emails pour relances, paniers abandonnés et support client."],
   "/article/maintenance-wordpress-securite-senegal": ["Maintenance WordPress au Sénégal : sécurité, vitesse et backups", "Mises à jour sécurisées, Core Web Vitals, sauvegardes vérifiées et surveillance malware."],
   "/article/core-web-vitals-afrique": ["Core Web Vitals en Afrique : comment passer au vert", "LCP, CLS, INP sur mobile 3G/4G : optimisations performance adaptées aux marchés africains."],
-  "/article/integrer-paiement-machine-eau-esp32-senegal": ["Intégrer un paiement mobile dans une machine de vente d’eau ESP32", "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur d’eau."],
+  "/article/integrer-paiement-machine-eau-esp32-senegal": ["Intégrer Wave ou Orange Money sur une machine à pièces", "Architecture, sécurité et tests pour accepter Wave, Orange Money et Free Money sur un distributeur, une borne ou une machine à monnayeur."],
   "/article/developpement-iot-embarque-senegal-arduino-esp32": ["Développement IoT & embarqué au Sénégal : Arduino, ESP32", "Capteurs, contrôle, OTA et dashboards : comment démarrer un projet IoT fiable et évolutif."],
   "/article/passerelles-paiement-iot-wave-orange-free": ["Passerelles de paiement pour IoT : Wave, Orange Money, Free Money", "Comparatif et bonnes pratiques : sécurité, confirmations côté serveur, résilience et supervision."],
   "/article/telemetrie-maintenance-predictive-iot-senegal": ["Télémétrie & maintenance prédictive pour machines connectées", "Réduire les pannes avec la donnée : capteurs, alertes et historique exploitable."],

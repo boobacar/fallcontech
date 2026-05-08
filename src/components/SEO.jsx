@@ -23,6 +23,7 @@ export default function SEO({
   lang = "fr",
   imageAlt = "Fallcon Tech — Agence Web Dakar",
   siteName = "Fallcon Tech",
+  ogLocale,
   jsonLd,
   publishedTime,
   modifiedTime,
@@ -31,6 +32,7 @@ export default function SEO({
   const canonical = absoluteUrl(path || "/");
   const ogImage = absoluteUrl(image);
   const robots = noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+  const resolvedOgLocale = ogLocale || (lang?.startsWith("en") ? "en_US" : "fr_SN");
 
   return (
     <Helmet htmlAttributes={{ lang: lang || "fr" }}>
@@ -46,7 +48,7 @@ export default function SEO({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="fr_SN" />
+      <meta property="og:locale" content={resolvedOgLocale} />
       {canonical && <meta property="og:url" content={canonical} />}
       {ogImage && <meta property="og:image" content={ogImage} />}
       {ogImage && <meta property="og:image:alt" content={imageAlt} />}

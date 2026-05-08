@@ -25,14 +25,14 @@ export default function ServiceCreationSiteWebDakar() {
     <>
       <SEO
         path="/services/creation-site-web-dakar"
-        title="Création de site web à Dakar | Agence Web Fallcon Tech — Sénégal"
-        description="Création de site web professionnel à Dakar dès 350 000 F CFA : design mobile-first, SEO local Sénégal, Core Web Vitals, Analytics et stratégie de conversion pour PME, cliniques et startups."
+        title="Création Site Internet Sénégal | Développeur Web Dakar — Fallcon Tech"
+        description="Création de site internet au Sénégal dès 350 000 F CFA : site web professionnel à Dakar, design mobile-first, SEO local, Core Web Vitals, Analytics et conversion."
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Création de site web à Dakar",
-            description: "Création de site web professionnel à Dakar : design moderne mobile-first, SEO local, performance optimisée et stratégie de conversion pour PME au Sénégal.",
+            name: "Création de site internet au Sénégal",
+            description: "Création de site internet professionnel au Sénégal : design moderne mobile-first, SEO local, performance optimisée et stratégie de conversion pour PME à Dakar.",
             provider: {
               "@type": "LocalBusiness",
               name: "Fallcon Tech",
@@ -55,7 +55,7 @@ export default function ServiceCreationSiteWebDakar() {
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Accueil", item: "https://fallcontech.com/" },
               { "@type": "ListItem", position: 2, name: "Services", item: "https://fallcontech.com/services" },
-              { "@type": "ListItem", position: 3, name: "Création de site web à Dakar", item: "https://fallcontech.com/services/creation-site-web-dakar" },
+              { "@type": "ListItem", position: 3, name: "Création de site internet au Sénégal", item: "https://fallcontech.com/services/creation-site-web-dakar" },
             ],
           },
           {
@@ -69,8 +69,8 @@ export default function ServiceCreationSiteWebDakar() {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">Création de site web à Dakar</h1>
-            <p className="text-xl text-foreground/80">Un site rapide, élégant et orienté business pour transformer vos visiteurs en clients.</p>
+            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">Création de site internet au Sénégal</h1>
+            <p className="text-xl text-foreground/80">Un site web rapide, élégant et orienté business pour transformer vos visiteurs Google en clients.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card rounded-3xl shadow-2xl overflow-hidden">

@@ -15,6 +15,15 @@ const ServiceAutomatisationWhatsappSenegal = lazy(() => import("@/pages/ServiceA
 const ServiceIntegrationPaiementMobileMoneyMachines = lazy(
   () => import("@/pages/ServiceIntegrationPaiementMobileMoneyMachines"),
 );
+const WebDevelopmentSenegal = lazy(() =>
+  import("@/pages/ServiceEnglishSeoPages").then((module) => ({ default: module.WebDevelopmentSenegal })),
+);
+const MobileAppDevelopmentSenegal = lazy(() =>
+  import("@/pages/ServiceEnglishSeoPages").then((module) => ({ default: module.MobileAppDevelopmentSenegal })),
+);
+const SoftwareDevelopmentSenegal = lazy(() =>
+  import("@/pages/ServiceEnglishSeoPages").then((module) => ({ default: module.SoftwareDevelopmentSenegal })),
+);
 const CaseStudyClinic = lazy(
   () => import("@/pages/case-studies/CaseStudyClinic"),
 );
@@ -195,6 +204,9 @@ function App() {
             path="/services/integration-paiement-mobile-money-machines"
             element={<ServiceIntegrationPaiementMobileMoneyMachines />}
           />
+          <Route path="/services/web-development-senegal" element={<WebDevelopmentSenegal />} />
+          <Route path="/services/mobile-app-development-senegal" element={<MobileAppDevelopmentSenegal />} />
+          <Route path="/services/software-development-senegal" element={<SoftwareDevelopmentSenegal />} />
           <Route path="/case-study/clinic" element={<CaseStudyClinic />} />
           <Route
             path="/case-study/telimanshare"

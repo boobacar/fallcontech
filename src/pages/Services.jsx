@@ -295,6 +295,9 @@ const Services = () => {
             <li><Link to="/services/agence-seo-senegal" className="hover:underline">Agence SEO au Sénégal</Link></li>
             <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:underline">Automatisation WhatsApp au Sénégal</Link></li>
             <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:underline">Paiement mobile money sur machines à pièces</Link></li>
+            <li><Link to="/services/web-development-senegal" className="hover:underline">Web development in Senegal</Link></li>
+            <li><Link to="/services/mobile-app-development-senegal" className="hover:underline">Mobile app development in Senegal</Link></li>
+            <li><Link to="/services/software-development-senegal" className="hover:underline">Software development in Senegal</Link></li>
           </ul>
           <h3 className="text-2xl font-bold mb-4 text-primary">{t('services.recentArticles')}</h3>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">

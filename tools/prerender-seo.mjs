@@ -32,8 +32,9 @@ const applySeo = (template, routePath) => {
   const ogImage = escapeHtml(seo.ogImage);
   const robots = escapeHtml(seo.robots);
   const type = escapeHtml(seo.type || "website");
+  const lang = escapeHtml(seo.lang || "fr-SN");
 
-  let html = template.replace(/<html lang="[^"]*">/, '<html lang="fr-SN">');
+  let html = template.replace(/<html lang="[^"]*">/, `<html lang="${lang}">`);
   html = replaceOrInsert(html, /<title>.*?<\/title>/s, `<title>${title}</title>`);
   html = replaceOrInsert(html, /<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${description}" />`);
   html = replaceOrInsert(html, /<meta name="robots" content="[^"]*" \/>/, `<meta name="robots" content="${robots}" />`);

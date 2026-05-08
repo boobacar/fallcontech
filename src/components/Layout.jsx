@@ -104,6 +104,7 @@ const Layout = ({ children }) => {
       "Arduino", "ESP32", "React", "Node.js", "Firebase", "MVP startup",
       "Application mobile", "E-commerce Sénégal", "Développement embarqué",
       "Paiement mobile money", "Wave", "Orange Money", "Monnayeur",
+      "Web development", "Mobile app development", "Software development",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -113,6 +114,9 @@ const Layout = ({ children }) => {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Agence SEO Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/agence-seo-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automatisation WhatsApp", url: `${siteUrl || "https://fallcontech.com"}/services/automatisation-whatsapp-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Intégration mobile money sur machines à pièces", url: `${siteUrl || "https://fallcontech.com"}/services/integration-paiement-mobile-money-machines` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/web-development-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile app development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/mobile-app-development-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/software-development-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Développement application web & MVP" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solutions IoT & embarqué" } },
       ],
@@ -280,6 +284,7 @@ const Layout = ({ children }) => {
                 <li><Link to="/services/agence-seo-senegal" className="hover:text-blue-400 transition-colors">Agence SEO au Sénégal</Link></li>
                 <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:text-blue-400 transition-colors">Automatisation WhatsApp</Link></li>
                 <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:text-blue-400 transition-colors">Paiement mobile money machines</Link></li>
+                <li><Link to="/services/web-development-senegal" className="hover:text-blue-400 transition-colors">Web development Senegal</Link></li>
                 <li><Link to="/services" className="hover:text-blue-400 transition-colors">{t("common.footer.links.mvpDev")}</Link></li>
                 <li><Link to="/services#iot-embedded" className="hover:text-blue-400 transition-colors">{t("common.footer.links.iot")}</Link></li>
               </ul>

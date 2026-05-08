@@ -179,8 +179,8 @@ const Home = () => {
         return (
           <SEO
             path="/"
-            title="Transition Digitale Sénégal | Développeur Web & Agence Web Dakar — Fallcon Tech"
-            description="Fallcon Tech accompagne la transition digitale au Sénégal : digitalisation des courriers, applications de gestion, GED, création de site web, SEO local, automatisation WhatsApp et solutions web/mobile pour services, PME et administrations."
+            title="Web Development Senegal & Agence Web Dakar — Fallcon Tech"
+            description="Web development in Senegal for companies that need websites, custom software, mobile apps, SEO, automation and IoT solutions in Dakar."
             jsonLd={[
               itemListJsonLd,
               {
