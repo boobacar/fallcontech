@@ -24,6 +24,18 @@ const MobileAppDevelopmentSenegal = lazy(() =>
 const SoftwareDevelopmentSenegal = lazy(() =>
   import("@/pages/ServiceEnglishSeoPages").then((module) => ({ default: module.SoftwareDevelopmentSenegal })),
 );
+const DeveloppeurWebSenegal = lazy(() =>
+  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.DeveloppeurWebSenegal })),
+);
+const CreationSiteInternetSenegal = lazy(() =>
+  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.CreationSiteInternetSenegal })),
+);
+const TarifSiteVitrineSenegal = lazy(() =>
+  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.TarifSiteVitrineSenegal })),
+);
+const AuditSeoProfessionnelSenegal = lazy(() =>
+  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.AuditSeoProfessionnelSenegal })),
+);
 const CaseStudyClinic = lazy(
   () => import("@/pages/case-studies/CaseStudyClinic"),
 );
@@ -207,6 +219,10 @@ function App() {
           <Route path="/services/web-development-senegal" element={<WebDevelopmentSenegal />} />
           <Route path="/services/mobile-app-development-senegal" element={<MobileAppDevelopmentSenegal />} />
           <Route path="/services/software-development-senegal" element={<SoftwareDevelopmentSenegal />} />
+          <Route path="/services/developpeur-web-senegal" element={<DeveloppeurWebSenegal />} />
+          <Route path="/services/creation-site-internet-senegal" element={<CreationSiteInternetSenegal />} />
+          <Route path="/services/tarif-site-vitrine-senegal" element={<TarifSiteVitrineSenegal />} />
+          <Route path="/services/audit-seo-professionnel-senegal" element={<AuditSeoProfessionnelSenegal />} />
           <Route path="/case-study/clinic" element={<CaseStudyClinic />} />
           <Route
             path="/case-study/telimanshare"

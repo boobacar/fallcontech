@@ -292,6 +292,10 @@ const Services = () => {
           <h2 className="text-3xl font-bold mb-6 text-primary">Pages services SEO locales</h2>
           <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm mb-8">
             <li><Link to="/services/creation-site-web-dakar" className="hover:underline">Création de site web à Dakar</Link></li>
+            <li><Link to="/services/developpeur-web-senegal" className="hover:underline">Développeur web au Sénégal</Link></li>
+            <li><Link to="/services/creation-site-internet-senegal" className="hover:underline">Création site internet Sénégal</Link></li>
+            <li><Link to="/services/tarif-site-vitrine-senegal" className="hover:underline">Tarif site vitrine Sénégal</Link></li>
+            <li><Link to="/services/audit-seo-professionnel-senegal" className="hover:underline">Audit SEO professionnel Sénégal</Link></li>
             <li><Link to="/services/agence-seo-senegal" className="hover:underline">Agence SEO au Sénégal</Link></li>
             <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:underline">Automatisation WhatsApp au Sénégal</Link></li>
             <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:underline">Paiement mobile money sur machines à pièces</Link></li>

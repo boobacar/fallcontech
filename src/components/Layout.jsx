@@ -105,6 +105,8 @@ const Layout = ({ children }) => {
       "Application mobile", "E-commerce Sénégal", "Développement embarqué",
       "Paiement mobile money", "Wave", "Orange Money", "Monnayeur",
       "Web development", "Mobile app development", "Software development",
+      "Développeur web Sénégal", "Création site internet Sénégal",
+      "Tarif site vitrine Sénégal", "Audit SEO professionnel Sénégal",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -117,6 +119,10 @@ const Layout = ({ children }) => {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/web-development-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile app development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/mobile-app-development-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Software development in Senegal", url: `${siteUrl || "https://fallcontech.com"}/services/software-development-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Développeur web au Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/developpeur-web-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Création site internet Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/creation-site-internet-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Tarif site vitrine Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/tarif-site-vitrine-senegal` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit SEO professionnel Sénégal", url: `${siteUrl || "https://fallcontech.com"}/services/audit-seo-professionnel-senegal` } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Développement application web & MVP" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solutions IoT & embarqué" } },
       ],
@@ -281,6 +287,8 @@ const Layout = ({ children }) => {
               <span className="font-semibold text-primary-foreground">{t("common.footer.services")}</span>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/services/creation-site-web-dakar" className="hover:text-blue-400 transition-colors">Création de site web à Dakar</Link></li>
+                <li><Link to="/services/developpeur-web-senegal" className="hover:text-blue-400 transition-colors">Développeur web Sénégal</Link></li>
+                <li><Link to="/services/creation-site-internet-senegal" className="hover:text-blue-400 transition-colors">Création site internet Sénégal</Link></li>
                 <li><Link to="/services/agence-seo-senegal" className="hover:text-blue-400 transition-colors">Agence SEO au Sénégal</Link></li>
                 <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:text-blue-400 transition-colors">Automatisation WhatsApp</Link></li>
                 <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:text-blue-400 transition-colors">Paiement mobile money machines</Link></li>

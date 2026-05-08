@@ -4,9 +4,9 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Web Development Senegal & Agence Web Dakar | Fallcon Tech",
+    title: "Développeur Web Sénégal & Agence Web Dakar | Fallcon Tech",
     description:
-      "Web development in Senegal for companies that need websites, custom software, mobile apps, SEO, automation and IoT solutions in Dakar.",
+      "Développeur web au Sénégal pour créer votre site internet, application métier, logiciel sur mesure, SEO, automatisation et solution mobile à Dakar.",
     priority: "1.0",
     changefreq: "daily",
   },
@@ -43,6 +43,34 @@ export const pageSeo = {
     description:
       "Intégration mobile money Wave, Orange Money ou Free Money sur distributeurs automatiques, machines de vente, bornes et équipements à monnayeur au Sénégal.",
     priority: "0.92",
+    changefreq: "weekly",
+  },
+  "/services/developpeur-web-senegal": {
+    title: "Développeur Web Sénégal | Sites, Apps & Plateformes Dakar",
+    description:
+      "Développeur web au Sénégal pour sites internet, applications métier, plateformes React, tableaux de bord, SEO technique et intégrations business.",
+    priority: "0.94",
+    changefreq: "weekly",
+  },
+  "/services/creation-site-internet-senegal": {
+    title: "Création Site Internet Sénégal | Site Web Pro dès 350 000 F",
+    description:
+      "Création de site internet au Sénégal : site vitrine, site business ou landing page rapide, SEO-friendly, mobile-first, WhatsApp et devis clair.",
+    priority: "0.94",
+    changefreq: "weekly",
+  },
+  "/services/tarif-site-vitrine-senegal": {
+    title: "Tarif Site Vitrine Sénégal | Prix dès 350 000 F CFA",
+    description:
+      "Tarif site vitrine au Sénégal : prix clair dès 350 000 F CFA, design mobile, SEO de base, formulaire, WhatsApp, mise en ligne et devis rapide.",
+    priority: "0.90",
+    changefreq: "weekly",
+  },
+  "/services/audit-seo-professionnel-senegal": {
+    title: "Audit SEO Professionnel Sénégal | Plus de Clics Google",
+    description:
+      "Audit SEO professionnel au Sénégal : analyse Search Console, titres, CTR, pages, requêtes, indexation et plan d'action pour gagner plus de clics.",
+    priority: "0.90",
     changefreq: "weekly",
   },
   "/services/web-development-senegal": {

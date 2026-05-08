@@ -179,8 +179,8 @@ const Home = () => {
         return (
           <SEO
             path="/"
-            title="Web Development Senegal & Agence Web Dakar — Fallcon Tech"
-            description="Web development in Senegal for companies that need websites, custom software, mobile apps, SEO, automation and IoT solutions in Dakar."
+            title="Développeur Web Sénégal & Agence Web Dakar — Fallcon Tech"
+            description="Développeur web au Sénégal pour créer votre site internet, application métier, logiciel sur mesure, SEO, automatisation et solution mobile à Dakar."
             jsonLd={[
               itemListJsonLd,
               {
