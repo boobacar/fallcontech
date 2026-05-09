@@ -190,6 +190,11 @@ const ArticleDigitalisationCourriersSenegal = lazy(
 const ArticleLogicielGestionCourrierSenegal = lazy(
   () => import("@/pages/articles/ArticleLogicielGestionCourrierSenegal"),
 );
+const ArticleWhatsappEcomSenegal = lazy(() => import("@/pages/articles/ArticleWhatsappEcomSenegal"));
+const ArticleAppMobilePmeDakar = lazy(() => import("@/pages/articles/ArticleAppMobilePmeDakar"));
+const ArticleSeoRevenueSenegal = lazy(() => import("@/pages/articles/ArticleSeoRevenueSenegal"));
+const ArticleHebergementWebSenegal = lazy(() => import("@/pages/articles/ArticleHebergementWebSenegal"));
+const ArticleTendancesDevWebSenegal2026 = lazy(() => import("@/pages/articles/ArticleTendancesDevWebSenegal2026"));
 
 function App() {
   return (
@@ -445,6 +450,11 @@ function App() {
             path="/article/logiciel-gestion-courrier-administration-senegal"
             element={<ArticleLogicielGestionCourrierSenegal />}
           />
+          <Route path="/article/whatsapp-business-api-ecommerce-senegal" element={<ArticleWhatsappEcomSenegal />} />
+          <Route path="/article/avantages-application-mobile-pme-dakar" element={<ArticleAppMobilePmeDakar />} />
+          <Route path="/article/comment-seo-transforme-chiffre-affaires-senegal" element={<ArticleSeoRevenueSenegal />} />
+          <Route path="/article/hebergement-web-senegal-guide-choisir-serveur" element={<ArticleHebergementWebSenegal />} />
+          <Route path="/article/tendances-developpement-web-senegal-2026" element={<ArticleTendancesDevWebSenegal2026 />} />
 
           {/* FR only */}
         </Routes>

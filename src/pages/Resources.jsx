@@ -32,6 +32,41 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Tendances du développement web au Sénégal en 2026",
+      excerpt: "Quelles sont les technologies et pratiques qui domineront le développement web au Sénégal en 2026 ?",
+      category: "Tendances Web",
+      readTime: "7 min de lecture",
+      link: "/article/tendances-developpement-web-senegal-2026",
+    },
+    {
+      title: "Hébergement web au Sénégal : guide complet pour choisir le bon serveur",
+      excerpt: "Quels sont les critères pour choisir un bon hébergement web au Sénégal ? Vitesse, sécurité et support local expliqués.",
+      category: "Hébergement Web",
+      readTime: "8 min de lecture",
+      link: "/article/hebergement-web-senegal-guide-choisir-serveur",
+    },
+    {
+      title: "Comment le SEO peut transformer votre chiffre d'affaires au Sénégal",
+      excerpt: "Comprendre l'impact du référencement naturel (SEO) sur les revenus de votre entreprise au Sénégal.",
+      category: "SEO & Revenus",
+      readTime: "6 min de lecture",
+      link: "/article/comment-seo-transforme-chiffre-affaires-senegal",
+    },
+    {
+      title: "Les avantages d'une application mobile sur mesure pour les PME à Dakar",
+      excerpt: "Pourquoi investir dans une application mobile sur mesure peut transformer la croissance de votre PME à Dakar.",
+      category: "Applications Mobiles",
+      readTime: "7 min de lecture",
+      link: "/article/avantages-application-mobile-pme-dakar",
+    },
+    {
+      title: "Pourquoi intégrer WhatsApp Business API pour votre e-commerce au Sénégal",
+      excerpt: "Découvrez comment WhatsApp Business API peut booster les ventes de votre boutique en ligne au Sénégal.",
+      category: "WhatsApp API",
+      readTime: "6 min de lecture",
+      link: "/article/whatsapp-business-api-ecommerce-senegal",
+    },
+    {
       title:
         "Digitalisation des courriers au Sénégal : réussir sa transition digitale",
       excerpt:
@@ -440,6 +475,11 @@ const Resources = () => {
             {paginatedPosts.map((post, idx) => {
               const slug = post.link.split("/").pop();
               const map = {
+                "whatsapp-business-api-ecommerce-senegal": imgWhatsapp,
+                "avantages-application-mobile-pme-dakar": imgMobile,
+                "comment-seo-transforme-chiffre-affaires-senegal": imgSeo,
+                "hebergement-web-senegal-guide-choisir-serveur": imgStack,
+                "tendances-developpement-web-senegal-2026": imgDev,
                 "optimisation-vitesse-site-seo-conversions": imgMobile,
                 "digitalisation-courriers-services-senegal": imgStack,
                 "logiciel-gestion-courrier-administration-senegal": imgSeo,
