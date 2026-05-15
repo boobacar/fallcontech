@@ -165,6 +165,11 @@ export const pageSeo = {
 };
 
 export const articleSeo = {
+  "/article/agence-digitale-dakar-pme-seo-site-web-automatisation": ["Agence digitale Dakar : SEO, site web et automatisation PME", "Guide complet pour choisir une agence digitale à Dakar capable de créer un site web performant, améliorer le SEO local et automatiser la prospection WhatsApp des PME."],
+  "/article/developpement-logiciel-sur-mesure-senegal-pme": ["Développement logiciel sur mesure Sénégal pour PME", "CRM, stock, facturation, courrier, RH ou dashboard : comment réussir un projet de logiciel sur mesure au Sénégal avec budget, étapes, sécurité et ROI."],
+  "/article/google-ads-ou-seo-senegal-choisir": ["Google Ads ou SEO Sénégal : quel canal choisir ?", "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés."],
+  "/article/landing-page-dakar-conversion-leads": ["Landing page Dakar : créer une page qui convertit", "Structure complète d’une landing page à Dakar : message, SEO, preuve, CTA WhatsApp, formulaire et suivi pour augmenter les leads qualifiés."],
+  "/article/referencement-google-senegal-plan-90-jours": ["Référencement Google Sénégal : plan SEO 90 jours", "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages services, contenu, maillage interne, Search Console et optimisation CTR."],
   "/article/digitalisation-courriers-services-senegal": ["Digitalisation des courriers au Sénégal : réussir sa transition digitale", "Registre numérique, workflow, GED, archivage et traçabilité : comment digitaliser les courriers entrants et sortants de votre service."],
   "/article/logiciel-gestion-courrier-administration-senegal": ["Logiciel de gestion de courrier au Sénégal : fonctionnalités et budget", "Checklist pour choisir ou développer une application de gestion de courrier adaptée aux administrations, services et PME sénégalaises."],
   "/article/creer-site-web-professionnel-dakar": ["Créer un site web professionnel à Dakar : guide complet 2026", "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal."],

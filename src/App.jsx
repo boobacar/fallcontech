@@ -195,6 +195,11 @@ const ArticleAppMobilePmeDakar = lazy(() => import("@/pages/articles/ArticleAppM
 const ArticleSeoRevenueSenegal = lazy(() => import("@/pages/articles/ArticleSeoRevenueSenegal"));
 const ArticleHebergementWebSenegal = lazy(() => import("@/pages/articles/ArticleHebergementWebSenegal"));
 const ArticleTendancesDevWebSenegal2026 = lazy(() => import("@/pages/articles/ArticleTendancesDevWebSenegal2026"));
+const ArticleAgenceDigitaleDakarPME = lazy(() => import("@/pages/articles/ArticleAgenceDigitaleDakarPME"));
+const ArticleLogicielSurMesureSenegalPME = lazy(() => import("@/pages/articles/ArticleLogicielSurMesureSenegalPME"));
+const ArticleGoogleAdsOuSeoSenegal = lazy(() => import("@/pages/articles/ArticleGoogleAdsOuSeoSenegal"));
+const ArticleLandingPageDakarConversion = lazy(() => import("@/pages/articles/ArticleLandingPageDakarConversion"));
+const ArticleReferencementGoogleSenegal90Jours = lazy(() => import("@/pages/articles/ArticleReferencementGoogleSenegal90Jours"));
 
 function App() {
   return (
@@ -455,6 +460,12 @@ function App() {
           <Route path="/article/comment-seo-transforme-chiffre-affaires-senegal" element={<ArticleSeoRevenueSenegal />} />
           <Route path="/article/hebergement-web-senegal-guide-choisir-serveur" element={<ArticleHebergementWebSenegal />} />
           <Route path="/article/tendances-developpement-web-senegal-2026" element={<ArticleTendancesDevWebSenegal2026 />} />
+
+          <Route path="/article/agence-digitale-dakar-pme-seo-site-web-automatisation" element={<ArticleAgenceDigitaleDakarPME />} />
+          <Route path="/article/developpement-logiciel-sur-mesure-senegal-pme" element={<ArticleLogicielSurMesureSenegalPME />} />
+          <Route path="/article/google-ads-ou-seo-senegal-choisir" element={<ArticleGoogleAdsOuSeoSenegal />} />
+          <Route path="/article/landing-page-dakar-conversion-leads" element={<ArticleLandingPageDakarConversion />} />
+          <Route path="/article/referencement-google-senegal-plan-90-jours" element={<ArticleReferencementGoogleSenegal90Jours />} />
 
           {/* FR only */}
         </Routes>

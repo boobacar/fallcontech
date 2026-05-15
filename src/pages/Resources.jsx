@@ -32,6 +32,41 @@ const Resources = () => {
 
   const blogPosts = [
     {
+      title: "Agence digitale à Dakar : site web, SEO et automatisation pour PME",
+      excerpt: "Guide complet pour choisir une agence digitale à Dakar capable de créer un site web performant, améliorer le SEO local et automatiser la prospection WhatsApp des PME.",
+      category: "Agence digitale",
+      readTime: "10 min de lecture",
+      link: "/article/agence-digitale-dakar-pme-seo-site-web-automatisation",
+    },
+    {
+      title: "Développement logiciel sur mesure au Sénégal : guide PME 2026",
+      excerpt: "CRM, stock, facturation, courrier, RH ou dashboard : comment réussir un projet de logiciel sur mesure au Sénégal avec budget, étapes, sécurité et ROI.",
+      category: "Logiciel sur mesure",
+      readTime: "11 min de lecture",
+      link: "/article/developpement-logiciel-sur-mesure-senegal-pme",
+    },
+    {
+      title: "Google Ads ou SEO au Sénégal : que choisir pour avoir plus de clients ?",
+      excerpt: "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés.",
+      category: "Acquisition",
+      readTime: "9 min de lecture",
+      link: "/article/google-ads-ou-seo-senegal-choisir",
+    },
+    {
+      title: "Landing page à Dakar : comment créer une page qui convertit les visiteurs en leads",
+      excerpt: "Structure complète d’une landing page à Dakar : message, SEO, preuve, CTA WhatsApp, formulaire et suivi pour augmenter les leads qualifiés.",
+      category: "Conversion",
+      readTime: "8 min de lecture",
+      link: "/article/landing-page-dakar-conversion-leads",
+    },
+    {
+      title: "Référencement Google au Sénégal : plan d’action SEO en 90 jours",
+      excerpt: "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages services, contenu, maillage interne, Search Console et optimisation CTR.",
+      category: "SEO",
+      readTime: "12 min de lecture",
+      link: "/article/referencement-google-senegal-plan-90-jours",
+    },
+    {
       title: "Tendances du développement web au Sénégal en 2026",
       excerpt: "Quelles sont les technologies et pratiques qui domineront le développement web au Sénégal en 2026 ?",
       category: "Tendances Web",
@@ -475,6 +510,11 @@ const Resources = () => {
             {paginatedPosts.map((post, idx) => {
               const slug = post.link.split("/").pop();
               const map = {
+                "agence-digitale-dakar-pme-seo-site-web-automatisation": imgDev,
+                "developpement-logiciel-sur-mesure-senegal-pme": imgStack,
+                "google-ads-ou-seo-senegal-choisir": imgSeo,
+                "landing-page-dakar-conversion-leads": imgCost,
+                "referencement-google-senegal-plan-90-jours": imgSeo,
                 "whatsapp-business-api-ecommerce-senegal": imgWhatsapp,
                 "avantages-application-mobile-pme-dakar": imgMobile,
                 "comment-seo-transforme-chiffre-affaires-senegal": imgSeo,
