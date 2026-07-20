@@ -220,7 +220,7 @@ export const articleSeo = {
   "/article/maintenance-nettoyage-pc-senegal": ["Maintenance et nettoyage PC au Sénégal : guide pratique", "Nettoyage, mises à jour, sauvegarde et prévention des pannes pour prolonger la durée de vie des PC professionnels."],
   "/article/cybersecurite-pme-senegal": ["Cybersécurité PME Sénégal : priorités et erreurs à éviter", "Mots de passe, phishing, sauvegardes, antivirus, accès cloud et bonnes pratiques pour protéger une PME."],
   "/article/choisir-pc-professionnel-guide": ["Choisir un PC professionnel : guide pour entreprises", "Critères d’achat pour PC professionnel : processeur, RAM, stockage, garantie, usage métier et durabilité."],
-  "/article/sauvegarde-donnees-entreprises": ["Sauvegarde des données en entreprise : méthode simple", "Construire une stratégie de sauvegarde fiable : cloud, local, tests de restauration et responsabilités internes."],
+  "/article/sauvegarde-donnees-entreprises": ["Sauvegarde données entreprise : méthode simple pour une protection fiable", "Protégez vos données professionnelles avec une stratégie de sauvegarde fiable. Découvrez notre méthode simple, cloud ou local, avec tests de restauration. Sécurisez votre activité dès maintenant."],
 };
 
 export function absoluteUrl(path = "/") {
