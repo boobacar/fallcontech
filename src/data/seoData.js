@@ -67,9 +67,9 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/services/audit-seo-professionnel-senegal": {
-    title: "Audit SEO Professionnel Sénégal | Plus de Clics Google",
+    title: "Audit SEO Sénégal | Améliorez votre CTR et votre trafic",
     description:
-      "Audit SEO professionnel au Sénégal : analyse Search Console, titres, CTR, pages, requêtes, indexation et plan d'action pour gagner plus de clics.",
+      "Votre site ne génère pas assez de clics ? Bénéficiez d’un audit SEO professionnel au Sénégal : analyse complète, recommandations actionnables et plan pour booster votre visibilité. Contactez-nous.",
     priority: "0.90",
     changefreq: "weekly",
   },
