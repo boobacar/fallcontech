@@ -105,9 +105,9 @@ export const pageSeo = {
     changefreq: "monthly",
   },
   "/about": {
-    title: "À propos de Fallcon Tech | Développeur Web à Dakar",
+    title: "À propos de Fallcon Tech | Agence Web & SEO à Dakar",
     description:
-      "Fallcon Tech est une agence digitale à Dakar spécialisée en React, SEO local, automatisation WhatsApp, applications métier et IoT.",
+      "Découvrez Fallcon Tech, votre agence digitale à Dakar experte en création de sites web, référencement SEO, automatisation WhatsApp et solutions IoT. Boostez votre visibilité en ligne !",
     priority: "0.80",
     changefreq: "monthly",
   },
