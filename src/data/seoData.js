@@ -146,38 +146,38 @@ export const pageSeo = {
     lang: "en-SN",
   },
   "/work": {
-    title: "Réalisations Web, SEO & Apps au Sénégal | Fallcon Tech",
+    title: "Références logiciels métier & transformation numérique | Fallcon Tech",
     description:
-      "Découvrez les projets Fallcon Tech : sites web, applications métier, automatisations WhatsApp, IoT et plateformes digitales livrées au Sénégal.",
-    priority: "0.80",
+      "Découvrez les systèmes métier réalisés par Fallcon Tech pour le courrier, la santé, le transport, la logistique et l’information au Sénégal.",
+    priority: "0.85",
     changefreq: "monthly",
   },
   "/about": {
-    title: "À propos de Fallcon Tech | Agence Web & SEO à Dakar",
+    title: "Cabinet de transformation numérique à Dakar | Fallcon Tech",
     description:
-      "Découvrez Fallcon Tech, votre agence digitale à Dakar experte en création de sites web, référencement SEO, automatisation WhatsApp et solutions IoT. Boostez votre visibilité en ligne !",
-    priority: "0.80",
+      "Fallcon Tech est un cabinet d’ingénierie numérique à Dakar spécialisé en GED, logiciels métier, santé, logistique et systèmes sécurisés.",
+    priority: "0.82",
     changefreq: "monthly",
   },
   "/pricing": {
-    title: "Prix Site Web & Développement au Sénégal | Fallcon Tech",
+    title: "Formats d’intervention transformation numérique | Fallcon Tech",
     description:
-      "Consultez les modèles de prix Fallcon Tech pour site vitrine, e-commerce, application web, SEO et accompagnement digital au Sénégal.",
-    priority: "0.80",
+      "Diagnostic, projet de transformation numérique et maintenance pour administrations, ONG et entreprises au Sénégal. Budget établi après cadrage.",
+    priority: "0.72",
     changefreq: "monthly",
   },
   "/resources": {
-    title: "Blog Développement Web, SEO & IT Sénégal | Fallcon Tech",
+    title: "Centre de ressources transformation numérique Sénégal | Fallcon Tech",
     description:
-      "Guides pratiques pour entrepreneurs au Sénégal : SEO local, création de site web, automatisation WhatsApp, IoT, prix et bonnes pratiques IT.",
-    priority: "0.75",
+      "Guides sur la GED, le courrier, les logiciels métier, la cybersécurité, la sauvegarde et la transformation numérique au Sénégal.",
+    priority: "0.78",
     changefreq: "weekly",
   },
   "/contact": {
-    title: "Contacter un Développeur Web à Dakar | Devis Gratuit",
+    title: "Demander une étude de transformation numérique | Fallcon Tech",
     description:
-      "Contactez Fallcon Tech pour votre projet web, SEO, application, automatisation WhatsApp ou IoT. Réponse rapide et devis gratuit.",
-    priority: "0.85",
+      "Présentez votre besoin de GED, logiciel métier, digitalisation administrative, santé, logistique ou infrastructure à Fallcon Tech Dakar.",
+    priority: "0.90",
     changefreq: "monthly",
   },
   "/case-study/clinic": {

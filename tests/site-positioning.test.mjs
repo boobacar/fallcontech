@@ -36,6 +36,17 @@ test("la navigation et le SEO ne présentent plus Fallcon Tech comme une agence 
   assert.doesNotMatch(seo.slice(0, 1200), /Développeur Web Sénégal & Agence Web Dakar/);
 });
 
+test("les pages de confiance soutiennent le nouveau positionnement", () => {
+  const about = read("src/pages/About.jsx");
+  const work = read("src/pages/Work.jsx");
+  const pricing = read("src/pages/Pricing.jsx");
+  const resources = read("src/pages/Resources.jsx");
+  assert.match(about, /cabinet d’ingénierie numérique/i);
+  assert.match(work, /EMGA Courrier/);
+  assert.match(pricing, /Formats d’intervention/);
+  assert.match(resources, /Centre de ressources/);
+});
+
 test("le formulaire qualifie les demandes institutionnelles", () => {
   const contact = read("src/pages/Contact.jsx");
   assert.match(contact, /Administration publique/);

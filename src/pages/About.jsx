@@ -1,272 +1,54 @@
-import React from "react";
-import SEO from "@/components/SEO";
-import { useI18n } from "@/i18n";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Code, Shield, Zap, Globe, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  ReactLogo,
-  TailwindLogo,
-  NodeLogo,
-  FirebaseLogo,
-  GitLogo,
-  VercelLogo,
-} from "@/components/TechIcons";
+import { ArrowRight, Check, Compass, Database, ShieldCheck, UsersRound } from "lucide-react";
+import SEO from "@/components/SEO";
 
-const About = () => {
-  const { t } = useI18n();
-  const techStack = [
-    {
-      name: "React",
-      description: t("about.stackItems.react"),
-      icon: <ReactLogo className="h-8 w-8" />,
-    },
-    {
-      name: "Tailwind CSS",
-      description: t("about.stackItems.tailwind"),
-      icon: <TailwindLogo className="h-8 w-8" />,
-    },
-    {
-      name: "Node.js",
-      description: t("about.stackItems.node"),
-      icon: <NodeLogo className="h-8 w-8" />,
-    },
-    {
-      name: "Firebase",
-      description: t("about.stackItems.firebase"),
-      icon: <FirebaseLogo className="h-8 w-8" />,
-    },
-    {
-      name: "Git/GitHub",
-      description: t("about.stackItems.git"),
-      icon: <GitLogo className="h-8 w-8" />,
-    },
-    {
-      name: "Vercel/GoDaddy",
-      description: t("about.stackItems.hosting"),
-      icon: (
-        <span className="inline-flex items-center gap-2">
-          <VercelLogo className="h-8 w-8" />
-          <img
-            src="https://cdn.simpleicons.org/godaddy"
-            alt="GoDaddy"
-            className="h-7 w-7"
-            loading="lazy"
-            decoding="async"
-          />
-        </span>
-      ),
-    },
-  ];
+const principles = [
+  { icon: Compass, title: "Partir du terrain", text: "Comprendre les rôles, les documents et les exceptions avant d’écrire la solution." },
+  { icon: Database, title: "Fiabiliser la donnée", text: "Définir la source de vérité, les contrôles et les règles de migration dès le cadrage." },
+  { icon: ShieldCheck, title: "Concevoir pour durer", text: "Sécurité, sauvegarde, exploitation et maintenance font partie du produit livré." },
+  { icon: UsersRound, title: "Organiser l’adoption", text: "Associer les utilisateurs, documenter et former pour rendre l’organisation autonome." },
+];
 
-  const values = [
-    {
-      icon: Zap,
-      title: t("about.values.items.0.title"),
-      description: t("about.values.items.0.desc"),
-    },
-    {
-      icon: Shield,
-      title: t("about.values.items.1.title"),
-      description: t("about.values.items.1.desc"),
-    },
-    {
-      icon: Code,
-      title: t("about.values.items.2.title"),
-      description: t("about.values.items.2.desc"),
-    },
-    {
-      icon: Globe,
-      title: t("about.values.items.3.title"),
-      description: t("about.values.items.3.desc"),
-    },
-  ];
-
+export default function About() {
   return (
     <>
-      <SEO
-        path="/about"
-        title="À propos de Fallcon Tech | Développeur Web & Agence Digitale à Dakar"
-        description="Fallcon Tech — développeur web et agence digitale à Dakar, Sénégal. Spécialisés en développement React, SEO local, automatisation WhatsApp et IoT. Stack moderne, livraison rapide, résultats mesurables."
-      />
-
-      <section className="gradient-bg pt-28 md:pt-20 pb-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              {t("about.hero.title")}
-            </h1>
-            <p className="text-xl text-foreground/80">
-              {t("about.hero.subtitle")}
-            </p>
-          </motion.div>
+      <SEO path="/about" title="Cabinet de transformation numérique à Dakar | Fallcon Tech" description="Fallcon Tech est un cabinet d’ingénierie numérique à Dakar spécialisé en GED, logiciels métier, santé, logistique et systèmes sécurisés." />
+      <section className="page-hero">
+        <div className="site-shell page-hero-grid">
+          <div><p className="overline">Le cabinet</p><h1>Une ingénierie proche du terrain.</h1></div>
+          <p>Fallcon Tech est un cabinet d’ingénierie numérique basé à Dakar. Nous réunissons conseil, conception produit et réalisation technique pour transformer des procédures critiques en systèmes utiles.</p>
         </div>
       </section>
 
-      <section className="pb-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6 text-primary">
-                {t("about.approach.title")}
-              </h2>
-              {[0, 1, 2].map((i) => (
-                <p key={i} className="text-lg text-muted-foreground mb-6">
-                  {t(`about.approach.paragraphs.${i}`)}
-                </p>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-card rounded-3xl p-8"
-            >
-              <img
-                alt={t("about.images.workspaceAlt")}
-                className="w-full h-full object-cover rounded-2xl shadow-xl"
-                src="https://images.unsplash.com/photo-1699843526854-250e2aca1a60"
-                loading="lazy"
-                decoding="async"
-              />
-            </motion.div>
+      <section className="section">
+        <div className="site-shell manifesto-grid">
+          <div><p className="overline">Notre conviction</p><h2>La transformation numérique n’est pas un projet d’interface.</h2></div>
+          <div className="manifesto-copy">
+            <p>Elle engage les responsabilités, les règles, la qualité de la donnée et la continuité du service. C’est pourquoi nous ne commençons pas par choisir une technologie : nous commençons par comprendre ce qui doit mieux fonctionner.</p>
+            <p>Notre taille nous permet de rester proches des décideurs et des utilisateurs. Notre méthode impose un cadrage explicite, des livraisons vérifiables et une documentation exploitable.</p>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-              {t("about.values.title")}
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-card rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all"
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl mb-4">
-                    <value.icon className="text-primary-foreground" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">
-                    {value.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-              {t("about.stack.title")}
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {techStack.map((tech, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-card border-2 border-border rounded-xl p-6 hover:border-blue-400 transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    {tech.icon}
-                    <h3 className="text-xl font-bold text-blue-600">
-                      {tech.name}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    {tech.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      <section className="py-20 gradient-bg">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
-              {t("about.why.title")}
-            </h2>
-            <div className="space-y-4">
-              {[0, 1, 2, 3, 4, 5, 6, 7].map((i, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex items-center gap-4 bg-card rounded-xl p-4 shadow-md"
-                >
-                  <CheckCircle2
-                    className="text-blue-600 flex-shrink-0"
-                    size={24}
-                  />
-                  <span className="text-lg text-foreground">
-                    {t(`about.why.items.${i}`)}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+      <section className="section section-muted">
+        <div className="site-shell">
+          <div className="section-heading compact"><p className="overline">Principes de travail</p><h2>La qualité du système commence avant le développement.</h2></div>
+          <div className="principle-grid">
+            {principles.map((principle, index) => <article key={principle.title}><span>0{index + 1}</span><principle.icon size={23} /><h3>{principle.title}</h3><p>{principle.text}</p></article>)}
+          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              {t("about.cta.title")}
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
-              {t("about.cta.subtitle")}
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
-            >
-              <Link to="/contact">{t("about.cta.button")}</Link>
-            </Button>
-          </motion.div>
+      <section className="section">
+        <div className="site-shell delivery-grid">
+          <div className="delivery-copy"><p className="overline">Ce que nous prenons en charge</p><h2>Un interlocuteur responsable de bout en bout.</h2><p>Selon la mission, nous mobilisons les compétences nécessaires sans multiplier les interfaces côté client.</p></div>
+          <div className="offer-outcomes">
+            {["Diagnostic et feuille de route", "Architecture fonctionnelle et technique", "Conception d’interface et développement", "Migration et contrôle des données", "Tests métier et sécurité", "Déploiement, formation et maintenance"].map((item) => <div key={item}><Check size={17} /><span>{item}</span></div>)}
+          </div>
         </div>
       </section>
+
+      <section className="contact-banner"><div className="site-shell contact-banner-inner"><div><p className="overline overline-light">Travailler ensemble</p><h2>Un besoin complexe mérite un premier échange précis.</h2></div><Link to="/contact" className="button button-light">Présenter votre contexte <ArrowRight size={17} /></Link></div></section>
     </>
   );
-};
-
-export default About;
+}
