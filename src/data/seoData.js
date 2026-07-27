@@ -4,18 +4,66 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Développeur Web Sénégal & Agence Web Dakar | Fallcon Tech",
+    title: "Transformation numérique Sénégal | Fallcon Tech",
     description:
-      "Développeur web au Sénégal pour créer votre site internet, application métier, logiciel sur mesure, SEO, automatisation et solution mobile à Dakar.",
+      "Fallcon Tech conçoit des systèmes de gestion, GED, logiciels métier et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal.",
     priority: "1.0",
-    changefreq: "daily",
+    changefreq: "weekly",
   },
   "/services": {
-    title: "Services Web, SEO, Automatisation & IoT à Dakar | Fallcon Tech",
+    title: "Solutions de transformation numérique Sénégal | Fallcon Tech",
     description:
-      "Création de site web, référencement SEO, automatisation WhatsApp, MVP, applications web/mobile et intégration IoT, Wave et Orange Money sur machines à pièces au Sénégal.",
-    priority: "0.90",
+      "GED, gestion du courrier, logiciels métier, digitalisation administrative, infrastructure et cybersécurité pour organisations au Sénégal.",
+    priority: "0.95",
     changefreq: "weekly",
+  },
+  "/solutions/gestion-courrier-ged": {
+    title: "Logiciel gestion courrier & GED Sénégal | Fallcon Tech",
+    description: "Solution de gestion électronique du courrier, GED, parapheur, workflow et traçabilité pour administrations et entreprises au Sénégal.",
+    priority: "0.98",
+    changefreq: "weekly",
+  },
+  "/solutions/applications-metier": {
+    title: "Développement logiciel métier sur mesure Sénégal | Fallcon Tech",
+    description: "Applications métier sur mesure, portails internes, workflows et tableaux de bord pour organisations au Sénégal.",
+    priority: "0.96",
+    changefreq: "weekly",
+  },
+  "/solutions/digitalisation-administrations": {
+    title: "Digitalisation administrations Sénégal | Fallcon Tech",
+    description: "Dématérialisation des procédures, registres, courriers, dossiers et workflows pour administrations et établissements publics au Sénégal.",
+    priority: "0.98",
+    changefreq: "weekly",
+  },
+  "/solutions/infrastructure-cybersecurite": {
+    title: "Infrastructure informatique & cybersécurité Sénégal",
+    description: "Audit, sauvegarde, supervision, contrôle d’accès et continuité informatique pour entreprises, ONG et administrations au Sénégal.",
+    priority: "0.92",
+    changefreq: "monthly",
+  },
+  "/secteurs/sante": {
+    title: "Logiciel clinique & cabinet médical Sénégal | Fallcon Tech",
+    description: "Dossier patient, rendez-vous, caisse, prescriptions, stocks et reporting pour cliniques et cabinets au Sénégal.",
+    priority: "0.94",
+    changefreq: "weekly",
+  },
+  "/secteurs/transport-logistique": {
+    title: "Logiciel gestion flotte transport Sénégal | Fallcon Tech",
+    description: "Véhicules, conducteurs, missions, maintenance, carburant, GPS et tableaux de bord pour flottes au Sénégal.",
+    priority: "0.94",
+    changefreq: "weekly",
+  },
+  "/secteurs/ong-projets": {
+    title: "Logiciel suivi projets ONG Sénégal | Fallcon Tech",
+    description: "Suivi de projets, bénéficiaires, activités, justificatifs et indicateurs pour ONG et programmes au Sénégal.",
+    priority: "0.90",
+    changefreq: "monthly",
+  },
+  "/secteurs/education-formation": {
+    title: "Logiciel gestion école & formation Sénégal | Fallcon Tech",
+    description: "Inscriptions, paiements, présences, dossiers et reporting pour écoles et centres de formation au Sénégal.",
+    priority: "0.88",
+    changefreq: "monthly",
   },
   "/services/creation-site-web-dakar": {
     title: "Création Site Internet Sénégal | Développeur Web Dakar",

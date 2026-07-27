@@ -14,14 +14,14 @@ function absoluteUrl(path) {
 }
 
 export default function SEO({
-  title = "Agence Web Dakar & Développeur Web Sénégal | Fallcon Tech",
-  description = "Fallcon Tech — création de site web, SEO local, automatisation WhatsApp, applications et IoT pour entreprises à Dakar et au Sénégal.",
+  title = "Transformation numérique Sénégal | Fallcon Tech",
+  description = "Fallcon Tech conçoit des systèmes de gestion, GED, logiciels métier et infrastructures sécurisées pour les organisations au Sénégal.",
   path = "/",
   image = siteLogo,
   type = "website",
   noindex = false,
   lang = "fr",
-  imageAlt = "Fallcon Tech — Agence Web Dakar",
+  imageAlt = "Fallcon Tech — Transformation numérique au Sénégal",
   siteName = "Fallcon Tech",
   ogLocale,
   jsonLd,

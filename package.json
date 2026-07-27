@@ -8,6 +8,7 @@
     "build": "vite build && node tools/generate-sitemap.mjs && node tools/verify-sitemap.mjs && node tools/prerender-seo.mjs",
     "prerender:seo": "node tools/prerender-seo.mjs",
     "verify:sitemap": "node tools/verify-sitemap.mjs",
+    "test": "node --test tests/*.test.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -9,6 +9,7 @@ const About = lazy(() => import("@/pages/About"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const InstitutionalPage = lazy(() => import("@/pages/InstitutionalPage"));
 const ServiceCreationSiteWebDakar = lazy(() => import("@/pages/ServiceCreationSiteWebDakar"));
 const ServiceAgenceSeoSenegal = lazy(() => import("@/pages/ServiceAgenceSeoSenegal"));
 const ServiceAutomatisationWhatsappSenegal = lazy(() => import("@/pages/ServiceAutomatisationWhatsappSenegal"));
@@ -219,6 +220,14 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/solutions/gestion-courrier-ged" element={<InstitutionalPage />} />
+          <Route path="/solutions/applications-metier" element={<InstitutionalPage />} />
+          <Route path="/solutions/digitalisation-administrations" element={<InstitutionalPage />} />
+          <Route path="/solutions/infrastructure-cybersecurite" element={<InstitutionalPage />} />
+          <Route path="/secteurs/sante" element={<InstitutionalPage />} />
+          <Route path="/secteurs/transport-logistique" element={<InstitutionalPage />} />
+          <Route path="/secteurs/ong-projets" element={<InstitutionalPage />} />
+          <Route path="/secteurs/education-formation" element={<InstitutionalPage />} />
           <Route path="/services/creation-site-web-dakar" element={<ServiceCreationSiteWebDakar />} />
           <Route path="/services/agence-seo-senegal" element={<ServiceAgenceSeoSenegal />} />
           <Route path="/services/automatisation-whatsapp-senegal" element={<ServiceAutomatisationWhatsappSenegal />} />

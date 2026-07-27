@@ -1,347 +1,143 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
+import { ArrowRight, Mail, MapPin, Phone, Send } from "lucide-react";
 import SEO from "@/components/SEO";
-import { useI18n } from "@/i18n";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { confettiBurst } from "@/lib/confetti";
 
-const Contact = () => {
-  const { t } = useI18n();
-  const { toast } = useToast();
+const initialForm = {
+  name: "",
+  organization: "",
+  email: "",
+  phone: "",
+  organizationType: "",
+  need: "",
+  budget: "",
+  message: "",
+};
+
+export default function Contact() {
+  const [formData, setFormData] = useState(initialForm);
   const [loading, setLoading] = useState(false);
-  const formRef = useRef(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    whatsapp: "",
-    businessType: "",
-    goal: "",
-    message: "",
-  });
+  const { toast } = useToast();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (event) => setFormData((current) => ({ ...current, [event.target.name]: event.target.value }));
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.goal) {
-      toast({
-        title: t("contact.toast.missing.title"),
-        description: t("contact.toast.missing.description"),
-        variant: "destructive",
-      });
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: t("contact.toast.invalidEmail.title"),
-        description: t("contact.toast.invalidEmail.description"),
-        variant: "destructive",
-      });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!formData.name || !formData.email || !formData.need) {
+      toast({ title: "Informations manquantes", description: "Merci de renseigner votre nom, votre e-mail et le besoin principal.", variant: "destructive" });
       return;
     }
 
     try {
       setLoading(true);
-      const r = await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.phone,
+          businessType: formData.organizationType,
+          goal: formData.need,
+          message: `Organisation: ${formData.organization}\nBudget: ${formData.budget}\n\n${formData.message}`,
+        }),
       });
-      const data = await r.json().catch(() => ({}));
-      if (!r.ok) throw new Error(data?.error || "send_error");
-      toast({
-        title: t("contact.toast.sent.title"),
-        description: t("contact.toast.sent.description"),
-      });
-      // Confetti au milieu de la page
-      confettiBurst();
-      setFormData({
-        name: "",
-        email: "",
-        whatsapp: "",
-        businessType: "",
-        goal: "",
-        message: "",
-      });
-    } catch (err) {
-      toast({
-        title: t("contact.toast.failed.title"),
-        description: t("contact.toast.failed.description"),
-        variant: "destructive",
-      });
-      const subject = encodeURIComponent(
-        `Contact — ${formData.name || ""} (${formData.goal || ""})`
-      );
-      const body = encodeURIComponent(
-        `Nom: ${formData.name}\nEmail: ${formData.email}\nWhatsApp: ${formData.whatsapp}\nType: ${formData.businessType}\nObjectif: ${formData.goal}\n\nMessage:\n${formData.message}`
-      );
-      window.open(
-        `mailto:info@fallcontech.com?subject=${subject}&body=${body}`,
-        "_blank"
-      );
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data?.error || "send_error");
+      toast({ title: "Demande transmise", description: "Nous reviendrons vers vous pour qualifier le contexte et la prochaine étape." });
+      setFormData(initialForm);
+    } catch {
+      toast({ title: "Envoi automatique indisponible", description: "Votre application e-mail va s’ouvrir avec les informations préparées.", variant: "destructive" });
+      const subject = encodeURIComponent(`Demande d'étude — ${formData.organization || formData.name}`);
+      const body = encodeURIComponent(Object.entries(formData).map(([key, value]) => `${key}: ${value}`).join("\n"));
+      window.open(`mailto:info@fallcontech.com?subject=${subject}&body=${body}`, "_blank");
     } finally {
       setLoading(false);
     }
   };
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: t("contact.info.address"),
-      details: "Dakar – New York",
-    },
-    {
-      icon: Mail,
-      title: t("contact.info.email"),
-      details: "info@fallcontech.com",
-    },
-    {
-      icon: Phone,
-      title: t("contact.info.phone"),
-      details: "+221 77 626 00 20 / +221 77 483 75 76",
-    },
-  ];
-
-  const waUrl = `https://wa.me/221776260020?text=${encodeURIComponent(
-    t("contact.schedule.waMessage")
-  )}`;
-
   return (
     <>
       <SEO
         path="/contact"
-        title="Contacter un Développeur Web à Dakar | Devis Gratuit — Fallcon Tech"
-        description="Contactez Fallcon Tech pour votre projet : création de site web, SEO, application, automatisation WhatsApp ou IoT. Développeur web à Dakar — réponse rapide, devis gratuit en 24h."
+        title="Demander une étude de transformation numérique | Fallcon Tech"
+        description="Présentez votre besoin de GED, logiciel métier, digitalisation administrative, santé, logistique ou infrastructure à Fallcon Tech Dakar."
       />
+      <section className="contact-page">
+        <div className="site-shell contact-page-grid">
+          <div className="contact-intro">
+            <p className="overline">Demande d’étude</p>
+            <h1>Parlons du problème avant de parler de la solution.</h1>
+            <p className="contact-lead">Décrivez le processus, les utilisateurs concernés et les difficultés actuelles. Nous vous répondrons avec une première lecture du besoin et la prochaine étape recommandée.</p>
 
-      <section className="py-20 gradient-bg">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              {t("contact.heroTitle")}
-            </h1>
-            <p className="text-xl text-foreground/80">{t("contact.lead")}</p>
-          </motion.div>
+            <div className="contact-details">
+              <a href="mailto:info@fallcontech.com"><Mail size={19} /><span><small>E-mail</small>info@fallcontech.com</span></a>
+              <a href="tel:+221776260020"><Phone size={19} /><span><small>Téléphone</small>+221 77 626 00 20</span></a>
+              <div><MapPin size={19} /><span><small>Implantation</small>Dakar, Sénégal</span></div>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Formulaire */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="bg-card rounded-3xl shadow-2xl p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-6">
-                  {t("contact.form.title")}
-                </h2>
-                <form
-                  ref={formRef}
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                  id="contact-form"
-                >
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      {t("contact.form.name")}
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder={t("contact.form.namePlaceholder")}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      {t("contact.form.email")}
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder={t("contact.form.emailPlaceholder")}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="whatsapp"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      {t("contact.form.whatsapp")}
-                    </label>
-                    <input
-                      type="tel"
-                      id="whatsapp"
-                      name="whatsapp"
-                      value={formData.whatsapp}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder={t("contact.form.whatsappPlaceholder")}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="businessType"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      {t("contact.form.businessType")}
-                    </label>
-                    <select
-                      id="businessType"
-                      name="businessType"
-                      value={formData.businessType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    >
-                      <option value="">
-                        {t("contact.form.businessTypePlaceholder")}
-                      </option>
-                      <option value="clinic">
-                        {t("contact.form.businessTypes.clinic")}
-                      </option>
-                      <option value="retail">
-                        {t("contact.form.businessTypes.retail")}
-                      </option>
-                      <option value="services">
-                        {t("contact.form.businessTypes.services")}
-                      </option>
-                      <option value="startup">
-                        {t("contact.form.businessTypes.startup")}
-                      </option>
-                      <option value="other">
-                        {t("contact.form.businessTypes.other")}
-                      </option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="goal"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      {t("contact.form.goal")}
-                    </label>
-                    <select
-                      id="goal"
-                      name="goal"
-                      value={formData.goal}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    >
-                      <option value="">
-                        {t("contact.form.goalPlaceholder")}
-                      </option>
-                      <option value="website">
-                        {t("contact.form.goals.website")}
-                      </option>
-                      <option value="redesign">
-                        {t("contact.form.goals.redesign")}
-                      </option>
-                      <option value="automation">
-                        {t("contact.form.goals.automation")}
-                      </option>
-                      <option value="mvp">{t("contact.form.goals.mvp")}</option>
-                      <option value="maintenance">
-                        {t("contact.form.goals.maintenance")}
-                      </option>
-                      <option value="consultation">
-                        {t("contact.form.goals.consultation")}
-                      </option>
-                    </select>
-                  </div>
-                  <Button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg py-6"
-                  >
-                    <Send className="mr-2" size={20} />{" "}
-                    {loading
-                      ? t("contact.form.sending")
-                      : t("contact.form.submit")}
-                  </Button>
-                </form>
-              </div>
-            </motion.div>
-
-            {/* Colonne droite */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="space-y-8"
-            >
-              <div className="bg-card rounded-3xl shadow-2xl p-8">
-                <h2 className="text-3xl font-bold mb-4">
-                  {t("contact.schedule.title")}
-                </h2>
-                <p className="text-foreground/80 mb-6">
-                  {t("contact.schedule.description")}
-                </p>
-                <Button
-                  asChild
-                  className="w-full bg-green-500 hover:bg-green-600 text-white text-lg py-6"
-                >
-                  <a
-                    href={waUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle size={20} /> {t("common.cta.whatsapp")}
-                  </a>
-                </Button>
-              </div>
-
-              <div className="bg-card rounded-3xl shadow-2xl p-8">
-                <h2 className="text-3xl font-bold mb-6">
-                  {t("contact.info.title")}
-                </h2>
-                <div className="space-y-6">
-                  {contactInfo.map((info, idx) => (
-                    <div key={idx} className="flex items-start gap-4">
-                      <div className="bg-background p-3 rounded-xl">
-                        <info.icon className="text-blue-500" size={24} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">
-                          {info.title}
-                        </h3>
-                        <p className="text-muted-foreground">{info.details}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            <div className="contact-expectation">
+              <strong>Ce que vous recevrez au premier échange</strong>
+              <ul>
+                <li>Qualification du problème et des parties prenantes</li>
+                <li>Identification des risques et dépendances</li>
+                <li>Proposition d’une étape de diagnostic ou de cadrage</li>
+              </ul>
+            </div>
           </div>
+
+          <form className="institutional-form" onSubmit={handleSubmit}>
+            <div className="form-heading"><span>01</span><div><h2>Présentez votre contexte</h2><p>Les champs marqués d’un astérisque sont requis.</p></div></div>
+            <div className="form-grid">
+              <label>Nom et prénom *<input name="name" value={formData.name} onChange={handleChange} required placeholder="Votre nom" /></label>
+              <label>Organisation<input name="organization" value={formData.organization} onChange={handleChange} placeholder="Nom de la structure" /></label>
+              <label>E-mail professionnel *<input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="nom@organisation.sn" /></label>
+              <label>Téléphone / WhatsApp<input name="phone" value={formData.phone} onChange={handleChange} placeholder="+221 …" /></label>
+              <label>Type d’organisation
+                <select name="organizationType" value={formData.organizationType} onChange={handleChange}>
+                  <option value="">Sélectionner</option>
+                  <option value="administration">Administration publique</option>
+                  <option value="etablissement-public">Établissement ou agence publique</option>
+                  <option value="entreprise">Entreprise privée</option>
+                  <option value="sante">Clinique ou structure de santé</option>
+                  <option value="ong">ONG ou programme</option>
+                  <option value="education">École ou organisme de formation</option>
+                  <option value="autre">Autre organisation</option>
+                </select>
+              </label>
+              <label>Besoin principal *
+                <select name="need" value={formData.need} onChange={handleChange} required>
+                  <option value="">Sélectionner</option>
+                  <option value="courrier-ged">Gestion électronique du courrier / GED</option>
+                  <option value="application-metier">Application métier sur mesure</option>
+                  <option value="digitalisation">Digitalisation d’une procédure administrative</option>
+                  <option value="sante">Système de gestion clinique</option>
+                  <option value="flotte">Gestion de flotte ou logistique</option>
+                  <option value="infrastructure">Infrastructure, sauvegarde ou cybersécurité</option>
+                  <option value="audit">Audit et feuille de route</option>
+                </select>
+              </label>
+              <label className="form-wide">Budget indicatif
+                <select name="budget" value={formData.budget} onChange={handleChange}>
+                  <option value="">À définir / je ne sais pas encore</option>
+                  <option value="moins-2m">Moins de 2 millions FCFA</option>
+                  <option value="2-5m">2 à 5 millions FCFA</option>
+                  <option value="5-15m">5 à 15 millions FCFA</option>
+                  <option value="15-30m">15 à 30 millions FCFA</option>
+                  <option value="plus-30m">Plus de 30 millions FCFA</option>
+                </select>
+              </label>
+              <label className="form-wide">Contexte et difficulté actuelle
+                <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Décrivez brièvement la procédure actuelle, les utilisateurs concernés, les outils utilisés et le résultat attendu." />
+              </label>
+            </div>
+            <button className="button button-primary form-submit" type="submit" disabled={loading}>
+              <Send size={17} /> {loading ? "Transmission…" : "Transmettre la demande"} <ArrowRight size={17} />
+            </button>
+            <p className="form-note">Vos informations sont utilisées uniquement pour répondre à cette demande.</p>
+          </form>
         </div>
       </section>
     </>
   );
-};
-
-export default Contact;
+}

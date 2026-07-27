@@ -1,318 +1,147 @@
-import React from "react";
-import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Globe, Zap, Rocket, CheckCircle2, ArrowRight } from "lucide-react";
-import RiveIcon from "@/components/media/RiveIcon";
-import { Button } from "@/components/ui/button";
-import { useI18n } from "@/i18n";
+import {
+  ArrowRight,
+  Building2,
+  FileStack,
+  GraduationCap,
+  LockKeyhole,
+  Stethoscope,
+  Truck,
+  UsersRound,
+  Workflow,
+} from "lucide-react";
+import SEO from "@/components/SEO";
 
-const Services = () => {
-  const { t } = useI18n();
-  const services = [
-    {
-      icon: Globe,
-      title: "Conception de Sites Web & SEO",
-      tagline:
-        "Plus de demandes, chargement plus rapide, meilleur classement local",
-      priceFrom: "350 000 F CFA",
-      id: "site-web-seo",
-      features: [
-        "UI responsive mobile-first",
-        "SEO on-page (sitemap, méta-tags, GSC)",
-        "Intégration Google Analytics",
-        "Vitesses de chargement rapides (Core Web Vitals)",
-        "Formulaires de contact & capture de leads",
-        "Gestion de blog/contenu",
-      ],
-      outcomes: [
-        "Trafic organique accru",
-        "Meilleur engagement utilisateur",
-        "Taux de conversion plus élevés",
-      ],
-    },
-    {
-      icon: Zap,
-      title: "Plateformes Internes & Automatisations",
-      tagline:
-        "Gagnez du temps, réduisez les erreurs, faites évoluer vos opérations",
-      priceFrom: "2.5M F CFA",
-      id: "automatisations-plateformes",
-      features: [
-        "Portails de documents avec contrôle d'accès",
-        "Journaux d'activité et pistes d'audit",
-        "Workflows WhatsApp/SMS",
-        "Pipelines de messages depuis CSV",
-        "Tableaux de bord personnalisés",
-        "Fonctionnalité de corbeille/restauration",
-      ],
-      outcomes: [
-        "Réduction du travail manuel",
-        "Sécurité améliorée",
-        "Meilleure collaboration d'équipe",
-      ],
-    },
-    {
-      icon: Rocket,
-      title: "Développement de MVP & Startups",
-      tagline:
-        "Prototypage rapide, fonctionnalités en temps réel, prêt pour le cloud",
-      priceFrom: "1 000 000 F CFA",
-      id: "developpement-mvp",
-      features: [
-        "Architecture React + Firebase",
-        "Base de données en temps réel",
-        "Authentification des utilisateurs",
-        "Déploiement cloud (Vercel/Firebase)",
-        "Infrastructure évolutive",
-        "Cycles d'itération rapides",
-      ],
-      outcomes: [
-        "Validation rapide sur le marché",
-        "Produit prêt pour les investisseurs",
-        "Fondation évolutive",
-      ],
-    },
-    {
-      icon: Zap,
-      title: "Systèmes Embarqués & IoT (Arduino/ESP32)",
-      tagline:
-        "Mobile money sur machines à pièces, capteurs, télémétrie & OTA",
-      priceFrom: "Sur devis",
-      id: "iot-embedded",
-      features: [
-        "Intégrations Wave/Orange/Free Money sur monnayeur",
-        "Ajout paiement mobile sur machines qui prennent des pièces",
-        "Télémétrie: capteurs, alertes, journaux",
-        "Communication sécurisée MQTT/HTTPS",
-        "Mises à jour OTA et gestion d'appareils",
-        "Outils d'administration et audit",
-        "Résilience: offline & reprise",
-      ],
-      outcomes: [
-        "Machines de vente moins dépendantes des pièces",
-        "Exploitation fiable de vos kiosques/machines",
-        "Moins d'arrêts imprévus",
-        "Indicateurs temps réel actionnables",
-      ],
-    },
-  ];
+const offers = [
+  {
+    icon: FileStack,
+    number: "01",
+    title: "Gestion du courrier & GED",
+    text: "Registre, orientation, instruction, parapheur, pièces jointes, délais, recherche et audit.",
+    href: "/solutions/gestion-courrier-ged",
+    forWho: "Administrations · Agences · Entreprises multisites",
+  },
+  {
+    icon: Workflow,
+    number: "02",
+    title: "Applications métier sur mesure",
+    text: "Portails internes, dossiers, workflows, référentiels et tableaux de bord alignés sur vos règles.",
+    href: "/solutions/applications-metier",
+    forWho: "Directions métier · Opérations · Programmes",
+  },
+  {
+    icon: Building2,
+    number: "03",
+    title: "Digitalisation administrative",
+    text: "Dématérialisation progressive des registres, demandes, circuits de validation et décisions.",
+    href: "/solutions/digitalisation-administrations",
+    forWho: "Secteur public · Collectivités · Établissements",
+  },
+  {
+    icon: LockKeyhole,
+    number: "04",
+    title: "Infrastructure & cybersécurité",
+    text: "Accès, sauvegardes vérifiées, supervision, documentation et continuité des services critiques.",
+    href: "/solutions/infrastructure-cybersecurite",
+    forWho: "DSI · Organisations sensibles · Réseaux multisites",
+  },
+];
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
-  const servicesJsonLd = {
+const sectors = [
+  { icon: Stethoscope, title: "Santé", text: "Patient, consultation, caisse, stock et direction.", href: "/secteurs/sante" },
+  { icon: Truck, title: "Transport & logistique", text: "Flotte, missions, maintenance et rentabilité.", href: "/secteurs/transport-logistique" },
+  { icon: UsersRound, title: "ONG & programmes", text: "Terrain, bénéficiaires, indicateurs et reporting.", href: "/secteurs/ong-projets" },
+  { icon: GraduationCap, title: "Éducation & formation", text: "Admissions, scolarité, paiements et documents.", href: "/secteurs/education-formation" },
+];
+
+export default function Services() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://fallcontech.com";
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: services.map((s, i) => ({
+    itemListElement: offers.map((offer, index) => ({
       "@type": "ListItem",
-      position: i + 1,
-      url: `${siteUrl}/services#${s.id}`,
-      item: {
-        "@type": "Service",
-        name: s.title,
-        description: s.tagline,
-        areaServed: "SN",
-        provider: { "@type": "Organization", name: "Fallcon Tech" },
-        offers: {
-          "@type": "Offer",
-          price: s.priceFrom?.replace(/[^0-9.]/g, ""),
-          priceCurrency: "XOF",
-          url: `${siteUrl}/contact`,
-        },
-      },
+      position: index + 1,
+      url: `${siteUrl}${offer.href}`,
+      item: { "@type": "Service", name: offer.title, description: offer.text },
     })),
   };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
-    ],
-  };
-
-  const faqs = [
-          {
-            q: 'Combien coûte un site web professionnel ?',
-            a: "Nos sites démarrent à 350 000 F CFA et varient selon les fonctionnalités (réservation, blog, intégrations, etc.).",
-          },
-          {
-            q: 'En combien de temps livrez-vous ?',
-            a: "De 1 à 2 semaines pour un site vitrine, 2 à 3 semaines pour un site business, 4 à 8 semaines pour une plateforme personnalisée.",
-          },
-          {
-            q: 'Puis-je vous contacter sur WhatsApp ?',
-            a: 'Oui, nous répondons rapidement sur WhatsApp au +221 77 626 00 20 pour planifier un appel et clarifier vos besoins.',
-          },
-          {
-            q: 'Intégrez-vous Wave ou Orange Money sur des machines à pièces ?',
-            a: "Oui, nous pouvons ajouter Wave, Orange Money ou Free Money sur des distributeurs automatiques, machines de vente, bornes et équipements à monnayeur, avec validation sécurisée côté serveur.",
-          },
-        ];
 
   return (
     <>
       <SEO
         path="/services"
-        title="Services Web, SEO, Automatisation & IoT à Dakar | Fallcon Tech"
-        description="Découvrez nos services : création de site web, référencement SEO, automatisation WhatsApp/CRM, MVP et intégration IoT, Wave et Orange Money sur machines à pièces au Sénégal."
-        jsonLd={[servicesJsonLd, {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map(f => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }, breadcrumbJsonLd]}
+        title="Solutions de transformation numérique Sénégal | Fallcon Tech"
+        description="GED, gestion du courrier, logiciels métier, digitalisation administrative, infrastructure et cybersécurité pour organisations au Sénégal."
+        jsonLd={jsonLd}
       />
+      <section className="page-hero">
+        <div className="site-shell page-hero-grid">
+          <div>
+            <p className="overline">Nos solutions</p>
+            <h1>Structurer l’information. Fluidifier les décisions.</h1>
+          </div>
+          <p>
+            Fallcon Tech intervient là où une procédure critique, une donnée
+            dispersée ou un système fragile ralentit votre organisation. Chaque
+            mission commence par un diagnostic et se termine par un dispositif
+            exploitable par vos équipes.
+          </p>
+        </div>
+      </section>
 
-      <section className="py-20 gradient-bg">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <div className="mb-4"><RiveIcon /></div>
-            <h1 className="vt-title text-5xl md:text-6xl font-bold mb-6 gradient-text">{t('services.pageTitle')}</h1>
-            <p className="text-xl text-foreground/80">{t('services.lead')}</p>
-          </motion.div>
-
-          <div className="space-y-20">
-            {services.map((service, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="bg-card rounded-3xl shadow-2xl overflow-hidden"
-                id={service.id}
-              >
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="p-8 md:p-12">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl mb-6">
-                      <service.icon
-                        className="text-primary-foreground"
-                        size={32}
-                      />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                      {service.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground mb-8">
-                      {service.tagline}
-                    </p>
-
-                    <div className="mb-4 text-sm text-muted-foreground">{t('services.card.startingAt')} {service.priceFrom}</div>
-                    <h3 className="font-bold text-lg mb-4 text-foreground">{t('services.card.keyFeatures')}</h3>
-                    <ul className="space-y-3 mb-8">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2
-                            className="text-blue-500 flex-shrink-0 mt-1"
-                            size={20}
-                          />
-                          <span className="text-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex items-center gap-4">
-                      <Button asChild>
-                        <Link to="/contact">
-                          {t('services.card.startNow')} <ArrowRight className="ml-2" size={18} />
-                        </Link>
-                      </Button>
-                      <Link to="/work" className="text-sm text-blue-600 hover:underline">
-                        {t('services.card.seeCaseStudies')}
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="bg-primary/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="font-bold text-2xl mb-6 text-primary">{t('services.card.expectedOutcomes')}</h3>
-                    <div className="space-y-4">
-                      {service.outcomes.map((outcome, i) => (
-                        <div
-                          key={i}
-                          className="bg-card rounded-xl p-4 shadow-md"
-                        >
-                          <p className="font-semibold text-blue-600">
-                            {outcome}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+      <section className="section section-muted">
+        <div className="site-shell service-list">
+          {offers.map((offer) => {
+            const Icon = offer.icon;
+            return (
+              <article className="service-list-row" key={offer.title}>
+                <span className="service-number">{offer.number}</span>
+                <div className="service-icon"><Icon size={24} /></div>
+                <div className="service-main">
+                  <p className="card-eyebrow">{offer.forWho}</p>
+                  <h2>{offer.title}</h2>
+                  <p>{offer.text}</p>
                 </div>
-              </motion.div>
-            ))}
+                <Link to={offer.href} className="button button-secondary">Voir la solution <ArrowRight size={16} /></Link>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section" id="secteurs">
+        <div className="site-shell">
+          <div className="split-heading">
+            <div><p className="overline">Expertises sectorielles</p><h2>Des configurations adaptées au vocabulaire et aux contraintes du terrain.</h2></div>
+            <p className="intro-copy">Nous ne vendons pas le même logiciel à tout le monde. Nous capitalisons sur des composants éprouvés puis les adaptons au contexte de chaque métier.</p>
+          </div>
+          <div className="sector-grid sector-grid-services">
+            {sectors.map((sector) => {
+              const Icon = sector.icon;
+              return <Link className="sector-card" to={sector.href} key={sector.title}><Icon size={23} /><div><h3>{sector.title}</h3><p>{sector.text}</p></div><ArrowRight size={18} /></Link>;
+            })}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-4xl font-bold mb-8 text-primary">FAQ</h2>
-          <div className="space-y-6">
-            {faqs.map((f, i) => (
-              <div key={i} className="bg-card rounded-xl p-6 shadow-md">
-                <h3 className="font-semibold text-lg mb-2">{f.q}</h3>
-                <p className="text-muted-foreground">{f.a}</p>
-              </div>
-            ))}
+      <section className="section section-soft">
+        <div className="site-shell buying-grid">
+          <div><p className="overline">Formats d’intervention</p><h2>Choisir le bon niveau d’engagement.</h2></div>
+          <div className="buying-options">
+            <div><span>01</span><h3>Diagnostic ciblé</h3><p>État des lieux, risques, priorités, scénario cible et feuille de route budgétée.</p></div>
+            <div><span>02</span><h3>Projet de transformation</h3><p>Cadrage, réalisation, migration, formation et mise en production d’un système métier.</p></div>
+            <div><span>03</span><h3>Maintenance & évolution</h3><p>Supervision, assistance, sauvegardes, corrections et cycles d’amélioration planifiés.</p></div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('services.cta.title')}</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">{t('services.cta.subtitle')}</p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
-            >
-              <Link to="/contact">{t('services.cta.button')}</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-primary">Pages services SEO locales</h2>
-          <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm mb-8">
-            <li><Link to="/services/creation-site-web-dakar" className="hover:underline">Création de site web à Dakar</Link></li>
-            <li><Link to="/services/developpeur-web-senegal" className="hover:underline">Développeur web au Sénégal</Link></li>
-            <li><Link to="/services/creation-site-internet-senegal" className="hover:underline">Création site internet Sénégal</Link></li>
-            <li><Link to="/services/tarif-site-vitrine-senegal" className="hover:underline">Tarif site vitrine Sénégal</Link></li>
-            <li><Link to="/services/audit-seo-professionnel-senegal" className="hover:underline">Audit SEO professionnel Sénégal</Link></li>
-            <li><Link to="/services/agence-seo-senegal" className="hover:underline">Agence SEO au Sénégal</Link></li>
-            <li><Link to="/services/automatisation-whatsapp-senegal" className="hover:underline">Automatisation WhatsApp au Sénégal</Link></li>
-            <li><Link to="/services/integration-paiement-mobile-money-machines" className="hover:underline">Paiement mobile money sur machines à pièces</Link></li>
-            <li><Link to="/services/web-development-senegal" className="hover:underline">Web development in Senegal</Link></li>
-            <li><Link to="/services/mobile-app-development-senegal" className="hover:underline">Mobile app development in Senegal</Link></li>
-            <li><Link to="/services/software-development-senegal" className="hover:underline">Software development in Senegal</Link></li>
-          </ul>
-          <h3 className="text-2xl font-bold mb-4 text-primary">{t('services.recentArticles')}</h3>
-          <ul className="grid md:grid-cols-3 gap-4 text-blue-600 text-sm">
-            <li><Link to="/article/integrer-paiement-machine-eau-esp32-senegal" className="hover:underline">Intégrer un paiement mobile sur une machine (ESP32)</Link></li>
-            <li><Link to="/article/passerelles-paiement-iot-wave-orange-free" className="hover:underline">Passerelles de paiement pour IoT (Wave/OM/Free)</Link></li>
-            <li><Link to="/article/developpement-iot-embarque-senegal-arduino-esp32" className="hover:underline">Développement IoT & embarqué (Arduino/ESP32)</Link></li>
-          </ul>
+      <section className="contact-banner">
+        <div className="site-shell contact-banner-inner">
+          <div><p className="overline overline-light">Premier échange</p><h2>Décrivez-nous le processus qui vous fait perdre du temps.</h2></div>
+          <Link className="button button-light" to="/contact">Demander une étude <ArrowRight size={17} /></Link>
         </div>
       </section>
     </>
   );
-};
-
-export default Services;
+}
