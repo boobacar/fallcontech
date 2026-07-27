@@ -1,16 +1,34 @@
-# React + Vite
+# Fallcon Tech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institutionnel de Fallcon Tech, cabinet de transformation numérique basé à Dakar.
 
-Currently, two official plugins are available:
+## Positionnement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fallcon Tech conçoit et déploie des systèmes numériques pour les administrations, établissements de santé, ONG, programmes et entreprises :
 
-## React Compiler
+- gestion électronique du courrier et GED ;
+- applications métier sur mesure ;
+- digitalisation des procédures administratives ;
+- systèmes de gestion clinique ;
+- gestion de flotte et logistique ;
+- infrastructure, sauvegarde et cybersécurité.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Développement
 
-## Expanding the ESLint configuration
+```bash
+npm ci
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Vérification
+
+```bash
+npm test
+npm run build
+```
+
+Le build génère et vérifie le sitemap, puis produit les pages SEO statiques.
+
+## Déploiement
+
+La production est déployée sur [fallcontech.com](https://fallcontech.com) depuis la branche `main`.
