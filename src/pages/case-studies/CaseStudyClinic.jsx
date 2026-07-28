@@ -1,10 +1,12 @@
 import React from "react";
 import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import clinicImg from "@/assets/clinic-dabia.webp";
+import clinicHomeHeroImg from "@/assets/dabia-home-hero.webp";
+import clinicHomeWhyChooseImg from "@/assets/dabia-home-why-choose.webp";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useI18n } from "@/i18n";
 
@@ -40,7 +42,7 @@ const CaseStudyClinic = () => {
 
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -88,13 +90,13 @@ const CaseStudyClinic = () => {
                 <p className="text-muted-foreground">{t('case.common.devTime')}</p>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -142,18 +144,18 @@ const CaseStudyClinic = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-primary/5 rounded-2xl p-2">
                 <img
-                  alt={t('case.clinic.alt.bookingUI')}
-                  className="w-full rounded-xl"
-                  src="https://images.unsplash.com/photo-1593150543200-56e05bdb018e"
+                  alt="Accueil de la Clinique Dentaire DABIA avec prise de rendez-vous"
+                  className="w-full aspect-video object-cover rounded-xl"
+                  src={clinicHomeHeroImg}
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div className="bg-primary/5 rounded-2xl p-2">
                 <img
-                  alt={t('case.clinic.alt.doctors')}
-                  className="w-full rounded-xl"
-                  src="https://images.unsplash.com/photo-1588966915713-6d43603478e5"
+                  alt="Section Pourquoi nous choisir de la Clinique Dentaire DABIA"
+                  className="w-full aspect-video object-cover rounded-xl"
+                  src={clinicHomeWhyChooseImg}
                   loading="lazy"
                   decoding="async"
                 />
@@ -218,7 +220,7 @@ const CaseStudyClinic = () => {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
     </>

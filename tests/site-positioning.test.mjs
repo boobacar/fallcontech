@@ -54,6 +54,13 @@ test("les pages de confiance soutiennent le nouveau positionnement", () => {
   assert.match(resources, /Centre de ressources/);
 });
 
+test("l’étude de cas de la clinique utilise des captures réelles de la page d’accueil", () => {
+  const clinic = read("src/pages/case-studies/CaseStudyClinic.jsx");
+  assert.match(clinic, /dabia-home-hero\.webp/);
+  assert.match(clinic, /dabia-home-why-choose\.webp/);
+  assert.doesNotMatch(clinic, /images\.unsplash\.com/);
+});
+
 test("le formulaire qualifie les demandes institutionnelles", () => {
   const contact = read("src/pages/Contact.jsx");
   assert.match(contact, /Administration publique/);
