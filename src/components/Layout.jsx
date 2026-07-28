@@ -5,7 +5,6 @@ import logoUrl from "@/assets/logo.webp";
 
 const navLinks = [
   { path: "/services", label: "Solutions" },
-  { path: "/services#secteurs", label: "Secteurs" },
   { path: "/work", label: "Références" },
   { path: "/about", label: "Cabinet" },
   { path: "/resources", label: "Analyses" },
