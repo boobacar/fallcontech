@@ -72,7 +72,7 @@ export default function Contact() {
 
             <div className="contact-details">
               <a href="mailto:info@fallcontech.com"><Mail size={19} /><span><small>E-mail</small>info@fallcontech.com</span></a>
-              <a href="tel:+221776260020"><Phone size={19} /><span><small>Téléphone</small>+221 77 626 00 20</span></a>
+              <a href="tel:+221774837576"><Phone size={19} /><span><small>Téléphone</small>+221 77 483 75 76</span></a>
               <div><MapPin size={19} /><span><small>Implantation</small>Dakar, Sénégal</span></div>
             </div>
 

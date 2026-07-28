@@ -20,7 +20,7 @@ const ArticleSeoLocalSenegalGBP = () => {
         <h2>2) Créer des pages locales orientées intention</h2><p>Exemple: <Link to="/services/agence-seo-senegal">Agence SEO Sénégal</Link> et <Link to="/services/creation-site-web-dakar">Création de site web Dakar</Link>.</p>
         <h2>3) Renforcer le maillage interne</h2><p>Chaque article doit pointer vers une page service et vers <Link to="/contact">contact</Link>.</p>
         <h2>4) Piloter avec GSC/GA4</h2><p>Suivre impressions, CTR, position et conversions pour corriger chaque semaine.</p>
-        <div className="mt-8 flex gap-3"><Button asChild><Link to="/contact">Demander un devis</Link></Button><Button asChild variant="outline"><a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button></div>
+        <div className="mt-8 flex gap-3"><Button asChild><Link to="/contact">Demander un devis</Link></Button><Button asChild variant="outline"><a href="https://wa.me/221774837576" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button></div>
       </div></article>
     </>
   )

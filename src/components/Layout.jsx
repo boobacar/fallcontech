@@ -116,7 +116,6 @@ export default function Layout({ children }) {
             <h2>Contact</h2>
             <ul>
               <li><a href="mailto:info@fallcontech.com">info@fallcontech.com</a></li>
-              <li><a href="tel:+221776260020">+221 77 626 00 20</a></li>
               <li><a href="tel:+221774837576">+221 77 483 75 76</a></li>
               <li><Link to="/contact">Présenter un besoin</Link></li>
             </ul>
@@ -128,7 +127,7 @@ export default function Layout({ children }) {
         </div>
       </footer>
 
-      <a className="whatsapp-button" href="https://wa.me/221776260020?text=Bonjour%20Fallcon%20Tech%2C%20je%20souhaite%20vous%20présenter%20un%20besoin%20de%20transformation%20numérique." target="_blank" rel="noopener noreferrer" aria-label="Contacter Fallcon Tech sur WhatsApp">
+      <a className="whatsapp-button" href="https://wa.me/221774837576?text=Bonjour%20Fallcon%20Tech%2C%20je%20souhaite%20vous%20présenter%20un%20besoin%20de%20transformation%20numérique." target="_blank" rel="noopener noreferrer" aria-label="Contacter Fallcon Tech sur WhatsApp">
         <MessageCircle size={21} /><span>WhatsApp</span>
       </a>
     </div>

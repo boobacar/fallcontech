@@ -145,7 +145,7 @@ const ArticleLandingPageDakarConversion = () => {
         </div>
         <div className="not-prose mt-8 flex flex-col sm:flex-row gap-3">
           <Button asChild><Link to="/contact">Demander un audit ou un devis</Link></Button>
-          <Button asChild variant="outline"><a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button>
+          <Button asChild variant="outline"><a href="https://wa.me/221774837576" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button>
         </div>
         </div>
       </article>

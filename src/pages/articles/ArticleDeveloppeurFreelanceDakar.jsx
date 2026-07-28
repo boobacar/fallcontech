@@ -193,7 +193,7 @@ const ArticleDeveloppeurFreelanceDakar = () => {
               <Link to="/contact">Discuter de mon projet</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/221774837576" target="_blank" rel="noopener noreferrer">
                 Écrire sur WhatsApp
               </a>
             </Button>

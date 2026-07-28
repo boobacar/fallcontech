@@ -162,7 +162,7 @@ function ServiceFrenchPage({ page }) {
         "@type": "LocalBusiness",
         name: "Fallcon Tech",
         url: site,
-        telephone: "+221776260020",
+        telephone: "+221774837576",
         address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
       },
       areaServed: [{ "@type": "Country", name: "Sénégal" }, { "@type": "City", name: "Dakar" }],

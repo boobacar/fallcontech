@@ -64,7 +64,7 @@ export default function ServiceIntegrationPaiementMobileMoneyMachines() {
               "@type": "LocalBusiness",
               name: "Fallcon Tech",
               url: "https://fallcontech.com",
-              telephone: "+221776260020",
+              telephone: "+221774837576",
               address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
             },
             areaServed: [{ "@type": "City", name: "Dakar" }, { "@type": "Country", name: "Sénégal" }],

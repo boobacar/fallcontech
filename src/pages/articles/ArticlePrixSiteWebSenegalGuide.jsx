@@ -21,7 +21,7 @@ const ArticlePrixSiteWebSenegalGuide = () => {
         <h2>Ce qui impacte le budget</h2><p>Nombre de pages, copywriting, SEO, vitesse, intégrations, maintenance.</p>
         <h2>Éviter les faux bons plans</h2><p>Un site trop bas prix sans structure SEO coûte plus cher à corriger après.</p>
         <p>Si vous lancez un nouveau projet, regardez notre offre <Link to="/services/creation-site-web-dakar">Création de site web à Dakar</Link> et notre <Link to="/pricing">page tarifs</Link>.</p>
-        <div className="mt-8 flex gap-3"><Button asChild><Link to="/contact">Demander un devis</Link></Button><Button asChild variant="outline"><a href="https://wa.me/221776260020" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button></div>
+        <div className="mt-8 flex gap-3"><Button asChild><Link to="/contact">Demander un devis</Link></Button><Button asChild variant="outline"><a href="https://wa.me/221774837576" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button></div>
       </div></article>
     </>
   )
