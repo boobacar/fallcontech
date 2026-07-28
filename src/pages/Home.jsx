@@ -17,7 +17,7 @@ import {
   Workflow,
 } from "lucide-react";
 import SEO from "@/components/SEO";
-import clinicImg from "@/assets/clinic-dabia.webp";
+import dentalOsImg from "@/assets/dental-os-odontogram.webp";
 import telimanImg from "@/assets/teliman-tracking-fleeti-dashboard.png";
 import telimanShareImg from "@/assets/telimanshare.webp";
 
@@ -89,12 +89,12 @@ const references = [
     tags: ["Courrier", "GED", "Contrôle d’accès"],
   },
   {
-    label: "Système d’information de santé",
-    title: "Dabia Dental OS — opérations cliniques unifiées",
-    text: "Un environnement de travail couvrant le patient, les actes, la caisse et les documents médicaux.",
-    image: clinicImg,
-    href: "/case-study/clinic",
-    tags: ["Santé", "Caisse", "Dossier patient"],
+    label: "Logiciel métier · santé dentaire",
+    title: "Dental OS",
+    text: "Logiciel métier pour cabinets dentaires réunissant dossiers patients, odontogramme, plans de traitement, rendez-vous, caisse et documents cliniques.",
+    image: dentalOsImg,
+    href: "/secteurs/sante",
+    tags: ["Dossier patient", "Odontogramme", "Caisse"],
   },
   {
     label: "Pilotage logistique",

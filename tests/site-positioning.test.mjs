@@ -9,6 +9,9 @@ test("la page d'accueil porte le positionnement institutionnel", () => {
   assert.match(home, /Systèmes numériques pour organisations exigeantes/);
   assert.match(home, /Administrations publiques/);
   assert.match(home, /Courrier, GED et workflows/);
+  assert.match(home, /title: "Dental OS"/);
+  assert.match(home, /dental-os-odontogram\.webp/);
+  assert.doesNotMatch(home, /Dabia Dental OS/);
   assert.doesNotMatch(home, /MorphingShape|confettiBurst|floating-blobs/);
 });
 
