@@ -148,7 +148,7 @@ export const pageSeo = {
   "/work": {
     title: "Références logiciels métier & transformation numérique | Fallcon Tech",
     description:
-      "Découvrez les systèmes métier réalisés par Fallcon Tech pour le courrier, la santé, le transport, la logistique et l’information au Sénégal.",
+      "Découvrez les logiciels métier, plateformes documentaires et sites institutionnels réalisés par Fallcon Tech au Sénégal.",
     priority: "0.85",
     changefreq: "monthly",
   },

@@ -42,7 +42,11 @@ test("les pages de confiance soutiennent le nouveau positionnement", () => {
   const pricing = read("src/pages/Pricing.jsx");
   const resources = read("src/pages/Resources.jsx");
   assert.match(about, /cabinet d’ingénierie numérique/i);
-  assert.match(work, /EMGA Courrier/);
+  assert.match(work, /Circuit Courrier/);
+  assert.doesNotMatch(work, /EMGA/);
+  assert.match(work, /Site Web de la Clinique Dentaire Dabia/);
+  assert.match(work, /title: "Dental OS"/);
+  assert.match(work, /title: "TelimanShare"/);
   assert.match(pricing, /Formats d’intervention/);
   assert.match(resources, /Centre de ressources/);
 });
