@@ -82,7 +82,7 @@ const sectors = [
 const references = [
   {
     label: "Gestion électronique du courrier",
-    title: "EMGA Courrier — circulation et traçabilité documentaire",
+    title: "Circuit Courrier — circulation et traçabilité documentaire",
     text: "Une plateforme métier structurée autour des circuits, rôles, étiquettes, accusés et historiques d’action.",
     image: telimanShareImg,
     href: "/work",

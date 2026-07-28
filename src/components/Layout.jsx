@@ -21,6 +21,18 @@ export default function Layout({ children }) {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    }
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
     document.documentElement.lang = "fr";
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
