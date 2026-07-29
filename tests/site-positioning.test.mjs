@@ -54,6 +54,19 @@ test("les pages de confiance soutiennent le nouveau positionnement", () => {
   assert.match(resources, /Centre de ressources/);
 });
 
+test("les quatre études de cas partagent le layout institutionnel", () => {
+  for (const file of [
+    "CaseStudyClinic.jsx",
+    "CaseStudyTelimanShare.jsx",
+    "CaseStudyTelimanTrackingFleeti.jsx",
+    "CaseStudyMiroirFoncier.jsx",
+  ]) {
+    const page = read(`src/pages/case-studies/${file}`);
+    assert.match(page, /CaseStudyLayout/);
+    assert.doesNotMatch(page, /gradient-bg|gradient-text|images\.unsplash\.com/);
+  }
+});
+
 test("l’étude de cas de la clinique utilise des captures réelles de la page d’accueil", () => {
   const clinic = read("src/pages/case-studies/CaseStudyClinic.jsx");
   assert.match(clinic, /dabia-home-hero\.webp/);

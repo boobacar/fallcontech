@@ -1,230 +1,40 @@
-import React from "react";
-import SEO from "@/components/SEO";
-import { motion as Motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import CaseStudyLayout from "@/components/CaseStudyLayout";
 import clinicImg from "@/assets/clinic-dabia.webp";
 import clinicHomeHeroImg from "@/assets/dabia-home-hero.webp";
 import clinicHomeWhyChooseImg from "@/assets/dabia-home-why-choose.webp";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { useI18n } from "@/i18n";
 
-const CaseStudyClinic = () => {
-  const { t } = useI18n();
-  return (
-    <>
-      <SEO
-        path="/case-study/clinic"
-        title={t('case.clinic.seo.title')}
-        description={t('case.clinic.seo.description')}
-        image={clinicImg}
-        type="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: t('case.clinic.seo.title'),
-          image:
-            (import.meta.env.VITE_SITE_URL ||
-              (typeof window !== "undefined" ? window.location.origin : "")) +
-            clinicImg,
-          datePublished: "2025-06-01",
-          dateModified: "2025-09-01",
-          author: { "@type": "Person", name: "Boubacar FALL" },
-          publisher: { "@type": "Organization", name: "Fallcon Tech" },
-          mainEntityOfPage:
-            (import.meta.env.VITE_SITE_URL ||
-              (typeof window !== "undefined" ? window.location.origin : "")) +
-            "/case-study/clinic",
-          description: t('case.clinic.seo.headlineDescription'),
-        }}
-      />
-
-      <section className="py-20 gradient-bg">
-        <div className="container mx-auto px-4">
-          <Motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <Link
-              to="/work"
-              className="inline-flex items-center text-primary hover:text-blue-500 mb-8"
-            >
-              <ArrowLeft className="mr-2" size={20} />
-              {t('case.common.backToWork')}
-            </Link>
-            <Breadcrumbs
-              items={[
-                { label: t('common.breadcrumb.home'), to: "/" },
-                { label: t('work.pageTitle'), to: "/work" },
-                { label: t('case.clinic.title') },
-              ]}
-            />
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-              {t('case.clinic.title')}
-            </h1>
-            <p className="text-2xl text-foreground/80 mb-8">
-              {t('case.clinic.subtitle')}
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-card rounded-xl p-6 shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">
-                  +70%
-                </div>
-                <p className="text-muted-foreground">
-                  {t('case.clinic.metrics.mobileTraffic')}
-                </p>
-              </div>
-              <div className="bg-card rounded-xl p-6 shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">
-                  100%
-                </div>
-                <p className="text-muted-foreground">{t('case.clinic.metrics.automatedAppointments')}</p>
-              </div>
-              <div className="bg-card rounded-xl p-6 shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">
-                  2 {t('case.common.weeks')}
-                </div>
-                <p className="text-muted-foreground">{t('case.common.devTime')}</p>
-              </div>
-            </div>
-          </Motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <Motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-primary/5 rounded-3xl p-2 mb-12">
-              <img
-                alt={t('case.clinic.alt.hero')}
-                className="w-full rounded-2xl shadow-2xl"
-                src={clinicImg}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <h2 className="text-4xl font-bold mb-6 text-primary">{t('case.common.challenge')}</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              {t('case.clinic.challenge')}
-            </p>
-
-            <h2 className="text-4xl font-bold mb-6 text-primary">{t('case.common.solution')}</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              {t('case.clinic.solutionIntro')}
-            </p>
-
-            <ul className="space-y-4 mb-12">
-              {[
-                t('case.clinic.features.0'),
-                t('case.clinic.features.1'),
-                t('case.clinic.features.2'),
-                t('case.clinic.features.3'),
-                t('case.clinic.features.4'),
-                t('case.clinic.features.5'),
-                t('case.clinic.features.6'),
-              ].map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle2
-                    className="text-blue-500 flex-shrink-0 mt-1"
-                    size={24}
-                  />
-                  <span className="text-lg text-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-primary/5 rounded-2xl p-2">
-                <img
-                  alt="Accueil de la Clinique Dentaire DABIA avec prise de rendez-vous"
-                  className="w-full aspect-video object-cover rounded-xl"
-                  src={clinicHomeHeroImg}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="bg-primary/5 rounded-2xl p-2">
-                <img
-                  alt="Section Pourquoi nous choisir de la Clinique Dentaire DABIA"
-                  className="w-full aspect-video object-cover rounded-xl"
-                  src={clinicHomeWhyChooseImg}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-
-            <h2 className="text-4xl font-bold mb-6 text-primary">{t('case.common.results')}</h2>
-            <div className="bg-green-100 border-l-4 border-green-500 p-6 rounded-lg mb-8">
-              <div className="flex items-start gap-4">
-                <TrendingUp
-                  className="text-green-600 flex-shrink-0 mt-1"
-                  size={32}
-                />
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">{t('case.common.keyResults')}</h3>
-                  <ul className="space-y-3">
-                    {[0,1,2,3].map(i => (
-                      <li key={i} className="text-green-900">{t(`case.clinic.results.${i}`)}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <h2 className="text-4xl font-bold mb-6 text-primary">{t('case.common.stack')}</h2>
-            <div className="flex flex-wrap gap-3 mb-12">
-              {[
-                "React",
-                "Tailwind CSS",
-                "Firebase",
-                "API Google Calendar",
-                "API WhatsApp Business",
-              ].map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="bg-primary rounded-3xl p-8 text-primary-foreground text-center">
-              <h2 className="text-3xl font-bold mb-4">{t('case.clinic.cta.title')}</h2>
-              <p className="text-xl mb-6 text-muted-foreground">{t('case.clinic.cta.subtitle')}</p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                >
-                  <Link to="/contact">{t('case.clinic.cta.primary')}</Link>
-                </Button>
-                <Button asChild size="lg" variant="secondary">
-                  <a
-                    href="https://www.cliniquedentairedabia.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t('case.common.viewSite')}
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </Motion.div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default CaseStudyClinic;
+export default function CaseStudyClinic() {
+  return <CaseStudyLayout
+    path="/case-study/clinic"
+    seoTitle="Site Web de la Clinique Dentaire DABIA | Fallcon Tech"
+    seoDescription="Conception du site institutionnel de la Clinique Dentaire DABIA : parcours patient, informations de soins, contact, rendez-vous et SEO local."
+    eyebrow="Référence · Santé numérique"
+    title="Site Web de la Clinique Dentaire DABIA"
+    subtitle="Une présence institutionnelle claire pour présenter les soins, rassurer les patients et faciliter la prise de contact."
+    image={clinicImg}
+    imageAlt="Page d’accueil du site de la Clinique Dentaire DABIA"
+    tags={["Site institutionnel", "Parcours patient", "SEO local"]}
+    challenge="La clinique devait réunir dans une interface cohérente ses informations pratiques, ses spécialités, ses contenus de prévention et ses différents moyens de prise de rendez-vous, avec une expérience fiable sur mobile."
+    solution="Fallcon Tech a structuré un site orienté patient : navigation par besoin, présentation lisible de l’établissement, accès rapide aux informations utiles et points de contact visibles sans détour."
+    features={[
+      "Expérience responsive pensée en priorité pour les usages mobiles",
+      "Présentation structurée des soins, compétences et informations pratiques",
+      "Parcours de contact et de prise de rendez-vous clairement identifié",
+      "Intégration de WhatsApp et des coordonnées de la clinique",
+      "Architecture SEO locale pour les recherches dentaires à Dakar",
+      "Contenus éditoriaux et pages d’information accessibles",
+    ]}
+    gallery={[
+      { src: clinicHomeHeroImg, alt: "Accueil de la Clinique Dentaire DABIA avec prise de rendez-vous" },
+      { src: clinicHomeWhyChooseImg, alt: "Arguments et équipements de la Clinique Dentaire DABIA" },
+    ]}
+    outcomes={[
+      "Une information patient centralisée et accessible sur tous les écrans",
+      "Un accès direct aux rendez-vous, urgences et moyens de contact",
+      "Une vitrine cohérente avec l’identité et les équipements de la clinique",
+      "Un socle éditorial exploitable pour le référencement local",
+    ]}
+    stack={["React", "Vite", "SEO technique", "Responsive design", "Analytics"]}
+    externalUrl="https://www.cliniquedentairedabia.com"
+  />;
+}

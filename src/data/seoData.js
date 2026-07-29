@@ -181,14 +181,14 @@ export const pageSeo = {
     changefreq: "monthly",
   },
   "/case-study/clinic": {
-    title: "Étude de cas clinique digitale à Dakar | Fallcon Tech",
+    title: "Site Web de la Clinique Dentaire DABIA | Fallcon Tech",
     description:
-      "Étude de cas Fallcon Tech : digitalisation de parcours clinique, rendez-vous, expérience patient et outils web pour la santé à Dakar.",
+      "Parcours patient, informations de soins, contact, rendez-vous et SEO local pour la Clinique Dentaire DABIA à Dakar.",
   },
   "/case-study/telimanshare": {
-    title: "Étude de cas Teliman Share | Plateforme digitale",
+    title: "TelimanShare — plateforme documentaire sécurisée | Fallcon Tech",
     description:
-      "Découvrez comment Fallcon Tech a accompagné Teliman Share avec une expérience digitale claire, rapide et orientée conversion.",
+      "Plateforme de partage documentaire avec droits d’accès, historique, recherche, versions et restauration de fichiers.",
   },
   "/case-study/whatsapp": {
     title: "Étude de cas automatisation WhatsApp Sénégal | Fallcon Tech",
@@ -196,9 +196,9 @@ export const pageSeo = {
       "Cas pratique d’automatisation WhatsApp : relances, qualification de prospects, suivi client et gain de temps opérationnel.",
   },
   "/case-study/miroir-foncier": {
-    title: "Étude de cas Miroir Foncier | Plateforme web Sénégal",
+    title: "Miroir Foncier — plateforme d’information foncière | Fallcon Tech",
     description:
-      "Projet Miroir Foncier : interface web, confiance utilisateur et présence digitale pour un service immobilier au Sénégal.",
+      "Plateforme éditoriale structurée, responsive et performante pour rendre l’information foncière plus accessible.",
   },
   "/case-study/hg-cuisine": {
     title: "Étude de cas HG Cuisine | Site web restaurant Sénégal",
@@ -206,9 +206,9 @@ export const pageSeo = {
       "Projet HG Cuisine : présence web, catalogue, expérience mobile et parcours de contact pour un business de restauration.",
   },
   "/case-study/teliman-tracking-fleeti": {
-    title: "Étude de cas Teliman Tracking Fleeti | Dashboard IoT",
+    title: "Teliman Fleet Operations — pilotage de flotte | Fallcon Tech",
     description:
-      "Dashboard de suivi et télémétrie pour flotte connectée : données, supervision, maintenance et interface métier.",
+      "Tableau de bord métier pour consolider les données Fleeti, suivre la flotte, prioriser les alertes et piloter les opérations.",
   },
 };
 
