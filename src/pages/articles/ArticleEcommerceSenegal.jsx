@@ -118,7 +118,7 @@ const ArticleEcommerceSenegal = () => {
 
           <div className="mt-10 flex justify-center">
             <Button asChild size="lg">
-              <Link to="/contact">Lancer une boutique optimisée</Link>
+              <Link to="/services/creation-site-web-dakar">Lancer une boutique optimisée</Link>
             </Button>
           </div>
         </div>

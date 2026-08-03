@@ -10,11 +10,13 @@ const pages = {
   web: {
     path: "/services/web-development-senegal",
     icon: Globe,
-    eyebrow: "Web Development in Senegal",
+    eyebrow: "Web Development Company Senegal",
     title: "Web Development in Senegal for serious businesses",
     lead: "Fallcon Tech builds fast websites, business platforms and SEO-ready web applications for companies in Dakar and across Senegal.",
     serviceName: "Web development in Senegal",
     serviceType: "Web development",
+    quickAnswer:
+      "Fallcon Tech builds fast, SEO-ready websites and web applications for companies in Dakar and across Senegal: business websites, landing pages, portals and dashboards, with mobile performance and lead tracking included.",
     features: [
       "Business websites built for Google visibility and conversion",
       "React frontends with fast loading on mobile networks",
@@ -50,6 +52,8 @@ const pages = {
     lead: "We design and develop practical mobile apps for sales, operations, customer service and field teams in Senegal.",
     serviceName: "Mobile app development in Senegal",
     serviceType: "Mobile app development",
+    quickAnswer:
+      "We design and build practical mobile apps for sales, operations, customer service and field teams in Senegal: clear MVP scope, React Native interfaces, local payment and WhatsApp integrations, plus an admin dashboard.",
     features: [
       "Android and iOS app planning with a clear MVP scope",
       "React Native interfaces designed for local mobile usage",
@@ -85,6 +89,8 @@ const pages = {
     lead: "We build business software, internal platforms and automation tools that replace fragile spreadsheets, manual processes and scattered WhatsApp follow-ups.",
     serviceName: "Software development in Senegal",
     serviceType: "Custom software development",
+    quickAnswer:
+      "We build custom business software and internal platforms in Senegal: CRM, stock, billing, document workflows, booking systems and dashboards that replace fragile spreadsheets and manual processes.",
     features: [
       "Custom CRM, stock, billing, booking or document workflows",
       "Role-based access, audit trail and secure document handling",
@@ -227,6 +233,15 @@ function ServiceEnglishPage({ page }) {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border-l-4 border-primary bg-card p-6 shadow-md">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary mb-2">In short</p>
+            <p className="text-lg leading-relaxed text-foreground/90">{page.quickAnswer}</p>
+          </div>
         </div>
       </section>
 

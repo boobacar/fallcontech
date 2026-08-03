@@ -48,7 +48,7 @@ const ArticleSeoRevenueSenegal = () => {
         <p>Le SEO ne consiste plus seulement à insérer des mots-clés dans des textes. C'est une stratégie d'acquisition globale, combinant technique, création de contenu de qualité et popularité, conçue pour connecter efficacement votre offre à la demande existante sur le marché sénégalais. C'est un moteur de croissance stable pour vos revenus.</p>
 
         <p>
-          Envie de dominer les résultats de recherche dans votre secteur d'activité ? <Link to="/contact">Demandez dès aujourd'hui un audit SEO gratuit et personnalisé</Link>.
+          Envie de dominer les résultats de recherche dans votre secteur d'activité ? <Link to="/contact">Demandez dès aujourd'hui un audit SEO gratuit et personnalisé</Link> ou découvrez notre <Link to="/services/creation-site-web-dakar">création de site web à Dakar</Link>.
         </p>
 
       </div></article>

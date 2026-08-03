@@ -95,6 +95,17 @@ export default function ServiceCreationSiteWebDakar() {
         </div>
       </section>
 
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border-l-4 border-primary bg-card p-6 shadow-md">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary mb-2">En bref</p>
+            <p className="text-lg leading-relaxed text-foreground/90">
+              Fallcon Tech crée des sites web professionnels au Sénégal : site vitrine, site business ou landing page, livré en 1 à 3 semaines avec design mobile-first, base technique pour apparaître sur Google, et devis dès 350 000 F CFA.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-4xl font-bold mb-8 text-primary">FAQ</h2>

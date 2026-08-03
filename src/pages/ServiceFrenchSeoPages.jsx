@@ -15,6 +15,8 @@ const pages = {
     lead: "Fallcon Tech développe des sites web, applications métier et plateformes React rapides pour les entreprises à Dakar et au Sénégal.",
     serviceName: "Développeur web au Sénégal",
     serviceType: "Développement web",
+    quickAnswer:
+      "Fallcon Tech développe des sites web, applications métier et plateformes React rapides pour les entreprises à Dakar et au Sénégal : création orientée conversion, SEO technique, tableaux de bord et maintenance après lancement.",
     features: [
       "Création de site web professionnel orienté conversion",
       "Développement React, Firebase, Node.js et intégrations API",
@@ -49,7 +51,9 @@ const pages = {
     title: "Création de site internet au Sénégal qui génère des demandes",
     lead: "Nous créons des sites internet professionnels, rapides et SEO-friendly pour attirer des clients depuis Google et WhatsApp.",
     serviceName: "Création de site internet au Sénégal",
-    serviceType: "Création de site internet",
+    serviceType: "Création de site web",
+    quickAnswer:
+      "Fallcon Tech crée des sites internet professionnels au Sénégal : site vitrine, site business ou landing page, livré en 1 à 3 semaines avec design mobile-first, base SEO et suivi des demandes clients.",
     features: [
       "Site vitrine, site business, catalogue ou landing page",
       "Design responsive adapté aux smartphones et connexions locales",
@@ -84,7 +88,9 @@ const pages = {
     title: "Tarif site vitrine au Sénégal : prix clair et devis rapide",
     lead: "Un site vitrine professionnel démarre à 350 000 F CFA avec design mobile, SEO de base, formulaire, WhatsApp et mise en ligne.",
     serviceName: "Tarif site vitrine au Sénégal",
-    serviceType: "Tarif création site vitrine",
+    serviceType: "Site vitrine",
+    quickAnswer:
+      "Un site vitrine au Sénégal démarre à 350 000 F CFA chez Fallcon Tech : design mobile, pages de présentation, formulaire de contact, base SEO et mise en ligne, livrés en 1 à 3 semaines.",
     features: [
       "Site vitrine simple : présentation, services, contact, WhatsApp",
       "SEO de base : balises, sitemap, performance, indexation",
@@ -120,6 +126,8 @@ const pages = {
     lead: "Nous analysons vos impressions, CTR, pages, requêtes, titres, contenus et problèmes techniques pour transformer votre visibilité Google en clics qualifiés.",
     serviceName: "Audit SEO professionnel au Sénégal",
     serviceType: "Audit SEO",
+    quickAnswer:
+      "Un audit SEO professionnel au Sénégal identifie les actions qui rapportent : titres à réécrire, pages à optimiser, contenu à créer et problèmes techniques. Fallcon Tech livre une liste priorisée et actionnable.",
     features: [
       "Analyse Google Search Console : impressions, CTR, requêtes et pages",
       "Réécriture des titres et descriptions qui ne donnent pas envie de cliquer",
@@ -261,6 +269,15 @@ function ServiceFrenchPage({ page }) {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border-l-4 border-primary bg-card p-6 shadow-md">
+            <p className="text-xs font-bold uppercase tracking-wide text-primary mb-2">En bref</p>
+            <p className="text-lg leading-relaxed text-foreground/90">{page.quickAnswer}</p>
+          </div>
         </div>
       </section>
 
