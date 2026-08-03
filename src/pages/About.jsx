@@ -10,9 +10,38 @@ const principles = [
 ];
 
 export default function About() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://fallcontech.com";
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "Fallcon Tech — cabinet d'ingénierie numérique à Dakar",
+      url: `${siteUrl}/about`,
+      description:
+        "Fallcon Tech est un cabinet d'ingénierie numérique basé à Dakar : GED, gestion du courrier, logiciels métier, santé, logistique, infrastructure et cybersécurité.",
+      mainEntity: {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Fallcon Tech",
+        url: siteUrl,
+        logo: `${siteUrl}/logo.png`,
+        email: "info@fallcontech.com",
+        telephone: "+221774837576",
+        address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+        areaServed: { "@type": "Country", name: "Sénégal" },
+        founder: {
+          "@type": "Person",
+          name: "Boubacar Fall",
+          jobTitle: "Fondateur",
+          worksFor: { "@type": "Organization", name: "Fallcon Tech" },
+        },
+      },
+    },
+  ];
+
   return (
     <>
-      <SEO path="/about" title="Cabinet de transformation numérique à Dakar | Fallcon Tech" description="Fallcon Tech est un cabinet d’ingénierie numérique à Dakar spécialisé en GED, logiciels métier, santé, logistique et systèmes sécurisés." />
+      <SEO path="/about" title="Cabinet de transformation numérique à Dakar | Fallcon Tech" description="Fallcon Tech est un cabinet d’ingénierie numérique à Dakar spécialisé en GED, logiciels métier, santé, logistique et systèmes sécurisés." jsonLd={jsonLd} />
       <section className="page-hero">
         <div className="site-shell page-hero-grid">
           <div><p className="overline">Le cabinet</p><h1>Une ingénierie proche du terrain.</h1></div>

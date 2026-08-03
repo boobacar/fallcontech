@@ -36,5 +36,23 @@ export default function CaseStudyClinic() {
     ]}
     stack={["React", "Vite", "SEO technique", "Responsive design", "Analytics"]}
     externalUrl="https://www.cliniquedentairedabia.com"
+    faq={[
+      {
+        q: "Quel était le besoin de la Clinique Dentaire DABIA ?",
+        a: "Réunir dans une interface cohérente ses informations pratiques, ses spécialités, ses contenus de prévention et ses moyens de prise de rendez-vous, avec une expérience fiable sur mobile.",
+      },
+      {
+        q: "Le site fonctionne-t-il bien sur mobile ?",
+        a: "Oui, l'expérience est pensée en priorité pour les usages mobiles : navigation par besoin, accès rapide aux informations utiles et points de contact visibles sans détour.",
+      },
+      {
+        q: "Comment un patient peut-il prendre rendez-vous ?",
+        a: "Le parcours de rendez-vous est clairement identifié, avec intégration de WhatsApp et des coordonnées de la clinique accessibles depuis chaque page utile.",
+      },
+      {
+        q: "Le site aide-t-il la clinique à apparaître dans les recherches locales ?",
+        a: "Oui, l'architecture des contenus est pensée pour les recherches dentaires à Dakar : pages structurées, informations locales et socle éditorial exploitable.",
+      },
+    ]}
   />;
 }

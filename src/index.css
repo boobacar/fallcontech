@@ -274,6 +274,20 @@
 .security-note { display: flex; gap: 12px; margin-top: 30px; padding: 18px; background: #e4ecef; color: #3f5967; font-size: 13px; }
 .security-note svg { flex-shrink: 0; color: var(--navy); }
 
+/* AEO — bloc réponse directe (Quick Answer) */
+.quick-answer-block { max-width: 860px; }
+.quick-answer-block .overline { margin-bottom: 14px; }
+.quick-answer-text { margin: 0; padding: 24px 28px; border-left: 3px solid var(--ochre); background: #eef3f4; color: #33495a; font-family: "IBM Plex Serif", serif; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.55; }
+
+/* AEO — FAQ accordéon */
+.faq-list { display: grid; gap: 12px; margin-top: 40px; }
+.faq-item { background: rgba(255,255,255,.7); border: 1px solid #b7c4ca; }
+.faq-item summary { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 20px 22px; cursor: pointer; color: var(--navy); font-family: "IBM Plex Serif", serif; font-size: 17px; font-weight: 600; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; flex-shrink: 0; color: var(--ochre); font-family: "IBM Plex Mono", monospace; font-size: 20px; line-height: 1; }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 0; padding: 0 22px 22px; color: #47606f; font-size: 14px; line-height: 1.65; max-width: 780px; }
+
 .contact-page { padding: 84px 0 110px; background: var(--paper); }
 .contact-page-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 80px; align-items: start; }
 .contact-intro { position: sticky; top: 130px; }

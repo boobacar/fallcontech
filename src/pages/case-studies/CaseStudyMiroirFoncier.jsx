@@ -29,5 +29,23 @@ export default function CaseStudyMiroirFoncier() {
     ]}
     stack={["React", "Vite", "Responsive design", "SEO technique", "Vercel"]}
     externalUrl="https://miroirfoncier.com"
+    faq={[
+      {
+        q: "À qui s'adresse la plateforme Miroir Foncier ?",
+        a: "Aux visiteurs qui cherchent une information foncière compréhensible et crédible : l'architecture de contenu est organisée par besoins d'information pour différents profils.",
+      },
+      {
+        q: "Le site est-il lisible sur mobile ?",
+        a: "Oui, la mise en page est responsive sur mobile, tablette et ordinateur, avec des composants éditoriaux cohérents et une lecture confortable.",
+      },
+      {
+        q: "Le site est-il rapide ?",
+        a: "Oui : optimisation des images, du chargement et du bundle frontend, avec un socle technique léger qui conserve des pages rapides.",
+      },
+      {
+        q: "Peut-on enrichir les contenus facilement ?",
+        a: "Oui, l'architecture éditoriale et la base technique sont maintenables, ce qui permet d'ajouter des contenus sans tout reprendre.",
+      },
+    ]}
   />;
 }

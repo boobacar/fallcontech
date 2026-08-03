@@ -30,5 +30,23 @@ export default function CaseStudyTelimanShare() {
     ]}
     stack={["React", "Firebase", "Cloud Storage", "Authentification", "RBAC"]}
     externalUrl="https://www.telimanshare.com"
+    faq={[
+      {
+        q: "Que peut-on faire avec TelimanShare ?",
+        a: "Centraliser les fichiers d'une organisation dans des espaces de travail, contrôler qui peut lire ou modifier chaque document et retrouver toutes les versions avec leur historique.",
+      },
+      {
+        q: "Qui peut voir les documents ?",
+        a: "Les droits d'accès sont définis par rôle : lecture, modification ou administration. Chaque utilisateur ne voit que les contenus et actions correspondant à sa fonction.",
+      },
+      {
+        q: "Peut-on retrouver une ancienne version d'un fichier ?",
+        a: "Oui, la gestion des versions, la corbeille et la restauration permettent de récupérer un fichier ou une version antérieure après modification ou suppression.",
+      },
+      {
+        q: "La plateforme fonctionne-t-elle sur mobile ?",
+        a: "Oui, l'interface est responsive et adaptée aux équipes distribuées qui consultent les documents depuis différents appareils.",
+      },
+    ]}
   />;
 }

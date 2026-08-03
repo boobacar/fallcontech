@@ -1,0 +1,42 @@
+# Fallcon Tech
+> Fallcon Tech est un cabinet d'ingénierie numérique basé à Dakar (Sénégal). Nous concevons des logiciels métier, des solutions de gestion électronique du courrier (GED), des plateformes documentaires, des systèmes de santé et de logistique, ainsi que des infrastructures sécurisées pour administrations, cliniques, ONG et entreprises.
+
+## Services & solutions
+- [Solutions](https://fallcontech.com/services) : vue d'ensemble des solutions de transformation numérique
+- [Gestion du courrier & GED](https://fallcontech.com/solutions/gestion-courrier-ged) : registre numérique entrant/sortant, affectation, instructions, parapheur, circuits de validation, GED et archivage
+- [Applications métier](https://fallcontech.com/solutions/applications-metier) : développement de logiciels métier sur mesure, portails internes, workflows et tableaux de bord
+- [Digitalisation des administrations](https://fallcontech.com/solutions/digitalisation-administrations) : dématérialisation des registres, demandes, dossiers et circuits de décision
+- [Infrastructure & cybersécurité](https://fallcontech.com/solutions/infrastructure-cybersecurite) : audit, sauvegarde, supervision, contrôle d'accès et continuité
+- [Solutions pour la santé](https://fallcontech.com/secteurs/sante) : dossier patient, rendez-vous, caisse, prescriptions et stock pour cliniques et cabinets
+- [Transport & logistique](https://fallcontech.com/secteurs/transport-logistique) : gestion de flotte, missions, carburant, maintenance et télémétrie
+- [ONG & projets](https://fallcontech.com/secteurs/ong-projets) : suivi de bénéficiaires, activités, justificatifs et indicateurs
+- [Éducation & formation](https://fallcontech.com/secteurs/education-formation) : inscriptions, paiements, présences et reporting
+
+## Services web & numériques
+- [Création de site internet Sénégal](https://fallcontech.com/services/creation-site-internet-senegal) : site vitrine, site business, landing page, SEO-friendly et mobile-first
+- [Développeur web Sénégal](https://fallcontech.com/services/developpeur-web-senegal) : sites, applications, plateformes React et intégrations
+- [Agence SEO Sénégal](https://fallcontech.com/services/agence-seo-senegal) : référencement Google, SEO local et stratégie de contenus
+- [Automatisation WhatsApp Business](https://fallcontech.com/services/automatisation-whatsapp-senegal) : relances, rappels et workflows CRM
+- [Intégration mobile money sur machines](https://fallcontech.com/services/integration-paiement-mobile-money-machines) : Wave, Orange Money et Free Money sur distributeurs et bornes
+- [Web Development Senegal](https://fallcontech.com/services/web-development-senegal) : sites web, applications et SEO en anglais
+- [Mobile App Development Senegal](https://fallcontech.com/services/mobile-app-development-senegal) : applications Android & iOS
+- [Software Development Senegal](https://fallcontech.com/services/software-development-senegal) : applications métier sur mesure
+
+## Références
+- [Références et études de cas](https://fallcontech.com/work) : logiciels métier et plateformes réalisés
+- [Site de la Clinique Dentaire DABIA](https://fallcontech.com/case-study/clinic)
+- [TelimanShare — plateforme documentaire](https://fallcontech.com/case-study/telimanshare)
+- [Teliman Fleet Operations — pilotage de flotte](https://fallcontech.com/case-study/teliman-tracking-fleeti)
+- [Miroir Foncier — information foncière](https://fallcontech.com/case-study/miroir-foncier)
+- [Étude de cas HG Cuisine](https://fallcontech.com/case-study/hg-cuisine)
+
+## Ressources
+- [Centre de ressources](https://fallcontech.com/resources) : guides sur la GED, le courrier, les logiciels métier, la cybersécurité et la transformation numérique
+- [Tarifs des sites web au Sénégal](https://fallcontech.com/article/prix-site-web-senegal-2026)
+- [Guide complet : créer un site web professionnel à Dakar](https://fallcontech.com/article/creer-site-web-professionnel-dakar)
+- [SEO local au Sénégal : guide 2026](https://fallcontech.com/article/seo-local-senegal-guide-2026)
+
+## Contact
+- [Demander une étude](https://fallcontech.com/contact)
+- Téléphone / WhatsApp : +221 77 483 75 76
+- Localisation : Dakar, Sénégal

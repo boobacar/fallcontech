@@ -68,7 +68,36 @@ ${urls}
 `;
 
 // 4. Generate robots.txt
-const robotsTxt = `User-agent: *
+const robotsTxt = `# Crawlers IA — accès complet (AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Tous les autres crawlers
+User-agent: *
 Allow: /
 Disallow: /api/
 

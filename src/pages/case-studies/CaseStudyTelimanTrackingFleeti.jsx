@@ -34,5 +34,23 @@ export default function CaseStudyTelimanTrackingFleeti() {
     ]}
     stack={["React", "Vite", "Express", "Fleeti API", "Leaflet", "SQLite"]}
     externalUrl="https://teliman-tracking-fleeti.vercel.app"
+    faq={[
+      {
+        q: "Quelles données sont visibles dans le tableau de bord ?",
+        a: "Les véhicules actifs, hors ligne et à surveiller, les alertes et anomalies, ainsi que les kilométrages, vitesses et activités de la flotte.",
+      },
+      {
+        q: "La solution se connecte-t-elle aux données GPS ?",
+        a: "Oui, elle se raccorde à l'API Fleeti avec une couche de transformation métier qui consolide les données de télémétrie en indicateurs exploitables.",
+      },
+      {
+        q: "Peut-on suivre la flotte sur une carte ?",
+        a: "Oui, la navigation entre carte, flotte, analytics et rapports permet de passer d'une vue globale à des vues détaillées.",
+      },
+      {
+        q: "À qui s'adresse cet outil ?",
+        a: "Aux équipes d'exploitation logistique qui doivent prioriser les situations quotidiennes et piloter les opérations sans parcourir plusieurs sources de données.",
+      },
+    ]}
   />;
 }

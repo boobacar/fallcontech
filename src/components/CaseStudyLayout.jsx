@@ -19,18 +19,32 @@ export default function CaseStudyLayout({
   stack = [],
   gallery = [],
   externalUrl,
+  faq = [],
 }) {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://fallcontech.com";
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: seoTitle,
-    description: seoDescription,
-    image: `${siteUrl}${image}`,
-    author: { "@type": "Organization", name: "Fallcon Tech" },
-    publisher: { "@type": "Organization", name: "Fallcon Tech" },
-    mainEntityOfPage: `${siteUrl}${path}`,
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: seoTitle,
+      description: seoDescription,
+      image: `${siteUrl}${image}`,
+      author: { "@type": "Organization", name: "Fallcon Tech" },
+      publisher: { "@type": "Organization", name: "Fallcon Tech" },
+      mainEntityOfPage: `${siteUrl}${path}`,
+    },
+  ];
+  if (faq.length > 0) {
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    });
+  }
 
   return (
     <>
@@ -107,6 +121,25 @@ export default function CaseStudyLayout({
           <ul>{outcomes.map((outcome) => <li key={outcome}><Check size={18} /><span>{outcome}</span></li>)}</ul>
         </div>
       </section>
+
+      {faq.length > 0 && (
+        <section className="case-section case-section-muted">
+          <div className="site-shell">
+            <div className="case-section-heading">
+              <p className="overline">Questions fréquentes</p>
+              <h2>Ce que l'on demande avant un projet du même type.</h2>
+            </div>
+            <div className="faq-list">
+              {faq.map((item) => (
+                <details className="faq-item" key={item.q}>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="case-section">
         <div className="site-shell case-closing-grid">
