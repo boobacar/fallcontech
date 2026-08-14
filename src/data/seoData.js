@@ -66,9 +66,9 @@ export const pageSeo = {
     changefreq: "monthly",
   },
   "/services/creation-site-web-dakar": {
-    title: "Création Site Internet Sénégal | Développeur Web Dakar",
+    title: "Création site web Dakar & Sénégal — dès 350 000 F CFA | Fallcon Tech",
     description:
-      "Création de site internet au Sénégal : site web professionnel à Dakar, design mobile-first, SEO local, vitesse, Analytics et stratégie de conversion.",
+      "Création de site web à Dakar et au Sénégal dès 350 000 F CFA : site professionnel mobile-first, SEO local, Core Web Vitals, Analytics et stratégie de conversion.",
     priority: "0.95",
     changefreq: "weekly",
   },
@@ -115,9 +115,9 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/services/audit-seo-professionnel-senegal": {
-    title: "Audit SEO Sénégal | Améliorez votre CTR et votre trafic",
+    title: "Audit SEO professionnel Sénégal | Fallcon Tech Dakar",
     description:
-      "Votre site ne génère pas assez de clics ? Bénéficiez d’un audit SEO professionnel au Sénégal : analyse complète, recommandations actionnables et plan pour booster votre visibilité. Contactez-nous.",
+      "Audit SEO professionnel au Sénégal : analyse de vos impressions, requêtes, pages et problèmes techniques pour transformer votre visibilité Google en clics et en contacts qualifiés.",
     priority: "0.90",
     changefreq: "weekly",
   },
@@ -273,6 +273,10 @@ export const articleSeo = {
   "/article/optimisation-seo-site-web-senegal": ["Optimiser son site web pour Google au Sénégal", "Vitesse, mobile, contenu, SEO local et maillage interne : la méthode pour optimiser votre site web et gagner des positions sur Google au Sénégal."],
   "/article/gestion-electronique-courrier-gec-senegal": ["Gestion électronique du courrier (GEC) : le guide complet", "Registre numérique, workflow, parapheur, archivage : comprendre la GEC et choisir un logiciel de gestion du courrier adapté aux administrations et entreprises au Sénégal."],
   "/article/digitalisation-services-publics-senegal": ["Digitalisation des services publics au Sénégal : enjeux et démarche", "Dématérialisation des procédures, état civil, courrier et dossiers : les enjeux et la méthode pour réussir la digitalisation d’une administration au Sénégal."],
+  "/article/logiciel-clinique-dentaire-senegal": ["Logiciel clinique dentaire Sénégal : guide 2026", "Dossier patient, rendez-vous, caisse, prescriptions, stocks et reporting : comment choisir ou développer un logiciel pour votre clinique dentaire au Sénégal."],
+  "/article/logiciel-gestion-flotte-senegal": ["Logiciel gestion flotte Sénégal : guide 2026", "Véhicules, conducteurs, missions, maintenance, carburant, GPS et tableaux de bord : comment piloter votre flotte au Sénégal."],
+  "/article/refonte-site-internet-senegal": ["Refonte site internet Sénégal : quand et comment", "Signaux d’alerte, objectifs, budget et méthode : comment réussir la refonte de votre site internet au Sénégal sans perdre votre référencement."],
+  "/article/automatisation-whatsapp-business-senegal": ["Automatisation WhatsApp Business Sénégal : guide complet", "Relances prospects, rappels de rendez-vous, notifications et support : comment automatiser WhatsApp Business au Sénégal sans spam."],
 };
 
 export function absoluteUrl(path = "/") {

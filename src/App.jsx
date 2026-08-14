@@ -129,6 +129,18 @@ const ArticleGestionElectroniqueCourrierGecSenegal = lazy(
 const ArticleDigitalisationServicesPublicsSenegal = lazy(
   () => import("@/pages/articles/ArticleDigitalisationServicesPublicsSenegal"),
 );
+const ArticleLogicielCliniqueDentaireSenegal = lazy(
+  () => import("@/pages/articles/ArticleLogicielCliniqueDentaireSenegal"),
+);
+const ArticleLogicielGestionFlotteSenegal = lazy(
+  () => import("@/pages/articles/ArticleLogicielGestionFlotteSenegal"),
+);
+const ArticleRefonteSiteInternetSenegal = lazy(
+  () => import("@/pages/articles/ArticleRefonteSiteInternetSenegal"),
+);
+const ArticleAutomatisationWhatsappBusinessSenegal = lazy(
+  () => import("@/pages/articles/ArticleAutomatisationWhatsappBusinessSenegal"),
+);
 
 const ArticleChoosingDev = lazy(
   () => import("@/pages/articles/ArticleChoosingDev"),
@@ -491,6 +503,10 @@ function App() {
           <Route path="/article/optimisation-seo-site-web-senegal" element={<ArticleOptimisationSeoSiteWebSenegal />} />
           <Route path="/article/gestion-electronique-courrier-gec-senegal" element={<ArticleGestionElectroniqueCourrierGecSenegal />} />
           <Route path="/article/digitalisation-services-publics-senegal" element={<ArticleDigitalisationServicesPublicsSenegal />} />
+          <Route path="/article/logiciel-clinique-dentaire-senegal" element={<ArticleLogicielCliniqueDentaireSenegal />} />
+          <Route path="/article/logiciel-gestion-flotte-senegal" element={<ArticleLogicielGestionFlotteSenegal />} />
+          <Route path="/article/refonte-site-internet-senegal" element={<ArticleRefonteSiteInternetSenegal />} />
+          <Route path="/article/automatisation-whatsapp-business-senegal" element={<ArticleAutomatisationWhatsappBusinessSenegal />} />
 
           {/* FR only */}
         </Routes>
