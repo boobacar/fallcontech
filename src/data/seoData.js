@@ -269,6 +269,10 @@ export const articleSeo = {
   "/article/cybersecurite-pme-senegal": ["Cybersécurité PME Sénégal : priorités et erreurs à éviter", "Mots de passe, phishing, sauvegardes, antivirus, accès cloud et bonnes pratiques pour protéger une PME."],
   "/article/choisir-pc-professionnel-guide": ["Choisir un PC professionnel : guide pour entreprises", "Critères d’achat pour PC professionnel : processeur, RAM, stockage, garantie, usage métier et durabilité."],
   "/article/sauvegarde-donnees-entreprises": ["Sauvegarde données entreprise : méthode simple pour une protection fiable", "Protégez vos données professionnelles avec une stratégie de sauvegarde fiable. Découvrez notre méthode simple, cloud ou local, avec tests de restauration. Sécurisez votre activité dès maintenant."],
+  "/article/developpement-web-professionnel-senegal": ["Développement web professionnel Sénégal : guide 2026", "Site vitrine, e-commerce, application métier : comment réussir un développement web professionnel au Sénégal — technologies, coûts, étapes et choix du bon prestataire à Dakar."],
+  "/article/optimisation-seo-site-web-senegal": ["Optimiser son site web pour Google au Sénégal", "Vitesse, mobile, contenu, SEO local et maillage interne : la méthode pour optimiser votre site web et gagner des positions sur Google au Sénégal."],
+  "/article/gestion-electronique-courrier-gec-senegal": ["Gestion électronique du courrier (GEC) : le guide complet", "Registre numérique, workflow, parapheur, archivage : comprendre la GEC et choisir un logiciel de gestion du courrier adapté aux administrations et entreprises au Sénégal."],
+  "/article/digitalisation-services-publics-senegal": ["Digitalisation des services publics au Sénégal : enjeux et démarche", "Dématérialisation des procédures, état civil, courrier et dossiers : les enjeux et la méthode pour réussir la digitalisation d’une administration au Sénégal."],
 };
 
 export function absoluteUrl(path = "/") {
