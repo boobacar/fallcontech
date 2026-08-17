@@ -22,8 +22,8 @@ const pages = {
     eyebrow: "Gestion du courrier & GED",
     title: "Chaque courrier suivi. Chaque décision traçable.",
     lead: "Une plateforme unique pour enregistrer, orienter, instruire, valider et retrouver les courriers et documents de votre organisation.",
-    seoTitle: "Logiciel gestion courrier & GED Sénégal | Fallcon Tech",
-    seoDescription: "Solution de gestion électronique du courrier, GED, parapheur, workflow et traçabilité pour administrations et entreprises au Sénégal.",
+    seoTitle: "Logiciel gestion du courrier (GEC) & GED Sénégal | Fallcon Tech",
+    seoDescription: "Gestion électronique du courrier (GEC), registre numérique, parapheur électronique et archivage pour administrations, collectivités et entreprises au Sénégal.",
     quickAnswer:
       "Un logiciel de gestion du courrier enregistre chaque courrier entrant et sortant, l'oriente vers le bon service, suit les instructions, les délais et les validations, puis archive les documents. Tout le circuit devient traçable, du bureau d'ordre jusqu'à l'archivage.",
     challenge: "Quand le courrier dépend des cahiers, WhatsApp et dossiers partagés, les délais deviennent invisibles et la responsabilité se dilue.",
@@ -46,6 +46,14 @@ const pages = {
       {
         q: "Les documents sont-ils archivés ?",
         a: "Les pièces jointes sont classées dans la GED avec droits d'accès, recherche plein texte et historique des consultations.",
+      },
+      {
+        q: "Qu'est-ce qu'un parapheur électronique ?",
+        a: "Le parapheur électronique dématérialise le circuit de visa et de signature : chaque document suit un ordre de validation défini, chaque visa est tracé et daté, et la version signée est archivée. Pour les actes à valeur juridique, il s'adosse à une signature électronique conforme au cadre réglementaire.",
+      },
+      {
+        q: "L'archivage électronique a-t-il une valeur probante ?",
+        a: "Un archivage électronique peut avoir une valeur probante s'il garantit l'intégrité du document, l'identification de l'auteur et un horodatage fiable. La solution est dimensionnée avec ces exigences pour les documents sensibles.",
       },
     ],
   },
@@ -86,8 +94,8 @@ const pages = {
     eyebrow: "Modernisation du service public",
     title: "Dématérialiser sans désorganiser le service.",
     lead: "Une transformation progressive des registres, demandes, dossiers et circuits de décision, conçue autour des responsabilités administratives réelles.",
-    seoTitle: "Digitalisation administrations Sénégal | Fallcon Tech",
-    seoDescription: "Dématérialisation des procédures, registres, courriers, dossiers et workflows pour administrations et établissements publics au Sénégal.",
+    seoTitle: "Dématérialisation des procédures administratives Sénégal | Fallcon Tech",
+    seoDescription: "Dématérialisation administrative au Sénégal : registres numériques, courriers, parapheur et circuits de validation pour administrations, mairies et collectivités locales.",
     quickAnswer:
       "Digitaliser une administration, c'est remplacer les registres papier, les dossiers éparpillés et les circuits lents par des procédures numériques claires : formulaires, circuits hiérarchiques, délais de traitement et indicateurs de pilotage, sans désorganiser le service.",
     challenge: "La réussite ne se mesure pas au nombre d’écrans livrés, mais à la réduction des délais, à la qualité des dossiers et à l’adoption par les agents.",
@@ -110,6 +118,14 @@ const pages = {
       {
         q: "Les données restent-elles sous notre contrôle ?",
         a: "Oui. Accès par rôle, journalisation et sauvegardes sont définis avec l'administration ; l'hébergement respecte le cadre de votre organisation.",
+      },
+      {
+        q: "Comment dématérialiser une démarche administrative ?",
+        a: "On commence par cartographier la procédure : pièces demandées, étapes, responsables et délais. Puis on numérise le formulaire, le circuit de validation et le suivi des délais, par étapes courtes, avant d'étendre aux procédures voisines.",
+      },
+      {
+        q: "La solution convient-elle aux mairies et collectivités locales ?",
+        a: "Oui. Registres, courriers, délibérations, actes et circuits interservices sont adaptés au fonctionnement d'une mairie ou d'une collectivité, avec des droits d'accès par service et des indicateurs pour l'exécutif.",
       },
     ],
   },

@@ -18,8 +18,8 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/solutions/gestion-courrier-ged": {
-    title: "Logiciel gestion courrier & GED Sénégal | Fallcon Tech",
-    description: "Solution de gestion électronique du courrier, GED, parapheur, workflow et traçabilité pour administrations et entreprises au Sénégal.",
+    title: "Logiciel gestion du courrier (GEC) & GED Sénégal | Fallcon Tech",
+    description: "Gestion électronique du courrier (GEC), registre numérique, parapheur électronique et archivage pour administrations, collectivités et entreprises au Sénégal.",
     priority: "0.98",
     changefreq: "weekly",
   },
@@ -30,8 +30,8 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/solutions/digitalisation-administrations": {
-    title: "Digitalisation administrations Sénégal | Fallcon Tech",
-    description: "Dématérialisation des procédures, registres, courriers, dossiers et workflows pour administrations et établissements publics au Sénégal.",
+    title: "Dématérialisation des procédures administratives Sénégal | Fallcon Tech",
+    description: "Dématérialisation administrative au Sénégal : registres numériques, courriers, parapheur et circuits de validation pour administrations, mairies et collectivités locales.",
     priority: "0.98",
     changefreq: "weekly",
   },
@@ -277,6 +277,12 @@ export const articleSeo = {
   "/article/logiciel-gestion-flotte-senegal": ["Logiciel gestion flotte Sénégal : guide 2026", "Véhicules, conducteurs, missions, maintenance, carburant, GPS et tableaux de bord : comment piloter votre flotte au Sénégal."],
   "/article/refonte-site-internet-senegal": ["Refonte site internet Sénégal : quand et comment", "Signaux d’alerte, objectifs, budget et méthode : comment réussir la refonte de votre site internet au Sénégal sans perdre votre référencement."],
   "/article/automatisation-whatsapp-business-senegal": ["Automatisation WhatsApp Business Sénégal : guide complet", "Relances prospects, rappels de rendez-vous, notifications et support : comment automatiser WhatsApp Business au Sénégal sans spam."],
+  "/article/dematerialisation-procedures-administratives-senegal": ["Dématérialisation des procédures administratives : le guide complet", "Registres numériques, formulaires, circuits de validation et suivi des délais : comment réussir la dématérialisation des procédures administratives au Sénégal."],
+  "/article/parapheur-electronique-administration-senegal": ["Parapheur électronique : dématérialiser visas et signatures", "Circuit de visa, signature électronique, traçabilité et archivage : comprendre le parapheur électronique et l'adopter dans une administration ou une collectivité au Sénégal."],
+  "/article/archivage-electronique-valeur-probante-senegal": ["Archivage électronique : valeur probante et bonnes pratiques", "Intégrité, horodatage, conservation à long terme : comprendre l'archivage électronique à valeur probante et l'appliquer dans une administration ou une entreprise au Sénégal."],
+  "/article/logiciel-metier-mairie-collectivites-senegal": ["Logiciel métier mairie : digitaliser les services d'une collectivité", "Registres, courrier, délibérations, actes et circuits interservices : comment choisir ou développer un logiciel métier pour une mairie ou une collectivité locale au Sénégal."],
+  "/article/dematerialisation-marches-publics-senegal": ["Dématérialisation des marchés publics : enjeux et outils", "Procédures électroniques, traçabilité, interopérabilité et conduite du changement : comprendre la dématérialisation des marchés publics et s'y préparer au Sénégal."],
+  "/article/digitalisation-entreprise-pme-senegal": ["Digitalisation d'entreprise au Sénégal : par où commencer", "Processus, données, outils et conduite du changement : une méthode concrète pour digitaliser une entreprise ou une PME au Sénégal, sans tout refondre d'un coup."],
 };
 
 export function absoluteUrl(path = "/") {

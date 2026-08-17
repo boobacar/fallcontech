@@ -225,6 +225,12 @@ const ArticleLogicielSurMesureSenegalPME = lazy(() => import("@/pages/articles/A
 const ArticleGoogleAdsOuSeoSenegal = lazy(() => import("@/pages/articles/ArticleGoogleAdsOuSeoSenegal"));
 const ArticleLandingPageDakarConversion = lazy(() => import("@/pages/articles/ArticleLandingPageDakarConversion"));
 const ArticleReferencementGoogleSenegal90Jours = lazy(() => import("@/pages/articles/ArticleReferencementGoogleSenegal90Jours"));
+const ArticleDematerialisationProceduresAdministrativesSenegal = lazy(() => import("@/pages/articles/ArticleDematerialisationProceduresAdministrativesSenegal"));
+const ArticleParapheurElectroniqueAdministrationSenegal = lazy(() => import("@/pages/articles/ArticleParapheurElectroniqueAdministrationSenegal"));
+const ArticleArchivageElectroniqueValeurProbanteSenegal = lazy(() => import("@/pages/articles/ArticleArchivageElectroniqueValeurProbanteSenegal"));
+const ArticleLogicielMetierMairieCollectivitesSenegal = lazy(() => import("@/pages/articles/ArticleLogicielMetierMairieCollectivitesSenegal"));
+const ArticleDematerialisationMarchesPublicsSenegal = lazy(() => import("@/pages/articles/ArticleDematerialisationMarchesPublicsSenegal"));
+const ArticleDigitalisationEntreprisePmeSenegal = lazy(() => import("@/pages/articles/ArticleDigitalisationEntreprisePmeSenegal"));
 
 function App() {
   return (
@@ -507,6 +513,12 @@ function App() {
           <Route path="/article/logiciel-gestion-flotte-senegal" element={<ArticleLogicielGestionFlotteSenegal />} />
           <Route path="/article/refonte-site-internet-senegal" element={<ArticleRefonteSiteInternetSenegal />} />
           <Route path="/article/automatisation-whatsapp-business-senegal" element={<ArticleAutomatisationWhatsappBusinessSenegal />} />
+          <Route path="/article/dematerialisation-procedures-administratives-senegal" element={<ArticleDematerialisationProceduresAdministrativesSenegal />} />
+          <Route path="/article/parapheur-electronique-administration-senegal" element={<ArticleParapheurElectroniqueAdministrationSenegal />} />
+          <Route path="/article/archivage-electronique-valeur-probante-senegal" element={<ArticleArchivageElectroniqueValeurProbanteSenegal />} />
+          <Route path="/article/logiciel-metier-mairie-collectivites-senegal" element={<ArticleLogicielMetierMairieCollectivitesSenegal />} />
+          <Route path="/article/dematerialisation-marches-publics-senegal" element={<ArticleDematerialisationMarchesPublicsSenegal />} />
+          <Route path="/article/digitalisation-entreprise-pme-senegal" element={<ArticleDigitalisationEntreprisePmeSenegal />} />
 
           {/* FR only */}
         </Routes>
