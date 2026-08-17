@@ -117,3 +117,34 @@ writeFileSync(resolve(`${outDir}/sitemap.xml`), xml);
 writeFileSync(resolve(`${outDir}/robots.txt`), robotsTxt);
 
 console.log(`[SEO] Generated sitemap.xml and robots.txt in ${outDir} for ${routes.length} URLs.`);
+
+// 6. IndexNow ping (Bing / Yandex / Seznam / Naver) — pages prioritaires à chaque build
+const INDEXNOW_KEY_PATH = resolve("public/indexnow-key.txt");
+if (existsSync(INDEXNOW_KEY_PATH)) {
+  const key = readFileSync(INDEXNOW_KEY_PATH, "utf8").trim();
+  if (/^[a-f0-9]{32}$/.test(key)) {
+    const priority = routes
+      .filter(
+        (p) =>
+          p === "/" ||
+          p === "/services" ||
+          p.startsWith("/solutions/") ||
+          p.startsWith("/secteurs/") ||
+          p.startsWith("/article/"),
+      )
+      .map((p) => `${SITE_URL}${p}`);
+    const payload = { host: new URL(SITE_URL).host, key, urlList: priority };
+    try {
+      const resp = await fetch("https://api.indexnow.org/indexnow", {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      console.log(`[IndexNow] Pinged ${priority.length} URLs (HTTP ${resp.status})`);
+    } catch (err) {
+      console.warn(`[IndexNow] Ping failed: ${err.message}`);
+    }
+  } else {
+    console.warn("[IndexNow] Clé absente ou invalide — ping ignoré.");
+  }
+}

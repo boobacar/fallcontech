@@ -99,6 +99,9 @@ const ArticleIoTEmbedded = () => {
               Dashboards web pour superviser vos parcs: métriques clés, alarmes, historiques,
               export CSV et rapports. Intégration possible avec des outils de BI.
             </p>
+            <p>
+              Un dashboard IoT n'est qu'une brique : nous concevons aussi les applications métier qui exploitent ces données (maintenance, missions, alertes). Voir nos <Link to="/solutions/applications-metier">applications métier sur mesure</Link>.
+            </p>
           </motion.div>
 
           <div className="mt-10 flex justify-center">

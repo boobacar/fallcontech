@@ -152,6 +152,8 @@ const ArticleCrerBoutiqueEnLigneSenegal = () => {
           </ul>
           <p>Lire notre guide complet : <Link to="/article/seo-ecommerce-senegal-guide-2026">SEO e-commerce au Sénégal 2026</Link>.</p>
 
+          <p>Au-delà du site vitrine, une boutique qui grossit a besoin d'un back-office fiable : stock, caisse, facturation et expéditions reliés aux paiements. Notre page <Link to="/solutions/applications-metier">applications métier sur mesure</Link> présente cette approche.</p>
+
           <h2>FAQ — Boutique en ligne Sénégal</h2>
           {faq.map((f, i) => (
             <div key={i}>

@@ -114,6 +114,9 @@ const ArticleEcommerceSenegal = () => {
               Rédigez des fiches produits uniques avec mots-clés longue traîne ("robe wax Dakar", "sneakers livraison express Dakar").
               Structurez vos pages avec données structurées Product et alimentez un flux Google Merchant/Facebook.
             </p>
+            <p>
+              Pour les commerces qui dépassent le catalogue simple, un back-office connecté (stock, caisse, commandes, expéditions) évite la ressaisie et les erreurs. Découvrez nos <Link to="/solutions/applications-metier">applications métier sur mesure</Link>.
+            </p>
           </motion.div>
 
           <div className="mt-10 flex justify-center">

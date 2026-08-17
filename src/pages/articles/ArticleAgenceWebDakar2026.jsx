@@ -21,7 +21,7 @@ const ArticleAgenceWebDakar2026 = () => {
         <h2>1) Vérifier les réalisations réelles</h2><p>Demandez des cas concrets : trafic, demandes, résultats. Consultez aussi la page <Link to="/work">réalisations</Link>.</p>
         <h2>2) Exiger une structure SEO dès le départ</h2><p>Un site propre sans SEO ne sert pas au business. Travaillez avec une équipe qui propose une stratégie claire, comme notre service <Link to="/services/agence-seo-senegal">Agence SEO au Sénégal</Link>.</p>
         <h2>3) Clarifier les livrables</h2><p>Avant de signer: pages, contenus, optimisation vitesse, analytics, formation, maintenance.</p>
-        <h2>4) Budget et ROI</h2><p>Un site rentable n’est pas le moins cher, c’est celui qui génère des leads. Consultez aussi <Link to="/article/cout-creation-site-web-senegal-prix">notre guide des prix</Link>.</p>
+        <h2>4) Budget et ROI</h2><p>Un site rentable n’est pas le moins cher, c’est celui qui génère des leads. Consultez aussi <Link to="/article/cout-creation-site-web-senegal-prix">notre guide des prix</Link>.</p><p>Au-delà du site, les organisations qui grandissent digitalisent leurs processus : courrier, stock, caisse, suivi. Découvrez nos <Link to="/solutions/applications-metier">applications métier sur mesure</Link>.</p>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded"><p>Besoin d’un accompagnement ? Nous construisons des sites orientés résultats à Dakar et au Sénégal.</p></div>
         <div className="mt-8 flex gap-3"><Button asChild><Link to="/contact">Demander un devis</Link></Button><Button asChild variant="outline"><a href="https://wa.me/221774837576" target="_blank" rel="noopener noreferrer">Parler sur WhatsApp</a></Button></div>
       </div></article>
