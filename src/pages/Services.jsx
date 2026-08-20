@@ -11,6 +11,7 @@ import {
   Workflow,
 } from "lucide-react";
 import SEO from "@/components/SEO";
+import { GEO_COUNTRIES } from "@/data/geoData";
 
 const offers = [
   {
@@ -121,6 +122,27 @@ export default function Services() {
               const Icon = sector.icon;
               return <Link className="sector-card" to={sector.href} key={sector.title}><Icon size={23} /><div><h3>{sector.title}</h3><p>{sector.text}</p></div><ArrowRight size={18} /></Link>;
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="site-shell">
+          <div className="split-heading">
+            <div><p className="overline">Afrique de l'Ouest & centrale</p><h2>Nous intervenons dans 16 pays.</h2></div>
+            <p className="intro-copy">Administrations, cliniques, ONG et entreprises : chaque pays a sa page dédiée avec les solutions adaptées à son contexte, à distance ou sur site.</p>
+          </div>
+          <div className="country-grid">
+            {GEO_COUNTRIES.map((country) => (
+              <Link className="country-card" to={`/services/logiciel-sur-mesure-${country.slug}`} key={country.slug}>
+                <span className="country-flag">{country.flag}</span>
+                <div>
+                  <h3>{country.name}</h3>
+                  <p>{country.capital} · {country.currency}</p>
+                </div>
+                <ArrowRight size={16} />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

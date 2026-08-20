@@ -35,8 +35,9 @@ const TarifSiteVitrineSenegal = lazy(() =>
   import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.TarifSiteVitrineSenegal })),
 );
 const AuditSeoProfessionnelSenegal = lazy(() =>
-  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.AuditSeoProfessionnelSenegal })),
+  import("@/pages/ServiceFrenchSeoPages").then((m) => ({ default: m.AuditSeoProfessionnelSenegal }))
 );
+const GeoLandingPage = lazy(() => import("@/pages/GeoLandingPage"));
 const CaseStudyClinic = lazy(
   () => import("@/pages/case-studies/CaseStudyClinic"),
 );
@@ -272,6 +273,8 @@ function App() {
           <Route path="/services/creation-site-internet-senegal" element={<CreationSiteInternetSenegal />} />
           <Route path="/services/tarif-site-vitrine-senegal" element={<TarifSiteVitrineSenegal />} />
           <Route path="/services/audit-seo-professionnel-senegal" element={<AuditSeoProfessionnelSenegal />} />
+          {/* Pages géo-compétences générées par données (16 pays × 20 compétences) */}
+          <Route path="/services/:geoSlug" element={<GeoLandingPage />} />
           <Route path="/case-study/clinic" element={<CaseStudyClinic />} />
           <Route
             path="/case-study/telimanshare"

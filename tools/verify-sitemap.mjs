@@ -14,6 +14,7 @@ function extractRoutesFromApp() {
       let p = m[1]
       if (!p) continue
       if (!p.startsWith('/')) p = '/' + p
+      if (p.includes(':')) continue // routes dynamiques générées par données — présentes via les pages géo
       set.add(p)
     }
     // Always include home

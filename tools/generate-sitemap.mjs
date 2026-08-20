@@ -2,6 +2,7 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { getSeoForPath } from "../src/data/seoData.js";
+import { getAllGeoPages, geoSeoForPath } from "../src/data/geoData.js";
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -29,14 +30,22 @@ try {
 
 const defaultRoutes = ["/", "/services", "/work", "/about", "/pricing", "/resources", "/contact"];
 
+// Pages géo-compétences (16 pays × 20 compétences) issues des données
+const geoRoutes = getAllGeoPages().map((p) => p.path);
+console.log(`[sitemap] Found ${geoRoutes.length} geo-compétence pages in src/data/geoData.js`);
+
 const routes = Array.from(
-  new Set([...(extracted.length ? extracted : []), ...defaultRoutes])
+  new Set([...(extracted.length ? extracted : []), ...defaultRoutes, ...geoRoutes])
 )
   .filter((p) => !p.includes(":"))
   .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
 
 // 2. Priority & changefreq logic
 function getMeta(p) {
+  const geoSeo = geoSeoForPath(p);
+  if (geoSeo) {
+    return { priority: geoSeo.priority || "0.70", changefreq: "monthly" };
+  }
   const seo = getSeoForPath(p);
   return {
     priority: seo.priority || "0.50",
