@@ -287,8 +287,7 @@ export default function GeoLandingPage() {
             Un projet {competence.type} {country.prep} {country.name} ?
           </h2>
           <p className="text-xl text-foreground/80 mb-8">
-            Parlez-nous de votre besoin : nous répondons avec une estimation claire, à {country.capital}
-            ou à distance.
+            Parlez-nous de votre besoin : nous répondons avec une estimation claire, à {country.capital} ou à distance.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
