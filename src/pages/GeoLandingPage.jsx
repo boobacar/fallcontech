@@ -1,20 +1,28 @@
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Flag, MapPin, Phone, Wallet, Globe2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Flag, MapPin, Phone, Wallet, Globe2, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   getGeoPageByPath,
-  GEO_COUNTRIES,
   GEO_SITE_URL,
 } from "@/data/geoData";
 
 const WHATSAPP_NUMBER = "221774837576";
 
-// Page géo-compétence générée par données : /services/<competence>-<pays>
+// Pages géo générées par données :
+//   /services/<compétence>-<pays>   (320 pages)
+//   /secteurs/<filière>-<pays>      (192 pages)
+//   /pays/<pays>                    (16 hubs pays)
 export default function GeoLandingPage() {
-  const { geoSlug } = useParams();
-  const page = getGeoPageByPath(`/services/${geoSlug}`);
+  const { geoSlug, secteurSlug, countrySlug } = useParams();
+  const path = geoSlug
+    ? `/services/${geoSlug}`
+    : secteurSlug
+      ? `/secteurs/${secteurSlug}`
+      : `/pays/${countrySlug}`;
+  const page = getGeoPageByPath(path);
+  const isPays = page?.family === "pays";
 
   if (!page) {
     return (
@@ -36,15 +44,17 @@ export default function GeoLandingPage() {
     );
   }
 
-  const { country, competence, faq } = page;
-  const otherCountries = GEO_COUNTRIES.filter((c) => c.slug !== country.slug);
+  const { country, faq } = page;
+  const gridTitle = isPays
+    ? "Autres pays"
+    : `${page.competence?.name || page.secteur?.name || page.type} dans d'autres pays`;
 
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       name: page.h1,
-      serviceType: competence.type,
+      serviceType: page.type,
       description: page.lead,
       provider: {
         "@type": "LocalBusiness",
@@ -103,7 +113,7 @@ export default function GeoLandingPage() {
               <Flag className="text-primary-foreground" size={30} />
             </div>
             <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-4">
-              {competence.type} {country.prep} {country.name} · {country.flag} {country.capital}
+              {page.eyebrow} · {country.flag} {country.capital}
             </p>
             <h1 className="vt-title text-4xl md:text-5xl font-bold mb-6 gradient-text">
               {page.h1}
@@ -119,23 +129,62 @@ export default function GeoLandingPage() {
           >
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-4">Ce que nous livrons</h2>
-                <p className="text-xl text-muted-foreground mb-8">
-                  Une solution concrète, adaptée à votre organisation {country.prep} {country.name}.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {page.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="text-blue-500 flex-shrink-0 mt-1" size={20} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild>
-                  <Link to="/contact">
-                    Demander un devis <ArrowRight className="ml-2" size={18} />
-                  </Link>
-                </Button>
+                {isPays ? (
+                  <>
+                    <h2 className="text-3xl font-bold mb-4">20 solutions disponibles</h2>
+                    <p className="text-xl text-muted-foreground mb-8">
+                      Chaque page de solution détaille l'offre adaptée {country.prep} {country.name}.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+                      {page.competenceLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="bg-muted/40 rounded-lg px-3 py-2 text-sm text-blue-600 hover:bg-muted transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                    <h3 className="font-bold text-xl mb-4 text-primary">12 filières accompagnées</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+                      {page.secteurLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="bg-muted/40 rounded-lg px-3 py-2 text-sm text-blue-600 hover:bg-muted transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                    <Button asChild>
+                      <Link to="/contact">
+                        Demander un devis <ArrowRight className="ml-2" size={18} />
+                      </Link>
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-3xl font-bold mb-4">Ce que nous livrons</h2>
+                    <p className="text-xl text-muted-foreground mb-8">
+                      Une solution concrète, adaptée à votre organisation {country.prep} {country.name}.
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {page.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="text-blue-500 flex-shrink-0 mt-1" size={20} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild>
+                      <Link to="/contact">
+                        Demander un devis <ArrowRight className="ml-2" size={18} />
+                      </Link>
+                    </Button>
+                  </>
+                )}
               </div>
 
               <div className="bg-primary/5 p-8 md:p-12 flex flex-col justify-center">
@@ -191,26 +240,24 @@ export default function GeoLandingPage() {
         </div>
       </section>
 
-      {/* Maillage : même compétence dans les autres pays */}
+      {/* Maillage : autres pays */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-3 text-primary">
-            {competence.name} dans d'autres pays
-          </h2>
+          <h2 className="text-3xl font-bold mb-3 text-primary">{gridTitle}</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
             Fallcon Tech intervient dans 16 pays d'Afrique de l'Ouest et centrale. Choisissez votre
             pays pour découvrir l'offre adaptée.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {otherCountries.map((c) => (
+            {page.relatedCountries.map((c) => (
               <Link
-                key={c.slug}
-                to={`/services/${competence.slug}-${c.slug}`}
+                key={c.to}
+                to={c.to}
                 className="bg-card rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow flex items-center gap-3"
               >
                 <span className="text-2xl">{c.flag}</span>
                 <span className="font-medium text-sm">
-                  {c.name} — {competence.type}
+                  {c.name} — {page.type}
                 </span>
               </Link>
             ))}
@@ -238,10 +285,7 @@ export default function GeoLandingPage() {
             <div className="bg-card rounded-2xl p-8 shadow-md">
               <h2 className="text-2xl font-bold mb-4 text-primary">Pour aller plus loin</h2>
               <div className="flex flex-col gap-3">
-                <Link
-                  to={page.relatedArticle.to}
-                  className="text-blue-600 hover:underline"
-                >
+                <Link to={page.relatedArticle.to} className="text-blue-600 hover:underline">
                   {page.relatedArticle.label}
                 </Link>
                 <Link to="/work" className="text-blue-600 hover:underline">
@@ -263,8 +307,7 @@ export default function GeoLandingPage() {
             Questions fréquentes
           </h2>
           <p className="text-muted-foreground mb-8">
-            {competence.name} {country.prep} {country.name} : les réponses aux questions que l'on
-            nous pose le plus souvent.
+            {page.h1} : les réponses aux questions que l'on nous pose le plus souvent.
           </p>
           <div className="space-y-6">
             {faq.map((item, index) => (
@@ -281,10 +324,10 @@ export default function GeoLandingPage() {
       <section className="py-16 gradient-bg">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <div className="inline-flex items-center justify-center w-14 h-14 bg-primary rounded-2xl mb-6">
-            <Globe2 className="text-primary-foreground" size={26} />
+            {isPays ? <LayoutGrid className="text-primary-foreground" size={26} /> : <Globe2 className="text-primary-foreground" size={26} />}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Un projet {competence.type} {country.prep} {country.name} ?
+            Un projet {page.type} {country.prep} {country.name} ?
           </h2>
           <p className="text-xl text-foreground/80 mb-8">
             Parlez-nous de votre besoin : nous répondons avec une estimation claire, à {country.capital} ou à distance.

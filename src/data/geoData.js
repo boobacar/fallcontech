@@ -979,12 +979,417 @@ export const GEO_COMPETENCES = [
 ];
 
 // ---------------------------------------------------------------------------
+// Filières (secteurs d'activité)
+// ---------------------------------------------------------------------------
+export const GEO_SECTEURS = [
+  {
+    slug: "sante",
+    name: "le secteur de la santé",
+    type: "Santé",
+    desc: "dossier patient, rendez-vous, caisse, stocks et paiement mobile pour les structures de santé",
+    lead:
+      "Nous équipons les cliniques, hôpitaux, cabinets et structures de santé de {capital} et du {country} avec des solutions numériques adaptées au terrain.",
+    quickAnswer:
+      "Fallcon Tech accompagne le secteur de la santé en {country} : logiciels de gestion de clinique, dossier patient, rendez-vous en ligne, caisse avec paiement mobile ({mobileMoney}), stocks et reporting pour la direction.",
+    features: [
+      "Logiciel de gestion de clinique et dossier patient",
+      "Prise de rendez-vous en ligne et rappels",
+      "Caisse, facturation et règlements mobile money",
+      "Gestion des stocks de médicaments et consommables",
+      "Reporting d'activité et de recettes",
+    ],
+    faq: [
+      {
+        q: "Vos logiciels conviennent-ils aux petites structures de santé ?",
+        a: "Oui, ils se déploient par modules : dossier patient et rendez-vous d'abord, puis caisse, stocks et reporting selon la taille de la structure.",
+      },
+      {
+        q: "Les données des patients sont-elles sécurisées ?",
+        a: "Oui : accès par rôles, sauvegardes chiffrées et journal d'audit, dans le respect des règles de confidentialité applicables {prep} {country}.",
+      },
+      {
+        q: "Peut-on encaisser les soins en mobile money ?",
+        a: "Oui, la caisse accepte les règlements mobile money ({mobileMoney}) avec rapprochement automatique des transactions.",
+      },
+    ],
+    relatedArticle: { to: "/article/logiciel-clinique-dentaire-senegal", label: "Guide : logiciel de gestion de clinique" },
+    competenceLinks: ["logiciel-clinique", "gestion-stock-caisse", "ged-archivage"],
+  },
+  {
+    slug: "education-formation",
+    name: "l'éducation et la formation",
+    type: "Éducation",
+    desc: "inscriptions, paiements, présences et dossiers pour écoles, centres de formation et instituts",
+    lead:
+      "Nous développons des logiciels de gestion pour les écoles, centres de formation et instituts de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour l'éducation et la formation en {country} : inscriptions, paiements des frais, présences, dossiers des apprenants, bulletins et communication avec les familles.",
+    features: [
+      "Inscriptions et dossiers des apprenants",
+      "Paiements des frais et relances automatiques",
+      "Suivi des présences et des résultats",
+      "Emplois du temps et communication",
+      "Bulletins et rapports pour la direction",
+    ],
+    faq: [
+      {
+        q: "Le logiciel convient-il aux petits centres de formation ?",
+        a: "Oui, il se déploie par modules : inscriptions et paiements d'abord, puis présences, résultats et communication.",
+      },
+      {
+        q: "Peut-on suivre les paiements des frais de scolarité ?",
+        a: "Oui, avec un registre des paiements, des relances automatiques et des encaissements mobile money ({mobileMoney}).",
+      },
+      {
+        q: "Les parents peuvent-ils suivre la scolarité ?",
+        a: "Selon vos besoins, nous ouvrons un espace parent avec accès aux présences, notes et communications.",
+      },
+    ],
+    relatedArticle: { to: "/article/digitalisation-entreprise-pme-senegal", label: "Guide : digitaliser une organisation" },
+    competenceLinks: ["gestion-ecole-formation", "paiement-mobile-money", "creation-site-web"],
+  },
+  {
+    slug: "ong-projets",
+    name: "les ONG et les programmes",
+    type: "ONG & programmes",
+    desc: "suivi des activités, bénéficiaires, justificatifs et reporting pour les ONG et bailleurs",
+    lead:
+      "Nous développons des outils de suivi de projets pour les ONG et programmes intervenant à {capital} et dans tout le pays.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour les ONG en {country} : suivi des activités et des bénéficiaires, collecte des justificatifs, indicateurs et rapports pour les bailleurs, utilisables même hors-ligne.",
+    features: [
+      "Planification des activités et des jalons",
+      "Suivi des bénéficiaires et des zones d'intervention",
+      "Collecte des justificatifs et des pièces",
+      "Indicateurs et rapports pour les bailleurs",
+      "Mode hors-ligne adapté au terrain",
+    ],
+    faq: [
+      {
+        q: "Le suivi fonctionne-t-il sans connexion sur le terrain ?",
+        a: "Oui, les versions mobiles et terrain fonctionnent hors-ligne et synchronisent les données dès le retour du réseau.",
+      },
+      {
+        q: "Peut-on produire les rapports demandés par les bailleurs ?",
+        a: "Oui, les indicateurs sont configurés avec vous et les rapports s'exportent au format demandé.",
+      },
+      {
+        q: "Comment protéger les données des bénéficiaires ?",
+        a: "Accès par rôles, chiffrement et sauvegardes régulières, selon les bonnes pratiques de protection des données personnelles.",
+      },
+    ],
+    relatedArticle: { to: "/article/digitalisation-entreprise-pme-senegal", label: "Guide : digitaliser une organisation" },
+    competenceLinks: ["suivi-projets-ong", "ged-archivage", "gec-courrier"],
+  },
+  {
+    slug: "transport-logistique",
+    name: "le transport et la logistique",
+    type: "Transport & logistique",
+    desc: "gestion de flotte, missions, carburant, maintenance et suivi GPS pour les transporteurs",
+    lead:
+      "Nous développons des logiciels de gestion de flotte pour les transporteurs et entreprises logistiques de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour le transport et la logistique en {country} : gestion de flotte, missions, carburant, maintenance, suivi GPS et tableaux de bord de coûts.",
+    features: [
+      "Registre des véhicules et des conducteurs",
+      "Gestion des missions et des affectations",
+      "Suivi du carburant et de la maintenance",
+      "Intégration GPS et alertes en temps réel",
+      "Tableaux de bord de coûts et d'utilisation",
+    ],
+    faq: [
+      {
+        q: "Quels gains pour une entreprise de transport ?",
+        a: "Moins de consommation inexpliquée, une maintenance planifiée, des missions tracées et une vision claire des coûts par véhicule.",
+      },
+      {
+        q: "Peut-on suivre les véhicules en temps réel ?",
+        a: "Oui, nous intégrons des solutions GPS légères avec alertes et historique des trajets, adaptées aux réseaux locaux.",
+      },
+      {
+        q: "Le logiciel convient-il aux petites flottes ?",
+        a: "Oui, il est utile dès quelques véhicules pour suivre carburant, maintenance et missions.",
+      },
+    ],
+    relatedArticle: { to: "/article/logiciel-gestion-flotte-senegal", label: "Guide : logiciel de gestion de flotte" },
+    competenceLinks: ["gestion-flotte", "logiciel-sur-mesure", "iot-embarque"],
+  },
+  {
+    slug: "secteur-public",
+    name: "le secteur public",
+    type: "Secteur public",
+    desc: "courrier, registres, dématérialisation des procédures et services aux usagers pour les administrations",
+    lead:
+      "Nous accompagnons les administrations, mairies et collectivités de {capital} et du {country} dans la digitalisation de leurs procédures.",
+    quickAnswer:
+      "Fallcon Tech accompagne le secteur public en {country} : GEC et GED, registres numériques, parapheur électronique, dématérialisation des procédures et formation des agents.",
+    features: [
+      "Gestion électronique du courrier (GEC) et GED",
+      "Registres numériques (courrier, délibérations, actes)",
+      "Parapheur et circuits de validation",
+      "Dématérialisation des procédures et formulaires",
+      "Formation des agents et conduite du changement",
+    ],
+    faq: [
+      {
+        q: "Par où commencer la digitalisation d'une administration ?",
+        a: "Par un diagnostic : identifier les procédures les plus lourdes (courrier, dossiers, délibérations) et les digitaliser une par une.",
+      },
+      {
+        q: "Les solutions s'intègrent-elles aux outils existants ?",
+        a: "Oui : import des données existantes, formats standards et interopérabilité avec les outils déjà utilisés par les services.",
+      },
+      {
+        q: "Comment gérez-vous la conduite du changement ?",
+        a: "Formation, accompagnement sur le terrain et écrans simples : la solution doit être plus rapide à utiliser que le papier.",
+      },
+    ],
+    relatedArticle: { to: "/article/digitalisation-services-publics-senegal", label: "Guide : digitalisation des services publics" },
+    competenceLinks: ["gec-courrier", "dematerialisation-marches-publics", "digitalisation-administrations"],
+  },
+  {
+    slug: "commerce-retail",
+    name: "le commerce et la distribution",
+    type: "Commerce & retail",
+    desc: "caisse, stock, boutique en ligne et paiement mobile pour les commerces et distributeurs",
+    lead:
+      "Nous équipons les commerces, grossistes et distributeurs de {capital} et du {country} avec des outils de vente et de gestion fiables.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour le commerce et la distribution en {country} : caisse, gestion de stock, boutique en ligne et encaissements mobile money ({mobileMoney}).",
+    features: [
+      "Caisse avec encaissements mobile money",
+      "Inventaire et suivi des produits par dépôt",
+      "Boutique en ligne et gestion des commandes",
+      "Gestion des fournisseurs et réapprovisionnement",
+      "Rapports de ventes et de marges",
+    ],
+    faq: [
+      {
+        q: "Faut-il un logiciel de caisse dans un commerce ?",
+        a: "Dès que vous suivez plusieurs produits et encaissements, un logiciel évite les pertes, les erreurs et donne une vision claire des ventes.",
+      },
+      {
+        q: "Peut-on vendre en ligne et encaisser en mobile money ?",
+        a: "Oui : boutique en ligne, paiement mobile money ({mobileMoney}) et gestion des livraisons locales.",
+      },
+      {
+        q: "Le logiciel fonctionne-t-il sans connexion ?",
+        a: "Oui, la caisse reste opérationnelle hors-ligne et synchronise les ventes dès le retour du réseau.",
+      },
+    ],
+    relatedArticle: { to: "/article/logiciel-gestion-stock-caisse-senegal", label: "Guide : gestion stock & caisse" },
+    competenceLinks: ["gestion-stock-caisse", "boutique-en-ligne", "paiement-mobile-money"],
+  },
+  {
+    slug: "banque-microfinance",
+    name: "la banque et la microfinance",
+    type: "Banque & microfinance",
+    desc: "dossiers clients, crédits, épargne, recouvrement et reporting pour institutions financières",
+    lead:
+      "Nous développons des logiciels de gestion pour les banques, microfinances et institutions financières de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour la banque et la microfinance en {country} : dossiers clients, crédits, épargne, recouvrement et reporting, avec intégration du mobile money ({mobileMoney}).",
+    features: [
+      "Dossiers clients et agents de crédit",
+      "Gestion des crédits, échéances et recouvrement",
+      "Épargne et comptes internes",
+      "Intégration du mobile money ({mobileMoney})",
+      "Reporting prudentiel et tableaux de bord",
+    ],
+    faq: [
+      {
+        q: "Vos solutions conviennent-elles aux petites structures ?",
+        a: "Oui, elles s'adaptent aux mutuelles, caisses villageoises et microfinances comme aux structures plus grandes.",
+      },
+      {
+        q: "Peut-on encaisser les remboursements en mobile money ?",
+        a: "Oui, les remboursements et dépôts via mobile money ({mobileMoney}) sont intégrés avec rapprochement automatique.",
+      },
+      {
+        q: "Comment sécuriser les données financières ?",
+        a: "Accès par rôles, traçabilité complète, sauvegardes chiffrées et contrôle des opérations sensibles.",
+      },
+    ],
+    relatedArticle: { to: "/article/application-gestion-sur-mesure-senegal", label: "Guide : application de gestion sur mesure" },
+    competenceLinks: ["logiciel-sur-mesure", "paiement-mobile-money", "infrastructure-cybersecurite"],
+  },
+  {
+    slug: "industrie",
+    name: "l'industrie et la production",
+    type: "Industrie",
+    desc: "suivi de production, stocks, maintenance des équipements et IoT pour les industriels",
+    lead:
+      "Nous équipons les industriels et producteurs de {capital} et du {country} avec des outils de suivi de production et d'équipements.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour l'industrie en {country} : suivi de production, gestion des stocks, maintenance des équipements et capteurs IoT pour la télémétrie.",
+    features: [
+      "Suivi de la production et des ordres de fabrication",
+      "Gestion des stocks matières et produits",
+      "Maintenance préventive des équipements",
+      "Capteurs IoT et télémétrie",
+      "Tableaux de bord de performance",
+    ],
+    faq: [
+      {
+        q: "Le suivi de production est-il adapté aux petites unités ?",
+        a: "Oui, il se déploie progressivement : production, stocks, puis maintenance et capteurs selon vos priorités.",
+      },
+      {
+        q: "Peut-on surveiller les machines à distance ?",
+        a: "Oui, avec des capteurs et une supervision temps réel qui alertent avant les pannes (maintenance prédictive).",
+      },
+      {
+        q: "Quels sont les premiers gains ?",
+        a: "Moins de ruptures de stock, des pannes anticipées et une vision claire de la production et des coûts.",
+      },
+    ],
+    relatedArticle: { to: "/article/telemetrie-maintenance-predictive-iot-senegal", label: "Guide : télémétrie & maintenance prédictive" },
+    competenceLinks: ["gestion-stock-caisse", "iot-embarque", "logiciel-sur-mesure"],
+  },
+  {
+    slug: "agriculture",
+    name: "l'agriculture et l'agroalimentaire",
+    type: "Agriculture",
+    desc: "suivi des exploitations, coopératives, achats, stocks et paiements pour la filière agro",
+    lead:
+      "Nous développons des outils de gestion pour les exploitations, coopératives et transformateurs agricoles de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour l'agriculture et l'agroalimentaire en {country} : suivi des exploitations et des coopératives, achats, stocks, paiements et traçabilité.",
+    features: [
+      "Registre des exploitations et des producteurs",
+      "Achats, pesées et paiements aux producteurs",
+      "Gestion des stocks et de la transformation",
+      "Paiements mobile money ({mobileMoney})",
+      "Traçabilité et rapports de campagne",
+    ],
+    faq: [
+      {
+        q: "Comment gérer les paiements aux producteurs ?",
+        a: "Les achats et pesées sont enregistrés sur le terrain et les paiements sont réalisés en mobile money ({mobileMoney}) avec un historique complet.",
+      },
+      {
+        q: "Le suivi fonctionne-t-il en zone rurale ?",
+        a: "Oui, les saisies fonctionnent hors-ligne et se synchronisent dès le retour du réseau.",
+      },
+      {
+        q: "Peut-on tracer une production jusqu'à la vente ?",
+        a: "Oui : chaque lot est suivi de la collecte à la transformation et à la vente, avec les documents associés.",
+      },
+    ],
+    relatedArticle: { to: "/article/digitalisation-entreprise-pme-senegal", label: "Guide : digitaliser une organisation" },
+    competenceLinks: ["suivi-projets-ong", "gestion-stock-caisse", "paiement-mobile-money"],
+  },
+  {
+    slug: "immobilier-btp",
+    name: "l'immobilier et le BTP",
+    type: "Immobilier & BTP",
+    desc: "gestion locative, suivi des chantiers, contrats et paiements pour promoteurs et agences",
+    lead:
+      "Nous développons des logiciels de gestion pour les promoteurs, agences immobilières et entreprises du BTP de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour l'immobilier et le BTP en {country} : gestion locative, suivi des chantiers, contrats, encaissements et reporting.",
+    features: [
+      "Gestion locative : biens, baux, loyers",
+      "Suivi des chantiers et des phases",
+      "Contrats et documents centralisés",
+      "Encaissements mobile money ({mobileMoney})",
+      "Tableaux de bord de trésorerie",
+    ],
+    faq: [
+      {
+        q: "Le logiciel convient-il aux petites agences ?",
+        a: "Oui, il se déploie par modules : biens et loyers d'abord, puis chantiers, contrats et reporting.",
+      },
+      {
+        q: "Peut-on encaisser les loyers en mobile money ?",
+        a: "Oui, les loyers et frais peuvent être réglés en mobile money ({mobileMoney}) avec rapprochement automatique.",
+      },
+      {
+        q: "Comment suivre plusieurs chantiers ?",
+        a: "Chaque chantier a son avancement, ses documents et ses coûts, visibles dans un tableau de bord unique.",
+      },
+    ],
+    relatedArticle: { to: "/article/application-gestion-sur-mesure-senegal", label: "Guide : application de gestion sur mesure" },
+    competenceLinks: ["logiciel-sur-mesure", "paiement-mobile-money", "creation-site-web"],
+  },
+  {
+    slug: "hotelerie-tourisme",
+    name: "l'hôtellerie et le tourisme",
+    type: "Hôtellerie & tourisme",
+    desc: "réservations, séjours, caisse, présence en ligne et paiements pour hôtels et agences",
+    lead:
+      "Nous équipons les hôtels, restaurants et agences de tourisme de {capital} et du {country} avec des outils de réservation et de gestion.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour l'hôtellerie et le tourisme en {country} : réservations, gestion des séjours, caisse et paiement mobile ({mobileMoney}), site web et présence en ligne.",
+    features: [
+      "Réservations en ligne et gestion des séjours",
+      "Caisse et encaissements mobile money",
+      "Site web et présence sur Google",
+      "Gestion des chambres et du personnel",
+      "Rapports d'occupation et de revenus",
+    ],
+    faq: [
+      {
+        q: "Peut-on prendre les réservations en ligne ?",
+        a: "Oui, avec un système de réservation simple sur votre site et une confirmation automatique par WhatsApp.",
+      },
+      {
+        q: "Quels moyens de paiement pour les clients ?",
+        a: "Espèces, cartes et mobile money ({mobileMoney}) selon vos besoins, avec un rapprochement automatique.",
+      },
+      {
+        q: "Comment attirer plus de clients sur Google ?",
+        a: "Nous optimisons votre présence : site rapide, fiche Google Business Profile et contenus localisés sur votre ville.",
+      },
+    ],
+    relatedArticle: { to: "/article/creer-site-web-professionnel-dakar", label: "Guide : créer un site web professionnel" },
+    competenceLinks: ["creation-site-web", "seo-referencement", "boutique-en-ligne"],
+  },
+  {
+    slug: "medias-communication",
+    name: "les médias et la communication",
+    type: "Médias & communication",
+    desc: "sites d'information, plateformes éditoriales, gestion des contenus et audiences",
+    lead:
+      "Nous concevons des plateformes numériques pour les médias, agences de communication et éditeurs de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech développe des solutions pour les médias et la communication en {country} : sites d'information rapides, plateformes éditoriales, gestion des contenus et mesures d'audience.",
+    features: [
+      "Sites d'information rapides et mobile-first",
+      "Plateformes éditoriales et gestion des contenus",
+      "Optimisation SEO et performance",
+      "Newsletters et intégrations WhatsApp",
+      "Mesure d'audience et tableaux de bord",
+    ],
+    faq: [
+      {
+        q: "Votre plateforme gère-t-elle de gros volumes de contenus ?",
+        a: "Oui, l'architecture est conçue pour les sites d'information avec des temps de chargement rapides, même en 3G/4G.",
+      },
+      {
+        q: "Peut-on monétiser avec la publicité ?",
+        a: "Oui, nous intégrons les formats publicitaires et les statistiques d'audience nécessaires à la régie.",
+      },
+      {
+        q: "Le site sera-t-il bien positionné sur Google ?",
+        a: "Oui : performance, SEO technique, contenus structurés et vitesse sont au cœur de nos développements.",
+      },
+    ],
+    relatedArticle: { to: "/article/optimisation-vitesse-site-seo-conversions", label: "Guide : vitesse et conversions" },
+    competenceLinks: ["creation-site-web", "developpement-web", "seo-referencement"],
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Construction des pages
 // ---------------------------------------------------------------------------
 
 const countryBySlug = Object.fromEntries(GEO_COUNTRIES.map((c) => [c.slug, c]));
 const competenceBySlug = Object.fromEntries(
   GEO_COMPETENCES.map((c) => [c.slug, c])
+);
+const secteurBySlug = Object.fromEntries(
+  GEO_SECTEURS.map((s) => [s.slug, s])
 );
 
 function fill(template, vars) {
@@ -996,12 +1401,8 @@ function fill(template, vars) {
   return s;
 }
 
-export function buildGeoPage(countrySlug, competenceSlug) {
-  const country = countryBySlug[countrySlug];
-  const competence = competenceBySlug[competenceSlug];
-  if (!country || !competence) return null;
-
-  const vars = {
+function countryVars(country) {
+  return {
     country: country.name,
     nameShort: country.nameShort || country.name,
     prep: country.prep,
@@ -1014,6 +1415,14 @@ export function buildGeoPage(countrySlug, competenceSlug) {
     ofCountry: `${country.gen} ${country.name}`,
     ofCapital: /^[aeiouh]/i.test(country.capital) ? `d'${country.capital}` : `de ${country.capital}`,
   };
+}
+
+export function buildGeoPage(countrySlug, competenceSlug) {
+  const country = countryBySlug[countrySlug];
+  const competence = competenceBySlug[competenceSlug];
+  if (!country || !competence) return null;
+
+  const vars = countryVars(country);
 
   const shortName = country.nameShort || country.name;
   const geoName = `${competence.name} ${country.prep} ${country.name}`;
@@ -1028,10 +1437,12 @@ export function buildGeoPage(countrySlug, competenceSlug) {
 
   return {
     path,
+    family: "competence",
     country,
     competence,
     geoName,
     h1: geoName,
+    eyebrow: `${competence.type} ${country.prep} ${country.name}`,
     title: `${geoNameShort} | Fallcon Tech`,
     description,
     lead,
@@ -1044,6 +1455,128 @@ export function buildGeoPage(countrySlug, competenceSlug) {
     relatedArticle: competence.relatedArticle,
     relatedServices: competence.relatedServices,
     type: competence.type,
+    relatedCountries: GEO_COUNTRIES.filter((c) => c.slug !== country.slug).map((c) => ({
+      flag: c.flag,
+      name: c.name,
+      label: c.name,
+      to: `/services/${competence.slug}-${c.slug}`,
+    })),
+  };
+}
+
+export function buildSecteurPage(countrySlug, secteurSlug) {
+  const country = countryBySlug[countrySlug];
+  const secteur = secteurBySlug[secteurSlug];
+  if (!country || !secteur) return null;
+
+  const vars = countryVars(country);
+  const shortName = country.nameShort || country.name;
+  const geoName = `Solutions numériques pour ${secteur.name} ${country.prep} ${shortName}`;
+  const path = `/secteurs/${secteur.slug}-${country.slug}`;
+  const lead = fill(secteur.lead, vars);
+  const descBody = secteur.desc.includes(":")
+    ? secteur.desc.slice(secteur.desc.indexOf(":") + 1).trim()
+    : secteur.desc;
+  const description = `${geoName} : ${fill(descBody, vars)}. Devis rapide à ${country.capital}.`;
+  const competenceLinks = secteur.competenceLinks
+    .map((slug) => {
+      const comp = competenceBySlug[slug];
+      if (!comp) return null;
+      return {
+        label: `${comp.name} ${country.prep} ${shortName}`,
+        to: `/services/${slug}-${country.slug}`,
+      };
+    })
+    .filter(Boolean);
+
+  return {
+    path,
+    family: "secteur",
+    country,
+    secteur,
+    geoName,
+    h1: geoName,
+    eyebrow: `${secteur.type} ${country.prep} ${country.name}`,
+    title: `${geoName} | Fallcon Tech`,
+    description,
+    lead,
+    quickAnswer: fill(secteur.quickAnswer, vars),
+    features: secteur.features,
+    faq: secteur.faq.map((item) => ({
+      q: fill(item.q, vars),
+      a: fill(item.a, vars),
+    })),
+    relatedArticle: secteur.relatedArticle,
+    relatedServices: competenceLinks,
+    type: secteur.type,
+    relatedCountries: GEO_COUNTRIES.filter((c) => c.slug !== country.slug).map((c) => ({
+      flag: c.flag,
+      name: c.name,
+      label: c.name,
+      to: `/secteurs/${secteur.slug}-${c.slug}`,
+    })),
+  };
+}
+
+export function buildCountryHub(countrySlug) {
+  const country = countryBySlug[countrySlug];
+  if (!country) return null;
+
+  const vars = countryVars(country);
+  const shortName = country.nameShort || country.name;
+  const geoName = `Cabinet de transformation numérique ${country.prep} ${shortName}`;
+  const path = `/pays/${country.slug}`;
+  const lead = `${country.note} Nous concevons des sites web, applications métier, GED, logiciels de gestion et infrastructures sécurisées pour les administrations, cliniques, ONG et entreprises ${vars.ofCountry}.`;
+  const description = `${geoName} : sites web, applications métier, GEC et GED, digitalisation administrative, cybersécurité et paiement mobile pour les organisations ${vars.ofCapital} et des grandes villes du pays. Devis rapide.`;
+
+  const faq = [
+    {
+      q: `Fallcon Tech intervient-il ${country.prep} ${shortName} ?`,
+      a: `Oui. Notre équipe, basée à Dakar, travaille à distance ou sur site ${country.prep} ${shortName} pour le cadrage, le déploiement et la formation de vos équipes.`,
+    },
+    {
+      q: `Quels moyens de paiement mobile intégrez-vous ${country.prep} ${shortName} ?`,
+      a: `Nous intégrons les opérateurs locaux : ${country.mobileMoney}, avec des confirmations côté serveur et un rapprochement fiable des transactions.`,
+    },
+    {
+      q: "Comment démarrer un projet de transformation numérique ?",
+      a: "Par un premier échange pour comprendre vos processus, puis un diagnostic ciblé et une feuille de route budgétée. Nous avançons par étapes validées.",
+    },
+  ];
+
+  return {
+    path,
+    family: "pays",
+    country,
+    geoName,
+    h1: geoName,
+    eyebrow: `Transformation numérique ${country.prep} ${country.name}`,
+    title: `${geoName} | Fallcon Tech`,
+    description,
+    lead,
+    quickAnswer: `Fallcon Tech est un cabinet de transformation numérique ${country.prep} ${shortName}, basé à Dakar : sites web, applications métier, GEC et GED, digitalisation administrative, cybersécurité, paiement mobile (${country.mobileMoney}) et IoT, avec accompagnement à distance et sur site.`,
+    features: [],
+    faq,
+    relatedArticle: { to: "/work", label: "Nos réalisations" },
+    relatedServices: [
+      { to: "/services", label: "Toutes nos solutions" },
+      { to: "/pricing", label: "Formats d'intervention" },
+    ],
+    type: "Transformation numérique",
+    competenceLinks: GEO_COMPETENCES.map((c) => ({
+      label: c.name,
+      to: `/services/${c.slug}-${country.slug}`,
+    })),
+    secteurLinks: GEO_SECTEURS.map((s) => ({
+      label: `Solutions pour ${s.name}`,
+      to: `/secteurs/${s.slug}-${country.slug}`,
+    })),
+    relatedCountries: GEO_COUNTRIES.filter((c) => c.slug !== country.slug).map((c) => ({
+      flag: c.flag,
+      name: c.name,
+      label: c.name,
+      to: `/pays/${c.slug}`,
+    })),
   };
 }
 
@@ -1053,6 +1586,10 @@ export function getAllGeoPages() {
     for (const competence of GEO_COMPETENCES) {
       pages.push(buildGeoPage(country.slug, competence.slug));
     }
+    for (const secteur of GEO_SECTEURS) {
+      pages.push(buildSecteurPage(country.slug, secteur.slug));
+    }
+    pages.push(buildCountryHub(country.slug));
   }
   return pages.filter(Boolean);
 }
@@ -1076,10 +1613,11 @@ export function geoSeoForPath(path) {
     ogImage: `${GEO_SITE_URL}/logo.png`,
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     type: "website",
-    priority: "0.70",
+    priority: page.family === "pays" ? "0.80" : "0.70",
     changefreq: "monthly",
   };
 }
 
 export const GEO_COUNTRY_SLUGS = GEO_COUNTRIES.map((c) => c.slug);
 export const GEO_COMPETENCE_SLUGS = GEO_COMPETENCES.map((c) => c.slug);
+export const GEO_SECTEUR_SLUGS = GEO_SECTEURS.map((s) => s.slug);

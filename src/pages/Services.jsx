@@ -134,7 +134,7 @@ export default function Services() {
           </div>
           <div className="country-grid">
             {GEO_COUNTRIES.map((country) => (
-              <Link className="country-card" to={`/services/logiciel-sur-mesure-${country.slug}`} key={country.slug}>
+              <Link className="country-card" to={`/pays/${country.slug}`} key={country.slug}>
                 <span className="country-flag">{country.flag}</span>
                 <div>
                   <h3>{country.name}</h3>

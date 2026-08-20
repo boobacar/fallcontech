@@ -275,6 +275,10 @@ function App() {
           <Route path="/services/audit-seo-professionnel-senegal" element={<AuditSeoProfessionnelSenegal />} />
           {/* Pages géo-compétences générées par données (16 pays × 20 compétences) */}
           <Route path="/services/:geoSlug" element={<GeoLandingPage />} />
+          {/* Pages filières × pays (16 pays × 12 filières) */}
+          <Route path="/secteurs/:secteurSlug" element={<GeoLandingPage />} />
+          {/* Hubs pays (16 pages) */}
+          <Route path="/pays/:countrySlug" element={<GeoLandingPage />} />
           <Route path="/case-study/clinic" element={<CaseStudyClinic />} />
           <Route
             path="/case-study/telimanshare"
