@@ -1381,6 +1381,84 @@ export const GEO_SECTEURS = [
 ];
 
 // ---------------------------------------------------------------------------
+// Villes (pages locales — Sénégal + villes clés de la sous-région)
+// ---------------------------------------------------------------------------
+export const GEO_CITIES = [
+  {
+    slug: "thies",
+    name: "Thiès",
+    countrySlug: "senegal",
+    note: "Deuxième ville du Sénégal, Thiès est un pôle ferroviaire et industriel avec une forte demande de digitalisation des commerces et des services.",
+  },
+  {
+    slug: "saint-louis",
+    name: "Saint-Louis",
+    countrySlug: "senegal",
+    note: "Ancienne capitale, Saint-Louis est un pôle touristique et universitaire : hôtels, écoles et services publics modernisent leur gestion.",
+  },
+  {
+    slug: "touba",
+    name: "Touba",
+    countrySlug: "senegal",
+    note: "Ville sainte et grand centre commercial, Touba concentre une forte activité de commerce et de transport qui gagne à être digitalisée.",
+  },
+  {
+    slug: "kaolack",
+    name: "Kaolack",
+    countrySlug: "senegal",
+    note: "Carrefour commercial du bassin arachidier, Kaolack regroupe grossistes et PME qui modernisent leurs outils de gestion.",
+  },
+  {
+    slug: "ziguinchor",
+    name: "Ziguinchor",
+    countrySlug: "senegal",
+    note: "Capitale de la Casamance, Ziguinchor allie tourisme, agroalimentaire et services publics en pleine digitalisation.",
+  },
+  {
+    slug: "mbour",
+    name: "Mbour",
+    countrySlug: "senegal",
+    note: "Station balnéaire en plein essor, Mbour compte hôtels, commerces et acteurs du tourisme qui renforcent leur présence numérique.",
+  },
+  {
+    slug: "rufisque",
+    name: "Rufisque",
+    countrySlug: "senegal",
+    note: "Ville industrielle proche de Dakar, Rufisque abrite des PME et des services qui digitalisent leurs processus.",
+  },
+  {
+    slug: "tambacounda",
+    name: "Tambacounda",
+    countrySlug: "senegal",
+    note: "Carrefour de l'est du Sénégal, Tambacounda est un centre d'échanges agricoles et d'élevage en pleine modernisation.",
+  },
+  {
+    slug: "abidjan",
+    name: "Abidjan",
+    countrySlug: "cote-divoire",
+    note: "Capitale économique de la Côte d'Ivoire et plus grande ville francophone d'Afrique de l'Ouest, Abidjan concentre sièges d'entreprises et institutions.",
+  },
+  {
+    slug: "bamako",
+    name: "Bamako",
+    countrySlug: "mali",
+    note: "Capitale du Mali sur le fleuve Niger, Bamako regroupe administrations, commerces et organisations qui digitalisent leurs outils.",
+  },
+  {
+    slug: "douala",
+    name: "Douala",
+    countrySlug: "cameroun",
+    note: "Capitale économique du Cameroun et premier port du pays, Douala est le cœur des affaires et de l'industrie camerounaises.",
+  },
+  {
+    slug: "cotonou",
+    name: "Cotonou",
+    countrySlug: "benin",
+    note: "Capitale économique du Bénin, Cotonou est un grand pôle portuaire et commercial où la digitalisation progresse rapidement.",
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Construction des pages
 // ---------------------------------------------------------------------------
 
@@ -1390,6 +1468,9 @@ const competenceBySlug = Object.fromEntries(
 );
 const secteurBySlug = Object.fromEntries(
   GEO_SECTEURS.map((s) => [s.slug, s])
+);
+const cityBySlug = Object.fromEntries(
+  GEO_CITIES.map((c) => [c.slug, c])
 );
 
 function fill(template, vars) {
@@ -1518,6 +1599,76 @@ export function buildSecteurPage(countrySlug, secteurSlug) {
   };
 }
 
+export function buildVillePage(citySlug, competenceSlug) {
+  const city = cityBySlug[citySlug];
+  const competence = competenceBySlug[competenceSlug];
+  if (!city || !competence) return null;
+  const country = countryBySlug[city.countrySlug];
+  if (!country) return null;
+
+  const vars = { ...countryVars(country), capital: city.name };
+  vars.ofCapital = /^[aeiouh]/i.test(city.name) ? `d'${city.name}` : `de ${city.name}`;
+
+  const shortName = country.nameShort || country.name;
+  const geoName = `${competence.name} à ${city.name}`;
+  const path = `/services/${competence.slug}-${city.slug}`;
+  const lead = fill(competence.lead, vars);
+  const descBody = competence.desc.includes(":")
+    ? competence.desc.slice(competence.desc.indexOf(":") + 1).trim()
+    : competence.desc;
+  const description = `${geoName} : ${fill(descBody, vars)}. Devis rapide à ${city.name}.`;
+
+  return {
+    path,
+    family: "ville",
+    city,
+    country,
+    competence,
+    geoName,
+    h1: geoName,
+    eyebrow: `${competence.type} à ${city.name} · ${country.name}`,
+    title: `${geoName} | Fallcon Tech`,
+    description,
+    lead,
+    quickAnswer: fill(competence.quickAnswer, vars),
+    features: competence.features,
+    faq: competence.faq.map((item) => ({
+      q: fill(item.q, vars),
+      a: fill(item.a, vars),
+    })),
+    relatedArticle: competence.relatedArticle,
+    relatedServices: [
+      {
+        label: `${competence.name} ${country.prep} ${shortName}`,
+        to: `/services/${competence.slug}-${country.slug}`,
+      },
+      {
+        label: `Cabinet de transformation numérique ${country.prep} ${shortName}`,
+        to: `/pays/${country.slug}`,
+      },
+      ...competence.relatedServices,
+    ],
+    type: competence.type,
+    gridTitle: "Aussi disponible dans d'autres villes",
+    contextTitle: `Votre projet à ${city.name}`,
+    contextNote: city.note,
+    contextRows: [
+      { title: "Ville", value: `${city.name} · ${country.name}` },
+      { title: "Contexte local", value: `${country.currency} · ${country.zone}` },
+      { title: "Paiement mobile", value: country.mobileMoney },
+    ],
+    heroLocation: `${country.flag} ${city.name}`,
+    ctaLoc: `à ${city.name}`,
+    areaServed: { "@type": "City", name: city.name },
+    relatedCountries: GEO_CITIES.filter((c) => c.slug !== city.slug).map((c) => ({
+      flag: countryBySlug[c.countrySlug].flag,
+      name: c.name,
+      label: c.name,
+      to: `/services/${competence.slug}-${c.slug}`,
+    })),
+  };
+}
+
 export function buildCountryHub(countrySlug) {
   const country = countryBySlug[countrySlug];
   if (!country) return null;
@@ -1571,6 +1722,10 @@ export function buildCountryHub(countrySlug) {
       label: `Solutions pour ${s.name}`,
       to: `/secteurs/${s.slug}-${country.slug}`,
     })),
+    villeLinks: GEO_CITIES.filter((c) => c.countrySlug === country.slug).map((c) => ({
+      label: `Solutions à ${c.name}`,
+      to: `/services/logiciel-sur-mesure-${c.slug}`,
+    })),
     relatedCountries: GEO_COUNTRIES.filter((c) => c.slug !== country.slug).map((c) => ({
       flag: c.flag,
       name: c.name,
@@ -1590,6 +1745,11 @@ export function getAllGeoPages() {
       pages.push(buildSecteurPage(country.slug, secteur.slug));
     }
     pages.push(buildCountryHub(country.slug));
+  }
+  for (const city of GEO_CITIES) {
+    for (const competence of GEO_COMPETENCES) {
+      pages.push(buildVillePage(city.slug, competence.slug));
+    }
   }
   return pages.filter(Boolean);
 }
@@ -1621,3 +1781,4 @@ export function geoSeoForPath(path) {
 export const GEO_COUNTRY_SLUGS = GEO_COUNTRIES.map((c) => c.slug);
 export const GEO_COMPETENCE_SLUGS = GEO_COMPETENCES.map((c) => c.slug);
 export const GEO_SECTEUR_SLUGS = GEO_SECTEURS.map((s) => s.slug);
+export const GEO_CITY_SLUGS = GEO_CITIES.map((c) => c.slug);

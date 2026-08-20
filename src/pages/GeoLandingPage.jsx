@@ -1,7 +1,7 @@
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Flag, MapPin, Phone, Wallet, Globe2, LayoutGrid } from "lucide-react";
+import { ArrowRight, CheckCircle2, Flag, MapPin, Globe2, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   getGeoPageByPath,
@@ -45,9 +45,21 @@ export default function GeoLandingPage() {
   }
 
   const { country, faq } = page;
-  const gridTitle = isPays
-    ? "Autres pays"
-    : `${page.competence?.name || page.secteur?.name || page.type} dans d'autres pays`;
+  const gridTitle =
+    page.gridTitle ||
+    (isPays
+      ? "Autres pays"
+      : `${page.competence?.name || page.secteur?.name || page.type} dans d'autres pays`);
+  const contextTitle = page.contextTitle || `Votre projet ${country.prep} ${country.name}`;
+  const contextNote = page.contextNote || country.note;
+  const contextRows = page.contextRows || [
+    { title: "Capital et grandes villes", value: `${country.capital} · ${country.cities}` },
+    { title: "Contexte local", value: `${country.currency} · ${country.zone}` },
+    { title: "Paiement mobile", value: country.mobileMoney },
+  ];
+  const heroLocation = page.heroLocation || `${country.flag} ${country.capital}`;
+  const ctaLoc = page.ctaLoc || `${country.prep} ${country.name}`;
+  const areaServed = page.areaServed || { "@type": "Country", name: country.name };
 
   const jsonLd = [
     {
@@ -63,7 +75,7 @@ export default function GeoLandingPage() {
         telephone: `+${WHATSAPP_NUMBER}`,
         address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
       },
-      areaServed: { "@type": "Country", name: country.name },
+      areaServed,
       offers: { "@type": "Offer", url: `${GEO_SITE_URL}/contact` },
       url: `${GEO_SITE_URL}${page.path}`,
     },
@@ -113,7 +125,7 @@ export default function GeoLandingPage() {
               <Flag className="text-primary-foreground" size={30} />
             </div>
             <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-4">
-              {page.eyebrow} · {country.flag} {country.capital}
+              {page.eyebrow} · {heroLocation}
             </p>
             <h1 className="vt-title text-4xl md:text-5xl font-bold mb-6 gradient-text">
               {page.h1}
@@ -158,6 +170,22 @@ export default function GeoLandingPage() {
                         </Link>
                       ))}
                     </div>
+                    {page.villeLinks?.length > 0 && (
+                      <>
+                        <h3 className="font-bold text-xl mb-4 text-primary">Villes</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+                          {page.villeLinks.map((item) => (
+                            <Link
+                              key={item.to}
+                              to={item.to}
+                              className="bg-muted/40 rounded-lg px-3 py-2 text-sm text-blue-600 hover:bg-muted transition-colors"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    )}
                     <Button asChild>
                       <Link to="/contact">
                         Demander un devis <ArrowRight className="ml-2" size={18} />
@@ -189,35 +217,19 @@ export default function GeoLandingPage() {
 
               <div className="bg-primary/5 p-8 md:p-12 flex flex-col justify-center">
                 <h3 className="font-bold text-2xl mb-6 text-primary">
-                  Votre projet {country.prep} {country.name}
+                  {contextTitle}
                 </h3>
-                <p className="text-muted-foreground mb-6">{country.note}</p>
+                <p className="text-muted-foreground mb-6">{contextNote}</p>
                 <div className="space-y-4 mb-8">
-                  <div className="bg-card rounded-xl p-4 shadow-md flex items-start gap-3">
-                    <MapPin className="text-blue-500 mt-0.5" size={20} />
-                    <div>
-                      <p className="font-semibold">Capital et grandes villes</p>
-                      <p className="text-sm text-muted-foreground">
-                        {country.capital} · {country.cities}
-                      </p>
+                  {contextRows.map((row) => (
+                    <div key={row.title} className="bg-card rounded-xl p-4 shadow-md flex items-start gap-3">
+                      <MapPin className="text-blue-500 mt-0.5" size={20} />
+                      <div>
+                        <p className="font-semibold">{row.title}</p>
+                        <p className="text-sm text-muted-foreground">{row.value}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="bg-card rounded-xl p-4 shadow-md flex items-start gap-3">
-                    <Wallet className="text-blue-500 mt-0.5" size={20} />
-                    <div>
-                      <p className="font-semibold">Contexte local</p>
-                      <p className="text-sm text-muted-foreground">
-                        {country.currency} · {country.zone}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-card rounded-xl p-4 shadow-md flex items-start gap-3">
-                    <Phone className="text-blue-500 mt-0.5" size={20} />
-                    <div>
-                      <p className="font-semibold">Paiement mobile</p>
-                      <p className="text-sm text-muted-foreground">{country.mobileMoney}</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
                 <Button asChild variant="outline">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
@@ -333,7 +345,7 @@ export default function GeoLandingPage() {
             {isPays ? <LayoutGrid className="text-primary-foreground" size={26} /> : <Globe2 className="text-primary-foreground" size={26} />}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Un projet {page.type} {country.prep} {country.name} ?
+            Un projet {page.type} {ctaLoc} ?
           </h2>
           <p className="text-xl text-foreground/80 mb-8">
             Parlez-nous de votre besoin : nous répondons avec une estimation claire, à {country.capital} ou à distance.
