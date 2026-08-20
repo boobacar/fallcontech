@@ -122,28 +122,29 @@ const pages = {
     path: "/services/audit-seo-professionnel-senegal",
     icon: FileSearch,
     eyebrow: "Audit SEO professionnel Sénégal",
+    seoTitle: "Audit SEO professionnel Sénégal : rapport d'actions priorisé | Fallcon Tech",
     title: "Audit SEO professionnel au Sénégal pour gagner plus de clics",
-    lead: "Nous analysons vos impressions, CTR, pages, requêtes, titres, contenus et problèmes techniques pour transformer votre visibilité Google en clics qualifiés.",
+    lead: "Nous analysons votre visibilité sur Google, vos pages, vos contenus et vos problèmes techniques pour identifier les actions qui rapportent : plus de clics, plus de demandes qualifiées.",
     serviceName: "Audit SEO professionnel au Sénégal",
     serviceType: "Audit SEO",
     quickAnswer:
       "Un audit SEO professionnel au Sénégal identifie les actions qui rapportent : titres à réécrire, pages à optimiser, contenu à créer et problèmes techniques. Fallcon Tech livre une liste priorisée et actionnable.",
     features: [
-      "Analyse Google Search Console : impressions, CTR, requêtes et pages",
+      "Analyse de votre visibilité Google : pages, contenus et résultats",
       "Réécriture des titres et descriptions qui ne donnent pas envie de cliquer",
-      "Audit technique : indexation, sitemap, performance et balisage",
-      "Plan de contenus pour les requêtes à fort potentiel",
+      "Audit technique : vitesse, structure et conformité Google",
+      "Plan de contenus pour vos futurs clients",
       "Priorisation des actions rapides et des pages à créer ou corriger",
     ],
-    outcomes: ["CTR amélioré", "Requêtes mieux ciblées", "Plan d'action concret"],
+    outcomes: ["Plus de clics", "Meilleure visibilité", "Plan d'action concret"],
     faq: [
       {
-        q: "Pourquoi ai-je beaucoup d'impressions mais peu de clics ?",
-        a: "Souvent parce que la page apparaît sur une requête trop large, avec un titre peu aligné, une position moyenne faible ou une description qui ne répond pas clairement à l'intention.",
+        q: "Pourquoi mon site est-il visible sur Google mais sans clics ?",
+        a: "Souvent parce que la page apparaît sur une recherche trop large, avec un titre peu aligné, une place trop loin dans les résultats ou une description qui ne répond pas clairement à l'intention.",
       },
       {
         q: "Un audit SEO peut-il augmenter les clics ?",
-        a: "Oui, surtout quand le site a déjà des impressions. Le travail consiste à améliorer les snippets, créer les bonnes pages et mieux répondre aux requêtes qui s'affichent déjà.",
+        a: "Oui, surtout quand le site a déjà une bonne visibilité. Le travail consiste à améliorer les titres affichés, créer les bonnes pages et mieux répondre aux recherches qui s'affichent déjà.",
       },
       {
         q: "Que livrez-vous après l'audit ?",
@@ -201,7 +202,7 @@ function ServiceFrenchPage({ page }) {
     <>
       <SEO
         path={page.path}
-        title={`${page.eyebrow} | Fallcon Tech Dakar`}
+        title={page.seoTitle || `${page.eyebrow} | Fallcon Tech Dakar`}
         description={page.lead}
         imageAlt={`${page.eyebrow} par Fallcon Tech`}
         jsonLd={jsonLd}

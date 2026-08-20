@@ -11,6 +11,7 @@ const pages = {
     path: "/services/web-development-senegal",
     icon: Globe,
     eyebrow: "Web Development Company Senegal",
+    seoTitle: "Web Development & Web Design Company Senegal | Websites & Apps Dakar",
     title: "Web Development in Senegal for serious businesses",
     lead: "Fallcon Tech builds fast websites, business platforms and SEO-ready web applications for companies in Dakar and across Senegal.",
     serviceName: "Web development in Senegal",
@@ -164,7 +165,7 @@ function ServiceEnglishPage({ page }) {
     <>
       <SEO
         path={page.path}
-        title={`${page.eyebrow} | Fallcon Tech Dakar`}
+        title={page.seoTitle || `${page.eyebrow} | Fallcon Tech Dakar`}
         description={page.lead}
         lang="en"
         imageAlt={`${page.eyebrow} by Fallcon Tech`}

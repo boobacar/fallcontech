@@ -49,7 +49,7 @@ const ArticleGoogleAdsOuSeoSenegal = () => {
 
   return (
     <>
-      <SEO path={path} title={`Google Ads ou SEO Sénégal : quel canal choisir ? | Fallcon Tech`} description={description} type="article" jsonLd={jsonLd} author="Boubacar FALL" />
+      <SEO path={path} title={`Campagnes Google Ads Sénégal : que choisir entre Ads et SEO ? | Fallcon Tech`} description={description} type="article" jsonLd={jsonLd} author="Boubacar FALL" />
       <section className="py-12 gradient-bg">
         <div className="container mx-auto px-4">
           <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8">

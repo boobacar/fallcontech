@@ -115,16 +115,16 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/services/audit-seo-professionnel-senegal": {
-    title: "Audit SEO professionnel Sénégal | Fallcon Tech Dakar",
+    title: "Audit SEO professionnel Sénégal : rapport d'actions priorisé | Fallcon Tech",
     description:
-      "Audit SEO professionnel au Sénégal : analyse de vos impressions, requêtes, pages et problèmes techniques pour transformer votre visibilité Google en clics et en contacts qualifiés.",
+      "Audit SEO professionnel au Sénégal : analyse de votre visibilité Google et plan d'actions priorisé pour gagner plus de clics et de contacts qualifiés.",
     priority: "0.90",
     changefreq: "weekly",
   },
   "/services/web-development-senegal": {
-    title: "Web Development Company Senegal | Websites & Apps Dakar",
+    title: "Web Development & Web Design Company Senegal | Websites & Apps Dakar",
     description:
-      "Web development company in Senegal: fast websites, React web apps, SEO setup, lead tracking and conversion-focused pages by Fallcon Tech Dakar.",
+      "Web development and web design company in Senegal: fast websites, React web apps, SEO setup, lead tracking and conversion-focused pages by Fallcon Tech Dakar.",
     priority: "0.93",
     changefreq: "weekly",
     lang: "en-SN",
@@ -215,7 +215,7 @@ export const pageSeo = {
 export const articleSeo = {
   "/article/agence-digitale-dakar-pme-seo-site-web-automatisation": ["Agence digitale Dakar : SEO, site web et automatisation PME", "Guide complet pour choisir une agence digitale à Dakar capable de créer un site web performant, améliorer le SEO local et automatiser la prospection WhatsApp des PME."],
   "/article/developpement-logiciel-sur-mesure-senegal-pme": ["Développement logiciel sur mesure Sénégal pour PME", "CRM, stock, facturation, courrier, RH ou dashboard : comment réussir un projet de logiciel sur mesure au Sénégal avec budget, étapes, sécurité et ROI."],
-  "/article/google-ads-ou-seo-senegal-choisir": ["Google Ads ou SEO Sénégal : quel canal choisir ?", "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés."],
+  "/article/google-ads-ou-seo-senegal-choisir": ["Campagnes Google Ads Sénégal : que choisir entre Ads et SEO ?", "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés."],
   "/article/landing-page-dakar-conversion-leads": ["Landing page Dakar : créer une page qui convertit", "Structure complète d’une landing page à Dakar : message, SEO, preuve, CTA WhatsApp, formulaire et suivi pour augmenter les leads qualifiés."],
   "/article/referencement-google-senegal-plan-90-jours": ["Référencement Google Sénégal : plan SEO 90 jours", "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages services, contenu, maillage interne, Search Console et optimisation CTR."],
   "/article/digitalisation-courriers-services-senegal": ["Digitalisation des courriers au Sénégal : réussir sa transition digitale", "Registre numérique, workflow, GED, archivage et traçabilité : comment digitaliser les courriers entrants et sortants de votre service."],
