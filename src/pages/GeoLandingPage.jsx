@@ -277,9 +277,11 @@ export default function GeoLandingPage() {
                     {item.label}
                   </Link>
                 ))}
-                <Link to="/services" className="text-blue-600 hover:underline">
-                  Toutes nos solutions
-                </Link>
+                {!isPays && (
+                  <Link to="/services" className="text-blue-600 hover:underline">
+                    Toutes nos solutions
+                  </Link>
+                )}
               </div>
             </div>
             <div className="bg-card rounded-2xl p-8 shadow-md">
@@ -288,12 +290,16 @@ export default function GeoLandingPage() {
                 <Link to={page.relatedArticle.to} className="text-blue-600 hover:underline">
                   {page.relatedArticle.label}
                 </Link>
-                <Link to="/work" className="text-blue-600 hover:underline">
-                  Nos réalisations
-                </Link>
-                <Link to="/pricing" className="text-blue-600 hover:underline">
-                  Formats d'intervention
-                </Link>
+                {!isPays && (
+                  <Link to="/work" className="text-blue-600 hover:underline">
+                    Nos réalisations
+                  </Link>
+                )}
+                {!isPays && (
+                  <Link to="/pricing" className="text-blue-600 hover:underline">
+                    Formats d'intervention
+                  </Link>
+                )}
               </div>
             </div>
           </div>
