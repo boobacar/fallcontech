@@ -10,7 +10,7 @@ import imgSeo from "@/assets/articles/seo.png";
 const ArticleSiteVitrineSeo = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
   const path = "/article/refonte-site-vitrine-seo-dakar";
-  const title = "Refonte de site vitrine à Dakar : SEO local et conversions";
+  const title = "Refonte de site web au Sénégal : SEO local et conversions";
   const description =
     "Guide pratique pour réussir la refonte d’un site vitrine au Sénégal : SEO local, Core Web Vitals, contenu orienté conversions et tracking.";
 
@@ -36,7 +36,7 @@ const ArticleSiteVitrineSeo = () => {
             mainEntityOfPage: site + path,
             description,
             articleSection: "SEO local",
-            keywords: "refonte site vitrine Dakar, SEO Sénégal, Core Web Vitals, performance web, conversions",
+            keywords: "refonte site web Sénégal, SEO Sénégal, Core Web Vitals, performance web, conversions",
           },
           {
             "@context": "https://schema.org",

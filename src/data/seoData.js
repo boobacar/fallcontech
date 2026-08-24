@@ -4,7 +4,7 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Transformation numérique Sénégal : développement web & logiciels | Fallcon Tech",
+    title: "Transformation numérique Sénégal : développement web, applications mobiles & logiciels | Fallcon Tech",
     description:
       "Fallcon Tech conçoit des sites web, applications métier, GED, logiciels de gestion et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal.",
     priority: "1.0",
@@ -217,7 +217,7 @@ export const articleSeo = {
   "/article/developpement-logiciel-sur-mesure-senegal-pme": ["Développement logiciel sur mesure Sénégal pour PME", "CRM, stock, facturation, courrier, RH ou dashboard : comment réussir un projet de logiciel sur mesure au Sénégal avec budget, étapes, sécurité et ROI."],
   "/article/google-ads-ou-seo-senegal-choisir": ["Campagnes Google Ads Sénégal : que choisir entre Ads et SEO ?", "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés."],
   "/article/landing-page-dakar-conversion-leads": ["Landing page Dakar : créer une page qui convertit", "Structure complète d’une landing page à Dakar : message, SEO, preuve, CTA WhatsApp, formulaire et suivi pour augmenter les leads qualifiés."],
-  "/article/referencement-google-senegal-plan-90-jours": ["Référencement Google Sénégal : plan SEO 90 jours", "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages services, contenu, maillage interne, Search Console et optimisation CTR."],
+  "/article/referencement-google-senegal-plan-90-jours": ["Référencement Google Sénégal : plan SEO 90 jours", "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages de services, contenus ciblés, liens entre vos pages et suivi des résultats."],
   "/article/digitalisation-courriers-services-senegal": ["Digitalisation des courriers au Sénégal : réussir sa transition digitale", "Registre numérique, workflow, GED, archivage et traçabilité : comment digitaliser les courriers entrants et sortants de votre service."],
   "/article/logiciel-gestion-courrier-administration-senegal": ["Logiciel de gestion de courrier au Sénégal : fonctionnalités et budget", "Checklist pour choisir ou développer une application de gestion de courrier adaptée aux administrations, services et PME sénégalaises."],
   "/article/creer-site-web-professionnel-dakar": ["Créer un site web professionnel à Dakar : guide complet 2026", "Types de sites, coûts réels, technologies, délais et critères pour choisir le bon prestataire web au Sénégal."],
@@ -238,7 +238,7 @@ export const articleSeo = {
   "/article/agence-web-dakar-comment-choisir-2026": ["Choisir une agence web à Dakar en 2026 : la checklist complète", "Découvrez notre méthode pas à pas pour sélectionner le bon partenaire web à Dakar. Critères, budget, livrables : tous nos conseils pour 2026."],
   "/article/prix-creation-site-web-senegal-guide-complet": ["Création site web Sénégal : Guide complet | FallConTech", "Créez un site web performant au Sénégal : découvrez les coûts réels, les étapes clés et les conseils d'experts. Demandez votre devis gratuit."],
   "/article/seo-local-senegal-google-business-profile-plan-action": ["SEO local Sénégal : Google Business Profile + plan d’action", "Méthode pratique pour améliorer votre visibilité locale : GBP, contenus géolocalisés, maillage interne et suivi KPI."],
-  "/article/refonte-site-vitrine-seo-dakar": ["Refonte de site vitrine à Dakar : SEO local et conversions", "Checklist Core Web Vitals, balises locales et contenus qui génèrent des leads à Dakar et au Sénégal."],
+  "/article/refonte-site-vitrine-seo-dakar": ["Refonte de site web au Sénégal : SEO local et conversions", "Checklist Core Web Vitals, balises locales et contenus qui génèrent des leads à Dakar et au Sénégal."],
   "/article/ecommerce-senegal-wave-orange": ["E-commerce au Sénégal : Wave, Orange Money, Free Money et logistique", "Stack paiement mobile, logistique locale, fiches produits SEO et automatisations WhatsApp."],
   "/article/workflows-whatsapp-crm-senegal": ["Workflows WhatsApp + CRM au Sénégal : relances et ventes", "Connecter WhatsApp Business, CRM et emails pour relances, paniers abandonnés et support client."],
   "/article/maintenance-wordpress-securite-senegal": ["Maintenance WordPress au Sénégal : sécurité, vitesse et backups", "Mises à jour sécurisées, Core Web Vitals, sauvegardes vérifiées et surveillance malware."],

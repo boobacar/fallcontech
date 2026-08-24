@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 const ArticleReferencementGoogleSenegal90Jours = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
   const path = "/article/referencement-google-senegal-plan-90-jours";
-  const title = "Référencement Google au Sénégal : plan d’action SEO en 90 jours";
-  const description = "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages services, contenu, maillage interne, Search Console et optimisation CTR.";
+  const title = "Référencement Google Sénégal : plan SEO 90 jours";
+  const description = "Plan SEO sur 90 jours pour améliorer le référencement Google au Sénégal : audit, pages de services, contenus ciblés, liens entre vos pages et suivi des résultats.";
   const keywords = "référencement Google Sénégal, SEO Dakar, être visible sur Google Sénégal, référencement naturel Sénégal, agence SEO Dakar";
   const jsonLd = [
     {
