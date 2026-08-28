@@ -12,7 +12,7 @@ const ArticlePrixSiteWebSenegalGuide = () => {
   const description = "Tarifs de création de site web au Sénégal : site vitrine, e-commerce, maintenance et facteurs qui font varier le budget.";
   return (
     <>
-      <SEO path={path} title={`Prix site web Sénégal — ${title}`} description={description} type="article" />
+      <SEO path={path} title="Prix création site web Sénégal : guide complet | Fallcon Tech" description={description} type="article" />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4"><Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link><Breadcrumbs items={[{label:"Accueil",to:"/"},{label:"Ressources",to:"/resources"},{label:"Prix site web Sénégal"}]}/><motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="text-4xl md:text-5xl font-bold mt-4 gradient-text">{title}</motion.h1></div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
         <p>Le coût d’un site web au Sénégal dépend surtout du niveau de personnalisation, du SEO, du contenu et des objectifs business.</p>

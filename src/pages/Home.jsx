@@ -138,7 +138,7 @@ export default function Home() {
     <>
       <SEO
         path="/"
-        title="Transformation numérique Sénégal : développement web, applications mobiles & logiciels | Fallcon Tech"
+        title="Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech"
         description="Fallcon Tech conçoit des systèmes de gestion, GED, logiciels métier et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal."
         jsonLd={serviceJsonLd}
       />
@@ -269,6 +269,45 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-muted" id="prestations">
+        <div className="site-shell">
+          <div className="section-heading compact">
+            <p className="overline">Nos prestations</p>
+            <h2>Des réalisations concrètes, du site web au système métier.</h2>
+            <p>Chaque prestation est livrée avec une structure claire, un suivi des demandes et un accompagnement après mise en service.</p>
+          </div>
+          <div className="prestation-grid">
+            <Link className="prestation-card" to="/services/creation-site-web-dakar">
+              <h3>Création de site web</h3>
+              <p>Site vitrine ou site business, pensé pour vos clients et visible sur Google.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/developpeur-web-senegal">
+              <h3>Développement web</h3>
+              <p>Plateformes, portails et applications web sur mesure pour votre organisation.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/mobile-app-development-senegal">
+              <h3>Applications mobiles</h3>
+              <p>Applications Android et iOS pour vos équipes terrain et vos clients.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/software-development-senegal">
+              <h3>Logiciels métier</h3>
+              <p>CRM, stock, facturation, tableaux de bord : vos processus dans un outil fiable.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/web-development-senegal">
+              <h3>Web development (EN)</h3>
+              <p>Fast websites and business platforms for companies in Dakar and across Senegal.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/audit-seo-professionnel-senegal">
+              <h3>Visibilité sur Google</h3>
+              <p>Diagnostic de votre présence en ligne et plan d'actions pour gagner des contacts.</p>
+            </Link>
+          </div>
+          <div className="prestation-more">
+            <Link to="/services" className="text-link">Voir toutes les prestations <ArrowRight size={17} /></Link>
           </div>
         </div>
       </section>

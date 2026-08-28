@@ -4,7 +4,7 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Transformation numérique Sénégal : développement web, applications mobiles & logiciels | Fallcon Tech",
+    title: "Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech",
     description:
       "Fallcon Tech conçoit des sites web, applications métier, GED, logiciels de gestion et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal.",
     priority: "1.0",
@@ -236,7 +236,7 @@ export const articleSeo = {
   "/article/wordpress-vs-nextjs-seo": ["WordPress vs Next.js : quel choix pour SEO et performance ?", "Comparatif simple pour choisir la stack adaptée à vos objectifs business et SEO."],
   "/article/checklist-audit-seo-30-minutes": ["Audit SEO en 30 minutes : checklist terrain", "Les contrôles essentiels pour détecter vite les erreurs qui bloquent votre trafic organique."],
   "/article/agence-web-dakar-comment-choisir-2026": ["Choisir une agence web à Dakar en 2026 : la checklist complète", "Découvrez notre méthode pas à pas pour sélectionner le bon partenaire web à Dakar. Critères, budget, livrables : tous nos conseils pour 2026."],
-  "/article/prix-creation-site-web-senegal-guide-complet": ["Création site web Sénégal : Guide complet | FallConTech", "Créez un site web performant au Sénégal : découvrez les coûts réels, les étapes clés et les conseils d'experts. Demandez votre devis gratuit."],
+  "/article/prix-creation-site-web-senegal-guide-complet": ["Prix création site web Sénégal : guide complet", "Créez un site web performant au Sénégal : découvrez les coûts réels, les étapes clés et les conseils d'experts. Demandez votre devis gratuit."],
   "/article/seo-local-senegal-google-business-profile-plan-action": ["SEO local Sénégal : Google Business Profile + plan d’action", "Méthode pratique pour améliorer votre visibilité locale : GBP, contenus géolocalisés, maillage interne et suivi KPI."],
   "/article/refonte-site-vitrine-seo-dakar": ["Refonte de site web au Sénégal : SEO local et conversions", "Checklist Core Web Vitals, balises locales et contenus qui génèrent des leads à Dakar et au Sénégal."],
   "/article/ecommerce-senegal-wave-orange": ["E-commerce au Sénégal : Wave, Orange Money, Free Money et logistique", "Stack paiement mobile, logistique locale, fiches produits SEO et automatisations WhatsApp."],
@@ -258,7 +258,7 @@ export const articleSeo = {
   "/article/arnaques-wave-orange-money-senegal": ["Arnaques Wave & Orange Money au Sénégal : alerte sécurité", "Les méthodes d’arnaque mobile money au Sénégal et comment sécuriser vos comptes professionnels."],
   "/article/acheter-pc-portable-original-dakar": ["Où acheter son matériel informatique à Dakar ?", "Différencier un PC venant d’un ordinateur neuf original : guide d’achat informatique pour entreprises."],
   "/article/logiciel-gestion-stock-caisse-senegal": ["Logiciel de gestion & caisse pour commerces au Sénégal", "Gestion de stock, caisse, anti-vol et rapports automatiques : pourquoi quitter le cahier pour un logiciel POS."],
-  "/article/comment-choisir-developpeur-web-dakar-senegal": ["Choisir un développeur web à Dakar : guide et conseils | FallConTech", "Découvrez comment choisir le développeur web idéal à Dakar. Freelance ou agence ? Junior ou senior ? Nos critères pour éviter les erreurs et réussir votre projet."],
+  "/article/comment-choisir-developpeur-web-dakar-senegal": ["Choisir un développeur web à Dakar : guide et conseils", "Découvrez comment choisir le développeur web idéal à Dakar. Freelance ou agence ? Junior ou senior ? Nos critères pour éviter les erreurs et réussir votre projet."],
   "/article/freelance-ou-agence-web-senegal-que-choisir": ["Freelance ou agence web au Sénégal : que choisir ?", "Avantages et inconvénients d’un freelance vs une agence digitale à Dakar : prix, délais et qualité."],
   "/article/role-informaticien-pme-dakar": ["Le vrai rôle d’un informaticien pour votre PME", "Pourquoi votre PME a besoin d’un informaticien orienté sécurité, stratégie, cloud et continuité."],
   "/article/cout-creation-site-web-senegal-prix": ["Combien coûte un site web au Sénégal en 2025 ?", "Estimations de prix pour site vitrine, e-commerce et application web à Dakar et au Sénégal."],

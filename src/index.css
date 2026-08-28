@@ -197,6 +197,13 @@
 .sector-card p { margin: 0; color: #61737e; font-size: 13px; }
 .sector-card > svg:last-child { margin-top: 4px; color: var(--navy); }
 
+.prestation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.prestation-card { display: block; padding: 22px 24px; background: white; border: 1px solid var(--line); transition: border-color .2s, transform .2s; }
+.prestation-card:hover { transform: translateY(-2px); border-color: var(--navy); }
+.prestation-card h3 { margin: 0 0 6px; color: var(--navy); font-family: "IBM Plex Serif", serif; font-size: 18px; font-weight: 600; }
+.prestation-card p { margin: 0; color: #61737e; font-size: 13px; }
+.prestation-more { margin-top: 22px; }
+
 .dark-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 55px; }
 .dark-heading h2 { max-width: 720px; color: white; }
 .overline-light { color: #b9cedb; }
@@ -468,7 +475,7 @@ article .prose img { border: 1px solid var(--line); }
   .board-flow { grid-template-columns: 1fr; }
   .section { padding: 75px 0; }
   .section-heading { margin-bottom: 38px; }
-  .solution-grid, .sector-grid, .module-grid, .commitment-grid, .principle-grid, .engagement-grid, .resource-grid { grid-template-columns: 1fr; }
+  .solution-grid, .sector-grid, .module-grid, .commitment-grid, .principle-grid, .engagement-grid, .resource-grid, .prestation-grid { grid-template-columns: 1fr; }
   .project-case { grid-template-columns: 1fr; gap: 16px; }
   .project-meta { display: flex; justify-content: space-between; align-items: center; }
   .project-meta p { margin: 0; }
