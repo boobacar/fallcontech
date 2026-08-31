@@ -734,12 +734,12 @@ export default {
     },
     website_cost: {
       seo: {
-        title: "Website Cost Senegal 2025 (Quotes)",
+        title: "Website Creation Senegal: Cost & Prices 2026",
         description:
           "How much does a professional website cost in Dakar? Price estimates for showcase sites, e-commerce and web apps.",
-        headline: "Website Prices Senegal 2025",
+        headline: "Website Prices Senegal 2026",
       },
-      title: "How much does a website cost in Senegal in 2025?",
+      title: "How much does a website cost in Senegal in 2026?",
     },
     it_support: {
       seo: {

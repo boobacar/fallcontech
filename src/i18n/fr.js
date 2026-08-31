@@ -767,12 +767,12 @@ export default {
     },
     website_cost: {
       seo: {
-        title: "Prix création site web Sénégal 2025 (Devis)",
+        title: "Création de site web au Sénégal : prix & tarifs 2026",
         description:
           "Combien coûte un site web professionnel à Dakar ? Estimations de prix pour site vitrine, e-commerce et application web.",
-        headline: "Tarifs Site Web Sénégal 2025",
+        headline: "Tarifs Site Web Sénégal 2026",
       },
-      title: "Combien coûte un site web au Sénégal en 2025 ?",
+      title: "Combien coûte un site web au Sénégal en 2026 ?",
     },
     it_support: {
       seo: {

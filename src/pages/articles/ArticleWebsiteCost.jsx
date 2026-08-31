@@ -60,7 +60,7 @@ const ArticleWebsiteCost = () => {
             {isEn ? (
               <>
                 <p>
-                  How much does a website cost in Senegal in 2025? From 150,000
+                  How much does a website cost in Senegal in 2026? From 150,000
                   FCFA to 5,000,000 FCFA, here is what you get.
                 </p>
                 <h2>The Low Cost Trap</h2>
@@ -80,7 +80,7 @@ const ArticleWebsiteCost = () => {
                   comme demander "Combien coûte une voiture ?". Cela dépend si
                   vous voulez une occasion ou une voiture de course.
                 </p>
-                <h2>Les tranches de prix (Estimations 2025)</h2>
+                <h2>Les tranches de prix (Estimations 2026)</h2>
                 <ul>
                   <li>
                     <strong>Site Vitrine Simple (Freelance) :</strong> 200 000 -
