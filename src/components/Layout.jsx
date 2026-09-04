@@ -5,6 +5,7 @@ import logoUrl from "@/assets/logo.webp";
 
 const navLinks = [
   { path: "/services", label: "Solutions" },
+  { path: "/boutique", label: "Équipements" },
   { path: "/work", label: "Références" },
   { path: "/about", label: "Cabinet" },
   { path: "/resources", label: "Analyses" },
@@ -118,6 +119,7 @@ export default function Layout({ children }) {
               <li><a href="mailto:info@fallcontech.com">info@fallcontech.com</a></li>
               <li><a href="tel:+221774837576">+221 77 483 75 76</a></li>
               <li><Link to="/contact">Présenter un besoin</Link></li>
+              <li><Link to="/boutique">Boutique équipements</Link></li>
             </ul>
           </div>
         </div>

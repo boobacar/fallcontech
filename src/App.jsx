@@ -9,6 +9,7 @@ const About = lazy(() => import("@/pages/About"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const Boutique = lazy(() => import("@/pages/Boutique"));
 const InstitutionalPage = lazy(() => import("@/pages/InstitutionalPage"));
 const ServiceCreationSiteWebDakar = lazy(() => import("@/pages/ServiceCreationSiteWebDakar"));
 const ServiceAgenceSeoSenegal = lazy(() => import("@/pages/ServiceAgenceSeoSenegal"));
@@ -251,6 +252,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/boutique" element={<Boutique />} />
           <Route path="/solutions/gestion-courrier-ged" element={<InstitutionalPage />} />
           <Route path="/solutions/applications-metier" element={<InstitutionalPage />} />
           <Route path="/solutions/digitalisation-administrations" element={<InstitutionalPage />} />

@@ -180,6 +180,13 @@ export const pageSeo = {
     priority: "0.90",
     changefreq: "monthly",
   },
+  "/boutique": {
+    title: "Boutique équipements informatique, réseau & paiement à Dakar | Fallcon Tech",
+    description:
+      "Achetez vos équipements professionnels à Dakar : terminaux de paiement, modules mobile money, PC, onduleurs, switch, routeurs, serveurs et caisses POS. Livraison et installation au Sénégal.",
+    priority: "0.80",
+    changefreq: "weekly",
+  },
   "/case-study/clinic": {
     title: "Site Web de la Clinique Dentaire DABIA | Fallcon Tech",
     description:
