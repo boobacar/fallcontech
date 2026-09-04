@@ -181,9 +181,9 @@ export const pageSeo = {
     changefreq: "monthly",
   },
   "/boutique": {
-    title: "Boutique équipements informatique, réseau & paiement à Dakar | Fallcon Tech",
+    title: "Équipements réseaux Huawei : routeurs, switches, serveurs & pare-feu à Dakar | Fallcon Tech",
     description:
-      "Achetez vos équipements professionnels à Dakar : terminaux de paiement, modules mobile money, PC, onduleurs, switch, routeurs, serveurs et caisses POS. Livraison et installation au Sénégal.",
+      "Revente de matériel réseau Huawei à Dakar : routeurs NetEngine 8000 M8/M1A/M14, switch S5735, serveur 2288X V5 et pare-feu USG6625E. Configuré, livré et installé au Sénégal.",
     priority: "0.80",
     changefreq: "weekly",
   },

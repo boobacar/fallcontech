@@ -165,8 +165,8 @@ export default function Boutique() {
     <>
       <SEO
         path="/boutique"
-        title="Boutique équipements informatique, réseau & paiement à Dakar | Fallcon Tech"
-        description="Achetez vos équipements professionnels à Dakar : terminaux de paiement, modules mobile money, PC, onduleurs, switch, routeurs, serveurs et caisses POS. Livraison et installation au Sénégal."
+        title="Équipements réseaux Huawei : routeurs, switches, serveurs & pare-feu à Dakar | Fallcon Tech"
+        description="Revente de matériel réseau Huawei à Dakar : routeurs NetEngine 8000 M8/M1A/M14, switch S5735, serveur 2288X V5 et pare-feu USG6625E. Configuré, livré et installé au Sénégal."
         image={siteLogo}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />
@@ -174,11 +174,11 @@ export default function Boutique() {
       {/* Hero */}
       <section className="page-hero">
         <div className="site-shell shop-hero-inner">
-          <p className="overline">Boutique · Équipements & matériel</p>
-          <h1>Vos équipements professionnels, livrés et installés.</h1>
+          <p className="overline">Boutique · Équipements réseaux</p>
+          <h1>Matériel réseau Huawei, configuré et installé.</h1>
           <p>
-            Terminaux de paiement, modules mobile money, postes de travail, réseau, onduleurs et
-            caisses POS. Chaque commande est confirmée avec vous sur WhatsApp avant paiement.
+            Routeurs NetEngine 8000, switches S5735, serveurs 2288X et pare-feu USG. Chaque
+            commande est confirmée avec vous sur WhatsApp avant paiement.
           </p>
           <p className="shop-trustline">
             <span><ShieldCheck size={15} /> Matériel vérifié & garanti</span>

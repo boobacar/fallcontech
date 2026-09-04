@@ -545,8 +545,8 @@ article .prose img { border: 1px solid var(--line); }
 .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .product-card { display: flex; flex-direction: column; background: white; border: 1px solid var(--line); transition: transform .2s, border-color .2s, box-shadow .2s; }
 .product-card:hover { transform: translateY(-3px); border-color: #9aabb5; box-shadow: var(--shadow); }
-.product-media { position: relative; display: block; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #e7edef; border: 0; border-bottom: 1px solid var(--line); cursor: pointer; padding: 0; }
-.product-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; filter: saturate(.78) contrast(1.02); }
+.product-media { position: relative; display: block; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #eef0f1; border: 0; border-bottom: 1px solid var(--line); cursor: pointer; padding: 16px; }
+.product-media img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s; }
 .product-card:hover .product-media img { transform: scale(1.03); }
 .product-badge { position: absolute; top: 12px; left: 12px; padding: 4px 9px; background: var(--ochre); color: white; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
 .product-body { display: flex; flex-direction: column; flex: 1; padding: 20px; }
@@ -571,8 +571,8 @@ article .prose img { border: 1px solid var(--line); }
 .product-modal { position: relative; width: min(880px, 100%); max-height: 88dvh; overflow: auto; display: grid; grid-template-columns: 1fr 1fr; background: white; box-shadow: 22px 22px 0 rgba(0,0,0,.12); }
 .modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); background: white; color: var(--navy); cursor: pointer; }
 .modal-close:hover { background: var(--navy); color: white; }
-.modal-media { background: #e7edef; }
-.modal-media img { width: 100%; height: 100%; object-fit: cover; }
+.modal-media { background: #eef0f1; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.modal-media img { width: 100%; height: 100%; object-fit: contain; max-height: 64dvh; }
 .modal-body { padding: 34px; }
 .modal-body h2 { margin: 0 0 14px; color: var(--navy); font-family: "IBM Plex Serif", serif; font-size: 30px; font-weight: 600; line-height: 1.1; }
 .modal-short { margin: 0 0 22px; color: #47606f; font-size: 15px; }

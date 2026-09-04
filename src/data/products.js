@@ -1,290 +1,152 @@
 // =============================================================================
-// CATALOGUE ÉQUIPEMENTS — Fallcon Tech
+// CATALOGUE ÉQUIPEMENTS — Fallcon Tech (matériel réel en stock)
 // -----------------------------------------------------------------------------
-// Cette page est pilotée par ce fichier. Pour ajouter / modifier un matériel :
+// Page pilotée par ce fichier. Pour ajouter / modifier un matériel :
 //   1. Dupliquez un objet ci-dessous.
-//   2. Remplissez id, slug, name, category, price, short, specs, image, stock.
-//   3. Placez la vraie photo du matériel dans src/assets/products/ (webp de
-//      préférence) et importez-la en haut avec un chemin `@/assets/products/…`.
-// Le prix est INDICATIF : la commande est confirmée sur WhatsApp avant paiement.
+//   2. Renseignez id, slug, name, category, price, short, specs, image, stock.
+//   3. Placez la photo réelle du matériel dans src/assets/products/ et
+//      importez-la en haut avec un chemin `@/assets/products/…`.
+// Les prix sont INDICATIFS (revente) : la commande est confirmée sur WhatsApp
+// avant paiement, et le prix final dépend de la configuration / des licences.
 // =============================================================================
-import iotEsp32 from "@/assets/articles/iot-esp32.svg";
-import paymentGateways from "@/assets/articles/payment-gateways.svg";
-import posShop from "@/assets/articles/pos_system_shop_senegal.png";
-import pcStore from "@/assets/articles/pc_laptop_store_dakar.png";
-import hardware from "@/assets/articles/hardware.png";
-import ups from "@/assets/articles/electricity_stabilizer_dakar.png";
-import serverRoom from "@/assets/articles/it_professional_server_room.png";
-import security from "@/assets/articles/security.png";
-import itSupport from "@/assets/articles/it-support.png";
-import maintenance from "@/assets/articles/maintenance.png";
+import netengineM8 from "@/assets/products/netengine-8000-m8.jpg";
+import netengineM1A from "@/assets/products/netengine-8000-m1a.jpg";
+import netengineM14 from "@/assets/products/netengine-8000-m14.jpg";
+import switchS5735 from "@/assets/products/huawei-switch-s5735.jpg";
+import server2288x from "@/assets/products/huawei-server-2288x-v5.jpg";
+import usg6625e from "@/assets/products/usg6625e.png";
 
 export const CATEGORIES = [
-  "Paiement & IoT",
-  "Informatique",
-  "Réseau & Cybersécurité",
-  "Caisse & POS",
+  "Routeurs",
+  "Switches",
+  "Serveurs",
+  "Sécurité & Pare-feu",
 ];
 
 export const products = [
-  // ---------- Paiement & IoT ----------
+  // ---------- Routeurs ----------
   {
-    id: "module-integration-mobile-money",
-    slug: "module-integration-mobile-money",
-    name: "Module d'intégration mobile money",
-    category: "Paiement & IoT",
-    price: 85000,
-    priceNote: "hors installation",
-    image: iotEsp32,
+    id: "routeur-netengine-8000-m8",
+    slug: "routeur-netengine-8000-m8",
+    name: "Huawei NetEngine 8000 M8",
+    category: "Routeurs",
+    price: 2500000,
+    priceNote: "à partir de · selon cartes",
+    image: netengineM8,
     short:
-      "Ajoute Wave, Orange Money et Free Money sur vos machines à pièces, bornes et équipements à monnayeur.",
+      "Routeur modulaire de coeur/agrégation pour opérateurs et grands réseaux d'entreprise.",
     specs: [
-      "Compatible ESP32 / Arduino",
-      "Validation côté serveur anti-doublon",
-      "Tableau de bord ventes & erreurs",
-      "Mise à jour à distance (OTA)",
+      "Châssis 3U · 8 emplacements de cartes",
+      "Capacité 4,8 Tbit/s · 400 Gbit/s par slot",
+      "Cartes 40GE / 10GE incluses",
+      "Alimentation & ventilation redondées",
     ],
-    stock: "En stock",
-    badge: "Populaire",
-    unit: "module",
+    stock: "Sur commande",
+    badge: "Opérateur",
+    unit: "châssis",
   },
   {
-    id: "passerelle-paiement-iot",
-    slug: "passerelle-paiement-iot",
-    name: "Passerelle de paiement IoT (Wave / OM / Free)",
-    category: "Paiement & IoT",
-    price: 95000,
-    priceNote: "hors abonnement",
-    image: paymentGateways,
+    id: "routeur-netengine-8000-m1a",
+    slug: "routeur-netengine-8000-m1a",
+    name: "Huawei NetEngine 8000 M1A",
+    category: "Routeurs",
+    price: 900000,
+    priceNote: "à partir de · selon licence",
+    image: netengineM1A,
     short:
-      "Raccordez vos automates, distributeurs et kiosques aux passerelles mobile money avec suivi des transactions.",
+      "Routeur compact haute densité (1U) pour accès, backhaul et services opérateur.",
     specs: [
-      "Wave, Orange Money, Free Money",
-      "Référence de paiement unique",
-      "Coupure réseau gérée",
-      "API pour votre tableau de bord",
+      "1U · capacité 352 Gbit/s · 176 G port",
+      "Ports 10GE / GE optique & électrique",
+      "SRv6, EVPN, horodatage 1588v2",
+      "Double alimentation DC",
     ],
     stock: "Sur commande",
     unit: "unité",
   },
   {
-    id: "distributeur-eau-connecte",
-    slug: "distributeur-eau-connecte",
-    name: "Distributeur d'eau connecté",
-    category: "Paiement & IoT",
-    price: 450000,
-    priceNote: "selon capacité",
-    image: posShop,
+    id: "routeur-netengine-8000-m14",
+    slug: "routeur-netengine-8000-m14",
+    name: "Huawei NetEngine 8000 M14",
+    category: "Routeurs",
+    price: 5000000,
+    priceNote: "à partir de · selon cartes & licences",
+    image: netengineM14,
     short:
-      "Distributeur ou fontaine automatique avec paiement mobile money, supervision des volumes et des cycles.",
+      "Routeur de coeur opérateur : très grande capacité, haute disponibilité.",
     specs: [
-      "Paiement pièces + mobile money",
-      "Comptage des volumes",
-      "Alertes maintenance",
-      "Télésupervision",
+      "Châssis 5U · 14 emplacements de cartes",
+      "Jusqu'à 7,2 Tbit/s · 400 Gbit/s par slot",
+      "Jusqu'à 20×100GE / 280 ports physiques",
+      "Alimentation 1+1 · ventilateurs 3+1",
     ],
     stock: "Sur commande",
-    badge: "Sur devis",
-    unit: "machine",
+    badge: "Très haute valeur",
+    unit: "châssis",
   },
 
-  // ---------- Informatique ----------
+  // ---------- Switches ----------
   {
-    id: "pc-portable-professionnel",
-    slug: "pc-portable-professionnel",
-    name: "PC portable professionnel",
-    category: "Informatique",
-    price: 385000,
-    priceNote: "selon config",
-    image: pcStore,
+    id: "switch-s5735-s24t4x",
+    slug: "switch-s5735-s24t4x",
+    name: "Huawei S5735-S24T4X",
+    category: "Switches",
+    price: 360000,
+    priceNote: "à partir de",
+    image: switchS5735,
     short:
-      "Poste portable conçu pour l'usage professionnel : processeur récent, mémoire et stockage SSD, garantie.",
+      "Switch d'accès couche 3 (24× GE + 4× 10GE SFP+) pour réseau d'entreprise.",
     specs: [
-      "CPU moderne (i5 / Ryzen 5)",
-      "RAM 16 Go, SSD 512 Go",
-      "Écran 14–15,6\" Full HD",
-      "Garantie constructeur",
+      "24× GE (10/100/1000BASE-T)",
+      "4× 10GE SFP+ uplink",
+      "Fonctions de routage couche 3",
+      "2× blocs d'alimentation AC 60 W",
     ],
     stock: "En stock",
-    badge: "Populaire",
-    unit: "unité",
-  },
-  {
-    id: "pc-bureau-professionnel",
-    slug: "pc-bureau-professionnel",
-    name: "PC bureau professionnel",
-    category: "Informatique",
-    price: 320000,
-    priceNote: "selon config",
-    image: hardware,
-    short:
-      "Unité centrale pour poste fixe : bureautique et applications métier, évolutive et facile à maintenir.",
-    specs: [
-      "CPU performant",
-      "RAM 16 Go, SSD 512 Go",
-      "Windows / Linux préinstallé",
-      "Extension facile",
-    ],
-    stock: "En stock",
-    unit: "unité",
-  },
-  {
-    id: "onduleur-1500va",
-    slug: "onduleur-1500va",
-    name: "Onduleur 1500 VA",
-    category: "Informatique",
-    price: 95000,
-    priceNote: "hors câblage",
-    image: ups,
-    short:
-      "Protège vos postes et serveurs contre coupures, variations et microcoupures du réseau électrique.",
-    specs: [
-      "1500 VA / 900 W",
-      "Autonomie en cas de coupure",
-      "Protection contre les surtensions",
-      "Sorties secourues",
-    ],
-    stock: "En stock",
-    unit: "unité",
-  },
-  {
-    id: "stabilisateur-tension",
-    slug: "stabilisateur-tension",
-    name: "Stabilisateur / régulateur de tension",
-    category: "Informatique",
-    price: 45000,
-    priceNote: "hors câblage",
-    image: ups,
-    short:
-      "Régule la tension du réseau pour prolonger la durée de vie de votre matériel en environnement instable.",
-    specs: [
-      "Régulation 220 V",
-      "Protection surtension",
-      "Plusieurs puissances",
-      "Idéal dépanneurs",
-    ],
-    stock: "En stock",
+    badge: "Disponible",
     unit: "unité",
   },
 
-  // ---------- Réseau & Cybersécurité ----------
+  // ---------- Serveurs ----------
   {
-    id: "serveur-tour",
-    slug: "serveur-tour",
-    name: "Serveur de bureau (tour)",
-    category: "Réseau & Cybersécurité",
-    price: 850000,
-    priceNote: "selon RAID & CPU",
-    image: serverRoom,
+    id: "serveur-huawei-2288x-v5",
+    slug: "serveur-huawei-2288x-v5",
+    name: "Huawei 2288X V5 (FusionServer)",
+    category: "Serveurs",
+    price: 720000,
+    priceNote: "à partir de · selon RAM & disques",
+    image: server2288x,
     short:
-      "Serveur pour applications métier, fichier et sauvegarde : redondance, capacité et continuité de service.",
+      "Serveur rack 2U pour applications métier, virtualisation et stockage.",
     specs: [
-      "Multi-cœurs, ECC",
-      "RAID 1 / 5 / 10",
-      "Baies disques chaudes",
-      "Licences non activées",
+      "Serveur rack 2U · 24 baies 2,5\"",
+      "Support double processeur",
+      "Mémoire et stockage évolutifs",
+      "Gestion BMC intégrée",
     ],
     stock: "Sur commande",
-    badge: "Sur devis",
-    unit: "unité",
-  },
-  {
-    id: "switch-managed-24p",
-    slug: "switch-managed-24p",
-    name: "Switch administrable 24 ports",
-    category: "Réseau & Cybersécurité",
-    price: 245000,
-    priceNote: "selon modèle",
-    image: serverRoom,
-    short:
-      "Switch réseau administrable pour structurer et sécuriser vos réseaux d'entreprise et VLAN.",
-    specs: [
-      "24 ports Gigabit",
-      "Gestion VLAN",
-      "PoE optionnel",
-      "VLAN & QoS",
-    ],
-    stock: "En stock",
-    unit: "unité",
-  },
-  {
-    id: "routeur-pare-feu",
-    slug: "routeur-pare-feu",
-    name: "Routeur / pare-feu d'entreprise",
-    category: "Réseau & Cybersécurité",
-    price: 385000,
-    priceNote: "selon modèle",
-    image: security,
-    short:
-      "Contrôle d'accès Internet, VPN, filtrage et segmentation pour protéger votre réseau d'entreprise.",
-    specs: [
-      "Pare-feu NGFW",
-      "VPN site à site",
-      "Filtrage applicatif",
-      "Gestion centralisée",
-    ],
-    stock: "En stock",
-    badge: "Populaire",
-    unit: "unité",
-  },
-  {
-    id: "point-acces-wifi",
-    slug: "point-acces-wifi",
-    name: "Point d'accès Wi-Fi",
-    category: "Réseau & Cybersécurité",
-    price: 78000,
-    priceNote: "hors installation",
-    image: itSupport,
-    short:
-      "Point d'accès Wi-Fi professionnel pour couvrir bureaux, salles et espaces de réception.",
-    specs: [
-      "Wi-Fi 6 (802.11ax)",
-      "Alimentation PoE",
-      "Gestion de plusieurs SSID",
-      "Mode invité",
-    ],
-    stock: "En stock",
     unit: "unité",
   },
 
-  // ---------- Caisse & POS ----------
+  // ---------- Sécurité & Pare-feu ----------
   {
-    id: "logiciel-caisse-pos",
-    slug: "logiciel-caisse-pos",
-    name: "Caisse point de vente (POS) — licence",
-    category: "Caisse & POS",
-    price: 120000,
-    priceNote: "licence annuelle",
-    image: posShop,
+    id: "pare-feu-usg6625e",
+    slug: "pare-feu-usg6625e",
+    name: "Huawei USG6625E (NGFW)",
+    category: "Sécurité & Pare-feu",
+    price: 2700000,
+    priceNote: "à partir de · hors licences",
+    image: usg6625e,
     short:
-      "Logiciel de caisse et gestion de stock : tickets, paiements, rapports et anti-vol pour commerces.",
+      "Pare-feu nouvelle génération pour entreprises et data centers.",
     specs: [
-      "Tickets & encaissements",
-      "Gestion de stock",
-      "Rapports quotidiens",
-      "Rôles & permissions",
-    ],
-    stock: "En stock",
-    badge: "Populaire",
-    unit: "licence",
-  },
-  {
-    id: "terminal-paiement-electronique",
-    slug: "terminal-paiement-electronique",
-    name: "Terminal de paiement électronique (TPE)",
-    category: "Caisse & POS",
-    price: 125000,
-    priceNote: "selon modèle",
-    image: posShop,
-    short:
-      "Terminal de paiement pour encaisser par carte, Wave, Orange Money et espèces en boutique.",
-    specs: [
-      "Carte bancaire (CNPS / GIM)",
-      "Mobile money",
-      "Imprimante tickets",
-      "Batterie de secours",
+      "16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+",
+      "20 Gbit/s · 15 Gbit/s IPSec VPN",
+      "SSL VPN 100 utilisateurs",
+      "Mémoire 16 Go · alimentation AC",
     ],
     stock: "Sur commande",
+    badge: "NGFW",
     unit: "unité",
   },
 ];
@@ -298,8 +160,8 @@ export const formatFCFA = (value) =>
     : `${new Intl.NumberFormat("fr-FR").format(value)} F CFA`;
 
 export const CATEGORY_META = {
-  "Paiement & IoT": "Machines, bornes, kiosques et passerelles de paiement mobile money.",
-  "Informatique": "Postes de travail, serveurs d'utilisateurs et protection électrique.",
-  "Réseau & Cybersécurité": "Routage, switch, Wi-Fi, serveurs et contrôles d'accès.",
-  "Caisse & POS": "Points de vente, terminaux de paiement et logiciels de caisse.",
+  "Routeurs": "Routeurs de coeur et d'agrégation Huawei NetEngine 8000.",
+  "Switches": "Switches d'accès et de distribution pour réseaux d'entreprise.",
+  "Serveurs": "Serveurs rack pour applications métier, virtualisation et stockage.",
+  "Sécurité & Pare-feu": "Pare-feu nouvelle génération et passerelles de sécurité Huawei.",
 };
