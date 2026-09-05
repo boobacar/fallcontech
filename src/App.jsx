@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { CartProvider } from "@/context/CartContext";
 
 const Home = lazy(() => import("@/pages/Home"));
 const Services = lazy(() => import("@/pages/Services"));
@@ -10,6 +11,7 @@ const Pricing = lazy(() => import("@/pages/Pricing"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Boutique = lazy(() => import("@/pages/Boutique"));
+const ProductPage = lazy(() => import("@/pages/ProductPage"));
 const InstitutionalPage = lazy(() => import("@/pages/InstitutionalPage"));
 const ServiceCreationSiteWebDakar = lazy(() => import("@/pages/ServiceCreationSiteWebDakar"));
 const ServiceAgenceSeoSenegal = lazy(() => import("@/pages/ServiceAgenceSeoSenegal"));
@@ -236,7 +238,8 @@ const ArticleDigitalisationEntreprisePmeSenegal = lazy(() => import("@/pages/art
 
 function App() {
   return (
-    <Layout>
+    <CartProvider>
+      <Layout>
       <Suspense
         fallback={
           <div className="px-4 py-10 text-center text-sm text-muted-foreground">
@@ -253,6 +256,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/boutique" element={<Boutique />} />
+          <Route path="/boutique/:productSlug" element={<ProductPage />} />
           <Route path="/solutions/gestion-courrier-ged" element={<InstitutionalPage />} />
           <Route path="/solutions/applications-metier" element={<InstitutionalPage />} />
           <Route path="/solutions/digitalisation-administrations" element={<InstitutionalPage />} />
@@ -532,7 +536,8 @@ function App() {
           {/* FR only */}
         </Routes>
       </Suspense>
-    </Layout>
+      </Layout>
+    </CartProvider>
   );
 }
 

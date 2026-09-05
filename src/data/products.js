@@ -4,17 +4,13 @@
 // Page pilotée par ce fichier. Pour ajouter / modifier un matériel :
 //   1. Dupliquez un objet ci-dessous.
 //   2. Renseignez id, slug, name, category, price, short, specs, image, stock.
-//   3. Placez la photo réelle du matériel dans src/assets/products/ et
-//      importez-la en haut avec un chemin `@/assets/products/…`.
-// Les prix sont INDICATIFS (revente) : la commande est confirmée sur WhatsApp
-// avant paiement, et le prix final dépend de la configuration / des licences.
+//   3. Déposez la photo réelle du matériel dans public/products/ (webp/jpg/png)
+//      et pointez `image` vers "/products/<fichier>".
+// Ce fichier est importé par la page React ET par les outils sitemap/prerender
+// (node), donc il ne doit contenir AUCUN import d'asset Vite — uniquement des
+// chemins publics en chaînes.
 // =============================================================================
-import netengineM8 from "@/assets/products/netengine-8000-m8.jpg";
-import netengineM1A from "@/assets/products/netengine-8000-m1a.jpg";
-import netengineM14 from "@/assets/products/netengine-8000-m14.jpg";
-import switchS5735 from "@/assets/products/huawei-switch-s5735.jpg";
-import server2288x from "@/assets/products/huawei-server-2288x-v5.jpg";
-import usg6625e from "@/assets/products/usg6625e.png";
+import { SITE_URL } from "./seoData.js";
 
 export const CATEGORIES = [
   "Routeurs",
@@ -32,7 +28,7 @@ export const products = [
     category: "Routeurs",
     price: 2500000,
     priceNote: "à partir de · selon cartes",
-    image: netengineM8,
+    image: "/products/netengine-8000-m8.jpg",
     short:
       "Routeur modulaire de coeur/agrégation pour opérateurs et grands réseaux d'entreprise.",
     specs: [
@@ -52,7 +48,7 @@ export const products = [
     category: "Routeurs",
     price: 900000,
     priceNote: "à partir de · selon licence",
-    image: netengineM1A,
+    image: "/products/netengine-8000-m1a.jpg",
     short:
       "Routeur compact haute densité (1U) pour accès, backhaul et services opérateur.",
     specs: [
@@ -71,7 +67,7 @@ export const products = [
     category: "Routeurs",
     price: 5000000,
     priceNote: "à partir de · selon cartes & licences",
-    image: netengineM14,
+    image: "/products/netengine-8000-m14.jpg",
     short:
       "Routeur de coeur opérateur : très grande capacité, haute disponibilité.",
     specs: [
@@ -93,7 +89,7 @@ export const products = [
     category: "Switches",
     price: 360000,
     priceNote: "à partir de",
-    image: switchS5735,
+    image: "/products/huawei-switch-s5735.jpg",
     short:
       "Switch d'accès couche 3 (24× GE + 4× 10GE SFP+) pour réseau d'entreprise.",
     specs: [
@@ -115,7 +111,7 @@ export const products = [
     category: "Serveurs",
     price: 720000,
     priceNote: "à partir de · selon RAM & disques",
-    image: server2288x,
+    image: "/products/huawei-server-2288x-v5.jpg",
     short:
       "Serveur rack 2U pour applications métier, virtualisation et stockage.",
     specs: [
@@ -136,7 +132,7 @@ export const products = [
     category: "Sécurité & Pare-feu",
     price: 2700000,
     priceNote: "à partir de · hors licences",
-    image: usg6625e,
+    image: "/products/usg6625e.png",
     short:
       "Pare-feu nouvelle génération pour entreprises et data centers.",
     specs: [
@@ -165,3 +161,21 @@ export const CATEGORY_META = {
   "Serveurs": "Serveurs rack pour applications métier, virtualisation et stockage.",
   "Sécurité & Pare-feu": "Pare-feu nouvelle génération et passerelles de sécurité Huawei.",
 };
+
+// --- Pour le sitemap + prerender (outils node) ---
+export const getAllProductPages = () => products.map((p) => ({ path: `/boutique/${p.slug}` }));
+
+export function productSeoForPath(path) {
+  const product = products.find((p) => `/boutique/${p.slug}` === path);
+  if (!product) return null;
+  return {
+    path,
+    title: `${product.name} — ${product.category} à Dakar | Fallcon Tech`,
+    description:
+      `${product.name} : ${product.short} ` +
+      `Prix à partir de ${formatFCFA(product.price)}. Livré et installé au Sénégal.`,
+    canonical: `${SITE_URL}${path}`,
+    priority: "0.85",
+    changefreq: "weekly",
+  };
+}

@@ -3,6 +3,7 @@ import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { getSeoForPath } from "../src/data/seoData.js";
 import { getAllGeoPages, geoSeoForPath } from "../src/data/geoData.js";
+import { getAllProductPages, productSeoForPath } from "../src/data/products.js";
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -34,14 +35,22 @@ const defaultRoutes = ["/", "/services", "/work", "/about", "/pricing", "/resour
 const geoRoutes = getAllGeoPages().map((p) => p.path);
 console.log(`[sitemap] Found ${geoRoutes.length} geo-compétence pages in src/data/geoData.js`);
 
+// Pages produit dédiées (une par matériel)
+const productRoutes = getAllProductPages().map((p) => p.path);
+console.log(`[sitemap] Found ${productRoutes.length} product pages in src/data/products.js`);
+
 const routes = Array.from(
-  new Set([...(extracted.length ? extracted : []), ...defaultRoutes, ...geoRoutes])
+  new Set([...(extracted.length ? extracted : []), ...defaultRoutes, ...geoRoutes, ...productRoutes])
 )
   .filter((p) => !p.includes(":"))
   .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
 
 // 2. Priority & changefreq logic
 function getMeta(p) {
+  const productSeo = productSeoForPath(p);
+  if (productSeo) {
+    return { priority: productSeo.priority || "0.85", changefreq: productSeo.changefreq || "weekly" };
+  }
   const geoSeo = geoSeoForPath(p);
   if (geoSeo) {
     return { priority: geoSeo.priority || "0.70", changefreq: "monthly" };
