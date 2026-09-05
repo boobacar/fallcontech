@@ -169,6 +169,13 @@ export default function Boutique() {
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />
 
+      {/* Top label strip (small page title) */}
+      <div className="shop-topstrip">
+        <div className="site-shell">
+          <p className="overline">Boutique · Équipements réseaux</p>
+        </div>
+      </div>
+
       {/* Toolbar: categories + search + cart */}
       <div className="shop-toolbar">
         <div className="site-shell shop-toolbar-inner">
