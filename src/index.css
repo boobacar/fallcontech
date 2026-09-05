@@ -539,7 +539,7 @@ article .prose img { border: 1px solid var(--line); }
 .shop-cart-btn:hover { background: var(--navy); color: white; }
 .cart-count { min-width: 19px; height: 19px; display: inline-grid; place-items: center; padding: 0 5px; border-radius: 99px; background: var(--ochre); color: white; font-size: 11px; font-weight: 700; }
 
-.shop-catalog { padding: 60px 0 90px; }
+.shop-catalog { padding: 28px 0 90px; }
 .shop-cat-desc { margin: 0 0 20px; color: #536a77; font-size: 15px; }
 .shop-price-note { margin: 0 0 32px; padding: 13px 16px; border-left: 3px solid var(--ochre); background: #eef3f4; color: #405867; font-size: 12px; }
 .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }

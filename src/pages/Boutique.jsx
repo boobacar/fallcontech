@@ -7,10 +7,8 @@ import {
   Minus,
   Plus,
   Search,
-  ShieldCheck,
   ShoppingCart,
   Trash2,
-  Truck,
   X,
 } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -170,23 +168,6 @@ export default function Boutique() {
         image={siteLogo}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />
-
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="site-shell shop-hero-inner">
-          <p className="overline">Boutique · Équipements réseaux</p>
-          <h1>Matériel réseau Huawei, configuré et installé.</h1>
-          <p>
-            Routeurs NetEngine 8000, switches S5735, serveurs 2288X et pare-feu USG. Chaque
-            commande est confirmée avec vous sur WhatsApp avant paiement.
-          </p>
-          <p className="shop-trustline">
-            <span><ShieldCheck size={15} /> Matériel vérifié & garanti</span>
-            <span><Truck size={15} /> Livraison à Dakar et au Sénégal</span>
-            <span><MessageCircle size={15} /> Confirmation sur WhatsApp</span>
-          </p>
-        </div>
-      </section>
 
       {/* Toolbar: categories + search + cart */}
       <div className="shop-toolbar">
