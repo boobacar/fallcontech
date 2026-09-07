@@ -402,7 +402,7 @@ export const GEO_COMPETENCES = [
   },
   {
     slug: "gec-courrier",
-    name: "Gestion électronique du courrier (GEC)",
+    name: "GEC (gestion électronique du courrier)",
     type: "GEC · Courrier",
     desc: "gestion électronique du courrier : registre numérique, circuit de validation, alertes de délais et archivage",
     lead:
