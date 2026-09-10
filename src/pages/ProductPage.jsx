@@ -9,7 +9,7 @@ import { SITE_URL } from "@/data/seoData";
 import {
   getProductBySlug,
   products,
-  formatFCFA,
+  PRICE_LABEL,
   productSeoForPath,
 } from "@/data/products";
 
@@ -40,18 +40,7 @@ export default function ProductPage() {
     image: toAbsolute(product.image),
     category: product.category,
     brand: { "@type": "Brand", name: "Fallcon Tech" },
-    ...(product.price != null
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: product.price,
-            priceCurrency: "XOF",
-            availability: "https://schema.org/InStock",
-            url: `${SITE_URL}/boutique/${product.slug}`,
-            priceValidUntil: "2027-12-31",
-          },
-        }
-      : {}),
+    url: `${SITE_URL}/boutique/${product.slug}`,
   };
 
   const breadcrumbJsonLd = {
@@ -102,8 +91,8 @@ export default function ProductPage() {
 
             <div className="product-page-price-row">
               <p className="product-price product-page-price">
-                {formatFCFA(product.price)}
-                {product.priceNote && <small>{product.priceNote}</small>}
+                {PRICE_LABEL}
+                {product.configNote && <small>{product.configNote}</small>}
               </p>
               <span className={`product-stock stock-${product.stock.toLowerCase().replace(/\s/g, "")}`}>
                 {product.stock}
@@ -121,7 +110,7 @@ export default function ProductPage() {
 
             <div className="product-page-actions">
               <button className="button button-primary" onClick={() => addToCart(product, qty)}>
-                Ajouter au panier · {formatFCFA(product.price * qty)}
+                Ajouter à ma demande (× {qty})
               </button>
               <Link className="button button-secondary" to="/contact">
                 Demander un devis <ArrowRight size={17} />
@@ -129,7 +118,8 @@ export default function ProductPage() {
             </div>
 
             <p className="product-page-note">
-              Prix indicatif. La commande est confirmée sur WhatsApp avant paiement.
+              Prix communiqué sur devis : configuration, licences, garantie et installation
+              chiffrées par écrit avant toute commande.
             </p>
           </div>
         </div>
@@ -150,8 +140,8 @@ export default function ProductPage() {
                     <p className="product-short">{rel.short}</p>
                     <div className="product-foot">
                       <p className="product-price">
-                        {formatFCFA(rel.price)}
-                        {rel.priceNote && <small>{rel.priceNote}</small>}
+                        {PRICE_LABEL}
+                        {rel.configNote && <small>{rel.configNote}</small>}
                       </p>
                       <span className={`product-stock stock-${rel.stock.toLowerCase().replace(/\s/g, "")}`}>
                         {rel.stock}
@@ -159,7 +149,7 @@ export default function ProductPage() {
                     </div>
                     <div className="product-actions">
                       <button className="button button-primary" onClick={() => addToCart(rel, 1)}>
-                        Ajouter au panier
+                        Ajouter à ma demande
                       </button>
                       <Link className="button button-secondary" to={`/boutique/${rel.slug}`}>
                         Détails

@@ -9,22 +9,22 @@ import {
   X,
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { formatFCFA } from "@/data/products";
+import { PRICE_LABEL } from "@/data/products";
 
 const WHATSAPP_NUMBER = "221774837576";
 
-function buildOrderMessage(items, total, customer) {
+function buildOrderMessage(items, customer) {
   const lines = [
-    "Bonjour Fallcon Tech, voici ma commande depuis votre Boutique :",
+    "Bonjour Fallcon Tech, voici ma demande depuis votre Boutique :",
     "",
     ...items.map(
       (item, i) =>
-        `${i + 1}. ${item.product.name} × ${item.qty} — ${formatFCFA(item.product.price * item.qty)}${
-          item.product.priceNote ? ` (${item.product.priceNote})` : ""
+        `${i + 1}. ${item.product.name} × ${item.qty}${
+          item.product.configNote ? ` — ${item.product.configNote}` : ""
         }`,
     ),
     "",
-    `Total estimé : ${formatFCFA(total)}`,
+    "Merci de me communiquer le devis : prix, licences, délai et installation.",
     "",
   ];
   if (customer.name) lines.push(`Nom : ${customer.name}`);
@@ -35,7 +35,7 @@ function buildOrderMessage(items, total, customer) {
 }
 
 export default function CartDrawer({ open, onClose }) {
-  const { setQtyFor, clearCart, cartItems, cartTotal } = useCart();
+  const { setQtyFor, clearCart, cartItems } = useCart();
   const [checkoutStep, setCheckoutStep] = useState("cart");
   const [customer, setCustomer] = useState({ name: "", phone: "", city: "", note: "" });
 
@@ -47,9 +47,9 @@ export default function CartDrawer({ open, onClose }) {
 
   return (
     <div className="shop-overlay" onClick={onClose} role="presentation">
-      <aside className="cart-drawer" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label="Panier">
+      <aside className="cart-drawer" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label="Ma demande">
         <div className="cart-head">
-          <h2>Votre panier</h2>
+          <h2>Ma demande</h2>
           <button className="modal-close" onClick={onClose} aria-label="Fermer le panier">
             <X size={20} />
           </button>
@@ -59,8 +59,8 @@ export default function CartDrawer({ open, onClose }) {
           <>
             {cartItems.length === 0 ? (
               <div className="cart-empty">
-                <p>Votre panier est vide.</p>
-                <p className="cart-empty-sub">Parcourez le catalogue pour ajouter des équipements.</p>
+                <p>Votre demande est vide.</p>
+                <p className="cart-empty-sub">Parcourez le catalogue pour ajouter des équipements à votre demande de devis.</p>
               </div>
             ) : (
               <ul className="cart-list">
@@ -70,8 +70,8 @@ export default function CartDrawer({ open, onClose }) {
                     <div>
                       <p className="cart-item-name">{product.name}</p>
                       <p className="cart-item-price">
-                        {formatFCFA(product.price)}
-                        {product.priceNote && <small> {product.priceNote}</small>}
+                        {PRICE_LABEL}
+                        {product.configNote && <small> · {product.configNote}</small>}
                       </p>
                       <div className="qty-control cart-qty">
                         <button onClick={() => setQtyFor(product.slug, qty - 1)} aria-label="Diminuer"><Minus size={15} /></button>
@@ -89,8 +89,8 @@ export default function CartDrawer({ open, onClose }) {
 
             {cartItems.length > 0 && (
               <div className="cart-total">
-                <span>Total estimé</span>
-                <strong>{formatFCFA(cartTotal)}</strong>
+                <span>Montant</span>
+                <strong>Sur devis</strong>
               </div>
             )}
 
@@ -100,7 +100,7 @@ export default function CartDrawer({ open, onClose }) {
                 disabled={cartItems.length === 0}
                 onClick={() => setCheckoutStep("form")}
               >
-                Commander via WhatsApp <ArrowRight size={17} />
+                Demander un devis sur WhatsApp <ArrowRight size={17} />
               </button>
               <button className="text-link" onClick={onClose}>
                 Continuer mes achats
@@ -123,14 +123,14 @@ export default function CartDrawer({ open, onClose }) {
                 className="button button-primary form-submit"
                 onClick={() => {
                   if (!customer.name || !customer.phone || !customer.city) return;
-                  const msg = buildOrderMessage(cartItems, cartTotal, customer);
+                  const msg = buildOrderMessage(cartItems, customer);
                   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank", "noopener,noreferrer");
                   setCheckoutStep("done");
                 }}
               >
-                Envoyer ma commande sur WhatsApp <MessageCircle size={17} />
+                Envoyer ma demande sur WhatsApp <MessageCircle size={17} />
               </button>
-              <p className="form-note">Votre commande s'ouvre dans WhatsApp, prête à être envoyée.</p>
+              <p className="form-note">Votre demande s'ouvre dans WhatsApp, prête à être envoyée — nous revenons vers vous avec le devis.</p>
             </div>
             <button className="text-link cart-back" onClick={() => setCheckoutStep("cart")}>
               ← Retour au panier
@@ -141,8 +141,8 @@ export default function CartDrawer({ open, onClose }) {
         {checkoutStep === "done" && (
           <div className="cart-success">
             <CheckCircle2 size={40} className="cart-success-icon" />
-            <h3>Commande préparée !</h3>
-            <p>WhatsApp s'est ouvert avec le récapitulatif de votre panier. Envoyez-le pour finaliser.</p>
+            <h3>Demande prête !</h3>
+            <p>WhatsApp s'est ouvert avec le récapitulatif. Envoyez-le : nous vous transmettons le devis (prix, licences, délai, installation).</p>
             <button className="button button-secondary" onClick={() => { clearCart(); setCheckoutStep("cart"); onClose(); }}>
               Fermer
             </button>

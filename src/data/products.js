@@ -3,19 +3,23 @@
 // -----------------------------------------------------------------------------
 // Page pilotée par ce fichier. Pour ajouter / modifier un matériel :
 //   1. Dupliquez un objet ci-dessous.
-//   2. Renseignez id, slug, name, category, price, short, specs, image, stock.
+//   2. Renseignez id, slug, name, category, short, specs, image, stock,
+//      configNote (une ligne, SANS MONTANT).
 //   3. Déposez la photo réelle du matériel dans public/products/ (webp/jpg/png)
 //      et pointez `image` vers "/products/<fichier>".
 // Ce fichier est importé par la page React ET par les outils sitemap/prerender
 // (node), donc il ne doit contenir AUCUN import d'asset Vite — uniquement des
 // chemins publics en chaînes.
 //
-// Prix = valeurs indicatives « à partir de », calculées à partir du prix marché
-// international du matériel (neuf/refurb) + marge locale (transport,
-// dédouanement, tests, garantie atelier, installation). Détail des calculs :
-// docs/boutique-prix-configurations.md
+// ⚠️ AUCUN PRIX N'EST PUBLIÉ : le site affiche « Prix sur devis » et les tarifs
+// vivent uniquement dans la grille interne (dépôt public GitHub → tout montant
+// committé ici serait public). Grille commerciale : voir
+// ~/.hermes/business/fallcontech-grille-prix-interne.md (hors dépôt).
 // =============================================================================
 import { SITE_URL } from "./seoData.js";
+
+// Libellé affiché à la place du prix (garder le mot « prix » pour le SEO).
+export const PRICE_LABEL = "Prix sur devis";
 
 export const CATEGORIES = [
   "Routeurs",
@@ -32,8 +36,7 @@ export const products = [
     slug: "routeur-netengine-8000-m14",
     name: "Huawei NetEngine 8000 M14",
     category: "Routeurs",
-    price: 17000000,
-    priceNote: "à partir de · neuf, config complète — licences Huawei (RTU/SW) sur devis",
+    configNote: "Neuf · 2× IPU-1T2-A + 20 ports 10GbE · licences en sus",
     image: "/products/netengine-8000-m14.jpg",
     short:
       "Routeur de coeur opérateur 5U livré configuré et neuf : 2 cartes IPU-1T2-A, 2 PIC 20 ports 10GbE au total, optiques 10G LR incluses.",
@@ -45,7 +48,7 @@ export const products = [
       "2× alimentation AC redondante · ventilation intégrée",
       "Kit de mise à la terre + accessoires M14 livrés",
       "État : neuf / jamais utilisé",
-      "Licences Huawei (RTU 10GE, MACsec, logiciels SW/SRv6) requises pour l'activation complète des ports — sur devis",
+      "Licences Huawei (RTU 10GE, MACsec, logiciels SW/SRv6) requises pour l'activation complète des ports — chiffrées au devis",
     ],
     stock: "En stock",
     badge: "Neuf",
@@ -56,8 +59,7 @@ export const products = [
     slug: "routeur-netengine-8000-m8",
     name: "Huawei NetEngine 8000 M8",
     category: "Routeurs",
-    price: 2500000,
-    priceNote: "à partir de · selon cartes & licences",
+    configNote: "Selon cartes & licences",
     image: "/products/netengine-8000-m8.jpg",
     short:
       "Routeur modulaire de coeur/agrégation 3U pour opérateurs et grands réseaux d'entreprise.",
@@ -78,8 +80,7 @@ export const products = [
     slug: "routeur-netengine-8000-m1a",
     name: "Huawei NetEngine 8000 M1A",
     category: "Routeurs",
-    price: 900000,
-    priceNote: "à partir de · selon configuration & licence",
+    configNote: "Selon configuration & licences",
     image: "/products/netengine-8000-m1a.jpg",
     short:
       "Routeur compact haute densité (1U) pour accès, backhaul et services opérateur.",
@@ -100,8 +101,7 @@ export const products = [
     slug: "switch-s5735-s24t4x",
     name: "Huawei CloudEngine S5735-S24T4X",
     category: "Switches",
-    price: 520000,
-    priceNote: "à partir de · plusieurs unités disponibles",
+    configNote: "Plusieurs unités disponibles",
     image: "/products/huawei-switch-s5735.jpg",
     short:
       "Switch d'accès couche 3 (24× GE + 4× 10GE SFP+) pour réseau d'entreprise.",
@@ -124,8 +124,7 @@ export const products = [
     slug: "serveur-huawei-2288x-v5",
     name: "Huawei 2288X V5 (FusionServer Pro)",
     category: "Serveurs",
-    price: 1800000,
-    priceNote: "à partir de · config 2× Xeon Silver 4210 / 128 Go / 8× 600 Go SAS",
+    configNote: "2× Xeon Silver 4210 · 128 Go · 8× 600 Go SAS",
     image: "/products/huawei-server-2288x-v5.jpg",
     short:
       "Serveur rack 2U bi-processeur configuré, prêt pour virtualisation, base de données et applications métier.",
@@ -148,8 +147,7 @@ export const products = [
     slug: "pare-feu-usg6625e",
     name: "Huawei USG6625E-AC (HiSecEngine NGFW)",
     category: "Sécurité & Pare-feu",
-    price: 3200000,
-    priceNote: "à partir de · hors licences",
+    configNote: "Hors licences (chiffrées au devis)",
     image: "/products/usg6625e.png",
     short:
       "Pare-feu nouvelle génération pour entreprises et data centers.",
@@ -171,8 +169,7 @@ export const products = [
     slug: "carte-optique-tn13oau",
     name: "Huawei TN13OAU (OAU1)",
     category: "Optique & WDM/OTN",
-    price: 450000,
-    priceNote: "à partir de · l'unité",
+    configNote: "À l'unité",
     image: "/products/huawei-tn13oau.jpg",
     short:
       "Carte amplificateur optique C-band (EDFA) pour systèmes de transport WDM/OTN Huawei OSN.",
@@ -191,11 +188,6 @@ export const products = [
 
 export const getProductBySlug = (slug) =>
   products.find((product) => product.slug === slug);
-
-export const formatFCFA = (value) =>
-  value == null
-    ? null
-    : `${new Intl.NumberFormat("fr-FR").format(value)} F CFA`;
 
 export const CATEGORY_META = {
   "Routeurs": "Routeurs de coeur et d'agrégation Huawei NetEngine 8000.",
@@ -216,7 +208,7 @@ export function productSeoForPath(path) {
     title: `${product.name} — ${product.category} à Dakar | Fallcon Tech`,
     description:
       `${product.name} : ${product.short} ` +
-      `Prix à partir de ${formatFCFA(product.price)}. Livré et installé au Sénégal.`,
+      `Prix sur devis selon configuration, licences et installation — livré et installé au Sénégal.`,
     canonical: `${SITE_URL}${path}`,
     priority: "0.85",
     changefreq: "weekly",

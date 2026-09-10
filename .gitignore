@@ -30,3 +30,7 @@ dist-ssr
 
 # backup files
 *.bak
+
+# Grilles tarifaires : jamais dans ce dépôt public (voir ~/.hermes/business/)
+docs/*prix*interne*
+docs/*tarif*interne*

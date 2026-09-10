@@ -46,13 +46,9 @@ export function CartProvider({ children }) {
   );
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
-  const cartTotal = cartItems.reduce(
-    (sum, item) => sum + item.product.price * item.qty,
-    0,
-  );
 
   const value = useMemo(
-    () => ({ cart, addToCart, setQtyFor, clearCart, cartItems, cartCount, cartTotal }),
+    () => ({ cart, addToCart, setQtyFor, clearCart, cartItems, cartCount }),
     [cart],
   );
 

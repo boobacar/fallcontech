@@ -11,7 +11,7 @@ import {
   products,
   CATEGORIES,
   CATEGORY_META,
-  formatFCFA,
+  PRICE_LABEL,
 } from "@/data/products";
 
 const toAbsolute = (img) =>
@@ -48,18 +48,7 @@ export default function Boutique() {
         image: toAbsolute(product.image),
         category: product.category,
         brand: { "@type": "Brand", name: "Fallcon Tech" },
-        ...(product.price != null
-          ? {
-              offers: {
-                "@type": "Offer",
-                price: product.price,
-                priceCurrency: "XOF",
-                availability: "https://schema.org/InStock",
-                url: `${SITE_URL}/boutique/${product.slug}`,
-                priceValidUntil: "2027-12-31",
-              },
-            }
-          : {}),
+        url: `${SITE_URL}/boutique/${product.slug}`,
       },
     })),
   };
@@ -126,7 +115,8 @@ export default function Boutique() {
             <p className="shop-cat-desc">{CATEGORY_META[activeCategory]}</p>
           )}
           <p className="shop-price-note">
-            Prix indicatifs en F CFA. Chaque commande est confirmée sur WhatsApp avant paiement.
+            Prix communiqués sur devis (configuration, licences, quantité, installation).
+            Chaque demande est confirmée sur WhatsApp avant commande.
           </p>
 
           {filtered.length === 0 ? (
@@ -154,8 +144,8 @@ export default function Boutique() {
                     <p className="product-short">{product.short}</p>
                     <div className="product-foot">
                       <p className="product-price">
-                        {formatFCFA(product.price)}
-                        {product.priceNote && <small>{product.priceNote}</small>}
+                        {PRICE_LABEL}
+                        {product.configNote && <small>{product.configNote}</small>}
                       </p>
                       <span className={`product-stock stock-${product.stock.toLowerCase().replace(/\s/g, "")}`}>
                         {product.stock}
@@ -163,7 +153,7 @@ export default function Boutique() {
                     </div>
                     <div className="product-actions">
                       <button className="button button-primary" onClick={() => addToCart(product, 1)}>
-                        Ajouter au panier
+                        Ajouter à ma demande
                       </button>
                       <Link className="button button-secondary" to={`/boutique/${product.slug}`}>
                         Détails
