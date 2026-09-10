@@ -97,7 +97,7 @@ export default function ProductPage() {
         path={seo.path}
         title={seo.title}
         description={seo.description}
-        image={product.image}
+        image={product.ogImage || product.image}
         jsonLd={[productJsonLd, breadcrumbJsonLd, productFaqJsonLd]}
       />
 
@@ -114,7 +114,7 @@ export default function ProductPage() {
       <section className="product-page">
         <div className="site-shell product-page-grid">
           <div className="product-page-media">
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={`${product.name} — ${product.category} Huawei`} width={product.imgW} height={product.imgH} decoding="async" />
           </div>
           <div className="product-page-body">
             <p className="product-cat">{product.category}</p>
@@ -219,7 +219,7 @@ export default function ProductPage() {
                 <article className="product-card" key={rel.slug}>
                   <Link to={`/boutique/${rel.slug}`} className="product-media" aria-label={`Voir la fiche ${rel.name}`}>
                     {rel.badge && <span className="product-badge">{rel.badge}</span>}
-                    <img src={rel.image} alt={rel.name} loading="lazy" />
+                    <img src={rel.image} alt={`${rel.name} — ${rel.category} Huawei`} width={rel.imgW} height={rel.imgH} loading="lazy" decoding="async" />
                   </Link>
                   <div className="product-body">
                     <p className="product-cat">{rel.category}</p>

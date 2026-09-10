@@ -302,6 +302,9 @@ export default function GeoLandingPage() {
                 <Link to={page.relatedArticle.to} className="text-blue-600 hover:underline">
                   {page.relatedArticle.label}
                 </Link>
+                <Link to={`/boutique/pays/${country.slug}`} className="text-blue-600 hover:underline">
+                  Matériel réseau Huawei — achat et livraison : {country.prep} {country.name}
+                </Link>
                 {!isPays && (
                   <Link to="/work" className="text-blue-600 hover:underline">
                     Nos réalisations

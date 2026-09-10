@@ -155,7 +155,7 @@ export default function BoutiqueSeoPage() {
         path={page.path}
         title={page.title}
         description={page.description}
-        image={page.product?.image || "/logo.png"}
+        image={page.product?.ogImage || page.product?.image || "/logo.png"}
         imageAlt={page.h1}
         jsonLd={jsonLd}
       />
@@ -213,7 +213,7 @@ export default function BoutiqueSeoPage() {
                       aria-label={`Voir ${product.name} ${page.country ? `${page.country.prep} ${page.country.name}` : ""}`}
                     >
                       {product.badge && <span className="product-badge">{product.badge}</span>}
-                      <img src={product.image} alt={`${product.name} — ${product.category}`} loading="lazy" />
+                      <img src={product.image} alt={`${product.name} — ${product.category} Huawei`} width={product.imgW} height={product.imgH} loading="lazy" decoding="async" />
                     </Link>
                     <div className="product-body">
                       <p className="product-cat">{product.category}</p>

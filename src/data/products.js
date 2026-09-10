@@ -39,7 +39,10 @@ export const products = [
     name: "Huawei NetEngine 8000 M14",
     category: "Routeurs",
     configNote: "Neuf · 2× IPU-1T2-A · 20× 10GbE",
-    image: "/products/netengine-8000-m14.jpg",
+    image: "/products/netengine-8000-m14.webp",
+    ogImage: "/products/netengine-8000-m14.jpg",
+    imgW: 1600,
+    imgH: 1067,
     short:
       "Routeur de coeur opérateur 5U livré configuré et neuf : 2 cartes IPU-1T2-A, 2 PIC 20 ports 10GbE au total, optiques 10G LR incluses.",
     specs: [
@@ -64,7 +67,10 @@ export const products = [
     name: "Huawei NetEngine 8000 M8",
     category: "Routeurs",
     configNote: "Selon cartes & licences",
-    image: "/products/netengine-8000-m8.jpg",
+    image: "/products/netengine-8000-m8.webp",
+    ogImage: "/products/netengine-8000-m8.jpg",
+    imgW: 2560,
+    imgH: 823,
     short:
       "Routeur modulaire de coeur/agrégation 3U pour opérateurs et grands réseaux d'entreprise.",
     specs: [
@@ -87,7 +93,10 @@ export const products = [
     name: "Huawei NetEngine 8000 M1A",
     category: "Routeurs",
     configNote: "Selon configuration & licences",
-    image: "/products/netengine-8000-m1a.jpg",
+    image: "/products/netengine-8000-m1a.webp",
+    ogImage: "/products/netengine-8000-m1a.jpg",
+    imgW: 1973,
+    imgH: 361,
     short:
       "Routeur compact haute densité (1U) pour accès, backhaul et services opérateur.",
     specs: [
@@ -110,7 +119,10 @@ export const products = [
     name: "Huawei CloudEngine S5735-S24T4X",
     category: "Switches",
     configNote: "Plusieurs unités disponibles",
-    image: "/products/huawei-switch-s5735.jpg",
+    image: "/products/huawei-switch-s5735.webp",
+    ogImage: "/products/huawei-switch-s5735.jpg",
+    imgW: 1178,
+    imgH: 901,
     short:
       "Switch d'accès couche 3 (24× GE + 4× 10GE SFP+) pour réseau d'entreprise.",
     specs: [
@@ -135,7 +147,10 @@ export const products = [
     name: "Huawei 2288X V5 (FusionServer Pro)",
     category: "Serveurs",
     configNote: "2× Xeon Silver 4210 · 128 Go · 8× 600 Go",
-    image: "/products/huawei-server-2288x-v5.jpg",
+    image: "/products/huawei-server-2288x-v5.webp",
+    ogImage: "/products/huawei-server-2288x-v5.jpg",
+    imgW: 1234,
+    imgH: 958,
     short:
       "Serveur rack 2U bi-processeur configuré, prêt pour virtualisation, base de données et applications métier.",
     specs: [
@@ -160,7 +175,10 @@ export const products = [
     name: "Huawei USG6625E-AC (HiSecEngine NGFW)",
     category: "Sécurité & Pare-feu",
     configNote: "Hors licences",
-    image: "/products/usg6625e.png",
+    image: "/products/usg6625e.webp",
+    ogImage: "/products/usg6625e.png",
+    imgW: 1440,
+    imgH: 1440,
     short:
       "Pare-feu nouvelle génération pour entreprises et data centers.",
     specs: [
@@ -184,7 +202,10 @@ export const products = [
     name: "Huawei TN13OAU (OAU1)",
     category: "Optique & WDM/OTN",
     configNote: "À l'unité",
-    image: "/products/huawei-tn13oau.jpg",
+    image: "/products/huawei-tn13oau.webp",
+    ogImage: "/products/huawei-tn13oau.jpg",
+    imgW: 721,
+    imgH: 397,
     short:
       "Carte amplificateur optique C-band (EDFA) pour systèmes de transport WDM/OTN Huawei OSN.",
     specs: [

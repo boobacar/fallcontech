@@ -137,7 +137,7 @@ export default function Boutique() {
                     aria-label={`Voir la fiche ${product.name}`}
                   >
                     {product.badge && <span className="product-badge">{product.badge}</span>}
-                    <img src={product.image} alt={product.name} loading="lazy" />
+                    <img src={product.image} alt={`${product.name} — ${product.category} Huawei`} width={product.imgW} height={product.imgH} loading="lazy" decoding="async" />
                   </Link>
                   <div className="product-body">
                     <p className="product-cat">{product.category}</p>

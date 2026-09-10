@@ -1,5 +1,16 @@
 # Fallcon Tech
-> Fallcon Tech est un cabinet d'ingénierie numérique basé à Dakar (Sénégal). Nous concevons des logiciels métier, des solutions de gestion électronique du courrier (GED), des plateformes documentaires, des systèmes de santé et de logistique, ainsi que des infrastructures sécurisées pour administrations, cliniques, ONG et entreprises.
+> Fallcon Tech est un cabinet d'ingénierie numérique et fournisseur de matériel réseau professionnel, basé à Dakar (Sénégal). Nous concevons des logiciels métier, des solutions de gestion électronique du courrier (GED), des plateformes documentaires, des systèmes de santé et de logistique, ainsi que des infrastructures sécurisées pour administrations, cliniques, ONG et entreprises. Nous fournissons également des routeurs, switches, pare-feu, serveurs et cartes optiques Huawei d'entreprise, avec devis, configuration et expédition en Afrique de l'Ouest et centrale.
+
+## Boutique — matériel réseau Huawei (achat & devis en Afrique)
+- [Boutique équipements réseaux](https://fallcontech.com/boutique) : catalogue de matériel réseau Huawei disponible, devis sous 24 h
+- [Routeurs Huawei NetEngine 8000](https://fallcontech.com/boutique/categorie/routeurs) : routeurs M14, M8, M1A pour opérateurs, FAI et grands réseaux
+- [Switches Huawei CloudEngine](https://fallcontech.com/boutique/categorie/switches) : switches d'accès et d'agrégation couche 3
+- [Serveurs Huawei FusionServer](https://fallcontech.com/boutique/categorie/serveurs) : serveurs rack 2U pour virtualisation et bases de données
+- [Pare-feu Huawei HiSecEngine](https://fallcontech.com/boutique/categorie/pare-feu) : pare-feu NGFW, VPN IPsec et SSL VPN
+- [Optique & WDM/OTN](https://fallcontech.com/boutique/categorie/optique-wdm) : cartes et modules optiques pour réseaux de transport OSN
+- [Huawei NetEngine 8000 M14](https://fallcontech.com/boutique/routeur-netengine-8000-m14) · [NetEngine 8000 M8](https://fallcontech.com/boutique/routeur-netengine-8000-m8) · [NetEngine 8000 M1A](https://fallcontech.com/boutique/routeur-netengine-8000-m1a)
+- [Switch CloudEngine S5735-S24T4X](https://fallcontech.com/boutique/switch-s5735-s24t4x) · [Serveur 2288X V5](https://fallcontech.com/boutique/serveur-huawei-2288x-v5) · [Pare-feu USG6625E-AC](https://fallcontech.com/boutique/pare-feu-usg6625e) · [Carte optique TN13OAU](https://fallcontech.com/boutique/carte-optique-tn13oau)
+- Livraison : Sénégal, Côte d'Ivoire, Mali, Burkina Faso, Guinée, Bénin, Togo, Niger, Mauritanie, Gambie, Guinée-Bissau, Cap-Vert, Cameroun, Gabon, Tchad, RDC (voir https://fallcontech.com/boutique/pays/senegal)
 
 ## Services & solutions
 - [Solutions](https://fallcontech.com/services) : vue d'ensemble des solutions de transformation numérique
