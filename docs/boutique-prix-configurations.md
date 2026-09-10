@@ -30,7 +30,7 @@ installation/mise en service et support de proximité. Les prix affichés sur le
 
 | Produit | Configuration | Prix (F CFA) | Évolution |
 |---|---|---|---|
-| NetEngine 8000 M14 | 5U, 2× IPU-1T2-A, 2× CR5D00LAXF91 (20 ports 10GbE), 3× SFP+ 10G LR, AC redondante | 5 000 000 | inchangé (confirmé par la config) |
+| NetEngine 8000 M14 | 5U, **neuf/jamais utilisé**, 2× IPU-1T2-A, 2× PIC CR5D00LAXF91 (20 ports 10GbE SFP+, MACsec), 3× SFP+ 10G LR (1310 nm, monomode, 10 km, LC), 2× AC redondante, ventilation, kit mise à la terre, accessoires | 8 900 000 | **+3 900 000** (matériel neuf : châssis+IPU ≈ 5 000 $, 2× PIC 2 403-2 500 $ l'unité, optiques ; licences non incluses) |
 | NetEngine 8000 M8 | 3U, 2× IPU-1T2, cartes 10GbE, AC redondante | 2 500 000 | inchangé |
 | NetEngine 8000 M1A | 1U, jusqu'à 352 Gbit/s selon configuration | 900 000 | inchangé |
 | CloudEngine S5735-S24T4X | 24× GE + 4× 10GE SFP+, couche 3, 2 alimentations | 520 000 | **+160 000** (aligné sur 871 $ neuf / 400-600 $ refurb) |
