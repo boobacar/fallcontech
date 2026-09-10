@@ -13,7 +13,11 @@ import {
   CATEGORY_META,
   PRICE_LABEL,
 } from "@/data/products";
-import { BOUTIQUE_FAMILIES, BOUTIQUE_COUNTRIES } from "@/data/boutiqueGeoData";
+import {
+  BOUTIQUE_FAMILIES,
+  BOUTIQUE_COUNTRIES,
+  BOUTIQUE_EN_COUNTRIES,
+} from "@/data/boutiqueGeoData";
 
 const toAbsolute = (img) =>
   img && img.startsWith("http") ? img : `${SITE_URL}${img.startsWith("/") ? img : `/${img}`}`;
@@ -181,6 +185,17 @@ export default function Boutique() {
               {BOUTIQUE_COUNTRIES.map((country) => (
                 <Link key={country.slug} to={`/boutique/pays/${country.slug}`}>
                   <span aria-hidden="true">{country.flag}</span> Équipements réseau {country.prep} {country.name}
+                </Link>
+              ))}
+            </div>
+            <h2 className="shop-seo-h2 shop-seo-h2-spaced">English · Supply across English-speaking Africa</h2>
+            <div className="shop-linkgrid">
+              <Link to="/en/boutique">
+                <span aria-hidden="true">🌍</span> Huawei network equipment for Africa (English)
+              </Link>
+              {BOUTIQUE_EN_COUNTRIES.map((country) => (
+                <Link key={country.slug} to={`/en/boutique/countries/${country.slug}`}>
+                  <span aria-hidden="true">{country.flag}</span> Network equipment in {country.name}
                 </Link>
               ))}
             </div>

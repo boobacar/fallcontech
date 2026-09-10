@@ -16,6 +16,8 @@
 import { GEO_COUNTRIES } from "./geoData.js";
 import { products } from "./products.js";
 import { SITE_URL } from "./seoData.js";
+import { cut, composeDesc, composeTitle } from "./seoTextUtils.js";
+import { getAllBoutiqueEnPages } from "./boutiqueEnData.js";
 
 // Noms courts pour les titles/descriptions (SERP-safe).
 const NAME_SHORT = {
@@ -28,39 +30,6 @@ const VOWEL_START = /^[aeiouyàâäéèêëîïôöûüh]/i;
 const deVille = (ville) => (VOWEL_START.test(ville) ? `d'${ville}` : `de ${ville}`);
 
 const shortName = (country) => NAME_SHORT[country.slug] || country.name;
-
-// Fenêtres de longueur SERP
-const cut = (value, max) =>
-  value.length <= max ? value : `${value.slice(0, max - 1).replace(/[\s,;:.]+\S*$/, "")}…`;
-
-// Coupe au dernier mot complet, sans ellipse (pour garder une phrase lisible)
-const shorten = (value, max) => {
-  if (value.length <= max) return value;
-  const slice = value.slice(0, max);
-  const cutAt = slice.lastIndexOf(" ");
-  const trimmed = (cutAt > 40 ? slice.slice(0, cutAt) : slice)
-    .replace(/[\s,;:.–-]+$/, "")
-    .replace(/\s+(et|de|du|des|la|le|les|pour|avec|vers|à)$/i, "");
-  return trimmed;
-};
-
-const ensureSentence = (value) =>
-  /[.!?]$/.test(value) ? value : `${value.replace(/[\s,;:–-]+$/, "")}.`;
-
-// Le CTA final ne doit JAMAIS être coupé par Google : on raccourcit le cœur, pas la fin.
-const composeDesc = (core, cta, max = 163) => {
-  const full = `${core} ${cta}`.replace(/\s+/g, " ").trim();
-  if (full.length <= max) return full;
-  return `${ensureSentence(shorten(core, max - cta.length - 1))} ${cta}`;
-};
-
-// Title : jamais de « | Fallcon Tech » coupé en deux
-const composeTitle = (base, max = 88) => {
-  const full = `${base} | Fallcon Tech`;
-  if (full.length <= max) return full;
-  if (base.length <= max) return base;
-  return shorten(base, max);
-};
 
 // ---------------------------------------------------------------------------
 // Familles (catégories) de la boutique
@@ -499,7 +468,9 @@ export function getAllBoutiquePages() {
   const productCountryPages = GEO_COUNTRIES.flatMap((country) =>
     products.map((product) => buildProductCountryPage(country, product)),
   );
-  cache = [...familyPages, ...countryPages, ...productCountryPages].map(applyOverrides);
+  cache = [...familyPages, ...countryPages, ...productCountryPages, ...getAllBoutiqueEnPages()].map(
+    applyOverrides,
+  );
   return cache;
 }
 
@@ -523,7 +494,7 @@ export function boutiqueSeoForPath(path) {
       : "/og-default.jpg",
     robots: "index, follow",
     type: "website",
-    lang: "fr-SN",
+    lang: page.lang === "en" ? "en" : "fr-SN",
     priority,
     changefreq: "monthly",
   };
@@ -531,3 +502,4 @@ export function boutiqueSeoForPath(path) {
 
 export const BOUTIQUE_FAMILY_COUNT = BOUTIQUE_FAMILIES.length;
 export const BOUTIQUE_COUNTRIES = GEO_COUNTRIES;
+export { BOUTIQUE_EN_FAMILIES, BOUTIQUE_EN_COUNTRIES } from "./boutiqueEnData.js";

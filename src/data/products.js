@@ -20,6 +20,7 @@ import { SITE_URL } from "./seoData.js";
 
 // Libellé affiché à la place du prix (garder le mot « prix » pour le SEO).
 export const PRICE_LABEL = "Prix sur devis";
+export const PRICE_LABEL_EN = "Price on request";
 
 export const CATEGORIES = [
   "Routeurs",
@@ -33,12 +34,27 @@ export const products = [
   // ---------- Routeurs ----------
   {
     id: "routeur-netengine-8000-m14",
+    seoPitchEn:
+      "5U operator core router, up to 7.2 Tbit/s, shipped new and configured.",
     seoPitch:
       "Routeur de cœur opérateur 5U, jusqu'à 7,2 Tbit/s, livré configuré et neuf.",
     slug: "routeur-netengine-8000-m14",
     name: "Huawei NetEngine 8000 M14",
     category: "Routeurs",
     configNote: "Neuf · 2× IPU-1T2-A · 20× 10GbE",
+    shortEn:
+      "Operator-grade 5U core router shipped fully configured and new: 2 IPU-1T2-A cards, 20 × 10GbE ports and 10G LR optics included.",
+    specsEn: [
+      "5U chassis · 14 slots · up to 7.2 Tbit/s / 1117 Mpps depending on configuration",
+      "2 × IPU-1T2-A cards (1:1 redundancy · 2.4 Tbit/s system switching)",
+      "2 × CR5D00LAXF91 PICs: 10 × 10GE/GE SFP+ each → 20 × 10GbE SFP+ ports (MACsec)",
+      "3 × SFP+ 10G LR optics included (1310 nm, single-mode, 10 km, LC connector)",
+      "2 × redundant AC power supplies · integrated cooling",
+      "Grounding kit and M14 accessories included",
+      "Condition: new / never used",
+      "Huawei licences (10GE RTU, MACsec, SW/SRv6) required for full port activation — quoted separately",
+    ],
+    configNoteEn: "New · 2× IPU-1T2-A · 20× 10GbE",
     image: "/products/netengine-8000-m14.webp",
     ogImage: "/products/netengine-8000-m14.jpg",
     imgW: 1600,
@@ -61,12 +77,25 @@ export const products = [
   },
   {
     id: "routeur-netengine-8000-m8",
+    seoPitchEn:
+      "3U aggregation router (2.4 Tbit/s) for operators and large networks.",
     seoPitch:
       "Routeur d'agrégation 3U (2,4 Tbit/s) pour opérateurs et grands réseaux.",
     slug: "routeur-netengine-8000-m8",
     name: "Huawei NetEngine 8000 M8",
     category: "Routeurs",
     configNote: "Selon cartes & licences",
+    shortEn:
+      "3U modular core/aggregation router for operators and large enterprise networks.",
+    specsEn: [
+      "3U chassis · 8 card slots",
+      "Switching capacity 2.4 Tbit/s · 453 Mpps",
+      "2 × IPU-1T2 cards (control & switching, 1:1 redundancy)",
+      "10 × 10GbE SFP+ cards (CR5D00EAGF70) · 40GE/100GE optional",
+      "SR, EVPN, FlexE, 1588v2 timing",
+      "Redundant 1+1 AC power",
+    ],
+    configNoteEn: "Depending on cards & licences",
     image: "/products/netengine-8000-m8.webp",
     ogImage: "/products/netengine-8000-m8.jpg",
     imgW: 2560,
@@ -83,16 +112,29 @@ export const products = [
     ],
     stock: "En stock",
     badge: "Opérateur",
+    badgeEn: "Operator",
     unit: "châssis",
   },
   {
     id: "routeur-netengine-8000-m1a",
+    seoPitchEn:
+      "Compact 1U high-density router for operator access and backhaul.",
     seoPitch:
       "Routeur compact 1U haute densité pour l'accès et le backhaul opérateur.",
     slug: "routeur-netengine-8000-m1a",
     name: "Huawei NetEngine 8000 M1A",
     category: "Routeurs",
     configNote: "Selon configuration & licences",
+    shortEn:
+      "Compact 1U high-density router for operator access, backhaul and edge services.",
+    specsEn: [
+      "Compact 1U · 220 mm depth",
+      "Switching capacity up to 352 Gbit/s depending on configuration",
+      "10GE / GE optical and electrical interfaces",
+      "SRv6, EVPN, FlexE, 1588v2 timing",
+      "AC power · 2+1 redundant fans",
+    ],
+    configNoteEn: "Depending on configuration & licences",
     image: "/products/netengine-8000-m1a.webp",
     ogImage: "/products/netengine-8000-m1a.jpg",
     imgW: 1973,
@@ -113,12 +155,25 @@ export const products = [
   // ---------- Switches ----------
   {
     id: "switch-s5735-s24t4x",
+    seoPitchEn:
+      "Layer 3 access switch: 24× GE + 4× 10GE SFP+ for enterprises.",
     seoPitch:
       "Switch d'accès couche 3 : 24× GE + 4× 10GE SFP+ pour réseau d'entreprise.",
     slug: "switch-s5735-s24t4x",
     name: "Huawei CloudEngine S5735-S24T4X",
     category: "Switches",
     configNote: "Plusieurs unités disponibles",
+    shortEn:
+      "Layer 3 access switch (24 × GE + 4 × 10GE SFP+) for enterprise networks.",
+    specsEn: [
+      "24 × 10/100/1000BASE-T (GE)",
+      "4 × 10GE SFP+ uplinks",
+      "336 Gbit/s switching · 96 Mpps (Layer 3)",
+      "2 × AC/DC power slots (1+1 redundancy)",
+      "SEP / ERPS, IPv6, iStack",
+      "Several units available — ask us",
+    ],
+    configNoteEn: "Several units available",
     image: "/products/huawei-switch-s5735.webp",
     ogImage: "/products/huawei-switch-s5735.jpg",
     imgW: 1178,
@@ -135,18 +190,33 @@ export const products = [
     ],
     stock: "En stock",
     badge: "Disponible",
+    badgeEn: "Available",
     unit: "unité",
   },
 
   // ---------- Serveurs ----------
   {
     id: "serveur-huawei-2288x-v5",
+    seoPitchEn:
+      "Configured 2U dual-Xeon rack server, ready for virtualisation.",
     seoPitch:
       "Serveur rack 2U bi-Xeon configuré, prêt pour la virtualisation et les bases de données.",
     slug: "serveur-huawei-2288x-v5",
     name: "Huawei 2288X V5 (FusionServer Pro)",
     category: "Serveurs",
     configNote: "2× Xeon Silver 4210 · 128 Go · 8× 600 Go",
+    shortEn:
+      "Configured 2U dual-socket rack server, ready for virtualisation, databases and business applications.",
+    specsEn: [
+      "2U rack · 2 sockets · 24 × 2.5\" bays",
+      "2 × Intel Xeon Silver 4210 (10 cores / 20 threads each)",
+      "128 GB DDR4 ECC (original configuration)",
+      "8 × 600 GB SAS 10K + Broadcom MegaRAID 9460-8i / SAS3508",
+      "2 × 10GbE SFP+ · 2 × 1GbE + 8 × 1GbE onboard",
+      "2 × redundant 900 W power supplies",
+      "Integrated BMC management (iBMC)",
+    ],
+    configNoteEn: "2× Xeon Silver 4210 · 128 GB · 8× 600 GB",
     image: "/products/huawei-server-2288x-v5.webp",
     ogImage: "/products/huawei-server-2288x-v5.jpg",
     imgW: 1234,
@@ -169,12 +239,24 @@ export const products = [
   // ---------- Sécurité & Pare-feu ----------
   {
     id: "pare-feu-usg6625e",
+    seoPitchEn:
+      "1U NGFW firewall: 20 Gbit/s, 16× GE + 6× 10GE SFP+.",
     seoPitch:
       "Pare-feu NGFW 1U : 20 Gbit/s, 16× GE + 6× 10GE SFP+, 16 Go de mémoire.",
     slug: "pare-feu-usg6625e",
     name: "Huawei USG6625E-AC (HiSecEngine NGFW)",
     category: "Sécurité & Pare-feu",
     configNote: "Hors licences",
+    shortEn:
+      "Next-generation firewall for enterprises and data centres.",
+    specsEn: [
+      "16 × GE RJ45 + 6 × GE SFP + 6 × 10GE SFP+",
+      "20 Gbit/s throughput · 15 Gbit/s IPsec VPN",
+      "SSL VPN for 100 users",
+      "16 GB memory · AC power",
+      "1U rack mountable",
+    ],
+    configNoteEn: "Licences excluded",
     image: "/products/usg6625e.webp",
     ogImage: "/products/usg6625e.png",
     imgW: 1440,
@@ -189,19 +271,32 @@ export const products = [
       "1U rackable",
     ],
     stock: "En stock",
-    badge: "NGFW",
+    badge: "NEUF",
+    badgeEn: "NEW",
     unit: "unité",
   },
 
   // ---------- Optique & WDM/OTN ----------
   {
     id: "carte-optique-tn13oau",
+    seoPitchEn:
+      "C-band optical amplifier board for Huawei OSN WDM/OTN networks.",
     seoPitch:
       "Carte amplificateur optique C-band pour réseaux WDM/OTN Huawei OSN.",
     slug: "carte-optique-tn13oau",
     name: "Huawei TN13OAU (OAU1)",
     category: "Optique & WDM/OTN",
     configNote: "À l'unité",
+    shortEn:
+      "C-band optical amplifier board (EDFA) for Huawei OSN WDM/OTN transport systems.",
+    specsEn: [
+      "C-band optical amplifier (EDFA) · 1529–1561 nm",
+      "Adjustable gain, gain locking, transient control",
+      "LC/UPC optical ports (IN / OUT / MON)",
+      "Compatible with OptiX OSN 6800 / 8800 / 9800 · occupies 1 slot",
+      "Long-haul transmission without electrical regeneration",
+    ],
+    configNoteEn: "Per unit",
     image: "/products/huawei-tn13oau.webp",
     ogImage: "/products/huawei-tn13oau.jpg",
     imgW: 721,
