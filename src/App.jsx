@@ -261,11 +261,11 @@ function App() {
           <Route path="/boutique/pays/:countrySlug" element={<BoutiqueSeoPage />} />
           <Route path="/boutique/:countrySlug/:productSlug" element={<BoutiqueSeoPage />} />
           <Route path="/boutique/:productSlug" element={<ProductPage />} />
-          <Route path="/en/boutique" element={<BoutiqueSeoPage />} />
-          <Route path="/en/boutique/categories/:familySlug" element={<BoutiqueSeoPage />} />
-          <Route path="/en/boutique/countries/:countrySlug" element={<BoutiqueSeoPage />} />
-          <Route path="/en/boutique/products/:productSlug" element={<BoutiqueSeoPage />} />
-          <Route path="/en/boutique/:countrySlug/:productSlug" element={<BoutiqueSeoPage />} />
+          <Route path="/huawei-network-equipment" element={<BoutiqueSeoPage />} />
+          <Route path="/huawei-network-equipment/category/:familySlug" element={<BoutiqueSeoPage />} />
+          <Route path="/huawei-network-equipment/country/:countrySlug" element={<BoutiqueSeoPage />} />
+          <Route path="/huawei-network-equipment/product/:productSlug" element={<BoutiqueSeoPage />} />
+          <Route path="/huawei-network-equipment/:countrySlug/:productSlug" element={<BoutiqueSeoPage />} />
           <Route path="/solutions/gestion-courrier-ged" element={<InstitutionalPage />} />
           <Route path="/solutions/applications-metier" element={<InstitutionalPage />} />
           <Route path="/solutions/digitalisation-administrations" element={<InstitutionalPage />} />

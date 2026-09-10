@@ -46,7 +46,9 @@ test("les chemins sont uniques et sans placeholder non rempli", () => {
   assert.equal(new Set(paths).size, paths.length, "chemins dupliqués");
   const withPlaceholder = pages.filter((p) => /\{[a-zA-Z]+\}/.test(JSON.stringify(p)));
   assert.equal(withPlaceholder.length, 0, `placeholders non remplis : ${withPlaceholder.map((p) => p.path)}`);
-  en.forEach((p) => assert.ok(p.path.startsWith("/en/boutique"), `chemin EN inattendu : ${p.path}`));
+  en.forEach((p) =>
+    assert.ok(p.path.startsWith("/huawei-network-equipment"), `chemin EN inattendu : ${p.path}`),
+  );
   fr.forEach((p) => assert.ok(p.path.startsWith("/boutique"), `chemin FR inattendu : ${p.path}`));
 });
 
@@ -121,7 +123,7 @@ test("le SEO dérivé expose canonicalUrl, priorité et langue", () => {
     assert.equal(seo.lang, page.lang === "en" ? "en" : "fr-SN");
   }
   assert.equal(boutiqueSeoForPath("/boutique/categorie/inconnu"), null);
-  assert.equal(boutiqueSeoForPath("/en/boutique/inconnu"), null);
+  assert.equal(boutiqueSeoForPath("/huawei-network-equipment/inconnu"), null);
 });
 
 test("les ensembles de pays FR et EN sont disjoints (pas de hreflang nécessaire)", () => {

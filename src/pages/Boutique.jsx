@@ -190,11 +190,11 @@ export default function Boutique() {
             </div>
             <h2 className="shop-seo-h2 shop-seo-h2-spaced">English · Supply across English-speaking Africa</h2>
             <div className="shop-linkgrid">
-              <Link to="/en/boutique">
+              <Link to="/huawei-network-equipment">
                 <span aria-hidden="true">🌍</span> Huawei network equipment for Africa (English)
               </Link>
               {BOUTIQUE_EN_COUNTRIES.map((country) => (
-                <Link key={country.slug} to={`/en/boutique/countries/${country.slug}`}>
+                <Link key={country.slug} to={`/huawei-network-equipment/country/${country.slug}`}>
                   <span aria-hidden="true">{country.flag}</span> Network equipment in {country.name}
                 </Link>
               ))}

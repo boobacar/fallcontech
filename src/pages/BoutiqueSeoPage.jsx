@@ -22,8 +22,8 @@ const toAbsolute = (img) =>
 
 // Pages SEO boutique générées par données (src/data/boutiqueGeoData.js + boutiqueEnData.js) :
 //   FR : /boutique/categorie/<famille> · /boutique/pays/<pays> · /boutique/<pays>/<produit>
-//   EN : /en/boutique · /en/boutique/categories/<famille> · /en/boutique/countries/<pays>
-//        /en/boutique/products/<produit> · /en/boutique/<pays>/<produit>
+//   EN : /huawei-network-equipment · …/category/<famille> · …/country/<pays>
+//        …/product/<produit> · …/<pays>/<produit>
 const UI = {
   fr: {
     back: "← Retour à la boutique",
@@ -101,18 +101,18 @@ export default function BoutiqueSeoPage() {
   const [cartOpen, setCartOpen] = useState(false);
   const { addToCart } = useCart();
 
-  const isEn = pathname.startsWith("/en/boutique");
+  const isEn = pathname.startsWith("/huawei-network-equipment");
 
   const path = isEn
     ? familySlug
-      ? `/en/boutique/categories/${familySlug}`
+      ? `/huawei-network-equipment/category/${familySlug}`
       : productSlug
         ? countrySlug
-          ? `/en/boutique/${countrySlug}/${productSlug}`
-          : `/en/boutique/products/${productSlug}`
+          ? `/huawei-network-equipment/${countrySlug}/${productSlug}`
+          : `/huawei-network-equipment/product/${productSlug}`
         : countrySlug
-          ? `/en/boutique/countries/${countrySlug}`
-          : "/en/boutique"
+          ? `/huawei-network-equipment/country/${countrySlug}`
+          : "/huawei-network-equipment"
     : familySlug
       ? `/boutique/categorie/${familySlug}`
       : productSlug
@@ -128,7 +128,7 @@ export default function BoutiqueSeoPage() {
         <div className="site-shell">
           <h1>{t.notFoundTitle}</h1>
           <p>{t.notFoundText}</p>
-          <Link className="button button-primary" to={isEn ? "/en/boutique" : "/boutique"}>
+          <Link className="button button-primary" to={isEn ? "/huawei-network-equipment" : "/boutique"}>
             {t.notFoundCta} <ArrowRight size={17} />
           </Link>
         </div>
@@ -148,27 +148,30 @@ export default function BoutiqueSeoPage() {
 
   const cards = isProductCountry || isProduct ? page.product && [page.product] : page.products || [];
   const cardLink = (product) => {
-    if (isProductCountry) {
+    if (isProductCountry || isCountry) {
       return page.lang === "en"
-        ? `/en/boutique/${page.country.slug}/${product.slug}`
+        ? `/huawei-network-equipment/${page.country.slug}/${product.slug}`
         : `/boutique/${page.country.slug}/${product.slug}`;
     }
-    if (isCountry) {
-      return page.lang === "en"
-        ? `/en/boutique/${page.country.slug}/${product.slug}`
-        : `/boutique/${page.country.slug}/${product.slug}`;
-    }
-    return page.lang === "en" ? `/en/boutique/products/${product.slug}` : `/boutique/${product.slug}`;
+    return page.lang === "en"
+      ? `/huawei-network-equipment/product/${product.slug}`
+      : `/boutique/${product.slug}`;
   };
   const productSheet = (product) =>
-    page.lang === "en" ? `/en/boutique/products/${product.slug}` : `/boutique/${product.slug}`;
+    page.lang === "en"
+      ? `/huawei-network-equipment/product/${product.slug}`
+      : `/boutique/${product.slug}`;
   const categoryLink = (slug) =>
-    page.lang === "en" ? `/en/boutique/categories/${slug}` : `/boutique/categorie/${slug}`;
+    page.lang === "en"
+      ? `/huawei-network-equipment/category/${slug}`
+      : `/boutique/categorie/${slug}`;
   const countryLink = (slug) =>
-    page.lang === "en" ? `/en/boutique/countries/${slug}` : `/boutique/pays/${slug}`;
+    page.lang === "en"
+      ? `/huawei-network-equipment/country/${slug}`
+      : `/boutique/pays/${slug}`;
   const withProductCountry = (country, product) =>
     page.lang === "en"
-      ? `/en/boutique/${country.slug}/${product.slug}`
+      ? `/huawei-network-equipment/${country.slug}/${product.slug}`
       : `/boutique/${country.slug}/${product.slug}`;
 
   const otherCountries = countries.filter((c) => c.slug !== page.country?.slug);
@@ -182,7 +185,7 @@ export default function BoutiqueSeoPage() {
       "@type": "ListItem",
       position: 2,
       name: page.lang === "en" ? "Shop" : "Boutique",
-      item: page.lang === "en" ? `${SITE_URL}/en/boutique` : `${SITE_URL}/boutique`,
+      item: page.lang === "en" ? `${SITE_URL}/huawei-network-equipment` : `${SITE_URL}/boutique`,
     },
   ];
   if (isFamily) {
@@ -289,7 +292,7 @@ export default function BoutiqueSeoPage() {
 
       <div className="shop-topstrip">
         <div className="site-shell product-page-nav">
-          <Link to={page.lang === "en" ? "/en/boutique" : "/boutique"} className="product-back">
+          <Link to={page.lang === "en" ? "/huawei-network-equipment" : "/boutique"} className="product-back">
             {isHub ? t.backHub : t.back}
           </Link>
           <p className="overline">{page.overline}</p>

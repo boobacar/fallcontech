@@ -3,10 +3,12 @@
 // -----------------------------------------------------------------------------
 // Structure symétrique de la couche FR (aucun hreflang nécessaire : les pays visés
 // sont disjoints — FR = Afrique francophone, EN = Afrique anglophone) :
-//   /en/boutique                              → hub
-//   /en/boutique/categories/<famille>          → 5 catégories (EN)
-//   /en/boutique/countries/<pays>              → 8 hubs pays (EN)
-//   /en/boutique/<pays>/<produit>              → 8 × 7 = 56 pages produit × pays (EN)
+//   /huawei-network-equipment                   → hub
+//   /huawei-network-equipment/category/<famille> → 5 catégories (EN)
+//   /huawei-network-equipment/country/<pays>     → 8 hubs pays (EN)
+//   /huawei-network-equipment/product/<produit>  → 7 fiches produit (EN)
+//   /huawei-network-equipment/<pays>/<produit>   → 8 × 7 = 56 pages produit × pays (EN)
+// (préfixe racine plutôt que /en/ : vercel.json redirige tout /en/* en 301 legacy)
 // ⚠️ Prix : jamais de montant ici.
 // =============================================================================
 
@@ -331,7 +333,7 @@ const enTitle = composeTitle;
 const enDesc = composeDesc;
 
 function buildEnFamilyPage(family) {
-  const path = `/en/boutique/categories/${family.slug}`;
+  const path = `/huawei-network-equipment/category/${family.slug}`;
   const list = EN_PRODUCTS_BY_CAT(family.cat);
   return {
     family: "categorie",
@@ -355,7 +357,7 @@ function buildEnFamilyPage(family) {
 }
 
 function buildEnCountryPage(country) {
-  const path = `/en/boutique/countries/${country.slug}`;
+  const path = `/huawei-network-equipment/country/${country.slug}`;
   return {
     family: "pays",
     lang: "en",
@@ -426,7 +428,7 @@ function buildEnCountryPage(country) {
 }
 
 function buildEnProductCountryPage(country, product) {
-  const path = `/en/boutique/${country.slug}/${product.slug}`;
+  const path = `/huawei-network-equipment/${country.slug}/${product.slug}`;
   const family = BOUTIQUE_EN_FAMILIES.find((f) => f.cat === product.category) || BOUTIQUE_EN_FAMILIES[0];
   return {
     family: "produit-pays",
@@ -484,7 +486,7 @@ function buildEnProductCountryPage(country, product) {
 }
 
 export function buildEnBoutiqueHub() {
-  const path = "/en/boutique";
+  const path = "/huawei-network-equipment";
   return {
     family: "hub-en",
     lang: "en",
@@ -533,7 +535,7 @@ export function buildEnBoutiqueHub() {
 }
 
 function buildEnProductPage(product) {
-  const path = `/en/boutique/products/${product.slug}`;
+  const path = `/huawei-network-equipment/product/${product.slug}`;
   const family = BOUTIQUE_EN_FAMILIES.find((f) => f.cat === product.category) || BOUTIQUE_EN_FAMILIES[0];
   return {
     family: "produit-en",
