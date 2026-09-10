@@ -71,8 +71,8 @@ export default function Boutique() {
     <>
       <SEO
         path="/boutique"
-        title="Équipements réseaux Huawei : routeurs, switches, serveurs & pare-feu à Dakar | Fallcon Tech"
-        description="Revente de matériel réseau Huawei à Dakar : routeurs NetEngine 8000 M8/M1A/M14, switch S5735, serveur 2288X V5 et pare-feu USG6625E. Configuré, livré et installé au Sénégal."
+        title="Équipements réseau Huawei à Dakar & en Afrique : routeurs, switches, pare-feu | Fallcon Tech"
+        description="Achat de matériel réseau Huawei pour l'Afrique : routeurs NetEngine 8000 M14/M8/M1A, switches CloudEngine, pare-feu USG6625E, serveurs et optique WDM. Devis sous 24 h, expédition depuis Dakar."
         image={siteLogo}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />
