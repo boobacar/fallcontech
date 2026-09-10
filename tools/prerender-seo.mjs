@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { getSeoForPath, SITE_URL } from "../src/data/seoData.js";
 import { geoSeoForPath } from "../src/data/geoData.js";
 import { productSeoForPath } from "../src/data/products.js";
+import { boutiqueSeoForPath } from "../src/data/boutiqueGeoData.js";
 
 const distIndexPath = resolve("dist/index.html");
 const sitemapPath = resolve("dist/sitemap.xml");
@@ -27,7 +28,11 @@ const outputPathsForRoute = (routePath) => {
 };
 
 const applySeo = (template, routePath) => {
-  const seo = productSeoForPath(routePath) || geoSeoForPath(routePath) || getSeoForPath(routePath);
+  const seo =
+    boutiqueSeoForPath(routePath) ||
+    productSeoForPath(routePath) ||
+    geoSeoForPath(routePath) ||
+    getSeoForPath(routePath);
   const title = escapeHtml(seo.title);
   const description = escapeHtml(seo.description);
   const canonical = escapeHtml(seo.canonical);

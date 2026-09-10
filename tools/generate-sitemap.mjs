@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import { getSeoForPath } from "../src/data/seoData.js";
 import { getAllGeoPages, geoSeoForPath } from "../src/data/geoData.js";
 import { getAllProductPages, productSeoForPath } from "../src/data/products.js";
+import { getAllBoutiquePages, boutiqueSeoForPath } from "../src/data/boutiqueGeoData.js";
 
 const SITE_URL =
   process.env.SITE_URL ||
@@ -39,14 +40,28 @@ console.log(`[sitemap] Found ${geoRoutes.length} geo-compétence pages in src/da
 const productRoutes = getAllProductPages().map((p) => p.path);
 console.log(`[sitemap] Found ${productRoutes.length} product pages in src/data/products.js`);
 
+// Pages SEO boutique générées (5 catégories + 16 pays + 112 produit×pays)
+const boutiqueRoutes = getAllBoutiquePages().map((p) => p.path);
+console.log(`[sitemap] Found ${boutiqueRoutes.length} boutique pages in src/data/boutiqueGeoData.js`);
+
 const routes = Array.from(
-  new Set([...(extracted.length ? extracted : []), ...defaultRoutes, ...geoRoutes, ...productRoutes])
+  new Set([
+    ...(extracted.length ? extracted : []),
+    ...defaultRoutes,
+    ...geoRoutes,
+    ...productRoutes,
+    ...boutiqueRoutes,
+  ])
 )
   .filter((p) => !p.includes(":"))
   .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
 
 // 2. Priority & changefreq logic
 function getMeta(p) {
+  const boutiqueSeo = boutiqueSeoForPath(p);
+  if (boutiqueSeo) {
+    return { priority: boutiqueSeo.priority || "0.75", changefreq: boutiqueSeo.changefreq || "monthly" };
+  }
   const productSeo = productSeoForPath(p);
   if (productSeo) {
     return { priority: productSeo.priority || "0.85", changefreq: productSeo.changefreq || "weekly" };
@@ -148,6 +163,7 @@ if (existsSync(INDEXNOW_KEY_PATH)) {
           p === "/services" ||
           p.startsWith("/solutions/") ||
           p.startsWith("/secteurs/") ||
+          p.startsWith("/boutique") ||
           p.startsWith("/article/"),
       )
       .map((p) => `${SITE_URL}${p}`);

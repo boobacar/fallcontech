@@ -12,6 +12,7 @@ import {
   PRICE_LABEL,
   productSeoForPath,
 } from "@/data/products";
+import { BOUTIQUE_FAMILIES, BOUTIQUE_COUNTRIES } from "@/data/boutiqueGeoData";
 
 const toAbsolute = (img) =>
   img && img.startsWith("http") ? img : `${SITE_URL}${img.startsWith("/") ? img : `/${img}`}`;
@@ -32,6 +33,28 @@ export default function ProductPage() {
 
   const seo = productSeoForPath(`/boutique/${product.slug}`) || {};
 
+  const family = BOUTIQUE_FAMILIES.find((f) => f.cat === product.category) || BOUTIQUE_FAMILIES[0];
+
+  const productFaq = [
+    {
+      q: `Comment obtenir le prix du ${product.name} ?`,
+      a: `Le prix dépend de la configuration livrée (cartes, modules optiques, licences éventuelles) : il est établi sur devis sous 24 h, avec la référence exacte et le détail de ce qui est inclus.`,
+    },
+    {
+      q: `Livrez-vous le ${product.name} en Afrique ?`,
+      a: `Oui : expédition depuis Dakar vers l'Afrique de l'Ouest et centrale. Le matériel est testé avant expédition et le mode de livraison est confirmé dans le devis selon le poids et les formalités d'importation.`,
+    },
+    {
+      q: `Le matériel est-il configuré avant livraison ?`,
+      a: `Nous livrons le matériel testé et pré-configuré selon vos informations (adressage, VLAN, politique de sécurité de base, VPN le cas échéant). La configuration sur site ou à distance peut être incluse au devis.`,
+    },
+    {
+      q: `Quelles licences faut-il prévoir ?`,
+      a: `Selon le modèle et les fonctions activées : licences matérielles Huawei (capacité de port, MACsec) et logicielles (jeux de fonctions, options de sécurité). Elles sont chiffrées séparément dans le devis pour éviter toute surprise.`,
+    },
+    ...family.faq.slice(0, 2),
+  ];
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -39,8 +62,23 @@ export default function ProductPage() {
     description: product.short,
     image: toAbsolute(product.image),
     category: product.category,
-    brand: { "@type": "Brand", name: "Fallcon Tech" },
+    brand: { "@type": "Brand", name: product.category === "Serveurs" ? "Huawei" : "Huawei" },
     url: `${SITE_URL}/boutique/${product.slug}`,
+    additionalProperty: product.specs.slice(0, 6).map((spec) => ({
+      "@type": "PropertyValue",
+      name: "Caractéristique",
+      value: spec,
+    })),
+  };
+
+  const productFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: productFaq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 
   const breadcrumbJsonLd = {
@@ -60,7 +98,7 @@ export default function ProductPage() {
         title={seo.title}
         description={seo.description}
         image={product.image}
-        jsonLd={[productJsonLd, breadcrumbJsonLd]}
+        jsonLd={[productJsonLd, breadcrumbJsonLd, productFaqJsonLd]}
       />
 
       {/* Top strip with back link + cart */}
@@ -120,6 +158,55 @@ export default function ProductPage() {
             <p className="product-page-note">
               Prix communiqué sur devis : configuration, licences, garantie et installation
               chiffrées par écrit avant toute commande.
+            </p>
+          </div>
+        </div>
+
+        {/* Contenu SEO : usages, cadrage, FAQ, maillage pays */}
+        <div className="site-shell shop-seo-content">
+          <div className="shop-seo-section">
+            <h2>Pour quels projets choisir le {product.name} ?</h2>
+            <ul className="shop-seo-list">
+              {family.useCases.map((item) => (
+                <li key={item}><CheckCircle2 size={16} /> <span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="shop-seo-section">
+            <h2>Comment nous cadrons la configuration</h2>
+            <ul className="shop-seo-list">
+              {family.buying.map((item) => (
+                <li key={item}><CheckCircle2 size={16} /> <span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="shop-seo-section">
+            <h2>Questions fréquentes</h2>
+            <div className="shop-faq">
+              {productFaq.map((item) => (
+                <details key={item.q}>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div className="shop-seo-block">
+            <h2 className="shop-seo-h2">Livraison de ce matériel par pays</h2>
+            <div className="shop-linkgrid">
+              {BOUTIQUE_COUNTRIES.map((country) => (
+                <Link key={country.slug} to={`/boutique/${country.slug}/${product.slug}`}>
+                  <span aria-hidden="true">{country.flag}</span> {product.name} {country.prep} {country.name}
+                </Link>
+              ))}
+            </div>
+            <p className="shop-seo-more">
+              <Link to={`/boutique/categorie/${family.slug}`}>
+                Voir toute la catégorie {family.label} <ArrowRight size={15} />
+              </Link>
             </p>
           </div>
         </div>
