@@ -276,11 +276,11 @@ function buildCountryPage(country) {
   const flag = country.flag;
 
   const title = composeTitle(
-    `Équipements réseau Huawei ${prep} ${name} : routeurs, switches, pare-feu`,
+    `Fournisseur équipements réseau Huawei ${prep} ${name} : routeurs, switches, pare-feu`,
   );
   const description = composeDesc(
-    `Matériel réseau Huawei ${prep} ${name} : routeurs NetEngine 8000, switches CloudEngine, ` +
-      `pare-feu HiSecEngine, serveurs FusionServer et optique WDM/OTN.`,
+    `Revendeur de matériel réseau Huawei ${prep} ${name} : routeurs NetEngine 8000, switches ` +
+      `CloudEngine, pare-feu HiSecEngine, serveurs FusionServer, optique WDM/OTN.`,
     `Devis sous 24 h, expédition vers ${country.capital}.`,
   );
 
@@ -325,7 +325,7 @@ function buildCountryPage(country) {
         ],
       },
       {
-        title: `Installation, configuration et support`,
+        title: `Installation, intégration réseau, maintenance et support`,
         intro: `Au-delà du matériel :`,
         items: [
           "Pré-configuration en atelier avant expédition (adressage, VLAN, politique de base, VPN)",
@@ -392,8 +392,8 @@ function buildProductCountryPage(country, product) {
     ),
     sections: [
       {
-        title: "Configuration livrée",
-        intro: `Caractéristiques principales :`,
+        title: `Fiche technique et configuration livrée (datasheet)`,
+        intro: `Caractéristiques principales du ${product.name} :`,
         items: product.specs,
       },
       {

@@ -362,9 +362,11 @@ function buildEnCountryPage(country) {
     family: "pays",
     lang: "en",
     path,
-    title: enTitle(`Huawei network equipment in ${country.name}: routers, switches, firewalls`),
+    title: enTitle(
+      `Huawei network equipment supplier in ${country.name}: routers, switches, firewalls`,
+    ),
     description: enDesc(
-      `Huawei enterprise network equipment in ${country.name}: NetEngine 8000 routers, CloudEngine switches, HiSecEngine firewalls, FusionServer servers, WDM/OTN optics.`,
+      `Huawei enterprise network equipment supplier in ${country.name}: NetEngine 8000 routers, CloudEngine switches, HiSecEngine firewalls, FusionServer servers, WDM/OTN optics.`,
       `Quotation and shipping to ${country.capital}.`,
     ),
     h1: `Huawei network equipment in ${country.name}`,
@@ -393,7 +395,7 @@ function buildEnCountryPage(country) {
         ],
       },
       {
-        title: "Installation, configuration and support",
+        title: "Installation, network integration, maintenance and support",
         intro: "Beyond the hardware:",
         items: [
           "Pre-configuration in our workshop before dispatch (addressing, VLANs, base policy, VPN)",
@@ -445,7 +447,7 @@ function buildEnProductCountryPage(country, product) {
       340,
     ),
     sections: [
-      { title: "Delivered configuration", intro: "Key characteristics:", items: product.specsEn || product.specs },
+      { title: `Technical specification and delivered configuration (datasheet)`, intro: `Key characteristics of the ${product.name}:`, items: product.specsEn || product.specs },
       { title: `Typical projects in ${country.name}`, intro: "Common uses for this equipment in the region:", items: family.useCases.slice(0, 4) },
       {
         title: `Quotation, licences and delivery to ${country.capital}`,
@@ -555,7 +557,7 @@ function buildEnProductPage(product) {
       340,
     ),
     sections: [
-      { title: "Delivered configuration", intro: "Key characteristics:", items: product.specsEn || product.specs },
+      { title: `Technical specification and delivered configuration (datasheet)`, intro: `Key characteristics of the ${product.name}:`, items: product.specsEn || product.specs },
       { title: "Where is it used?", intro: "Typical projects for this equipment:", items: family.useCases.slice(0, 4) },
       {
         title: "Quotation, licences and logistics",

@@ -182,7 +182,7 @@ export const pageSeo = {
   },
   "/boutique": {
     title:
-      "Équipements réseau Huawei à Dakar & en Afrique : routeurs, switches, pare-feu | Fallcon Tech",
+      "Boutique matériel réseau Huawei à Dakar & en Afrique : routeurs, switches, pare-feu | Fallcon Tech",
     description:
       "Achat de matériel réseau Huawei pour l'Afrique : routeurs NetEngine 8000 M14/M8/M1A, switches CloudEngine, pare-feu USG6625E, serveurs et optique WDM. Devis sous 24 h, expédition depuis Dakar.",
     priority: "0.90",
