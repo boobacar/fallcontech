@@ -10,6 +10,7 @@
 - [Optique & WDM/OTN](https://fallcontech.com/boutique/categorie/optique-wdm) : cartes et modules optiques pour réseaux de transport OSN
 - [Huawei NetEngine 8000 M14](https://fallcontech.com/boutique/routeur-netengine-8000-m14) · [NetEngine 8000 M8](https://fallcontech.com/boutique/routeur-netengine-8000-m8) · [NetEngine 8000 M1A](https://fallcontech.com/boutique/routeur-netengine-8000-m1a)
 - [Switch CloudEngine S5735-S24T4X](https://fallcontech.com/boutique/switch-s5735-s24t4x) · [Serveur 2288X V5](https://fallcontech.com/boutique/serveur-huawei-2288x-v5) · [Pare-feu USG6625E-AC](https://fallcontech.com/boutique/pare-feu-usg6625e) · [Carte optique TN13OAU](https://fallcontech.com/boutique/carte-optique-tn13oau)
+- Optique OSN 8800 : [amplificateur OBU103](https://fallcontech.com/boutique/carte-optique-tn13obu103) · [carte WSS WSMD9](https://fallcontech.com/boutique/carte-optique-tn12wsmd901) · [module SFP+ 10G OSX010N01](https://fallcontech.com/boutique/module-optique-osx010n01-sfp) · [module TXFP C-band ODX0480T1](https://fallcontech.com/boutique/module-optique-odx0480t1-txfp)
 - Livraison : Sénégal, Côte d'Ivoire, Mali, Burkina Faso, Guinée, Bénin, Togo, Niger, Mauritanie, Gambie, Guinée-Bissau, Cap-Vert, Cameroun, Gabon, Tchad, RDC (voir https://fallcontech.com/boutique/pays/senegal)
 
 ## Services & solutions
