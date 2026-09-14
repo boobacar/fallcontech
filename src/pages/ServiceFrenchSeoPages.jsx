@@ -122,7 +122,9 @@ const pages = {
     path: "/services/audit-seo-professionnel-senegal",
     icon: FileSearch,
     eyebrow: "Audit SEO professionnel Sénégal",
-    seoTitle: "Audit SEO professionnel Sénégal : rapport d'actions priorisé | Fallcon Tech",
+    seoTitle: "Audit SEO professionnel Sénégal : diagnostic & plan d'actions | Fallcon Tech",
+    seoDescription:
+      "Audit SEO et technique au Sénégal : analyse de votre site, priorités classées par impact et plan d'actions pour gagner des contacts qualifiés.",
     title: "Audit SEO professionnel au Sénégal pour gagner plus de clics",
     lead: "Nous analysons votre visibilité sur Google, vos pages, vos contenus et vos problèmes techniques pour identifier les actions qui rapportent : plus de clics, plus de demandes qualifiées.",
     serviceName: "Audit SEO professionnel au Sénégal",
@@ -203,7 +205,7 @@ function ServiceFrenchPage({ page }) {
       <SEO
         path={page.path}
         title={page.seoTitle || `${page.eyebrow} | Fallcon Tech Dakar`}
-        description={page.lead}
+        description={page.seoDescription || page.lead}
         imageAlt={`${page.eyebrow} par Fallcon Tech`}
         jsonLd={jsonLd}
       />

@@ -6,7 +6,7 @@ export const pageSeo = {
   "/": {
     title: "Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech",
     description:
-      "Fallcon Tech conçoit des sites web, applications métier, GED, logiciels de gestion et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal.",
+      "GED, gestion du courrier, logiciels métier et applications sur mesure pour administrations, cliniques, ONG et entreprises au Sénégal. Étude de votre besoin.",
     priority: "1.0",
     changefreq: "weekly",
   },
@@ -115,16 +115,16 @@ export const pageSeo = {
     changefreq: "weekly",
   },
   "/services/audit-seo-professionnel-senegal": {
-    title: "Audit SEO professionnel Sénégal : rapport d'actions priorisé | Fallcon Tech",
+    title: "Audit SEO professionnel Sénégal : diagnostic & plan d'actions | Fallcon Tech",
     description:
-      "Audit SEO professionnel au Sénégal : analyse de votre visibilité Google et plan d'actions priorisé pour gagner plus de clics et de contacts qualifiés.",
+      "Audit SEO et technique au Sénégal : analyse de votre site, priorités classées par impact et plan d'actions pour gagner des contacts qualifiés.",
     priority: "0.90",
     changefreq: "weekly",
   },
   "/services/web-development-senegal": {
-    title: "Web Development & Web Design Company Senegal | Websites & Apps Dakar",
+    title: "Web Development Company Senegal | Custom Websites & Web Apps Dakar",
     description:
-      "Web development and web design company in Senegal: fast websites, React web apps, SEO setup, lead tracking and conversion-focused pages by Fallcon Tech Dakar.",
+      "Web development company in Dakar, Senegal: custom websites, web apps, portals and dashboards built to stay fast on mobile networks. Request a quote.",
     priority: "0.93",
     changefreq: "weekly",
     lang: "en-SN",

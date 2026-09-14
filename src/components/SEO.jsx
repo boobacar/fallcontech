@@ -15,7 +15,7 @@ function absoluteUrl(path) {
 
 export default function SEO({
   title = "Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech",
-  description = "Fallcon Tech conçoit des sites web, applications métier, GED, logiciels de gestion et infrastructures sécurisées pour les organisations au Sénégal.",
+  description = "GED, gestion du courrier, logiciels métier et applications sur mesure pour administrations, cliniques, ONG et entreprises au Sénégal. Étude de votre besoin.",
   path = "/",
   image = siteLogo,
   type = "website",
