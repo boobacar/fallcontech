@@ -119,6 +119,7 @@ export default function Layout({ children }) {
               <li><a href="tel:+221774837576">+221 77 483 75 76</a></li>
               <li><Link to="/contact">Présenter un besoin</Link></li>
               <li><Link to="/boutique">Boutique équipements</Link></li>
+              <li><Link to="/huawei-network-equipment">Huawei network equipment (EN)</Link></li>
             </ul>
           </div>
         </div>

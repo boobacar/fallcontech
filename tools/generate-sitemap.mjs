@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync, statSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { resolve } from "node:path";
 import { getSeoForPath } from "../src/data/seoData.js";
 import { getAllGeoPages, geoSeoForPath } from "../src/data/geoData.js";
@@ -77,14 +78,71 @@ function getMeta(p) {
   };
 }
 
-// 3. Generate Sitemap XML
-const now = new Date().toISOString();
+// 3. lastmod réel par famille de pages : date du dernier commit touchant le(s) module(s) source.
+//    Un <lastmod> unique = date du build pour les 1 197 URLs est ignoré par Google (fraîcheur
+//    non crédible) et ne permet aucune priorisation de recrawl — on l'ancre donc sur le contenu.
+const gitDateCache = new Map();
+function gitLastCommit(relPath) {
+  if (gitDateCache.has(relPath)) return gitDateCache.get(relPath);
+  let iso = null;
+  try {
+    const out = execSync(`git log -1 --format=%cI -- "${relPath}"`, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (out) iso = new Date(out).toISOString();
+  } catch {
+    /* git indisponible (build hors dépôt) */
+  }
+  if (!iso) {
+    try {
+      iso = statSync(relPath).mtime.toISOString();
+    } catch {
+      iso = null;
+    }
+  }
+  gitDateCache.set(relPath, iso);
+  return iso;
+}
+
+const LASTMOD_SOURCES = [
+  {
+    test: (p) => p.startsWith("/huawei-network-equipment") || p.startsWith("/boutique"),
+    files: [
+      "src/data/boutiqueEnData.js",
+      "src/data/boutiqueGeoData.js",
+      "src/data/products.js",
+      "src/pages/BoutiqueSeoPage.jsx",
+      "src/pages/Boutique.jsx",
+      "src/pages/ProductPage.jsx",
+    ],
+  },
+  {
+    test: (p) => p.startsWith("/services") || p.startsWith("/secteurs") || p.startsWith("/pays"),
+    files: ["src/data/geoData.js", "src/pages/GeoLandingPage.jsx"],
+  },
+  {
+    test: (p) => p.startsWith("/article/"),
+    files: ["src/pages/articles", "src/data/seoData.js"],
+  },
+];
+
+const buildDate = new Date().toISOString();
+function lastModFor(p) {
+  const group = LASTMOD_SOURCES.find((g) => g.test(p));
+  const files = group ? group.files : ["src/data/seoData.js", "src/App.jsx"];
+  const dates = files.map(gitLastCommit).filter(Boolean).sort();
+  const iso = dates.length ? dates[dates.length - 1] : buildDate;
+  return iso > buildDate ? buildDate : iso;
+}
+
+// 4. Generate Sitemap XML
 const urls = routes
   .map((p) => {
     const { priority, changefreq } = getMeta(p);
     return `  <url>
     <loc>${SITE_URL}${p}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${lastModFor(p)}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -164,6 +222,7 @@ if (existsSync(INDEXNOW_KEY_PATH)) {
           p.startsWith("/solutions/") ||
           p.startsWith("/secteurs/") ||
           p.startsWith("/boutique") ||
+          p.startsWith("/huawei-network-equipment") ||
           p.startsWith("/article/"),
       )
       .map((p) => `${SITE_URL}${p}`);
