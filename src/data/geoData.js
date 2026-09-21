@@ -1735,6 +1735,18 @@ export function buildCountryHub(countrySlug) {
   };
 }
 
+// Réécritures one-off pilotées par la boucle GSC hebdomadaire : on ne touche pas
+// aux templates pour corriger une seule page (sinon les 16 pays changent d'un coup).
+// L'override est appliqué après construction ; les champs absents gardent la valeur
+// du template. Le H1 et les libellés de maillage ne sont pas modifiés.
+export const GEO_TITLE_OVERRIDES = {
+  "/services/gestion-ecole-formation-senegal": {
+    title: "Logiciel de gestion d'école au Sénégal : scolarité, paiements, bulletins | Fallcon Tech",
+    description:
+      "Gestion des inscriptions, paiements de scolarité, présences, bulletins et dossiers des apprenants pour écoles et centres de formation au Sénégal. Devis rapide à Dakar.",
+  },
+};
+
 export function getAllGeoPages() {
   const pages = [];
   for (const country of GEO_COUNTRIES) {
@@ -1751,7 +1763,10 @@ export function getAllGeoPages() {
       pages.push(buildVillePage(city.slug, competence.slug));
     }
   }
-  return pages.filter(Boolean);
+  return pages.filter(Boolean).map((page) => {
+    const override = GEO_TITLE_OVERRIDES[page.path];
+    return override ? { ...page, ...override } : page;
+  });
 }
 
 const GEO_PAGES = getAllGeoPages();

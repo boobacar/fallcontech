@@ -138,8 +138,8 @@ export default function Home() {
     <>
       <SEO
         path="/"
-        title="Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech"
-        description="Fallcon Tech conçoit des systèmes de gestion, GED, logiciels métier et infrastructures sécurisées pour administrations, cliniques, ONG et entreprises au Sénégal."
+        title="Transformation numérique Sénégal : mobile app development & logiciels métier | Fallcon Tech"
+        description="Fallcon Tech conçoit des applications mobiles, des logiciels métier, de la GED et des infrastructures sécurisées pour administrations, cliniques, ONG et entreprises."
         jsonLd={serviceJsonLd}
       />
 

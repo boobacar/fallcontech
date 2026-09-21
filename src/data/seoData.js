@@ -4,9 +4,9 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech",
+    title: "Transformation numérique Sénégal : mobile app development & logiciels métier | Fallcon Tech",
     description:
-      "GED, gestion du courrier, logiciels métier et applications sur mesure pour administrations, cliniques, ONG et entreprises au Sénégal. Étude de votre besoin.",
+      "Applications mobiles, GED, logiciels métier et plateformes sur mesure pour administrations, cliniques, ONG et entreprises au Sénégal. Étude de votre besoin.",
     priority: "1.0",
     changefreq: "weekly",
   },
