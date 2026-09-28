@@ -549,6 +549,16 @@ export const GEO_COMPETENCES = [
     name: "Infrastructure informatique et cybersécurité",
     type: "Infrastructure · Sécurité",
     desc: "infrastructure informatique et cybersécurité : audit, sauvegardes, supervision et continuité d'activité",
+    // Snippet SERP propre à cette famille (boucle GSC hebdo). Constat de la boucle :
+    // la famille faisait 0,46 % de CTR (4 clics / 870 impressions) à une position
+    // moyenne pondérée de 14,6, quand gec-courrier (2,7 % à 14,8) et boutique-en-ligne
+    // (4,7 % à 11,7) font 6 à 10 fois mieux avec le même gabarit de titre. Les
+    // recherches réellement tapées qui remontent sont « sécurité informatique <pays> »
+    // et « cybersécurité <pays> », pas « infrastructure informatique et cybersécurité ».
+    // {place} = « en Mauritanie » (page pays) ou « à Abidjan » (page ville).
+    seoTitle: "Sécurité informatique {place} : audit, sauvegardes & supervision | Fallcon Tech",
+    seoDescription:
+      "Audit de sécurité, sauvegardes vérifiées, supervision et protection des accès {place}. Devis rapide, {intervention}.",
     lead:
       "Nous sécurisons l'infrastructure informatique des organisations de {capital} et du {country} : sauvegardes, supervision et continuité.",
     quickAnswer:
@@ -1514,7 +1524,14 @@ export function buildGeoPage(countrySlug, competenceSlug) {
   const descBody = competence.desc.includes(":")
     ? competence.desc.slice(competence.desc.indexOf(":") + 1).trim()
     : competence.desc;
-  const description = `${geoNameShort} : ${fill(descBody, vars)}. Devis rapide à ${country.capital}.`;
+  const seoVars = {
+    ...vars,
+    place: `${country.prep} ${shortName}`,
+    intervention: `intervention à ${country.capital}`,
+  };
+  const description = competence.seoDescription
+    ? fill(competence.seoDescription, seoVars)
+    : `${geoNameShort} : ${fill(descBody, vars)}. Devis rapide à ${country.capital}.`;
 
   return {
     path,
@@ -1524,7 +1541,9 @@ export function buildGeoPage(countrySlug, competenceSlug) {
     geoName,
     h1: geoName,
     eyebrow: `${competence.type} ${country.prep} ${country.name}`,
-    title: `${geoNameShort} | Fallcon Tech`,
+    title: competence.seoTitle
+      ? `${fill(competence.seoTitle, seoVars)}`
+      : `${geoNameShort} | Fallcon Tech`,
     description,
     lead,
     quickAnswer: fill(competence.quickAnswer, vars),
@@ -1616,7 +1635,10 @@ export function buildVillePage(citySlug, competenceSlug) {
   const descBody = competence.desc.includes(":")
     ? competence.desc.slice(competence.desc.indexOf(":") + 1).trim()
     : competence.desc;
-  const description = `${geoName} : ${fill(descBody, vars)}. Devis rapide à ${city.name}.`;
+  const seoVars = { ...vars, place: `à ${city.name}`, intervention: "sur site ou à distance" };
+  const description = competence.seoDescription
+    ? fill(competence.seoDescription, seoVars)
+    : `${geoName} : ${fill(descBody, vars)}. Devis rapide à ${city.name}.`;
 
   return {
     path,
@@ -1627,7 +1649,9 @@ export function buildVillePage(citySlug, competenceSlug) {
     geoName,
     h1: geoName,
     eyebrow: `${competence.type} à ${city.name} · ${country.name}`,
-    title: `${geoName} | Fallcon Tech`,
+    title: competence.seoTitle
+      ? `${fill(competence.seoTitle, seoVars)}`
+      : `${geoName} | Fallcon Tech`,
     description,
     lead,
     quickAnswer: fill(competence.quickAnswer, vars),
