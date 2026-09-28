@@ -1684,12 +1684,15 @@ export function buildVillePage(citySlug, competenceSlug) {
     heroLocation: `${country.flag} ${city.name}`,
     ctaLoc: `à ${city.name}`,
     areaServed: { "@type": "City", name: city.name },
-    relatedCountries: GEO_CITIES.filter((c) => c.slug !== city.slug).map((c) => ({
-      flag: countryBySlug[c.countrySlug].flag,
-      name: c.name,
-      label: c.name,
-      to: `/services/${competence.slug}-${c.slug}`,
-    })),
+    relatedCountries: GEO_CITIES.filter((c) => c.slug !== city.slug)
+      .map((c) => ({
+        flag: countryBySlug[c.countrySlug].flag,
+        name: c.name,
+        label: c.name,
+        to: `/services/${competence.slug}-${c.slug}`,
+      }))
+      // Aucun lien interne ne doit pointer vers une page exclue (elle répond 301).
+      .filter((link) => !GEO_EXCLUDED_PATHS.has(link.to)),
   };
 }
 
@@ -1771,6 +1774,13 @@ export const GEO_TITLE_OVERRIDES = {
   },
 };
 
+// Pages volontairement NON générées (ni sitemap ni pré-rendu) : doublons ville/pays qui
+// se cannibalisent sur la même requête. `/services/gec-courrier-cotonou` duplique
+// `/services/gec-courrier-benin` (même pays, même gabarit, même description) et n'a jamais
+// obtenu un seul clic (59 impressions / 0 clic), quand la page pays concentre les clics
+// (« gec benin » : 18 clics, 5,8 % de CTR). Une 301 est déclarée dans vercel.json.
+export const GEO_EXCLUDED_PATHS = new Set(["/services/gec-courrier-cotonou"]);
+
 export function getAllGeoPages() {
   const pages = [];
   for (const country of GEO_COUNTRIES) {
@@ -1787,10 +1797,13 @@ export function getAllGeoPages() {
       pages.push(buildVillePage(city.slug, competence.slug));
     }
   }
-  return pages.filter(Boolean).map((page) => {
-    const override = GEO_TITLE_OVERRIDES[page.path];
-    return override ? { ...page, ...override } : page;
-  });
+  return pages
+    .filter(Boolean)
+    .filter((page) => !GEO_EXCLUDED_PATHS.has(page.path))
+    .map((page) => {
+      const override = GEO_TITLE_OVERRIDES[page.path];
+      return override ? { ...page, ...override } : page;
+    });
 }
 
 const GEO_PAGES = getAllGeoPages();
