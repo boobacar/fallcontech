@@ -1,21 +1,26 @@
 import { useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Minus, Plus } from "lucide-react";
+import { ArrowRight, CheckCircle2, Minus, Plus, ShieldCheck, Wrench } from "lucide-react";
 import SEO from "@/components/SEO";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import { useCart } from "@/context/CartContext";
-import { SITE_URL } from "@/data/seoData";
 import {
-  getProductBySlug,
-  products,
   PRICE_LABEL,
   productSeoForPath,
+  products,
+  getProductBySlug,
 } from "@/data/products";
-import { BOUTIQUE_FAMILIES, BOUTIQUE_COUNTRIES } from "@/data/boutiqueGeoData";
+import {
+  productBuyingPoints,
+  productFaqFor,
+  productFamily,
+  productJsonLd,
+  productUseCases,
+} from "@/data/productSeo";
+import { BOUTIQUE_COUNTRIES } from "@/data/boutiqueGeoData";
 
-const toAbsolute = (img) =>
-  img && img.startsWith("http") ? img : `${SITE_URL}${img.startsWith("/") ? img : `/${img}`}`;
+const WHATSAPP = "https://wa.me/221774837576";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
@@ -32,64 +37,14 @@ export default function ProductPage() {
   if (!product) return <Navigate to="/boutique" replace />;
 
   const seo = productSeoForPath(`/boutique/${product.slug}`) || {};
-
-  const family = BOUTIQUE_FAMILIES.find((f) => f.cat === product.category) || BOUTIQUE_FAMILIES[0];
-
-  const productFaq = [
-    {
-      q: `Comment obtenir le prix du ${product.name} ?`,
-      a: `Le prix dépend de la configuration livrée (cartes, modules optiques, licences éventuelles) : il est établi sur devis sous 24 h, avec la référence exacte et le détail de ce qui est inclus.`,
-    },
-    {
-      q: `Livrez-vous le ${product.name} en Afrique ?`,
-      a: `Oui : expédition depuis Dakar vers l'Afrique de l'Ouest et centrale. Le matériel est testé avant expédition et le mode de livraison est confirmé dans le devis selon le poids et les formalités d'importation.`,
-    },
-    {
-      q: `Le matériel est-il configuré avant livraison ?`,
-      a: `Nous livrons le matériel testé et pré-configuré selon vos informations (adressage, VLAN, politique de sécurité de base, VPN le cas échéant). La configuration sur site ou à distance peut être incluse au devis.`,
-    },
-    {
-      q: `Quelles licences faut-il prévoir ?`,
-      a: `Selon le modèle et les fonctions activées : licences matérielles Huawei (capacité de port, MACsec) et logicielles (jeux de fonctions, options de sécurité). Elles sont chiffrées séparément dans le devis pour éviter toute surprise.`,
-    },
-    ...family.faq.slice(0, 2),
-  ];
-
-  const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name,
-    description: product.short,
-    image: toAbsolute(product.image),
-    category: product.category,
-    brand: { "@type": "Brand", name: product.category === "Serveurs" ? "Huawei" : "Huawei" },
-    url: `${SITE_URL}/boutique/${product.slug}`,
-    additionalProperty: product.specs.slice(0, 6).map((spec) => ({
-      "@type": "PropertyValue",
-      name: "Caractéristique",
-      value: spec,
-    })),
-  };
-
-  const productFaqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: productFaq.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "Boutique", item: `${SITE_URL}/boutique` },
-      { "@type": "ListItem", position: 3, name: product.name, item: `${SITE_URL}/boutique/${product.slug}` },
-    ],
-  };
+  const family = productFamily(product);
+  const productFaq = productFaqFor(product);
+  const useCases = productUseCases(product);
+  const buying = productBuyingPoints(product);
+  const jsonLd = productJsonLd(product);
+  const whatsappHref = `${WHATSAPP}?text=${encodeURIComponent(
+    `Bonjour Fallcon Tech, je souhaite un devis pour le ${product.name}.`,
+  )}`;
 
   return (
     <>
@@ -98,7 +53,7 @@ export default function ProductPage() {
         title={seo.title}
         description={seo.description}
         image={product.ogImage || product.image}
-        jsonLd={[productJsonLd, breadcrumbJsonLd, productFaqJsonLd]}
+        jsonLd={jsonLd}
       />
 
       {/* Top strip with back link + cart */}
@@ -114,7 +69,13 @@ export default function ProductPage() {
       <section className="product-page">
         <div className="site-shell product-page-grid">
           <div className="product-page-media">
-            <img src={product.image} alt={`${product.name} — ${product.category} Huawei`} width={product.imgW} height={product.imgH} decoding="async" />
+            <img
+              src={product.image}
+              alt={product.imageAlt || `${product.name} — ${product.category} Huawei`}
+              width={product.imgW}
+              height={product.imgH}
+              decoding="async"
+            />
           </div>
           <div className="product-page-body">
             <p className="product-cat">{product.category}</p>
@@ -137,6 +98,8 @@ export default function ProductPage() {
               </span>
             </div>
 
+            {product.stockNote && <p className="product-stock-note">{product.stockNote}</p>}
+
             <div className="product-page-qty">
               <span>Quantité</span>
               <div className="qty-control">
@@ -153,21 +116,55 @@ export default function ProductPage() {
               <Link className="button button-secondary" to="/contact">
                 Demander un devis <ArrowRight size={17} />
               </Link>
+              <a className="button button-secondary" href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
             </div>
 
             <p className="product-page-note">
               Prix communiqué sur devis : configuration, licences, garantie et installation
               chiffrées par écrit avant toute commande.
+              {product.condition && (
+                <>
+                  <br />
+                  <Wrench size={12} aria-hidden="true" /> État : {product.condition}
+                </>
+              )}
             </p>
           </div>
         </div>
 
-        {/* Contenu SEO : usages, cadrage, FAQ, maillage pays */}
+        {/* Contenu SEO : présentation, fiche technique, licences, usages, FAQ, maillage pays */}
         <div className="site-shell shop-seo-content">
+          {product.longIntro && product.longIntro.length > 0 && (
+            <div className="product-intro">
+              <h2 className="shop-seo-h2">Présentation du {product.name}</h2>
+              {product.longIntro.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+
+          {product.techSpecs && product.techSpecs.length > 0 && (
+            <>
+              <h2 className="shop-seo-h2">Fiche technique {product.name}</h2>
+              <table className="product-specs-table">
+                <tbody>
+                  {product.techSpecs.map((row) => (
+                    <tr key={row.k}>
+                      <th scope="row">{row.k}</th>
+                      <td>{row.v}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+          )}
+
           <div className="shop-seo-section">
             <h2>Pour quels projets choisir le {product.name} ?</h2>
             <ul className="shop-seo-list">
-              {family.useCases.map((item) => (
+              {useCases.map((item) => (
                 <li key={item}><CheckCircle2 size={16} /> <span>{item}</span></li>
               ))}
             </ul>
@@ -176,11 +173,38 @@ export default function ProductPage() {
           <div className="shop-seo-section">
             <h2>Comment nous cadrons la configuration</h2>
             <ul className="shop-seo-list">
-              {family.buying.map((item) => (
+              {buying.map((item) => (
                 <li key={item}><CheckCircle2 size={16} /> <span>{item}</span></li>
               ))}
             </ul>
           </div>
+
+          {product.included && product.included.length > 0 && (
+            <div className="shop-seo-section">
+              <h2>Ce qui est inclus, et ce qui dépend d'une licence</h2>
+              <div className="product-licence-grid">
+                <div className="product-licence-card is-included">
+                  <h3><ShieldCheck size={16} aria-hidden="true" /> Inclus sans licence</h3>
+                  <ul>
+                    {product.included.map((item) => (
+                      <li key={item}><CheckCircle2 size={15} /> <span>{item}</span></li>
+                    ))}
+                  </ul>
+                </div>
+                {product.options && product.options.length > 0 && (
+                  <div className="product-licence-card is-option">
+                    <h3><Wrench size={16} aria-hidden="true" /> Options et licences</h3>
+                    <ul>
+                      {product.options.map((item) => (
+                        <li key={item}><Plus size={15} /> <span>{item}</span></li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              {product.licenceNote && <p className="product-licence-note">{product.licenceNote}</p>}
+            </div>
+          )}
 
           <div className="shop-seo-section">
             <h2>Questions fréquentes</h2>

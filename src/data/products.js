@@ -240,36 +240,143 @@ export const products = [
   {
     id: "pare-feu-usg6625e",
     seoPitchEn:
-      "1U NGFW firewall: 20 Gbit/s, 16× GE + 6× 10GE SFP+.",
+      "New 1U NGFW firewall: 20 Gbit/s, 16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+, 15 Gbit/s IPsec VPN, 2 units available in Dakar.",
     seoPitch:
-      "Pare-feu NGFW 1U : 20 Gbit/s, 16× GE + 6× 10GE SFP+, 16 Go de mémoire.",
+      "Pare-feu NGFW 1U neuf : 20 Gbit/s, 16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+, VPN IPsec 15 Gbit/s — 2 unités disponibles à Dakar.",
     slug: "pare-feu-usg6625e",
     name: "Huawei USG6625E-AC (HiSecEngine NGFW)",
     category: "Sécurité & Pare-feu",
-    configNote: "Hors licences",
+    mpn: "02352RQN",
+    model: "USG6625E-AC",
+    configNote: "Neuf · 2 unités · hors licences",
+    configNoteEn: "New · 2 units · licences excluded",
+    seoTitle:
+      "Pare-feu Huawei USG6625E-AC à Dakar — NGFW 20 Gbit/s | Fallcon Tech",
+    seoDescription:
+      "Pare-feu Huawei USG6625E-AC neuf : 20 Gbit/s, 16×GE + 6×10GE SFP+, VPN IPsec 15 Gbit/s, SSL VPN, 8 M sessions. 2 unités en stock à Dakar, devis sous 24 h.",
     shortEn:
-      "Next-generation firewall for enterprises and data centres.",
+      "New 1U next-generation firewall: 20 Gbit/s firewall throughput, 15 Gbit/s IPsec VPN, 16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+, 16 GB memory. Two units in stock in Dakar.",
+    short:
+      "Pare-feu nouvelle génération 1U neuf : 20 Gbit/s, 16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+, VPN IPsec 15 Gbit/s et SSL VPN. Pour périmètre d'entreprise, VPN multi-sites et segmentation réseau. 2 unités en stock à Dakar.",
+    imageAlt:
+      "Pare-feu Huawei HiSecEngine USG6625E-AC (NGFW 1U, 16× GE + 6× 10GE SFP+) en stock à Dakar",
     specsEn: [
-      "16 × GE RJ45 + 6 × GE SFP + 6 × 10GE SFP+",
-      "20 Gbit/s throughput · 15 Gbit/s IPsec VPN",
-      "SSL VPN for 100 users",
-      "16 GB memory · AC power",
-      "1U rack mountable",
+      "16 × GE RJ45 + 6 × GE SFP + 6 × 10GE SFP+ (Huawei 02352RQN)",
+      "20 Gbit/s firewall throughput · 10 Gbit/s with IPS + antivirus",
+      "15 Gbit/s IPsec VPN · SSL VPN for 100 users (2,000 with licence)",
+      "8 million concurrent sessions · 200,000 new sessions/s",
+      "16 GB memory · 1U rack mountable · 442 × 420 × 43.6 mm (7.6 kg)",
+      "Two units in stock with consecutive serial numbers (HA pair possible)",
+      "Condition: new, never put into service, original packaging",
     ],
-    configNoteEn: "Licences excluded",
+    specs: [
+      "16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+ (réf. Huawei 02352RQN)",
+      "Débit pare-feu 20 Gbit/s · 10 Gbit/s avec IPS + antivirus activés",
+      "VPN IPsec 15 Gbit/s · SSL VPN 100 utilisateurs (2 000 en option)",
+      "8 millions de sessions simultanées · 200 000 nouvelles sessions/s",
+      "16 Go de mémoire · 1U rackable · 442 × 420 × 43,6 mm (7,6 kg)",
+      "2 unités en stock, numéros de série consécutifs (paire redondante possible)",
+      "État : neuf, jamais mis en service, emballage d'origine",
+    ],
+    techSpecs: [
+      { k: "Référence Huawei", v: "02352RQN" },
+      { k: "Modèle", v: "HiSecEngine USG6625E-AC (pare-feu NGFW 1U)" },
+      { k: "Interfaces fixes", v: "16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+" },
+      { k: "Débit pare-feu (1518 / 512 / 64 octets)", v: "20 / 20 / 20 Gbit/s" },
+      { k: "Débit IPS + antivirus activés", v: "10 Gbit/s" },
+      { k: "Débit avec inspection SSL", v: "3 Gbit/s" },
+      { k: "VPN IPsec (AES-256 + SHA-256)", v: "15 Gbit/s" },
+      { k: "SSL VPN", v: "100 utilisateurs inclus · jusqu'à 2 000 avec licence" },
+      { k: "Sessions simultanées", v: "8 000 000" },
+      { k: "Nouvelles sessions par seconde", v: "200 000" },
+      { k: "Latence", v: "15 µs" },
+      { k: "Politiques de sécurité", v: "Jusqu'à 40 000 règles" },
+      { k: "Pare-feu virtuels (VSYS)", v: "Jusqu'à 500" },
+      { k: "VLAN", v: "4 094" },
+      { k: "Mémoire", v: "16 Go" },
+      { k: "Alimentation", v: "100–240 V AC, 50/60 Hz · 104,5 W typique (118 W max) · 1 alimentation AC fournie" },
+      { k: "Format et dimensions", v: "1U rackable · 442 × 420 × 43,6 mm" },
+      { k: "Poids", v: "7,6 kg" },
+      { k: "Environnement", v: "0 à 45 °C · humidité 5–95 % sans condensation" },
+      { k: "Gestion", v: "Interface web, CLI, eSight, eLog (journalisation centralisée)" },
+      { k: "Stockage local (option)", v: "SSD 240 Go ou HDD 1 To 2,5\" (rapports et journaux)" },
+      { k: "État du matériel", v: "Neuf, jamais mis en service — 2 unités, numéros de série consécutifs" },
+    ],
+    longIntro: [
+      "Le Huawei HiSecEngine USG6625E-AC est un pare-feu nouvelle génération (NGFW) 1U conçu pour le périmètre d'une entreprise, d'une administration ou d'un data center. Il combine 16 ports GE cuivre, 6 ports GE optiques et 6 ports 10GE SFP+ avec un débit pare-feu de 20 Gbit/s, 16 Go de mémoire et 8 millions de sessions simultanées : de quoi tenir un lien Internet très haut débit tout en séparant proprement les zones du réseau.",
+      "En fonctionnement standard, il assure le filtrage des flux, le NAT, le routage, la segmentation en zones, les tunnels VPN IPsec site-à-site (15 Gbit/s) et le SSL VPN pour les collaborateurs à distance — sans licence supplémentaire. Le filtrage applicatif, la prévention d'intrusion, l'antivirus, le filtrage d'URL et le sandbox anti-APT s'activent par licences Huawei, chiffrées séparément au devis : vous payez la sécurité dont vous avez réellement besoin, quand vous en avez besoin.",
+      "Les deux unités disponibles sont neuves et n'ont jamais été mises en service. Leurs numéros de série sont consécutifs : elles peuvent être déployées en redondance (haute disponibilité actif/passif ou actif/actif), configuration que nous installons sur site ou à distance. Le matériel est testé et pré-configuré à Dakar (WAN, zones, règles, VPN, journalisation) avant expédition au Sénégal et dans la sous-région.",
+    ],
+    useCases: [
+      "Protéger le périmètre Internet d'une PME, d'une banque, d'une clinique ou d'une administration : NAT, filtrage, journalisation",
+      "Relier un siège et ses agences par tunnels IPsec chiffrés, avec bascule sur un second lien opérateur",
+      "Sécuriser le télétravail avec le SSL VPN : accès aux applications internes depuis l'extérieur",
+      "Segmenter le réseau : postes de travail, serveurs, Wi-Fi invités, caméras et objets connectés",
+      "Équiper un hébergeur ou un intégrateur qui revend une protection par client (pare-feu virtuels, VSYS)",
+      "Remplacer un pare-feu en fin de support quand les interfaces 10GE SFP+ sont déjà nécessaires",
+    ],
+    buying: [
+      "Dimensionner sur le débit avec inspection activée (10 Gbit/s IPS + antivirus), pas sur le débit brut de 20 Gbit/s",
+      "Compter les interfaces nécessaires : 16× GE pour les zones et 6× 10GE SFP+ pour les liens et les serveurs",
+      "Les fonctions avancées (IPS, antivirus, filtrage d'URL, SSL VPN au-delà de 100 utilisateurs) dépendent de licences",
+      "La configuration de base (WAN, zones, règles, VPN, journalisation) est incluse dans le devis",
+      "Pour une redondance, deux unités identiques sont nécessaires : nous en avons deux, séries consécutives",
+    ],
+    faq: [
+      {
+        q: "Le pare-feu USG6625E fonctionne-t-il sans licence ?",
+        a: "Oui. Sans licence, l'appareil assure le filtrage des flux, le NAT, le routage, la segmentation en zones, la haute disponibilité, les tunnels VPN IPsec site-à-site et le SSL VPN pour 100 utilisateurs nommés, ainsi que la journalisation. Les licences Huawei ne concernent que les fonctions avancées et leurs mises à jour : prévention d'intrusion (IPS), antivirus, filtrage d'URL, contrôle applicatif, anti-APT, DLP et SSL VPN au-delà de 100 utilisateurs. Le devis précise noir sur blanc ce qui est inclus et ce qui reste en option.",
+      },
+      {
+        q: "Quel débit réel puis-je espérer ?",
+        a: "20 Gbit/s en pare-feu seul, 15 Gbit/s en VPN IPsec chiffré, et 10 Gbit/s lorsque l'IPS et l'antivirus sont activés (3 Gbit/s avec inspection SSL). Ces valeurs dépassent largement les liens opérateurs disponibles au Sénégal et en Afrique de l'Ouest : l'appareil ne sera pas le facteur limitant de votre connexion.",
+      },
+      {
+        q: "Combien de sites et d'utilisateurs à distance peut-il connecter ?",
+        a: "Le VPN IPsec site-à-site relie autant de sites que vous avez de tunnels, avec possibilité de redondance sur deux liens WAN. Le SSL VPN est livré pour 100 utilisateurs simultanés et s'étend jusqu'à 2 000 avec licence. Pour dimensionner précisément, indiquez-nous le nombre d'agences, le débit de chaque lien et le nombre de télétravailleurs.",
+      },
+      {
+        q: "Peut-on déployer deux pare-feu en redondance ?",
+        a: "Oui, et c'est l'intérêt de nos deux unités : leurs numéros de série sont consécutifs et leur configuration est identique. Nous les installons en haute disponibilité (actif/passif ou actif/actif) pour qu'une panne matérielle n'entraîne aucune coupure d'accès Internet. C'est la configuration que demandent les banques, les cliniques et les hébergeurs.",
+      },
+      {
+        q: "Le matériel est-il neuf et quelle garantie s'applique ?",
+        a: "Les deux unités sont neuves et n'ont jamais été mises en service (emballage d'origine, cartons marqués par le stockage). Chaque appareil est testé avant expédition et livré avec notre garantie atelier depuis Dakar, dont la durée est précisée au devis. La garantie constructeur Huawei n'étant pas transférable à un acquéreur tiers, c'est nous qui l'assumons directement.",
+      },
+      {
+        q: "Puis-je voir le matériel et le tester avant d'acheter ?",
+        a: "Oui, sur rendez-vous à Dakar : nous allumons l'appareil, montrons la version logicielle, l'état des interfaces et une configuration VPN de démonstration. Pour un acheteur hors du Sénégal, nous envoyons des photos de l'appareil sous tension et la configuration testée avant expédition.",
+      },
+      {
+        q: "Livrez-vous et installez-vous hors du Sénégal ?",
+        a: "Oui : expédition depuis Dakar vers l'Afrique de l'Ouest et centrale (Côte d'Ivoire, Mali, Burkina Faso, Guinée, Bénin, Togo, Cameroun, Gabon…). La configuration peut être faite avant expédition, puis finalisée à distance ; une intervention sur site est possible selon le projet et précisée au devis.",
+      },
+    ],
+    included: [
+      "Politiques de filtrage, NAT, routage et segmentation en zones",
+      "VPN IPsec site-à-site jusqu'à 15 Gbit/s (chiffrement AES-256 + SHA-256)",
+      "SSL VPN pour 100 utilisateurs simultanés",
+      "Haute disponibilité entre deux unités (actif/passif ou actif/actif)",
+      "Journalisation locale, supervision et export des journaux (eLog)",
+      "Gestion complète par interface web et CLI",
+    ],
+    options: [
+      "Licence IPS — prévention d'intrusion et mise à jour des bases de signatures",
+      "Licence antivirus / anti-malware au niveau des flux",
+      "Licence filtrage d'URL (130+ catégories) et contrôle applicatif",
+      "SSL VPN au-delà de 100 utilisateurs (jusqu'à 2 000)",
+      "Sandbox anti-APT et prévention des fuites de données (DLP)",
+      "Deuxième alimentation AC pour la redondance d'alimentation",
+    ],
+    licenceNote:
+      "Sans licence, le pare-feu protège déjà votre périmètre : filtrage, NAT, zones, VPN IPsec et SSL VPN 100 utilisateurs. Les licences n'ajoutent que la sécurité avancée (IPS, antivirus, filtrage d'URL, anti-APT, SSL VPN étendu) — chiffrées séparément au devis, en 1 ou 3 ans.",
+    stockNote:
+      "2 unités en stock à Dakar — séries consécutives, redondance (HA) possible.",
+    condition: "Neuf, jamais mis en service · garantie atelier",
     image: "/products/usg6625e.webp",
     ogImage: "/products/usg6625e.png",
     imgW: 1440,
     imgH: 1440,
-    short:
-      "Pare-feu nouvelle génération pour entreprises et data centers.",
-    specs: [
-      "16× GE RJ45 + 6× GE SFP + 6× 10GE SFP+",
-      "Débit 20 Gbit/s · 15 Gbit/s IPSec VPN",
-      "SSL VPN 100 utilisateurs",
-      "16 Go de mémoire · alimentation AC",
-      "1U rackable",
-    ],
     stock: "En stock",
     badge: "NEUF",
     badgeEn: "NEW",
@@ -507,10 +614,11 @@ export function productSeoForPath(path) {
   if (!product) return null;
   return {
     path,
-    title: `${product.name} — ${product.category} à Dakar | Fallcon Tech`,
+    title: product.seoTitle || `${product.name} — ${product.category} à Dakar | Fallcon Tech`,
     description:
+      product.seoDescription ||
       `${product.name} : ${product.short} ` +
-      `Prix sur devis selon configuration, licences et installation — livré et installé au Sénégal.`,
+        `Prix sur devis selon configuration, licences et installation — livré et installé au Sénégal.`,
     canonical: `${SITE_URL}${path}`,
     priority: "0.85",
     changefreq: "weekly",

@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { getSeoForPath, SITE_URL } from "../src/data/seoData.js";
 import { geoSeoForPath } from "../src/data/geoData.js";
 import { productSeoForPath } from "../src/data/products.js";
+import { productJsonLdForSlug } from "../src/data/productSeo.js";
 import { boutiqueSeoForPath } from "../src/data/boutiqueGeoData.js";
 
 const distIndexPath = resolve("dist/index.html");
@@ -25,6 +26,24 @@ const outputPathsForRoute = (routePath) => {
   if (routePath === "/") return [distIndexPath];
   const cleanPath = routePath.replace(/^\/+/, "");
   return [resolve("dist", cleanPath, "index.html"), resolve("dist", `${cleanPath}.html`)];
+};
+
+// Données structurées des fiches produit : injectées dans le HTML statique pour
+// que les moteurs et les crawlers IA les lisent sans exécuter le JavaScript.
+// (Le composant React les réinjecte via Helmet : la copie statique est retirée
+// au montage — voir src/main.jsx.)
+const injectProductJsonLd = (html, routePath) => {
+  const match = routePath.match(/^\/boutique\/([^/]+)\/?$/);
+  if (!match) return html;
+  const blocks = productJsonLdForSlug(match[1], SITE_URL);
+  if (!blocks || !blocks.length) return html;
+  const scripts = blocks
+    .map(
+      (block) =>
+        `<script type="application/ld+json" data-prerender-jsonld="true">${JSON.stringify(block)}</script>`,
+    )
+    .join("\n    ");
+  return html.replace("</head>", `    ${scripts}\n  </head>`);
 };
 
 const applySeo = (template, routePath) => {
@@ -54,6 +73,7 @@ const applySeo = (template, routePath) => {
   html = replaceOrInsert(html, /<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${title}" />`);
   html = replaceOrInsert(html, /<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${description}" />`);
   html = replaceOrInsert(html, /<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${ogImage}" />`);
+  html = injectProductJsonLd(html, routePath);
   return html;
 };
 
