@@ -84,8 +84,20 @@ test("grammaire française : pas de « en Sénégal », « du Côte d'Ivoire »,
 });
 
 test("aucun prix n'est publié dans les données boutique (FR et EN)", () => {
+  // Les références constructeur (P/N Huawei, ex. 34060613) sont des suites de
+  // chiffres : elles sont retirées du texte avant le contrôle, sinon elles
+  // déclenchent la détection de montants. Un prix réel n'est jamais écrit après
+  // « P/N », « référence Huawei » ou « code carte ».
+  const refPattern = /(?:P\/N|référence(?:\s+Huawei)?|code carte)\s*:?\s*(\d{5,})/gi;
+  const references = new Set();
+  for (const match of JSON.stringify(products).matchAll(refPattern)) references.add(match[1]);
+  const stripRefs = (text) => {
+    let value = text;
+    for (const reference of references) value = value.split(reference).join("######");
+    return value;
+  };
   const offences = pages.filter((p) => {
-    const text = JSON.stringify(p);
+    const text = stripRefs(JSON.stringify(p));
     return /F\s?CFA/i.test(text) || /\bprix\s*:/i.test(text) || /\b\d{6,}\b/.test(text);
   });
   assert.equal(offences.length, 0, `montants détectés : ${offences.map((p) => p.path).join(", ")}`);

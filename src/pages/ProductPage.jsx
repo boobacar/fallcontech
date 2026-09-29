@@ -42,6 +42,9 @@ export default function ProductPage() {
   const useCases = productUseCases(product);
   const buying = productBuyingPoints(product);
   const jsonLd = productJsonLd(product);
+  const includedTitle = product.includedTitle || "Ce qui est inclus, et ce qui dépend d'une licence";
+  const optionsTitle = product.optionsTitle || "Options et licences";
+  const includedCardTitle = product.includedCardTitle || "Inclus sans licence";
   const whatsappHref = `${WHATSAPP}?text=${encodeURIComponent(
     `Bonjour Fallcon Tech, je souhaite un devis pour le ${product.name}.`,
   )}`;
@@ -181,10 +184,10 @@ export default function ProductPage() {
 
           {product.included && product.included.length > 0 && (
             <div className="shop-seo-section">
-              <h2>Ce qui est inclus, et ce qui dépend d'une licence</h2>
+              <h2>{includedTitle}</h2>
               <div className="product-licence-grid">
                 <div className="product-licence-card is-included">
-                  <h3><ShieldCheck size={16} aria-hidden="true" /> Inclus sans licence</h3>
+                  <h3><ShieldCheck size={16} aria-hidden="true" /> {includedCardTitle}</h3>
                   <ul>
                     {product.included.map((item) => (
                       <li key={item}><CheckCircle2 size={15} /> <span>{item}</span></li>
@@ -193,7 +196,7 @@ export default function ProductPage() {
                 </div>
                 {product.options && product.options.length > 0 && (
                   <div className="product-licence-card is-option">
-                    <h3><Wrench size={16} aria-hidden="true" /> Options et licences</h3>
+                    <h3><Wrench size={16} aria-hidden="true" /> {optionsTitle}</h3>
                     <ul>
                       {product.options.map((item) => (
                         <li key={item}><Plus size={15} /> <span>{item}</span></li>
