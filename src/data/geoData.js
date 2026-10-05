@@ -847,6 +847,7 @@ export const GEO_COMPETENCES = [
     name: "Création de boutique en ligne",
     type: "E-commerce",
     desc: "création de boutique en ligne : catalogue, paiement mobile money, livraison locale et SEO e-commerce",
+    seoTitle: "Création de boutique en ligne & e-commerce {place} | Fallcon Tech",
     lead:
       "Nous créons des boutiques en ligne pour les commerces de {capital} et du {country}, avec paiement mobile et livraison locale.",
     quickAnswer:

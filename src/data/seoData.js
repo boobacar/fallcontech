@@ -4,7 +4,7 @@ const defaultImage = "/logo.png";
 
 export const pageSeo = {
   "/": {
-    title: "Transformation numérique Sénégal : développeur web à Dakar, applications mobiles & logiciels | Fallcon Tech",
+    title: "Transformation numérique Sénégal : mobile app development & logiciels métier | Fallcon Tech",
     description:
       "Applications mobiles, GED, logiciels métier et plateformes sur mesure pour administrations, cliniques, ONG et entreprises au Sénégal. Étude de votre besoin.",
     priority: "1.0",
@@ -265,7 +265,7 @@ export const articleSeo = {
   "/article/internet-lent-fibre-dakar-solutions": ["Internet lent et fibre instable à Dakar : solutions", "Fibre Orange, Free, Starlink et backup 4G pour limiter les coupures internet en entreprise."],
   "/article/arnaques-wave-orange-money-senegal": ["Arnaques Wave & Orange Money au Sénégal : alerte sécurité", "Les méthodes d’arnaque mobile money au Sénégal et comment sécuriser vos comptes professionnels."],
   "/article/acheter-pc-portable-original-dakar": ["Où acheter son matériel informatique à Dakar ?", "Différencier un PC venant d’un ordinateur neuf original : guide d’achat informatique pour entreprises."],
-  "/article/logiciel-gestion-stock-caisse-senegal": ["Logiciel de gestion & caisse pour commerces au Sénégal", "Gestion de stock, caisse, anti-vol et rapports automatiques : pourquoi quitter le cahier pour un logiciel POS."],
+  "/article/logiciel-gestion-stock-caisse-senegal": ["Logiciel de caisse (POS) & gestion de stock au Sénégal", "Gestion de stock, caisse, anti-vol et rapports automatiques : pourquoi quitter le cahier pour un logiciel POS."],
   "/article/comment-choisir-developpeur-web-dakar-senegal": ["Choisir un développeur web à Dakar : guide et conseils", "Découvrez comment choisir le développeur web idéal à Dakar. Freelance ou agence ? Junior ou senior ? Nos critères pour éviter les erreurs et réussir votre projet."],
   "/article/comment-seo-transforme-chiffre-affaires-senegal": ["Comment le SEO peut transformer votre chiffre d'affaires au Sénégal", "Comprendre l'impact du référencement naturel (SEO) sur les revenus de votre entreprise au Sénégal."],
   "/article/freelance-ou-agence-web-senegal-que-choisir": ["Freelance ou agence web au Sénégal : que choisir ?", "Avantages et inconvénients d’un freelance vs une agence digitale à Dakar : prix, délais et qualité."],
