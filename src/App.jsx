@@ -202,6 +202,12 @@ const ArticlePlanContinuiteActiviteInformatique = lazy(
 const ArticleVisibleGoogleMapsEntrepriseSenegal = lazy(
   () => import("@/pages/articles/ArticleVisibleGoogleMapsEntrepriseSenegal"),
 );
+const ArticleProtectionDonneesPersonnellesSenegal = lazy(
+  () => import("@/pages/articles/ArticleProtectionDonneesPersonnellesSenegal"),
+);
+const ArticleDossierPatientInformatiseSenegal = lazy(
+  () => import("@/pages/articles/ArticleDossierPatientInformatiseSenegal"),
+);
 const ArticleSeoLocalSenegal2026 = lazy(
   () => import("@/pages/articles/ArticleSeoLocalSenegal2026"),
 );
@@ -534,6 +540,14 @@ function App() {
           <Route
             path="/article/visible-google-maps-entreprise-senegal"
             element={<ArticleVisibleGoogleMapsEntrepriseSenegal />}
+          />
+          <Route
+            path="/article/protection-donnees-personnelles-senegal"
+            element={<ArticleProtectionDonneesPersonnellesSenegal />}
+          />
+          <Route
+            path="/article/dossier-patient-informatise-senegal"
+            element={<ArticleDossierPatientInformatiseSenegal />}
           />
           <Route
             path="/article/wordpress-vs-nextjs-seo"

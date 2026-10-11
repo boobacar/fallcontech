@@ -9,7 +9,7 @@ const ArticleDossierPatientInformatiseSenegal = () => {
   const path = "/article/dossier-patient-informatise-senegal";
   const title = "Dossier patient informatisé : pourquoi y passer";
   const description =
-    "Dossier patient informatisé au Sénégal : déploiement de Kaffrine, cadre national, bénéfices concrets et contraintes réelles pour cliniques et hôpitaux.";
+    "Dossier patient informatisé au Sénégal : le déploiement de Kaffrine, le cadre national, les bénéfices concrets et les contraintes réelles pour cliniques et hôpitaux.";
 
   // Source unique de vérité : la FAQ visible et le JSON-LD affichent exactement le même contenu.
   const faq = [
@@ -156,7 +156,7 @@ const ArticleDossierPatientInformatiseSenegal = () => {
               </li>
               <li>
                 <strong>Les statistiques d’activité</strong> : le nombre de consultations, d’actes et de patients
-                devient une donnée disponible immédiatement pour piloter la structure.
+                devient une donnée disponible immédiatement pour gérer la structure.
               </li>
               <li>
                 <strong>La facturation et le suivi des paiements</strong> : les prestations financières sont rattachées
