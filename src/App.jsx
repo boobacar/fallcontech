@@ -184,6 +184,18 @@ const ArticlePrixLogicielGestionSenegal = lazy(
 const ArticlePrixApplicationMobileSenegal = lazy(
   () => import("@/pages/articles/ArticlePrixApplicationMobileSenegal"),
 );
+const ArticleFacturationElectroniqueFneSenegal = lazy(
+  () => import("@/pages/articles/ArticleFacturationElectroniqueFneSenegal"),
+);
+const ArticleWaveVsOrangeMoneyFraisSenegal2026 = lazy(
+  () => import("@/pages/articles/ArticleWaveVsOrangeMoneyFraisSenegal2026"),
+);
+const ArticleCinetpayPaydunyaFlutterwaveSenegal = lazy(
+  () => import("@/pages/articles/ArticleCinetpayPaydunyaFlutterwaveSenegal"),
+);
+const ArticleCommentChoisirLogicielGestionSenegal = lazy(
+  () => import("@/pages/articles/ArticleCommentChoisirLogicielGestionSenegal"),
+);
 const ArticleSeoLocalSenegal2026 = lazy(
   () => import("@/pages/articles/ArticleSeoLocalSenegal2026"),
 );
@@ -492,6 +504,22 @@ function App() {
           <Route
             path="/article/prix-application-mobile-senegal"
             element={<ArticlePrixApplicationMobileSenegal />}
+          />
+          <Route
+            path="/article/facturation-electronique-fne-senegal"
+            element={<ArticleFacturationElectroniqueFneSenegal />}
+          />
+          <Route
+            path="/article/wave-vs-orange-money-frais-senegal-2026"
+            element={<ArticleWaveVsOrangeMoneyFraisSenegal2026 />}
+          />
+          <Route
+            path="/article/cinetpay-paydunya-flutterwave-comparatif-senegal"
+            element={<ArticleCinetpayPaydunyaFlutterwaveSenegal />}
+          />
+          <Route
+            path="/article/comment-choisir-logiciel-gestion-senegal"
+            element={<ArticleCommentChoisirLogicielGestionSenegal />}
           />
           <Route
             path="/article/wordpress-vs-nextjs-seo"
