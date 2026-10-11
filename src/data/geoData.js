@@ -823,6 +823,270 @@ export const GEO_COMPETENCES = [
     ],
   },
   {
+    slug: "facturation-electronique",
+    name: "Facturation électronique normalisée (FNE)",
+    type: "Conformité · Facturation",
+    desc: "facturation électronique normalisée : émission des factures certifiées conformes à la réforme de la DGI, intégration à votre logiciel de gestion et archivage légal",
+    seoTitle: "Facturation électronique {place} : mise en conformité FNE",
+    seoDescription:
+      "Mise en conformité à la facturation électronique normalisée {place} : paramétrage, factures certifiées conformes à la DGI, intégration à votre logiciel et archivage. Devis sous 48 h.",
+    lead:
+      "Nous mettons les entreprises et administrations de {capital} et du {country} en conformité avec la facturation électronique normalisée : émission des factures certifiées, intégration à votre outil de gestion et archivage.",
+    quickAnswer:
+      "Fallcon Tech met en place la facturation électronique normalisée en {country} : paramétrage de vos modèles de factures, émission de factures certifiées conformes aux exigences de la DGI, intégration à votre logiciel de gestion ou de caisse, et archivage des pièces avec traçabilité complète.",
+    features: [
+      "Cadrage de votre obligation et de votre périmètre",
+      "Paramétrage des factures conformes (mentions, numérotation, TVA)",
+      "Émission et transmission des factures certifiées",
+      "Intégration à votre logiciel de gestion, de caisse ou de comptabilité",
+      "Archivage des factures avec horodatage et traçabilité",
+      "Formation de vos équipes facturation et comptabilité",
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce que la facturation électronique normalisée ?",
+        a: "C'est une facture dont le format, les mentions et la transmission respectent un cadre normalisé défini par l'administration fiscale : la facture devient une donnée lisible par les systèmes, et non plus un simple document papier ou PDF libre.",
+      },
+      {
+        q: "Suis-je concerné par la réforme {place} ?",
+        a: "Les entreprises assujetties à la TVA qui facturent des professionnels sont les premières concernées, ainsi que les administrations et leurs fournisseurs. Nous vérifions votre situation et le calendrier applicable avant tout engagement.",
+      },
+      {
+        q: "Faut-il changer mon logiciel de gestion ?",
+        a: "Pas nécessairement. Si votre outil gère déjà les factures et les paiements, nous l'intégrons aux exigences de conformité. Sinon, nous le complétons ou le remplaçons par un module de facturation conforme.",
+      },
+      {
+        q: "Que se passe-t-il pour mes anciennes factures ?",
+        a: "Nous organisons la reprise : les factures en cours sont reprises dans le nouveau circuit, et les archives sont classées pour rester opposables en cas de contrôle.",
+      },
+    ],
+    relatedArticle: { to: "/article/digitalisation-entreprise-pme-senegal", label: "Guide : digitaliser son entreprise" },
+    relatedServices: [
+      { to: "/services/logiciel-sur-mesure-senegal", label: "Logiciel sur mesure" },
+      { to: "/services/ged-archivage-senegal", label: "GED & archivage" },
+    ],
+  },
+  {
+    slug: "erp-odoo",
+    name: "ERP et intégration Odoo",
+    type: "ERP · Gestion intégrée",
+    desc: "ERP et intégration Odoo : unification de la comptabilité, des ventes, des achats et des stocks dans un seul système, avec formation et reprise des données",
+    seoTitle: "ERP et intégration Odoo {place} : comptabilité, ventes, stocks",
+    seoDescription:
+      "Mise en place d'un ERP {place} : intégration Odoo ou solution équivalente, comptabilité, ventes, achats et stocks unifiés, reprise des données et formation. Devis sous 48 h.",
+    lead:
+      "Nous déployons des ERP pour les PME et les groupes de {capital} et du {country} : un seul système pour la comptabilité, les ventes, les achats et les stocks.",
+    quickAnswer:
+      "Fallcon Tech intègre un ERP en {country}, notamment Odoo : paramétrage des modules comptabilité, ventes, achats, stocks et paie, reprise des données existantes, reprise des documents et formation des équipes — avec assistance après la mise en service.",
+    features: [
+      "Conception du paramétrage selon vos processus réels",
+      "Modules comptabilité, ventes, achats, stocks et paie",
+      "Reprise des données et des documents existants",
+      "Reprise des soldes et contrôle des comptes",
+      "Formation des utilisateurs par métier",
+      "Assistance après la mise en service",
+    ],
+    faq: [
+      {
+        q: "Odoo ou un développement sur mesure ?",
+        a: "Odoo convient quand vos processus sont proches du standard : c'est plus rapide et moins coûteux. Le développement sur mesure se justifie quand votre métier a des règles que l'ERP ne couvre pas — nous arbitrons avec vous après un atelier de cadrage.",
+      },
+      {
+        q: "Combien de temps prend une mise en place ?",
+        a: "Comptez de 4 à 12 semaines selon le nombre de modules, le volume de données à reprendre et la disponibilité de vos équipes. Nous démarrons par un module utile — la facturation ou les ventes — puis nous étendons.",
+      },
+      {
+        q: "Nos données sont-elles reprises correctement ?",
+        a: "Chaque reprise est contrôlée : nous comparons les totaux du système précédent et du nouveau (chiffre d'affaires, soldes clients, stocks) et vous faisons valider les écarts avant la bascule.",
+      },
+      {
+        q: "Que se passe-t-il après la mise en service ?",
+        a: "Nous restons disponibles pour les corrections et les ajustements, puis un contrat d'assistance prend le relais : support, mises à jour et évolutions.",
+      },
+    ],
+    relatedArticle: { to: "/article/application-gestion-sur-mesure-senegal", label: "Guide : application de gestion sur mesure" },
+    relatedServices: [
+      { to: "/services/logiciel-sur-mesure-senegal", label: "Logiciel sur mesure" },
+      { to: "/services/gestion-stock-caisse-senegal", label: "Stock & caisse" },
+    ],
+  },
+  {
+    slug: "reseau-cablage-informatique",
+    name: "Réseau et câblage informatique",
+    type: "Réseau · Infrastructure",
+    desc: "réseau informatique et câblage : baie de brassage, Wi-Fi professionnel, séparation des flux et supervision de la connectivité",
+    seoTitle: "Réseau informatique et câblage {place} : Wi-Fi, baie, supervision",
+    seoDescription:
+      "Installation de réseau informatique {place} : câblage, baie de brassage, points d'accès Wi-Fi, séparation des flux invités et supervision de la connexion. Devis sous 48 h.",
+    lead:
+      "Nous concevons et câblons les réseaux informatiques des bureaux, cliniques, écoles et sites industriels de {capital} et du {country} : câblage, baie, Wi-Fi et supervision.",
+    quickAnswer:
+      "Fallcon Tech réalise les réseaux informatiques en {country} : câblage structuré, baie de brassage, points d'accès Wi-Fi professionnels, séparation du réseau invité, adressage, et supervision de la connexion avec alertes en cas de coupure.",
+    features: [
+      "Étude du site et plan de câblage",
+      "Câblage structuré et baie de brassage",
+      "Wi-Fi professionnel avec couverture vérifiée",
+      "Séparation des flux : bureaux, invités, caméras, caisse",
+      "Adressage, sauvegarde de configuration et documentation",
+      "Supervision de la connexion et alertes",
+    ],
+    faq: [
+      {
+        q: "Le Wi-Fi peut-il couvrir tout le bâtiment ?",
+        a: "Oui, avec plusieurs points d'accès reliés par câble : c'est la seule architecture qui tient la charge quand plusieurs dizaines d'appareils sont connectés. Nous vérifions la couverture avant de valider l'installation.",
+      },
+      {
+        q: "Peut-on séparer le réseau des clients et celui du personnel ?",
+        a: "Oui, et c'est recommandé : le réseau invité est isolé, sans accès à vos serveurs, votre caisse ou vos caméras. Cela protège vos données même si un visiteur se connecte.",
+      },
+      {
+        q: "Faut-il refaire tout le câblage existant ?",
+        a: "Pas toujours. Nous testons l'existant : les liaisons conformes sont conservées, seules les liaisons défectueuses ou trop lentes sont reprises.",
+      },
+      {
+        q: "Pouvez-vous installer la vidéosurveillance en même temps ?",
+        a: "Oui : caméras, contrôle d'accès et réseau sont posés dans le même chantier, ce qui évite de réouvrir les murs et coûte moins cher que deux interventions séparées.",
+      },
+    ],
+    relatedArticle: { to: "/article/internet-lent-fibre-dakar-solutions", label: "Guide : connexion lente, que faire" },
+    relatedServices: [
+      { to: "/services/infrastructure-cybersecurite-senegal", label: "Infrastructure & cybersécurité" },
+      { to: "/services/maintenance-support-informatique-senegal", label: "Maintenance informatique" },
+    ],
+  },
+  {
+    slug: "videosurveillance-controle-acces",
+    name: "Vidéosurveillance et contrôle d'accès",
+    type: "Sécurité physique · Accès",
+    desc: "vidéosurveillance et contrôle d'accès : caméras IP, enregistrement local, badges, pointage du personnel et consultation à distance",
+    seoTitle: "Vidéosurveillance et contrôle d'accès {place} : caméras, badges",
+    seoDescription:
+      "Installation de vidéosurveillance et contrôle d'accès {place} : caméras IP, enregistrement local, badges, pointage du personnel et consultation à distance. Devis sous 48 h.",
+    lead:
+      "Nous installons la vidéosurveillance et le contrôle d'accès des commerces, cliniques, écoles, entrepôts et résidences de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech installe la vidéosurveillance et le contrôle d'accès en {country} : caméras IP intérieures et extérieures, enregistrement local sur disque, consultation à distance depuis le téléphone, badges et pointage du personnel, contrôle des portes et des entrées de véhicules.",
+    features: [
+      "Étude des points de vue et des zones à couvrir",
+      "Caméras IP intérieures et extérieures, vision nocturne",
+      "Enregistrement local et consultation à distance",
+      "Pointeuse à badges et suivi des présences",
+      "Contrôle des portes et des entrées de véhicules",
+      "Contrat de maintenance et vérification des enregistrements",
+    ],
+    faq: [
+      {
+        q: "Combien de jours d'enregistrement conserve-t-on ?",
+        a: "Sur un disque d'un téraoctet, comptez 10 à 15 jours avec trois caméras en définition courante ; au-delà, nous augmentons la capacité de stockage. Nous vous indiquons la durée réelle selon vos caméras et votre disque.",
+      },
+      {
+        q: "Peut-on consulter les caméras depuis un téléphone ?",
+        a: "Oui, depuis l'application du fabricant, avec un accès protégé par mot de passe. Le réseau du site doit disposer d'une connexion Internet ; nous configurons les comptes et la consultation.",
+      },
+      {
+        q: "Le pointage remplace-t-il le registre papier ?",
+        a: "Oui : chaque arrivée et départ est horodaté et transmis au logiciel, ce qui supprime les contestations d'heures et permet d'exporter les données vers la paie.",
+      },
+      {
+        q: "Faut-il une autorisation particulière ?",
+        a: "La vidéosurveillance implique des obligations d'information des personnes filmées et de conservation limitée des images. Nous vous indiquons ce qu'il faut afficher et respecter sur votre site.",
+      },
+    ],
+    relatedArticle: { to: "/article/depannage-informatique-5-problemes-courants", label: "Guide : problèmes informatiques courants" },
+    relatedServices: [
+      { to: "/services/reseau-cablage-informatique-senegal", label: "Réseau & câblage" },
+      { to: "/services/infrastructure-cybersecurite-senegal", label: "Infrastructure & cybersécurité" },
+    ],
+  },
+  {
+    slug: "chatbot-ia-entreprise",
+    name: "Chatbot IA et assistants pour entreprises",
+    type: "IA · Automatisation",
+    desc: "chatbot IA et assistants : réponses automatiques aux clients sur WhatsApp et le site, prise de commande et qualification des demandes",
+    seoTitle: "Chatbot IA {place} : réponses automatiques sur WhatsApp",
+    seoDescription:
+      "Mise en place d'un chatbot IA {place} : réponses automatiques 24 h/24 sur WhatsApp et le site, qualification des demandes, prise de rendez-vous et transfert à un humain. Devis sous 48 h.",
+    lead:
+      "Nous mettons en place des assistants IA pour les entreprises de {capital} et du {country} : réponses immédiates aux clients, qualification des demandes et prise de rendez-vous, sans perdre le contact humain.",
+    quickAnswer:
+      "Fallcon Tech déploie des chatbots IA en {country} : réponse automatique aux questions fréquentes sur WhatsApp et le site, collecte du besoin, prise de rendez-vous, envoi de catalogues ou de tarifs, et passage à un conseiller humain dès que la demande devient complexe — avec l'historique des échanges.",
+    features: [
+      "Analyse des questions réellement posées par vos clients",
+      "Réponses automatiques sur WhatsApp et sur le site",
+      "Qualification des demandes et prise de rendez-vous",
+      "Envoi de catalogues, tarifs et disponibilités",
+      "Passage à un conseiller humain à tout moment",
+      "Tableau de bord des conversations et des demandes générées",
+    ],
+    faq: [
+      {
+        q: "Le chatbot répond-il en français courant ?",
+        a: "Oui. Nous l'entraînons sur vos documents, vos tarifs et vos questions fréquentes, et nous testons les réponses en français avant la mise en service, y compris avec des fautes de frappe ou des formulations familières.",
+      },
+      {
+        q: "Va-t-il inventer des prix ou des informations ?",
+        a: "Non : le chatbot ne répond que sur la base des informations que vous validez (tarifs, horaires, disponibilités). S'il ne sait pas, il transfère la conversation à un conseiller au lieu d'improviser.",
+      },
+      {
+        q: "Est-ce que cela remplace mon équipe commerciale ?",
+        a: "Non. Il traite les questions répétitives et les demandes hors horaires, ce qui libère vos équipes pour les négociations. Chaque conversation est enregistrée et disponible pour le suivi.",
+      },
+      {
+        q: "Quels canaux sont pris en charge ?",
+        a: "WhatsApp Business en priorité, parce que c'est le canal utilisé par vos clients, plus le formulaire du site. D'autres canaux peuvent être ajoutés ensuite selon vos besoins.",
+      },
+    ],
+    relatedArticle: { to: "/article/automatisation-whatsapp-ventes-senegal-2026", label: "Guide : automatiser les ventes WhatsApp" },
+    relatedServices: [
+      { to: "/services/automatisation-whatsapp-business-senegal", label: "Automatisation WhatsApp" },
+      { to: "/services/application-mobile-senegal", label: "Application mobile" },
+    ],
+  },
+  {
+    slug: "hebergement-domaine-email",
+    name: "Hébergement, nom de domaine et email professionnel",
+    type: "Web · Messagerie",
+    desc: "hébergement web, nom de domaine .sn ou .com et email professionnel : mise en service, sauvegardes, certificat et configuration des postes",
+    seoTitle: "Hébergement web, domaine et email pro {place}",
+    seoDescription:
+      "Hébergement web, nom de domaine et email professionnel {place} : mise en service, boîtes nominatives, sauvegardes, certificat HTTPS et configuration des postes. Devis sous 48 h.",
+    lead:
+      "Nous prenons en charge l'hébergement de vos sites, votre nom de domaine et vos adresses email professionnelles pour les entreprises et organisations de {capital} et du {country}.",
+    quickAnswer:
+      "Fallcon Tech met en service l'hébergement, le nom de domaine et la messagerie professionnelle en {country} : choix des noms de domaine, boîtes nominatives (direction, commercial, comptabilité), certificat HTTPS, sauvegardes automatiques et configuration sur les téléphones et les ordinateurs — le tout au nom de votre organisation.",
+    features: [
+      "Réservation et gestion du nom de domaine (.sn, .com, .org)",
+      "Hébergement du site avec certificat HTTPS",
+      "Boîtes email nominatives et alias de service",
+      "Configuration sur téléphone et ordinateur",
+      "Sauvegardes automatiques et restauration",
+      "Supervision de la disponibilité des sites et de la messagerie",
+    ],
+    faq: [
+      {
+        q: "Le domaine et l'hébergement sont-ils à mon nom ?",
+        a: "Oui. Le nom de domaine et les comptes sont créés au nom de votre organisation et vous en restez propriétaire : vous pouvez les récupérer à tout moment, sans dépendre de nous.",
+      },
+      {
+        q: "Pourquoi une adresse email professionnelle ?",
+        a: "Une adresse en @votre-entreprise est vérifiable et inspire confiance en négociation ; les adresses gratuites finissent souvent en spam et font perdre des affaires. Les boîtes nominatives évitent en plus de partager un mot de passe unique.",
+      },
+      {
+        q: "Que se passe-t-il si mon site tombe ?",
+        a: "Nous surveillons la disponibilité et intervenons : le site est sauvegardé régulièrement, ce qui permet de rétablir la dernière version valide. Un contrat de maintenance définit les délais d'intervention.",
+      },
+      {
+        q: "Puis-je garder mon adresse actuelle ?",
+        a: "Oui. Nous transférons les anciens messages et configurons la redirection de l'ancienne adresse vers la nouvelle, sans perdre les emails en cours.",
+      },
+    ],
+    relatedArticle: { to: "/article/hebergement-web-senegal-guide-choisir-serveur", label: "Guide : choisir son hébergement" },
+    relatedServices: [
+      { to: "/services/creation-site-web-senegal", label: "Création de site web" },
+      { to: "/services/maintenance-support-informatique-senegal", label: "Maintenance informatique" },
+    ],
+  },
+  {
     slug: "suivi-projets-ong",
     name: "Logiciel de suivi de projets ONG",
     type: "Suivi de projets",
