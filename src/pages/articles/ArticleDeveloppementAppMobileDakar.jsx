@@ -169,6 +169,12 @@ const ArticleDeveloppementAppMobileDakar = () => {
             <Link to="/services/creation-site-web-dakar">Création de site web à Dakar</Link>
           </p>
 
+          <p>
+            Avant de lancer le projet, comparez votre périmètre aux paliers de prix détaillés dans
+            <Link to="/article/prix-application-mobile-senegal"> prix d'une application mobile au Sénégal</Link> :
+            vous saurez ce qui est inclus à chaque niveau et ce qui fait grimper le coût.
+          </p>
+
           <div className="not-prose mt-10 flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg">
               <Link to="/contact">Demander un devis pour mon app</Link>

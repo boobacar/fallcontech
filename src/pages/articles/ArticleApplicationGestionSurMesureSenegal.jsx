@@ -165,6 +165,12 @@ const ArticleApplicationGestionSurMesureSenegal = () => {
             <Link to="/services">Voir tous nos services</Link>
           </p>
 
+          <p>
+            Pour situer votre projet avant la première réunion, consultez les fourchettes détaillées dans
+            <Link to="/article/prix-logiciel-gestion-senegal"> prix d'un logiciel de gestion au Sénégal</Link> :
+            elles indiquent ce qui est inclus à chaque niveau et ce qui fait varier le budget.
+          </p>
+
           <div className="not-prose mt-10 flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg">
               <Link to="/contact">Discuter de mon application</Link>

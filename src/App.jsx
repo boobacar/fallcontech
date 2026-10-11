@@ -178,6 +178,12 @@ const ArticleWordpressVsNextjsSeo = lazy(
 const ArticlePrixSiteWebSenegal2026 = lazy(
   () => import("@/pages/articles/ArticlePrixSiteWebSenegal2026"),
 );
+const ArticlePrixLogicielGestionSenegal = lazy(
+  () => import("@/pages/articles/ArticlePrixLogicielGestionSenegal"),
+);
+const ArticlePrixApplicationMobileSenegal = lazy(
+  () => import("@/pages/articles/ArticlePrixApplicationMobileSenegal"),
+);
 const ArticleSeoLocalSenegal2026 = lazy(
   () => import("@/pages/articles/ArticleSeoLocalSenegal2026"),
 );
@@ -478,6 +484,14 @@ function App() {
           <Route
             path="/article/prix-site-web-senegal-2026"
             element={<ArticlePrixSiteWebSenegal2026 />}
+          />
+          <Route
+            path="/article/prix-logiciel-gestion-senegal"
+            element={<ArticlePrixLogicielGestionSenegal />}
+          />
+          <Route
+            path="/article/prix-application-mobile-senegal"
+            element={<ArticlePrixApplicationMobileSenegal />}
           />
           <Route
             path="/article/wordpress-vs-nextjs-seo"
