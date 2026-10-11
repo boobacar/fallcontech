@@ -556,13 +556,13 @@ export const GEO_COMPETENCES = [
     // recherches réellement tapées qui remontent sont « sécurité informatique <pays> »
     // et « cybersécurité <pays> », pas « infrastructure informatique et cybersécurité ».
     // {place} = « en Mauritanie » (page pays) ou « à Abidjan » (page ville).
-    seoTitle: "Sécurité informatique {place} : audit, sauvegardes & supervision | Fallcon Tech",
+    seoTitle: "Sécurité informatique {place} : audit, sauvegardes et supervision",
     seoDescription:
-      "Audit de sécurité, sauvegardes vérifiées, supervision et protection des accès {place}. Devis rapide, {intervention}.",
+      "Audit de sécurité, sauvegardes vérifiées, supervision et protection des accès {place}. Devis sous 48 h, {intervention}.",
     lead:
       "Nous sécurisons l'infrastructure informatique des organisations de {capital} et du {country} : sauvegardes, supervision et continuité.",
     quickAnswer:
-      "Fallcon Tech sécurise l'infrastructure informatique en {country} : audit, sauvegardes vérifiées, supervision, contrôle d'accès et continuité d'activité pour vos systèmes critiques.",
+      "Fallcon Tech sécurise l'infrastructure informatique en {country} : audit, sauvegardes vérifiées, supervision, contrôle d'accès et continuité d'activité pour vos systèmes critiques. Nous intervenons {intervention}.",
     features: [
       "Audit et diagnostic de votre infrastructure",
       "Sauvegardes automatiques et tests de restauration",
@@ -571,6 +571,14 @@ export const GEO_COMPETENCES = [
       "Plan de continuité et reprise d'activité",
     ],
     faq: [
+      {
+        q: "Quels fournisseurs peuvent accompagner une entreprise {place} ?",
+        a: "Un prestataire capable d'intervenir {place} et à distance : audit de l'existant, sauvegardes testées, supervision des serveurs et des postes, gestion des comptes et des accès, puis contrat de maintenance avec délai d'intervention écrit. Fallcon Tech couvre ces quatre volets depuis Dakar, pour les PME, les administrations et les structures de santé, avec un devis chiffré sous 48 h.",
+      },
+      {
+        q: "Combien coûte un audit de sécurité informatique {place} ?",
+        a: "Le prix dépend du nombre de serveurs, de postes et de sites à couvrir. L'audit est facturé à la journée d'intervention, et le devis détaille séparément l'audit, les sauvegardes et la supervision — vous validez chaque lot avant de vous engager.",
+      },
       {
         q: "Quels sont les risques les plus fréquents ?",
         a: "Pertes de données sans sauvegarde, comptes compromis, logiciels non maintenus et coupures : nous traitons ces quatre risques en priorité.",
@@ -768,6 +776,50 @@ export const GEO_COMPETENCES = [
     relatedServices: [
       { to: "/solutions/applications-metier", label: "Applications métier" },
       { to: "/services/software-development-senegal", label: "Software development" },
+    ],
+  },
+  {
+    slug: "systemes-pos-caisse",
+    name: "Systèmes de caisse (POS)",
+    type: "POS · Point de vente",
+    desc: "systèmes de caisse (POS) : caisse tactile, tiroir-caisse, imprimante de tickets, scanner et logiciel de vente encaissant le mobile money",
+    seoTitle: "Systèmes POS {place} : caisse tactile, logiciel de vente et tickets",
+    seoDescription:
+      "Installation de systèmes POS {place} : caisse tactile, tiroir-caisse, imprimante de tickets, scanner code-barres et logiciel de vente connecté à Wave et Orange Money. Devis sous 48 h, {intervention}.",
+    lead:
+      "Nous installons et paramétrons des systèmes de point de vente (POS) pour les commerces, restaurants, pharmacies et boutiques de {capital} et du {country} : matériel, logiciel de vente et encaissement mobile.",
+    quickAnswer:
+      "Fallcon Tech installe des systèmes POS en {country} : caisse tactile, tiroir-caisse, imprimante de tickets, lecteur code-barres, logiciel de vente et encaissement Wave / Orange Money, avec étiquetage des produits, formation des vendeurs et suivi des ventes par jour et par vendeur.",
+    features: [
+      "Caisse tactile avec logiciel de vente et tickets",
+      "Tiroir-caisse, imprimante de tickets et lecteur code-barres",
+      "Encaissement Wave, Orange Money, espèces et carte",
+      "Gestion des stocks, des prix et des promotions",
+      "Suivi des ventes par jour, par caisse et par vendeur",
+      "Rapports de clôture et export comptable",
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'un système POS ?",
+        a: "POS signifie « point of sale » : c'est l'ensemble caisse tactile, tiroir-caisse, imprimante de tickets et logiciel de vente qui enregistre chaque article vendu, calcule le montant et édite le ticket. Le commerçant sait à tout moment ce qui s'est vendu, quand et par quel vendeur.",
+      },
+      {
+        q: "Peut-on encaisser le mobile money sur la caisse ?",
+        a: "Oui. La caisse encaisse Wave, Orange Money et les autres portefeuilles via un QR code ou une passerelle de paiement, et la confirmation arrive dans le logiciel. Les espèces et les cartes restent acceptées en parallèle.",
+      },
+      {
+        q: "Le système fonctionne-t-il sans Internet ?",
+        a: "Oui. La caisse continue à enregistrer les ventes hors connexion et synchronise les données dès que le réseau revient ; seul l'encaissement par mobile money nécessite une connexion au moment du paiement.",
+      },
+      {
+        q: "Faut-il du matériel spécial ?",
+        a: "Nous fournissons et installons le matériel adapté à votre activité : caisse tactile ou tablette, tiroir-caisse, imprimante thermique, scanner, et onduleur pour tenir pendant les coupures de courant.",
+      },
+    ],
+    relatedArticle: { to: "/article/logiciel-gestion-stock-caisse-senegal", label: "Guide : gestion stock & caisse" },
+    relatedServices: [
+      { to: "/services/gestion-stock-caisse-senegal", label: "Stock & caisse" },
+      { to: "/services/paiement-mobile-money-senegal", label: "Paiement mobile money" },
     ],
   },
   {
@@ -1467,6 +1519,168 @@ export const GEO_CITIES = [
     countrySlug: "benin",
     note: "Capitale économique du Bénin, Cotonou est un grand pôle portuaire et commercial où la digitalisation progresse rapidement.",
   },
+  {
+    slug: "ouagadougou",
+    name: "Ouagadougou",
+    countrySlug: "burkina-faso",
+    note: "Capitale du Burkina Faso, Ouagadougou concentre administrations, banques, écoles et PME engagées dans la digitalisation de leurs services.",
+  },
+  {
+    slug: "bobo-dioulasso",
+    name: "Bobo-Dioulasso",
+    countrySlug: "burkina-faso",
+    note: "Deuxième ville du Burkina Faso et grand carrefour commercial de l'Ouest, Bobo-Dioulasso rassemble grossistes, transporteurs et commerces à moderniser.",
+  },
+  {
+    slug: "bouake",
+    name: "Bouaké",
+    countrySlug: "cote-divoire",
+    note: "Deuxième ville de Côte d'Ivoire et pôle industriel du centre, Bouaké voit ses commerces et ses écoles s'équiper en outils numériques de gestion.",
+  },
+  {
+    slug: "yamoussoukro",
+    name: "Yamoussoukro",
+    countrySlug: "cote-divoire",
+    note: "Capitale politique de la Côte d'Ivoire, Yamoussoukro abrite administrations, institutions et établissements de formation qui digitalisent leurs procédures.",
+  },
+  {
+    slug: "san-pedro",
+    name: "San-Pédro",
+    countrySlug: "cote-divoire",
+    note: "Port de San-Pédro : deuxième port de Côte d'Ivoire, il vit du cacao, du bois et de la logistique, avec des entreprises qui ont besoin d'outils de suivi et de facturation.",
+  },
+  {
+    slug: "sikasso",
+    name: "Sikasso",
+    countrySlug: "mali",
+    note: "Deuxième ville du Mali et capitale du coton, Sikasso réunit coopératives, transporteurs et commerçants qui gèrent encore beaucoup au papier.",
+  },
+  {
+    slug: "segou",
+    name: "Ségou",
+    countrySlug: "mali",
+    note: "Ségou, sur le fleuve Niger, est un pôle agricole et commercial du Mali où coopératives et PME cherchent à structurer leur gestion.",
+  },
+  {
+    slug: "niamey",
+    name: "Niamey",
+    countrySlug: "niger",
+    note: "Capitale du Niger, Niamey concentre les administrations, banques, projets de développement et entreprises qui pilotent leurs activités à distance.",
+  },
+  {
+    slug: "zinder",
+    name: "Zinder",
+    countrySlug: "niger",
+    note: "Grande ville commerciale de l'est du Niger, Zinder vit du commerce transfrontalier et du bétail, avec des acteurs qui gagnent à digitaliser leurs ventes.",
+  },
+  {
+    slug: "lome",
+    name: "Lomé",
+    countrySlug: "togo",
+    note: "Capitale du Togo et pôle portuaire de la sous-région, Lomé est un centre d'affaires où banques, commerces et écoles investissent dans le numérique.",
+  },
+  {
+    slug: "kara",
+    name: "Kara",
+    countrySlug: "togo",
+    note: "Deuxième ville du Togo, Kara est un carrefour agricole et commercial du nord, avec des structures qui ont besoin de suivi de stock et de facturation.",
+  },
+  {
+    slug: "porto-novo",
+    name: "Porto-Novo",
+    countrySlug: "benin",
+    note: "Capitale du Bénin, Porto-Novo abrite les administrations et de nombreux établissements scolaires qui modernisent leur gestion.",
+  },
+  {
+    slug: "parakou",
+    name: "Parakou",
+    countrySlug: "benin",
+    note: "Premier centre commercial du nord du Bénin, Parakou vit du coton, du transport et du commerce, avec des entreprises qui digitalisent leurs opérations.",
+  },
+  {
+    slug: "conakry",
+    name: "Conakry",
+    countrySlug: "guinee",
+    note: "Capitale de la Guinée, Conakry concentre banques, administrations, cliniques et PME en pleine croissance numérique.",
+  },
+  {
+    slug: "kankan",
+    name: "Kankan",
+    countrySlug: "guinee",
+    note: "Grande ville de Haute-Guinée, Kankan est un pôle commercial et agricole où les acteurs locaux cherchent à mieux suivre leurs ventes et leurs stocks.",
+  },
+  {
+    slug: "nouakchott",
+    name: "Nouakchott",
+    countrySlug: "mauritanie",
+    note: "Capitale de la Mauritanie, Nouakchott combine administrations, pêche, banques et commerces : un marché où les outils de gestion deviennent prioritaires.",
+  },
+  {
+    slug: "nouadhibou",
+    name: "Nouadhibou",
+    countrySlug: "mauritanie",
+    note: "Pôle portuaire et minier du nord de la Mauritanie, Nouadhibou abrite des entreprises logistiques et halieutiques à fort volume de transactions.",
+  },
+  {
+    slug: "libreville",
+    name: "Libreville",
+    countrySlug: "gabon",
+    note: "Capitale du Gabon, Libreville rassemble administrations, banques, cliniques et entreprises privées qui modernisent leurs systèmes d'information.",
+  },
+  {
+    slug: "port-gentil",
+    name: "Port-Gentil",
+    countrySlug: "gabon",
+    note: "Capitale économique du Gabon et ville pétrolière, Port-Gentil concentre entreprises industrielles et prestataires qui exigent fiabilité et traçabilité.",
+  },
+  {
+    slug: "kinshasa",
+    name: "Kinshasa",
+    countrySlug: "rdc",
+    note: "Capitale de la RDC et l'une des plus grandes villes d'Afrique, Kinshasa est un marché immense où administrations, banques et PME se numérisent rapidement.",
+  },
+  {
+    slug: "lubumbashi",
+    name: "Lubumbashi",
+    countrySlug: "rdc",
+    note: "Capitale économique du Haut-Katanga, Lubumbashi vit des mines, du transport et du commerce, avec des entreprises qui ont besoin d'outils robustes.",
+  },
+  {
+    slug: "ndjamena",
+    name: "N'Djaména",
+    countrySlug: "tchad",
+    note: "Capitale du Tchad, N'Djaména concentre administrations, projets de développement, banques et commerces en structuration.",
+  },
+  {
+    slug: "moundou",
+    name: "Moundou",
+    countrySlug: "tchad",
+    note: "Deuxième ville du Tchad et capitale du coton, Moundou réunit coopératives et négociants qui gèrent des flux importants au papier.",
+  },
+  {
+    slug: "yaounde",
+    name: "Yaoundé",
+    countrySlug: "cameroun",
+    note: "Capitale politique du Cameroun, Yaoundé abrite les administrations, les sièges d'entreprises et de nombreux établissements de formation.",
+  },
+  {
+    slug: "praia",
+    name: "Praia",
+    countrySlug: "cap-vert",
+    note: "Capitale du Cap-Vert, Praia combine administrations, tourisme et services numériques : un marché exigeant sur la qualité et la fiabilité.",
+  },
+  {
+    slug: "banjul",
+    name: "Banjul",
+    countrySlug: "gambie",
+    note: "Capitale de la Gambie, Banjul et sa région vivent du tourisme, du commerce et de la pêche, avec des entreprises qui digitalisent leur gestion.",
+  },
+  {
+    slug: "bissau",
+    name: "Bissau",
+    countrySlug: "guinee-bissau",
+    note: "Capitale de la Guinée-Bissau, Bissau est un pôle administratif et commercial où les projets de digitalisation se multiplient.",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -1547,11 +1761,11 @@ export function buildGeoPage(countrySlug, competenceSlug) {
       : `${geoNameShort} | Fallcon Tech`,
     description,
     lead,
-    quickAnswer: fill(competence.quickAnswer, vars),
-    features: competence.features,
+    quickAnswer: fill(competence.quickAnswer, seoVars),
+    features: (competence.features || []).map((f) => fill(f, seoVars)),
     faq: competence.faq.map((item) => ({
-      q: fill(item.q, vars),
-      a: fill(item.a, vars),
+      q: fill(item.q, seoVars),
+      a: fill(item.a, seoVars),
     })),
     relatedArticle: competence.relatedArticle,
     relatedServices: competence.relatedServices,
@@ -1579,6 +1793,7 @@ export function buildSecteurPage(countrySlug, secteurSlug) {
     ? secteur.desc.slice(secteur.desc.indexOf(":") + 1).trim()
     : secteur.desc;
   const description = `${geoName} : ${fill(descBody, vars)}. Devis rapide à ${country.capital}.`;
+  const seoVars = { ...vars, place: `${country.prep} ${shortName}`, intervention: `intervention à ${country.capital}` };
   const competenceLinks = secteur.competenceLinks
     .map((slug) => {
       const comp = competenceBySlug[slug];
@@ -1598,14 +1813,14 @@ export function buildSecteurPage(countrySlug, secteurSlug) {
     geoName,
     h1: geoName,
     eyebrow: `${secteur.type} ${country.prep} ${country.name}`,
-    title: `${geoName} | Fallcon Tech`,
+    title: `${geoName}`,
     description,
     lead,
-    quickAnswer: fill(secteur.quickAnswer, vars),
-    features: secteur.features,
+    quickAnswer: fill(secteur.quickAnswer, seoVars),
+    features: (secteur.features || []).map((f) => fill(f, seoVars)),
     faq: secteur.faq.map((item) => ({
-      q: fill(item.q, vars),
-      a: fill(item.a, vars),
+      q: fill(item.q, seoVars),
+      a: fill(item.a, seoVars),
     })),
     relatedArticle: secteur.relatedArticle,
     relatedServices: competenceLinks,
@@ -1655,11 +1870,11 @@ export function buildVillePage(citySlug, competenceSlug) {
       : `${geoName} | Fallcon Tech`,
     description,
     lead,
-    quickAnswer: fill(competence.quickAnswer, vars),
-    features: competence.features,
+    quickAnswer: fill(competence.quickAnswer, seoVars),
+    features: (competence.features || []).map((f) => fill(f, seoVars)),
     faq: competence.faq.map((item) => ({
-      q: fill(item.q, vars),
-      a: fill(item.a, vars),
+      q: fill(item.q, seoVars),
+      a: fill(item.a, seoVars),
     })),
     relatedArticle: competence.relatedArticle,
     relatedServices: [
@@ -1769,7 +1984,7 @@ export function buildCountryHub(countrySlug) {
 // du template. Le H1 et les libellés de maillage ne sont pas modifiés.
 export const GEO_TITLE_OVERRIDES = {
   "/services/gestion-ecole-formation-senegal": {
-    title: "Logiciel de gestion d'école au Sénégal : scolarité, paiements, bulletins | Fallcon Tech",
+    title: "Logiciel de gestion d'école au Sénégal : scolarité et bulletins",
     description:
       "Gestion des inscriptions, paiements de scolarité, présences, bulletins et dossiers des apprenants pour écoles et centres de formation au Sénégal. Devis rapide à Dakar.",
   },
