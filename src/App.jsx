@@ -196,6 +196,12 @@ const ArticleCinetpayPaydunyaFlutterwaveSenegal = lazy(
 const ArticleCommentChoisirLogicielGestionSenegal = lazy(
   () => import("@/pages/articles/ArticleCommentChoisirLogicielGestionSenegal"),
 );
+const ArticlePlanContinuiteActiviteInformatique = lazy(
+  () => import("@/pages/articles/ArticlePlanContinuiteActiviteInformatique"),
+);
+const ArticleVisibleGoogleMapsEntrepriseSenegal = lazy(
+  () => import("@/pages/articles/ArticleVisibleGoogleMapsEntrepriseSenegal"),
+);
 const ArticleSeoLocalSenegal2026 = lazy(
   () => import("@/pages/articles/ArticleSeoLocalSenegal2026"),
 );
@@ -520,6 +526,14 @@ function App() {
           <Route
             path="/article/comment-choisir-logiciel-gestion-senegal"
             element={<ArticleCommentChoisirLogicielGestionSenegal />}
+          />
+          <Route
+            path="/article/plan-continuite-activite-informatique"
+            element={<ArticlePlanContinuiteActiviteInformatique />}
+          />
+          <Route
+            path="/article/visible-google-maps-entreprise-senegal"
+            element={<ArticleVisibleGoogleMapsEntrepriseSenegal />}
           />
           <Route
             path="/article/wordpress-vs-nextjs-seo"
