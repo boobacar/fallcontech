@@ -97,6 +97,40 @@ const ArticlePOS = () => {
               </>
             )}
 
+            <h2>{isEn ? "Where to get a POS system in Senegal?" : "Où trouver un système POS au Sénégal ?"}</h2>
+            <p>
+              {isEn
+                ? "We install and configure point-of-sale systems for shops, pharmacies, restaurants and boutiques: touch cash register, cash drawer, receipt printer, barcode scanner and sales software that accepts mobile money."
+                : "Nous installons et paramétrons les systèmes de point de vente pour les commerces, pharmacies, restaurants et boutiques : caisse tactile, tiroir-caisse, imprimante de tickets, lecteur code-barres et logiciel de vente encaissant le mobile money."}
+            </p>
+            <ul>
+              <li>
+                <Link to="/services/systemes-pos-caisse-senegal">
+                  {isEn ? "POS systems in Senegal" : "Systèmes POS au Sénégal"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/systemes-pos-caisse-cote-divoire">
+                  {isEn ? "POS systems in Côte d'Ivoire" : "Systèmes POS en Côte d'Ivoire"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/systemes-pos-caisse-cameroun">
+                  {isEn ? "POS systems in Cameroon" : "Systèmes POS au Cameroun"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/systemes-pos-caisse-mali">
+                  {isEn ? "POS systems in Mali" : "Systèmes POS au Mali"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/systemes-pos-caisse-burkina-faso">
+                  {isEn ? "POS systems in Burkina Faso" : "Systèmes POS au Burkina Faso"}
+                </Link>
+              </li>
+            </ul>
+
             <div className="mt-12 bg-primary/10 p-8 rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-primary mb-4">
                 {isEn ? "Demo our POS solution?" : "Démo de notre logiciel ?"}

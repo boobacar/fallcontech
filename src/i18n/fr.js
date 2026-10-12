@@ -731,10 +731,10 @@ export default {
     },
     pos: {
       seo: {
-        title: "Logiciel de caisse (POS) & gestion de stock au Sénégal",
+        title: "Systèmes POS Sénégal : caisse, stock et logiciel de vente",
         description:
-          "Pourquoi quitter le cahier pour un logiciel de gestion (POS) ? Gestion de stock, anti-vol et rapports automatiques pour commerçants.",
-        headline: "Logiciel caisse et stock Sénégal",
+          "Installer un système POS au Sénégal : caisse tactile, douchette code-barres, imprimante de tickets et logiciel de stock qui continue de fonctionner sans internet.",
+        headline: "Systèmes POS et logiciel de caisse",
       },
       title: "Logiciel de Gestion & Caisse pour Commerces",
     },

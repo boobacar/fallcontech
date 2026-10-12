@@ -698,10 +698,10 @@ export default {
     },
     pos: {
       seo: {
-        title: "POS Stock Software for Senegal Shops",
+        title: "POS Systems Senegal: Cash Register, Stock & Sales Software",
         description:
-          "Why ditch the notebook for POS software? Stock management, anti-theft and automated reports for shopkeepers.",
-        headline: "POS and Stock Software Senegal",
+          "Setting up a POS system in Senegal: touch cash register, barcode scanner, receipt printer and stock software that keeps working when the internet goes down.",
+        headline: "POS systems and cash register software",
       },
       title: "Management & POS Software for Retail",
     },
