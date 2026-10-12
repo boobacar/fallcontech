@@ -703,7 +703,7 @@ export default {
           "Setting up a POS system in Senegal: touch cash register, barcode scanner, receipt printer and stock software that keeps working when the internet goes down.",
         headline: "POS systems and cash register software",
       },
-      title: "Management & POS Software for Retail",
+      title: "POS Systems and Cash Register Software for Retail",
     },
     choosing_dev: {
       seo: {

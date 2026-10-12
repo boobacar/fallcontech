@@ -736,7 +736,7 @@ export default {
           "Installer un système POS au Sénégal : caisse tactile, douchette code-barres, imprimante de tickets et logiciel de stock qui continue de fonctionner sans internet.",
         headline: "Systèmes POS et logiciel de caisse",
       },
-      title: "Logiciel de Gestion & Caisse pour Commerces",
+      title: "Systèmes POS et logiciel de caisse pour les commerces",
     },
     choosing_dev: {
       seo: {
