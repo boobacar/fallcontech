@@ -266,6 +266,17 @@ const ArticleArchivageElectroniqueValeurProbanteSenegal = lazy(() => import("@/p
 const ArticleLogicielMetierMairieCollectivitesSenegal = lazy(() => import("@/pages/articles/ArticleLogicielMetierMairieCollectivitesSenegal"));
 const ArticleDematerialisationMarchesPublicsSenegal = lazy(() => import("@/pages/articles/ArticleDematerialisationMarchesPublicsSenegal"));
 const ArticleDigitalisationEntreprisePmeSenegal = lazy(() => import("@/pages/articles/ArticleDigitalisationEntreprisePmeSenegal"));
+const ArticlePareFeuEntrepriseCyberattaques = lazy(() => import("@/pages/articles/ArticlePareFeuEntrepriseCyberattaques"));
+const ArticleServeurEntrepriseDakar = lazy(() => import("@/pages/articles/ArticleServeurEntrepriseDakar"));
+const ArticleSwitchReseauEntreprise = lazy(() => import("@/pages/articles/ArticleSwitchReseauEntreprise"));
+const ArticleRouteurEntrepriseInterconnexionSites = lazy(() => import("@/pages/articles/ArticleRouteurEntrepriseInterconnexionSites"));
+const ArticleRouteurAggregationOperateur = lazy(() => import("@/pages/articles/ArticleRouteurAggregationOperateur"));
+const ArticleRouteurCoeurReseauDatacenter = lazy(() => import("@/pages/articles/ArticleRouteurCoeurReseauDatacenter"));
+const ArticleAmplificateurOptiqueLiaisonFibre = lazy(() => import("@/pages/articles/ArticleAmplificateurOptiqueLiaisonFibre"));
+const ArticleBoosterOptiqueEmetteur = lazy(() => import("@/pages/articles/ArticleBoosterOptiqueEmetteur"));
+const ArticleWssRoadmLongueursOnde = lazy(() => import("@/pages/articles/ArticleWssRoadmLongueursOnde"));
+const ArticleModuleSfp10gFibreOptique = lazy(() => import("@/pages/articles/ArticleModuleSfp10gFibreOptique"));
+const ArticleModuleOptiqueAccordableBandeC = lazy(() => import("@/pages/articles/ArticleModuleOptiqueAccordableBandeC"));
 
 function App() {
   return (
@@ -611,6 +622,17 @@ function App() {
           <Route path="/article/logiciel-metier-mairie-collectivites-senegal" element={<ArticleLogicielMetierMairieCollectivitesSenegal />} />
           <Route path="/article/dematerialisation-marches-publics-senegal" element={<ArticleDematerialisationMarchesPublicsSenegal />} />
           <Route path="/article/digitalisation-entreprise-pme-senegal" element={<ArticleDigitalisationEntreprisePmeSenegal />} />
+          <Route path="/article/pare-feu-entreprise-cyberattaques" element={<ArticlePareFeuEntrepriseCyberattaques />} />
+          <Route path="/article/serveur-entreprise-dakar" element={<ArticleServeurEntrepriseDakar />} />
+          <Route path="/article/switch-reseau-entreprise" element={<ArticleSwitchReseauEntreprise />} />
+          <Route path="/article/routeur-entreprise-interconnexion-sites" element={<ArticleRouteurEntrepriseInterconnexionSites />} />
+          <Route path="/article/routeur-agregation-operateur" element={<ArticleRouteurAggregationOperateur />} />
+          <Route path="/article/routeur-coeur-reseau-datacenter" element={<ArticleRouteurCoeurReseauDatacenter />} />
+          <Route path="/article/amplificateur-optique-liaison-fibre" element={<ArticleAmplificateurOptiqueLiaisonFibre />} />
+          <Route path="/article/booster-optique-emetteur" element={<ArticleBoosterOptiqueEmetteur />} />
+          <Route path="/article/wss-roadm-longueurs-onde" element={<ArticleWssRoadmLongueursOnde />} />
+          <Route path="/article/module-sfp-10g-fibre-optique" element={<ArticleModuleSfp10gFibreOptique />} />
+          <Route path="/article/module-optique-accordable-bande-c" element={<ArticleModuleOptiqueAccordableBandeC />} />
 
           {/* FR only */}
         </Routes>
