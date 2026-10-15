@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 
 const ArticleSeoRevenueSenegal = () => {
   const path = "/article/comment-seo-transforme-chiffre-affaires-senegal";
@@ -20,7 +20,9 @@ const ArticleSeoRevenueSenegal = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo}
+ width={512}
+ height={266} loading="lazy" decoding="async" />
 
         <h2>Le SEO : un investissement de croissance, pas une simple dépense</h2>
         <p>Le référencement naturel (ou SEO, pour Search Engine Optimization) est encore trop souvent perçu par les entreprises sénégalaises comme une dépense purement technique ou un "bonus" digital. Pourtant, dans un marché où la digitalisation s'accélère et la concurrence en ligne devient féroce, le SEO représente l'un des canaux d'acquisition de clients les plus rentables et les plus pérennes sur le long terme. Investir dans le SEO, c'est investir dans l'actif numérique principal de votre entreprise : votre site web.</p>

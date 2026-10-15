@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgMobile from "@/assets/articles/mobile-first-design.png";
+import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleMobile = () => {
@@ -133,6 +133,8 @@ const ArticleMobile = () => {
               alt="Une main tenant un smartphone affichant un site web parfaitement adapté à l'écran mobile"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMobile}
+              width={1024}
+              height={404}
               loading="lazy"
               decoding="async"
             />

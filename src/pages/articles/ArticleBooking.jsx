@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgBooking from "@/assets/articles/online-reservation-system.png";
+import imgBooking from "@/assets/articles/online-reservation-system.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleBooking = () => {
@@ -132,6 +132,8 @@ const ArticleBooking = () => {
               alt="Une réception de clinique moderne avec une tablette affichant un système de réservation"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgBooking}
+              width={1200}
+              height={600}
               loading="lazy"
               decoding="async"
             />

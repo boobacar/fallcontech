@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.png";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
 
 const ArticleTendancesDevWebSenegal2026 = () => {
   const path = "/article/tendances-developpement-web-senegal-2026";
@@ -20,7 +20,9 @@ const ArticleTendancesDevWebSenegal2026 = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
 
         <h2>L'ère de l'Intelligence Artificielle véritablement intégrée</h2>
         <p>En 2026, l'Intelligence Artificielle n'est plus un simple buzzword ou un gadget expérimental. Au Sénégal, les développeurs web et les agences digitales intègrent massivement l'IA au cœur même des plateformes. On ne parle plus seulement de ChatGPT, mais d'agents conversationnels (chatbots) ultra-performants formés sur les données spécifiques de l'entreprise. Ces assistants virtuels sont capables de :</p>

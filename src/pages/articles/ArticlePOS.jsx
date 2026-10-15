@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgPos from "@/assets/articles/pos_system_shop_senegal.png";
+import imgPos from "@/assets/articles/pos_system_shop_senegal.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticlePOS = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgPos}
+            width={1024}
+            height={1024}
             alt="Logiciel de caisse point de vente Sénégal"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

@@ -19,7 +19,9 @@ export default function ArticleAutomatisationWhatsappVentesSenegal() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp}
+ width={1200}
+ height={628} loading="lazy" decoding="async" />
         <h2>Workflow recommandé</h2>
         <ul><li>Capture lead (site/formulaire)</li><li>Qualification auto</li><li>Relance personnalisée</li><li>Passage commercial humain</li></ul>
         <h2>Ce qui marche au Sénégal</h2>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgMobile from "@/assets/articles/mobile-first-design.png";
+import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 
 const ArticleDeveloppementAppMobileDakar = () => {
   const path = "/article/developpement-application-mobile-dakar";
@@ -86,7 +86,9 @@ const ArticleDeveloppementAppMobileDakar = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgMobile} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgMobile}
+ width={1024}
+ height={404} loading="lazy" decoding="async" />
 
           <h2>Pourquoi développer une application mobile au Sénégal en 2026 ?</h2>
           <p>

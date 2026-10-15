@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleStack = () => {
@@ -132,6 +132,8 @@ const ArticleStack = () => {
               alt="Des logos de différentes technologies web flottant autour d'un cerveau"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgStack}
+              width={1200}
+              height={729}
               loading="lazy"
               decoding="async"
             />

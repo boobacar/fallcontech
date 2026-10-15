@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 
 const ArticleSiteVitrineSeo = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
@@ -75,6 +75,8 @@ const ArticleSiteVitrineSeo = () => {
               alt="Dashboard SEO illustrant la refonte d'un site vitrine"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgSeo}
+              width={512}
+              height={266}
               loading="lazy"
               decoding="async"
             />

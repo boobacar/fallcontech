@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 
 const ArticleMaintenanceWordpress = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
@@ -75,6 +75,8 @@ const ArticleMaintenanceWordpress = () => {
               alt="Checklist de maintenance WordPress sécurisée"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgStack}
+              width={1200}
+              height={729}
               loading="lazy"
               decoding="async"
             />

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgTroubleshooting from "@/assets/articles/troubleshooting.png";
+import imgTroubleshooting from "@/assets/articles/troubleshooting.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleTroubleshooting = () => {
@@ -141,6 +141,8 @@ const ArticleTroubleshooting = () => {
               alt="Technicien réparant un ordinateur portable"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgTroubleshooting}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

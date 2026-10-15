@@ -133,6 +133,8 @@ const ArticleWhatsapp = () => {
               alt="Un téléphone affichant une conversation WhatsApp automatisée pour le service client"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgWhatsapp}
+              width={1200}
+              height={628}
               loading="lazy"
               decoding="async"
             />

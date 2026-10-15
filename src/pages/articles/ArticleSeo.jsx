@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, BarChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleSeo = () => {
@@ -132,6 +132,8 @@ const ArticleSeo = () => {
               alt="Un graphique montrant la croissance du trafic de recherche organique sur un ordinateur portable"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgSeo}
+              width={512}
+              height={266}
               loading="lazy"
               decoding="async"
             />

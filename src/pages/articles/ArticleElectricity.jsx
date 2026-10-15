@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgElectricity from "@/assets/articles/electricity_stabilizer_dakar.png";
+import imgElectricity from "@/assets/articles/electricity_stabilizer_dakar.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -54,6 +54,8 @@ const ArticleElectricity = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgElectricity}
+            width={1024}
+            height={1024}
             alt="Onduleur et protection électrique Dakar"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

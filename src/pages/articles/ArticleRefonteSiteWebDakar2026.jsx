@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 
 export default function ArticleRefonteSiteWebDakar2026() {
   const path = "/article/refonte-site-web-dakar-seo-2026";
@@ -19,7 +19,9 @@ export default function ArticleRefonteSiteWebDakar2026() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo}
+ width={512}
+ height={266} loading="lazy" decoding="async" />
         <h2>Pourquoi la refonte est souvent rentable</h2>
         <p>Un site lent ou mal structuré coûte des leads tous les jours. Une refonte orientée SEO + conversion améliore trafic qualifié, confiance et taux de prise de contact.</p>
         <h2>Plan en 4 étapes</h2>

@@ -108,6 +108,8 @@ const CaseStudyHgCuisine = () => {
                 alt={t("case.hgcuisine.alt.hero")}
                 className="w-full rounded-2xl shadow-2xl"
                 src={hgCuisineImg}
+                width={3420}
+                height={1962}
                 loading="lazy"
                 decoding="async"
               />

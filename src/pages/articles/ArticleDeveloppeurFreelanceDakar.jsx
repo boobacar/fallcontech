@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.png";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
 
 const ArticleDeveloppeurFreelanceDakar = () => {
   const path = "/article/developpeur-freelance-dakar-embaucher";
@@ -86,7 +86,9 @@ const ArticleDeveloppeurFreelanceDakar = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
 
           <h2>Pourquoi choisir le bon développeur est crucial</h2>
           <p>

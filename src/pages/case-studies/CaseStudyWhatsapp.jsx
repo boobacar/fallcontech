@@ -88,6 +88,8 @@ const CaseStudyWhatsApp = () => {
                 alt={t('case.whatsapp.alt.hero')}
                 className="w-full rounded-2xl shadow-2xl"
                 src={whatsappImg}
+                width={1200}
+                height={628}
                 loading="lazy"
                 decoding="async"
               />

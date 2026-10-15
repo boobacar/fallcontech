@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgCost from "@/assets/articles/website_cost_estimate_senegal.png";
+import imgCost from "@/assets/articles/website_cost_estimate_senegal.jpg";
 
 const ArticlePrixSiteWebSenegal2026 = () => {
   const path = "/article/prix-site-web-senegal-2026";
@@ -39,7 +39,9 @@ const ArticlePrixSiteWebSenegal2026 = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgCost} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgCost}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
 
         <h2>Fourchettes de prix indicatives</h2>
         <ul>

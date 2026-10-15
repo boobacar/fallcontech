@@ -1,6 +1,6 @@
 import CaseStudyLayout from "@/components/CaseStudyLayout";
-import dashboardImg from "@/assets/teliman-tracking-fleeti-dashboard.png";
-import dashboardFullImg from "@/assets/teliman-tracking-fleeti-dashboard-full.png";
+import dashboardImg from "@/assets/teliman-tracking-fleeti-dashboard.jpg";
+import dashboardFullImg from "@/assets/teliman-tracking-fleeti-dashboard-full.jpg";
 
 export default function CaseStudyTelimanTrackingFleeti() {
   return <CaseStudyLayout

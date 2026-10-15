@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgHelpdesk from "@/assets/articles/it_support_helpdesk_dakar.png";
+import imgHelpdesk from "@/assets/articles/it_support_helpdesk_dakar.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticleITSupport = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgHelpdesk}
+            width={1024}
+            height={1024}
             alt="Support Informatique Helpdesk Dakar"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

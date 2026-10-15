@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgMobile from "@/assets/articles/mobile-first-design.png";
+import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 
 const ArticleCoreWebVitals = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
@@ -75,6 +75,8 @@ const ArticleCoreWebVitals = () => {
               alt="Graphique Core Web Vitals sur mobile"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMobile}
+              width={1024}
+              height={404}
               loading="lazy"
               decoding="async"
             />

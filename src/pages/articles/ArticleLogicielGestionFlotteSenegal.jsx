@@ -5,7 +5,7 @@ import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgFleet from "@/assets/teliman-tracking-fleeti-dashboard.png";
+import imgFleet from "@/assets/teliman-tracking-fleeti-dashboard.jpg";
 
 const ArticleLogicielGestionFlotteSenegal = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
@@ -72,7 +72,9 @@ const ArticleLogicielGestionFlotteSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl prose prose-lg prose-headings:text-primary prose-a:text-blue-500">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgFleet} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgFleet}
+ width={1600}
+ height={900} loading="lazy" decoding="async" />
           <p className="lead">Quand une flotte grandit, le suivi sur papier ou dans des fichiers dispersés ne suffit plus : on perd des immobilisations, on oublie des maintenances et on ne sait plus combien coûte réellement chaque véhicule. Un logiciel de gestion de flotte remet de l’ordre.</p>
 
           <section>

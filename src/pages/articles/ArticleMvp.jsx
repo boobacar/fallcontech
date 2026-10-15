@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgMvp from "@/assets/articles/mvp-development-for-startups.png";
+import imgMvp from "@/assets/articles/mvp-development-for-startups.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleMvp = () => {
@@ -132,6 +132,8 @@ const ArticleMvp = () => {
               alt="Une fusée décollant d'un ordinateur portable, symbolisant le lancement rapide d'un MVP"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMvp}
+              width={1100}
+              height={700}
               loading="lazy"
               decoding="async"
             />

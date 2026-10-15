@@ -75,6 +75,8 @@ const ArticleWorkflowsWhatsapp = () => {
               alt="Messages WhatsApp automatisés pour le CRM"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgWhatsapp}
+              width={1200}
+              height={628}
               loading="lazy"
               decoding="async"
             />

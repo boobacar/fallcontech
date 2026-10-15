@@ -3,7 +3,7 @@ import { ArrowRight, FileStack, ShieldCheck, Workflow } from "lucide-react";
 import SEO from "@/components/SEO";
 import clinicImg from "@/assets/clinic-dabia.webp";
 import dentalOsImg from "@/assets/dental-os-odontogram.webp";
-import fleetImg from "@/assets/teliman-tracking-fleeti-dashboard-full.png";
+import fleetImg from "@/assets/teliman-tracking-fleeti-dashboard-full.jpg";
 import miroirImg from "@/assets/miroir-foncier.webp";
 import telimanShareImg from "@/assets/telimanshare.webp";
 

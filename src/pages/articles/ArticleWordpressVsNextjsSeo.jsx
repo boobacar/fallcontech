@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 
 const ArticleWordpressVsNextjsSeo = () => {
   const path = "/article/wordpress-vs-nextjs-seo";
@@ -39,7 +39,9 @@ const ArticleWordpressVsNextjsSeo = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack}
+ width={1200}
+ height={729} loading="lazy" decoding="async" />
 
         <h2>Quand choisir WordPress</h2>
         <p>WordPress est excellent pour publier rapidement du contenu, gérer un blog riche et garder un coût de production accessible.</p>

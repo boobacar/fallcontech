@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.png";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticleChoosingDev = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgDev}
+            width={1024}
+            height={1024}
             alt="Réunion développeur web client Dakar"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

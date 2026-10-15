@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgITSupport from "@/assets/articles/it_support_helpdesk_dakar.png";
+import imgITSupport from "@/assets/articles/it_support_helpdesk_dakar.jpg";
 
 export default function ArticlePrixMaintenanceInformatiqueSenegal() {
   const path = "/article/prix-maintenance-informatique-senegal-2026";
@@ -19,7 +19,9 @@ export default function ArticlePrixMaintenanceInformatiqueSenegal() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgITSupport} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgITSupport}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
         <h2>Ce qui fait varier le prix</h2>
         <ul><li>Nombre de postes</li><li>Niveau de criticité</li><li>Support sur site vs remote</li><li>Couverture sécurité/backups</li></ul>
         <h2>Bon contrat = bon SLA</h2>

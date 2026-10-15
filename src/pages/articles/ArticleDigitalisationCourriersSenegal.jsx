@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 
 const ArticleDigitalisationCourriersSenegal = () => {
   const path = "/article/digitalisation-courriers-services-senegal";
@@ -109,6 +109,8 @@ const ArticleDigitalisationCourriersSenegal = () => {
             alt="Digitalisation des courriers et transition digitale au Sénégal"
             className="w-full rounded-2xl shadow-xl mb-10"
             src={imgStack}
+            width={1200}
+            height={729}
             loading="lazy"
             decoding="async"
           />

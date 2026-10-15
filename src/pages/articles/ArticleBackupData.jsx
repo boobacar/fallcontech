@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgBackup from "@/assets/articles/backup.png";
+import imgBackup from "@/assets/articles/backup.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleBackupData = () => {
@@ -131,6 +131,8 @@ const ArticleBackupData = () => {
               alt="Sauvegarde de données sécurisée dans le cloud"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgBackup}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

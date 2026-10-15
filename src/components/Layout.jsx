@@ -42,7 +42,9 @@ export default function Layout({ children }) {
       <header className="site-header">
         <div className="site-shell header-inner">
           <Link to="/" className="brand" aria-label="Fallcon Tech — Accueil">
-            <img src={logoUrl} alt="" />
+            <img src={logoUrl}
+ width={1024}
+ height={1024} alt="" />
             <span><strong>Fallcon</strong> Tech<small>Transformation numérique</small></span>
           </Link>
 
@@ -87,7 +89,9 @@ export default function Layout({ children }) {
         <div className="site-shell footer-grid">
           <div className="footer-brand">
             <Link to="/" className="brand brand-footer">
-              <img src={logoUrl} alt="" />
+              <img src={logoUrl}
+ width={1024}
+ height={1024} alt="" />
               <span><strong>Fallcon</strong> Tech<small>Transformation numérique</small></span>
             </Link>
             <p>Nous concevons des systèmes numériques fiables pour les organisations qui ont des opérations, des données et des responsabilités à maîtriser.</p>

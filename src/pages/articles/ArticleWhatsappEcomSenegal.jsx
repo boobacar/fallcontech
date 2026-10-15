@@ -20,7 +20,9 @@ const ArticleWhatsappEcomSenegal = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp}
+ width={1200}
+ height={628} loading="lazy" decoding="async" />
 
         <h2>Une adoption massive au Sénégal : le canal privilégié</h2>
         <p>Aujourd'hui, WhatsApp est l'application de messagerie la plus utilisée au Sénégal, bien devant les SMS traditionnels ou les emails. La majorité des Sénégalais utilisent WhatsApp quotidiennement pour échanger avec leurs proches, mais aussi pour interagir avec les commerces. Intégrer WhatsApp Business API à votre plateforme e-commerce, c'est aller directement à la rencontre de vos clients, là où ils passent le plus clair de leur temps. L'enjeu est de transformer un simple canal de discussion en un véritable levier de vente et de fidélisation.</p>

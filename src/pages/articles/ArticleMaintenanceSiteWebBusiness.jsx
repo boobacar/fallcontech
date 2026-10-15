@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 
 export default function ArticleMaintenanceSiteWebBusiness() {
   const path = "/article/maintenance-site-web-business-senegal";
@@ -19,7 +19,9 @@ export default function ArticleMaintenanceSiteWebBusiness() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack}
+ width={1200}
+ height={729} loading="lazy" decoding="async" />
         <h2>Les 5 risques sans maintenance</h2>
         <ul><li>Site indisponible</li><li>Hack/malware</li><li>Formulaires en panne</li><li>Baisse SEO</li><li>Perte de données</li></ul>
         <h2>Routine recommandée</h2>

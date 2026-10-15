@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import dentalOsImg from "@/assets/dental-os-odontogram.webp";
-import telimanImg from "@/assets/teliman-tracking-fleeti-dashboard.png";
+import telimanImg from "@/assets/teliman-tracking-fleeti-dashboard.jpg";
 import telimanShareImg from "@/assets/telimanshare.webp";
 
 const solutions = [

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgEcommerce from "@/assets/articles/pos_system_shop_senegal.png";
+import imgEcommerce from "@/assets/articles/pos_system_shop_senegal.jpg";
 
 const ArticleCrerBoutiqueEnLigneSenegal = () => {
   const path = "/article/creer-boutique-en-ligne-senegal";
@@ -86,7 +86,9 @@ const ArticleCrerBoutiqueEnLigneSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgEcommerce} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgEcommerce}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
 
           <h2>Le e-commerce au Sénégal en 2026 : une opportunité réelle</h2>
           <p>

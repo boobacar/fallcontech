@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgMobile from "@/assets/articles/mobile-first-design.png";
+import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 
 const ArticleAppMobilePmeDakar = () => {
   const path = "/article/avantages-application-mobile-pme-dakar";
@@ -20,7 +20,9 @@ const ArticleAppMobilePmeDakar = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgMobile} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgMobile}
+ width={1024}
+ height={404} loading="lazy" decoding="async" />
 
         <h2>Le mobile est roi au Sénégal : une présence incontournable</h2>
         <p>À Dakar et partout au Sénégal, la révolution numérique s'est faite directement sur mobile. La grande majorité des interactions numériques, qu'il s'agisse de communication, de divertissement ou de commerce, se font aujourd'hui sur smartphone. Avoir un site web responsive est un bon début, mais disposer d'une application mobile sur mesure permet à votre PME d'être présente directement dans la poche de vos clients. C'est un point de contact permanent et privilégié avec votre audience.</p>

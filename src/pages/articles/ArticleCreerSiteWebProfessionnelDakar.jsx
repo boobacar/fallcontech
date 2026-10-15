@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgWeb from "@/assets/articles/online-reservation-system.png";
+import imgWeb from "@/assets/articles/online-reservation-system.jpg";
 
 const ArticleCreerSiteWebProfessionnelDakar = () => {
   const path = "/article/creer-site-web-professionnel-dakar";
@@ -103,7 +103,9 @@ const ArticleCreerSiteWebProfessionnelDakar = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWeb} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWeb}
+ width={1200}
+ height={600} loading="lazy" decoding="async" />
 
           <h2>Pourquoi votre entreprise a besoin d'un site web professionnel en 2026</h2>
           <p>

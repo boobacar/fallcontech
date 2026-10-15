@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgIT from "@/assets/articles/it-support.png";
+import imgIT from "@/assets/articles/it-support.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleGeneralistIT = () => {
@@ -131,6 +131,8 @@ const ArticleGeneralistIT = () => {
               alt="Informaticien polyvalent aidant une équipe"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgIT}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

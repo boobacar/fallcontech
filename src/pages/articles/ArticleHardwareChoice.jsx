@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgHardware from "@/assets/articles/hardware.png";
+import imgHardware from "@/assets/articles/hardware.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleHardwareChoice = () => {
@@ -131,6 +131,8 @@ const ArticleHardwareChoice = () => {
               alt="Ordinateur portable professionnel moderne sur un bureau"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgHardware}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

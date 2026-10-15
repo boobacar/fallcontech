@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.png";
+import imgStack from "@/assets/articles/stack.jpg";
 
 const ArticleApplicationGestionSurMesureSenegal = () => {
   const path = "/article/application-gestion-sur-mesure-senegal";
@@ -86,7 +86,9 @@ const ArticleApplicationGestionSurMesureSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgStack}
+ width={1200}
+ height={729} loading="lazy" decoding="async" />
 
           <h2>Le problème des PME sénégalaises sans outil de gestion numérique</h2>
           <p>

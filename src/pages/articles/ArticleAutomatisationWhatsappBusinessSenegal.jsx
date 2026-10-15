@@ -72,7 +72,9 @@ const ArticleAutomatisationWhatsappBusinessSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl prose prose-lg prose-headings:text-primary prose-a:text-blue-500">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgWhatsapp}
+ width={1200}
+ height={628} loading="lazy" decoding="async" />
           <p className="lead">Au Sénégal, WhatsApp est le canal où vos clients répondent le plus vite. L’automatisation permet d’envoyer le bon message au bon moment — sans y passer vos journées. À condition de respecter les règles et de viser la valeur, pas le spam.</p>
 
           <section>

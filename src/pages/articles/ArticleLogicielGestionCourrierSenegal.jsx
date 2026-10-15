@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 
 const ArticleLogicielGestionCourrierSenegal = () => {
   const path = "/article/logiciel-gestion-courrier-administration-senegal";
@@ -83,6 +83,8 @@ const ArticleLogicielGestionCourrierSenegal = () => {
             alt="Logiciel de gestion de courrier pour administration au Sénégal"
             className="w-full rounded-2xl shadow-xl mb-10"
             src={imgSeo}
+            width={512}
+            height={266}
             loading="lazy"
             decoding="async"
           />

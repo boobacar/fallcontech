@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgITRole from "@/assets/articles/it_professional_server_room.png";
+import imgITRole from "@/assets/articles/it_professional_server_room.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticleITRole = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgITRole}
+            width={1024}
+            height={1024}
             alt="Informaticien Dakar Serveur"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

@@ -5,7 +5,7 @@ import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.png";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
 
 const ArticleDeveloppementWebProfessionnelSenegal = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");
@@ -72,7 +72,9 @@ const ArticleDeveloppementWebProfessionnelSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl prose prose-lg prose-headings:text-primary prose-a:text-blue-500">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgDev}
+ width={1024}
+ height={1024} loading="lazy" decoding="async" />
           <p className="lead">Un site web « qui marche » ne se résume pas à un joli visuel. C’est un outil rapide, visible sur Google, adapté au mobile et pensé pour convertir un visiteur en client. Voici ce qu’il faut savoir avant de lancer un développement web professionnel au Sénégal.</p>
 
           <section>

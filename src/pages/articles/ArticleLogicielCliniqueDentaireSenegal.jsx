@@ -72,7 +72,9 @@ const ArticleLogicielCliniqueDentaireSenegal = () => {
 
       <article className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl prose prose-lg prose-headings:text-primary prose-a:text-blue-500">
-          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgOdonto} loading="lazy" decoding="async" />
+          <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgOdonto}
+ width={950}
+ height={562} loading="lazy" decoding="async" />
           <p className="lead">Un dossier papier, un cahier de rendez-vous, une caisse séparée : à partir d’un certain volume de patients, la clinique dentaire perd du temps et de l’argent sans un logiciel unique qui centralise tout.</p>
 
           <section>

@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgSeo from "@/assets/articles/seo.png";
+import imgSeo from "@/assets/articles/seo.jpg";
 
 const ArticleChecklistAuditSeo30Min = () => {
   const path = "/article/checklist-audit-seo-30-minutes";
@@ -39,7 +39,9 @@ const ArticleChecklistAuditSeo30Min = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}><h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1></motion.div>
       </div></section>
       <article className="py-16 bg-background"><div className="container mx-auto px-4 max-w-3xl prose prose-lg">
-        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo} loading="lazy" decoding="async" />
+        <img alt={title} className="w-full rounded-2xl shadow-xl mb-10" src={imgSeo}
+ width={512}
+ height={266} loading="lazy" decoding="async" />
 
         <h2>Pourquoi cette checklist marche</h2>
         <p>Elle vous force à corriger d’abord les points qui bloquent la visibilité et la conversion, avant d’entrer dans des optimisations secondaires.</p>

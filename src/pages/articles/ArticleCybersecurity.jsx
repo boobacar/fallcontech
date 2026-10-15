@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgSecurity from "@/assets/articles/security.png";
+import imgSecurity from "@/assets/articles/security.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleCybersecurity = () => {
@@ -131,6 +131,8 @@ const ArticleCybersecurity = () => {
               alt="Concept de cybersécurité pour les entreprises"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgSecurity}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

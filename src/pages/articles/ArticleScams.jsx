@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgScam from "@/assets/articles/mobile_money_scam_alert.png";
+import imgScam from "@/assets/articles/mobile_money_scam_alert.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticleScams = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgScam}
+            width={1024}
+            height={1024}
             alt="Arnaque Wave Orange Money Sécurité"
             className="w-full rounded-2xl shadow-xl mb-12"
           />

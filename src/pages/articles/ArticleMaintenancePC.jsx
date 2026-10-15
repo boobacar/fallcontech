@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgMaintenance from "@/assets/articles/maintenance.png";
+import imgMaintenance from "@/assets/articles/maintenance.jpg";
 import { useI18n } from "@/i18n";
 
 const ArticleMaintenancePC = () => {
@@ -130,6 +130,8 @@ const ArticleMaintenancePC = () => {
               alt="Nettoyage et maintenance d'un ordinateur"
               className="w-full rounded-2xl shadow-xl mb-12"
               src={imgMaintenance}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
             />

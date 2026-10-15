@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgCost from "@/assets/articles/website_cost_estimate_senegal.png";
+import imgCost from "@/assets/articles/website_cost_estimate_senegal.jpg";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
@@ -52,6 +52,8 @@ const ArticleWebsiteCost = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <img
             src={imgCost}
+            width={1024}
+            height={1024}
             alt="Devis site web Sénégal Prix"
             className="w-full rounded-2xl shadow-xl mb-12"
           />
