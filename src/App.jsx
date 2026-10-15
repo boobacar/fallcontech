@@ -284,7 +284,7 @@ function App() {
       <Layout>
       <Suspense
         fallback={
-          <div className="px-4 py-10 text-center text-sm text-muted-foreground">
+          <div className="min-h-[100svh] px-4 py-10 text-center text-sm text-muted-foreground">
             Chargement…
           </div>
         }
