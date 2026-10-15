@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { getSeoForPath, SITE_URL } from "../src/data/seoData.js";
 import { geoSeoForPath } from "../src/data/geoData.js";
@@ -26,6 +26,58 @@ const outputPathsForRoute = (routePath) => {
   if (routePath === "/") return [distIndexPath];
   const cleanPath = routePath.replace(/^\/+/, "");
   return [resolve("dist", cleanPath, "index.html"), resolve("dist", `${cleanPath}.html`)];
+};
+
+// ---------------------------------------------------------------------------
+// Préchargement de l'image de couverture des articles.
+// Sur une page article, l'élément LCP est l'image de couverture, mais elle n'est
+// découverte qu'au montage de React (resourceLoadDelay mesuré ~1,5 s). On injecte
+// donc un <link rel="preload" as="image"> dans le HTML statique : la requête part
+// dès l'analyse du <head>, en parallèle du JavaScript.
+// ---------------------------------------------------------------------------
+const ASSETS_DIR = resolve("dist/assets");
+
+const assetFilesByStem = () => {
+  const map = new Map();
+  if (!existsSync(ASSETS_DIR)) return map;
+  for (const file of readdirSync(ASSETS_DIR)) {
+    const match = file.match(/^(.*)-[A-Za-z0-9_-]{8}\.(jpg|jpeg|png|webp)$/i);
+    if (!match) continue;
+    const size = statSync(resolve(ASSETS_DIR, file)).size;
+    const current = map.get(match[1]);
+    if (!current || size > current.size) map.set(match[1], { file, size });
+  }
+  return map;
+};
+
+const articleCoverForRoute = (routePath, appSrc, assets) => {
+  const routeMatch = new RegExp(`<Route\\s+path="${routePath}"[\\s\\S]{0,120}?element=\\{<(\\w+)`).exec(appSrc);
+  if (!routeMatch) return null;
+  const comp = routeMatch[1];
+  const fileMatch = new RegExp(`const\\s+${comp}\\s*=\\s*lazy\\(\\s*\\(\\)\\s*=>\\s*import\\("(@/pages/[^"]+)"\\)\\s*,?\\s*\\)`).exec(appSrc);
+  if (!fileMatch) return null;
+  const basePath = resolve(fileMatch[1].replace(/^@\//, "src/"));
+  const filePath = [basePath, `${basePath}.jsx`, `${basePath}.js`, `${basePath}/index.jsx`].find((candidate) =>
+    existsSync(candidate),
+  );
+  if (!filePath) return null;
+  const source = readFileSync(filePath, "utf8");
+  let best = null;
+  for (const imp of source.matchAll(/from\s+"@\/assets\/([^"]+?)\.(?:jpg|jpeg|png|webp)"/gi)) {
+    const stem = imp[1].split("/").pop();
+    const asset = assets.get(stem);
+    if (asset && (!best || asset.size > best.size)) best = asset;
+  }
+  return best ? best.file : null;
+};
+
+const injectCoverPreload = (html, routePath, appSrc, assets) => {
+  if (!routePath.startsWith("/article/")) return html;
+  if (html.includes('rel="preload" as="image"')) return html;
+  const cover = articleCoverForRoute(routePath, appSrc, assets);
+  if (!cover) return html;
+  const tag = `<link rel="preload" as="image" href="/assets/${cover}" fetchpriority="high" />`;
+  return html.replace("</head>", `    ${tag}\n  </head>`);
 };
 
 // Données structurées des fiches produit : injectées dans le HTML statique pour
@@ -83,13 +135,17 @@ if (!existsSync(distIndexPath) || !existsSync(sitemapPath)) {
 }
 
 const template = readFileSync(distIndexPath, "utf8");
+const appSrc = readFileSync(resolve("src/App.jsx"), "utf8");
+const assets = assetFilesByStem();
 const sitemap = readFileSync(sitemapPath, "utf8");
 const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
   .map((match) => new URL(match[1]).pathname)
   .filter(Boolean);
 
+let preloaded = 0;
 for (const routePath of routes) {
-  const html = applySeo(template, routePath);
+  const html = injectCoverPreload(applySeo(template, routePath), routePath, appSrc, assets);
+  if (html.includes('rel="preload" as="image"')) preloaded += 1;
   for (const outputPath of outputPathsForRoute(routePath)) {
     mkdirSync(dirname(outputPath), { recursive: true });
     writeFileSync(outputPath, html, "utf8");
@@ -97,3 +153,4 @@ for (const routePath of routes) {
 }
 
 console.log(`[prerender-seo] Generated static SEO HTML for ${routes.length} URLs (${SITE_URL}).`);
+console.log(`[prerender-seo] Preload image de couverture injecte sur ${preloaded} pages article.`);
