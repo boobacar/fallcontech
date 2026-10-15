@@ -117,7 +117,7 @@ export default function GeoLandingPage() {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-4xl mx-auto mb-16"
           >

@@ -2,7 +2,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { getSeoForPath, SITE_URL } from "../src/data/seoData.js";
-import { geoSeoForPath } from "../src/data/geoData.js";
+import { geoSeoForPath, getGeoPageByPath } from "../src/data/geoData.js";
 import { productSeoForPath } from "../src/data/products.js";
 import { productJsonLdForSlug } from "../src/data/productSeo.js";
 import { boutiqueSeoForPath } from "../src/data/boutiqueGeoData.js";
@@ -84,6 +84,45 @@ const injectCoverPreload = (html, routePath, appSrc, assets) => {
 // que les moteurs et les crawlers IA les lisent sans exécuter le JavaScript.
 // (Le composant React les réinjecte via Helmet : la copie statique est retirée
 // au montage — voir src/main.jsx.)
+// ---------------------------------------------------------------------------
+// Coquille de hero pour les pages géo (services / secteurs / pays / villes).
+// Sur ces ~2000 pages, l'élément LCP est le paragraphe d'intro `p.text-xl`, rendu
+// par React après hydratation (LCP borné par le bundle critique). On écrit donc le
+// hero en HTML statique dans #root, avec un balisage byte-identique au composant :
+// React remplace les enfants du conteneur au commit, il n'y a ni doublon ni
+// désynchronisation, et le LCP est peint dès le premier rendu.
+// ---------------------------------------------------------------------------
+const esc = escapeHtml;
+
+const buildGeoHeroHtml = (routePath) => {
+  const page = getGeoPageByPath(routePath);
+  if (!page || !page.h1) return "";
+  const country = page.country || {};
+  const heroLocation = page.heroLocation || `${country.flag || ""} ${country.capital || ""}`.trim();
+  const eyebrow = [page.eyebrow, heroLocation].filter(Boolean).join(" · ");
+  return (
+    '<section class="py-20 gradient-bg"><div class="container mx-auto px-4">' +
+    '<div class="text-center max-w-4xl mx-auto mb-16">' +
+    '<div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl mb-6">' +
+    '<svg class="text-primary-foreground" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div>' +
+    `<p class="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-4">${esc(eyebrow)}</p>` +
+    `<h1 class="vt-title text-4xl md:text-5xl font-bold mb-6 gradient-text">${esc(page.h1)}</h1>` +
+    `<p class="text-xl text-foreground/80 max-w-3xl mx-auto">${esc(page.lead || "")}</p>` +
+    "</div></div></section>"
+  );
+};
+
+const injectGeoHero = (html, routePath) => {
+  if (!routePath.startsWith("/services/") && !routePath.startsWith("/secteurs/") && !routePath.startsWith("/pays/")) {
+    return html;
+  }
+  const hero = buildGeoHeroHtml(routePath);
+  if (!hero) return html;
+  if (!html.includes('<div id="root"></div>')) return html;
+  return html.replace('<div id="root"></div>', `<div id="root">${hero}</div>`);
+};
+
 const injectProductJsonLd = (html, routePath) => {
   const match = routePath.match(/^\/boutique\/([^/]+)\/?$/);
   if (!match) return html;
@@ -126,6 +165,7 @@ const applySeo = (template, routePath) => {
   html = replaceOrInsert(html, /<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${description}" />`);
   html = replaceOrInsert(html, /<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${ogImage}" />`);
   html = injectProductJsonLd(html, routePath);
+  html = injectGeoHero(html, routePath);
   return html;
 };
 
@@ -143,9 +183,11 @@ const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
   .filter(Boolean);
 
 let preloaded = 0;
+let geoCovers = 0;
 for (const routePath of routes) {
   const html = injectCoverPreload(applySeo(template, routePath), routePath, appSrc, assets);
   if (html.includes('rel="preload" as="image"')) preloaded += 1;
+  if (html.includes('gradient-text">')) geoCovers += 1;
   for (const outputPath of outputPathsForRoute(routePath)) {
     mkdirSync(dirname(outputPath), { recursive: true });
     writeFileSync(outputPath, html, "utf8");
@@ -154,3 +196,4 @@ for (const routePath of routes) {
 
 console.log(`[prerender-seo] Generated static SEO HTML for ${routes.length} URLs (${SITE_URL}).`);
 console.log(`[prerender-seo] Preload image de couverture injecte sur ${preloaded} pages article.`);
+console.log(`[prerender-seo] Hero statique injecte dans #root sur ${geoCovers} pages geo.`);
