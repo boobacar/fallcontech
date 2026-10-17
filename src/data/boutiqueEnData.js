@@ -416,7 +416,7 @@ function buildEnCountryPage(country) {
       },
       {
         q: `What warranty applies in ${country.name}?`,
-        a: "Every unit is tested before dispatch and covered by our workshop warranty, detailed in the quotation. Huawei licences and their support are provided by the manufacturer and quoted separately.",
+        a: "Every unit is tested before dispatch and covered by our workshop warranty, detailed in the quotation. Licence terms depend on the model: NetEngine 8000 M1A routers in stock ship with their perpetual licences already activated, other equipment is quoted separately.",
       },
       {
         q: `How do we get a quotation for ${country.capital}?`,

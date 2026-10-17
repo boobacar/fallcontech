@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -72,9 +72,9 @@ const ArticleRouteurEntrepriseInterconnexionSites = () => {
               { label: "Routeur d'entreprise" },
             ]}
           />
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <Motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
       <article className="py-16 bg-background">
@@ -203,9 +203,10 @@ const ArticleRouteurEntrepriseInterconnexionSites = () => {
           <p>
             Les unités disponibles sont neuves et n'ont jamais été mises en service :
             onze exemplaires fabriqués en juin 2021, dans leur emballage d'origine, livrés
-            avec notre garantie atelier depuis Dakar. Les licences Huawei (RTU) sont
-            attachées au numéro de série et chiffrées séparément au devis. Le prix est
-            établi sur devis selon la configuration et les licences réellement utiles.
+            avec leurs licences Huawei perpétuelles <strong>déjà activées</strong> — 6 ports
+            10G et 26 ports GE à pleine capacité, plus IPsec, SRv4, VXLAN et HQOS — et notre
+            garantie atelier depuis Dakar. Ces licences restent attachées au numéro de série
+            de chaque châssis : chaque unité est livrée avec son propre relevé de licences.
           </p>
 
           <h2>Quand ce routeur est le bon choix, et quand il ne l'est pas</h2>

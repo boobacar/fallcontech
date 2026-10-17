@@ -346,7 +346,7 @@ function buildCountryPage(country) {
       },
       {
         q: `Le matériel est-il livré avec sa garantie ${prep} ${name} ?`,
-        a: `Chaque équipement est testé avant expédition et couvert par notre garantie atelier, précisée dans le devis. Les licences Huawei et leur support relèvent du constructeur et sont chiffrées séparément.`,
+        a: `Chaque équipement est testé avant expédition et couvert par notre garantie atelier, précisée dans le devis. Les licences Huawei et leur support dépendent du modèle : les routeurs NetEngine 8000 M1A en stock arrivent avec leurs licences perpétuelles déjà activées, les autres équipements sont chiffrés séparément.`,
       },
       {
         q: `Comment obtenir un devis pour ${country.capital} ?`,

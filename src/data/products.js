@@ -208,18 +208,18 @@ export const products = [
   {
     id: "routeur-netengine-8000-m1a",
     seoPitchEn:
-      "New 1U carrier router (NetEngine 8000 M1A): up to 352 Gbit/s, 10GE SFP+, SRv6 and EVPN — eleven units in stock in Dakar.",
+      "New 1U carrier router (NetEngine 8000 M1A): perpetual licences included, 6×10G and 26×GE activated and tested, SRv6 and EVPN — eleven units in stock in Dakar.",
     seoPitch:
-      "Routeur opérateur 1U neuf (NetEngine 8000 M1A) : jusqu'à 352 Gbit/s, 10GE SFP+, SRv6 et EVPN — 11 unités en stock à Dakar.",
+      "Routeur opérateur 1U neuf (NetEngine 8000 M1A) : licences perpétuelles incluses, 6×10G et 26×GE activés et testés, SRv6 et EVPN — 11 unités en stock à Dakar.",
     slug: "routeur-netengine-8000-m1a",
     name: "Huawei NetEngine 8000 M1A",
     category: "Routeurs",
     model: "NetEngine 8000 M1A",
-    configNote: "Neuf · hors licences RTU",
-    configNoteEn: "New · RTU licences excluded",
+    configNote: "Neuf · licences perpétuelles incluses",
+    configNoteEn: "New · perpetual licences included",
     seoTitle: "Routeur Huawei NetEngine 8000 M1A neuf à Dakar | Fallcon Tech",
     seoDescription:
-      "Routeur Huawei NetEngine 8000 M1A neuf, jamais mis en service : jusqu'à 352 Gbit/s, 10GE SFP+, SRv6/EVPN, 1588v2. 11 unités en stock à Dakar, devis sous 24 h.",
+      "Routeur Huawei NetEngine 8000 M1A neuf, jamais mis en service : licences perpétuelles incluses (4 RTU 10GE, 18 RTU GE, IPsec, SRv4, VXLAN, HQOS), 6×10G et 26×GE activés, lien 10G testé. 11 unités en stock à Dakar.",
     shortEn:
       "New 1U carrier router, never put into service: up to 352 Gbit/s, 10GE SFP+ and GE interfaces, SRv6, EVPN, FlexE and 1588v2 timing. Eleven units in stock in Dakar.",
     short:
@@ -229,20 +229,20 @@ export const products = [
     specsEn: [
       "Compact 1U chassis · 442 × 220 × 44.5 mm · 4.5 kg (5.8 kg boxed)",
       "Switching capacity up to 352 Gbit/s · 72 Mpps",
-      "Interfaces: up to 16 × 10GE SFP+, plus GE optical (SFP) and copper (RJ45) depending on configuration",
+      "Interfaces: 16 × 10GE SFP+, 12 × GE optical (SFP), 4 × GE copper (RJ45) — 6 × 10GE and 26 × GE activated by licence",
       "SRv6, EVPN, FlexE, Port Slicing, in-service telemetry and 1588v2 timing",
       "AC power 100–240 V (≈ 75 W) · 2+1 hot-swappable redundant fans",
       "Eleven new units built in June 2021, never put into service, original packaging",
-      "Huawei RTU licences tied to the serial number — quoted separately",
+      "Huawei perpetual licences included (4 × 10GE RTU, 18 × GE RTU, plus IPsec, SRv4, VXLAN, HQOS)",
     ],
     specs: [
       "Châssis 1U compact · 442 × 220 × 44,5 mm · 4,5 kg (5,8 kg emballé)",
       "Capacité de commutation jusqu'à 352 Gbit/s · 72 Mpps",
-      "Interfaces : jusqu'à 16× 10GE SFP+, plus GE optiques (SFP) et cuivre (RJ45) selon la configuration",
+      "Interfaces : 16× 10GE SFP+ · 12× GE optique (SFP) · 4× GE cuivre (RJ45) — 32 ports au total",
       "SRv6, EVPN, FlexE, Port Slicing, télémétrie en service et horodatage 1588v2",
       "Alimentation AC 100–240 V (≈ 75 W) · ventilateurs redondants 2+1 remplaçables à chaud",
       "11 unités neuves fabriquées en juin 2021, jamais mises en service, emballage d'origine",
-      "Licences RTU Huawei attachées au numéro de série — chiffrées séparément au devis",
+      "Licences perpétuelles déjà activées : 6× 10GE et 26× GE à pleine capacité, plus IPsec, SRv4, VXLAN et HQOS",
     ],
     techSpecs: [
       { k: "Modèle", v: "Huawei NetEngine 8000 M1A (routeur opérateur 1U)" },
@@ -251,23 +251,27 @@ export const products = [
       { k: "Poids", v: "4,5 kg · 5,8 kg emballé" },
       { k: "Capacité de commutation", v: "Jusqu'à 352 Gbit/s selon la configuration" },
       { k: "Débit de paquets", v: "72 Mpps" },
-      { k: "Interfaces (selon configuration)", v: "Jusqu'à 16× 10GE SFP+ · GE optiques (SFP) · GE cuivre (RJ45) — configuration exacte confirmée par unité au devis" },
+      { k: "Référence (P/N)", v: "02353HFW — carte de commutation CR8PM1ABAS1" },
+      { k: "Interfaces (e-label)", v: "16× 10GE SFP+ · 12× GE optique (SFP) · 4× GE cuivre (RJ45) — soit 32 ports" },
+      { k: "Ports activés par licence", v: "6× 10GE (ports 0 à 5) et 26× GE activés et testés sur l'unité de référence" },
       { k: "Routage et transport", v: "IPv4/IPv6, MPLS L2VPN/L3VPN, EVPN, SRv6, FlexE, Port Slicing" },
       { k: "Synchronisation", v: "1588v2 (PTP) et SyncE pour les services mobiles et la voix" },
       { k: "Exploitation", v: "Télémétrie en service, supervision, gestion CLI et NMS Huawei" },
       { k: "Alimentation", v: "AC 100–240 V · 1,5 A · sortie 170 W · prise C13 (≈ 75 W en service)" },
       { k: "Refroidissement", v: "Ventilateurs redondants 2+1, remplaçables à chaud" },
       { k: "Fiabilité", v: "MTBF ≈ 36 ans · MTTR 2 h · disponibilité 99,999 %" },
-      { k: "Licences", v: "RTU Huawei attachées au numéro de série (capacité 10GE, fonctions logicielles)" },
+      { k: "Licences", v: "Perpétuelles (expiration : PERMANENT) et incluses — 4× RTU 10GE, 18× RTU GE, IPsec, SRv4, VXLAN, HQOS" },
+      { k: "Logiciel", v: "VRP V800R012C00SPC300" },
       { k: "Fabrication", v: "Juin 2021" },
       { k: "État", v: "Neuf, jamais mis en service — cartons d'origine marqués par le stockage, matériel intact" },
+      { k: "Contrôles effectués", v: "Lien 10G monté en boucle : trafic réel de 740 paquets, 0 perte, 0 erreur CRC, aucune alarme active" },
       { k: "Quantité disponible", v: "11 unités à Dakar (à l'unité, par lot de 10 ou lot complet)" },
       { k: "Usages typiques", v: "Accès et agrégation opérateur, backhaul, collecte multi-sites, transport métro, laboratoire" },
     ],
     longIntro: [
       "Le Huawei NetEngine 8000 M1A est un routeur opérateur compact de 1U, conçu pour l'accès, l'agrégation et le backhaul : collecte de sites mobiles, raccordement d'entreprises, transport métropolitain sur fibre existante. Avec 220 mm de profondeur seulement, il s'installe dans les armoires les plus contraintes — y compris chez un client final — tout en délivrant jusqu'à 352 Gbit/s de capacité de commutation et 72 Mpps.",
       "Il fait tourner la même famille logicielle que les NetEngine 8000 M8 et M14 (VRP V800) : routage IPv4/IPv6, MPLS L2VPN et L3VPN, EVPN, SRv6, FlexE et Port Slicing, avec synchronisation 1588v2 et SyncE pour les services qui dépendent du temps (mobile, voix, télémesure). C'est le routeur qu'un opérateur, un FAI ou une entreprise multi-sites utilise pour tenir un réseau propre sans empiler des équipements d'entrée de gamme.",
-      "Les 11 unités disponibles sont neuves et n'ont jamais été mises en service : fabriquées en juin 2021, stockées depuis dans leur emballage d'origine (cartons marqués par le stockage, le matériel lui-même est intact). Chaque unité est testée avant expédition et livrée avec sa configuration de base (interfaces, adressage, routage, supervision). Les licences RTU Huawei sont attachées au numéro de série : nous chiffrons séparément celles dont votre usage a réellement besoin.",
+      "Les 11 unités disponibles sont neuves et n'ont jamais été mises en service : fabriquées en juin 2021, stockées depuis dans leur emballage d'origine (cartons marqués par le stockage, le matériel lui-même est intact). Chaque unité est testée avant expédition et livrée avec sa configuration de base (interfaces, adressage, routage, supervision). Les licences Huawei de ces unités sont perpétuelles et déjà activées : 6 ports 10G et 26 ports GE sortent à pleine capacité, avec IPsec, SRv4, VXLAN et HQOS. Attachées au numéro de série, elles ne se transfèrent pas d'une machine à l'autre : chaque unité est livrée avec son propre relevé de licences.",
     ],
     useCases: [
       "Accès et agrégation d'un réseau opérateur ou FAI : collecte de sites radio et fibre, backhaul mobile",
@@ -288,20 +292,20 @@ export const products = [
       "Châssis 1U neuf avec alimentation AC, ventilateurs redondants 2+1 et cordon d'alimentation C13",
       "Logiciel de base installé : routage IP/MPLS, OSPF, BGP, IS-IS, L2VPN, QoS",
       "Configuration de base réalisée par nos soins (interfaces, adressage, routage, supervision)",
+      "Licences perpétuelles déjà activées : 6× 10GE et 26× GE à pleine capacité, plus IPsec, SRv4, VXLAN et HQOS",
       "Test de fonctionnement et relevé des numéros de série avant expédition",
+      "Relevé de licences de l'unité livrée, avec son numéro de série",
       "Accompagnement à la mise en service et à l'intégration dans votre réseau",
       "Garantie atelier depuis Dakar, durée précisée au devis",
     ],
     options: [
-      "Licences RTU 10GE attachées au numéro de série (activation des ports à pleine capacité)",
-      "Licences de fonctions logicielles (EVPN, SRv6, FlexE, Port Slicing) selon le besoin réel",
       "Modules optiques 10GE SFP+ (LR 10 km, ER 40 km) et cordons fibre",
       "Cartes d'extension et alimentations de rechange supplémentaires",
       "Mise en service sur site ou assistance à distance pendant votre migration",
       "Configuration avancée : EVPN multi-site, SRv6, 1588v2, télémétrie en service",
     ],
     licenceNote:
-      "Les licences Huawei sont attachées au numéro de série de chaque châssis et ne se transfèrent pas d'une machine à l'autre. Nous chiffrons séparément, au devis, les RTU réellement nécessaires à votre usage — et nous pouvons faire vérifier par un partenaire Huawei agréé ce qui est déjà activé sur les unités qui vous intéressent.",
+      "Les licences de ces unités sont perpétuelles — la mention « PERMANENT » figure sur le relevé du routeur — et déjà activées : ports 10G et GE à pleine capacité, IPsec, SRv4, VXLAN et HQOS. Elles restent attachées au numéro de série et ne se transfèrent pas d'une unité à l'autre : chaque machine est livrée avec son propre relevé de licences, que vous pouvez comparer à celui de l'unité que vous venez voir.",
     faq: [
       {
         q: "Combien de NetEngine 8000 M1A sont disponibles et à quel prix ?",
@@ -312,12 +316,12 @@ export const products = [
         a: "Les unités ont été fabriquées en juin 2021 et n'ont jamais été mises en service. Elles sont livrées dans leur emballage d'origine (cartons marqués par plusieurs années de stockage, le matériel lui-même est intact), testées avant expédition, avec notre garantie atelier depuis Dakar dont la durée est précisée au devis. La garantie constructeur Huawei n'étant pas transférable à un tiers, c'est nous qui l'assumons directement.",
       },
       {
-        q: "Quelles licences faut-il prévoir, et sont-elles obligatoires ?",
-        a: "Le châssis fonctionne dès la livraison pour le routage, le MPLS et la configuration de base. Les licences RTU Huawei, attachées au numéro de série, couvrent la capacité 10GE et certaines fonctions logicielles (EVPN, SRv6, FlexE, Port Slicing). Nous indiquons dans le devis, ligne par ligne, ce qui est inclus et ce qui reste à activer — sans surprise après la livraison.",
+        q: "Quelles licences sont incluses, et y a-t-il un abonnement à payer ?",
+        a: "Aucun abonnement. Chaque unité est livrée avec ses licences Huawei perpétuelles déjà activées : 4 RTU 10GE, 18 RTU GE, plus IPsec, SRv4, VXLAN et HQOS. Sur l'unité de référence, cela donne 6 ports 10G et 26 ports GE à pleine capacité. Ces licences sont liées au numéro de série et ne se transfèrent pas : nous fournissons le relevé de licences de l'unité livrée, avec son numéro de série.",
       },
       {
         q: "Quelle est la configuration d'interfaces exacte des unités ?",
-        a: "Le M1A existe en plusieurs variantes d'interfaces 10GE, GE optiques et GE cuivre. Indiquez-nous vos besoins (nombre de liens 10GE, distance, cuivre ou fibre) et nous confirmons, au devis, la configuration exacte de l'unité proposée, avec sa référence et son numéro de série.",
+        a: "Capacité annoncée par l'e-label : 16 ports 10GE SFP+, 12 ports GE optiques et 4 ports GE cuivre, soit 32 ports. Avec les licences incluses, 6 ports 10G et 26 ports GE sont activés à pleine capacité sur l'unité de référence — et le relevé de l'unité livrée indique exactement ce qui est activé sur la vôtre.",
       },
       {
         q: "D'où vient ce matériel et puis-je vérifier avant d'acheter ?",
@@ -606,7 +610,6 @@ export const products = [
       "Extends a span without electrical regeneration (long-haul transmission)",
       "Huawei reference: card code TN13OAU / OAU1 — confirmed with the serial on quotation",
     ],
-    configNoteEn: "Optical board · 1 slot",
     specs: [
       "Amplificateur optique C-band (EDFA) · 1529–1561 nm",
       "Gain ajustable, verrouillage de gain, contrôle des transitoires",

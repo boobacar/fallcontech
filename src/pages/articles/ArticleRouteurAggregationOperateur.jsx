@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -74,9 +74,9 @@ const ArticleRouteurAggregationOperateur = () => {
               { label: "Routeur d'agrégation" },
             ]}
           />
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <Motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -209,6 +209,12 @@ const ArticleRouteurAggregationOperateur = () => {
               Un équipement opérateur se chiffre en deux temps. D'un côté le matériel : châssis, cartes de contrôle,
               cartes d'interface et optiques. De l'autre les licences et fonctions logicielles, rattachées au numéro
               de série de l'équipement et chiffrées séparément au devis selon les fonctions que vous activez.
+            </p>
+            <p>
+              Une précision sur le stock actuel : les NetEngine 8000 M1A disponibles à Dakar font exception — ils
+              sont livrés avec leurs licences perpétuelles déjà activées (4 RTU 10GE, 18 RTU GE, IPsec, SRv4,
+              VXLAN, HQOS), donc sans surcoût de licence à prévoir. Cette séparation reste la règle pour les
+              châssis modulaires M8 et M14.
             </p>
             <p>
               Cette séparation est une bonne nouvelle : elle vous laisse activer uniquement ce que votre réseau
