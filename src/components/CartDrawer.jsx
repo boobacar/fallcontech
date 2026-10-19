@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { PRICE_LABEL } from "@/data/products";
+import { track } from "@/lib/track";
 
 const WHATSAPP_NUMBER = "221774837576";
 
@@ -98,6 +99,12 @@ export default function CartDrawer({ open, onClose }) {
       });
       const data = await r.json().catch(() => ({}));
       if (!r.ok || !data.ok) throw new Error(data.error || "L'envoi a échoué.");
+      track("generate_lead", {
+        ref: data.ref,
+        items: cartItems.length,
+        company: Boolean(customer.company),
+        email: Boolean(customer.email),
+      });
       setReference(data.ref);
       clearCart();
       setStatus("idle");
@@ -109,6 +116,7 @@ export default function CartDrawer({ open, onClose }) {
   };
 
   const openWhatsApp = () => {
+    track("whatsapp_click", { source: "boutique_panier" });
     const msg = buildOrderMessage(cartItems, customer);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank", "noopener,noreferrer");
   };
@@ -166,7 +174,10 @@ export default function CartDrawer({ open, onClose }) {
               <button
                 className="button button-primary cart-checkout"
                 disabled={cartItems.length === 0}
-                onClick={() => setCheckoutStep("form")}
+                onClick={() => {
+                  track("begin_quote", { items: cartItems.length });
+                  setCheckoutStep("form");
+                }}
               >
                 Demander un devis <ArrowRight size={17} />
               </button>

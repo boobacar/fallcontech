@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { getProductBySlug } from "@/data/products";
+import { track } from "@/lib/track";
 
 const CartContext = createContext(null);
 const STORAGE_KEY = "fallcon-boutique-cart";
@@ -25,8 +26,10 @@ export function CartProvider({ children }) {
     }
   };
 
-  const addToCart = (product, quantity = 1) =>
+  const addToCart = (product, quantity = 1) => {
+    track("add_to_cart", { item: product.slug, qty: quantity, category: product.category });
     persist({ ...cart, [product.slug]: (cart[product.slug] || 0) + quantity });
+  };
 
   const setQtyFor = (slug, quantity) => {
     const next = { ...cart };

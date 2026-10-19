@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, Mail, MapPin, Phone, Send } from "lucide-react";
 import SEO from "@/components/SEO";
 import { useToast } from "@/components/ui/use-toast";
+import { track } from "@/lib/track";
 
 const initialForm = {
   name: "",
@@ -44,6 +45,7 @@ export default function Contact() {
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data?.error || "send_error");
+      track("contact_submit", { goal: formData.need, org_type: formData.organizationType });
       toast({ title: "Demande transmise", description: "Nous reviendrons vers vous pour qualifier le contexte et la prochaine étape." });
       setFormData(initialForm);
     } catch {

@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Minus, Plus, ShieldCheck, Wrench } from "lucide-react";
 import SEO from "@/components/SEO";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import { useCart } from "@/context/CartContext";
+import { track } from "@/lib/track";
 import {
   PRICE_LABEL,
   productSeoForPath,
@@ -25,6 +26,10 @@ const WHATSAPP = "https://wa.me/221774837576";
 export default function ProductPage() {
   const { productSlug } = useParams();
   const product = getProductBySlug(productSlug);
+
+  useEffect(() => {
+    if (product) track("view_item", { item: product.slug, category: product.category });
+  }, [product]);
   const { addToCart } = useCart();
   const [qty, setQty] = useState(1);
   const [cartOpen, setCartOpen] = useState(false);
@@ -125,7 +130,13 @@ export default function ProductPage() {
               >
                 Demander un devis <ArrowRight size={17} />
               </button>
-              <a className="button button-secondary" href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              <a
+                className="button button-secondary"
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("whatsapp_click", { source: "fiche_produit", item: product.slug })}
+              >
                 WhatsApp
               </a>
             </div>
