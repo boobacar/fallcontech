@@ -116,9 +116,15 @@ export default function ProductPage() {
               <button className="button button-primary" onClick={() => addToCart(product, qty)}>
                 Ajouter à ma demande (× {qty})
               </button>
-              <Link className="button button-secondary" to="/contact">
+              <button
+                className="button button-secondary"
+                onClick={() => {
+                  addToCart(product, qty);
+                  setCartOpen(true);
+                }}
+              >
                 Demander un devis <ArrowRight size={17} />
-              </Link>
+              </button>
               <a className="button button-secondary" href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 WhatsApp
               </a>

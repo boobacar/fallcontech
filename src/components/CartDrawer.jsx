@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
+  Loader2,
   MessageCircle,
   Minus,
   Plus,
@@ -28,7 +29,9 @@ function buildOrderMessage(items, customer) {
     "",
   ];
   if (customer.name) lines.push(`Nom : ${customer.name}`);
+  if (customer.company) lines.push(`Société : ${customer.company}`);
   if (customer.phone) lines.push(`Téléphone : ${customer.phone}`);
+  if (customer.email) lines.push(`E-mail : ${customer.email}`);
   if (customer.city) lines.push(`Ville : ${customer.city}`);
   if (customer.note) lines.push(`Note : ${customer.note}`);
   return encodeURIComponent(lines.join("\n"));
@@ -37,13 +40,78 @@ function buildOrderMessage(items, customer) {
 export default function CartDrawer({ open, onClose }) {
   const { setQtyFor, clearCart, cartItems } = useCart();
   const [checkoutStep, setCheckoutStep] = useState("cart");
-  const [customer, setCustomer] = useState({ name: "", phone: "", city: "", note: "" });
+  const [customer, setCustomer] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    city: "",
+    note: "",
+    website: "",
+  });
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
+  const [reference, setReference] = useState("");
 
   useEffect(() => {
-    if (open) setCheckoutStep("cart");
+    if (open) {
+      setCheckoutStep("cart");
+      setStatus("idle");
+      setError("");
+    }
   }, [open]);
 
   if (!open) return null;
+
+  const update = (field) => (e) => setCustomer({ ...customer, [field]: e.target.value });
+
+  const validate = () => {
+    if (customer.name.trim().length < 2) return "Indiquez votre nom.";
+    if (customer.phone.trim().length < 6) return "Indiquez un téléphone joignable.";
+    if (customer.email && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(customer.email.trim()))
+      return "L'adresse e-mail semble incorrecte.";
+    return "";
+  };
+
+  const submitQuote = async () => {
+    const problem = validate();
+    if (problem) {
+      setError(problem);
+      return;
+    }
+    setStatus("sending");
+    setError("");
+    try {
+      const r = await fetch("/api/devis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...customer,
+          items: cartItems.map(({ product, qty }) => ({
+            name: product.name,
+            qty,
+            configNote: product.configNote || "",
+            slug: product.slug,
+          })),
+          page: typeof window !== "undefined" ? window.location.href : "",
+        }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || !data.ok) throw new Error(data.error || "L'envoi a échoué.");
+      setReference(data.ref);
+      clearCart();
+      setStatus("idle");
+      setCheckoutStep("done");
+    } catch (e) {
+      setStatus("error");
+      setError(e.message || "L'envoi a échoué. Réessayez ou écrivez à info@fallcontech.com.");
+    }
+  };
+
+  const openWhatsApp = () => {
+    const msg = buildOrderMessage(cartItems, customer);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="shop-overlay" onClick={onClose} role="presentation">
@@ -100,7 +168,7 @@ export default function CartDrawer({ open, onClose }) {
                 disabled={cartItems.length === 0}
                 onClick={() => setCheckoutStep("form")}
               >
-                Demander un devis sur WhatsApp <ArrowRight size={17} />
+                Demander un devis <ArrowRight size={17} />
               </button>
               <button className="text-link" onClick={onClose}>
                 Continuer mes achats
@@ -114,23 +182,51 @@ export default function CartDrawer({ open, onClose }) {
             <label className="form-label">Vos coordonnées</label>
             <div className="institutional-form cart-form">
               <div className="form-grid">
-                <label>Nom et prénom *<input name="name" value={customer.name} onChange={(e) => setCustomer({ ...customer, name: e.target.value })} required placeholder="Votre nom" /></label>
-                <label>WhatsApp / Téléphone *<input name="phone" value={customer.phone} onChange={(e) => setCustomer({ ...customer, phone: e.target.value })} required placeholder="77 000 00 00" /></label>
-                <label className="form-wide">Ville *<input name="city" value={customer.city} onChange={(e) => setCustomer({ ...customer, city: e.target.value })} required placeholder="Dakar" /></label>
-                <label className="form-wide">Note (option)<textarea name="note" value={customer.note} onChange={(e) => setCustomer({ ...customer, note: e.target.value })} placeholder="Précisions de livraison, horaires, besoin d'installation…" rows={3} /></label>
+                <label>Nom et prénom *<input name="name" value={customer.name} onChange={update("name")} required placeholder="Votre nom" autoComplete="name" /></label>
+                <label>Société<input name="company" value={customer.company} onChange={update("company")} placeholder="Nom de l'entreprise" autoComplete="organization" /></label>
+                <label>Téléphone / WhatsApp *<input name="phone" value={customer.phone} onChange={update("phone")} required placeholder="77 000 00 00" autoComplete="tel" inputMode="tel" /></label>
+                <label>E-mail<input name="email" type="email" value={customer.email} onChange={update("email")} placeholder="vous@entreprise.com" autoComplete="email" /></label>
+                <label className="form-wide">Ville *<input name="city" value={customer.city} onChange={update("city")} required placeholder="Dakar" autoComplete="address-level2" /></label>
+                <label className="form-wide">Précisions (option)<textarea name="note" value={customer.note} onChange={update("note")} placeholder="Quantité visée, délai, besoin d'installation, adresse de livraison…" rows={3} /></label>
+                {/* Piège à robots */}
+                <input
+                  type="text"
+                  name="website"
+                  value={customer.website}
+                  onChange={update("website")}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                />
               </div>
+
+              {error && (
+                <p role="alert" style={{ color: "#b42318", fontSize: "0.9rem", margin: "0.5rem 0" }}>
+                  {error}
+                </p>
+              )}
+
               <button
                 className="button button-primary form-submit"
-                onClick={() => {
-                  if (!customer.name || !customer.phone || !customer.city) return;
-                  const msg = buildOrderMessage(cartItems, customer);
-                  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank", "noopener,noreferrer");
-                  setCheckoutStep("done");
-                }}
+                onClick={submitQuote}
+                disabled={status === "sending"}
               >
-                Envoyer ma demande sur WhatsApp <MessageCircle size={17} />
+                {status === "sending" ? (
+                  <>Envoi en cours… <Loader2 size={17} className="spin" /></>
+                ) : (
+                  <>Envoyer ma demande <ArrowRight size={17} /></>
+                )}
               </button>
-              <p className="form-note">Votre demande s'ouvre dans WhatsApp, prête à être envoyée — nous revenons vers vous avec le devis.</p>
+
+              <button className="text-link cart-whatsapp" onClick={openWhatsApp} type="button">
+                <MessageCircle size={16} /> Préférer WhatsApp
+              </button>
+
+              <p className="form-note">
+                Réponse sous 24 heures ouvrées avec prix, licences, délai et installation.
+                {customer.email ? " Un accusé de réception vous sera envoyé." : " Ajoutez un e-mail pour recevoir l'accusé de réception."}
+              </p>
             </div>
             <button className="text-link cart-back" onClick={() => setCheckoutStep("cart")}>
               ← Retour au panier
@@ -141,9 +237,13 @@ export default function CartDrawer({ open, onClose }) {
         {checkoutStep === "done" && (
           <div className="cart-success">
             <CheckCircle2 size={40} className="cart-success-icon" />
-            <h3>Demande prête !</h3>
-            <p>WhatsApp s'est ouvert avec le récapitulatif. Envoyez-le : nous vous transmettons le devis (prix, licences, délai, installation).</p>
-            <button className="button button-secondary" onClick={() => { clearCart(); setCheckoutStep("cart"); onClose(); }}>
+            <h3>Demande envoyée</h3>
+            <p>
+              Votre demande est enregistrée{reference ? <> sous la référence <b>{reference}</b></> : null}. Nous revenons vers vous
+              sous 24 heures ouvrées avec le devis complet.
+            </p>
+            <p className="cart-empty-sub">Un e-mail de confirmation vous a été adressé si vous avez indiqué votre adresse.</p>
+            <button className="button button-secondary" onClick={() => { setCheckoutStep("cart"); onClose(); }}>
               Fermer
             </button>
           </div>
