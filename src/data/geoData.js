@@ -2247,10 +2247,27 @@ export function buildCountryHub(countrySlug) {
 // L'override est appliqué après construction ; les champs absents gardent la valeur
 // du template. Le H1 et les libellés de maillage ne sont pas modifiés.
 export const GEO_TITLE_OVERRIDES = {
+  // 19/10/2026 — requête « meilleur logiciel de gestion d'ecole au senegal » (39 imp, pos 9,0,
+  // 0 clic sur 90 j) : le titre décrivait des fonctionnalités alors que la requête demande un choix.
   "/services/gestion-ecole-formation-senegal": {
-    title: "Logiciel de gestion d'école au Sénégal : scolarité et bulletins",
+    title: "Logiciel de gestion d'école au Sénégal : lequel choisir ?",
     description:
-      "Gestion des inscriptions, paiements de scolarité, présences, bulletins et dossiers des apprenants pour écoles et centres de formation au Sénégal. Devis rapide à Dakar.",
+      "Inscriptions, scolarité, présences, bulletins : les critères pour choisir un logiciel de gestion d'école au Sénégal. Devis rapide à Dakar.",
+  },
+  // 19/10/2026 — « infrastructure informatique mauritanie » (pos 1,9), « infrastructure it
+  // mauritanie » (pos 3,2), « réseau informatique entreprise mauritanie » (pos 4,8) : aucun de ces
+  // mots n'était dans le titre sécurité-seule du 28/09. 161 imp / 0 clic sur 28 j.
+  "/services/infrastructure-cybersecurite-mauritanie": {
+    title: "Infrastructure informatique et cybersécurité en Mauritanie",
+    description:
+      "Audit, serveurs, réseau et cybersécurité en Mauritanie : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à Nouakchott.",
+  },
+  // 19/10/2026 — « création de site internet à mbour » (pos 4,0) et « agence web professionnelle
+  // à mbour » (pos 7,5) tombaient sur un titre qui ne disait ni « site internet » ni « agence web ».
+  "/services/creation-site-web-mbour": {
+    title: "Agence web à Mbour : création de site internet | Fallcon Tech",
+    description:
+      "Agence web à Mbour : création de site internet et e-commerce, design mobile, base SEO et boutons WhatsApp. Devis rapide à Mbour.",
   },
 };
 

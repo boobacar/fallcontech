@@ -9,9 +9,9 @@ import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 
 const ArticleDeveloppementAppMobileDakar = () => {
   const path = "/article/developpement-application-mobile-dakar";
-  const title = "Développement application mobile à Dakar : guide complet 2026";
+  const title = "Développement application mobile à Dakar";
   const description =
-    "Tout ce qu'il faut savoir pour faire développer une application mobile à Dakar : coûts, technologies, délais, erreurs à éviter et comment choisir le bon développeur au Sénégal.";
+    "Développer une application mobile à Dakar : étapes, technologies, délais, coûts et critères pour choisir votre prestataire au Sénégal.";
 
   const faq = [
     {
@@ -175,6 +175,14 @@ const ArticleDeveloppementAppMobileDakar = () => {
             Avant de lancer le projet, comparez votre périmètre aux paliers de prix détaillés dans
             <Link to="/article/prix-application-mobile-senegal"> prix d'une application mobile au Sénégal</Link> :
             vous saurez ce qui est inclus à chaque niveau et ce qui fait grimper le coût.
+          </p>
+
+          <p>
+            Pour confier le projet à une équipe :{" "}
+            <Link to="/services/application-mobile-senegal">
+              développement d'application mobile au Sénégal
+            </Link>{" "}
+            — périmètre, technologies et accompagnement jusqu'à la mise en ligne.
           </p>
 
           <div className="not-prose mt-10 flex flex-col sm:flex-row gap-4">
