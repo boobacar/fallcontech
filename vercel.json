@@ -6,6 +6,7 @@
       "status": 301,
       "headers": { "Location": "/services/gec-courrier-benin" }
     },
+    { "src": "^/api/track$", "dest": "https://home-server-1.tail660cfd.ts.net:10000/analytics/collect" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ],
