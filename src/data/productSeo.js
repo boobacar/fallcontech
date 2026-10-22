@@ -92,7 +92,7 @@ export function productJsonLd(product, siteUrl = SITE_URL) {
     brand: { "@type": "Brand", name: "Huawei" },
     manufacturer: { "@type": "Organization", name: "Huawei" },
     sku: product.mpn || product.id,
-    itemCondition: "https://schema.org/NewCondition",
+    itemCondition: product.itemCondition || "https://schema.org/NewCondition",
     url,
   };
 

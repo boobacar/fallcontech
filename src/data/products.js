@@ -166,6 +166,7 @@ export const products = [
     ],
     stockNote:
       "1 châssis configuré en stock à Dakar — 20 ports 10GbE SFP+, licences BNG 32 000 abonnés actives et vérifiées.",
+    itemCondition: "https://schema.org/UsedCondition",
     condition: "Configuration d'usine rétablie · testé sous tension · garantie atelier",
     stock: "En stock",
     badge: "LICENCÉ",
