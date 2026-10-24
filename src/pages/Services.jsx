@@ -5,9 +5,13 @@ import {
   FileStack,
   GraduationCap,
   LockKeyhole,
+  Network,
+  ShieldCheck,
+  Timer,
   Stethoscope,
   Truck,
   UsersRound,
+  Wifi,
   Workflow,
 } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -46,6 +50,23 @@ const offers = [
     href: "/solutions/infrastructure-cybersecurite",
     forWho: "DSI · Organisations sensibles · Réseaux multisites",
   },
+  {
+    icon: Network,
+    number: "05",
+    title: "Réseau & sécurité managés",
+    text: "Pare-feu, VPN, continuité multi-opérateurs, interconnexion de sites, Wi-Fi hôtel et filtrage scolaire : installés, supervisés et facturés au mois.",
+    href: "/services/reseau-et-securite",
+    forWho: "PME · Hôtels · Écoles · Réseaux multisites",
+  },
+];
+
+const networkServices = [
+  { icon: ShieldCheck, title: "Pare-feu managé", text: "Filtrage, NAT, segmentation et rapports mensuels, matériel inclus.", href: "/services/pare-feu-manage" },
+  { icon: LockKeyhole, title: "VPN & accès distant", text: "Vos équipes accèdent au système sans exposer un seul port.", href: "/services/vpn-acces-distant" },
+  { icon: Timer, title: "Continuité internet", text: "Deux opérateurs, bascule automatique, coupures mesurées.", href: "/services/continuite-internet-multi-operateurs" },
+  { icon: Network, title: "Interconnexion de sites", text: "Siège et agences sur un même réseau privé chiffré.", href: "/services/interconnexion-sites" },
+  { icon: Wifi, title: "Wi-Fi hôtel & portail captif", text: "Couverture, codes d'accès, débit par utilisateur.", href: "/services/wifi-hotel-portail-captif" },
+  { icon: GraduationCap, title: "Internet maîtrisé — écoles", text: "Filtrage par classe et par horaire, rapport à la direction.", href: "/services/internet-maitrise-ecoles" },
 ];
 
 const sectors = [
@@ -73,7 +94,7 @@ export default function Services() {
       <SEO
         path="/services"
         title="Solutions de transformation numérique Sénégal | Fallcon Tech"
-        description="GED, gestion du courrier, logiciels métier, digitalisation administrative, infrastructure et cybersécurité pour organisations au Sénégal."
+        description="GED, gestion du courrier, logiciels métier, digitalisation administrative, réseau et cybersécurité managés pour organisations au Sénégal."
         jsonLd={jsonLd}
       />
       <section className="page-hero">
@@ -108,6 +129,30 @@ export default function Services() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="section" id="reseau">
+        <div className="site-shell">
+          <div className="split-heading">
+            <div><p className="overline">Réseau & sécurité managés</p><h2>Des services facturés au mois, matériel inclus.</h2></div>
+            <p className="intro-copy">Pare-feu, VPN, continuité internet, interconnexion de sites, Wi-Fi et filtrage : nous installons, configurons et supervisons l'infrastructure réseau, avec rapports mensuels et astreinte.</p>
+          </div>
+          <div className="sector-grid sector-grid-services">
+            {networkServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link className="sector-card" to={item.href} key={item.title}>
+                  <Icon size={23} />
+                  <div><h3>{item.title}</h3><p>{item.text}</p></div>
+                  <ArrowRight size={18} />
+                </Link>
+              );
+            })}
+          </div>
+          <div className="network-services-cta">
+            <Link to="/services/reseau-et-securite" className="button button-secondary">Voir tous les services réseau <ArrowRight size={16} /></Link>
+          </div>
         </div>
       </section>
 

@@ -14,6 +14,7 @@ const Boutique = lazy(() => import("@/pages/Boutique"));
 const ProductPage = lazy(() => import("@/pages/ProductPage"));
 const BoutiqueSeoPage = lazy(() => import("@/pages/BoutiqueSeoPage"));
 const InstitutionalPage = lazy(() => import("@/pages/InstitutionalPage"));
+const NetworkServicesPage = lazy(() => import("@/pages/NetworkServicesPage"));
 const ServiceCreationSiteWebDakar = lazy(() => import("@/pages/ServiceCreationSiteWebDakar"));
 const ServiceAgenceSeoSenegal = lazy(() => import("@/pages/ServiceAgenceSeoSenegal"));
 const ServiceAutomatisationWhatsappSenegal = lazy(() => import("@/pages/ServiceAutomatisationWhatsappSenegal"));
@@ -315,6 +316,14 @@ function App() {
           <Route path="/secteurs/transport-logistique" element={<InstitutionalPage />} />
           <Route path="/secteurs/ong-projets" element={<InstitutionalPage />} />
           <Route path="/secteurs/education-formation" element={<InstitutionalPage />} />
+          <Route path="/services/reseau-et-securite" element={<NetworkServicesPage />} />
+          <Route path="/services/pare-feu-manage" element={<NetworkServicesPage />} />
+          <Route path="/services/vpn-acces-distant" element={<NetworkServicesPage />} />
+          <Route path="/services/continuite-internet-multi-operateurs" element={<NetworkServicesPage />} />
+          <Route path="/services/interconnexion-sites" element={<NetworkServicesPage />} />
+          <Route path="/services/wifi-hotel-portail-captif" element={<NetworkServicesPage />} />
+          <Route path="/services/internet-maitrise-ecoles" element={<NetworkServicesPage />} />
+          <Route path="/services/audit-reseau" element={<NetworkServicesPage />} />
           <Route path="/services/creation-site-web-dakar" element={<ServiceCreationSiteWebDakar />} />
           <Route path="/services/agence-seo-senegal" element={<ServiceAgenceSeoSenegal />} />
           <Route path="/services/automatisation-whatsapp-senegal" element={<ServiceAutomatisationWhatsappSenegal />} />

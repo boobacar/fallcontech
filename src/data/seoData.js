@@ -65,6 +65,62 @@ export const pageSeo = {
     priority: "0.88",
     changefreq: "monthly",
   },
+  "/services/reseau-et-securite": {
+    title: "Services réseau et sécurité managés à Dakar | Fallcon Tech",
+    description:
+      "Pare-feu managé, VPN, continuité multi-opérateurs, interconnexion de sites, Wi-Fi hôtel et audit réseau à Dakar. Services facturés au mois, matériel inclus.",
+    priority: "0.90",
+    changefreq: "monthly",
+  },
+  "/services/pare-feu-manage": {
+    title: "Pare-feu managé à Dakar : filtrage et supervision | Fallcon Tech",
+    description:
+      "Pare-feu d'entreprise en location à Dakar : filtrage par règles, NAT, VPN IPsec et SSL, supervision et rapports mensuels. Sans investissement matériel.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/vpn-acces-distant": {
+    title: "Accès distant VPN pour PME à Dakar | Fallcon Tech",
+    description:
+      "Accès distant sécurisé pour vos équipes à Dakar : VPN SSL et IPsec, authentification par utilisateur, journal des connexions et déconnexion automatique.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/continuite-internet-multi-operateurs": {
+    title: "Continuité internet : double opérateur à Dakar | Fallcon Tech",
+    description:
+      "Routeur de continuité à Dakar : deux fournisseurs d'accès, bascule automatique, adresse fixe conservée et supervision. Pour banques, cliniques et agences.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/interconnexion-sites": {
+    title: "Interconnexion d'agences : VPN multi-sites Sénégal | Fallcon",
+    description:
+      "Reliez siège et agences en réseau privé au Sénégal : VPN IPsec site à site, adressage unifié, qualité de service et supervision centralisée.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/wifi-hotel-portail-captif": {
+    title: "Wi-Fi hôtel et portail captif à Dakar | Fallcon Tech",
+    description:
+      "Wi-Fi pour hôtels, résidences et espaces de coworking à Dakar : couverture, portail captif, codes d'accès, débit par utilisateur et supervision.",
+    priority: "0.80",
+    changefreq: "monthly",
+  },
+  "/services/internet-maitrise-ecoles": {
+    title: "Internet maîtrisé pour écoles à Dakar | Fallcon Tech",
+    description:
+      "Filtrage internet pour écoles à Dakar : catégories bloquées, plages horaires par classe, quotas et rapports pour la direction. Réseau séparé administration et élèves.",
+    priority: "0.80",
+    changefreq: "monthly",
+  },
+  "/services/audit-reseau": {
+    title: "Audit réseau et banc de test à Dakar | Fallcon Tech",
+    description:
+      "Audit réseau à Dakar : mesure des liens, analyse du trafic, cartographie des équipements et rapport de priorités. Banc de test réel pour valider une architecture.",
+    priority: "0.80",
+    changefreq: "monthly",
+  },
   "/services/creation-site-web-dakar": {
     title: "Création site web Dakar & Sénégal — dès 350 000 F CFA | Fallcon Tech",
     description:

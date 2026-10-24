@@ -312,6 +312,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" id="reseau-securite">
+        <div className="site-shell">
+          <div className="section-heading compact">
+            <p className="overline">Réseau & sécurité managés</p>
+            <h2>Votre infrastructure réseau, exploitée comme un service.</h2>
+            <p>Pare-feu, VPN, continuité multi-opérateurs et interconnexion de sites : installés, supervisés et facturés au mois, matériel inclus. Pour les organisations qui ne peuvent pas se permettre une heure sans réseau.</p>
+          </div>
+          <div className="prestation-grid">
+            <Link className="prestation-card" to="/services/pare-feu-manage">
+              <h3>Pare-feu managé</h3>
+              <p>Filtrage, NAT, segmentation et rapports mensuels — sans acheter le matériel.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/continuite-internet-multi-operateurs">
+              <h3>Continuité internet</h3>
+              <p>Deux opérateurs, bascule automatique en quelques secondes, coupures mesurées.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/interconnexion-sites">
+              <h3>Interconnexion d'agences</h3>
+              <p>Siège et sites sur un même réseau privé chiffré : un seul système, partout.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/vpn-acces-distant">
+              <h3>Accès distant sécurisé</h3>
+              <p>Vos équipes travaillent de partout, vos serveurs restent fermés.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/wifi-hotel-portail-captif">
+              <h3>Wi-Fi hôtel & portail captif</h3>
+              <p>Couverture, codes d'accès et débit par utilisateur pour les établissements.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/internet-maitrise-ecoles">
+              <h3>Internet maîtrisé — écoles</h3>
+              <p>Filtrage par classe et par horaire, réseau élèves séparé de l'administration.</p>
+            </Link>
+          </div>
+          <div className="prestation-more">
+            <Link to="/services/reseau-et-securite" className="text-link">Voir les services réseau & sécurité <ArrowRight size={17} /></Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-dark">
         <div className="site-shell">
           <div className="dark-heading">
