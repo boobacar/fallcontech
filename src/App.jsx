@@ -324,6 +324,11 @@ function App() {
           <Route path="/services/wifi-hotel-portail-captif" element={<NetworkServicesPage />} />
           <Route path="/services/internet-maitrise-ecoles" element={<NetworkServicesPage />} />
           <Route path="/services/audit-reseau" element={<NetworkServicesPage />} />
+          <Route path="/services/supervision-infrastructure" element={<NetworkServicesPage />} />
+          <Route path="/services/detection-anomalies-reseau" element={<NetworkServicesPage />} />
+          <Route path="/services/sauvegarde-managee" element={<NetworkServicesPage />} />
+          <Route path="/services/audit-hygiene-numerique" element={<NetworkServicesPage />} />
+          <Route path="/services/contrat-serenite" element={<NetworkServicesPage />} />
           <Route path="/services/creation-site-web-dakar" element={<ServiceCreationSiteWebDakar />} />
           <Route path="/services/agence-seo-senegal" element={<ServiceAgenceSeoSenegal />} />
           <Route path="/services/automatisation-whatsapp-senegal" element={<ServiceAutomatisationWhatsappSenegal />} />

@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import {
+  Activity,
   ArrowRight,
   Building2,
+  ClipboardCheck,
+  DatabaseBackup,
   FileStack,
   GraduationCap,
   LockKeyhole,
   Network,
+  Radar,
   ShieldCheck,
   Timer,
   Stethoscope,
@@ -53,8 +57,8 @@ const offers = [
   {
     icon: Network,
     number: "05",
-    title: "Réseau & sécurité managés",
-    text: "Pare-feu, VPN, continuité multi-opérateurs, interconnexion de sites, Wi-Fi hôtel et filtrage scolaire : installés, supervisés et facturés au mois.",
+    title: "Services managés",
+    text: "Réseau, sécurité, supervision, sauvegarde testée et détection d'anomalies : installés, supervisés et facturés au mois, matériel inclus.",
     href: "/services/reseau-et-securite",
     forWho: "PME · Hôtels · Écoles · Réseaux multisites",
   },
@@ -67,6 +71,13 @@ const networkServices = [
   { icon: Network, title: "Interconnexion de sites", text: "Siège et agences sur un même réseau privé chiffré.", href: "/services/interconnexion-sites" },
   { icon: Wifi, title: "Wi-Fi hôtel & portail captif", text: "Couverture, codes d'accès, débit par utilisateur.", href: "/services/wifi-hotel-portail-captif" },
   { icon: GraduationCap, title: "Internet maîtrisé — écoles", text: "Filtrage par classe et par horaire, rapport à la direction.", href: "/services/internet-maitrise-ecoles" },
+];
+
+const managedServices = [
+  { icon: Activity, title: "Supervision & infogérance", text: "Disques, serveurs, liens et sauvegardes surveillés, alertes avant la panne.", href: "/services/supervision-infrastructure" },
+  { icon: Radar, title: "Détection d'anomalies", text: "Postes compromis et transferts massifs repérés sans lire les contenus.", href: "/services/detection-anomalies-reseau" },
+  { icon: DatabaseBackup, title: "Sauvegarde & restauration", text: "Copie chiffrée hors site et restauration testée chaque mois.", href: "/services/sauvegarde-managee" },
+  { icon: ClipboardCheck, title: "Audit d'hygiène numérique", text: "L'état des lieux noté que réclame un appel d'offres.", href: "/services/audit-hygiene-numerique" },
 ];
 
 const sectors = [
@@ -135,9 +146,10 @@ export default function Services() {
       <section className="section" id="reseau">
         <div className="site-shell">
           <div className="split-heading">
-            <div><p className="overline">Réseau & sécurité managés</p><h2>Des services facturés au mois, matériel inclus.</h2></div>
-            <p className="intro-copy">Pare-feu, VPN, continuité internet, interconnexion de sites, Wi-Fi et filtrage : nous installons, configurons et supervisons l'infrastructure réseau, avec rapports mensuels et astreinte.</p>
+            <div><p className="overline">Services managés</p><h2>Des services facturés au mois, matériel inclus.</h2></div>
+            <p className="intro-copy">Réseau et sécurité d'un côté, surveillance et sauvegarde de l'autre : nous installons, configurons et supervisons, avec rapports mensuels et astreinte.</p>
           </div>
+          <p className="service-group-label">Réseau & sécurité</p>
           <div className="sector-grid sector-grid-services">
             {networkServices.map((item) => {
               const Icon = item.icon;
@@ -150,8 +162,31 @@ export default function Services() {
               );
             })}
           </div>
+          <p className="service-group-label">Surveillance & exploitation</p>
+          <div className="sector-grid sector-grid-services">
+            {managedServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link className="sector-card" to={item.href} key={item.title}>
+                  <Icon size={23} />
+                  <div><h3>{item.title}</h3><p>{item.text}</p></div>
+                  <ArrowRight size={18} />
+                </Link>
+              );
+            })}
+          </div>
+          <div className="serenite-band services-pack">
+            <div>
+              <p className="overline">Offre groupée</p>
+              <h3>Contrat Sérénité</h3>
+              <p>Supervision, sauvegarde testée chaque mois et rapport de direction : un seul abonnement, un seul interlocuteur.</p>
+            </div>
+            <div>
+              <Link to="/services/contrat-serenite" className="button button-primary">Voir le Contrat Sérénité <ArrowRight size={16} /></Link>
+            </div>
+          </div>
           <div className="network-services-cta">
-            <Link to="/services/reseau-et-securite" className="button button-secondary">Voir tous les services réseau <ArrowRight size={16} /></Link>
+            <Link to="/services/reseau-et-securite" className="button button-secondary">Voir tous les services managés <ArrowRight size={16} /></Link>
           </div>
         </div>
       </section>

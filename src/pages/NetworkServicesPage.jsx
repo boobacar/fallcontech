@@ -10,6 +10,10 @@ import {
   Activity,
   Router,
   Timer,
+  Radar,
+  DatabaseBackup,
+  ClipboardCheck,
+  Layers,
   Server,
   Cable,
 } from "lucide-react";
@@ -414,12 +418,292 @@ const SERVICES = {
     ],
     related: ["/services/continuite-internet-multi-operateurs", "/services/interconnexion-sites", "/services/pare-feu-manage"],
   },
+
+  "/services/supervision-infrastructure": {
+    icon: Activity,
+    family: "exploitation",
+    eyebrow: "Supervision & infogérance",
+    title: "Vous apprenez qu'un disque est mort avant que votre équipe ne s'en aperçoive.",
+    lead: "Disques, alimentations, liens, sauvegardes, températures : surveillés en continu, avec une alerte qui vous parvient avant que l'activité ne s'arrête.",
+    seoTitle: "Supervision d'infrastructure à Dakar | Fallcon Tech",
+    seoDescription:
+      "Supervision informatique à Dakar : disques, serveurs, liens et sauvegardes surveillés en continu, alertes WhatsApp, rapport mensuel de disponibilité et astreinte.",
+    quickAnswer:
+      "Superviser, c'est interroger vos équipements à intervalle régulier et comparer leurs réponses à des seuils. Un disque qui se dégrade, une alimentation en panne, un lien qui perd des paquets, une sauvegarde qui n'a pas tourné : l'alerte part vers nous, puis vers vous, avant la panne visible.",
+    challenge:
+      "Sans supervision, une panne n'existe qu'au moment où quelqu'un ne peut plus travailler. Le disque mourrait depuis trois semaines, la sauvegarde échouait depuis un mois, personne ne le savait.",
+    outcomes: [
+      "État des disques, des grappes RAID et de l'espace restant",
+      "Alimentations, ventilateurs et températures de baie",
+      "Disponibilité et qualité des liens internet, site par site",
+      "Réussite ou échec des sauvegardes, chaque nuit",
+      "Alerte envoyée à la personne qui peut agir, pas à une boîte mail",
+      "Rapport mensuel : ce qui a été détecté, traité, et ce qui reste à corriger",
+    ],
+    modules: [
+      "Sondes et agents",
+      "Seuils et règles d'alerte",
+      "Écran de supervision",
+      "Astreinte et escalade",
+      "Rapport de disponibilité",
+      "Inventaire tenu à jour",
+    ],
+    audiences:
+      "PME sans informaticien interne, cliniques, cabinets, écoles, microfinances et groupes multisites qui ne peuvent pas se permettre une panne silencieuse.",
+    faq: [
+      {
+        q: "Que surveillez-vous exactement ?",
+        a: "Les équipements et les services : serveurs, disques, alimentations, routeurs, switchs, liens internet, sauvegardes, certificats et sites web. Nous ne surveillons pas l'activité des personnes sur leur poste.",
+      },
+      {
+        q: "Faut-il installer un logiciel sur chaque ordinateur ?",
+        a: "Pas pour la supervision d'infrastructure. Les équipements sont interrogés à distance par des protocoles standards. Un agent n'est installé que si vous demandez le suivi des postes de travail.",
+      },
+      {
+        q: "Que se passe-t-il la nuit ou le week-end ?",
+        a: "L'alerte est traitée selon la plage d'astreinte prévue au contrat. En dehors de cette plage, elle est enregistrée et traitée à la reprise, sauf incident bloquant qui déclenche l'escalade.",
+      },
+      {
+        q: "Et si c'est votre propre système qui tombe ?",
+        a: "La supervision tourne hors de votre site, et une sonde locale continue de collecter et de journaliser si le lien est coupé. Elle transmet dès le retour du réseau : vous ne perdez pas l'historique de la panne.",
+      },
+      {
+        q: "Est-ce que vous intervenez aussi pour réparer ?",
+        a: "Oui, la supervision seule ne sert à rien. L'intervention à distance est incluse ; le déplacement sur site et le remplacement de matériel sont cadrés au contrat.",
+      },
+    ],
+    related: ["/services/sauvegarde-managee", "/services/detection-anomalies-reseau", "/services/continuite-internet-multi-operateurs"],
+  },
+
+  "/services/detection-anomalies-reseau": {
+    icon: Radar,
+    family: "exploitation",
+    eyebrow: "Détection d'anomalies",
+    title: "Un poste qui parle à un inconnu toutes les cinq minutes, ça se voit.",
+    lead: "Nous analysons en continu les connexions de votre réseau : comportements inhabituels, transferts massifs, machines qui scannent. Sans jamais lire vos contenus.",
+    seoTitle: "Détection d'anomalies réseau à Dakar | Fallcon Tech",
+    seoDescription:
+      "Surveillance des comportements réseau à Dakar : détection de postes compromis, transferts massifs et scans internes, à partir des métadonnées de connexion, sans lire les contenus.",
+    quickAnswer:
+      "Un poste infecté se trahit rarement par sa lenteur : il se trahit par ses habitudes. Il appelle une adresse inconnue à intervalle régulier, envoie plus qu'il ne reçoit, ou scanne ses voisins. On compare le trafic réel à une base de référence pour repérer ces écarts.",
+    challenge:
+      "Une machine compromise peut envoyer des données pendant des semaines sans ralentir personne. Aucun utilisateur ne s'en plaindra, et sans mesure personne ne le verra.",
+    outcomes: [
+      "Postes qui communiquent avec des destinations inconnues",
+      "Transferts inhabituels vers l'extérieur, en volume et en horaire",
+      "Machines qui scannent le réseau interne",
+      "Connexions vers des pays ou des hébergeurs sans rapport avec l'activité",
+      "Services exposés sur internet sans nécessité",
+      "Rapport mensuel : ce qui a été détecté, qualifié et clos",
+    ],
+    modules: [
+      "Port miroir ou export de flux",
+      "Collecte des métadonnées",
+      "Base de référence",
+      "Règles de détection",
+      "Qualification des alertes",
+      "Rapport et procédure d'incident",
+    ],
+    audiences:
+      "Banques et microfinances, cliniques, études notariales, industries et écoles qui détiennent des données de clients, de patients ou d'élèves.",
+    faq: [
+      {
+        q: "Est-ce que vous lisez les mails et les messages ?",
+        a: "Non. Nous voyons qui parle à qui, quand, sur quel port et combien de données. Le contenu des échanges chiffrés reste illisible, et nous ne cherchons pas à le déchiffrer.",
+      },
+      {
+        q: "Faut-il installer un boîtier supplémentaire ?",
+        a: "Non. L'analyse se branche sur un port miroir de votre switch ou sur l'export de flux de votre routeur. Aucune coupure n'est nécessaire dans ce cas.",
+      },
+      {
+        q: "Combien d'alertes inutiles faut-il supporter ?",
+        a: "Les trois premières semaines servent à établir la référence et à régler les seuils. Ensuite, chaque alerte est qualifiée par une personne avant de vous être transmise : nous ne vous envoyons pas un écran de alertes brutes.",
+      },
+      {
+        q: "Que se passe-t-il quand quelque chose est détecté ?",
+        a: "Le poste est identifié, isolé si nécessaire, l'analyse est consignée et vous recevez une recommandation écrite. Nous ne touchons pas aux données personnelles hébergées sur le poste.",
+      },
+      {
+        q: "Est-ce que ça remplace un antivirus ?",
+        a: "Non, c'est complémentaire. L'antivirus voit ce qui se passe sur le poste ; nous voyons ce que le poste raconte au réseau. Les deux ensemble couvrent ce qu'aucun des deux ne voit seul.",
+      },
+    ],
+    related: ["/services/pare-feu-manage", "/services/supervision-infrastructure", "/services/audit-reseau"],
+  },
+
+  "/services/sauvegarde-managee": {
+    icon: DatabaseBackup,
+    family: "exploitation",
+    eyebrow: "Sauvegarde & restauration",
+    title: "Une sauvegarde qui n'a jamais été restaurée n'est pas une sauvegarde.",
+    lead: "Copie chiffrée de vos données hors de vos murs, et surtout : une restauration réellement testée chaque mois, avec le compte rendu.",
+    seoTitle: "Sauvegarde managée et test de restauration à Dakar | Fallcon",
+    seoDescription:
+      "Sauvegarde externalisée à Dakar : copie chiffrée hors site, rétention, et test de restauration mensuel chronométré avec rapport. La preuve que vos données reviennent.",
+    quickAnswer:
+      "Sauvegarder, c'est copier. Protéger, c'est être capable de revenir en arrière. La différence se mesure le jour où l'on restaure : combien de temps, quels fichiers, dans quel état. C'est ce test que nous facturons et documentons chaque mois.",
+    challenge:
+      "Presque toutes les entreprises ont une sauvegarde. Très peu savent si elle se restaure, combien de temps cela prend, et quels fichiers manquent. Le jour du sinistre n'est pas le moment de le découvrir.",
+    outcomes: [
+      "Copie chiffrée conservée hors de vos locaux",
+      "Fréquence et rétention définies selon vos obligations",
+      "Restauration testée chaque mois, chronométrée",
+      "Rapport mensuel : ce qui a été restauré, en combien de temps, ce qui a échoué",
+      "Procédure de reprise écrite, utilisable par quelqu'un d'autre que nous",
+      "Alertes si une sauvegarde n'a pas tourné",
+    ],
+    modules: [
+      "Agent et planification",
+      "Chiffrement des copies",
+      "Copie hors site",
+      "Test de restauration",
+      "Rapport mensuel",
+      "Procédure de reprise",
+    ],
+    audiences:
+      "Cabinets comptables, cliniques, écoles, microfinances et PME dont les dossiers clients, la comptabilité ou les données patients ne peuvent pas être perdus.",
+    faq: [
+      {
+        q: "Où sont stockées mes données ?",
+        a: "Sur notre infrastructure, chiffrées. La clé de déchiffrement peut rester chez vous : dans ce cas, même nous ne pouvons pas lire vos fichiers, et la restauration se fait avec votre clé.",
+      },
+      {
+        q: "Est-ce que le RAID ne suffit pas ?",
+        a: "Non. Le RAID protège d'une panne de disque, pas d'une suppression, d'un chiffrement par rançongiciel ni d'un incendie. Il assure la disponibilité, pas la sauvegarde.",
+      },
+      {
+        q: "Combien de temps pour tout restaurer ?",
+        a: "Nous l'annonçons après le premier test, pas avant : c'est précisément ce que le test mesure. Le délai dépend du volume et du débit disponible sur site.",
+      },
+      {
+        q: "Que se passe-t-il si nous arrêtons le contrat ?",
+        a: "Vos copies vous sont remises dans un format documenté, avec la procédure pour les restaurer. Vous n'êtes pas captif de nos outils.",
+      },
+      {
+        q: "Accédez-vous à mes fichiers ?",
+        a: "Nous manipulons des copies chiffrées, pas vos documents. Une restauration se fait à votre demande, sur un dossier que vous désignez.",
+      },
+    ],
+    related: ["/services/supervision-infrastructure", "/services/detection-anomalies-reseau", "/services/pare-feu-manage"],
+  },
+
+  "/services/audit-hygiene-numerique": {
+    icon: ClipboardCheck,
+    family: "exploitation",
+    eyebrow: "Audit d'hygiène numérique",
+    title: "Ce qui manque à votre dossier pour répondre à un appel d'offres.",
+    lead: "Un état des lieux en une semaine : comptes, mots de passe, sauvegardes, mises à jour, procédures. Une note par domaine et un plan de correction chiffré.",
+    seoTitle: "Audit d'hygiène numérique pour appels d'offres | Fallcon",
+    seoDescription:
+      "Audit informatique à Dakar pour appels d'offres et grands clients : comptes, sauvegardes, mises à jour, procédures, rapport noté par domaine et plan de correction chiffré.",
+    quickAnswer:
+      "Un audit d'hygiène numérique vérifie les fondamentaux : qui a accès à quoi, si les sauvegardes se restaurent, si les mises à jour sont faites, si les départs sont traités, si une procédure d'incident existe. Il produit un état des lieux daté et noté, pas un label.",
+    challenge:
+      "Les marchés publics et les grands donneurs d'ordre demandent des garanties que beaucoup de PME respectent déjà en pratique, mais ne savent pas documenter. Le dossier est écarté pour une case vide, pas pour une faiblesse réelle.",
+    outcomes: [
+      "Inventaire des comptes, des accès et des privilèges",
+      "État réel des sauvegardes et des restaurations",
+      "Suivi des mises à jour et des équipements en fin de vie",
+      "Politique de mots de passe et d'accès distants",
+      "Traitement des arrivées et des départs",
+      "Procédure d'incident écrite, et plan d'action priorisé",
+    ],
+    modules: [
+      "Grille de contrôle",
+      "Entretiens avec les équipes",
+      "Vérifications techniques",
+      "Note par domaine",
+      "Plan d'action chiffré",
+      "Rapport daté et confidentiel",
+    ],
+    audiences:
+      "PME qui répondent aux marchés publics, sous-traitants de grands groupes, écoles, ONG et organisations qui doivent prouver leur sérieux à un financeur.",
+    faq: [
+      {
+        q: "Est-ce une certification ?",
+        a: "Non, et nous ne le présenterons jamais comme telle. C'est un état des lieux daté, avec une note par domaine et des preuves. Il sert à répondre à un questionnaire client, pas à obtenir un label.",
+      },
+      {
+        q: "Combien de temps faut-il prévoir ?",
+        a: "Trois à cinq jours selon la taille, répartis sur une semaine. Le rapport est remis trois jours après la fin des vérifications.",
+      },
+      {
+        q: "Faut-il interrompre l'activité ?",
+        a: "Non. L'audit se fait sur documents, entretiens et vérifications à distance. Aucune coupure de service.",
+      },
+      {
+        q: "Qui reçoit le rapport ?",
+        a: "La direction uniquement. Il contient des informations sensibles sur vos faiblesses : il n'a pas vocation à circuler en interne.",
+      },
+      {
+        q: "Et après l'audit ?",
+        a: "Le plan d'action est exécutable par vous ou par nous, domaine par domaine. Nous pouvons repasser dans six mois pour mesurer ce qui a été corrigé.",
+      },
+    ],
+    related: ["/services/supervision-infrastructure", "/services/sauvegarde-managee", "/services/pare-feu-manage"],
+  },
+
+  "/services/contrat-serenite": {
+    icon: Layers,
+    family: "pack",
+    eyebrow: "Contrat Sérénité",
+    title: "Un seul contrat : on surveille, on sauvegarde, on vous rend compte.",
+    lead: "Supervision de votre infrastructure, sauvegarde testée chaque mois et rapport lisible par un dirigeant. Un interlocuteur, un prix mensuel, aucun matériel à acheter.",
+    seoTitle: "Contrat Sérénité : supervision et sauvegarde au mois | Fallcon",
+    seoDescription:
+      "Contrat mensuel tout compris à Dakar : supervision de l'infrastructure, sauvegarde testée, rapport de direction et astreinte. Matériel inclus, sans investissement initial.",
+    quickAnswer:
+      "Le Contrat Sérénité réunit trois prestations qui n'ont de valeur qu'ensemble : la supervision qui détecte, la sauvegarde qui permet de revenir en arrière, et le rapport qui vous dit où vous en êtes. C'est un abonnement, pas un projet.",
+    challenge:
+      "Beaucoup d'entreprises achètent un serveur, une sauvegarde et un pare-feu, puis personne ne les regarde. Trois outils sans quelqu'un derrière, c'est trois abonnements qui rassurent sans protéger.",
+    outcomes: [
+      "Une alerte avant la panne, pas une explication après",
+      "Une restauration prouvée chaque mois, avec sa durée réelle",
+      "Un rapport de deux pages que le dirigeant lit vraiment",
+      "Un seul numéro à appeler, quel que soit le problème",
+      "Un délai d'intervention écrit, pas une promesse verbale",
+      "Le matériel de sécurité inclus dans l'abonnement",
+    ],
+    modules: [
+      "Supervision continue",
+      "Sauvegarde et test mensuel",
+      "Pare-feu et VPN inclus",
+      "Astreinte et escalade",
+      "Rapport mensuel de direction",
+      "Revue trimestrielle sur site",
+    ],
+    audiences:
+      "PME de 10 à 100 postes, cliniques, cabinets, écoles privées et groupes multisites qui veulent un responsable identifiable plutôt qu'une pile de prestataires.",
+    faq: [
+      {
+        q: "Combien coûte le contrat ?",
+        a: "Le tarif dépend du nombre de serveurs, de postes et de sites, et du niveau d'astreinte. Il est établi après un audit court, jamais au téléphone à l'aveugle.",
+      },
+      {
+        q: "Quelle est la durée d'engagement ?",
+        a: "Douze mois en général, avec la durée et le préavis fixés noir sur blanc au contrat. Pas de reconduction surprenante.",
+      },
+      {
+        q: "J'ai déjà un informaticien, est-ce compatible ?",
+        a: "Oui, et c'est souvent la meilleure configuration : il garde le métier et les projets, nous portons la surveillance, les sauvegardes et l'astreinte.",
+      },
+      {
+        q: "Que se passe-t-il si vous êtes indisponible ?",
+        a: "Le contrat prévoit un délai d'intervention et une procédure d'escalade vers une personne nommée. La documentation et les accès sont organisés pour qu'un tiers puisse reprendre.",
+      },
+      {
+        q: "Peut-on arrêter ?",
+        a: "Oui. À la fin du contrat, la configuration, les copies de sauvegarde et la documentation vous sont remises. Nous ne retenons pas vos accès en otage.",
+      },
+    ],
+    related: ["/services/supervision-infrastructure", "/services/sauvegarde-managee", "/services/detection-anomalies-reseau"],
+  },
 };
 
 const HUB = {
-  seoTitle: "Services réseau et sécurité managés à Dakar | Fallcon Tech",
+  seoTitle: "Services réseau, supervision et sauvegarde à Dakar | Fallcon",
   seoDescription:
-    "Pare-feu managé, VPN, continuité multi-opérateurs, interconnexion de sites, Wi-Fi hôtel et audit réseau à Dakar. Services facturés au mois, matériel inclus.",
+    "Pare-feu, VPN, continuité, interconnexion, Wi-Fi, supervision d'infrastructure, détection d'anomalies et sauvegarde testée à Dakar. Services facturés au mois.",
 };
 
 const RELATED_LABEL = {
@@ -430,6 +714,11 @@ const RELATED_LABEL = {
   "/services/wifi-hotel-portail-captif": "Wi-Fi & portail captif",
   "/services/internet-maitrise-ecoles": "Internet maîtrisé — écoles",
   "/services/audit-reseau": "Audit & banc de test",
+  "/services/supervision-infrastructure": "Supervision & infogérance",
+  "/services/detection-anomalies-reseau": "Détection d'anomalies",
+  "/services/sauvegarde-managee": "Sauvegarde & restauration",
+  "/services/audit-hygiene-numerique": "Audit d'hygiène numérique",
+  "/services/contrat-serenite": "Contrat Sérénité",
 };
 
 export default function NetworkServicesPage() {
@@ -437,7 +726,10 @@ export default function NetworkServicesPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://fallcontech.com";
 
   if (pathname === "/services/reseau-et-securite") {
-    const items = Object.entries(SERVICES);
+    const all = Object.entries(SERVICES);
+    const items = all.filter(([, s]) => !s.family || s.family === "reseau");
+    const exploitation = all.filter(([, s]) => s.family === "exploitation");
+    const pack = SERVICES["/services/contrat-serenite"];
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -454,20 +746,25 @@ export default function NetworkServicesPage() {
         <section className="page-hero">
           <div className="site-shell page-hero-grid">
             <div>
-              <p className="overline">Réseau & sécurité managés</p>
-              <h1>Votre réseau, exploité comme un service.</h1>
+              <p className="overline">Services managés</p>
+              <h1>Votre infrastructure, exploitée comme un service.</h1>
             </div>
             <p>
-              Pare-feu, VPN, continuité internet, interconnexion de sites, Wi-Fi et
-              filtrage : nous installons, configurons et supervisons l'infrastructure
-              réseau dont votre organisation a besoin, facturée au mois, matériel inclus.
-              Un seul interlocuteur, un contrat lisible, des rapports qui se lisent.
+              Réseau et sécurité d'un côté, surveillance et sauvegarde de l'autre : nous
+              installons, configurons et supervisons l'infrastructure dont votre
+              organisation a besoin, facturée au mois, matériel inclus. Un seul
+              interlocuteur, un contrat lisible, des rapports qui se lisent.
             </p>
           </div>
         </section>
 
         <section className="section section-muted">
-          <div className="site-shell service-list">
+          <div className="site-shell">
+            <div className="section-heading compact">
+              <p className="overline">Réseau & sécurité</p>
+              <h2>Ce qui relie, filtre et protège.</h2>
+            </div>
+            <div className="service-list">
             {items.map(([slug, s], index) => {
               const Icon = s.icon;
               return (
@@ -485,6 +782,53 @@ export default function NetworkServicesPage() {
                 </article>
               );
             })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="site-shell">
+            <div className="section-heading compact">
+              <p className="overline">Surveillance & exploitation</p>
+              <h2>Ce qui détecte, sauvegarde et rend compte.</h2>
+            </div>
+            <div className="service-list">
+              {exploitation.map(([slug, s], index) => {
+                const Icon = s.icon;
+                return (
+                  <article className="service-list-row" key={slug}>
+                    <span className="service-number">{String(index + 1).padStart(2, "0")}</span>
+                    <div className="service-icon"><Icon size={24} /></div>
+                    <div className="service-main">
+                      <p className="card-eyebrow">{s.audiences.split(",")[0]}</p>
+                      <h2>{s.eyebrow}</h2>
+                      <p>{s.lead}</p>
+                    </div>
+                    <Link to={slug} className="button button-secondary">
+                      Voir le service <ArrowRight size={16} />
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-muted">
+          <div className="site-shell serenite-band">
+            <div>
+              <p className="overline">Offre groupée</p>
+              <h2>{pack.title}</h2>
+              <p className="intro-copy">{pack.lead}</p>
+              <Link to="/services/contrat-serenite" className="button button-primary">
+                Voir le Contrat Sérénité <ArrowRight size={16} />
+              </Link>
+            </div>
+            <ul className="serenite-points">
+              {pack.outcomes.slice(0, 4).map((item) => (
+                <li key={item}><Check size={16} /><span>{item}</span></li>
+              ))}
+            </ul>
           </div>
         </section>
 

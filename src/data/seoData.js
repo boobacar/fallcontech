@@ -66,9 +66,9 @@ export const pageSeo = {
     changefreq: "monthly",
   },
   "/services/reseau-et-securite": {
-    title: "Services réseau et sécurité managés à Dakar | Fallcon Tech",
+    title: "Services réseau, supervision et sauvegarde à Dakar | Fallcon",
     description:
-      "Pare-feu managé, VPN, continuité multi-opérateurs, interconnexion de sites, Wi-Fi hôtel et audit réseau à Dakar. Services facturés au mois, matériel inclus.",
+      "Pare-feu, VPN, continuité, interconnexion, Wi-Fi, supervision d'infrastructure, détection d'anomalies et sauvegarde testée à Dakar. Services facturés au mois.",
     priority: "0.90",
     changefreq: "monthly",
   },
@@ -119,6 +119,41 @@ export const pageSeo = {
     description:
       "Audit réseau à Dakar : mesure des liens, analyse du trafic, cartographie des équipements et rapport de priorités. Banc de test réel pour valider une architecture.",
     priority: "0.80",
+    changefreq: "monthly",
+  },
+  "/services/supervision-infrastructure": {
+    title: "Supervision d'infrastructure à Dakar | Fallcon Tech",
+    description:
+      "Supervision informatique à Dakar : disques, serveurs, liens et sauvegardes surveillés en continu, alertes WhatsApp, rapport mensuel de disponibilité et astreinte.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/detection-anomalies-reseau": {
+    title: "Détection d'anomalies réseau à Dakar | Fallcon Tech",
+    description:
+      "Surveillance des comportements réseau à Dakar : détection de postes compromis, transferts massifs et scans internes, à partir des métadonnées de connexion, sans lire les contenus.",
+    priority: "0.80",
+    changefreq: "monthly",
+  },
+  "/services/sauvegarde-managee": {
+    title: "Sauvegarde managée et test de restauration à Dakar | Fallcon",
+    description:
+      "Sauvegarde externalisée à Dakar : copie chiffrée hors site, rétention, et test de restauration mensuel chronométré avec rapport. La preuve que vos données reviennent.",
+    priority: "0.85",
+    changefreq: "monthly",
+  },
+  "/services/audit-hygiene-numerique": {
+    title: "Audit d'hygiène numérique pour appels d'offres | Fallcon",
+    description:
+      "Audit informatique à Dakar pour appels d'offres et grands clients : comptes, sauvegardes, mises à jour, procédures, rapport noté par domaine et plan de correction chiffré.",
+    priority: "0.80",
+    changefreq: "monthly",
+  },
+  "/services/contrat-serenite": {
+    title: "Contrat Sérénité : supervision et sauvegarde au mois | Fallcon",
+    description:
+      "Contrat mensuel tout compris à Dakar : supervision de l'infrastructure, sauvegarde testée, rapport de direction et astreinte. Matériel inclus, sans investissement initial.",
+    priority: "0.90",
     changefreq: "monthly",
   },
   "/services/creation-site-web-dakar": {

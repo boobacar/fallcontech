@@ -315,9 +315,9 @@ export default function Home() {
       <section className="section" id="reseau-securite">
         <div className="site-shell">
           <div className="section-heading compact">
-            <p className="overline">Réseau & sécurité managés</p>
-            <h2>Votre infrastructure réseau, exploitée comme un service.</h2>
-            <p>Pare-feu, VPN, continuité multi-opérateurs et interconnexion de sites : installés, supervisés et facturés au mois, matériel inclus. Pour les organisations qui ne peuvent pas se permettre une heure sans réseau.</p>
+            <p className="overline">Services managés</p>
+            <h2>Votre infrastructure, exploitée comme un service.</h2>
+            <p>Réseau, sécurité, supervision et sauvegarde : installés, surveillés et facturés au mois, matériel inclus. Pour les organisations qui ne peuvent pas se permettre une heure sans réseau ni une sauvegarde qui ne revient pas.</p>
           </div>
           <div className="prestation-grid">
             <Link className="prestation-card" to="/services/pare-feu-manage">
@@ -327,6 +327,14 @@ export default function Home() {
             <Link className="prestation-card" to="/services/continuite-internet-multi-operateurs">
               <h3>Continuité internet</h3>
               <p>Deux opérateurs, bascule automatique en quelques secondes, coupures mesurées.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/supervision-infrastructure">
+              <h3>Supervision & infogérance</h3>
+              <p>Disques, serveurs, liens et sauvegardes surveillés, avec alerte avant la panne.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/sauvegarde-managee">
+              <h3>Sauvegarde testée</h3>
+              <p>Copie chiffrée hors site et restauration réellement testée chaque mois.</p>
             </Link>
             <Link className="prestation-card" to="/services/interconnexion-sites">
               <h3>Interconnexion d'agences</h3>
@@ -345,8 +353,18 @@ export default function Home() {
               <p>Filtrage par classe et par horaire, réseau élèves séparé de l'administration.</p>
             </Link>
           </div>
+          <div className="serenite-band services-pack">
+            <div>
+              <p className="overline">Offre groupée</p>
+              <h3>Contrat Sérénité</h3>
+              <p>Supervision, sauvegarde testée chaque mois et rapport de direction : un seul abonnement, un seul interlocuteur.</p>
+            </div>
+            <div>
+              <Link to="/services/contrat-serenite" className="button button-primary">Découvrir le contrat <ArrowRight size={16} /></Link>
+            </div>
+          </div>
           <div className="prestation-more">
-            <Link to="/services/reseau-et-securite" className="text-link">Voir les services réseau & sécurité <ArrowRight size={17} /></Link>
+            <Link to="/services/reseau-et-securite" className="text-link">Voir tous les services managés <ArrowRight size={17} /></Link>
           </div>
         </div>
       </section>

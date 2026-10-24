@@ -105,7 +105,8 @@ export default function Layout({ children }) {
               <li><Link to="/solutions/applications-metier">Applications métier</Link></li>
               <li><Link to="/solutions/digitalisation-administrations">Digitalisation administrative</Link></li>
               <li><Link to="/solutions/infrastructure-cybersecurite">Infrastructure & cybersécurité</Link></li>
-              <li><Link to="/services/reseau-et-securite">Réseau & sécurité managés</Link></li>
+              <li><Link to="/services/reseau-et-securite">Services managés</Link></li>
+              <li><Link to="/services/contrat-serenite">Contrat Sérénité</Link></li>
             </ul>
           </div>
           <div>
