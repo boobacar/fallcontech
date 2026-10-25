@@ -4,6 +4,22 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { hardwareArticles } from "@/data/hardwareArticles";
+import { m1aUseCases } from "@/data/m1aUseCases";
+
+const ARTICLES = { ...hardwareArticles, ...m1aUseCases };
+
+const M1A_SECTORS = [
+  ["Banque & microfinance", "/article/m1a-banque-microfinance-agences"],
+  ["Santé", "/article/m1a-clinique-hopital-reseau-medical"],
+  ["Éducation", "/article/m1a-ecole-universite-campus"],
+  ["Hôtellerie", "/article/m1a-hotel-residence-wifi-invites"],
+  ["Industrie", "/article/m1a-industrie-usine-ot-it"],
+  ["ONG", "/article/m1a-ong-bureaux-terrain"],
+  ["Secteur public", "/article/m1a-administration-interconnexion-sites"],
+  ["FAI & hébergement", "/article/m1a-fai-hebergeur-bgp-bras"],
+  ["Immobilier", "/article/m1a-immeuble-partage-internet"],
+  ["Sites isolés", "/article/m1a-site-isole-chantier-mine"],
+];
 
 /**
  * Article « matériel » : un seul composant, alimenté par src/data/hardwareArticles.js.
@@ -59,7 +75,7 @@ const countWords = (article) => {
 
 export default function ArticleHardwareUseCase() {
   const { pathname } = useLocation();
-  const article = hardwareArticles[pathname];
+  const article = ARTICLES[pathname];
 
   if (!article) {
     return (
@@ -171,6 +187,32 @@ export default function ArticleHardwareUseCase() {
               ))}
             </section>
           ))}
+
+          {(pathname.startsWith("/article/m1a-") ||
+            pathname === "/article/netengine-8000-m1a-usages-reels") && (
+            <section>
+              <h2>Le M1A par secteur</h2>
+              <p>
+                Le même routeur ne se déploie pas de la même façon dans une banque, une
+                clinique ou une usine. Dix lectures par métier, avec les usages qui
+                comptent et les limites à annoncer.
+              </p>
+              <ul className="not-prose grid gap-3 sm:grid-cols-2">
+                {M1A_SECTORS.filter(([, to]) => to !== pathname).map(([label, to]) => (
+                  <li key={to}>
+                    <Link to={to} className="text-primary underline">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="not-prose mt-4">
+                <Link to="/article/netengine-8000-m1a-usages-reels" className="text-primary underline">
+                  Lire d’abord les quatre usages techniques du M1A
+                </Link>
+              </p>
+            </section>
+          )}
 
           {FURTHER[pathname] && (
             <section>

@@ -650,6 +650,16 @@ function App() {
           <Route path="/article/fusionserver-2288x-v5-usages-reels" element={<ArticleHardwareUseCase />} />
           <Route path="/article/cloudengine-s5735-switch-acces-entreprise" element={<ArticleHardwareUseCase />} />
           <Route path="/article/cartes-osn-wdm-spares-operateur" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-banque-microfinance-agences" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-clinique-hopital-reseau-medical" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-ecole-universite-campus" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-hotel-residence-wifi-invites" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-industrie-usine-ot-it" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-ong-bureaux-terrain" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-administration-interconnexion-sites" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-fai-hebergeur-bgp-bras" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-immeuble-partage-internet" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-site-isole-chantier-mine" element={<ArticleHardwareUseCase />} />
           <Route path="/article/booster-optique-emetteur" element={<ArticleBoosterOptiqueEmetteur />} />
           <Route path="/article/wss-roadm-longueurs-onde" element={<ArticleWssRoadmLongueursOnde />} />
           <Route path="/article/module-sfp-10g-fibre-optique" element={<ArticleModuleSfp10gFibreOptique />} />
