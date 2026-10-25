@@ -788,4 +788,251 @@ export const m1aUseCases = {
     ],
     cta: "Vous équipez un chantier, une mine ou une base isolée ?",
   },
+
+  "/article/m1a-cabinet-avocats-reseau": {
+    kicker: "Avocats",
+    title: "M1A dans un cabinet d’avocats : dossiers confidentiels, avocats en déplacement",
+    description:
+      "Secret professionnel, dossiers clients, avocats au palais et stagiaires : comment un NetEngine 8000 M1A cloisonne le réseau d’un cabinet d’avocats sans compliquer le travail.",
+    product: "/boutique/routeur-netengine-8000-m1a",
+    productLabel: "NetEngine 8000 M1A",
+    intro:
+      "Un cabinet d’avocats héberge des informations que personne d’autre ne doit voir : dossiers en cours, pièces de procédure, correspondances, négociations. Le risque n’est pas théorique — il vient rarement d’un piratage sophistiqué, et presque toujours d’un accès trop large : le stagiaire qui voit tout, la salle de réunion en Wi-Fi ouvert, la clé USB qui circule, ou le serveur exposé pour permettre le télétravail.",
+    sections: [
+      {
+        h2: "Le problème : un plateau partagé et un seul réseau",
+        paras: [
+          "Beaucoup de cabinets partagent leurs locaux : plusieurs avocats, parfois plusieurs structures, un secrétariat commun, une connexion unique. Tout le monde arrive sur le même réseau, et le serveur de dossiers est visible de chaque poste.",
+          "Le second point faible est le déplacement. Un avocat qui doit consulter une pièce depuis le palais ou de chez lui finit souvent par demander qu’on « ouvre un accès » — ce qui veut dire exposer un service sur internet, parfois sans mot de passe solide.",
+        ],
+      },
+      {
+        h2: "Usage 1 — Un accès distant nominatif, révocable",
+        paras: [
+          "Le M1A établit un tunnel chiffré pour chaque avocat qui travaille hors du cabinet. L’accès au serveur de dossiers passe par ce tunnel, jamais par un port ouvert sur internet.",
+          "Ce que ça change concrètement : quand un collaborateur quitte le cabinet, on désactive son compte et l’accès disparaît. On ne change pas le mot de passe du serveur pour tout le monde un vendredi soir.",
+        ],
+      },
+      {
+        h2: "Usage 2 — Séparer les structures qui partagent le plateau",
+        paras: [
+          "Quand deux cabinets ou deux associés partagent une connexion, le routeur crée un réseau distinct par structure, avec des règles entre les deux : accès commun à l’imprimante et à internet, aucun accès aux dossiers de l’autre.",
+          "C’est la traduction technique du secret professionnel : le réseau ne décide pas de la déontologie, mais il empêche les fuites accidentelles entre confrères qui partagent les mêmes murs.",
+        ],
+      },
+      {
+        h2: "Usage 3 — Le Wi-Fi des clients, séparé du reste",
+        paras: [
+          "Une salle de réunion où les clients se connectent ne doit pas donner accès au serveur de dossiers, ni à l’imprimante du secrétariat, ni aux caméras. Un réseau invité isolé, limité à internet, suffit.",
+          "C’est aussi un argument d’image : un cabinet qui annonce un Wi-Fi client séparé montre qu’il prend la confidentialité au sérieux.",
+        ],
+      },
+      {
+        h2: "Usage 4 — La continuité au moment où elle compte",
+        paras: [
+          "Les délais de procédure ne se suspendent pas pendant une panne internet. Un second lien, basculé automatiquement, permet de consulter une pièce ou de déposer un document pendant une coupure de l’opérateur principal.",
+          "La bascule prend quelques secondes ; les sessions en cours sont interrompues, ce qui suppose de rouvrir le document — un désagrément, pas un arrêt.",
+        ],
+      },
+      {
+        h2: "Ce que le M1A ne fait pas dans un cabinet",
+        paras: [
+          "Il ne chiffre pas les disques du serveur et ne gère pas les droits d’accès aux dossiers : cela se joue dans le système de gestion documentaire et dans les comptes utilisateurs.",
+          "Il ne remplace ni une sauvegarde, ni une politique de mots de passe, ni la sensibilisation aux pièces jointes. Un dossier peut fuir par un mail, sans qu’aucun équipement réseau n’y puisse rien.",
+          "Enfin, il ne vaut pas conformité déontologique : le secret professionnel reste une obligation personnelle de l’avocat, que le réseau aide à respecter mais ne satisfait pas à sa place.",
+        ],
+      },
+      {
+        h2: "Ce qu’il faut prévoir",
+        paras: [
+          "Un plan d’adressage simple, un compte par personne — jamais un compte partagé « cabinet » —, une sauvegarde testée du serveur de dossiers, et un onduleur. Un cabinet de cinq à quinze personnes se déploie en une journée.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Un routeur suffit-il à protéger le secret professionnel ?",
+        a: "Non. Il limite les chemins d’accès et chiffre les connexions, mais le secret dépend d’abord des comptes nominatifs, des droits dans le logiciel et du comportement des utilisateurs.",
+      },
+      {
+        q: "Peut-on partager une connexion entre deux cabinets ?",
+        a: "Oui, avec un réseau par structure et des règles strictes entre les deux. C’est un montage courant et le routeur est précisément l’équipement qui le rend propre.",
+      },
+      {
+        q: "Les avocats peuvent-ils travailler depuis chez eux ?",
+        a: "Oui, par tunnel nominatif. L’accès est limité aux dossiers utiles et se révoque immédiatement en cas de départ.",
+      },
+      {
+        q: "Faut-il un second lien internet ?",
+        a: "C’est recommandé dès que le cabinet dépend d’un serveur de dossiers ou de la messagerie pour tenir des délais. Le second lien peut être plus lent : il sert quelques heures par mois.",
+      },
+      {
+        q: "Est-ce adapté à un avocat seul ?",
+        a: "Un avocat seul a rarement besoin de ce niveau d’équipement. Un routeur plus simple et une sauvegarde correcte suffisent ; le M1A devient pertinent dès qu’il y a plusieurs collaborateurs et un serveur.",
+      },
+    ],
+    cta: "Vous équipez un cabinet d’avocats ?",
+  },
+
+  "/article/m1a-etude-notariale-reseau": {
+    kicker: "Notariat",
+    title: "M1A dans une étude notariale : accueil du public, minutaire et continuité",
+    description:
+      "Une étude reçoit du public et conserve des actes : comment un NetEngine 8000 M1A sépare l’accueil du réseau métier et évite qu’une panne reporte une signature.",
+    product: "/boutique/routeur-netengine-8000-m1a",
+    productLabel: "NetEngine 8000 M1A",
+    intro:
+      "Une étude notariale a deux contraintes que peu d’organisations cumulent : elle reçoit du public toute la journée, et elle conserve des actes dont la perte ou l’indisponibilité n’est pas rattrapable. Le réseau doit donc à la fois accueillir des inconnus et protéger un patrimoine documentaire.",
+    sections: [
+      {
+        h2: "Le problème : la salle d’attente sur le même réseau que le minutaire",
+        paras: [
+          "Les clients attendent, consultent leur téléphone, demandent le Wi-Fi. Dans beaucoup d’études, ce Wi-Fi est celui du bureau : il donne accès au réseau où se trouvent les actes, les dossiers et l’imprimante qui imprime les expéditions.",
+          "Le second point de fragilité est l’organisation interne : clercs, formalistes, comptabilité et direction partagent souvent les mêmes accès, alors qu’ils n’ont pas besoin de voir les mêmes choses.",
+        ],
+      },
+      {
+        h2: "Usage 1 — Un réseau d’accueil réellement séparé",
+        paras: [
+          "Le M1A isole le Wi-Fi des clients sur un réseau dédié, avec internet pour seul accès. Aucune route vers les serveurs, les imprimantes ou les scanners de l’étude.",
+          "C’est la mesure la plus simple à expliquer à un client qui demande le code Wi-Fi, et la plus efficace contre un incident : un téléphone infecté dans la salle d’attente ne peut pas atteindre le minutaire.",
+        ],
+      },
+      {
+        h2: "Usage 2 — Des accès par fonction, pas par commodité",
+        paras: [
+          "Chaque service accède à ce dont il a besoin : l’accueil à la prise de rendez-vous, les clercs aux dossiers en préparation, la comptabilité à ses outils, la direction à l’ensemble. Les règles sont écrites et datées.",
+          "L’intérêt n’est pas administratif : c’est ce qui limite les dégâts le jour où un poste est compromis ou qu’un mot de passe circule.",
+        ],
+      },
+      {
+        h2: "Usage 3 — Le rendez-vous de signature ne saute pas",
+        paras: [
+          "Un client s’est déplacé, un confrère est présent, l’acte doit être finalisé : une coupure internet à ce moment-là n’est pas acceptable. Le second lien et la bascule automatique couvrent la panne de l’opérateur principal.",
+          "La bascule ne protège pas de tout : si l’application est hébergée chez un prestataire inaccessible, le routeur ne peut pas la remplacer. C’est pourquoi nous demandons toujours où sont hébergées les applications critiques avant de promettre une continuité.",
+        ],
+      },
+      {
+        h2: "Usage 4 — Une annexe ou un second office",
+        paras: [
+          "Certaines études ont une annexe, un dépôt ou un second office dans une autre ville. Un tunnel entre les deux permet de consulter les dossiers sans les dupliquer, ou de partager un même système de gestion.",
+          "Quand les deux bâtiments sont proches et en visibilité directe, un faisceau radio remplace le tunnel : le lien ne dépend plus d’internet.",
+        ],
+      },
+      {
+        h2: "Ce que le M1A ne fait pas dans une étude",
+        paras: [
+          "Il ne conserve pas vos actes. La conservation, l’archivage et la sauvegarde relèvent d’un serveur, d’une procédure et de copies hors site — pas d’un routeur. Un acte perdu ne se reconstitue pas avec un équipement réseau.",
+          "Il ne remplace pas un coffre-fort numérique ni un dispositif de signature électronique. Il transporte et cloisonne ; il ne scelle rien.",
+          "Il ne vaut pas conformité aux obligations professionnelles du notariat : celles-ci dépendent des textes applicables et de l’organisation interne de l’étude.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Peut-on donner le Wi-Fi aux clients sans risque ?",
+        a: "Oui, sur un réseau invité isolé qui ne donne accès qu’à internet. C’est un réglage explicite : sans lui, un client connecté peut voir les équipements du bureau.",
+      },
+      {
+        q: "Les clercs peuvent-ils travailler à distance ?",
+        a: "Oui, avec un accès nominatif limité aux dossiers en préparation. Les actes authentiques et les pièces sensibles peuvent rester hors de portée à distance, selon l’organisation retenue.",
+      },
+      {
+        q: "Que se passe-t-il si internet tombe pendant une signature ?",
+        a: "Le second lien prend le relais en quelques secondes si l’étude en a un. Sans second lien, seules les applications hébergées localement continuent de fonctionner.",
+      },
+      {
+        q: "Faut-il un routeur pour une petite étude ?",
+        a: "Dès qu’il y a un serveur de dossiers, un accueil du public et plusieurs postes, la séparation devient utile. Pour une étude de deux personnes sans serveur, un équipement plus simple suffit.",
+      },
+      {
+        q: "Est-ce que cela sauvegarde les actes ?",
+        a: "Non, et il faut le dire clairement. La sauvegarde est un sujet distinct, avec des copies testées et une copie hors site. Le routeur ne fait que transporter.",
+      },
+    ],
+    cta: "Vous équipez une étude notariale ?",
+  },
+
+  "/article/m1a-cabinet-comptable-reseau": {
+    kicker: "Comptabilité",
+    title: "M1A dans un cabinet comptable : tenir la période fiscale sans saturer le réseau",
+    description:
+      "Télétransmissions, dépôt de pièces, collaborateurs en clientèle : comment un NetEngine 8000 M1A priorise les flux d’un cabinet comptable pendant les échéances.",
+    product: "/boutique/routeur-netengine-8000-m1a",
+    productLabel: "NetEngine 8000 M1A",
+    intro:
+      "Un cabinet comptable vit à deux vitesses : des semaines calmes, et des périodes où tout doit être déposé en même temps. Le réseau n’est pas un sujet le reste de l’année ; il devient critique le jour où quinze collaborateurs télétransmettent et où le portail clients reçoit des dizaines de pièces.",
+    sections: [
+      {
+        h2: "Le problème : la même bande passante pour tout",
+        paras: [
+          "Dans un cabinet, le trafic n’est pas homogène : télétransmissions, téléchargement de pièces clients, sauvegardes, visioconférences avec les clients, messagerie. Sans priorité, le plus volumineux gagne — et ce n’est jamais la déclaration à déposer avant minuit.",
+          "Le second problème est l’accès aux dossiers par portefeuille : un collaborateur ne devrait pas pouvoir consulter les dossiers d’un autre, alors que le serveur est souvent ouvert à tous.",
+        ],
+      },
+      {
+        h2: "Usage 1 — Priorité aux télétransmissions",
+        paras: [
+          "La qualité de service réserve une bande aux flux de déclaration et de messagerie, et laisse les téléchargements et sauvegardes utiliser le reste. En période d’échéance, cela évite qu’un dépôt volumineux bloque une transmission urgente.",
+          "C’est un réglage qui ne coûte rien en temps normal et qui sauve une journée deux fois par mois.",
+        ],
+      },
+      {
+        h2: "Usage 2 — Séparer les portefeuilles au niveau réseau",
+        paras: [
+          "Le routeur peut isoler des groupes de travail sur des réseaux distincts, avec des règles d’accès croisées limitées. Cela ne remplace pas les droits du logiciel comptable, mais cela empêche un poste compromis d’un pôle d’atteindre les dossiers d’un autre.",
+          "Pour les cabinets qui hébergent plusieurs entités — un cabinet principal et une structure de conseil, par exemple —, la séparation évite les mélanges.",
+        ],
+      },
+      {
+        h2: "Usage 3 — Collaborateurs en clientèle",
+        paras: [
+          "Un collaborateur chez un client doit pouvoir consulter une pièce ou valider un document. Un tunnel nominatif remplace les clés USB et les envois par messagerie personnelle, qui sont les deux premières causes de fuite de données dans les cabinets.",
+        ],
+      },
+      {
+        h2: "Usage 4 — L’accueil des clients qui déposent des pièces",
+        paras: [
+          "Un client qui vient déposer des justificatifs a parfois besoin d’une connexion. Un réseau invité isolé, limité à internet, évite de lui donner accès au réseau du cabinet.",
+        ],
+      },
+      {
+        h2: "Ce que le M1A ne fait pas dans un cabinet comptable",
+        paras: [
+          "Il ne remplace pas la GED, ni le contrôle de cohérence, ni la piste d’audit : ces fonctions sont dans le logiciel métier.",
+          "Il ne garantit pas la conservation légale des documents. Les durées de conservation et les modalités d’archivage relèvent des obligations professionnelles et fiscales, pas de l’équipement réseau.",
+          "Il ne protège pas contre un rançongiciel entré par une pièce jointe : la sauvegarde testée et la segmentation restent les deux mesures qui limitent la casse.",
+        ],
+      },
+      {
+        h2: "Ce qu’il faut prévoir",
+        paras: [
+          "Un débit montant suffisant — les télétransmissions et les dépôts de pièces montent autant qu’ils descendent —, un second lien si les échéances sont critiques, et une sauvegarde dont la restauration est testée avant la période fiscale, pas pendant.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Quel débit faut-il pour un cabinet de dix personnes ?",
+        a: "Le débit descendant compte moins que le montant : télétransmettre et déposer des pièces consomme de l’envoi. Un lien symétrique ou à fort débit montant change réellement le quotidien.",
+      },
+      {
+        q: "Peut-on prioriser les déclarations ?",
+        a: "Oui, par classe de service : les flux de déclaration et de messagerie passent devant les téléchargements et les sauvegardes. Cela se règle une fois et s’ajuste ensuite.",
+      },
+      {
+        q: "Les collaborateurs peuvent-ils travailler depuis chez eux ?",
+        a: "Oui, avec un accès nominatif. C’est aussi un moyen de supprimer les envois de fichiers par messagerie personnelle, qui échappent à toute traçabilité.",
+      },
+      {
+        q: "Faut-il séparer les dossiers par collaborateur sur le réseau ?",
+        a: "Le réseau peut isoler des groupes, mais la séparation fine par dossier se fait dans le logiciel et le système de fichiers. Les deux niveaux sont complémentaires.",
+      },
+      {
+        q: "Est-ce utile hors période fiscale ?",
+        a: "Oui, pour l’accès distant, la séparation des réseaux et la continuité. La priorité de flux est simplement moins visible le reste de l’année.",
+      },
+    ],
+    cta: "Vous équipez un cabinet comptable ou de conseil ?",
+  },
 };

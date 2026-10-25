@@ -19,6 +19,9 @@ const M1A_SECTORS = [
   ["FAI & hébergement", "/article/m1a-fai-hebergeur-bgp-bras"],
   ["Immobilier", "/article/m1a-immeuble-partage-internet"],
   ["Sites isolés", "/article/m1a-site-isole-chantier-mine"],
+  ["Avocats", "/article/m1a-cabinet-avocats-reseau"],
+  ["Notariat", "/article/m1a-etude-notariale-reseau"],
+  ["Comptabilité", "/article/m1a-cabinet-comptable-reseau"],
 ];
 
 /**
@@ -194,7 +197,7 @@ export default function ArticleHardwareUseCase() {
               <h2>Le M1A par secteur</h2>
               <p>
                 Le même routeur ne se déploie pas de la même façon dans une banque, une
-                clinique ou une usine. Dix lectures par métier, avec les usages qui
+                clinique ou une usine. Treize lectures par métier, avec les usages qui
                 comptent et les limites à annoncer.
               </p>
               <ul className="not-prose grid gap-3 sm:grid-cols-2">

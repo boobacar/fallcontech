@@ -660,6 +660,9 @@ function App() {
           <Route path="/article/m1a-fai-hebergeur-bgp-bras" element={<ArticleHardwareUseCase />} />
           <Route path="/article/m1a-immeuble-partage-internet" element={<ArticleHardwareUseCase />} />
           <Route path="/article/m1a-site-isole-chantier-mine" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-cabinet-avocats-reseau" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-etude-notariale-reseau" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/m1a-cabinet-comptable-reseau" element={<ArticleHardwareUseCase />} />
           <Route path="/article/booster-optique-emetteur" element={<ArticleBoosterOptiqueEmetteur />} />
           <Route path="/article/wss-roadm-longueurs-onde" element={<ArticleWssRoadmLongueursOnde />} />
           <Route path="/article/module-sfp-10g-fibre-optique" element={<ArticleModuleSfp10gFibreOptique />} />
