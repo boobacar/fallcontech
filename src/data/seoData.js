@@ -312,6 +312,13 @@ export const pageSeo = {
 };
 
 export const articleSeo = {
+  "/article/netengine-8000-m1a-usages-reels": ["NetEngine 8000 M1A : quatre usages réels", "VPN IPsec, routeur de bordure BGP, serveur d’accès PPPoE, cœur de campus : quatre usages concrets du NetEngine 8000 M1A, avec ce qu’il fait et ce qu’il ne fait pas."],
+  "/article/netengine-8000-m14-bng-operateur": ["NetEngine 8000 M14 : à quoi sert un BNG de 32 000 abonnés", "Le NetEngine 8000 M14 est un routeur de bordure opérateur avec fonction BNG et 32 000 abonnés licenciés. Ce que cela change pour un FAI, un hébergeur ou un laboratoire."],
+  "/article/usg6625e-pare-feu-entreprise": ["USG6625E : ce qu’un pare-feu d’entreprise fait vraiment", "Segmentation, règles, NAT, VPN SSL et journalisation : ce que fait un USG6625E, ce qu’il ne fait pas sans abonnement, et les erreurs qui rendent un pare-feu inutile."],
+  "/article/fusionserver-2288x-v5-usages-reels": ["FusionServer 2288X V5 : ce qu’un vrai serveur change dans une PME", "Virtualisation, fichiers, sauvegarde, supervision, vidéosurveillance : les usages concrets d’un FusionServer 2288X V5 à 25 baies, et les limites à connaître avant d’acheter."],
+  "/article/cloudengine-s5735-switch-acces-entreprise": ["CloudEngine S5735 : le switch qui tient un site", "VLAN, routage inter-VLAN, uplinks 10GE : ce que change un switch manageable comme le CloudEngine S5735, et pourquoi l’absence de PoE doit être anticipée."],
+  "/article/cartes-osn-wdm-spares-operateur": ["Cartes OSN et WDM : pourquoi un spare vaut plus que son prix", "TN12WSMD901, TN13OBU103, ODX0480T1 : ce que font ces cartes dans un réseau optique, pourquoi l’immobilisation coûte plus cher que la pièce, et comment vérifier la compatibilité."],
+
   "/article/agence-digitale-dakar-pme-seo-site-web-automatisation": ["Agence digitale Dakar : SEO, site web et automatisation PME", "Guide complet pour choisir une agence digitale à Dakar capable de créer un site web performant, améliorer le SEO local et automatiser la prospection WhatsApp des PME."],
   "/article/developpement-logiciel-sur-mesure-senegal-pme": ["Développement logiciel sur mesure Sénégal pour PME", "CRM, stock, facturation, courrier, RH ou dashboard : comment réussir un projet de logiciel sur mesure au Sénégal avec budget, étapes, sécurité et ROI."],
   "/article/google-ads-ou-seo-senegal-choisir": ["Campagnes Google Ads Sénégal : que choisir entre Ads et SEO ?", "Comparatif Google Ads vs SEO au Sénégal : coûts, délais, avantages, limites et stratégie mixte pour générer plus de prospects qualifiés."],

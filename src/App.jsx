@@ -274,6 +274,7 @@ const ArticleRouteurEntrepriseInterconnexionSites = lazy(() => import("@/pages/a
 const ArticleRouteurAggregationOperateur = lazy(() => import("@/pages/articles/ArticleRouteurAggregationOperateur"));
 const ArticleRouteurCoeurReseauDatacenter = lazy(() => import("@/pages/articles/ArticleRouteurCoeurReseauDatacenter"));
 const ArticleAmplificateurOptiqueLiaisonFibre = lazy(() => import("@/pages/articles/ArticleAmplificateurOptiqueLiaisonFibre"));
+const ArticleHardwareUseCase = lazy(() => import("@/pages/articles/ArticleHardwareUseCase"));
 const ArticleBoosterOptiqueEmetteur = lazy(() => import("@/pages/articles/ArticleBoosterOptiqueEmetteur"));
 const ArticleWssRoadmLongueursOnde = lazy(() => import("@/pages/articles/ArticleWssRoadmLongueursOnde"));
 const ArticleModuleSfp10gFibreOptique = lazy(() => import("@/pages/articles/ArticleModuleSfp10gFibreOptique"));
@@ -643,6 +644,12 @@ function App() {
           <Route path="/article/routeur-agregation-operateur" element={<ArticleRouteurAggregationOperateur />} />
           <Route path="/article/routeur-coeur-reseau-datacenter" element={<ArticleRouteurCoeurReseauDatacenter />} />
           <Route path="/article/amplificateur-optique-liaison-fibre" element={<ArticleAmplificateurOptiqueLiaisonFibre />} />
+          <Route path="/article/netengine-8000-m1a-usages-reels" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/netengine-8000-m14-bng-operateur" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/usg6625e-pare-feu-entreprise" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/fusionserver-2288x-v5-usages-reels" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/cloudengine-s5735-switch-acces-entreprise" element={<ArticleHardwareUseCase />} />
+          <Route path="/article/cartes-osn-wdm-spares-operateur" element={<ArticleHardwareUseCase />} />
           <Route path="/article/booster-optique-emetteur" element={<ArticleBoosterOptiqueEmetteur />} />
           <Route path="/article/wss-roadm-longueurs-onde" element={<ArticleWssRoadmLongueursOnde />} />
           <Route path="/article/module-sfp-10g-fibre-optique" element={<ArticleModuleSfp10gFibreOptique />} />
