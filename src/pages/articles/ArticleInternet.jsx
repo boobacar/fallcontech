@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgInternet from "@/assets/articles/slow_internet_wifi_dakar.jpg";
+import imgInternet from "@/assets/articles/slow_internet_wifi_dakar.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 

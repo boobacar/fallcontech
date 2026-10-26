@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgCost from "@/assets/articles/website_cost_estimate_senegal.jpg";
+import imgCost from "@/assets/articles/website_cost_estimate_senegal.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgBackup from "@/assets/articles/backup.jpg";
+import imgBackup from "@/assets/articles/backup.webp";
 import { useI18n } from "@/i18n";
 
 const ArticleBackupData = () => {

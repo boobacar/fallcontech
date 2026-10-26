@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.jpg";
+import imgStack from "@/assets/articles/stack.webp";
 
 const ArticleMaintenanceWordpress = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");

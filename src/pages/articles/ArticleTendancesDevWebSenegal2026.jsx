@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.webp";
 
 const ArticleTendancesDevWebSenegal2026 = () => {
   const path = "/article/tendances-developpement-web-senegal-2026";

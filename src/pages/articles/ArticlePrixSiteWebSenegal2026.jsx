@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgCost from "@/assets/articles/website_cost_estimate_senegal.jpg";
+import imgCost from "@/assets/articles/website_cost_estimate_senegal.webp";
 
 const ArticlePrixSiteWebSenegal2026 = () => {
   const path = "/article/prix-site-web-senegal-2026";

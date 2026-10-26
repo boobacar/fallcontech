@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgScam from "@/assets/articles/mobile_money_scam_alert.jpg";
+import imgScam from "@/assets/articles/mobile_money_scam_alert.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 

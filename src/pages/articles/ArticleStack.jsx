@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.jpg";
+import imgStack from "@/assets/articles/stack.webp";
 import { useI18n } from "@/i18n";
 
 const ArticleStack = () => {

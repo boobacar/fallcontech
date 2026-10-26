@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgHardware from "@/assets/articles/pc_laptop_store_dakar.jpg";
+import imgHardware from "@/assets/articles/pc_laptop_store_dakar.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 

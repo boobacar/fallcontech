@@ -5,7 +5,7 @@ import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.webp";
 
 const ArticleDeveloppementWebProfessionnelSenegal = () => {
   const site = import.meta.env.VITE_SITE_URL || (typeof window !== "undefined" ? window.location.origin : "");

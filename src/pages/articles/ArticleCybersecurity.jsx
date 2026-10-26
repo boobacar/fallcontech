@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgSecurity from "@/assets/articles/security.jpg";
+import imgSecurity from "@/assets/articles/security.webp";
 import { useI18n } from "@/i18n";
 
 const ArticleCybersecurity = () => {

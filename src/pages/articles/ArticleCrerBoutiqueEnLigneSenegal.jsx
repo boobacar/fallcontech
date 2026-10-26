@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgEcommerce from "@/assets/articles/pos_system_shop_senegal.jpg";
+import imgEcommerce from "@/assets/articles/pos_system_shop_senegal.webp";
 
 const ArticleCrerBoutiqueEnLigneSenegal = () => {
   const path = "/article/creer-boutique-en-ligne-senegal";

@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgStack from "@/assets/articles/stack.jpg";
+import imgStack from "@/assets/articles/stack.webp";
 
 export default function ArticleMaintenanceSiteWebBusiness() {
   const path = "/article/maintenance-site-web-business-senegal";

@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgIT from "@/assets/articles/it-support.jpg";
+import imgIT from "@/assets/articles/it-support.webp";
 import { useI18n } from "@/i18n";
 
 const ArticleGeneralistIT = () => {

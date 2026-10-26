@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import imgITSupport from "@/assets/articles/it_support_helpdesk_dakar.jpg";
+import imgITSupport from "@/assets/articles/it_support_helpdesk_dakar.webp";
 
 export default function ArticlePrixMaintenanceInformatiqueSenegal() {
   const path = "/article/prix-maintenance-informatique-senegal-2026";

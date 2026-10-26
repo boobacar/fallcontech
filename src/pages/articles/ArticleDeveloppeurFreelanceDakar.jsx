@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgDev from "@/assets/articles/web_developer_dakar_meeting.jpg";
+import imgDev from "@/assets/articles/web_developer_dakar_meeting.webp";
 
 const ArticleDeveloppeurFreelanceDakar = () => {
   const path = "/article/developpeur-freelance-dakar-embaucher";

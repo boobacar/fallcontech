@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgBooking from "@/assets/articles/online-reservation-system.jpg";
+import imgBooking from "@/assets/articles/online-reservation-system.webp";
 import { useI18n } from "@/i18n";
 
 const ArticleBooking = () => {

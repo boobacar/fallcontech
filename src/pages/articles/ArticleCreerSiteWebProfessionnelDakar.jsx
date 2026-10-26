@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgWeb from "@/assets/articles/online-reservation-system.jpg";
+import imgWeb from "@/assets/articles/online-reservation-system.webp";
 
 const ArticleCreerSiteWebProfessionnelDakar = () => {
   const path = "/article/creer-site-web-professionnel-dakar";

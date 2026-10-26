@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgStack from "@/assets/articles/stack.jpg";
+import imgStack from "@/assets/articles/stack.webp";
 
 const ArticleDigitalisationCourriersSenegal = () => {
   const path = "/article/digitalisation-courriers-services-senegal";

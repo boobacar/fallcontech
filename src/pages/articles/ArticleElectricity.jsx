@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import imgElectricity from "@/assets/articles/electricity_stabilizer_dakar.jpg";
+import imgElectricity from "@/assets/articles/electricity_stabilizer_dakar.webp";
 import { useI18n } from "@/i18n";
 import { motion } from "framer-motion";
 
