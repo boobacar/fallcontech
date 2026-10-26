@@ -277,33 +277,33 @@ export default function Home() {
         <div className="site-shell">
           <div className="section-heading compact">
             <p className="overline">Nos prestations</p>
-            <h2>Des réalisations concrètes, du site web au système métier.</h2>
-            <p>Chaque prestation est livrée avec une structure claire, un suivi des demandes et un accompagnement après mise en service.</p>
+            <h2>Des systèmes numériques et des réseaux qui portent votre activité.</h2>
+            <p>Nous concevons, déployons et exploitons l'infrastructure et les outils dont votre entreprise dépend au quotidien : réseau, sécurité, logiciels métier, automatisation. Un seul interlocuteur, de la conception à l'exploitation.</p>
           </div>
           <div className="prestation-grid">
-            <Link className="prestation-card" to="/services/creation-site-web-dakar">
-              <h3>Création de site web</h3>
-              <p>Site vitrine ou site business, pensé pour vos clients et visible sur Google.</p>
-            </Link>
-            <Link className="prestation-card" to="/services/developpeur-web-senegal">
-              <h3>Développement web</h3>
-              <p>Plateformes, portails et applications web sur mesure pour votre organisation.</p>
-            </Link>
-            <Link className="prestation-card" to="/services/mobile-app-development-senegal">
-              <h3>Applications mobiles</h3>
-              <p>Applications Android et iOS pour vos équipes terrain et vos clients.</p>
-            </Link>
             <Link className="prestation-card" to="/services/software-development-senegal">
-              <h3>Logiciels métier</h3>
-              <p>CRM, stock, facturation, tableaux de bord : vos processus dans un outil fiable.</p>
+              <h3>Systèmes numériques d'entreprise</h3>
+              <p>Ventes, stock, facturation, reporting : un système unique construit autour de vos processus, pas l'inverse.</p>
             </Link>
-            <Link className="prestation-card" to="/services/web-development-senegal">
-              <h3>Web development (EN)</h3>
-              <p>Fast websites and business platforms for companies in Dakar and across Senegal.</p>
+            <Link className="prestation-card" to="/services/reseau-et-securite">
+              <h3>Réseaux d'entreprise</h3>
+              <p>Conception et déploiement du LAN, du Wi-Fi, de l'interconnexion de sites et des accès distants sécurisés.</p>
             </Link>
-            <Link className="prestation-card" to="/services/audit-seo-professionnel-senegal">
-              <h3>Visibilité sur Google</h3>
-              <p>Diagnostic de votre présence en ligne et plan d'actions pour gagner des contacts.</p>
+            <Link className="prestation-card" to="/services/pare-feu-manage">
+              <h3>Sécurité et continuité</h3>
+              <p>Filtrage, segmentation, sauvegardes et reprise après incident : l'activité continue même quand tout ne va pas bien.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/supervision-infrastructure">
+              <h3>Supervision et exploitation</h3>
+              <p>Vos équipements surveillés, vos incidents traités, un rapport mensuel lisible sur l'état réel du système.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/automatisation-whatsapp-senegal">
+              <h3>Automatisation et intégrations</h3>
+              <p>Mobile money, WhatsApp, formulaires et relances : les tâches répétitives exécutées par le système, sans ressaisie.</p>
+            </Link>
+            <Link className="prestation-card" to="/services/creation-site-web-dakar">
+              <h3>Sites et applications</h3>
+              <p>Site vitrine, plateforme client ou application mobile — quand le numérique doit aussi parler à vos clients.</p>
             </Link>
           </div>
           <div className="prestation-more">
