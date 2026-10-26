@@ -9,19 +9,14 @@ import { m1aUseCases } from "@/data/m1aUseCases";
 const ARTICLES = { ...hardwareArticles, ...m1aUseCases };
 
 const M1A_SECTORS = [
-  ["Banque & microfinance", "/article/m1a-banque-microfinance-agences"],
   ["Santé", "/article/m1a-clinique-hopital-reseau-medical"],
   ["Éducation", "/article/m1a-ecole-universite-campus"],
-  ["Hôtellerie", "/article/m1a-hotel-residence-wifi-invites"],
   ["Industrie", "/article/m1a-industrie-usine-ot-it"],
-  ["ONG", "/article/m1a-ong-bureaux-terrain"],
-  ["Secteur public", "/article/m1a-administration-interconnexion-sites"],
   ["FAI & hébergement", "/article/m1a-fai-hebergeur-bgp-bras"],
-  ["Immobilier", "/article/m1a-immeuble-partage-internet"],
   ["Sites isolés", "/article/m1a-site-isole-chantier-mine"],
-  ["Avocats", "/article/m1a-cabinet-avocats-reseau"],
-  ["Notariat", "/article/m1a-etude-notariale-reseau"],
-  ["Comptabilité", "/article/m1a-cabinet-comptable-reseau"],
+  ["Professions libérales", "/article/m1a-cabinets-avocats-notaires-comptables"],
+  ["Multi-sites", "/article/m1a-organisations-multisites"],
+  ["Hébergement & immobilier", "/article/m1a-hotels-residences-immeubles"],
 ];
 
 /**
@@ -197,7 +192,7 @@ export default function ArticleHardwareUseCase() {
               <h2>Le M1A par secteur</h2>
               <p>
                 Le même routeur ne se déploie pas de la même façon dans une banque, une
-                clinique ou une usine. Treize lectures par métier, avec les usages qui
+                clinique ou une usine. Huit lectures par métier, avec les usages qui
                 comptent et les limites à annoncer.
               </p>
               <ul className="not-prose grid gap-3 sm:grid-cols-2">

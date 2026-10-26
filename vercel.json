@@ -1,61 +1,169 @@
 {
   "routes": [
-    { "src": "/en/(.*)", "status": 301, "headers": { "Location": "/$1" } },
+    {
+      "src": "/en/(.*)",
+      "status": 301,
+      "headers": {
+        "Location": "/$1"
+      }
+    },
     {
       "src": "/services/gec-courrier-cotonou",
       "status": 301,
-      "headers": { "Location": "/services/gec-courrier-benin" }
+      "headers": {
+        "Location": "/services/gec-courrier-benin"
+      }
     },
-    { "src": "^/api/track$", "dest": "https://home-server-1.tail660cfd.ts.net:10000/analytics/collect" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "^/api/track$",
+      "dest": "https://home-server-1.tail660cfd.ts.net:10000/analytics/collect"
+    },
+    {
+      "src": "^/article/m1a-cabinet-avocats-reseau$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-cabinets-avocats-notaires-comptables"
+      }
+    },
+    {
+      "src": "^/article/m1a-etude-notariale-reseau$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-cabinets-avocats-notaires-comptables"
+      }
+    },
+    {
+      "src": "^/article/m1a-cabinet-comptable-reseau$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-cabinets-avocats-notaires-comptables"
+      }
+    },
+    {
+      "src": "^/article/m1a-banque-microfinance-agences$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-organisations-multisites"
+      }
+    },
+    {
+      "src": "^/article/m1a-administration-interconnexion-sites$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-organisations-multisites"
+      }
+    },
+    {
+      "src": "^/article/m1a-ong-bureaux-terrain$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-organisations-multisites"
+      }
+    },
+    {
+      "src": "^/article/m1a-hotel-residence-wifi-invites$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-hotels-residences-immeubles"
+      }
+    },
+    {
+      "src": "^/article/m1a-immeuble-partage-internet$",
+      "status": 301,
+      "headers": {
+        "Location": "/article/m1a-hotels-residences-immeubles"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/(.*)\\.webp",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]
