@@ -2262,6 +2262,27 @@ export const GEO_TITLE_OVERRIDES = {
     description:
       "Audit, serveurs, réseau et cybersécurité en Mauritanie : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à Nouakchott.",
   },
+  // 28/10/2026 — même diagnostic que la Mauritanie sur trois autres pages pays : le titre
+  // « Sécurité informatique au X » ne contient pas le terme réellement tapé. Mesures 28 j
+  // (29/09→26/10) : « infrastructure informatique cameroun » pos 5,0 / « infrastructure it
+  // cameroun » pos 4,5 (45 imp, 0 clic) ; « infrastructure it tchad » pos 3,1 / « infrastructure
+  // informatique tchad » pos 4,1 (34 imp, 0 clic) ; « infrastructure informatique guinée »
+  // pos 2,5 (20 imp, 0 clic). Décision du 19/10 validée sur la Mauritanie, étendue ici.
+  "/services/infrastructure-cybersecurite-cameroun": {
+    title: "Infrastructure informatique et cybersécurité au Cameroun",
+    description:
+      "Audit, serveurs, réseau et cybersécurité au Cameroun : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à Yaoundé.",
+  },
+  "/services/infrastructure-cybersecurite-tchad": {
+    title: "Infrastructure informatique et cybersécurité au Tchad",
+    description:
+      "Audit, serveurs, réseau et cybersécurité au Tchad : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à N'Djaména.",
+  },
+  "/services/infrastructure-cybersecurite-guinee": {
+    title: "Infrastructure informatique et cybersécurité en Guinée",
+    description:
+      "Audit, serveurs, réseau et cybersécurité en Guinée : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à Conakry.",
+  },
   // 19/10/2026 — « création de site internet à mbour » (pos 4,0) et « agence web professionnelle
   // à mbour » (pos 7,5) tombaient sur un titre qui ne disait ni « site internet » ni « agence web ».
   "/services/creation-site-web-mbour": {
