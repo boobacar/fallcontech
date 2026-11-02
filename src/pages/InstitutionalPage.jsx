@@ -15,6 +15,17 @@ import {
   LockKeyhole,
 } from "lucide-react";
 import SEO from "@/components/SEO";
+import { GEO_COUNTRIES } from "@/data/geoData";
+
+// Pages pays réellement servies pour chaque solution : le hub doit pointer vers ses
+// déclinaisons pays, sinon ces pages n'ont aucun lien entrant hors sitemap et Google
+// cesse de les recrawler (mesure 02/11/2026 : 24 pages sur 31 en position 5-20 n'avaient
+// pas été explorées depuis le 20/08, malgré trois passages de titres).
+const GEO_COMPETENCE_FOR_SOLUTION = {
+  "/solutions/gestion-courrier-ged": "gec-courrier",
+  "/solutions/digitalisation-administrations": "digitalisation-administrations",
+  "/solutions/infrastructure-cybersecurite": "infrastructure-cybersecurite",
+};
 
 const pages = {
   "/solutions/gestion-courrier-ged": {
@@ -301,6 +312,7 @@ const process = [
 export default function InstitutionalPage() {
   const { pathname } = useLocation();
   const page = pages[pathname] || pages["/solutions/applications-metier"];
+  const geoCompetence = GEO_COMPETENCE_FOR_SOLUTION[pathname];
   const Icon = page.icon;
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://fallcontech.com";
   const jsonLd = [
@@ -425,6 +437,40 @@ export default function InstitutionalPage() {
           </div>
         </div>
       </section>
+
+      {geoCompetence && (
+        <section className="section">
+          <div className="site-shell">
+            <div className="split-heading">
+              <div>
+                <p className="overline">Déploiement</p>
+                <h2>Un interlocuteur unique, seize pays couverts.</h2>
+              </div>
+              <p className="intro-copy">
+                Nous travaillons depuis Dakar, à distance ou sur site, pour les administrations,
+                les entreprises et les organisations de ces pays. Choisissez le vôtre pour voir
+                le contexte local et les contraintes d’exploitation.
+              </p>
+            </div>
+            <div className="country-grid">
+              {GEO_COUNTRIES.map((country) => (
+                <Link
+                  className="country-card"
+                  to={`/services/${geoCompetence}-${country.slug}`}
+                  key={country.slug}
+                >
+                  <span className="country-flag">{country.flag}</span>
+                  <div>
+                    <h3>{country.name}</h3>
+                    <p>{country.capital} · {country.currency}</p>
+                  </div>
+                  <ArrowRight size={16} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="contact-banner">
         <div className="site-shell contact-banner-inner">
