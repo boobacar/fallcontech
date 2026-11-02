@@ -549,16 +549,19 @@ export const GEO_COMPETENCES = [
     name: "Infrastructure informatique et cybersécurité",
     type: "Infrastructure · Sécurité",
     desc: "infrastructure informatique et cybersécurité : audit, sauvegardes, supervision et continuité d'activité",
-    // Snippet SERP propre à cette famille (boucle GSC hebdo). Constat de la boucle :
-    // la famille faisait 0,46 % de CTR (4 clics / 870 impressions) à une position
-    // moyenne pondérée de 14,6, quand gec-courrier (2,7 % à 14,8) et boutique-en-ligne
-    // (4,7 % à 11,7) font 6 à 10 fois mieux avec le même gabarit de titre. Les
-    // recherches réellement tapées qui remontent sont « sécurité informatique <pays> »
-    // et « cybersécurité <pays> », pas « infrastructure informatique et cybersécurité ».
+    // Snippet SERP propre à cette famille (boucle GSC hebdo).
+    // Mesure 03/10→30/10/2026 (28 j vs 28 j précédents) : la famille entière fait
+    // 0 clic pour ~1 000 impressions réparties sur 20 pages. Les requêtes qui
+    // classent réellement sont « infrastructure it <pays> » (pos 2,4 à 8,4 :
+    // Guinée 2,4 / Burkina 3,2 / Mauritanie 3,8 / Tchad 3,9 / RDC 8,4) et
+    // « infrastructure informatique <pays> » (pos 3,0 à 17,2), pas
+    // « sécurité informatique <pays> » (pos 29,9) ni « cybersécurité entreprise
+    // <pays> » (pos 16,8 à 45,9). Le titre sécurité-seule ne contenait donc pas le
+    // terme tapé. Titre aligné sur la requête, H1 inchangé.
     // {place} = « en Mauritanie » (page pays) ou « à Abidjan » (page ville).
-    seoTitle: "Sécurité informatique {place} : audit, sauvegardes et supervision",
+    seoTitle: "Infrastructure informatique et cybersécurité {place}",
     seoDescription:
-      "Audit de sécurité, sauvegardes vérifiées, supervision et protection des accès {place}. Devis sous 48 h, {intervention}.",
+      "Audit, serveurs, réseau et cybersécurité {place} : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, {intervention}.",
     lead:
       "Nous sécurisons l'infrastructure informatique des organisations de {capital} et du {country} : sauvegardes, supervision et continuité.",
     quickAnswer:
