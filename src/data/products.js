@@ -441,6 +441,134 @@ export const products = [
     unit: "unité",
   },
 
+  // ---------- Mémoire serveur ----------
+  {
+    id: "barrette-memoire-32go-ddr4-2933-rdimm-huawei-06200317",
+    seoPitchEn:
+      "32 GB DDR4-2933 ECC Registered server memory (Samsung M393A4G43AB3, Huawei P/N 06200317) — 16 new modules in Dakar for 2288X V5, Dell R640/R740, HPE Gen10 and Lenovo SR650 servers.",
+    seoPitch:
+      "Barrette serveur 32 Go DDR4-2933 ECC Registered (Samsung M393A4G43AB3, P/N Huawei 06200317) — 16 modules neufs en stock à Dakar pour 2288X V5, Dell R640/R740, HPE Gen10 et Lenovo SR650.",
+    slug: "barrette-memoire-32go-ddr4-2933-rdimm-huawei-06200317",
+    name: "Barrette 32 Go DDR4-2933 ECC RDIMM (Huawei 06200317)",
+    category: "Serveurs",
+    model: "Samsung M393A4G43AB3-CVFBY",
+    mpn: "06200317",
+    configNote: "Neuf · 16 barrettes · 32 Go DDR4-2933 RDIMM ECC",
+    configNoteEn: "New · 16 modules · 32 GB DDR4-2933 RDIMM ECC",
+    seoTitle: "Barrette 32 Go DDR4-2933 RDIMM Huawei 06200317 | Dakar",
+    seoDescription:
+      "Barrette serveur 32 Go DDR4-2933 ECC RDIMM (Samsung M393A4G43AB3, P/N Huawei 06200317) : 16 modules neufs en stock à Dakar. Compatible 2288X V5, Dell R640/R740, HPE Gen10. Devis 24 h, livraison Afrique de l'Ouest.",
+    shortEn:
+      "32 GB DDR4-2933 ECC Registered DIMM (2Rx8, 1.2 V) for dual-Xeon servers: Huawei 2288X/2288H V5, Dell PowerEdge R640/R740, HPE ProLiant DL380 Gen10, Lenovo SR650. Sixteen new modules pulled from unused FusionServers, in stock in Dakar.",
+    short:
+      "Barrette 32 Go DDR4-2933 ECC Registered (2Rx8, 1,2 V) pour serveurs bi-Xeon : Huawei 2288X/2288H V5, Dell PowerEdge R640/R740, HPE ProLiant DL380 Gen10, Lenovo SR650. Seize modules neufs issus de FusionServer jamais mis en service, en stock à Dakar.",
+    imageAlt:
+      "Barrette mémoire serveur 32 Go DDR4-2933 ECC RDIMM Samsung M393A4G43AB3, référence Huawei 06200317, en stock à Dakar",
+    specsEn: [
+      "32 GB DDR4-2933 ECC Registered DIMM (RDIMM) · 2Rx8 · 1.2 V",
+      "Samsung M393A4G43AB3-CVFBY · Huawei P/N 06200317",
+      "288-pin RDIMM — server memory, not for desktop or gaming PCs",
+      "16 modules available · new, never put into service",
+      "Compatible: Huawei 2288X/2288H V5, Dell R640/R740/R740xd, HPE DL380 Gen10, Lenovo SR650",
+      "Adds 32 GB per module; four modules give 128 GB per 2288X V5",
+      "Tested before shipping · quotation within 24 h",
+    ],
+    specs: [
+      "32 Go DDR4-2933 ECC Registered (RDIMM) · 2Rx8 · 1,2 V",
+      "Samsung M393A4G43AB3-CVFBY · P/N Huawei 06200317",
+      "288 broches RDIMM — mémoire serveur, pas pour PC de bureau ni gaming",
+      "16 barrettes disponibles · neuves, jamais mises en service",
+      "Compatibles : Huawei 2288X/2288H V5, Dell R640/R740/R740xd, HPE DL380 Gen10, Lenovo SR650",
+      "32 Go par barrette ; quatre barrettes = 128 Go sur un 2288X V5",
+      "Testées avant expédition · devis sous 24 h",
+    ],
+    techSpecs: [
+      { k: "Capacité", v: "32 Go par barrette" },
+      { k: "Type", v: "DDR4-2933 ECC Registered (RDIMM), 2Rx8, 1,2 V" },
+      { k: "Spécification", v: "PC4-2933Y-R · 288 broches" },
+      { k: "Référence Samsung", v: "M393A4G43AB3-CVFBY" },
+      { k: "Référence Huawei", v: "06200317" },
+      { k: "Quantité", v: "16 barrettes" },
+      { k: "État", v: "Neuf, jamais mis en service" },
+      { k: "Serveurs compatibles", v: "Huawei 2288X / 2288H / 1288H V5 · Dell PowerEdge R640, R740, R740xd · HPE ProLiant DL380 Gen10 · Lenovo ThinkSystem SR650" },
+      { k: "Usage", v: "Serveurs bi-Xeon Scalable uniquement — incompatible PC de bureau et gaming" },
+      { k: "Origine", v: "Démontées de serveurs Huawei FusionServer Pro 2288X V5 neufs" },
+    ],
+    longIntro: [
+      "Cette barrette est de la mémoire serveur DDR4-2933 ECC Registered, au format RDIMM 288 broches. Elle se monte dans les serveurs bi-Xeon Scalable : Huawei FusionServer 2288X et 2288H V5, Dell PowerEdge R640, R740 et R740xd, HPE ProLiant DL380 Gen10, Lenovo ThinkSystem SR650. Quatre barrettes donnent 128 Go sur un 2288X V5, huit en donnent 256 Go.",
+      "Elle ne fonctionne pas dans un PC de bureau ni dans un PC de gaming : la mémoire Registered passe par une puce d'interface que les cartes mères grand public n'ont pas. C'est un point à vérifier avant d'acheter — beaucoup d'annonces vendent de la mémoire serveur sans le préciser, et l'acheteur se retrouve avec des barrettes inutilisables. Les seize modules proposés ici sont neufs, démontés de serveurs jamais mis en service, et peuvent être testés sur place à Dakar avant enlèvement.",
+      "Pour les entreprises du Sénégal et d'Afrique de l'Ouest, l'intérêt est simple : la DDR4 serveur est en pénurie depuis 2026, les délais d'import depuis l'Asie dépassent souvent six semaines, et une barrette manquante bloque une baie entière. Ici le stock est physiquement à Dakar, avec la référence exacte et le numéro de série du serveur d'origine sur demande.",
+    ],
+    useCases: [
+      "Augmenter la mémoire d'un serveur Huawei 2288X V5 ou 2288H V5 sans attendre un import",
+      "Remettre en service un serveur Dell R640/R740 ou HPE DL380 Gen10 dont une barrette est tombée en panne",
+      "Constituer une réserve de pièces pour une baie de virtualisation critique",
+      "Équiper un lot de serveurs d'occasion achetés sans mémoire",
+      "Remplacer une barrette signalée en erreur ECC par le contrôleur RAID ou l'iBMC",
+    ],
+    buying: [
+      "Vérifier le modèle exact du serveur et son guide mémoire : nombre de canaux, rangs et vitesses supportées",
+      "Contrôler que la mémoire attendue est bien de la RDIMM et non de l'UDIMM",
+      "Prévoir le remplissage par canal : sur un bi-Xeon, la mémoire se répartit entre les deux processeurs",
+      "Ne pas mélanger des barrettes de rang et de vitesse différents sur un même canal",
+      "Compter une barrette de réserve si le serveur est en production",
+    ],
+    included: [
+      "Barrettes neuves, contrôlées et testées avant expédition",
+      "Référence Samsung et P/N Huawei fournis pour chaque barrette",
+      "Conseil de compatibilité avec le modèle exact du serveur client",
+      "Emballage antistatique pour l'expédition depuis Dakar",
+      "Vente à l'unité, par lot de 4, de 8 ou lot complet de 16",
+    ],
+    options: [
+      "Test sur place à Dakar avant enlèvement",
+      "Lot de 4 barrettes pour équiper un serveur complet en 128 Go",
+      "Recherche d'autres capacités (16 Go, 64 Go) et d'autres vitesses sur demande",
+      "Accompagnement à l'ajout de mémoire : placement par canal et vérification post-installation",
+    ],
+    includedTitle: "Ce qui est inclus dans la livraison",
+    includedCardTitle: "Inclus dans la livraison",
+    optionsTitle: "Options et accessoires",
+    licenceNote:
+      "Aucune licence n'est nécessaire pour de la mémoire. La compatibilité avec le serveur cible (modèle, génération, guide mémoire) est vérifiée avec vous avant expédition.",
+    faq: [
+      {
+        q: "Puis-je installer cette barrette dans un PC de bureau ou un PC gaming ?",
+        a: "Non. C'est de la mémoire Registered (RDIMM), conçue pour des serveurs bi-Xeon. Les cartes mères grand public n'embarquent pas le circuit d'interface nécessaire : la barrette n'est pas reconnue et le PC ne démarre pas. Si vous cherchez de la mémoire pour un PC, ce produit n'est pas le bon.",
+      },
+      {
+        q: "Avec quels serveurs est-elle compatible ?",
+        a: "Huawei FusionServer 2288X et 2288H V5, 1288H V5 ; Dell PowerEdge R640, R740 et R740xd ; HPE ProLiant DL380 Gen10 ; Lenovo ThinkSystem SR650. Ce sont les serveurs bi-Xeon Scalable de génération DDR4-2933. Indiquez-nous le modèle exact : nous vérifions le guide mémoire avant expédition.",
+      },
+      {
+        q: "Combien de barrettes pour 128 Go ?",
+        a: "Quatre barrettes de 32 Go. Sur un 2288X V5, elles se répartissent entre les deux processeurs, idéalement deux par processeur pour préserver le double canal.",
+      },
+      {
+        q: "Les barrettes sont-elles neuves ?",
+        a: "Oui. Elles proviennent de serveurs Huawei FusionServer Pro 2288X V5 neufs, jamais mis en service. Elles sont testées avant expédition et livrées en emballage antistatique.",
+      },
+      {
+        q: "Peut-on tester avant d'acheter ?",
+        a: "Oui, sur place à Dakar : les barrettes peuvent être montées dans un serveur de démonstration et reconnues par le BIOS avant enlèvement. À distance, nous fournissons la référence exacte et le numéro de série du serveur d'origine.",
+      },
+      {
+        q: "Livrez-vous dans les autres pays d'Afrique de l'Ouest ?",
+        a: "Oui : expédition depuis Dakar vers la Côte d'Ivoire, le Mali, le Burkina Faso, la Guinée, la Mauritanie, le Bénin, le Togo et le Sénégal. Le mode de transport et les formalités sont précisés dans le devis, sous 24 h.",
+      },
+    ],
+    stockNote: "16 barrettes neuves en stock à Dakar — vente à l'unité ou par lot.",
+    condition: "Neuf, jamais mis en service",
+    image: "/products/huawei-32go-ddr4-2933-rdimm.webp",
+    ogImage: "/products/huawei-32go-ddr4-2933-rdimm.webp",
+    imgW: 1600,
+    imgH: 510,
+    stock: "En stock",
+    badge: "NEUF",
+    badgeEn: "NEW",
+    unit: "barrette",
+  },
+
   // ---------- Sécurité & Pare-feu ----------
   {
     id: "pare-feu-usg6625e",
