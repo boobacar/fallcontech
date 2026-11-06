@@ -569,6 +569,134 @@ export const products = [
     unit: "barrette",
   },
 
+  // ---------- Disques serveur ----------
+  {
+    id: "disque-600go-sas-10k-2-5-serveur-huawei",
+    seoPitchEn:
+      "600 GB 2.5-inch SAS 10K server drives, new, never put into service, in Huawei hot-swap caddies — 32 units in Dakar for 2288X V5, Dell, HPE and Lenovo servers.",
+    seoPitch:
+      "Disques 600 Go SAS 10K au format 2,5 pouces, neufs et jamais mis en service, dans leur tiroir hot-swap Huawei — 32 unités en stock à Dakar pour serveurs 2288X V5, Dell, HPE et Lenovo.",
+    slug: "disque-600go-sas-10k-2-5-serveur-huawei",
+    name: "Disque 600 Go SAS 10K 2,5\" (serveur Huawei)",
+    category: "Serveurs",
+    model: "600 GB SAS 12 Gb/s 10K RPM · 2,5 pouces",
+    mpn: "selon lot",
+    configNote: "Neuf · 32 disques · 600 Go SAS 10K, tiroir Huawei inclus",
+    configNoteEn: "New · 32 drives · 600 GB SAS 10K, Huawei caddy included",
+    seoTitle: "Disque 600 Go SAS 10K 2,5 pouces pour serveur | Dakar",
+    seoDescription:
+      "Disques 600 Go SAS 10K 2,5 pouces neufs, jamais mis en service, en tiroir hot-swap Huawei : 32 unités en stock à Dakar. Compatibles serveurs 2288X V5, Dell, HPE, Lenovo. Devis 24 h, livraison Afrique de l'Ouest.",
+    shortEn:
+      "600 GB 2.5-inch SAS hard drives, 10,000 rpm, 12 Gb/s, delivered in their Huawei hot-swap caddy. New, never put into service — thirty-two units in stock in Dakar, sold by unit or by set of eight for a full server.",
+    short:
+      "Disques durs 600 Go SAS 2,5 pouces, 10 000 tr/min, 12 Gb/s, livrés dans leur tiroir hot-swap Huawei. Neufs, jamais mis en service — trente-deux unités en stock à Dakar, à l'unité ou par jeu de huit pour un serveur complet.",
+    imageAlt:
+      "Baies 2,5 pouces du serveur Huawei FusionServer 2288X V5 accueillant les disques 600 Go SAS 10K en stock à Dakar",
+    specsEn: [
+      "600 GB capacity · 2.5-inch SFF (SFF) form factor",
+      "SAS 12 Gb/s interface · 10,000 rpm · enterprise class",
+      "Hot-swap, delivered in the Huawei 2.5-inch caddy",
+      "New, never put into service · SMART report available",
+      "Standard SAS: fits any SAS backplane — Huawei, Dell, HPE, Lenovo, Supermicro",
+      "Eight drives fill one 2288X V5 · 32 drives available",
+      "Sector format 512n or 512e depending on the batch, confirmed on quotation",
+    ],
+    specs: [
+      "Capacité 600 Go · format 2,5 pouces SFF",
+      "Interface SAS 12 Gb/s · 10 000 tr/min · classe entreprise",
+      "Hot-swap, livré dans son tiroir 2,5 pouces Huawei",
+      "Neufs, jamais mis en service · rapport SMART disponible",
+      "SAS standard : compatible tout fond de panier SAS — Huawei, Dell, HPE, Lenovo, Supermicro",
+      "Huit disques équipent un 2288X V5 · 32 disques disponibles",
+      "Format de secteur 512n ou 512e selon le lot, précisé au devis",
+    ],
+    techSpecs: [
+      { k: "Capacité", v: "600 Go" },
+      { k: "Format", v: "2,5 pouces SFF (small form factor)" },
+      { k: "Interface", v: "SAS 12 Gb/s, rétrocompatible 6 Gb/s" },
+      { k: "Vitesse", v: "10 000 tr/min" },
+      { k: "Usage", v: "Serveurs, baies de stockage, hyperviseurs" },
+      { k: "Tiroir", v: "Tiroir hot-swap Huawei 2,5 pouces inclus" },
+      { k: "État", v: "Neuf, jamais mis en service — 0 heure de fonctionnement" },
+      { k: "Quantité", v: "32 disques (8 par serveur 2288X V5)" },
+      { k: "Serveurs compatibles", v: "Huawei 2288X / 2288H V5 · Dell PowerEdge · HPE ProLiant · Lenovo ThinkSystem · Supermicro (fond de panier SAS requis)" },
+      { k: "Non compatible", v: "PC de bureau sans carte HBA SAS — un port SATA ne lit pas un disque SAS" },
+    ],
+    longIntro: [
+      "Ces disques sont des 600 Go SAS au format 2,5 pouces, à 10 000 tours par minute, en interface 12 Gb/s. Ils équipaient les quatre serveurs Huawei FusionServer Pro 2288X V5 du stock, huit par machine, et n'ont jamais tourné : les serveurs n'ont pas été mis en service. Ils sont livrés dans leur tiroir hot-swap Huawei d'origine, ce qui évite à l'acheteur de chercher un caddy.",
+      "Le SAS est un standard : le disque se monte dans n'importe quel serveur disposant d'un fond de panier et d'un contrôleur SAS, quelle que soit la marque — Huawei, Dell, HPE, Lenovo ou Supermicro. Le tiroir, en revanche, est propre à chaque constructeur : un tiroir Huawei ne rentre pas dans une baie Dell ou HPE, il faut alors réutiliser celui du serveur cible. Dans un PC de bureau, ces disques ne fonctionnent pas sans carte HBA SAS : un port SATA ne sait pas parler SAS.",
+      "Pour les entreprises du Sénégal et d'Afrique de l'Ouest, l'argument est le même que pour la mémoire : le disque d'entreprise est en tension depuis 2026, l'import depuis l'Asie prend des semaines, et un disque manquant immobilise une baie. Ici, le stock est à Dakar, avec le rapport SMART de chaque disque et la possibilité de les vendre par huit pour équiper un serveur complet.",
+    ],
+    useCases: [
+      "Équiper ou compléter un serveur Huawei 2288X / 2288H V5 dont les baies sont vides",
+      "Remplacer un disque en panne sur un serveur Dell, HPE ou Lenovo en production",
+      "Constituer une réserve de pièces pour une baie de virtualisation",
+      "Monter un laboratoire de test ou une baie de sauvegarde à budget maîtrisé",
+      "Ajouter de la capacité sur un serveur d'occasion acheté sans disques",
+    ],
+    buying: [
+      "Vérifier le format des baies du serveur cible : 2,5 pouces SFF ou 3,5 pouces LFF",
+      "Contrôler la présence d'un contrôleur SAS ou d'une HBA, et non d'un simple port SATA",
+      "Prévoir le tiroir adapté au serveur cible si ce n'est pas un Huawei",
+      "Vérifier le format de secteur attendu par le contrôleur (512n ou 512e) sur les serveurs anciens",
+      "Compter un disque de rechange par baie critique",
+    ],
+    included: [
+      "Disques neufs, jamais mis en service, contrôlés avant expédition",
+      "Tiroir hot-swap Huawei 2,5 pouces inclus",
+      "Rapport SMART de chaque disque sur demande",
+      "Conseil de compatibilité avec le serveur et le contrôleur cible",
+      "Vente à l'unité ou par jeu de 8 pour équiper un serveur complet",
+    ],
+    options: [
+      "Jeu de 8 disques pour un serveur 2288X V5 complet",
+      "Recherche d'autres capacités (1,2 To, 2,4 To) sur demande",
+      "Tiroirs adaptés à votre marque de serveur, sur demande",
+      "Accompagnement à la création de la grappe RAID et vérification post-installation",
+    ],
+    includedTitle: "Ce qui est inclus dans la livraison",
+    includedCardTitle: "Inclus dans la livraison",
+    optionsTitle: "Options et accessoires",
+    licenceNote:
+      "Aucune licence n'est nécessaire pour un disque. La compatibilité avec le serveur, le contrôleur et le format de secteur attendu est vérifiée avec vous avant expédition.",
+    faq: [
+      {
+        q: "Ces disques sont-ils compatibles avec mon serveur ?",
+        a: "Oui s'il dispose d'un fond de panier et d'un contrôleur SAS : Huawei 2288X et 2288H V5, Dell PowerEdge, HPE ProLiant, Lenovo ThinkSystem, Supermicro. Le SAS est un standard, la marque du disque n'a pas d'importance. Le tiroir, lui, est propre à chaque constructeur : indiquez-nous votre modèle, nous précisons si le tiroir Huawei peut être réutilisé ou s'il faut le vôtre.",
+      },
+      {
+        q: "Puis-je les installer dans un PC de bureau ?",
+        a: "Pas directement. Un port SATA ne lit pas un disque SAS : il faut une carte HBA SAS (LSI 9211-8i ou équivalent) et les câbles. C'est faisable pour un homelab, ce ne l'est pas sur une machine de bureau standard.",
+      },
+      {
+        q: "Sont-ils vraiment neufs ?",
+        a: "Oui : ils proviennent des quatre serveurs 2288X V5 du stock, jamais mis en service. Les heures de fonctionnement se lisent en SMART, et le rapport de chaque disque peut être fourni avant achat.",
+      },
+      {
+        q: "Combien de disques pour un serveur ?",
+        a: "Huit disques par 2288X V5, soit 4,8 To bruts. Nous vendons à l'unité ou par jeu de huit, ce qui permet d'équiper un serveur complet d'un seul coup.",
+      },
+      {
+        q: "Quelle est la durée de vie d'un disque d'entreprise ?",
+        a: "Ces modèles sont dimensionnés pour fonctionner en continu, 24 h sur 24, avec une charge de travail de classe entreprise. En pratique, la durée de service dépend de la charge et de la température : un disque de ce type tient cinq ans et plus en baie climatisée, et le SMART permet de suivre les indicateurs avant la panne.",
+      },
+      {
+        q: "Livrez-vous en Afrique de l'Ouest ?",
+        a: "Oui : expédition depuis Dakar vers le Sénégal, la Côte d'Ivoire, le Mali, le Burkina Faso, la Guinée, la Mauritanie, le Bénin et le Togo. Le mode de transport et les formalités sont précisés dans le devis sous 24 h.",
+      },
+    ],
+    stockNote: "32 disques disponibles à Dakar — vente à l'unité ou par jeu de 8.",
+    condition: "Neuf, jamais mis en service",
+    image: "/products/huawei-server-2288x-v5.webp",
+    ogImage: "/products/huawei-server-2288x-v5.webp",
+    imgW: 1234,
+    imgH: 958,
+    stock: "En stock",
+    badge: "NEUF",
+    badgeEn: "NEW",
+    unit: "disque",
+  },
+
   // ---------- Sécurité & Pare-feu ----------
   {
     id: "pare-feu-usg6625e",
