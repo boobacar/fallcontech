@@ -585,13 +585,13 @@ export const products = [
     slug: "disque-600go-sas-10k-2-5-serveur-huawei",
     name: "Disque 600 Go SAS 10K 2,5\" (serveur Huawei)",
     category: "Serveurs",
-    model: "600 GB SAS 12 Gb/s 10K RPM · 2,5 pouces",
-    mpn: "selon lot",
-    configNote: "Neuf · 32 disques · 600 Go SAS 10K, tiroir Huawei inclus",
+    model: "Toshiba AL15SEB060N · Seagate ST600MM0009 (Exos 10E2400)",
+    mpn: "02312RBW",
+    configNote: "Neuf · 32 disques · 600 Go SAS 10K, Toshiba et Seagate",
     configNoteEn: "New · 32 drives · 600 GB SAS 10K, Huawei caddy included",
     seoTitle: "Disque 600 Go SAS 10K 2,5 pouces pour serveur | Dakar",
     seoDescription:
-      "Disques 600 Go SAS 10K 2,5 pouces neufs, jamais mis en service, en tiroir hot-swap Huawei : 32 unités en stock à Dakar. Compatibles serveurs 2288X V5, Dell, HPE, Lenovo. Devis 24 h, livraison Afrique de l'Ouest.",
+      "Disques 600 Go SAS 10K 2,5 pouces neufs (Toshiba AL15SEB060N et Seagate ST600MM0009, P/N Huawei 02312RBW) : 32 unités en stock à Dakar. 38 000 F l'unité, compatibles serveurs 2288X V5, Dell, HPE, Lenovo.",
     shortEn:
       "600 GB 2.5-inch SAS hard drives, 10,000 rpm, 12 Gb/s, delivered in their Huawei hot-swap caddy. New, never put into service — thirty-two units in stock in Dakar, sold by unit or by set of eight for a full server.",
     short:
@@ -601,6 +601,7 @@ export const products = [
     specsEn: [
       "600 GB capacity · 2.5-inch SFF (SFF) form factor",
       "SAS 12 Gb/s interface · 10,000 rpm · enterprise class",
+      "Toshiba AL15SEB060N (2020) and Seagate ST600MM0009 Exos 10E2400 (2021) · Huawei P/N 02312RBW",
       "Hot-swap, delivered in the Huawei 2.5-inch caddy",
       "New, never put into service · SMART report available",
       "Standard SAS: fits any SAS backplane — Huawei, Dell, HPE, Lenovo, Supermicro",
@@ -610,6 +611,7 @@ export const products = [
     specs: [
       "Capacité 600 Go · format 2,5 pouces SFF",
       "Interface SAS 12 Gb/s · 10 000 tr/min · classe entreprise",
+      "Toshiba AL15SEB060N (2020) et Seagate ST600MM0009 Exos 10E2400 (2021) · P/N Huawei 02312RBW",
       "Hot-swap, livré dans son tiroir 2,5 pouces Huawei",
       "Neufs, jamais mis en service · rapport SMART disponible",
       "SAS standard : compatible tout fond de panier SAS — Huawei, Dell, HPE, Lenovo, Supermicro",
@@ -622,6 +624,8 @@ export const products = [
       { k: "Interface", v: "SAS 12 Gb/s, rétrocompatible 6 Gb/s" },
       { k: "Vitesse", v: "10 000 tr/min" },
       { k: "Usage", v: "Serveurs, baies de stockage, hyperviseurs" },
+      { k: "Modèles", v: "Toshiba AL15SEB060N (P/N HDEBL04JJA51, 2020, Philippines) · Seagate ST600MM0009 Exos 10E2400 (P/N 1XF200-179, 2021, Chine)" },
+      { k: "Référence Huawei", v: "02312RBW — référence de rechange commune aux deux modèles" },
       { k: "Tiroir", v: "Tiroir hot-swap Huawei 2,5 pouces inclus" },
       { k: "État", v: "Neuf, jamais mis en service — 0 heure de fonctionnement" },
       { k: "Quantité", v: "32 disques (8 par serveur 2288X V5)" },
