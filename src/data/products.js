@@ -455,13 +455,13 @@ export const products = [
     slug: "barrette-memoire-32go-ddr4-2933-rdimm-huawei-06200317",
     name: "Barrette 32 Go DDR4-2933 ECC RDIMM (Huawei 06200317)",
     category: "Serveurs",
-    model: "Samsung M393A4G43AB3-CVFBY",
+    model: "Samsung M393A4G43AB3-CVFBY · SK hynix HMAA4GR7AJR8N-WM",
     mpn: "06200317",
     configNote: "Neuf · 16 barrettes · 32 Go DDR4-2933 RDIMM ECC",
     configNoteEn: "New · 16 modules · 32 GB DDR4-2933 RDIMM ECC",
     seoTitle: "Barrette 32 Go DDR4-2933 RDIMM Huawei 06200317 | Dakar",
     seoDescription:
-      "Barrette serveur 32 Go DDR4-2933 ECC RDIMM (Samsung M393A4G43AB3, P/N Huawei 06200317) : 16 modules neufs en stock à Dakar. Compatible 2288X V5, Dell R640/R740, HPE Gen10. Devis 24 h, livraison Afrique de l'Ouest.",
+      "Barrette serveur 32 Go DDR4-2933 ECC RDIMM (Samsung M393A4G43AB3 et SK hynix HMAA4GR7AJR8N, P/N Huawei 06200317) : 16 modules neufs en stock à Dakar. Compatible 2288X V5, Dell R640/R740, HPE Gen10. 95 000 F l'unité.",
     shortEn:
       "32 GB DDR4-2933 ECC Registered DIMM (2Rx8, 1.2 V) for dual-Xeon servers: Huawei 2288X/2288H V5, Dell PowerEdge R640/R740, HPE ProLiant DL380 Gen10, Lenovo SR650. Sixteen new modules pulled from unused FusionServers, in stock in Dakar.",
     short:
@@ -470,7 +470,7 @@ export const products = [
       "Barrette mémoire serveur 32 Go DDR4-2933 ECC RDIMM Samsung M393A4G43AB3, référence Huawei 06200317, en stock à Dakar",
     specsEn: [
       "32 GB DDR4-2933 ECC Registered DIMM (RDIMM) · 2Rx8 · 1.2 V",
-      "Samsung M393A4G43AB3-CVFBY · Huawei P/N 06200317",
+      "Samsung M393A4G43AB3-CVFBY or SK hynix HMAA4GR7AJR8N-WM · Huawei P/N 06200317"
       "288-pin RDIMM — server memory, not for desktop or gaming PCs",
       "16 modules available · new, never put into service",
       "Compatible: Huawei 2288X/2288H V5, Dell R640/R740/R740xd, HPE DL380 Gen10, Lenovo SR650",
@@ -479,7 +479,7 @@ export const products = [
     ],
     specs: [
       "32 Go DDR4-2933 ECC Registered (RDIMM) · 2Rx8 · 1,2 V",
-      "Samsung M393A4G43AB3-CVFBY · P/N Huawei 06200317",
+      "Samsung M393A4G43AB3-CVFBY ou SK hynix HMAA4GR7AJR8N-WM · P/N Huawei 06200317",
       "288 broches RDIMM — mémoire serveur, pas pour PC de bureau ni gaming",
       "16 barrettes disponibles · neuves, jamais mises en service",
       "Compatibles : Huawei 2288X/2288H V5, Dell R640/R740/R740xd, HPE DL380 Gen10, Lenovo SR650",
@@ -490,7 +490,7 @@ export const products = [
       { k: "Capacité", v: "32 Go par barrette" },
       { k: "Type", v: "DDR4-2933 ECC Registered (RDIMM), 2Rx8, 1,2 V" },
       { k: "Spécification", v: "PC4-2933Y-R · 288 broches" },
-      { k: "Référence Samsung", v: "M393A4G43AB3-CVFBY" },
+      { k: "Références", v: "Samsung M393A4G43AB3-CVFBY (8 barrettes) · SK hynix HMAA4GR7AJR8N-WM (8 barrettes)" },
       { k: "Référence Huawei", v: "06200317" },
       { k: "Quantité", v: "16 barrettes" },
       { k: "État", v: "Neuf, jamais mis en service" },
