@@ -470,7 +470,7 @@ export const products = [
       "Barrette mémoire serveur 32 Go DDR4-2933 ECC RDIMM Samsung M393A4G43AB3, référence Huawei 06200317, en stock à Dakar",
     specsEn: [
       "32 GB DDR4-2933 ECC Registered DIMM (RDIMM) · 2Rx8 · 1.2 V",
-      "Samsung M393A4G43AB3-CVFBY or SK hynix HMAA4GR7AJR8N-WM · Huawei P/N 06200317"
+      "Samsung M393A4G43AB3-CVFBY or SK hynix HMAA4GR7AJR8N-WM · Huawei P/N 06200317",
       "288-pin RDIMM — server memory, not for desktop or gaming PCs",
       "16 modules available · new, never put into service",
       "Compatible: Huawei 2288X/2288H V5, Dell R640/R740/R740xd, HPE DL380 Gen10, Lenovo SR650",
