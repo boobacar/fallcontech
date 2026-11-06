@@ -8,6 +8,7 @@ import { useCart } from "@/context/CartContext";
 import { track } from "@/lib/track";
 import {
   PRICE_LABEL,
+  priceLabelFor,
   productSeoForPath,
   products,
   getProductBySlug,
@@ -98,7 +99,7 @@ export default function ProductPage() {
 
             <div className="product-page-price-row">
               <p className="product-price product-page-price">
-                {PRICE_LABEL}
+                {priceLabelFor(product)}
                 {product.configNote && <small>{product.configNote}</small>}
               </p>
               <span className={`product-stock stock-${product.stock.toLowerCase().replace(/\s/g, "")}`}>
@@ -271,7 +272,7 @@ export default function ProductPage() {
                     <p className="product-short">{rel.short}</p>
                     <div className="product-foot">
                       <p className="product-price">
-                        {PRICE_LABEL}
+                        {priceLabelFor(rel)}
                         {rel.configNote && <small>{rel.configNote}</small>}
                       </p>
                       <span className={`product-stock stock-${rel.stock.toLowerCase().replace(/\s/g, "")}`}>

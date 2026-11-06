@@ -98,6 +98,18 @@ export function productJsonLd(product, siteUrl = SITE_URL) {
 
   if (product.mpn) schema.mpn = product.mpn;
   if (product.model) schema.model = product.model;
+  // Offre chiffrée uniquement quand un prix public est défini (mémoire, disques).
+  if (product.price) {
+    schema.offers = {
+      "@type": "Offer",
+      url,
+      price: String(product.price),
+      priceCurrency: "XOF",
+      availability: "https://schema.org/InStock",
+      itemCondition: product.itemCondition || "https://schema.org/NewCondition",
+      seller: { "@type": "Organization", name: "Fallcon Tech" },
+    };
+  }
   if (product.longIntro && product.longIntro.length) {
     schema.description = `${product.short} ${product.longIntro[0]}`;
   }

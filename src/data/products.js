@@ -22,6 +22,10 @@ import { SITE_URL } from "./seoData.js";
 export const PRICE_LABEL = "Prix sur devis";
 export const PRICE_LABEL_EN = "Price on request";
 
+// Prix affiché quand il est public (mémoire et disques) : libellé figé, pas de calcul.
+export const priceLabelFor = (product, lang = "fr") =>
+  product?.priceLabel || (lang === "en" ? PRICE_LABEL_EN : PRICE_LABEL);
+
 export const CATEGORIES = [
   "Routeurs",
   "Switches",
@@ -566,6 +570,8 @@ export const products = [
     stock: "En stock",
     badge: "NEUF",
     badgeEn: "NEW",
+    price: 95000,
+    priceLabel: "95 000 F CFA l'unité",
     unit: "barrette",
   },
 
@@ -694,6 +700,8 @@ export const products = [
     stock: "En stock",
     badge: "NEUF",
     badgeEn: "NEW",
+    price: 38000,
+    priceLabel: "38 000 F CFA l'unité",
     unit: "disque",
   },
 

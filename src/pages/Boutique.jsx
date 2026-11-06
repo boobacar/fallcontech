@@ -12,6 +12,7 @@ import {
   CATEGORIES,
   CATEGORY_META,
   PRICE_LABEL,
+  priceLabelFor,
 } from "@/data/products";
 import {
   BOUTIQUE_FAMILIES,
@@ -149,7 +150,7 @@ export default function Boutique() {
                     <p className="product-short">{product.short}</p>
                     <div className="product-foot">
                       <p className="product-price">
-                        {PRICE_LABEL}
+                        {priceLabelFor(product)}
                         {product.configNote && <small>{product.configNote}</small>}
                       </p>
                       <span className={`product-stock stock-${product.stock.toLowerCase().replace(/\s/g, "")}`}>

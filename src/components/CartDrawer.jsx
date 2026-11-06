@@ -10,7 +10,7 @@ import {
   X,
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { PRICE_LABEL } from "@/data/products";
+import { PRICE_LABEL, priceLabelFor } from "@/data/products";
 import { track } from "@/lib/track";
 
 const WHATSAPP_NUMBER = "221774837576";
@@ -146,7 +146,7 @@ export default function CartDrawer({ open, onClose }) {
                     <div>
                       <p className="cart-item-name">{product.name}</p>
                       <p className="cart-item-price">
-                        {PRICE_LABEL}
+                        {priceLabelFor(product)}
                         {product.configNote && <small> · {product.configNote}</small>}
                       </p>
                       <div className="qty-control cart-qty">
