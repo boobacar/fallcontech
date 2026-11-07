@@ -222,7 +222,7 @@ export const products = [
     seoPitchEn:
       "New 1U carrier router (NetEngine 8000 M1A): perpetual licences included, 6×10G and 26×GE activated and tested, SRv6 and EVPN — eleven units in stock in Dakar.",
     seoPitch:
-      "Routeur opérateur 1U neuf (NetEngine 8000 M1A) : licences perpétuelles incluses, 6×10G et 26×GE activés et testés, SRv6 et EVPN — 11 unités en stock à Dakar.",
+      "Routeur opérateur 1U neuf (NetEngine 8000 M1A) : licences perpétuelles incluses, 6×10G et 26×GE activés et testés, EVPN, VXLAN et SR-MPLS — 15 unités en stock à Dakar.",
     slug: "routeur-netengine-8000-m1a",
     name: "Huawei NetEngine 8000 M1A",
     category: "Routeurs",
@@ -233,16 +233,16 @@ export const products = [
     seoDescription:
       "Routeur Huawei NetEngine 8000 M1A neuf, jamais mis en service : licences perpétuelles incluses (4 RTU 10GE, 18 RTU GE, IPsec, SRv4, VXLAN, HQOS), 6×10G et 26×GE activés, lien 10G testé. 11 unités en stock à Dakar.",
     shortEn:
-      "New 1U carrier router, never put into service: up to 352 Gbit/s, 10GE SFP+ and GE interfaces, SRv6, EVPN, FlexE and 1588v2 timing. Eleven units in stock in Dakar.",
+      "New 1U carrier router, never put into service: 6 × 10GE and 26 × GE ports active, EVPN, VXLAN, SR-MPLS, HQOS, IPsec and NAT licensed. No MPLS L3VPN, no SRv6, no 1588v2. Fifteen units in stock in Dakar.",
     short:
-      "Routeur opérateur compact 1U neuf, jamais mis en service : jusqu'à 352 Gbit/s, interfaces 10GE SFP+ et GE, SRv6, EVPN, FlexE et horodatage 1588v2. 11 unités en stock à Dakar.",
+      "Routeur opérateur compact 1U neuf, jamais mis en service : 6 × 10G et 26 × GE actifs, EVPN, VXLAN, SR-MPLS, HQOS, IPsec et NAT sous licence. Pas de MPLS L3VPN, pas de SRv6, pas de 1588v2. 15 unités en stock à Dakar.",
     imageAlt:
       "Routeur Huawei NetEngine 8000 M1A (1U, 10GE SFP+) neuf en stock à Dakar",
     specsEn: [
       "Compact 1U chassis · 442 × 220 × 44.5 mm · 4.5 kg (5.8 kg boxed)",
       "Switching capacity up to 352 Gbit/s · 72 Mpps",
       "Interfaces: 16 × 10GE SFP+, 12 × GE optical (SFP), 4 × GE copper (RJ45) — 6 × 10GE and 26 × GE activated by licence",
-      "SRv6, EVPN, FlexE, Port Slicing, in-service telemetry and 1588v2 timing",
+      "EVPN and VXLAN, SR-MPLS (SRv4), HQOS, IPsec, NAT, VRRP and BFD licensed — no MPLS L3VPN, no SRv6, no 1588v2",
       "AC power 100–240 V (≈ 75 W) · 2+1 hot-swappable redundant fans",
       "Eleven new units built in June 2021, never put into service, original packaging",
       "Huawei perpetual licences included (4 × 10GE RTU, 18 × GE RTU, plus IPsec, SRv4, VXLAN, HQOS)",
@@ -251,7 +251,7 @@ export const products = [
       "Châssis 1U compact · 442 × 220 × 44,5 mm · 4,5 kg (5,8 kg emballé)",
       "Capacité de commutation jusqu'à 352 Gbit/s · 72 Mpps",
       "Interfaces : 16× 10GE SFP+ · 12× GE optique (SFP) · 4× GE cuivre (RJ45) — 32 ports au total",
-      "SRv6, EVPN, FlexE, Port Slicing, télémétrie en service et horodatage 1588v2",
+      "EVPN et VXLAN, SR-MPLS (SRv4), HQOS, IPsec, NAT, VRRP et BFD sous licence — pas de MPLS L3VPN, pas de SRv6, pas de 1588v2",
       "Alimentation AC 100–240 V (≈ 75 W) · ventilateurs redondants 2+1 remplaçables à chaud",
       "11 unités neuves fabriquées en juin 2021, jamais mises en service, emballage d'origine",
       "Licences perpétuelles déjà activées : 6× 10GE et 26× GE à pleine capacité, plus IPsec, SRv4, VXLAN et HQOS",
