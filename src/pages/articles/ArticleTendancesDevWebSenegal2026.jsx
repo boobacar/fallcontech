@@ -9,11 +9,12 @@ import imgDev from "@/assets/articles/web_developer_dakar_meeting.webp";
 const ArticleTendancesDevWebSenegal2026 = () => {
   const path = "/article/tendances-developpement-web-senegal-2026";
   const title = "Tendances du développement web au Sénégal en 2026";
-  const description = "Quelles sont les technologies et pratiques qui domineront le développement web au Sénégal en 2026 ?";
+  const seoTitle = "Développement web au Sénégal : tendances 2026";
+  const description = "Technologies, performance mobile, SEO et paiement mobile : ce qui structure un site web sénégalais en 2026, et ce qui devient une dette technique.";
 
   return (
     <>
-      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgDev} type="article" />
+      <SEO path={path} title={`${seoTitle} | Fallcon Tech`} description={description} image={imgDev} type="article" />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4">
         <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link>
         <Breadcrumbs items={[{ label: "Accueil", to: "/" }, { label: "Ressources", to: "/resources" }, { label: "Tendances Web" }]} />

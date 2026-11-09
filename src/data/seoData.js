@@ -418,6 +418,10 @@ export const articleSeo = {
   "/article/booster-optique-emetteur": ["Booster optique : amplifier le signal en sortie d'émetteur", "Booster optique en bande C : rôle, placement en tête de liaison, gain 23 dB et budget optique. Carte Huawei TN13OBU103 pour réseaux DWDM OptiX OSN 6800 / 8800."],
   "/article/wss-roadm-longueurs-onde": ["WSS et ROADM : ajouter ou retirer des longueurs d'onde", "WSS et nœud ROADM expliqués simplement : ajouter, retirer ou rediriger une longueur d'onde à distance, sans intervention sur site, pour un réseau DWDM souple."],
   "/article/module-sfp-10g-fibre-optique": ["Module SFP+ 10G : relier deux équipements en fibre optique", "Guide pratique du module SFP+ 10G en fibre optique : branchement, choix monomode ou multimode, portée 10 km, connecteurs et nettoyage soigneux des liens 10 Gbit/s."],
+  "/article/tendances-developpement-web-senegal-2026": ["Développement web au Sénégal : tendances 2026", "Technologies, performance mobile, SEO et paiement mobile : ce qui structure un site web sénégalais en 2026, et ce qui devient une dette technique."],
+  "/article/hebergement-web-senegal-guide-choisir-serveur": ["Hébergement web au Sénégal : choisir son serveur", "Vitesse, sécurité, sauvegardes et support local : les critères pour choisir un hébergement web au Sénégal, et les pièges qui coûtent en référencement."],
+  "/article/avantages-application-mobile-pme-dakar": ["Application mobile sur mesure pour une PME à Dakar", "Parcours client, fidélisation, services terrain : pourquoi une application mobile sur mesure change la croissance d'une PME à Dakar."],
+  "/article/whatsapp-business-api-ecommerce-senegal": ["WhatsApp Business API pour e-commerce au Sénégal", "Commande, confirmation, suivi de livraison : comment WhatsApp Business API fait vendre une boutique en ligne au Sénégal, sans tout gérer à la main."],
   "/article/module-optique-accordable-bande-c": ["Module optique accordable : changer de longueur d'onde à distance", "Module optique accordable TXFP bande C : pourquoi un seul module suffit pour tous les canaux d'un réseau DWDM et simplifie la gestion du stock de rechange."],
 };
 

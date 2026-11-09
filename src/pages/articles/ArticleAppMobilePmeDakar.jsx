@@ -9,11 +9,12 @@ import imgMobile from "@/assets/articles/mobile-first-design.jpg";
 const ArticleAppMobilePmeDakar = () => {
   const path = "/article/avantages-application-mobile-pme-dakar";
   const title = "Les avantages d'une application mobile sur mesure pour les PME à Dakar";
-  const description = "Pourquoi investir dans une application mobile sur mesure peut transformer la croissance de votre PME à Dakar.";
+  const seoTitle = "Application mobile sur mesure pour une PME à Dakar";
+  const description = "Parcours client, fidélisation, services terrain : pourquoi une application mobile sur mesure change la croissance d'une PME à Dakar.";
 
   return (
     <>
-      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgMobile} type="article" />
+      <SEO path={path} title={`${seoTitle} | Fallcon Tech`} description={description} image={imgMobile} type="article" />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4">
         <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link>
         <Breadcrumbs items={[{ label: "Accueil", to: "/" }, { label: "Ressources", to: "/resources" }, { label: "Applications Mobiles" }]} />

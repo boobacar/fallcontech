@@ -9,11 +9,12 @@ import imgWhatsapp from "@/assets/articles/whatsapp-automation.webp";
 const ArticleWhatsappEcomSenegal = () => {
   const path = "/article/whatsapp-business-api-ecommerce-senegal";
   const title = "Pourquoi intégrer WhatsApp Business API pour votre e-commerce au Sénégal";
-  const description = "Découvrez comment WhatsApp Business API peut booster les ventes de votre boutique en ligne au Sénégal.";
+  const seoTitle = "WhatsApp Business API pour e-commerce au Sénégal";
+  const description = "Commande, confirmation, suivi de livraison : comment WhatsApp Business API fait vendre une boutique en ligne au Sénégal, sans tout gérer à la main.";
 
   return (
     <>
-      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgWhatsapp} type="article" />
+      <SEO path={path} title={`${seoTitle} | Fallcon Tech`} description={description} image={imgWhatsapp} type="article" />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4">
         <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link>
         <Breadcrumbs items={[{ label: "Accueil", to: "/" }, { label: "Ressources", to: "/resources" }, { label: "WhatsApp API" }]} />

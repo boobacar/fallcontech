@@ -9,11 +9,12 @@ import imgStack from "@/assets/articles/stack.webp";
 const ArticleHebergementWebSenegal = () => {
   const path = "/article/hebergement-web-senegal-guide-choisir-serveur";
   const title = "Hébergement web au Sénégal : guide complet pour choisir le bon serveur";
-  const description = "Quels sont les critères pour choisir un bon hébergement web au Sénégal ? Vitesse, sécurité et support local expliqués.";
+  const seoTitle = "Hébergement web au Sénégal : choisir son serveur";
+  const description = "Vitesse, sécurité, sauvegardes et support local : les critères pour choisir un hébergement web au Sénégal, et les pièges qui coûtent en référencement.";
 
   return (
     <>
-      <SEO path={path} title={`${title} | Fallcon Tech`} description={description} image={imgStack} type="article" />
+      <SEO path={path} title={`${seoTitle} | Fallcon Tech`} description={description} image={imgStack} type="article" />
       <section className="py-12 gradient-bg"><div className="container mx-auto px-4">
         <Link to="/resources" className="inline-flex items-center text-primary hover:text-blue-500 mb-8"><ArrowLeft className="mr-2" size={20}/>Retour aux ressources</Link>
         <Breadcrumbs items={[{ label: "Accueil", to: "/" }, { label: "Ressources", to: "/resources" }, { label: "Hébergement Web" }]} />
