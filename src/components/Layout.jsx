@@ -5,7 +5,8 @@ import logoUrl from "@/assets/logo.webp";
 
 const navLinks = [
   { path: "/services", label: "Solutions" },
-  { path: "/boutique", label: "Boutique" },
+  // Boutique masquée jusqu'à nouvel ordre — remettre cette ligne pour la réafficher.
+  // { path: "/boutique", label: "Boutique" },
   { path: "/work", label: "Références" },
   { path: "/about", label: "Cabinet" },
   { path: "/resources", label: "Analyses" },
@@ -125,7 +126,7 @@ export default function Layout({ children }) {
               <li><a href="mailto:info@fallcontech.com">info@fallcontech.com</a></li>
               <li><a href="tel:+221774837576">+221 77 483 75 76</a></li>
               <li><Link to="/contact">Présenter un besoin</Link></li>
-              <li><Link to="/boutique">Boutique équipements</Link></li>
+              {/* Boutique masquée jusqu'à nouvel ordre. */}
               <li><Link to="/huawei-network-equipment">Huawei network equipment (EN)</Link></li>
             </ul>
           </div>
