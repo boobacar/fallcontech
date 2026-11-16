@@ -191,13 +191,6 @@ export const pageSeo = {
     priority: "0.94",
     changefreq: "weekly",
   },
-  "/services/creation-site-internet-senegal": {
-    title: "Création Site Internet Sénégal | Site Web Pro dès 350 000 F",
-    description:
-      "Création de site internet au Sénégal : site vitrine, site business ou landing page rapide, SEO-friendly, mobile-first, WhatsApp et devis clair.",
-    priority: "0.94",
-    changefreq: "weekly",
-  },
   "/services/tarif-site-vitrine-senegal": {
     title: "Tarif Site Vitrine Sénégal | Prix dès 350 000 F CFA",
     description:

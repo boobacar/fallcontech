@@ -44,43 +44,6 @@ const pages = {
       { to: "/article/comment-choisir-developpeur-web-dakar-senegal", label: "Comment choisir un développeur web" },
     ],
   },
-  website: {
-    path: "/services/creation-site-internet-senegal",
-    icon: Globe,
-    eyebrow: "Création site internet Sénégal",
-    title: "Création de site internet au Sénégal qui génère des demandes",
-    lead: "Nous créons des sites internet professionnels, rapides et SEO-friendly pour attirer des clients depuis Google et WhatsApp.",
-    serviceName: "Création de site internet au Sénégal",
-    serviceType: "Création de site web",
-    quickAnswer:
-      "Fallcon Tech crée des sites internet professionnels au Sénégal : site vitrine, site business ou landing page, livré en 1 à 3 semaines avec design mobile-first, base SEO et suivi des demandes clients.",
-    features: [
-      "Site vitrine, site business, catalogue ou landing page",
-      "Design responsive adapté aux smartphones et connexions locales",
-      "Pages optimisées pour Google : titles, descriptions, sitemap, FAQ",
-      "Boutons WhatsApp, formulaire, tracking et analytics",
-      "Formation courte pour modifier les contenus essentiels",
-    ],
-    outcomes: ["Meilleure crédibilité", "Plus de clics Google", "Plus de contacts entrants"],
-    faq: [
-      {
-        q: "Quel est le prix d'un site internet au Sénégal ?",
-        a: "Un site vitrine professionnel démarre à 350 000 F CFA. Le budget dépend du nombre de pages, du contenu, du SEO et des fonctionnalités.",
-      },
-      {
-        q: "Combien de temps prend la création d'un site ?",
-        a: "Un site vitrine peut être livré en 1 à 3 semaines si les textes, images et validations sont disponibles rapidement.",
-      },
-      {
-        q: "Le site sera-t-il visible sur Google ?",
-        a: "Oui, nous intégrons les bases SEO : structure claire, metadata, sitemap, performance mobile et configuration Search Console.",
-      },
-    ],
-    related: [
-      { to: "/pricing", label: "Voir les tarifs de création de site" },
-      { to: "/article/creer-site-web-professionnel-dakar", label: "Guide création site web professionnel" },
-    ],
-  },
   pricing: {
     path: "/services/tarif-site-vitrine-senegal",
     icon: Receipt,
@@ -303,10 +266,6 @@ function ServiceFrenchPage({ page }) {
 
 export function DeveloppeurWebSenegal() {
   return <ServiceFrenchPage page={pages.developer} />;
-}
-
-export function CreationSiteInternetSenegal() {
-  return <ServiceFrenchPage page={pages.website} />;
 }
 
 export function TarifSiteVitrineSenegal() {

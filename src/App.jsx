@@ -33,9 +33,6 @@ const SoftwareDevelopmentSenegal = lazy(() =>
 const DeveloppeurWebSenegal = lazy(() =>
   import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.DeveloppeurWebSenegal })),
 );
-const CreationSiteInternetSenegal = lazy(() =>
-  import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.CreationSiteInternetSenegal })),
-);
 const TarifSiteVitrineSenegal = lazy(() =>
   import("@/pages/ServiceFrenchSeoPages").then((module) => ({ default: module.TarifSiteVitrineSenegal })),
 );
@@ -341,7 +338,6 @@ function App() {
           <Route path="/services/mobile-app-development-senegal" element={<MobileAppDevelopmentSenegal />} />
           <Route path="/services/software-development-senegal" element={<SoftwareDevelopmentSenegal />} />
           <Route path="/services/developpeur-web-senegal" element={<DeveloppeurWebSenegal />} />
-          <Route path="/services/creation-site-internet-senegal" element={<CreationSiteInternetSenegal />} />
           <Route path="/services/tarif-site-vitrine-senegal" element={<TarifSiteVitrineSenegal />} />
           <Route path="/services/audit-seo-professionnel-senegal" element={<AuditSeoProfessionnelSenegal />} />
           {/* Pages géo-compétences générées par données (16 pays × 20 compétences) */}

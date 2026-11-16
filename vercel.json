@@ -22,6 +22,13 @@
       }
     },
     {
+      "src": "/services/creation-site-internet-senegal",
+      "status": 301,
+      "headers": {
+        "Location": "/services/creation-site-web-senegal"
+      }
+    },
+    {
       "src": "/services/gec-courrier-cotonou",
       "status": 301,
       "headers": {
