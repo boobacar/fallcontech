@@ -2286,6 +2286,14 @@ export const GEO_TITLE_OVERRIDES = {
     description:
       "Audit, serveurs, réseau et cybersécurité en Guinée : supervision, sauvegardes et continuité d'activité. Devis sous 48 h, intervention à Conakry.",
   },
+  // 23/11/2026 — « partie fne mauritanie » : 25 imp, pos 6,7, 0 clic sur 28 j (23/10→20/11), soit
+  // 25 des 30 imp de la page. Le titre ne nommait que la ville (Nouakchott) alors que la requête
+  // nomme le pays ; dernier crawl 17/11, donc l'override sera lu au prochain passage.
+  "/services/facturation-electronique-nouakchott": {
+    title: "Facturation électronique FNE en Mauritanie : conformité DGI",
+    description:
+      "Mise en conformité FNE à Nouakchott et en Mauritanie : paramétrage, factures certifiées conformes à la DGI, intégration à votre logiciel et archivage. Devis sous 48 h.",
+  },
   // 19/10/2026 — « création de site internet à mbour » (pos 4,0) et « agence web professionnelle
   // à mbour » (pos 7,5) tombaient sur un titre qui ne disait ni « site internet » ni « agence web ».
   "/services/creation-site-web-mbour": {

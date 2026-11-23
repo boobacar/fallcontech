@@ -917,9 +917,9 @@ export default {
       meta: "10 Novembre 2025 • Par Boubacar Fall • Sauvegarde",
       breadcrumb: "Sauvegarde Données",
       seo: {
-        title: "Sauvegarde Données Entreprise Dakar : Stratégies Efficaces",
+        title: "Sauvegarde des données d'entreprise au Sénégal",
         description:
-          "Cloud, disque dur, règle 3-2-1... Protégez les données vitales de votre entreprise contre le vol et les pannes.",
+          "Cloud, disque dur, règle 3-2-1 : comment organiser la sauvegarde des données de votre entreprise au Sénégal, avec tests de restauration.",
         headline: "Stratégies de Sauvegarde de Données pour Entreprises",
         ldDescription:
           "Solutions de sauvegarde automatique et sécurisée pour les données critiques des entreprises.",
